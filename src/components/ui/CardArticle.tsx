@@ -36,16 +36,42 @@ export default function CardArticle({
 
   const inlineLinks: InlineLinkDef[] = useMemo(
     () => [
+      { phrase: "Steam wishlist", href: "/steam-wishlist-calculator" },
+      { phrase: "Steam wishlists", href: "/steam-wishlist-calculator" },
+      { phrase: "steam wishlist", href: "/steam-wishlist-calculator" },
+      { phrase: "steam wishlists", href: "/steam-wishlist-calculator" },
+      { phrase: "Wishlist Velocity", href: "/steam-wishlist-calculator" },
+      { phrase: "wishlist velocity", href: "/steam-wishlist-calculator" },
+      { phrase: "Wishlist Now", href: "/steam-wishlist-calculator" },
+      { phrase: "wishlist button", href: "/steam-wishlist-calculator" },
       { phrase: "Steam Wishlist Calculator", href: "/steam-wishlist-calculator" },
       { phrase: "Steam Pricing Planner", href: "/steam-pricing-planner" },
       { phrase: "Steam Influencer Planner", href: "/steam-influencers-planner" },
       { phrase: "Steam Festival Planner", href: "/steam-festival-planner" },
       { phrase: "Steam Next Fest", href: "/blog/steam-next-fest-the-masterclass-in-discovery" },
+      { phrase: "Discovery Queues", href: "/steam-festival-planner" },
+      { phrase: "Discovery Queue", href: "/steam-festival-planner" },
+      { phrase: "Steam Algorithm", href: "/steam-festival-planner" },
+      { phrase: "Steam Tags", href: "/steam-festival-planner" },
+      { phrase: "Metadata Optimization", href: "/steam-festival-planner" },
+      { phrase: "About This Game", href: "/steam-festival-planner" },
+      { phrase: "Steam News Hub", href: "/steam-festival-planner" },
+      { phrase: "Regional Pricing", href: "/steam-pricing-planner" },
+      { phrase: "regional pricing", href: "/steam-pricing-planner" },
+      { phrase: "Steamworks", href: "/steam-festival-planner" },
+      { phrase: "Livestream", href: "/steam-festival-planner" },
+      { phrase: "Steam marketing", href: "/steam-festival-planner" },
+      { phrase: "steam marketing", href: "/steam-festival-planner" },
+      { phrase: "Marketing for Steam", href: "/steam-festival-planner" },
+      { phrase: "video games pr", href: "/pr-starter-pack" },
+      { phrase: "video game pr", href: "/pr-starter-pack" },
+      { phrase: "Steam no wishlist", href: "/no-wishlists-on-steam" },
+      { phrase: "no wishlists on Steam", href: "/no-wishlists-on-steam" },
     ],
     [],
   );
 
-  const linkBudget = useMemo(() => ({ used: 0, max: 2 }), []);
+  const linkBudget = useMemo(() => ({ used: 0, max: 10, usedHrefs: {} as Record<string, true> }), []);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);

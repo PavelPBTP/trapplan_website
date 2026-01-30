@@ -53,7 +53,7 @@ type InlineLinkDef = {
   href: string;
 };
 
-type LinkifyBudget = { used: number; max: number };
+type LinkifyBudget = { used: number; max: number; usedHrefs: Record<string, true> };
 
 function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget) {
   if (!text) return text;
@@ -73,6 +73,7 @@ function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget)
     let best: InlineLinkDef | null = null;
 
     for (const d of sorted) {
+      if (budget.usedHrefs[d.href]) continue;
       const idx = lower.indexOf(d.phrase.toLowerCase());
       if (idx === -1) continue;
       if (bestIdx === -1 || idx < bestIdx) {
@@ -100,6 +101,7 @@ function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget)
 
     remaining = after;
     budget.used += 1;
+    budget.usedHrefs[best.href] = true;
   }
 
   if (remaining) out.push(remaining);
@@ -140,7 +142,7 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
           {linkifyText(
             normalizeText(block.text),
             opts.inlineLinks ?? [],
-            opts.linkBudget ?? { used: 0, max: 0 },
+            opts.linkBudget ?? { used: 0, max: 0, usedHrefs: {} },
           )}
         </p>
       );
@@ -155,7 +157,7 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
               {linkifyText(
                 normalizeText(it),
                 opts.inlineLinks ?? [],
-                opts.linkBudget ?? { used: 0, max: 0 },
+                opts.linkBudget ?? { used: 0, max: 0, usedHrefs: {} },
               )}
             </li>
           ))}
@@ -194,7 +196,7 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
               {linkifyText(
                 normalizeText(block.text),
                 opts.inlineLinks ?? [],
-                opts.linkBudget ?? { used: 0, max: 0 },
+                opts.linkBudget ?? { used: 0, max: 0, usedHrefs: {} },
               )}
             </div>
           </div>
@@ -268,7 +270,7 @@ export async function generateMetadata({
     const lower = baseTitle.toLowerCase();
     if (!keyword) return clampText(baseTitle, 60);
     if (lower.includes(keyword.toLowerCase())) return clampText(baseTitle, 60);
-    const candidate = `${baseTitle} — ${keyword}`;
+    const candidate = `${baseTitle}: ${keyword}`;
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
   const excerptUses = BLOG_POSTS.reduce((acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0), 0);
@@ -335,34 +337,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .map((b) => (b.type === "p" || b.type === "h2" || b.type === "h3" ? b.text : ""))
     .join("\n")}`.toLowerCase();
 
-  const toolLinks: Array<{ label: string; href: string }> = [];
-  const maybeAddTool = (cond: boolean, label: string, href: string) => {
-    if (!cond) return;
-    if (toolLinks.some((t) => t.href === href)) return;
-    toolLinks.push({ label, href });
-  };
-
-  maybeAddTool(
-    allText.includes("wishlist") || allText.includes("wishlists") || allText.includes("traffic") || allText.includes("utm") || allText.includes("budget"),
-    "Steam Wishlist Calculator",
-    "/steam-wishlist-calculator",
-  );
-  maybeAddTool(
-    allText.includes("regional pricing") || allText.includes("ppp") || allText.includes("pricing"),
-    "Steam Pricing Planner",
-    "/steam-pricing-planner",
-  );
-  maybeAddTool(
-    allText.includes("influencer") || allText.includes("creators") || allText.includes("twitch") || allText.includes("youtube"),
-    "Steam Influencer Planner",
-    "/steam-influencers-planner",
-  );
-  maybeAddTool(
-    allText.includes("next fest") || allText.includes("festival") || allText.includes("sale") || allText.includes("discount") || allText.includes("event"),
-    "Steam Festival Planner",
-    "/steam-festival-planner",
-  );
-
   const relatedPostLinks = BLOG_POSTS
     .filter((p) => p.slug !== post.slug)
     .filter((p) => (post.category ? p.category === post.category : true))
@@ -370,15 +344,41 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .map((p) => ({ label: p.title, href: `/blog/${p.slug}` }));
 
   const inlineLinks: InlineLinkDef[] = [
+    { phrase: "Steam wishlist", href: "/steam-wishlist-calculator" },
+    { phrase: "Steam wishlists", href: "/steam-wishlist-calculator" },
+    { phrase: "steam wishlist", href: "/steam-wishlist-calculator" },
+    { phrase: "steam wishlists", href: "/steam-wishlist-calculator" },
+    { phrase: "wishlist", href: "/steam-wishlist-calculator" },
+    { phrase: "wishlists", href: "/steam-wishlist-calculator" },
     { phrase: "Steam Next Fest", href: "/blog/steam-next-fest-the-masterclass-in-discovery" },
+    { phrase: "Marketing for Steam", href: "/steam-festival-planner" },
+    { phrase: "Marketing for steam", href: "/steam-festival-planner" },
+    { phrase: "Steam marketing", href: "/steam-festival-planner" },
+    { phrase: "steam marketing", href: "/steam-festival-planner" },
+    { phrase: "Steam reviews", href: "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026" },
+    { phrase: "Steam review", href: "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026" },
+    { phrase: "reviews on Steam", href: "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026" },
+    { phrase: "Steam page", href: "/steam-festival-planner" },
+    { phrase: "Steam store page", href: "/steam-festival-planner" },
+    { phrase: "video games pr", href: "/pr-starter-pack" },
+    { phrase: "video game pr", href: "/pr-starter-pack" },
+    { phrase: "Video games PR", href: "/pr-starter-pack" },
+    { phrase: "Steam no wishlist", href: "/no-wishlists-on-steam" },
+    { phrase: "Steam no wishlists", href: "/no-wishlists-on-steam" },
+    { phrase: "no wishlists on Steam", href: "/no-wishlists-on-steam" },
+    { phrase: "Steam no wishlist", href: "/no-wishlists-on-steam" },
+    { phrase: "Marketing for video games", href: "/" },
+    { phrase: "marketing for video games", href: "/" },
     { phrase: "Steam Wishlist Calculator", href: "/steam-wishlist-calculator" },
     { phrase: "Steam Pricing Planner", href: "/steam-pricing-planner" },
     { phrase: "Steam Influencer Planner", href: "/steam-influencers-planner" },
     { phrase: "Steam Festival Planner", href: "/steam-festival-planner" },
+    { phrase: "Work with us", href: "/form" },
+    { phrase: "work with us", href: "/form" },
     ...relatedPostLinks.map((p) => ({ phrase: p.label, href: p.href })),
   ];
 
-  const linkBudget: LinkifyBudget = { used: 0, max: 2 };
+  const linkBudget: LinkifyBudget = { used: 0, max: 10, usedHrefs: {} };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -510,23 +510,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <article className="mt-10">
           {renderedBlocks}
         </article>
-
-        {toolLinks.length ? (
-          <div className="mt-12 rounded-[14px] border border-[#eeeeee] bg-black/[0.01] px-5 py-4">
-            <div className="text-[12px] font-semibold tracking-wide text-black/45">Tools mentioned</div>
-            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[14px] text-black/70">
-              {toolLinks.map((t) => (
-                <Link
-                  key={t.href}
-                  href={t.href}
-                  className="font-medium underline underline-offset-2 decoration-black/20 hover:text-black hover:decoration-black/40"
-                >
-                  {t.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        ) : null}
 
         <div className="mt-14 border-t border-[#eeeeee] pt-8">
           <Link href="/blog" className="text-[14px] font-semibold text-black/70 hover:underline">

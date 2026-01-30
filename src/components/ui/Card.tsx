@@ -10,7 +10,11 @@ type InlineLinkDef = {
   href: string;
 };
 
-type LinkifyBudget = { used: number; max: number };
+type LinkifyBudget = { used: number; max: number; usedHrefs: Record<string, true> };
+
+function normalizeText(s: string) {
+  return s.replace(/[—–]/g, " ");
+}
 
 function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget) {
   if (!text) return text;
@@ -28,6 +32,7 @@ function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget)
     let best: InlineLinkDef | null = null;
 
     for (const d of sorted) {
+      if (budget.usedHrefs[d.href]) continue;
       const idx = lower.indexOf(d.phrase.toLowerCase());
       if (idx === -1) continue;
       if (bestIdx === -1 || idx < bestIdx) {
@@ -55,6 +60,7 @@ function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget)
 
     remaining = after;
     budget.used += 1;
+    budget.usedHrefs[best.href] = true;
   }
 
   if (remaining) out.push(remaining);
@@ -112,7 +118,11 @@ export default function Card({
       <div className="mt-5 prose prose-slate max-w-none text-[16px] leading-[1.7]">
         {splitParagraphs(answer).map((p, idx) => (
           <p key={idx}>
-            {linkifyText(p, inlineLinks ?? [], linkBudget ?? { used: 0, max: 0 })}
+            {linkifyText(
+              normalizeText(p),
+              inlineLinks ?? [],
+              linkBudget ?? { used: 0, max: 0, usedHrefs: {} },
+            )}
           </p>
         ))}
       </div>
