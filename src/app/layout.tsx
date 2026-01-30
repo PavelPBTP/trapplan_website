@@ -57,7 +57,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Analytics />
         <StructuredData />
       </head>
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
@@ -71,6 +70,7 @@ export default function RootLayout({
         </noscript>
         <Header />
         {children}
+        <Analytics />
         <VercelAnalytics />
       </body>
     </html>

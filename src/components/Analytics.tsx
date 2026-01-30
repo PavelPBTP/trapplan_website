@@ -5,7 +5,7 @@ export default function Analytics() {
   return (
     <>
       {/* Google Tag Manager */}
-      <Script id="gtm-script" strategy="afterInteractive">
+      <Script id="gtm-script" strategy="lazyOnload">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -16,9 +16,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {/* Google Analytics 4 */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-7WXJZK7F4L"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="ga4-script" strategy="afterInteractive">
+      <Script id="ga4-script" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -28,7 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </Script>
 
       {/* Facebook Pixel */}
-      <Script id="fb-pixel" strategy="afterInteractive">
+      <Script id="fb-pixel" strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -53,14 +53,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </noscript>
 
       {/* LinkedIn Insight Tag - Partner ID 7168089 */}
-      <Script id="linkedin-insight-1" strategy="afterInteractive">
+      <Script id="linkedin-insight-1" strategy="lazyOnload">
         {`
           _linkedin_partner_id = "7168089";
           window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
           window._linkedin_data_partner_ids.push(_linkedin_partner_id);
         `}
       </Script>
-      <Script id="linkedin-insight-1-load" strategy="afterInteractive">
+      <Script id="linkedin-insight-1-load" strategy="lazyOnload">
         {`
           (function(l) {
             if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
@@ -84,14 +84,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </noscript>
 
       {/* LinkedIn Insight Tag - Partner ID 7050836 */}
-      <Script id="linkedin-insight-2" strategy="afterInteractive">
+      <Script id="linkedin-insight-2" strategy="lazyOnload">
         {`
           _linkedin_partner_id = "7050836";
           window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
           window._linkedin_data_partner_ids.push(_linkedin_partner_id);
         `}
       </Script>
-      <Script id="linkedin-insight-2-load" strategy="afterInteractive">
+      <Script id="linkedin-insight-2-load" strategy="lazyOnload">
         {`
           (function(l) {
             if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
