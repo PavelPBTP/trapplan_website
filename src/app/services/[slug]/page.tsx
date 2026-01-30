@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import Footer from "@/components/sections/Footer";
+import { SERVICES } from "@/lib/data/services";
 
 const SERVICE_SLUGS = [
   "performance-based-campaigns",
@@ -27,6 +28,21 @@ function titleFromSlug(slug: string) {
     .join(" ");
 }
 
+function normalizeServiceKey(s: string) {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+const SERVICE_DESCRIPTION_BY_SLUG = (() => {
+  const map = new Map<string, string>();
+  for (const s of SERVICES) {
+    map.set(normalizeServiceKey(s.title), s.description);
+  }
+  return map;
+})();
+
 export function generateStaticParams() {
   return SERVICE_SLUGS.map((slug) => ({ slug }));
 }
@@ -42,7 +58,8 @@ export async function generateMetadata({
   const title = titleFromSlug(slug);
   const url = `/services/${slug}`;
   const description =
-    "Service overview from TrapPlan. This page is stored in the repo and does not load any external content.";
+    SERVICE_DESCRIPTION_BY_SLUG.get(slug) ??
+    `TrapPlan service: ${title}. Overview, deliverables, and how we work.`;
 
   return {
     title,
