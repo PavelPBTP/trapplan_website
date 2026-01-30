@@ -219,7 +219,58 @@ export async function generateMetadata({
   if (!post) return {};
 
   const url = `/blog/${post.slug}`;
-  const title = post.title;
+  const titleFromSlug = (s: string) =>
+    s
+      .split("-")
+      .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
+      .join(" ");
+
+  const looksSluggyTitle = (t: string) => {
+    const s = (t ?? "").trim();
+    if (!s) return true;
+    if (s.includes("-") || s.includes("_")) return true;
+    const letters = s.replace(/[^a-zA-Z]/g, "");
+    if (!letters) return false;
+    const hasUpper = /[A-Z]/.test(letters);
+    if (!hasUpper) return true;
+    return false;
+  };
+
+  const clampText = (s: string, maxLen: number) => {
+    const t = (s ?? "").trim();
+    if (t.length <= maxLen) return t;
+    return t.slice(0, maxLen - 1).trimEnd() + "…";
+  };
+
+  const baseTitle = looksSluggyTitle(post.title) ? titleFromSlug(slug) : post.title;
+
+  const allText = `${post.title}\n${post.excerpt}\n${post.content
+    .map((b) => (b.type === "p" || b.type === "h2" || b.type === "h3" ? b.text : ""))
+    .join("\n")}`.toLowerCase();
+
+  const pickKeyword = () => {
+    const hasSteam = allText.includes("steam");
+    const hasWishlist = allText.includes("wishlist") || allText.includes("wishlists");
+    const hasMarketing = allText.includes("marketing") || allText.includes("go-to-market") || allText.includes("go to market");
+    const hasPr = allText.includes("pr") || allText.includes("press") || allText.includes("journalist") || allText.includes("media");
+
+    if (hasSteam && hasWishlist) return "Steam wishlist";
+    if (hasSteam && hasMarketing) return "Steam marketing";
+    if (hasPr && (allText.includes("video game") || allText.includes("games"))) return "video games pr";
+    if (allText.includes("video games promote violence") || (allText.includes("promote") && allText.includes("violence")))
+      return "video games promote violence";
+    if (hasMarketing && (allText.includes("video game") || allText.includes("video games"))) return "marketing for video games";
+    return "";
+  };
+
+  const keyword = pickKeyword();
+  const title = (() => {
+    const lower = baseTitle.toLowerCase();
+    if (!keyword) return clampText(baseTitle, 60);
+    if (lower.includes(keyword.toLowerCase())) return clampText(baseTitle, 60);
+    const candidate = `${baseTitle} — ${keyword}`;
+    return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
+  })();
   const excerptUses = BLOG_POSTS.reduce((acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0), 0);
   const description =
     excerptUses > 1
