@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import CardArticle from "@/components/ui/CardArticle";
+import BackToTopButton from "@/components/ui/BackToTopButton";
 import BlogQuoteBanner from "@/components/ui/BlogQuoteBanner";
 import { BLOG_POSTS, type BlogBlock } from "@/lib/data/blog";
 
@@ -409,11 +410,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <BackToTopButton />
         <CardArticle
           data={post.cardArticle}
           cover={{ src: cover, alt: post.title }}
           hideProTips={post.slug === "steam-next-fest-2026-the-ultimate-strategy-guide"}
         />
+        <BlogQuoteBanner />
       </>
     );
   }
@@ -446,6 +449,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <BackToTopButton />
       <div className="mx-auto max-w-3xl px-6 pb-20 pt-12 lg:px-0">
         <header>
           <div className="flex flex-col gap-4">
