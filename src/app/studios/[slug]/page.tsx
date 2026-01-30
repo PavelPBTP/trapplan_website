@@ -18,10 +18,13 @@ export async function generateMetadata({
   if (!s) return {};
 
   const url = `/studios/${slug}`;
+  const excerptUses = STUDIO_PAGES.reduce((acc, p) => acc + (p.excerpt === s.excerpt ? 1 : 0), 0);
+  const description =
+    excerptUses > 1 ? `${s.excerpt} (${s.client} — ${s.title})` : s.excerpt;
 
   return {
     title: s.title,
-    description: s.excerpt,
+    description,
     alternates: {
       canonical: url,
     },
@@ -29,12 +32,12 @@ export async function generateMetadata({
       type: "website",
       url,
       title: s.title,
-      description: s.excerpt,
+      description,
     },
     twitter: {
       card: "summary_large_image",
       title: s.title,
-      description: s.excerpt,
+      description,
     },
   };
 }

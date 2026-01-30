@@ -220,7 +220,11 @@ export async function generateMetadata({
 
   const url = `/blog/${post.slug}`;
   const title = post.title;
-  const description = post.excerpt;
+  const excerptUses = BLOG_POSTS.reduce((acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0), 0);
+  const description =
+    excerptUses > 1
+      ? `${post.excerpt} (${post.category ? `${post.category} — ` : ""}${post.title})`
+      : post.excerpt;
 
   const ogFallback = (() => {
     const p = new URLSearchParams();
