@@ -1,4 +1,4 @@
-import { WEBFLOW_BLOG_POSTS } from "@/lib/data/blog.webflow";
+import { BLOG_IMPORTED_POSTS } from "@/lib/data/blog.posts";
 
 export type BlogBlock =
   | { type: "p"; text: string }
@@ -156,5 +156,5 @@ function toDateMs(date: string) {
 
 export const BLOG_POSTS: BlogPost[] = dedupePostsBySlug([
   ...MANUAL_BLOG_POSTS,
-  ...WEBFLOW_BLOG_POSTS,
+  ...BLOG_IMPORTED_POSTS,
 ]).sort((a, b) => toDateMs(b.date) - toDateMs(a.date));

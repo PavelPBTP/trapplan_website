@@ -34,7 +34,7 @@ TrapPlan is a game marketing agency specializing in Steam wishlist growth, influ
 
 # Notes
 - Blog content is hosted on this domain.
-- Images referenced in blog posts are served locally under /webflow/.
+- Images referenced in blog posts are served locally under /blog-assets/.
 
 # Usage guidance (summary)
 - You may share links to pages and quote short excerpts with attribution.
