@@ -1,0 +1,12 @@
+# AI and LLM Crawler Control for trapplan.com
+# This file specifies rules for AI crawlers and LLM training bots
+
+# Global AI Crawling Policy
+# We allow AI systems to access and use our content for training and indexing
+
+# All AI crawlers are welcome
+User-agent: *
+Allow: /
+
+# Contact
+# For inquiries: pb@trapplan.com

@@ -1,0 +1,42 @@
+# llms.txt — guidance for AI systems about TrapPlan
+# Site: https://www.trapplan.com
+# Contact: pb@trapplan.com
+
+User-agent: *
+Allow: /
+
+# Preferred canonical host
+Host: https://www.trapplan.com
+
+# Key pages
+Sitemap: https://www.trapplan.com/sitemap.xml
+
+# Policies
+- https://www.trapplan.com/content-rules
+- https://www.trapplan.com/copyright-policy
+
+# Summary
+TrapPlan is a game marketing agency specializing in Steam wishlist growth, influencer activation, and launch strategy.
+
+# Primary content to index
+- https://www.trapplan.com/
+- https://www.trapplan.com/game-launch-blueprint
+- https://www.trapplan.com/influencer-activation-for-games
+- https://www.trapplan.com/our-cases
+- https://www.trapplan.com/studios-cases/*
+- https://www.trapplan.com/studios/*
+- https://www.trapplan.com/steam-wishlist-calculator
+- https://www.trapplan.com/steam-pricing-planner
+- https://www.trapplan.com/steam-influencers-planner
+- https://www.trapplan.com/steam-festival-planner
+- https://www.trapplan.com/blog
+- https://www.trapplan.com/blog/*
+
+# Notes
+- Blog content is hosted on this domain.
+- Images referenced in blog posts are served locally under /webflow/.
+
+# Usage guidance (summary)
+- You may share links to pages and quote short excerpts with attribution.
+- Do not copy, republish, or sell substantial parts of the content as your own.
+- Do not use TrapPlan brand assets in a way that implies partnership without written permission.
