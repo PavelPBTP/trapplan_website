@@ -1,10 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 export default function WorkWithUsForm() {
-  const searchParams = useSearchParams();
   const didPrefillRef = useRef(false);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -16,12 +14,13 @@ export default function WorkWithUsForm() {
 
   useEffect(() => {
     if (didPrefillRef.current) return;
-    const m = searchParams?.get("message");
+    if (typeof window === "undefined") return;
+    const m = new URLSearchParams(window.location.search).get("message");
     if (!m) return;
     if (message.trim().length > 0) return;
     setMessage(m);
     didPrefillRef.current = true;
-  }, [message, searchParams]);
+  }, [message]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
