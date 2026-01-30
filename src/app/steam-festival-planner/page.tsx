@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import InternalLinksSection from "@/components/sections/InternalLinksSection";
 import SteamFestivalPlannerClient from "./steam-festival-planner-client";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function SteamFestivalPlannerPage() {
     <>
       <main className="bg-[#F3F3F3]">
         <SteamFestivalPlannerClient />
+        <InternalLinksSection currentPath="/steam-festival-planner" variant="compact" />
         <Footer />
       </main>
     </>

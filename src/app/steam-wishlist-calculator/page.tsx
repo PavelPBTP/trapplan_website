@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import InternalLinksSection from "@/components/sections/InternalLinksSection";
 import SteamWishlistCalculatorClient from "./steam-wishlist-calculator-client";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function SteamWishlistCalculatorPage() {
     <>
       <main className="bg-[#F3F3F3]">
         <SteamWishlistCalculatorClient />
+        <InternalLinksSection currentPath="/steam-wishlist-calculator" variant="compact" />
         <Footer />
       </main>
     </>

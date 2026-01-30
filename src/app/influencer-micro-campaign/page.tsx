@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import InternalLinksSection from "@/components/sections/InternalLinksSection";
 
 export const metadata: Metadata = {
   title: "Influencer Micro Campaign: Cost-Efficient Reach That Converts",
@@ -261,6 +262,8 @@ export default function InfluencerMicroCampaignPage() {
             </div>
           </div>
         </section>
+
+        <InternalLinksSection currentPath="/influencer-micro-campaign" variant="compact" />
 
         <Footer />
       </main>

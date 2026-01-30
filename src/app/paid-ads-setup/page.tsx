@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import InternalLinksSection from "@/components/sections/InternalLinksSection";
 
 export const metadata: Metadata = {
   title: "Paid Ads Setup: Launch Your Campaigns Correctly",
@@ -261,6 +262,8 @@ export default function PaidAdsSetupPage() {
             </div>
           </div>
         </section>
+
+        <InternalLinksSection currentPath="/paid-ads-setup" variant="compact" />
 
         <Footer />
       </main>
