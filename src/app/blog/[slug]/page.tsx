@@ -501,7 +501,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
 
               <p className="mt-5 text-[18px] leading-[1.6] text-[#37352f]">
-                {post.excerpt}
+                {normalizeText(post.excerpt)}
               </p>
             </div>
           </div>

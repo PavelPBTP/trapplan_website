@@ -110,7 +110,7 @@ export default function Card({
             {stepLabel}
           </div>
           <h2 className="mt-2 text-[22px] font-extrabold leading-[1.15] tracking-tight text-slate-950 sm:text-[26px]">
-            {question}
+            {normalizeText(question)}
           </h2>
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function Card({
         ))}
       </div>
 
-      {proTip ? <ProTip text={proTip} /> : null}
+      {proTip ? <ProTip text={normalizeText(proTip)} /> : null}
     </section>
   );
 }
