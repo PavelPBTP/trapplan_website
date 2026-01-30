@@ -2,8 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { access } from "node:fs/promises";
-import path from "node:path";
 
 import CardArticle from "@/components/ui/CardArticle";
 import BlogQuoteBanner from "@/components/ui/BlogQuoteBanner";
@@ -224,18 +222,6 @@ export async function generateMetadata({
   const title = post.title;
   const description = post.excerpt;
 
-  const resolveLocalCover = async (cover?: string) => {
-    if (!cover) return undefined;
-    if (!cover.startsWith("/webflow/") && !cover.startsWith("/images/")) return cover;
-    const publicPath = path.join(process.cwd(), "public", cover);
-    try {
-      await access(publicPath);
-      return cover;
-    } catch {
-      return undefined;
-    }
-  };
-
   const ogFallback = (() => {
     const p = new URLSearchParams();
     p.set("title", title);
@@ -244,7 +230,7 @@ export async function generateMetadata({
     return `/og?${p.toString()}`;
   })();
 
-  const cover = (await resolveLocalCover(post.cover)) ?? ogFallback;
+  const cover = post.cover ?? ogFallback;
 
   const images = [
     {
@@ -280,18 +266,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return notFound();
 
-  const resolveLocalCover = async (cover?: string) => {
-    if (!cover) return undefined;
-    if (!cover.startsWith("/webflow/") && !cover.startsWith("/images/")) return cover;
-    const publicPath = path.join(process.cwd(), "public", cover);
-    try {
-      await access(publicPath);
-      return cover;
-    } catch {
-      return undefined;
-    }
-  };
-
   const ogFallback = (() => {
     const p = new URLSearchParams();
     p.set("title", post.title);
@@ -300,7 +274,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return `/og?${p.toString()}`;
   })();
 
-  const cover = (await resolveLocalCover(post.cover)) ?? ogFallback;
+  const cover = post.cover ?? ogFallback;
 
   const allText = `${post.title}\n${post.excerpt}\n${post.content
     .map((b) => (b.type === "p" || b.type === "h2" || b.type === "h3" ? b.text : ""))

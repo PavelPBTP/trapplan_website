@@ -2,10 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "@/lib/data/blog";
-import { access } from "node:fs/promises";
-import path from "node:path";
-
-export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Gaming Marketing Blog | Industry Trends & Tips",
@@ -36,19 +32,6 @@ function formatDate(iso: string) {
     month: "short",
     day: "2-digit",
   }).format(d);
-}
-
-async function resolveLocalCover(cover?: string) {
-  if (!cover) return undefined;
-  if (!cover.startsWith("/webflow/") && !cover.startsWith("/images/")) return cover;
-
-  const publicPath = path.join(process.cwd(), "public", cover);
-  try {
-    await access(publicPath);
-    return cover;
-  } catch {
-    return undefined;
-  }
 }
 
 function ogFallbackForPost(title: string, category?: string) {
@@ -89,13 +72,11 @@ export default async function BlogIndexPage({
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
   );
 
-  const cards = await Promise.all(
-    posts.map(async (p) => ({
-      post: p,
-      cover: await resolveLocalCover(p.cover),
-      ogCover: ogFallbackForPost(p.title, p.category),
-    })),
-  );
+  const cards = posts.map((p) => ({
+    post: p,
+    cover: p.cover,
+    ogCover: ogFallbackForPost(p.title, p.category),
+  }));
 
   return (
     <main className="bg-white">

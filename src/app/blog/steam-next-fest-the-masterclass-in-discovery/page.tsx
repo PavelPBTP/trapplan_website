@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { existsSync } from "fs";
-import { join } from "path";
 
 import CardArticle from "@/components/ui/CardArticle";
 
@@ -28,7 +26,6 @@ export const metadata: Metadata = {
 
 export default function SteamNextFestMasterclassPage() {
   const coverPath = "/images/steam-next-fest-the-masterclass-in-discovery.png";
-  const coverExists = existsSync(join(process.cwd(), "public", coverPath));
 
   const sections = [
     {
@@ -140,7 +137,7 @@ export default function SteamNextFestMasterclassPage() {
   return (
     <CardArticle
       data={data}
-      cover={coverExists ? { src: coverPath, alt: "Steam Next Fest February 2026" } : undefined}
+      cover={{ src: coverPath, alt: "Steam Next Fest February 2026" }}
     />
   );
 }
