@@ -264,7 +264,7 @@ export default function SteamInfluencersPlannerClient({
     <>
       <div id="tp-influencer-planner">
         <div className="tp-card">
-          <h2>Steam Influencer Planner</h2>
+          <h1>Steam Influencer Planner</h1>
           <div className="tp-sub">
             Paste a Steam page link and get a ready-to-run short list: 20 Twitch + 20 YouTube creators.
           </div>

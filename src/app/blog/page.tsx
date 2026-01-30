@@ -95,11 +95,11 @@ export default async function BlogIndexPage({
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           <aside className="lg:col-span-3">
-            <div className="text-[26px] font-bold leading-tight tracking-tight text-black">
+            <h1 className="text-[26px] font-bold leading-tight tracking-tight text-black">
               Trap Plan
               <br />
               Blog
-            </div>
+            </h1>
             <p className="mt-4 text-[15px] leading-[1.6] text-[#37352f]">
               Notes, playbooks, and practical marketing systems for games.
             </p>
