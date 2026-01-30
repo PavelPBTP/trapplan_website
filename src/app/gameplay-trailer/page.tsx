@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
-import InternalLinksSection from "@/components/sections/InternalLinksSection";
 
 export const metadata: Metadata = {
   title: "Gameplay Trailer: A Trailer Built to Convert",
@@ -264,8 +263,6 @@ export default function GameplayTrailerPage() {
             </div>
           </div>
         </section>
-
-        <InternalLinksSection currentPath="/gameplay-trailer" variant="compact" />
 
         <Footer />
       </main>

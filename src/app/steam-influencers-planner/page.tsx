@@ -4,7 +4,6 @@ import { readdir } from "node:fs/promises";
 import path from "node:path";
 
 import Footer from "@/components/sections/Footer";
-import InternalLinksSection from "@/components/sections/InternalLinksSection";
 import SteamInfluencersPlannerClient from "./steam-influencers-planner-client";
 
 export const metadata: Metadata = {
@@ -227,7 +226,6 @@ export default async function SteamInfluencersPlannerPage() {
         />
 
         <SteamInfluencersPlannerClient influencers={influencers} />
-        <InternalLinksSection currentPath="/steam-influencers-planner" variant="compact" />
         <Footer />
       </main>
     </>

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 import Footer from "@/components/sections/Footer";
-import InternalLinksSection from "@/components/sections/InternalLinksSection";
 
 export const metadata: Metadata = {
   title: "Reddit Launch Support: Organic Steam Traffic Without Backlash",
@@ -371,8 +370,6 @@ export default function RedditLaunchSupportPage() {
             </div>
           </div>
         </section>
-
-        <InternalLinksSection currentPath="/reddit-launch-support" variant="compact" />
       </main>
 
       <Footer />

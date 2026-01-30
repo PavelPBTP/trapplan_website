@@ -118,12 +118,6 @@ export default function SteamWishlistCalculatorClient() {
             Estimate wishlists, Steam page visits, and an indicative paid budget to reach your week 1 sales goal. This calculator helps indie teams plan realistic
             launch targets.
           </p>
-          <p>
-            Related:
-            <a href="/steam-pricing-planner"> Steam Pricing Planner</a>,
-            <a href="/steam-influencers-planner"> Steam Influencer Planner</a>,
-            <a href="/steam-festival-planner"> Steam Festival Planner</a>.
-          </p>
         </div>
 
         <div className="tpw-head">

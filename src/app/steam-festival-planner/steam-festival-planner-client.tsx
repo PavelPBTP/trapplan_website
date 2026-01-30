@@ -66,12 +66,6 @@ export default function SteamFestivalPlannerClient() {
         <p>
           Browse Steam festivals and sales. Filter events by type and genre, and enter an AppID to highlight events that fit your game.
         </p>
-        <p>
-          Related:
-          <a href="/steam-wishlist-calculator"> Steam Wishlist Calculator</a>,
-          <a href="/steam-pricing-planner"> Steam Pricing Planner</a>,
-          <a href="/steam-influencers-planner"> Steam Influencer Planner</a>.
-        </p>
       </div>
 
       <div id="tp-planner-app" suppressHydrationWarning>

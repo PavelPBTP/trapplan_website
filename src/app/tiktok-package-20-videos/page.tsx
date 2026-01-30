@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
-import InternalLinksSection from "@/components/sections/InternalLinksSection";
 
 export const metadata: Metadata = {
   title: "TikTok Package: 20 Videos",
@@ -584,9 +583,6 @@ export default function TikTokPackage20VideosPage() {
           </div>
         </section>
       </main>
-
-      <InternalLinksSection currentPath="/tiktok-package-20-videos" variant="compact" />
-
       <Footer />
     </>
   );

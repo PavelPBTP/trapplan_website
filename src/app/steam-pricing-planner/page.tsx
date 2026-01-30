@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
-import InternalLinksSection from "@/components/sections/InternalLinksSection";
 import SteamPricingPlannerClient from "./steam-pricing-planner-client";
 
 export const metadata: Metadata = {
@@ -31,7 +30,6 @@ export default function SteamPricingPlannerPage() {
     <>
       <main className="bg-[#F3F3F3]">
         <SteamPricingPlannerClient />
-        <InternalLinksSection currentPath="/steam-pricing-planner" variant="compact" />
         <Footer />
       </main>
     </>

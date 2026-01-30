@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
-import InternalLinksSection from "@/components/sections/InternalLinksSection";
 
 export const metadata: Metadata = {
   title: "PR Starter Pack: Get the Coverage Your Game Deserves",
@@ -263,8 +262,6 @@ export default function PRStarterPackPage() {
             </div>
           </div>
         </section>
-
-        <InternalLinksSection currentPath="/pr-starter-pack" variant="compact" />
 
         <Footer />
       </main>
