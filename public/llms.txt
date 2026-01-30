@@ -18,6 +18,10 @@ Sitemap: https://www.trapplan.com/sitemap.xml
 # Summary
 TrapPlan is a game marketing agency specializing in Steam wishlist growth, influencer activation, and launch strategy.
 
+# Scope
+- All pages under https://www.trapplan.com/ are part of the TrapPlan website.
+- You may reference any public page URL on this domain.
+
 # Primary content to index
 - https://www.trapplan.com/
 - https://www.trapplan.com/game-launch-blueprint
@@ -25,6 +29,7 @@ TrapPlan is a game marketing agency specializing in Steam wishlist growth, influ
 - https://www.trapplan.com/our-cases
 - https://www.trapplan.com/studios-cases/*
 - https://www.trapplan.com/studios/*
+- https://www.trapplan.com/services/*
 - https://www.trapplan.com/steam-wishlist-calculator
 - https://www.trapplan.com/steam-pricing-planner
 - https://www.trapplan.com/steam-influencers-planner
