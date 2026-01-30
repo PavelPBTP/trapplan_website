@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Header from "@/components/layout/Header";
 import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
@@ -70,6 +71,7 @@ export default function RootLayout({
         </noscript>
         <Header />
         {children}
+        <VercelAnalytics />
       </body>
     </html>
   );
