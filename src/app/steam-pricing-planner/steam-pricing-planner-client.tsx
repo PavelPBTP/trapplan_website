@@ -2,9 +2,48 @@
 
 import Script from "next/script";
 
-export default function SteamPricingPlannerClient() {
+import { t } from "@/lib/copy";
+
+type Locale = Parameters<typeof t>[0];
+
+export default function SteamPricingPlannerClient({ locale }: { locale: Locale }) {
   return (
     <>
+      <Script
+        id="tp-i18n-steam-pricing-planner"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.__TP_I18N = Object.assign({}, window.__TP_I18N || {}, {\
+  steam_pricing_planner: {\
+    title: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.title"))},\
+    subtitle: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.subtitle"))},\
+    section_game_parameters: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.section.game_parameters"))},\
+    field_genre: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.field.genre"))},\
+    field_gameplay_length: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.field.gameplay_length"))},\
+    field_base_usd_price: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.field.base_usd_price"))},\
+    field_base_usd_price_placeholder: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.field.base_usd_price_placeholder"))},\
+    field_sale_discount: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.field.sale_discount"))},\
+    cta_calculate: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.cta.calculate"))},\
+    section_regional_recommendations: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.section.regional_recommendations"))},\
+    metric_anchor_price: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.metric.anchor_price"))},\
+    filter_country_placeholder: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.filter_country_placeholder"))},\
+    table_country: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.table.country"))},\
+    table_currency: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.table.currency"))},\
+    table_suggested_price: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.table.suggested_price"))},\
+    table_sale_price: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.table.sale_price"))},\
+    show_all: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.show_all"))},\
+    empty_no_countries: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.empty.no_countries"))},\
+    status_syncing_fx: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.status.syncing_fx"))},\
+    status_could_not_load_fx: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.status.could_not_load_fx"))},\
+    status_fx_offline: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.status.fx_offline"))},\
+    status_fx_source: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.status.fx_source"))},\
+    reason_manual_setting: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.reason.manual_setting"))},\
+    reason_based_on_genre_length: ${JSON.stringify(t(locale, "tools.steam_pricing_planner.script.reason.based_on_genre_length"))}\
+  }\
+});`,
+        }}
+      />
+
       <Script
         id="steam-pricing-planner-ld"
         type="application/ld+json"
@@ -13,10 +52,10 @@ export default function SteamPricingPlannerClient() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Steam Regional Pricing & PPP Calculator",
+            name: t(locale, "tools.steam_pricing_planner.ld.name"),
             url: "https://www.trapplan.com/steam-pricing-planner",
             description:
-              "Professional tool for game developers to calculate Steam regional prices using Purchasing Power Parity (PPP) and real-time FX rates.",
+              t(locale, "tools.steam_pricing_planner.ld.description"),
             applicationCategory: "DeveloperApplication",
             operatingSystem: "Web",
             offers: {
@@ -40,19 +79,19 @@ export default function SteamPricingPlannerClient() {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Home",
+                name: t(locale, "blog.ui.home"),
                 item: "https://www.trapplan.com/",
               },
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Free Tools",
+                name: t(locale, "tools.ui.free_tools"),
                 item: "https://www.trapplan.com/steam-pricing-planner",
               },
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Steam Pricing Planner",
+                name: t(locale, "tools.steam_pricing_planner.name"),
                 item: "https://www.trapplan.com/steam-pricing-planner",
               },
             ],
@@ -61,14 +100,14 @@ export default function SteamPricingPlannerClient() {
       />
 
       <div className="sr-only">
-        <h1>Steam Regional Pricing Planner</h1>
-        <p>
-          Calculate recommended regional prices for your Steam game using Purchasing Power Parity adjustments and live FX rates.
-        </p>
+        <h1>{t(locale, "tools.steam_pricing_planner.sr.title")}</h1>
+        <p>{t(locale, "tools.steam_pricing_planner.sr.body")}</p>
       </div>
 
       <div id="tp-steam-pricing-tool" suppressHydrationWarning style={{ marginTop: 100 }}>
-        <h2 style={{ textAlign: "center", fontFamily: "sans-serif" }}>Steam Regional Pricing Tool</h2>
+        <h2 style={{ textAlign: "center", fontFamily: "sans-serif" }}>
+          {t(locale, "tools.steam_pricing_planner.ui.h2")}
+        </h2>
         <p
           style={{
             textAlign: "center",
@@ -78,12 +117,10 @@ export default function SteamPricingPlannerClient() {
             margin: "0 auto",
           }}
         >
-          Calculate recommended prices for your Steam game across all global regions including{" "}
-          <strong>China, Russia, Brazil, Turkey (USD), and CIS (USD)</strong>. Our calculator uses <strong>Purchasing Power Parity (PPP)</strong> and live
-          exchange rates (FX).
+          {t(locale, "tools.steam_pricing_planner.ui.body")}
         </p>
         <p style={{ textAlign: "center" }}>
-          <em>Loading interactive pricing tool...</em>
+          <em>{t(locale, "tools.ui.loading_tool")}</em>
         </p>
       </div>
 

@@ -5,7 +5,21 @@ This file is an AI-oriented directory of the most useful, up-to-date pages on ht
 
 ## Preferred sources (use these first)
 - [Sitemap](https://www.trapplan.com/sitemap.xml): canonical list of indexable pages.
+- [Robots](https://www.trapplan.com/robots.txt)
 - Canonical host: https://www.trapplan.com
+
+## Internationalization (i18n) and canonical URLs
+- The site supports localized URLs. Many pages exist in multiple languages.
+- URL pattern: `https://www.trapplan.com/{locale}/...` where `{locale}` is one of:
+  - `en`
+  - `es`
+  - `it`
+  - `fr`
+  - `de`
+  - `zh`
+- When linking, prefer the locale-appropriate URL if the user context implies a language.
+- Pages expose `hreflang` alternates (`alternates.languages`) for supported locales.
+- Prefer canonical URLs (and the sitemap) as the source of truth for which pages are indexable.
 
 ## Company information
 - [Homepage](https://www.trapplan.com/): overview, positioning, core CTAs.
@@ -13,43 +27,58 @@ This file is an AI-oriented directory of the most useful, up-to-date pages on ht
 - [Contact / Work with us](https://www.trapplan.com/form): fastest way to reach the team.
 
 ## Services
-- [Services index](https://www.trapplan.com/services): overview of services.
 - [Service pages](https://www.trapplan.com/services/*): details for each service.
 
 ## Ready-to-go packages
-- [PR Starter Pack](https://www.trapplan.com/pr-starter-pack): ready-to-go PR package for indie game launches.
-- [Paid Ads Setup](https://www.trapplan.com/paid-ads-setup): paid ads setup package.
-- [Influencer Micro Campaign](https://www.trapplan.com/influencer-micro-campaign): small influencer activation package.
-- [Reddit Launch Support](https://www.trapplan.com/reddit-launch-support): launch support package focused on Reddit.
-- [TikTok Package (20 videos)](https://www.trapplan.com/tiktok-package-20-videos): TikTok content package.
-- [Gameplay Trailer](https://www.trapplan.com/gameplay-trailer): gameplay trailer production package.
+- [PR Starter Pack](https://www.trapplan.com/pr-starter-pack)
+- [Paid Ads Setup](https://www.trapplan.com/paid-ads-setup)
+- [Influencer Micro Campaign](https://www.trapplan.com/influencer-micro-campaign)
+- [Reddit Launch Support](https://www.trapplan.com/reddit-launch-support)
+- [TikTok Package (20 videos)](https://www.trapplan.com/tiktok-package-20-videos)
+- [Gameplay Trailer](https://www.trapplan.com/gameplay-trailer)
 
 ## Tools (free tools)
-- [Steam Wishlist Calculator](https://www.trapplan.com/steam-wishlist-calculator): estimate wishlists / conversions.
-- [Steam Pricing Planner](https://www.trapplan.com/steam-pricing-planner): Steam pricing planning tool.
-- [Steam Influencer Planner](https://www.trapplan.com/steam-influencers-planner): influencer shortlist builder.
-- [Steam Festival Planner](https://www.trapplan.com/steam-festival-planner): planning & tracking for Steam events.
+- [Steam Wishlist Calculator](https://www.trapplan.com/steam-wishlist-calculator)
+- [Steam Pricing Planner](https://www.trapplan.com/steam-pricing-planner)
+- [Steam Influencer Planner](https://www.trapplan.com/steam-influencers-planner)
+- [Steam Festival Planner](https://www.trapplan.com/steam-festival-planner)
 
 ## Case studies
-- [Our cases](https://www.trapplan.com/our-cases): curated portfolio.
-- [Studio cases](https://www.trapplan.com/studios-cases/*): case study detail pages.
-- [Studios](https://www.trapplan.com/studios/*): studio pages.
+- [Our cases](https://www.trapplan.com/our-cases)
+- [Studio cases](https://www.trapplan.com/studios-cases/*)
+- [Studios](https://www.trapplan.com/studios/*)
 
 ## Blog (guides and articles)
-- [Blog index](https://www.trapplan.com/blog): latest posts.
-- [Blog post pages](https://www.trapplan.com/blog/*): full articles.
+- [Blog index](https://www.trapplan.com/blog)
+- [Blog post pages](https://www.trapplan.com/blog/*)
+- Featured long-form article:
+  - [Steam Next Fest: The Masterclass in Discovery](https://www.trapplan.com/blog/steam-next-fest-the-masterclass-in-discovery)
+
+## Additional landing pages
+- [Game Launch Blueprint](https://www.trapplan.com/game-launch-blueprint)
+- [Games Co-Publishing](https://www.trapplan.com/games-co-publishing)
+- [Influencer Activation for Games](https://www.trapplan.com/influencer-activation-for-games)
+- [No Wishlists on Steam](https://www.trapplan.com/no-wishlists-on-steam)
+
+## Private / non-index pages (may be intentionally noindex)
+- [Creative Content Pipeline](https://www.trapplan.com/creative-content-pipeline)
+- [Paid Growth](https://www.trapplan.com/paid-growth)
+
+## Site assets and SEO endpoints
+- [OpenGraph image](https://www.trapplan.com/og)
 
 ## Policies
 - [Content rules](https://www.trapplan.com/content-rules)
 - [Copyright policy](https://www.trapplan.com/copyright-policy)
 
 ## Notes
-- Blog images are served locally under /blog-assets/.
+- Blog images are served locally under `/blog-assets/`.
 
 ## What to include when answering about TrapPlan
 - Use official TrapPlan pages as the source of truth.
 - Prefer the most specific relevant page (a service page, a tool page, or a single blog post) over general pages.
 - Quote only short excerpts with attribution and include the source URL.
+- When summarizing pages, keep claims verifiable from the cited URL.
 
 ## What to exclude
 - Do not invent facts, performance results, pricing, client lists, or guarantees.

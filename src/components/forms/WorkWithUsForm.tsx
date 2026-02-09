@@ -1,8 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 export default function WorkWithUsForm() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const didPrefillRef = useRef(false);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -40,17 +49,39 @@ export default function WorkWithUsForm() {
       });
 
       if (response.ok) {
-        setStatusMessage("✅ Thank you! We'll contact you soon.");
+        setStatusMessage(t(locale, "work_with_us_form.success"));
         setName("");
         setCompany("");
         setEmail("");
         setMessage("");
         setSubscribe(true);
       } else {
-        setStatusMessage("❌ Something went wrong. Please try again.");
+        let serverError: string | undefined;
+        try {
+          const data: unknown = await response.json();
+          if (typeof data === "object" && data !== null) {
+            const error = (data as { error?: unknown }).error;
+            const details = (data as { details?: unknown }).details;
+            const status = (data as { status?: unknown }).status;
+
+            const parts: string[] = [];
+            if (typeof error === "string") parts.push(error);
+            if (typeof details === "string") parts.push(details);
+            if (typeof status === "number") parts.push(`(${status})`);
+            serverError = parts.length ? parts.join(" ") : undefined;
+          }
+        } catch {
+          serverError = undefined;
+        }
+
+        if (process.env.NODE_ENV !== "production" && serverError) {
+          setStatusMessage(serverError);
+        } else {
+          setStatusMessage(t(locale, "work_with_us_form.error_generic"));
+        }
       }
     } catch {
-      setStatusMessage("❌ Failed to send. Please try again.");
+      setStatusMessage(t(locale, "work_with_us_form.error_network"));
     } finally {
       setIsSubmitting(false);
     }
@@ -60,7 +91,7 @@ export default function WorkWithUsForm() {
     <form className="space-y-9" onSubmit={handleSubmit}>
       <label className="block">
         <span className="text-[13px] font-semibold text-black/45">
-          Your Full Name*
+          {t(locale, "work_with_us_form.field_full_name")}
         </span>
         <input
           type="text"
@@ -75,7 +106,7 @@ export default function WorkWithUsForm() {
 
       <label className="block">
         <span className="text-[13px] font-semibold text-black/45">
-          Company Name*
+          {t(locale, "work_with_us_form.field_company")}
         </span>
         <input
           type="text"
@@ -90,7 +121,7 @@ export default function WorkWithUsForm() {
 
       <label className="block">
         <span className="text-[13px] font-semibold text-black/45">
-          you@yourcompany.com*
+          {t(locale, "work_with_us_form.field_email")}
         </span>
         <input
           type="email"
@@ -105,7 +136,7 @@ export default function WorkWithUsForm() {
 
       <label className="block">
         <span className="text-[13px] font-semibold text-black/45">
-          Tell us about your game or what you need help with...
+          {t(locale, "work_with_us_form.field_message")}
         </span>
         <textarea
           name="message"
@@ -124,7 +155,7 @@ export default function WorkWithUsForm() {
           onChange={(e) => setSubscribe(e.target.checked)}
           className="h-4 w-4 rounded border-black/30 text-[#FF0A5B] accent-[#FF0A5B]"
         />
-        I&apos;d like to receive occasional marketing tips
+        {t(locale, "work_with_us_form.subscribe")}
       </label>
 
       {statusMessage && (
@@ -139,12 +170,13 @@ export default function WorkWithUsForm() {
           disabled={isSubmitting}
           className="h-[52px] w-full rounded-full bg-[#FF0A5B] text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E] disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? "Sending..." : "Let’s Talk"}
+          {isSubmitting
+            ? t(locale, "work_with_us_form.submit_sending")
+            : t(locale, "work_with_us_form.submit")}
         </button>
 
         <p className="mt-4 text-center text-[12px] font-semibold text-black/45">
-          We&apos;ll never share your information. Only one expert will
-          contact you.
+          {t(locale, "work_with_us_form.privacy_note")}
         </p>
       </div>
     </form>

@@ -5,6 +5,9 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { isLocale, withLocale } from "@/lib/i18n.shared";
+import { usePathname } from "next/navigation";
+import { t } from "@/lib/copy";
 
 type ValueBlock = {
   title: string;
@@ -18,6 +21,10 @@ type FAQItem = {
 };
 
 function Hero() {
+  const pathname = usePathname() || "/";
+  const maybeLocale = pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
+  const formHref = withLocale(locale, "/form");
   return (
     <section className="mx-auto max-w-6xl px-6 pt-10 pb-10 lg:px-10 lg:pt-14">
       <div className="rounded-[28px] bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]">
@@ -37,7 +44,7 @@ function Hero() {
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Link
-                href="/form"
+                href={formHref}
                 className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.30)] transition-colors hover:bg-[#E6004E]"
               >
                 Book a Strategy Call
@@ -53,7 +60,7 @@ function Hero() {
               <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_25%_25%,rgba(255,10,91,0.14),transparent_58%),radial-gradient(circle_at_70%_70%,rgba(0,0,0,0.08),transparent_60%)]" />
               <Image
                 src="/images/PaidHero.avif"
-                alt="Paid growth illustration"
+                alt={t(locale, "paid_growth.ui.hero.image_alt")}
                 fill
                 sizes="(max-width: 1024px) 92vw, 520px"
                 className="object-contain opacity-90"
@@ -146,6 +153,10 @@ function CoreValueBlocks() {
 }
 
 function IndieAccordionFAQ() {
+  const pathname = usePathname() || "/";
+  const maybeLocale = pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
+  const formHref = withLocale(locale, "/form");
   const items = useMemo<FAQItem[]>(
     () => [
       {
@@ -230,7 +241,7 @@ function IndieAccordionFAQ() {
 
         <div className="mt-10">
           <Link
-            href="/form"
+            href={formHref}
             className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-[#E6004E]"
           >
             Book a Strategy Call

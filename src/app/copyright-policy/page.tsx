@@ -1,49 +1,65 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale } from "@/lib/i18n.server";
+import { t } from "@/lib/copy";
+import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 
-export const metadata: Metadata = {
-  title: "Copyright Policy",
-  description: "Copyright policy for TrapPlan website content.",
-  alternates: {
-    canonical: "/copyright-policy",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/copyright-policy");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/copyright-policy")]),
+  ) as Record<string, string>;
 
-export default function CopyrightPolicyPage() {
+  return {
+    title: t(locale, "legal.copyright.meta_title"),
+    description: t(locale, "legal.copyright.meta_desc"),
+    alternates: {
+      canonical,
+      languages,
+    },
+  };
+}
+
+export default async function CopyrightPolicyPage() {
+  const locale = await getRequestLocale();
   return (
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
           <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
-            Copyright Policy
+            {t(locale, "legal.copyright.title")}
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-7 text-black/65">
-            This page explains how TrapPlan content is protected and how you can use it.
+            {t(locale, "legal.copyright.lede")}
           </p>
 
           <div className="mt-10 space-y-8 rounded-2xl border border-black/10 bg-white px-7 py-8">
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">Copyright notice</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.copyright.section1.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                All text, design, and materials on this website are protected by copyright and other
-                applicable intellectual property laws.
+                {t(locale, "legal.copyright.section1.body")}
               </p>
             </div>
 
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">Permission</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.copyright.section2.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                You may reference and link to our pages. If you want to republish or reproduce any
-                substantial part of our content, please request permission.
+                {t(locale, "legal.copyright.section2.body")}
               </p>
             </div>
 
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">Reporting</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.copyright.section3.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                If you believe your copyrighted work is used on this website in a way that
-                constitutes infringement, please contact us and include relevant details.
+                {t(locale, "legal.copyright.section3.body")}
               </p>
             </div>
           </div>

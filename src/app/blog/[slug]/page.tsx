@@ -7,10 +7,14 @@ import CardArticle from "@/components/ui/CardArticle";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import BlogQuoteBanner from "@/components/ui/BlogQuoteBanner";
 import { BLOG_POSTS, type BlogBlock } from "@/lib/data/blog";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { getBlogPost } from "@/lib/data/blog.i18n";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-function formatDate(iso: string) {
+function formatDate(locale: string, iso: string) {
   const d = new Date(iso);
-  return new Intl.DateTimeFormat("en", {
+  return new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "short",
     day: "2-digit",
@@ -217,11 +221,15 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const locale = await getRequestLocale();
   const { slug } = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const post = getBlogPost(locale, slug);
   if (!post) return {};
 
-  const url = `/blog/${post.slug}`;
+  const url = withLocale(locale, `/blog/${post.slug}`);
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/blog/${post.slug}`)]),
+  ) as Record<string, string>;
   const titleFromSlug = (s: string) =>
     s
       .split("-")
@@ -257,12 +265,17 @@ export async function generateMetadata({
     const hasMarketing = allText.includes("marketing") || allText.includes("go-to-market") || allText.includes("go to market");
     const hasPr = allText.includes("pr") || allText.includes("press") || allText.includes("journalist") || allText.includes("media");
 
-    if (hasSteam && hasWishlist) return "Steam wishlist";
-    if (hasSteam && hasMarketing) return "Steam marketing";
-    if (hasPr && (allText.includes("video game") || allText.includes("games"))) return "video games pr";
-    if (allText.includes("video games promote violence") || (allText.includes("promote") && allText.includes("violence")))
-      return "video games promote violence";
-    if (hasMarketing && (allText.includes("video game") || allText.includes("video games"))) return "marketing for video games";
+    if (hasSteam && hasWishlist) return t(locale, "blog.inline.steam_wishlist");
+    if (hasSteam && hasMarketing) return t(locale, "blog.inline.steam_marketing");
+    if (hasPr && (allText.includes("video game") || allText.includes("games")))
+      return t(locale, "blog.inline.video_games_pr");
+    if (
+      allText.includes("video games promote violence") ||
+      (allText.includes("promote") && allText.includes("violence"))
+    )
+      return t(locale, "blog.inline.video_games_promote_violence");
+    if (hasMarketing && (allText.includes("video game") || allText.includes("video games")))
+      return t(locale, "blog.inline.marketing_for_video_games");
     return "";
   };
 
@@ -283,7 +296,7 @@ export async function generateMetadata({
   const ogFallback = (() => {
     const p = new URLSearchParams();
     p.set("title", title);
-    p.set("subtitle", "Read the full article on trapplan.com");
+    p.set("subtitle", t(locale, "blog.og.subtitle"));
     if (post.category) p.set("tag", post.category);
     return `/og?${p.toString()}`;
   })();
@@ -302,6 +315,7 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical: url,
+      languages,
     },
     openGraph: {
       type: "article",
@@ -320,14 +334,15 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const locale = await getRequestLocale();
   const { slug } = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const post = getBlogPost(locale, slug);
   if (!post) return notFound();
 
   const ogFallback = (() => {
     const p = new URLSearchParams();
     p.set("title", post.title);
-    p.set("subtitle", "Read the full article on trapplan.com");
+    p.set("subtitle", t(locale, "blog.og.subtitle"));
     if (post.category) p.set("tag", post.category);
     return `/og?${p.toString()}`;
   })();
@@ -342,40 +357,141 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .filter((p) => p.slug !== post.slug)
     .filter((p) => (post.category ? p.category === post.category : true))
     .slice(0, 2)
-    .map((p) => ({ label: p.title, href: `/blog/${p.slug}` }));
+    .map((p) => ({ label: p.title, href: withLocale(locale, `/blog/${p.slug}`) }));
 
   const inlineLinks: InlineLinkDef[] = [
-    { phrase: "Steam wishlist", href: "/steam-wishlist-calculator" },
-    { phrase: "Steam wishlists", href: "/steam-wishlist-calculator" },
-    { phrase: "steam wishlist", href: "/steam-wishlist-calculator" },
-    { phrase: "steam wishlists", href: "/steam-wishlist-calculator" },
-    { phrase: "wishlist", href: "/steam-wishlist-calculator" },
-    { phrase: "wishlists", href: "/steam-wishlist-calculator" },
-    { phrase: "Steam Next Fest", href: "/blog/steam-next-fest-the-masterclass-in-discovery" },
-    { phrase: "Marketing for Steam", href: "/steam-festival-planner" },
-    { phrase: "Marketing for steam", href: "/steam-festival-planner" },
-    { phrase: "Steam marketing", href: "/steam-festival-planner" },
-    { phrase: "steam marketing", href: "/steam-festival-planner" },
-    { phrase: "Steam reviews", href: "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026" },
-    { phrase: "Steam review", href: "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026" },
-    { phrase: "reviews on Steam", href: "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026" },
-    { phrase: "Steam page", href: "/steam-festival-planner" },
-    { phrase: "Steam store page", href: "/steam-festival-planner" },
-    { phrase: "video games pr", href: "/pr-starter-pack" },
-    { phrase: "video game pr", href: "/pr-starter-pack" },
-    { phrase: "Video games PR", href: "/pr-starter-pack" },
-    { phrase: "Steam no wishlist", href: "/no-wishlists-on-steam" },
-    { phrase: "Steam no wishlists", href: "/no-wishlists-on-steam" },
-    { phrase: "no wishlists on Steam", href: "/no-wishlists-on-steam" },
-    { phrase: "Steam no wishlist", href: "/no-wishlists-on-steam" },
-    { phrase: "Marketing for video games", href: "/" },
-    { phrase: "marketing for video games", href: "/" },
-    { phrase: "Steam Wishlist Calculator", href: "/steam-wishlist-calculator" },
-    { phrase: "Steam Pricing Planner", href: "/steam-pricing-planner" },
-    { phrase: "Steam Influencer Planner", href: "/steam-influencers-planner" },
-    { phrase: "Steam Festival Planner", href: "/steam-festival-planner" },
-    { phrase: "Work with us", href: "/form" },
-    { phrase: "work with us", href: "/form" },
+    {
+      phrase: t(locale, "blog.inline.steam_wishlist"),
+      href: withLocale(locale, "/steam-wishlist-calculator"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_wishlist").toLowerCase(),
+      href: withLocale(locale, "/steam-wishlist-calculator"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_wishlists"),
+      href: withLocale(locale, "/steam-wishlist-calculator"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_wishlists").toLowerCase(),
+      href: withLocale(locale, "/steam-wishlist-calculator"),
+    },
+    { phrase: t(locale, "blog.inline.wishlist"), href: withLocale(locale, "/steam-wishlist-calculator") },
+    { phrase: t(locale, "blog.inline.wishlists"), href: withLocale(locale, "/steam-wishlist-calculator") },
+    {
+      phrase: t(locale, "blog.inline.steam_next_fest"),
+      href: withLocale(locale, "/blog/steam-next-fest-the-masterclass-in-discovery"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_next_fest").toLowerCase(),
+      href: withLocale(locale, "/blog/steam-next-fest-the-masterclass-in-discovery"),
+    },
+    {
+      phrase: t(locale, "blog.inline.marketing_for_steam"),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.marketing_for_steam").toLowerCase(),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_marketing"),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_marketing").toLowerCase(),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_reviews"),
+      href: withLocale(locale, "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_reviews").toLowerCase(),
+      href: withLocale(locale, "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_review"),
+      href: withLocale(locale, "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_review").toLowerCase(),
+      href: withLocale(locale, "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026"),
+    },
+    {
+      phrase: t(locale, "blog.inline.reviews_on_steam"),
+      href: withLocale(locale, "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026"),
+    },
+    {
+      phrase: t(locale, "blog.inline.reviews_on_steam").toLowerCase(),
+      href: withLocale(locale, "/blog/how-steam-reviews-affect-visibility-and-sales-in-2026"),
+    },
+    { phrase: t(locale, "blog.inline.steam_page"), href: withLocale(locale, "/steam-festival-planner") },
+    {
+      phrase: t(locale, "blog.inline.steam_page").toLowerCase(),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_store_page"),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_store_page").toLowerCase(),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    {
+      phrase: t(locale, "blog.inline.video_games_pr"),
+      href: withLocale(locale, "/pr-starter-pack"),
+    },
+    {
+      phrase: t(locale, "blog.inline.video_game_pr"),
+      href: withLocale(locale, "/pr-starter-pack"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_no_wishlist"),
+      href: withLocale(locale, "/no-wishlists-on-steam"),
+    },
+    {
+      phrase: t(locale, "blog.inline.steam_no_wishlists"),
+      href: withLocale(locale, "/no-wishlists-on-steam"),
+    },
+    {
+      phrase: t(locale, "blog.inline.no_wishlists_on_steam"),
+      href: withLocale(locale, "/no-wishlists-on-steam"),
+    },
+    {
+      phrase: t(locale, "blog.inline.no_wishlists_on_steam").toLowerCase(),
+      href: withLocale(locale, "/no-wishlists-on-steam"),
+    },
+    {
+      phrase: t(locale, "blog.inline.marketing_for_video_games"),
+      href: withLocale(locale, "/"),
+    },
+    {
+      phrase: t(locale, "blog.inline.marketing_for_video_games").toLowerCase(),
+      href: withLocale(locale, "/"),
+    },
+    {
+      phrase: t(locale, "seo.steam_wishlist_calculator.title"),
+      href: withLocale(locale, "/steam-wishlist-calculator"),
+    },
+    {
+      phrase: t(locale, "seo.steam_pricing_planner.title"),
+      href: withLocale(locale, "/steam-pricing-planner"),
+    },
+    {
+      phrase: t(locale, "seo.steam_influencers_planner.title"),
+      href: withLocale(locale, "/steam-influencers-planner"),
+    },
+    {
+      phrase: t(locale, "seo.steam_festival_planner.title"),
+      href: withLocale(locale, "/steam-festival-planner"),
+    },
+    { phrase: t(locale, "blog.inline.work_with_us"), href: withLocale(locale, "/form") },
+    {
+      phrase: t(locale, "blog.inline.work_with_us").toLowerCase(),
+      href: withLocale(locale, "/form"),
+    },
     ...relatedPostLinks.map((p) => ({ phrase: p.label, href: p.href })),
   ];
 
@@ -388,7 +504,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
-    mainEntityOfPage: `https://www.trapplan.com/blog/${post.slug}`,
+    mainEntityOfPage: `https://www.trapplan.com${withLocale(locale, `/blog/${post.slug}`)}`,
     author: post.authorName
       ? {
           "@type": "Person",
@@ -456,14 +572,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-black/50">
               <ol className="flex flex-wrap items-center gap-2">
                 <li>
-                  <Link href="/" className="transition-colors hover:text-black">
-                    Home
+                  <Link href={withLocale(locale, "/")} className="transition-colors hover:text-black">
+                    {t(locale, "blog.ui.home")}
                   </Link>
                 </li>
                 <li className="text-black/30">/</li>
                 <li>
-                  <Link href="/blog" className="transition-colors hover:text-black">
-                    Blog
+                  <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-black">
+                    {t(locale, "blog.ui.blog")}
                   </Link>
                 </li>
                 <li className="text-black/30">/</li>
@@ -487,9 +603,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </h1>
 
               <div className="mt-4 text-[13px] font-medium text-black/50">
-                <span>{formatDate(post.date)}</span>
+                <span>{formatDate(locale, post.date)}</span>
                 <span className="px-2 text-black/25">•</span>
-                <span>{post.readingMinutes} min read</span>
+                <span>
+                  {post.readingMinutes} {t(locale, "blog.ui.min_read")}
+                </span>
                 {post.authorName ? (
                   <>
                     <span className="px-2 text-black/25">•</span>
@@ -516,8 +634,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </article>
 
         <div className="mt-14 border-t border-[#eeeeee] pt-8">
-          <Link href="/blog" className="text-[14px] font-semibold text-black/70 hover:underline">
-            Back to Blog
+          <Link href={withLocale(locale, "/blog")} className="text-[14px] font-semibold text-black/70 hover:underline">
+            {t(locale, "blog.ui.back_to_blog")}
           </Link>
         </div>
       </div>

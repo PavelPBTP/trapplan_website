@@ -3,6 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { SUPPORTED_LOCALES, withLocale, type Locale } from "@/lib/i18n.shared";
+import { usePathname } from "next/navigation";
+import { t } from "@/lib/copy";
 
 type Section = {
   title: string;
@@ -38,6 +41,9 @@ export default function ArticleClient({
   coverAlt?: string;
   coverTitle?: string;
 }) {
+  const pathname = usePathname() || "/";
+  const candidate = pathname.split("/").filter(Boolean)[0] || "en";
+  const locale = (SUPPORTED_LOCALES.includes(candidate as Locale) ? candidate : "en") as Locale;
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -65,14 +71,14 @@ export default function ArticleClient({
         <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-black/50">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="transition-colors hover:text-black">
-                Home
+              <Link href={withLocale(locale, "/")} className="transition-colors hover:text-black">
+                {t(locale, "blog.ui.home")}
               </Link>
             </li>
             <li className="text-black/30">/</li>
             <li>
-              <Link href="/blog" className="transition-colors hover:text-black">
-                Blog
+              <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-black">
+                {t(locale, "blog.ui.blog")}
               </Link>
             </li>
             <li className="text-black/30">/</li>

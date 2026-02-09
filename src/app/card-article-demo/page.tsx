@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import CardArticle, { type CardArticleData } from "@/components/ui/CardArticle";
 
-export const metadata: Metadata = {
-  title: "Card Article Demo",
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
+export function generateMetadata(): Metadata {
+  return {
+    title: "Card Article Demo",
+    robots: {
       index: false,
       follow: false,
+      googleBot: {
+        index: false,
+        follow: false,
+      },
     },
-  },
-};
+  };
+}
 
 const DATA: CardArticleData = {
   title: "Steam Next Fest 2026: The Ultimate Strategy Guide",

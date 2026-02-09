@@ -3,28 +3,40 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Gameplay Trailer: A Trailer Built to Convert",
-  description:
-    "A complete gameplay trailer crafted specifically for your game: storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
-  alternates: {
-    canonical: "/gameplay-trailer",
-  },
-  openGraph: {
-    type: "website",
-    url: "/gameplay-trailer",
-    title: "Gameplay Trailer: A Trailer Built to Convert",
-    description:
-      "A complete gameplay trailer crafted specifically for your game: storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gameplay Trailer: A Trailer Built to Convert",
-    description:
-      "A complete gameplay trailer crafted specifically for your game: storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/gameplay-trailer");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/gameplay-trailer")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.gameplay_trailer.title");
+  const description = t(locale, "seo.gameplay_trailer.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function ArrowUpRightIcon() {
   return (
@@ -89,7 +101,8 @@ function Step({ index, title, text }: { index: string; title: string; text: stri
   );
 }
 
-export default function GameplayTrailerPage() {
+export default async function GameplayTrailerPage() {
+  const locale = await getRequestLocale();
   return (
     <>
       <main className="bg-[#F3F3F3]">
@@ -98,24 +111,25 @@ export default function GameplayTrailerPage() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-6">
                 <h1 className="text-[42px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[48px]">
-                  Your gameplay.
+                  {t(locale, "gameplay_trailer.ui.hero.title_01")}
                   <br />
-                  Cut into a story.
+                  {t(locale, "gameplay_trailer.ui.hero.title_02")}
                 </h1>
 
                 <p className="mt-5 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                  A complete, high quality gameplay trailer crafted specifically for your game. Clear storytelling, polished capture, pacing, editing and
-                  delivery ready for Steam, YouTube and media distribution.
+                  {t(locale, "gameplay_trailer.ui.hero.body")}
                 </p>
 
                 <div className="mt-8 flex items-center gap-6">
                   <Link
-                    href="/form"
+                    href={withLocale(locale, "/form")}
                     className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                   >
-                    Let’s Start <ArrowUpRightIcon />
+                    {t(locale, "gameplay_trailer.ui.hero.cta")} <ArrowUpRightIcon />
                   </Link>
-                  <div className="text-[18px] font-extrabold text-black">Price: €3 000</div>
+                  <div className="text-[18px] font-extrabold text-black">
+                    {t(locale, "gameplay_trailer.ui.hero.price")}
+                  </div>
                 </div>
               </div>
 
@@ -124,7 +138,7 @@ export default function GameplayTrailerPage() {
                   <div className="overflow-hidden rounded-[24px] bg-black shadow-[0_40px_90px_rgba(0,0,0,0.14)]">
                     <Image
                       src="/images/TrailerHero.avif"
-                      alt="Gameplay trailer preview"
+                      alt={t(locale, "gameplay_trailer.ui.hero.image_alt")}
                       width={900}
                       height={720}
                       className="h-auto w-full object-cover"
@@ -145,7 +159,7 @@ export default function GameplayTrailerPage() {
                   <div className="relative h-[280px] w-full max-w-[520px] overflow-hidden rounded-[22px]">
                     <Image
                       src="/images/TrailerHero.avif"
-                      alt="Trailer pacing and structure"
+                      alt={t(locale, "gameplay_trailer.ui.section2.image_alt")}
                       fill
                       sizes="(max-width: 1024px) 90vw, 520px"
                       className="object-contain"
@@ -156,17 +170,17 @@ export default function GameplayTrailerPage() {
             </div>
             <div className="lg:col-span-6">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                Clarity.
+                {t(locale, "gameplay_trailer.ui.section2.title_01")}
                 <br />
-                Pacing.
+                {t(locale, "gameplay_trailer.ui.section2.title_02")}
                 <br />
-                Conversion.
+                {t(locale, "gameplay_trailer.ui.section2.title_03")}
               </h2>
               <p className="mt-6 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                Most trailers fail because they look like uncut gameplay. A good trailer makes the player understand the fantasy in seconds.
+                {t(locale, "gameplay_trailer.ui.section2.p1")}
               </p>
               <p className="mt-4 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                We cut a story, not a montage. The goal is to move the viewer to wishlist, download the demo, or click through.
+                {t(locale, "gameplay_trailer.ui.section2.p2")}
               </p>
             </div>
           </div>
@@ -182,7 +196,7 @@ export default function GameplayTrailerPage() {
                     <div className="relative h-[260px] w-full max-w-[740px] overflow-hidden rounded-[22px] border border-black/5 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.12)]">
                       <Image
                         src="/images/TrailerHero.avif"
-                        alt="Gameplay trailer package preview"
+                        alt={t(locale, "gameplay_trailer.ui.section3.image_alt")}
                         fill
                         sizes="(max-width: 1024px) 90vw, 740px"
                         className="object-cover"
@@ -195,47 +209,64 @@ export default function GameplayTrailerPage() {
             </div>
 
             <div className="px-6 pt-10 pb-10 lg:px-12">
-              <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">The Gameplay Trailer</h2>
+              <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
+                {t(locale, "gameplay_trailer.ui.section3.title")}
+              </h2>
 
               <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Structure:</span> hook, features, proof, and close.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "gameplay_trailer.ui.section3.bullet1.title")}
+                    </span>{" "}
+                    {t(locale, "gameplay_trailer.ui.section3.bullet1.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Capture direction:</span> what footage you need and how to get it.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "gameplay_trailer.ui.section3.bullet2.title")}
+                    </span>{" "}
+                    {t(locale, "gameplay_trailer.ui.section3.bullet2.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Editing + pacing:</span> clean cuts, timing and rhythm.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "gameplay_trailer.ui.section3.bullet3.title")}
+                    </span>{" "}
+                    {t(locale, "gameplay_trailer.ui.section3.bullet3.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Delivery formats:</span> ready for Steam and socials.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "gameplay_trailer.ui.section3.bullet4.title")}
+                    </span>{" "}
+                    {t(locale, "gameplay_trailer.ui.section3.bullet4.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Distribution-ready:</span> send to press and creators.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "gameplay_trailer.ui.section3.bullet5.title")}
+                    </span>{" "}
+                    {t(locale, "gameplay_trailer.ui.section3.bullet5.text")}
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Let’s Start <ArrowUpRightIcon />
+                  {t(locale, "gameplay_trailer.ui.section3.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -244,21 +275,39 @@ export default function GameplayTrailerPage() {
 
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-16 lg:px-10">
-            <h2 className="text-center text-[18px] font-extrabold text-black">How It Works</h2>
+            <h2 className="text-center text-[18px] font-extrabold text-black">
+              {t(locale, "gameplay_trailer.ui.how.title")}
+            </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-4">
-              <Step index="1" title="Plan" text="We define the story and the key moments to capture." />
-              <Step index="2" title="Capture" text="We guide what footage is needed for a clean cut." />
-              <Step index="3" title="Edit" text="We edit for pacing, clarity, and conversion." />
-              <Step index="4" title="Deliver" text="You get formats ready for Steam, YouTube and media." />
+              <Step
+                index="1"
+                title={t(locale, "gameplay_trailer.ui.how.step1.title")}
+                text={t(locale, "gameplay_trailer.ui.how.step1.text")}
+              />
+              <Step
+                index="2"
+                title={t(locale, "gameplay_trailer.ui.how.step2.title")}
+                text={t(locale, "gameplay_trailer.ui.how.step2.text")}
+              />
+              <Step
+                index="3"
+                title={t(locale, "gameplay_trailer.ui.how.step3.title")}
+                text={t(locale, "gameplay_trailer.ui.how.step3.text")}
+              />
+              <Step
+                index="4"
+                title={t(locale, "gameplay_trailer.ui.how.step4.title")}
+                text={t(locale, "gameplay_trailer.ui.how.step4.text")}
+              />
             </div>
 
             <div className="mt-10 flex justify-center">
               <Link
-                href="/form"
+                href={withLocale(locale, "/form")}
                 className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
               >
-                Let’s Start <ArrowUpRightIcon />
+                {t(locale, "gameplay_trailer.ui.how.cta")} <ArrowUpRightIcon />
               </Link>
             </div>
           </div>

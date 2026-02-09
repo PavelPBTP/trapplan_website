@@ -1,4 +1,7 @@
-export default function StructuredData() {
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
+
+export default function StructuredData({ locale }: { locale: Locale }) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -6,7 +9,7 @@ export default function StructuredData() {
     url: "https://www.trapplan.com",
     logo: "https://www.trapplan.com/images/logo.png",
     description:
-      "TrapPlan is a specialized game marketing agency helping indie and AA studios grow Steam wishlists and game sales through influencers, community-driven marketing, and structured launch support.",
+      t(locale, "structured.organization.description"),
     email: "pb@trapplan.com",
     foundingDate: "2020",
     sameAs: [
@@ -19,10 +22,10 @@ export default function StructuredData() {
     },
     areaServed: "Worldwide",
     serviceType: [
-      "Game Marketing",
-      "Steam Wishlist Growth",
-      "Paid Growth",
-      "Creative Content Pipeline",
+      t(locale, "structured.organization.service_type.01"),
+      t(locale, "structured.organization.service_type.02"),
+      t(locale, "structured.organization.service_type.03"),
+      t(locale, "structured.organization.service_type.04"),
     ],
   };
 
@@ -32,7 +35,7 @@ export default function StructuredData() {
     name: "TrapPlan",
     url: "https://www.trapplan.com",
     description:
-      "Game marketing agency specializing in Steam wishlists, influencer campaigns, and launch strategies for indie and AA game studios.",
+      t(locale, "structured.website.description"),
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -46,7 +49,7 @@ export default function StructuredData() {
   const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "TrapPlan Game Marketing Agency",
+    name: t(locale, "structured.professional_service.name"),
     image: "https://www.trapplan.com/images/logo.png",
     "@id": "https://www.trapplan.com",
     url: "https://www.trapplan.com",
@@ -97,33 +100,30 @@ export default function StructuredData() {
     areaServed: "Worldwide",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Game Marketing Services",
+      name: t(locale, "structured.service_catalog.name"),
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Game Launch Blueprint",
-            description:
-              "A clear launch plan for your game: positioning, audience, messaging, timeline and channel mix.",
+            name: t(locale, "structured.service.blueprint.name"),
+            description: t(locale, "structured.service.blueprint.desc"),
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Paid Growth",
-            description:
-              "Paid campaign setup and structure: channel selection, tracking, targeting and clean handoff.",
+            name: t(locale, "structured.service.paid_growth.name"),
+            description: t(locale, "structured.service.paid_growth.desc"),
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Creative Content Pipeline",
-            description:
-              "A pipeline for trailers, shortform and store assets built for iteration and distribution.",
+            name: t(locale, "structured.service.creative.name"),
+            description: t(locale, "structured.service.creative.desc"),
           },
         },
       ],

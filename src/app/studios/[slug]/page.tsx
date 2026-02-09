@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 
 import Footer from "@/components/sections/Footer";
 import { STUDIO_PAGES } from "@/lib/data/studios";
+import { getRequestLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 
 export function generateStaticParams() {
   return STUDIO_PAGES.map((s) => ({ slug: s.slug }));
@@ -13,11 +15,15 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   const s = STUDIO_PAGES.find((x) => x.slug === slug);
   if (!s) return {};
 
-  const url = `/studios/${slug}`;
+  const canonical = withLocale(locale, `/studios/${slug}`);
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/studios/${slug}`)]),
+  ) as Record<string, string>;
   const excerptUses = STUDIO_PAGES.reduce((acc, p) => acc + (p.excerpt === s.excerpt ? 1 : 0), 0);
   const description =
     excerptUses > 1 ? `${s.excerpt} (${s.client} — ${s.title})` : s.excerpt;
@@ -26,11 +32,12 @@ export async function generateMetadata({
     title: s.title,
     description,
     alternates: {
-      canonical: url,
+      canonical,
+      languages,
     },
     openGraph: {
       type: "website",
-      url,
+      url: canonical,
       title: s.title,
       description,
     },

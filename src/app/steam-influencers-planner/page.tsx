@@ -5,28 +5,40 @@ import path from "node:path";
 
 import Footer from "@/components/sections/Footer";
 import SteamInfluencersPlannerClient from "./steam-influencers-planner-client";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Steam Influencer Planner",
-  description:
-    "Professional tool for discovering YouTube and Twitch gaming influencers based on genre and similar games.",
-  alternates: {
-    canonical: "/steam-influencers-planner",
-  },
-  openGraph: {
-    type: "website",
-    url: "/steam-influencers-planner",
-    title: "Steam Influencer Planner",
-    description:
-      "Professional tool for discovering YouTube and Twitch gaming influencers based on genre and similar games.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Steam Influencer Planner",
-    description:
-      "Professional tool for discovering YouTube and Twitch gaming influencers based on genre and similar games.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/steam-influencers-planner");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/steam-influencers-planner")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.steam_influencers_planner.title");
+  const description = t(locale, "seo.steam_influencers_planner.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 type InfluencerRow = {
   platform: "twitch" | "youtube" | "other";
@@ -174,6 +186,7 @@ async function loadInfluencersSnapshot(): Promise<InfluencerRow[]> {
 }
 
 export default async function SteamInfluencersPlannerPage() {
+  const locale = await getRequestLocale();
   const influencers = await loadInfluencersSnapshot();
 
   return (
@@ -185,10 +198,10 @@ export default async function SteamInfluencersPlannerPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: "Steam Influencer Planner",
+              name: t(locale, "seo.steam_influencers_planner.title"),
               url: "https://www.trapplan.com/steam-influencers-planner",
               description:
-                "Professional tool for discovering YouTube and Twitch gaming influencers based on genre and similar games.",
+                t(locale, "seo.steam_influencers_planner.desc"),
               applicationCategory: "MarketingApplication",
               operatingSystem: "Web",
             }),
@@ -205,19 +218,19 @@ export default async function SteamInfluencersPlannerPage() {
                 {
                   "@type": "ListItem",
                   position: 1,
-                  name: "Home",
+                  name: t(locale, "blog.ui.home"),
                   item: "https://www.trapplan.com/",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "Free Tools",
+                  name: t(locale, "tools.ui.free_tools"),
                   item: "https://www.trapplan.com/steam-influencers-planner",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
-                  name: "Steam Influencer Planner",
+                  name: t(locale, "seo.steam_influencers_planner.title"),
                   item: "https://www.trapplan.com/steam-influencers-planner",
                 },
               ],

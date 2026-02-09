@@ -4,6 +4,8 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Header from "@/components/layout/Header";
 import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
+import { getRequestLocale } from "@/lib/i18n.server";
+import { t } from "@/lib/copy";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,53 +13,63 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.trapplan.com"),
-  title: {
-    default: "TrapPlan",
-    template: "%s | TrapPlan",
-  },
-  description: "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
-  openGraph: {
-    type: "website",
-    url: "/",
-    siteName: "TrapPlan",
-    title: "TrapPlan",
-    description: "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
-    images: [
-      {
-        url: "/og",
-        width: 1200,
-        height: 630,
-        alt: "TrapPlan",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TrapPlan",
-    description: "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
-    images: ["/og"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const description = t(locale, "seo.site.description");
+
+  return {
+    metadataBase: new URL("https://www.trapplan.com"),
+    icons: {
+      icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+      shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    },
+    title: {
+      default: "TrapPlan",
+      template: "%s | TrapPlan",
+    },
+    description,
+    openGraph: {
+      type: "website",
+      url: "/",
+      siteName: "TrapPlan",
+      title: "TrapPlan",
+      description,
+      images: [
+        {
+          url: "/og",
+          width: 1200,
+          height: 630,
+          alt: "TrapPlan",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "TrapPlan",
+      description,
+      images: ["/og"],
+    },
+    robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
     },
-  },
-};
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getRequestLocale();
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
-        <StructuredData />
+        <StructuredData locale={locale} />
       </head>
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <noscript>
@@ -68,7 +80,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <Header />
+        <Header locale={locale} />
         {children}
         <Analytics />
         <VercelAnalytics />

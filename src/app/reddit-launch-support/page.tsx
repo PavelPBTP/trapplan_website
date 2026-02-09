@@ -4,28 +4,40 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Reddit Launch Support: Organic Steam Traffic Without Backlash",
-  description:
-    "A 15 post organic Reddit campaign designed to drive Steam wishlists without triggering the usual marketing backlash.",
-  alternates: {
-    canonical: "/reddit-launch-support",
-  },
-  openGraph: {
-    type: "website",
-    url: "/reddit-launch-support",
-    title: "Reddit Launch Support: Organic Steam Traffic Without Backlash",
-    description:
-      "A 15 post organic Reddit campaign designed to drive Steam wishlists without triggering the usual marketing backlash.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Reddit Launch Support: Organic Steam Traffic Without Backlash",
-    description:
-      "A 15 post organic Reddit campaign designed to drive Steam wishlists without triggering the usual marketing backlash.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/reddit-launch-support");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/reddit-launch-support")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.reddit_launch_support.title");
+  const description = t(locale, "seo.reddit_launch_support.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function ArrowUpRightIcon() {
   return (
@@ -97,6 +109,7 @@ function RedditPostCard({
   objectPosition,
   className,
   style,
+  locale,
 }: {
   subreddit: string;
   title: string;
@@ -104,6 +117,7 @@ function RedditPostCard({
   objectPosition: string;
   className?: string;
   style?: CSSProperties;
+  locale: Parameters<typeof t>[0];
 }) {
   return (
     <div
@@ -118,11 +132,13 @@ function RedditPostCard({
           <div className="h-7 w-7 rounded-full bg-[#FF0A5B]" />
           <div className="min-w-0">
             <div className="truncate text-[12px] font-semibold text-black">{subreddit}</div>
-            <div className="truncate text-[11px] font-medium text-black/45">Posted by u dev</div>
+            <div className="truncate text-[11px] font-medium text-black/45">
+              {t(locale, "reddit_launch_support.ui.post.posted_by")}
+            </div>
           </div>
         </div>
         <div className="inline-flex items-center rounded-full bg-black/[0.04] px-3 py-1 text-[11px] font-semibold text-black/60">
-          Join
+          {t(locale, "reddit_launch_support.ui.post.join")}
         </div>
       </div>
 
@@ -133,7 +149,7 @@ function RedditPostCard({
       <div className="relative h-[150px] bg-[#0F0F0F]">
         <Image
           src={imageSrc}
-          alt="Reddit post screenshot"
+          alt={t(locale, "reddit_launch_support.ui.post.image_alt")}
           width={1000}
           height={750}
           className="h-full w-full object-cover"
@@ -149,14 +165,15 @@ function RedditPostCard({
           💬 184
         </div>
         <div className="inline-flex items-center gap-2 rounded-full bg-black/[0.04] px-3 py-1 text-[11px] font-semibold text-black/60">
-          ↗ Share
+          ↗ {t(locale, "reddit_launch_support.ui.post.share")}
         </div>
       </div>
     </div>
   );
 }
 
-export default function RedditLaunchSupportPage() {
+export default async function RedditLaunchSupportPage() {
+  const locale = await getRequestLocale();
   return (
     <>
       <main className="bg-[#F3F3F3]">
@@ -165,23 +182,25 @@ export default function RedditLaunchSupportPage() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-6">
                 <h1 className="text-[42px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[48px]">
-                  Get your game to the front page of Reddit.
+                  {t(locale, "reddit_launch_support.ui.hero.title_01")}
                   <br />
-                  Without the “marketing” backlash.
+                  {t(locale, "reddit_launch_support.ui.hero.title_02")}
                 </h1>
 
                 <p className="mt-5 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                  Posting on Reddit is a full time job and a massive headache. One wrong move and you&apos;re banned. We take that risk for you. We drop 15 targeted posts about your game. We seed the comments, handle the feedback, and help you to grow wishlists.
+                  {t(locale, "reddit_launch_support.ui.hero.body")}
                 </p>
 
                 <div className="mt-8 flex items-center gap-6">
                   <Link
-                    href="/form"
+                    href={withLocale(locale, "/form")}
                     className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                   >
-                    Let’s Start <ArrowUpRightIcon />
+                    {t(locale, "reddit_launch_support.ui.hero.cta")} <ArrowUpRightIcon />
                   </Link>
-                  <div className="text-[18px] font-extrabold text-black">Price: €2 500</div>
+                  <div className="text-[18px] font-extrabold text-black">
+                    {t(locale, "reddit_launch_support.ui.hero.price")}
+                  </div>
                 </div>
               </div>
 
@@ -190,7 +209,7 @@ export default function RedditLaunchSupportPage() {
                   <div className="overflow-hidden rounded-[24px] bg-black shadow-[0_40px_90px_rgba(0,0,0,0.14)]">
                     <Image
                       src="/images/Reddit Hero.png"
-                      alt="Reddit post example"
+                      alt={t(locale, "reddit_launch_support.ui.hero.image_alt")}
                       width={900}
                       height={720}
                       className="h-auto w-full object-cover"
@@ -211,7 +230,7 @@ export default function RedditLaunchSupportPage() {
                   <div className="relative h-[280px] w-full max-w-[520px] overflow-hidden rounded-[22px]">
                     <Image
                       src="/images/RLS.avif"
-                      alt="Reddit launch support collage"
+                      alt={t(locale, "reddit_launch_support.ui.section2.image_alt")}
                       fill
                       sizes="(max-width: 1024px) 90vw, 520px"
                       className="object-contain"
@@ -222,15 +241,15 @@ export default function RedditLaunchSupportPage() {
             </div>
             <div className="lg:col-span-6">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                Reddit hates marketing.
+                {t(locale, "reddit_launch_support.ui.section2.title_01")}
                 <br />
-                But it loves developers.
+                {t(locale, "reddit_launch_support.ui.section2.title_02")}
               </h2>
               <p className="mt-6 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                Reddit is a minefield. The rules are rarely written the way they’re enforced, and the penalty for looking like marketing can be instant. Removals, bans, and backlash that follows your game.
+                {t(locale, "reddit_launch_support.ui.section2.p1")}
               </p>
               <p className="mt-4 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                Our job is to handle the scary part. Navigating each subreddit’s culture, positioning the post like a real developer story, and managing the thread so you can enjoy the traffic without getting burned.
+                {t(locale, "reddit_launch_support.ui.section2.p2")}
               </p>
             </div>
           </div>
@@ -249,6 +268,7 @@ export default function RedditLaunchSupportPage() {
                     objectPosition="50% 25%"
                     className="absolute left-0 top-10 w-[290px]"
                     style={{ transform: "rotate(-6deg)" }}
+                    locale={locale}
                   />
                   <RedditPostCard
                     subreddit="r gaming"
@@ -257,6 +277,7 @@ export default function RedditLaunchSupportPage() {
                     objectPosition="50% 40%"
                     className="absolute left-1/2 top-0 w-[320px] -translate-x-1/2"
                     style={{ transform: "rotate(2deg)" }}
+                    locale={locale}
                   />
                   <RedditPostCard
                     subreddit="r gaming"
@@ -265,6 +286,7 @@ export default function RedditLaunchSupportPage() {
                     objectPosition="50% 55%"
                     className="absolute right-0 top-12 w-[290px]"
                     style={{ transform: "rotate(7deg)" }}
+                    locale={locale}
                   />
                 </div>
               </div>
@@ -272,48 +294,63 @@ export default function RedditLaunchSupportPage() {
 
             <div className="px-6 pt-10 pb-10 lg:px-12">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                The Stealth Reddit Package
+                {t(locale, "reddit_launch_support.ui.section3.title")}
               </h2>
 
               <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">15 High Engagement Posts:</span> tailored to each community’s content style and appetite.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "reddit_launch_support.ui.section3.bullet1.title")}
+                    </span>{" "}
+                    {t(locale, "reddit_launch_support.ui.section3.bullet1.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Community Native Strategy:</span> no corporate accounts. We keep it developer to player.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "reddit_launch_support.ui.section3.bullet2.title")}
+                    </span>{" "}
+                    {t(locale, "reddit_launch_support.ui.section3.bullet2.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Wishlist Spike Mechanics:</span> designed to convert curiosity into store visits and wishlists.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "reddit_launch_support.ui.section3.bullet3.title")}
+                    </span>{" "}
+                    {t(locale, "reddit_launch_support.ui.section3.bullet3.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Subreddit Curation:</span> we pick the communities that actually fit your game.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "reddit_launch_support.ui.section3.bullet4.title")}
+                    </span>{" "}
+                    {t(locale, "reddit_launch_support.ui.section3.bullet4.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Active Management:</span> seeding engagement and guiding the thread while it is live.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "reddit_launch_support.ui.section3.bullet5.title")}
+                    </span>{" "}
+                    {t(locale, "reddit_launch_support.ui.section3.bullet5.text")}
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Let’s Start <ArrowUpRightIcon />
+                  {t(locale, "reddit_launch_support.ui.section3.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -322,28 +359,48 @@ export default function RedditLaunchSupportPage() {
 
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-16 lg:px-10">
-            <h2 className="text-center text-[18px] font-extrabold text-black">How It Works</h2>
+            <h2 className="text-center text-[18px] font-extrabold text-black">
+              {t(locale, "reddit_launch_support.ui.section4.title")}
+            </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-4">
-              <Step index="1" title="Subreddit map" text="We curate the right communities and define the safe posting angles." />
-              <Step index="2" title="Write" text="We craft posts that feel native and invite discussion, not suspicion." />
-              <Step index="3" title="Post" text="We publish through community compatible accounts and monitor reactions." />
-              <Step index="4" title="Manage" text="We seed engagement, reply, and steer the thread while it is live." />
+              <Step
+                index="1"
+                title={t(locale, "reddit_launch_support.ui.section4.step1.title")}
+                text={t(locale, "reddit_launch_support.ui.section4.step1.text")}
+              />
+              <Step
+                index="2"
+                title={t(locale, "reddit_launch_support.ui.section4.step2.title")}
+                text={t(locale, "reddit_launch_support.ui.section4.step2.text")}
+              />
+              <Step
+                index="3"
+                title={t(locale, "reddit_launch_support.ui.section4.step3.title")}
+                text={t(locale, "reddit_launch_support.ui.section4.step3.text")}
+              />
+              <Step
+                index="4"
+                title={t(locale, "reddit_launch_support.ui.section4.step4.title")}
+                text={t(locale, "reddit_launch_support.ui.section4.step4.text")}
+              />
             </div>
 
             <div className="mt-10 flex justify-center">
               <Link
-                href="/form"
+                href={withLocale(locale, "/form")}
                 className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
               >
-                Let’s Start <ArrowUpRightIcon />
+                {t(locale, "reddit_launch_support.ui.section4.cta")} <ArrowUpRightIcon />
               </Link>
             </div>
 
             <div className="pt-16">
-              <h2 className="text-center text-[18px] font-extrabold text-black">Steam Traffic Results</h2>
+              <h2 className="text-center text-[18px] font-extrabold text-black">
+                {t(locale, "reddit_launch_support.ui.results.title")}
+              </h2>
               <p className="mx-auto mt-4 max-w-[62ch] text-center text-[14px] leading-6 text-black/60">
-                Placeholder section for screenshots of Steam traffic spikes.
+                {t(locale, "reddit_launch_support.ui.results.subtitle")}
               </p>
 
               <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -352,19 +409,23 @@ export default function RedditLaunchSupportPage() {
                     key={idx}
                     className="relative overflow-hidden rounded-[18px] bg-[#F3F3F3] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.08)]"
                   >
-                    <div className="text-[12px] font-semibold tracking-wide text-black/45">PLACEHOLDER</div>
+                    <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                      {t(locale, "reddit_launch_support.ui.results.placeholder_kicker")}
+                    </div>
                     <div className="mt-3 h-[120px] rounded-[14px] bg-white" />
-                    <div className="mt-4 text-[13px] leading-6 text-black/60">Add a Steam traffic graph screenshot.</div>
+                    <div className="mt-4 text-[13px] leading-6 text-black/60">
+                      {t(locale, "reddit_launch_support.ui.results.placeholder_body")}
+                    </div>
                   </div>
                 ))}
               </div>
 
               <div className="mt-10 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Let’s Start <ArrowUpRightIcon />
+                  {t(locale, "reddit_launch_support.ui.results.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>

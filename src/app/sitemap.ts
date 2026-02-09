@@ -1,9 +1,13 @@
 import type { MetadataRoute } from "next";
 
 import { BLOG_POSTS } from "@/lib/data/blog";
+import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://www.trapplan.com";
+
+  const toAbs = (href: string) => `${siteUrl}${href.startsWith("/") ? href : `/${href}`}`;
+  const localize = (path: string) => SUPPORTED_LOCALES.map((l) => withLocale(l, path));
 
   const serviceRoutes: MetadataRoute.Sitemap = [
     "performance-based-campaigns",
@@ -18,20 +22,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "pr-and-communications",
     "content-production",
     "social-media",
-  ].map((slug) => ({
-    url: `${siteUrl}/services/${slug}`,
-    changeFrequency: "yearly",
-    priority: 0.2,
-  }));
+  ].flatMap((slug) =>
+    localize(`/services/${slug}`).map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "yearly" as const,
+      priority: 0.2,
+    })),
+  );
 
   const studiosRoutes: MetadataRoute.Sitemap = [
     "influencer-remote-team-for-wargaming",
     "remote-influencer-team-for-gaijin-entertainment",
-  ].map((slug) => ({
-    url: `${siteUrl}/studios/${slug}`,
-    changeFrequency: "yearly",
-    priority: 0.2,
-  }));
+  ].flatMap((slug) =>
+    localize(`/studios/${slug}`).map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "yearly" as const,
+      priority: 0.2,
+    })),
+  );
 
   const studiosCasesRoutes: MetadataRoute.Sitemap = [
     "created-a-brief-for-youtube-and-twitch",
@@ -42,101 +50,105 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "youtube-ad-campaigns-for-warthunder-in-europe",
     "youtube-ad-campaigns-for-world-of-tanks-in-usa",
     "youtube-ad-campaigns-for-world-of-warships-in-europe",
-  ].map((slug) => ({
-    url: `${siteUrl}/studios-cases/${slug}`,
-    changeFrequency: "yearly",
-    priority: 0.2,
-  }));
+  ].flatMap((slug) =>
+    localize(`/studios-cases/${slug}`).map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "yearly" as const,
+      priority: 0.2,
+    })),
+  );
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${siteUrl}/`,
-      changeFrequency: "weekly",
+    ...localize("/").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "weekly" as const,
       priority: 1,
-    },
-    {
-      url: `${siteUrl}/about-us`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/about-us").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/content-rules`,
-      changeFrequency: "yearly",
+    })),
+    ...localize("/content-rules").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "yearly" as const,
       priority: 0.2,
-    },
-    {
-      url: `${siteUrl}/copyright-policy`,
-      changeFrequency: "yearly",
+    })),
+    ...localize("/copyright-policy").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "yearly" as const,
       priority: 0.2,
-    },
-    {
-      url: `${siteUrl}/our-cases`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/our-cases").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.4,
-    },
-    {
-      url: `${siteUrl}/no-wishlists-on-steam`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/no-wishlists-on-steam").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.5,
-    },
-    {
-      url: `${siteUrl}/influencer-activation-for-games`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/influencer-activation-for-games").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/blog`,
-      changeFrequency: "daily",
+    })),
+    ...localize("/blog").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "daily" as const,
       priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/form`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/form").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/reddit-launch-support`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/reddit-launch-support").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/pr-starter-pack`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/pr-starter-pack").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/tiktok-package-20-videos`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/tiktok-package-20-videos").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/steam-wishlist-calculator`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/steam-wishlist-calculator").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/steam-pricing-planner`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/steam-pricing-planner").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/steam-influencers-planner`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/steam-influencers-planner").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/steam-festival-planner`,
-      changeFrequency: "monthly",
+    })),
+    ...localize("/steam-festival-planner").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    },
+    })),
   ];
 
-  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
-    url: `${siteUrl}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.flatMap((p) =>
+    localize(`/blog/${p.slug}`).map((url) => ({
+      url: toAbs(url),
+      lastModified: new Date(p.date),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+  );
 
   return [
     ...staticRoutes,

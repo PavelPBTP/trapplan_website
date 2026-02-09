@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 
 import Footer from "@/components/sections/Footer";
 import { SERVICES } from "@/lib/data/services";
+import { getRequestLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
 const SERVICE_SLUGS = [
   "performance-based-campaigns",
@@ -52,11 +55,15 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   if (!SERVICE_SLUGS.includes(slug as ServiceSlug)) return {};
 
   const title = titleFromSlug(slug);
-  const url = `/services/${slug}`;
+  const canonical = withLocale(locale, `/services/${slug}`);
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/services/${slug}`)]),
+  ) as Record<string, string>;
   const description =
     SERVICE_DESCRIPTION_BY_SLUG.get(slug) ??
     `TrapPlan service: ${title}. Overview, deliverables, and how we work.`;
@@ -65,11 +72,12 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: url,
+      canonical,
+      languages,
     },
     openGraph: {
       type: "website",
-      url,
+      url: canonical,
       title,
       description,
     },
@@ -86,6 +94,7 @@ export default async function ServicePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   if (!SERVICE_SLUGS.includes(slug as ServiceSlug)) notFound();
 
@@ -99,7 +108,7 @@ export default async function ServicePage({
             {title}
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-7 text-black/65">
-            This is a local placeholder page for an older route. No external content is loaded.
+            {t(locale, "services.legacy_placeholder")}
           </p>
         </div>
       </section>

@@ -1,43 +1,62 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BLOG_POSTS } from "@/lib/data/blog";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { getBlogPosts } from "@/lib/data/blog.i18n";
+import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Gaming Marketing Blog | Industry Trends & Tips",
-  description:
-    "Stay up-to-date with the latest trends in gaming influencer marketing. TrapPlan's blog covers tips, case studies, and strategies to help brands succeed in the gaming industry.",
-  alternates: {
-    canonical: "/blog",
-  },
-  openGraph: {
-    type: "website",
-    url: "/blog",
-    title: "Gaming Marketing Blog | Industry Trends & Tips | TrapPlan",
-    description:
-      "Stay up-to-date with the latest trends in gaming influencer marketing. TrapPlan's blog covers tips, case studies, and strategies to help brands succeed in the gaming industry.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gaming Marketing Blog | Industry Trends & Tips | TrapPlan",
-    description:
-      "Stay up-to-date with the latest trends in gaming influencer marketing. TrapPlan's blog covers tips, case studies, and strategies to help brands succeed in the gaming industry.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/blog");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/blog")]),
+  ) as Record<string, string>;
 
-function formatDate(iso: string) {
-  const d = new Date(iso);
-  return new Intl.DateTimeFormat("en", {
+  const title = t(locale, "seo.blog.title");
+  const description = t(locale, "seo.blog.desc");
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
+function formatDate(locale: Locale, iso: string) {
+  const normalizedIso = iso.length === 10 ? `${iso}T00:00:00.000Z` : iso;
+  const d = new Date(normalizedIso);
+  return new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "short",
     day: "2-digit",
+    timeZone: "UTC",
   }).format(d);
 }
 
-function ogFallbackForPost(title: string, category?: string) {
+function toDateMs(iso: string) {
+  const normalizedIso = iso.length === 10 ? `${iso}T00:00:00.000Z` : iso;
+  const ms = new Date(normalizedIso).getTime();
+  return Number.isFinite(ms) ? ms : 0;
+}
+
+function ogFallbackForPost(locale: Locale, title: string, category?: string) {
   const p = new URLSearchParams();
   p.set("title", title);
-  p.set("subtitle", "Read the full article on trapplan.com");
+  p.set("subtitle", t(locale, "blog.og.subtitle"));
   if (category) p.set("tag", category);
   return `/og?${p.toString()}`;
 }
@@ -47,8 +66,11 @@ export default async function BlogIndexPage({
 }: {
   searchParams?: Promise<{ category?: string }> | { category?: string };
 }) {
+  const locale = await getRequestLocale();
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const selectedCategory = resolvedSearchParams?.category;
+
+  const allPosts = getBlogPosts(locale);
 
   const dedupeBySlug = <T extends { slug: string }>(items: T[]) => {
     const seen = new Set<string>();
@@ -60,22 +82,22 @@ export default async function BlogIndexPage({
   };
 
   const categories = Array.from(
-    new Set(BLOG_POSTS.map((p) => p.category).filter(Boolean) as string[]),
-  ).sort((a, b) => a.localeCompare(b));
+    new Set(allPosts.map((p) => p.category).filter(Boolean) as string[]),
+  ).sort((a, b) => a.localeCompare(b, locale, { sensitivity: "base" }));
 
   const posts = dedupeBySlug(
     (selectedCategory
-    ? BLOG_POSTS.filter((p) => p.category === selectedCategory)
-    : BLOG_POSTS
+    ? allPosts.filter((p) => p.category === selectedCategory)
+    : allPosts
     )
       .slice()
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+      .sort((a, b) => toDateMs(b.date) - toDateMs(a.date)),
   );
 
   const cards = posts.map((p) => ({
     post: p,
     cover: p.cover,
-    ogCover: ogFallbackForPost(p.title, p.category),
+    ogCover: ogFallbackForPost(locale, p.title, p.category),
   }));
 
   return (
@@ -84,12 +106,12 @@ export default async function BlogIndexPage({
         <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-black/50">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="transition-colors hover:text-black">
-                Home
+              <Link href={withLocale(locale, "/")} className="transition-colors hover:text-black">
+                {t(locale, "blog.ui.home")}
               </Link>
             </li>
             <li className="text-black/30">/</li>
-            <li className="text-black/70">Blog</li>
+            <li className="text-black/70">{t(locale, "blog.ui.blog")}</li>
           </ol>
         </nav>
 
@@ -108,7 +130,7 @@ export default async function BlogIndexPage({
               <div className="text-[13px] font-semibold text-black/50">Latest</div>
               <div className="mt-4 flex flex-wrap gap-2 lg:flex-col lg:gap-1">
                 <Link
-                  href="/blog"
+                  href={withLocale(locale, "/blog")}
                   prefetch={false}
                   className={`inline-flex items-center rounded-full px-3 py-1.5 text-[14px] font-medium transition-colors lg:rounded-md lg:px-2.5 lg:py-2 ${
                     !selectedCategory
@@ -121,7 +143,7 @@ export default async function BlogIndexPage({
                 {categories.map((c) => (
                   <Link
                     key={c}
-                    href={`/blog?category=${encodeURIComponent(c)}`}
+                    href={withLocale(locale, `/blog?category=${encodeURIComponent(c)}`)}
                     prefetch={false}
                     className={`inline-flex items-center rounded-full px-3 py-1.5 text-[14px] font-medium transition-colors lg:rounded-md lg:px-2.5 lg:py-2 ${
                       selectedCategory === c
@@ -140,7 +162,7 @@ export default async function BlogIndexPage({
             <div suppressHydrationWarning className="grid grid-cols-1 gap-10 sm:grid-cols-2">
               {cards.map(({ post, cover, ogCover }, idx) => (
                 <article key={post.slug} className="group">
-                  <Link href={`/blog/${post.slug}`} className="block">
+                  <Link href={withLocale(locale, `/blog/${post.slug}`)} className="block">
                     <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-black/[0.04]">
                       {cover ? (
                         <>
@@ -199,9 +221,11 @@ export default async function BlogIndexPage({
                       </p>
 
                       <div className="mt-4 text-[13px] font-medium text-black/50">
-                        <span>{formatDate(post.date)}</span>
+                        <span>{formatDate(locale, post.date)}</span>
                         <span className="px-2 text-black/25">•</span>
-                        <span>{post.readingMinutes} min read</span>
+                        <span>
+                          {post.readingMinutes} {t(locale, "blog.ui.min_read")}
+                        </span>
                         {post.authorName ? (
                           <>
                             <span className="px-2 text-black/25">•</span>
@@ -217,7 +241,7 @@ export default async function BlogIndexPage({
 
             {posts.length === 0 ? (
               <div className="rounded-[16px] bg-black/[0.02] px-5 py-5 text-[15px] text-black/60">
-                No posts found.
+                {t(locale, "blog.ui.no_posts_found")}
               </div>
             ) : null}
           </section>

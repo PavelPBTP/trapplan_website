@@ -1,26 +1,40 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Influencer Activation for Games: Coverage That Converts.",
-  description:
-    "We run structured influencer campaigns: sourcing, outreach, coordination, tracking, and post-campaign learnings. Repeatable, measurable, and built for games.",
-  alternates: { canonical: "/influencer-activation-for-games" },
-  openGraph: {
-    type: "website",
-    url: "/influencer-activation-for-games",
-    title: "Influencer Activation for Games: Coverage That Converts.",
-    description:
-      "We run structured influencer campaigns: sourcing, outreach, coordination, tracking, and post-campaign learnings. Repeatable, measurable, and built for games.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Influencer Activation for Games: Coverage That Converts.",
-    description:
-      "We run structured influencer campaigns: sourcing, outreach, coordination, tracking, and post-campaign learnings. Repeatable, measurable, and built for games.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/influencer-activation-for-games");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/influencer-activation-for-games")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.influencer_activation.title");
+  const description = t(locale, "seo.influencer_activation.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function SectionKicker({ children }: { children: string }) {
   return <div className="text-[12px] font-semibold tracking-wide text-black/45">{children}</div>;
@@ -34,14 +48,14 @@ function SectionTitle({ children }: { children: string }) {
   );
 }
 
-function CTAButtons() {
+function CTAButtons({ locale }: { locale: Parameters<typeof t>[0] }) {
   return (
     <div className="mt-10 flex flex-col gap-3 sm:flex-row">
       <a
         href="#contact"
         className="inline-flex items-center justify-center rounded-full bg-[#FF1F6D] px-7 py-3 text-[14px] font-semibold text-white shadow-[0_18px_42px_rgba(255,31,109,0.28)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.40)]"
       >
-        Let&apos;s talk
+        {t(locale, "cta.lets_talk")}
       </a>
     </div>
   );
@@ -59,28 +73,30 @@ function ContactField({ label, placeholder }: { label: string; placeholder: stri
   );
 }
 
-export default function InfluencerActivationForGamesPage() {
+export default async function InfluencerActivationForGamesPage() {
+  const locale = await getRequestLocale();
+
   const deliverables = [
-    "Creator list by tier and audience fit",
-    "Outreach templates and follow-up sequence",
-    "Keys/build distribution + scheduling",
-    "Coverage tracking sheet + weekly updates",
-    "Post-campaign report with learnings",
-    "Next activation sprint plan",
+    t(locale, "influencer_activation.deliverables.01"),
+    t(locale, "influencer_activation.deliverables.02"),
+    t(locale, "influencer_activation.deliverables.03"),
+    t(locale, "influencer_activation.deliverables.04"),
+    t(locale, "influencer_activation.deliverables.05"),
+    t(locale, "influencer_activation.deliverables.06"),
   ];
 
   const faqs = [
     {
-      q: "Do you guarantee coverage?",
-      a: "No service can guarantee coverage, but we increase hit rate with better targeting, sequencing, and follow-ups.",
+      q: t(locale, "influencer_activation.faq.01.q"),
+      a: t(locale, "influencer_activation.faq.01.a"),
     },
     {
-      q: "Which platforms do you activate?",
-      a: "Twitch, YouTube, and TikTok  we tailor the format and the creator list per platform.",
+      q: t(locale, "influencer_activation.faq.02.q"),
+      a: t(locale, "influencer_activation.faq.02.a"),
     },
     {
-      q: "How do you measure impact?",
-      a: "We track coverage, views, link clicks and time-window lift with UTMs and structured reporting.",
+      q: t(locale, "influencer_activation.faq.03.q"),
+      a: t(locale, "influencer_activation.faq.03.a"),
     },
   ];
 
@@ -95,21 +111,22 @@ export default function InfluencerActivationForGamesPage() {
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-[12px] font-semibold text-black/70">
                 <span className="h-2 w-2 rounded-full bg-[#FF1F6D]" />
-                Service
+                {t(locale, "influencer_activation.badge")}
               </div>
 
               <h1 className="mt-6 text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[54px]">
-                Influencer Activation for Games
+                {t(locale, "influencer_activation.hero.title")}
               </h1>
 
-              <p className="mt-4 text-[18px] leading-7 text-black/70">Coverage that converts into wishlists.</p>
-
-              <p className="mt-6 text-[15px] leading-7 text-black/65">
-                We run structured influencer campaigns: sourcing, outreach, coordination, tracking, and learnings.
-                Repeatable execution instead of random emails.
+              <p className="mt-4 text-[18px] leading-7 text-black/70">
+                {t(locale, "influencer_activation.hero.kicker")}
               </p>
 
-              <CTAButtons />
+              <p className="mt-6 text-[15px] leading-7 text-black/65">
+                {t(locale, "influencer_activation.hero.body")}
+              </p>
+
+              <CTAButtons locale={locale} />
             </div>
           </div>
         </div>
@@ -119,25 +136,43 @@ export default function InfluencerActivationForGamesPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <SectionKicker>HOW IT WORKS</SectionKicker>
-              <SectionTitle>One sprint, one loop</SectionTitle>
+              <SectionKicker>{t(locale, "influencer_activation.how_it_works.kicker")}</SectionKicker>
+              <SectionTitle>{t(locale, "influencer_activation.how_it_works.title")}</SectionTitle>
             </div>
             <div className="lg:col-span-8">
               <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <div>
-                  <div className="text-[12px] font-semibold tracking-wide text-black/45">PHASE 1</div>
-                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">Preparation</div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">Targeting, angles, assets, tracking.</p>
+                  <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                    {t(locale, "influencer_activation.phase.01.kicker")}
+                  </div>
+                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">
+                    {t(locale, "influencer_activation.phase.01.title")}
+                  </div>
+                  <p className="mt-3 text-[14px] leading-6 text-black/65">
+                    {t(locale, "influencer_activation.phase.01.desc")}
+                  </p>
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold tracking-wide text-black/45">PHASE 2</div>
-                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">Activation</div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">Outreach, follow-ups, scheduling.</p>
+                  <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                    {t(locale, "influencer_activation.phase.02.kicker")}
+                  </div>
+                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">
+                    {t(locale, "influencer_activation.phase.02.title")}
+                  </div>
+                  <p className="mt-3 text-[14px] leading-6 text-black/65">
+                    {t(locale, "influencer_activation.phase.02.desc")}
+                  </p>
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold tracking-wide text-black/45">PHASE 3</div>
-                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">Post Mortem</div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">Report, learnings, next sprint.</p>
+                  <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                    {t(locale, "influencer_activation.phase.03.kicker")}
+                  </div>
+                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">
+                    {t(locale, "influencer_activation.phase.03.title")}
+                  </div>
+                  <p className="mt-3 text-[14px] leading-6 text-black/65">
+                    {t(locale, "influencer_activation.phase.03.desc")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -149,8 +184,8 @@ export default function InfluencerActivationForGamesPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <SectionKicker>WHAT YOU GET</SectionKicker>
-              <SectionTitle>Deliverables</SectionTitle>
+              <SectionKicker>{t(locale, "influencer_activation.deliverables.kicker")}</SectionKicker>
+              <SectionTitle>{t(locale, "influencer_activation.deliverables.title")}</SectionTitle>
             </div>
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -168,7 +203,7 @@ export default function InfluencerActivationForGamesPage() {
               </div>
 
               <div className="mt-10">
-                <CTAButtons />
+                <CTAButtons locale={locale} />
               </div>
             </div>
           </div>
@@ -179,8 +214,8 @@ export default function InfluencerActivationForGamesPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <SectionKicker>FAQ</SectionKicker>
-              <SectionTitle>Frequently Asked Questions</SectionTitle>
+              <SectionKicker>{t(locale, "influencer_activation.faq.kicker")}</SectionKicker>
+              <SectionTitle>{t(locale, "influencer_activation.faq.title")}</SectionTitle>
             </div>
             <div className="lg:col-span-8">
               <div className="space-y-3">
@@ -201,7 +236,7 @@ export default function InfluencerActivationForGamesPage() {
               </div>
 
               <div className="mt-10">
-                <CTAButtons />
+                <CTAButtons locale={locale} />
               </div>
             </div>
           </div>
@@ -213,28 +248,38 @@ export default function InfluencerActivationForGamesPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
               <h2 className="text-[34px] font-extrabold leading-[1.05] tracking-tight text-white">
-                Ready to plan your first activation sprint?
+                {t(locale, "influencer_activation.contact.title")}
               </h2>
               <p className="mt-5 text-[15px] leading-7 text-white/65">
-                Share the basics and well reply with the next steps.
+                {t(locale, "influencer_activation.contact.body")}
               </p>
             </div>
             <div className="lg:col-span-7">
               <div className="rounded-[24px] bg-white px-8 py-8 shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
-                <div className="text-[12px] font-semibold tracking-wide text-black/45">CONTACT</div>
-                <div className="mt-3 text-[22px] font-extrabold tracking-tight text-black">Lets talk</div>
+                <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                  {t(locale, "influencer_activation.contact.card_kicker")}
+                </div>
+                <div className="mt-3 text-[22px] font-extrabold tracking-tight text-black">
+                  {t(locale, "influencer_activation.contact.card_title")}
+                </div>
                 <form className="mt-7 space-y-5" action="#">
-                  <ContactField label="Name" placeholder="Your full name" />
-                  <ContactField label="Studio name" placeholder="Your studio" />
                   <ContactField
-                    label="Steam page / Demo link"
-                    placeholder="https://store.steampowered.com/app/..."
+                    label={t(locale, "influencer_activation.contact.field.name.label")}
+                    placeholder={t(locale, "influencer_activation.contact.field.name.placeholder")}
+                  />
+                  <ContactField
+                    label={t(locale, "influencer_activation.contact.field.studio.label")}
+                    placeholder={t(locale, "influencer_activation.contact.field.studio.placeholder")}
+                  />
+                  <ContactField
+                    label={t(locale, "influencer_activation.contact.field.steam.label")}
+                    placeholder={t(locale, "influencer_activation.contact.field.steam.placeholder")}
                   />
                   <button
                     type="button"
                     className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[#FF1F6D] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,31,109,0.30)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.42)]"
                   >
-                    Send
+                    {t(locale, "influencer_activation.contact.submit")}
                   </button>
                 </form>
               </div>

@@ -1,5 +1,7 @@
 import { FOOTER_LINKS } from "@/lib/data/footer";
 import Image from "next/image";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { t } from "@/lib/copy";
 
 function SocialIcon({ label }: { label: string }) {
   return (
@@ -13,7 +15,14 @@ function SocialIcon({ label }: { label: string }) {
   );
 }
 
-export default function Footer() {
+export default async function Footer() {
+  const locale = await getRequestLocale();
+
+  const localizeHref = (href: string) => {
+    if (!href.startsWith("/")) return href;
+    return withLocale(locale, href);
+  };
+
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-10 lg:px-10">
@@ -27,7 +36,7 @@ export default function Footer() {
               className="h-12 w-auto"
             />
             <p className="mt-6 max-w-[38ch] text-[14px] leading-6 text-black/60">
-              From first announcement to global release. Professional grade marketing workflows designed specifically for game studios who want better results and zero chaos.
+              {t(locale, "footer.tagline")}
             </p>
           </div>
 
@@ -42,7 +51,7 @@ export default function Footer() {
                     {group.links.map((l) => (
                       <li key={l.label}>
                         <a
-                          href={l.href}
+                          href={localizeHref(l.href)}
                           className="text-[14px] font-semibold text-black/80 transition-colors hover:text-black"
                         >
                           {l.label}
@@ -74,13 +83,13 @@ export default function Footer() {
               href="https://www.iubenda.com/privacy-policy/24291473"
               className="inline-flex h-8 items-center rounded-[10px] border border-black/15 bg-white px-3 text-[12px] font-semibold text-black/80 transition-colors hover:bg-black/5 hover:text-black"
             >
-              Notice at collection
+              {t(locale, "footer.notice_at_collection")}
             </a>
             <a
               href="https://www.iubenda.com/privacy-policy/24291473/cookie-policy"
               className="inline-flex h-8 items-center gap-2 rounded-[10px] border border-black/15 bg-white px-3 text-[12px] font-semibold text-black/80 transition-colors hover:bg-black/5 hover:text-black"
             >
-              Your Privacy Choices
+              {t(locale, "footer.privacy_choices")}
               <span className="inline-flex h-4 w-6 items-center justify-center rounded-[6px] bg-[#2563EB] text-[11px] font-extrabold leading-none text-white">
                 ✓
               </span>

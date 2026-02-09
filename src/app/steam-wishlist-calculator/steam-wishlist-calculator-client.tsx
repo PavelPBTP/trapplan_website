@@ -3,6 +3,8 @@
 import Script from "next/script";
 import { useMemo, useState } from "react";
 
+import { t } from "@/lib/copy";
+
 type PresetKey = "conservative" | "base" | "optimistic";
 
 type Inputs = {
@@ -20,11 +22,13 @@ function clampNum(v: number, min: number) {
   return Number.isFinite(v) ? Math.max(min, v) : min;
 }
 
-function fmtInt(n: number) {
-  return Math.round(n).toLocaleString("en-US");
+type Locale = Parameters<typeof t>[0];
+
+function fmtInt(locale: Locale, n: number) {
+  return Math.round(n).toLocaleString(locale);
 }
 
-export default function SteamWishlistCalculatorClient() {
+export default function SteamWishlistCalculatorClient({ locale }: { locale: Locale }) {
   const presets = useMemo(
     () => ({
       conservative: { wlToSalesPct: 5, visitToWlPct: 8 },
@@ -69,10 +73,10 @@ export default function SteamWishlistCalculatorClient() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Steam Wishlist Calculator",
+            name: t(locale, "tools.steam_wishlist_calculator.name"),
             url: "https://www.trapplan.com/steam-wishlist-calculator",
             description:
-              "Tool for indie developers to estimate wishlists, traffic and budget for Steam sales targets.",
+              t(locale, "tools.steam_wishlist_calculator.ld.description"),
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
           }),
@@ -91,19 +95,19 @@ export default function SteamWishlistCalculatorClient() {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Home",
+                name: t(locale, "blog.ui.home"),
                 item: "https://www.trapplan.com/",
               },
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Free Tools",
+                name: t(locale, "tools.ui.free_tools"),
                 item: "https://www.trapplan.com/steam-wishlist-calculator",
               },
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Steam Wishlist Calculator",
+                name: t(locale, "tools.steam_wishlist_calculator.name"),
                 item: "https://www.trapplan.com/steam-wishlist-calculator",
               },
             ],
@@ -113,25 +117,22 @@ export default function SteamWishlistCalculatorClient() {
 
       <div className="tpw" data-tp-root>
         <div className="sr-only">
-          <h2>Steam Wishlist and Marketing Forecast Tool</h2>
-          <p>
-            Estimate wishlists, Steam page visits, and an indicative paid budget to reach your week 1 sales goal. This calculator helps indie teams plan realistic
-            launch targets.
-          </p>
+          <h2>{t(locale, "tools.steam_wishlist_calculator.sr.title")}</h2>
+          <p>{t(locale, "tools.steam_wishlist_calculator.sr.body")}</p>
         </div>
 
         <div className="tpw-head">
-          <h1 className="tpw-title">Steam Wishlist Calculator</h1>
-          <div className="tpw-sub">Estimate required wishlists, traffic and budget to hit your week 1 sales target</div>
+          <h1 className="tpw-title">{t(locale, "tools.steam_wishlist_calculator.ui.title")}</h1>
+          <div className="tpw-sub">{t(locale, "tools.steam_wishlist_calculator.ui.subtitle")}</div>
           <div className="tpw-accent" aria-hidden="true" />
         </div>
 
         <div className="tpw-grid">
           <section className="tpw-card">
-            <div className="tpw-card-title">Goal</div>
+            <div className="tpw-card-title">{t(locale, "tools.steam_wishlist_calculator.ui.card.goal")}</div>
 
             <label className="tpw-label">
-              Target sales (week 1)
+              {t(locale, "tools.steam_wishlist_calculator.ui.goal.target_sales")}
               <input
                 className="tpw-input"
                 type="number"
@@ -141,7 +142,7 @@ export default function SteamWishlistCalculatorClient() {
             </label>
 
             <label className="tpw-label">
-              Price
+              {t(locale, "tools.steam_wishlist_calculator.ui.goal.price")}
               <input
                 className="tpw-input"
                 type="number"
@@ -153,7 +154,7 @@ export default function SteamWishlistCalculatorClient() {
 
             <div className="tpw-row">
               <label className="tpw-label">
-                Steam cut, %
+                {t(locale, "tools.steam_wishlist_calculator.ui.goal.steam_cut")}
                 <input
                   className="tpw-input"
                   type="number"
@@ -162,7 +163,7 @@ export default function SteamWishlistCalculatorClient() {
                 />
               </label>
               <label className="tpw-label">
-                Adjustments, %
+                {t(locale, "tools.steam_wishlist_calculator.ui.goal.adjustments")}
                 <input
                   className="tpw-input"
                   type="number"
@@ -172,11 +173,11 @@ export default function SteamWishlistCalculatorClient() {
               </label>
             </div>
 
-            <div className="tpw-help">Adjustments include refunds, regional pricing, and taxes.</div>
+            <div className="tpw-help">{t(locale, "tools.steam_wishlist_calculator.ui.goal.adjustments_help")}</div>
           </section>
 
           <section className="tpw-card">
-            <div className="tpw-card-title">Funnel</div>
+            <div className="tpw-card-title">{t(locale, "tools.steam_wishlist_calculator.ui.card.funnel")}</div>
 
             <div className="tpw-presets">
               <button
@@ -187,7 +188,7 @@ export default function SteamWishlistCalculatorClient() {
                   setInputs((p) => ({ ...p, ...presets.conservative }));
                 }}
               >
-                Conservative
+                {t(locale, "tools.steam_wishlist_calculator.ui.funnel.preset.conservative")}
               </button>
               <button
                 className={`tpw-chip ${activePreset === "base" ? "is-active" : ""}`}
@@ -197,7 +198,7 @@ export default function SteamWishlistCalculatorClient() {
                   setInputs((p) => ({ ...p, ...presets.base }));
                 }}
               >
-                Base
+                {t(locale, "tools.steam_wishlist_calculator.ui.funnel.preset.base")}
               </button>
               <button
                 className={`tpw-chip ${activePreset === "optimistic" ? "is-active" : ""}`}
@@ -207,12 +208,12 @@ export default function SteamWishlistCalculatorClient() {
                   setInputs((p) => ({ ...p, ...presets.optimistic }));
                 }}
               >
-                Optimistic
+                {t(locale, "tools.steam_wishlist_calculator.ui.funnel.preset.optimistic")}
               </button>
             </div>
 
             <label className="tpw-label">
-              Wishlist to sales (week 1), %
+              {t(locale, "tools.steam_wishlist_calculator.ui.funnel.wl_to_sales")}
               <input
                 className="tpw-input"
                 type="number"
@@ -222,7 +223,7 @@ export default function SteamWishlistCalculatorClient() {
             </label>
 
             <label className="tpw-label">
-              Visit to wishlist, %
+              {t(locale, "tools.steam_wishlist_calculator.ui.funnel.visit_to_wl")}
               <input
                 className="tpw-input"
                 type="number"
@@ -239,13 +240,13 @@ export default function SteamWishlistCalculatorClient() {
                 checked={inputs.paidToggle}
                 onChange={(e) => setInputs((p) => ({ ...p, paidToggle: e.target.checked }))}
               />{" "}
-              <span>Estimate paid budget</span>
+              <span>{t(locale, "tools.steam_wishlist_calculator.ui.funnel.estimate_paid")}</span>
             </label>
 
             {inputs.paidToggle ? (
               <div>
                 <label className="tpw-label">
-                  CPC
+                  {t(locale, "tools.steam_wishlist_calculator.ui.funnel.cpc")}
                   <input
                     className="tpw-input"
                     type="number"
@@ -259,37 +260,37 @@ export default function SteamWishlistCalculatorClient() {
 
             <div className="tpw-actions">
               <button className="tpw-btn" type="button">
-                Calculate
+                {t(locale, "tools.steam_wishlist_calculator.ui.funnel.calculate")}
               </button>
             </div>
           </section>
 
           <section className="tpw-card">
-            <div className="tpw-card-title">Results</div>
+            <div className="tpw-card-title">{t(locale, "tools.steam_wishlist_calculator.ui.card.results")}</div>
 
             <div className="tpw-metric">
-              <div className="tpw-metric-label">Required wishlists at launch</div>
-              <div className="tpw-metric-value">{fmtInt(requiredWishlists)}</div>
+              <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.required_wl")}</div>
+              <div className="tpw-metric-value">{fmtInt(locale, requiredWishlists)}</div>
             </div>
             <div className="tpw-metric">
-              <div className="tpw-metric-label">Required Steam page visits</div>
-              <div className="tpw-metric-value">{fmtInt(requiredVisits)}</div>
+              <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.required_visits")}</div>
+              <div className="tpw-metric-value">{fmtInt(locale, requiredVisits)}</div>
             </div>
             <div className="tpw-metric">
-              <div className="tpw-metric-label">Estimated week 1 net revenue</div>
-              <div className="tpw-metric-value">{fmtInt(netRev)}</div>
+              <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.net_revenue")}</div>
+              <div className="tpw-metric-value">{fmtInt(locale, netRev)}</div>
             </div>
 
             {inputs.paidToggle ? (
               <div className="tpw-metric">
-                <div className="tpw-metric-label">Estimated paid budget</div>
-                <div className="tpw-metric-value">{fmtInt(budget)}</div>
+                <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.paid_budget")}</div>
+                <div className="tpw-metric-value">{fmtInt(locale, budget)}</div>
               </div>
             ) : null}
           </section>
         </div>
 
-        <div className="tpw-bottom-note">Numbers don&apos;t launch games. Execution does.</div>
+        <div className="tpw-bottom-note">{t(locale, "tools.steam_wishlist_calculator.ui.bottom_note")}</div>
       </div>
 
       <style jsx global>{`

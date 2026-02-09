@@ -1,6 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 type InfluencerRow = {
   platform: "twitch" | "youtube" | "other";
@@ -152,6 +155,12 @@ export default function SteamInfluencersPlannerClient({
 }: {
   influencers: InfluencerRow[];
 }) {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const [steamUrl, setSteamUrl] = useState("");
   const [similarGames, setSimilarGames] = useState("");
   const [region, setRegion] = useState("all");
@@ -264,30 +273,32 @@ export default function SteamInfluencersPlannerClient({
     <>
       <div id="tp-influencer-planner">
         <div className="tp-card">
-          <h1>Steam Influencer Planner</h1>
+          <h1>{t(locale, "tools.steam_influencers_planner.ui.title")}</h1>
           <div className="tp-sub">
-            Paste a Steam page link and get a ready-to-run short list: 20 Twitch + 20 YouTube creators.
+            {t(locale, "tools.steam_influencers_planner.ui.subtitle")}
           </div>
 
           <div className="tp-how">
-            <div className="tp-how-title">How it works</div>
+            <div className="tp-how-title">
+              {t(locale, "tools.steam_influencers_planner.ui.how_title")}
+            </div>
             <div className="tp-how-grid">
               <div className="tp-how-step">
                 <div className="tp-how-num">1</div>
                 <div className="tp-how-copy">
-                  Paste your Steam store page URL. We extract AppID + keywords from the link.
+                  {t(locale, "tools.steam_influencers_planner.ui.how_step1")}
                 </div>
               </div>
               <div className="tp-how-step">
                 <div className="tp-how-num">2</div>
                 <div className="tp-how-copy">
-                  We generate a creator shortlist tailored to your game.
+                  {t(locale, "tools.steam_influencers_planner.ui.how_step2")}
                 </div>
               </div>
               <div className="tp-how-step">
                 <div className="tp-how-num">3</div>
                 <div className="tp-how-copy">
-                  You get at least 20 Twitch + 20 YouTube picks for any query. Use Open or Run with TrapPlan.
+                  {t(locale, "tools.steam_influencers_planner.ui.how_step3")}
                 </div>
               </div>
             </div>
@@ -296,19 +307,28 @@ export default function SteamInfluencersPlannerClient({
           <div className="tp-form">
             <div className="tp-grid">
               <div className="tp-field">
-                <div className="tp-label">Steam store page</div>
+                <div className="tp-label">
+                  {t(locale, "tools.steam_influencers_planner.ui.field.steam_store_page")}
+                </div>
                 <input
                   className="tp-input"
                   value={steamUrl}
                   onChange={(e) => setSteamUrl(e.target.value)}
-                  placeholder="https://store.steampowered.com/app/000000/Game_Name/"
+                  placeholder={t(
+                    locale,
+                    "tools.steam_influencers_planner.ui.placeholder.steam_url",
+                  )}
                 />
               </div>
 
               <div className="tp-field">
-                <div className="tp-label">Region</div>
+                <div className="tp-label">
+                  {t(locale, "tools.steam_influencers_planner.ui.field.region")}
+                </div>
                 <select className="tp-input" value={region} onChange={(e) => setRegion(e.target.value)}>
-                  <option value="all">All</option>
+                  <option value="all">
+                    {t(locale, "tools.steam_influencers_planner.ui.field.region_all")}
+                  </option>
                   {regions.map((r) => (
                     <option key={r} value={r}>
                       {r}
@@ -320,7 +340,9 @@ export default function SteamInfluencersPlannerClient({
 
             <div className="tp-preview tp-span-2">
               {normalize(steamUrl).length === 0 ? (
-                <span className="tp-preview-muted">Tip: paste a link like https://store.steampowered.com/app/570/Dota_2/</span>
+                <span className="tp-preview-muted">
+                  {t(locale, "tools.steam_influencers_planner.ui.tip_paste")}
+                </span>
               ) : parsedSteamInput.appId ? (
                 <div className="tp-preview-row">
                   <span className="tp-chip">AppID: {parsedSteamInput.appId}</span>
@@ -331,18 +353,25 @@ export default function SteamInfluencersPlannerClient({
                   ))}
                 </div>
               ) : (
-                <span className="tp-preview-warn">Couldn’t detect AppID in the link. Please paste a Steam /app/ URL.</span>
+                <span className="tp-preview-warn">
+                  {t(locale, "tools.steam_influencers_planner.ui.warn_bad_link")}
+                </span>
               )}
             </div>
 
             <div className="tp-grid">
               <div className="tp-field tp-span-2">
-                <div className="tp-label">Similar games (optional)</div>
+                <div className="tp-label">
+                  {t(locale, "tools.steam_influencers_planner.ui.field.similar_games")}
+                </div>
                 <input
                   className="tp-input"
                   value={similarGames}
                   onChange={(e) => setSimilarGames(e.target.value)}
-                  placeholder="Example: World of Tanks, World of Warships"
+                  placeholder={t(
+                    locale,
+                    "tools.steam_influencers_planner.ui.placeholder.similar_games",
+                  )}
                 />
               </div>
             </div>
@@ -350,8 +379,8 @@ export default function SteamInfluencersPlannerClient({
             <div className="tp-cta">
               <div className="tp-hint">
                 {submitted
-                  ? "Showing results for your last query."
-                  : "Paste your Steam page and press Search to get creators."}
+                  ? t(locale, "tools.steam_influencers_planner.ui.hint_showing_results")
+                  : t(locale, "tools.steam_influencers_planner.ui.hint_paste_and_search")}
               </div>
               <div style={{ display: "flex", gap: 10 }}>
                 <button
@@ -360,7 +389,7 @@ export default function SteamInfluencersPlannerClient({
                   onClick={onSearch}
                   disabled={!hasAnyInput || !parsedSteamInput.appId}
                 >
-                  Search
+                  {t(locale, "tools.steam_influencers_planner.ui.cta.search")}
                 </button>
                 <button
                   type="button"
@@ -373,7 +402,7 @@ export default function SteamInfluencersPlannerClient({
                     borderColor: "rgba(11, 11, 11, 0.22)",
                   }}
                 >
-                  Clear
+                  {t(locale, "tools.steam_influencers_planner.ui.cta.clear")}
                 </button>
               </div>
             </div>

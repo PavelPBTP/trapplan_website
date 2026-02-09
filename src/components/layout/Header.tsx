@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PACKAGES } from "@/lib/data/packages";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import { withLocale, type Locale } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
 const SERVICES_DROPDOWN_LINKS = PACKAGES.map((p) => ({
   label: p.title.replace(/\n/g, " "),
@@ -56,12 +59,12 @@ function MailIcon() {
   );
 }
 
-export default function Header() {
+export default function Header({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur">
       <div className="border-b border-black/10">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6 lg:px-10">
-          <Link href="/" className="block leading-none">
+          <Link href={withLocale(locale, "/")} className="block leading-none">
             <Image
               src="/images/logo.png"
               alt="TrapPlan"
@@ -74,15 +77,15 @@ export default function Header() {
 
           <div className="flex items-center gap-6">
             <nav className="hidden items-center gap-7 text-[14px] font-semibold text-black/80 lg:flex">
-              <Link href="/about-us" className="transition-colors hover:text-black">
-                About Us
+              <Link href={withLocale(locale, "/about-us")} className="transition-colors hover:text-black">
+                {t(locale, "nav.about_us")}
               </Link>
               <div className="group relative">
                 <Link
-                  href="/#packages"
+                  href={withLocale(locale, "/#packages")}
                   className="inline-flex items-center gap-1 transition-colors hover:text-black"
                 >
-                  Services
+                  {t(locale, "nav.services")}
                   <span className="translate-y-[1px] text-[12px] text-black/70 group-hover:text-black">
                     ▾
                   </span>
@@ -92,7 +95,7 @@ export default function Header() {
                     {SERVICES_DROPDOWN_LINKS.map((item) => (
                       <Link
                         key={item.label}
-                        href={item.href}
+                        href={withLocale(locale, item.href)}
                         className="block rounded-xl px-3 py-2 text-[13px] font-semibold text-black/80 transition-colors hover:bg-zinc-50 hover:text-black"
                       >
                         {item.label}
@@ -101,13 +104,15 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <Link href="/our-cases" className="transition-colors hover:text-black">
-                Our Cases
+              <Link href={withLocale(locale, "/our-cases")} className="transition-colors hover:text-black">
+                {t(locale, "nav.our_cases")}
               </Link>
-              <Link href="/blog" className="transition-colors hover:text-black">
-                Blog
+              <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-black">
+                {t(locale, "nav.blog")}
               </Link>
             </nav>
+
+            <LanguageSwitcher locale={locale} />
 
             <a
               href="https://www.linkedin.com/company/trapplan"
@@ -127,10 +132,10 @@ export default function Header() {
             </a>
 
             <Link
-              href="/form"
+              href={withLocale(locale, "/form")}
               className="ml-2 inline-flex items-center rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
             >
-              Work with us
+              {t(locale, "cta.work_with_us")}
             </Link>
           </div>
         </div>

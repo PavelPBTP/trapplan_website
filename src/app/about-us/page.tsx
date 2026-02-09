@@ -2,28 +2,40 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description:
-    "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
-  alternates: {
-    canonical: "/about-us",
-  },
-  openGraph: {
-    type: "website",
-    url: "/about-us",
-    title: "About Us",
-    description:
-      "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Us",
-    description:
-      "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/about-us");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/about-us")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.about.title");
+  const description = t(locale, "seo.about.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function NumberBadge({ n }: { n: string }) {
   return (
@@ -39,40 +51,41 @@ function SectionTitle({ children }: { children: string }) {
   );
 }
 
-export default function AboutUsPage() {
+export default async function AboutUsPage() {
+  const locale = await getRequestLocale();
   const principles = [
     {
       n: "01",
-      title: "Strategy that fits your stage",
-      body: "No generic advice. We map your current reality (team, timeline, audience, store assets) into a launch and growth plan that you can actually execute.",
+      title: t(locale, "about.principle.01.title"),
+      body: t(locale, "about.principle.01.body"),
     },
     {
       n: "02",
-      title: "Messaging that converts",
-      body: "We help you communicate the core promise of your game clearly across your Steam page, creative, and campaigns, so the right players understand it fast.",
+      title: t(locale, "about.principle.02.title"),
+      body: t(locale, "about.principle.02.body"),
     },
     {
       n: "03",
-      title: "Execution with measurement",
-      body: "We run structured marketing beats with clean tracking, clear ownership, and post-mortems, so every iteration improves outcomes.",
+      title: t(locale, "about.principle.03.title"),
+      body: t(locale, "about.principle.03.body"),
     },
   ];
 
   const values = [
     {
       n: "04",
-      title: "Transparent, predictable process",
-      body: "You always know what we are doing, why, and what success looks like. Clear deliverables, cadence, and decision logs.",
+      title: t(locale, "about.value.04.title"),
+      body: t(locale, "about.value.04.body"),
     },
     {
       n: "05",
-      title: "Performance mindset",
-      body: "We focus on what moves the needle: store conversion, wishlist velocity, and repeatable acquisition channels.",
+      title: t(locale, "about.value.05.title"),
+      body: t(locale, "about.value.05.body"),
     },
     {
       n: "06",
-      title: "Built for game studios",
-      body: "We design around the realities of production: limited time, shifting priorities, and asset constraints, without lowering the quality bar.",
+      title: t(locale, "about.value.06.title"),
+      body: t(locale, "about.value.06.body"),
     },
   ];
 
@@ -87,25 +100,24 @@ export default function AboutUsPage() {
           </div>
 
           <h1 className="mt-8 text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[56px]">
-            About TrapPlan
+            {t(locale, "about.hero.title")}
           </h1>
           <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/65">
-            We help game studios build predictable wishlist and sales growth by combining strategy,
-            strong messaging, and performance-driven execution.
+            {t(locale, "about.hero.subtitle")}
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/form"
+              href={withLocale(locale, "/form")}
               className="inline-flex items-center justify-center rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
             >
-              Work with us
+              {t(locale, "about.hero.cta_primary")}
             </Link>
             <Link
-              href="/blog"
+              href={withLocale(locale, "/blog")}
               className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white px-7 py-3 text-[13px] font-semibold text-black/80 transition-colors duration-200 hover:bg-black/5 hover:text-black"
             >
-              Read the blog
+              {t(locale, "about.hero.cta_secondary")}
             </Link>
           </div>
         </div>
@@ -120,10 +132,9 @@ export default function AboutUsPage() {
                 <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
               </div>
               <div className="mt-6">
-                <SectionTitle>How we think</SectionTitle>
+                <SectionTitle>{t(locale, "about.how_we_think.title")}</SectionTitle>
                 <p className="mt-4 max-w-[52ch] text-[15px] leading-7 text-black/65">
-                  We build systems that make marketing repeatable. The goal is not “more activity”,
-                  it’s a clear chain from positioning to assets to distribution to measurement.
+                  {t(locale, "about.how_we_think.body")}
                 </p>
               </div>
             </div>
@@ -164,9 +175,9 @@ export default function AboutUsPage() {
                 <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
               </div>
               <div className="mt-6">
-                <SectionTitle>What you get</SectionTitle>
+                <SectionTitle>{t(locale, "about.what_you_get.title")}</SectionTitle>
                 <p className="mt-4 max-w-[52ch] text-[15px] leading-7 text-black/65">
-                  A structured collaboration that reduces chaos and makes decisions measurable.
+                  {t(locale, "about.what_you_get.body")}
                 </p>
               </div>
             </div>
@@ -175,46 +186,46 @@ export default function AboutUsPage() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
                   <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
-                    OUTCOME
+                    {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    Clear priorities
+                    {t(locale, "about.outcome.01.title")}
                   </div>
                   <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    A plan that maps milestones to marketing beats, with ownership and deadlines.
+                    {t(locale, "about.outcome.01.body")}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
                   <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
-                    OUTCOME
+                    {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    Better conversion
+                    {t(locale, "about.outcome.02.title")}
                   </div>
                   <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    Messaging and store assets tuned to reduce confusion and increase intent.
+                    {t(locale, "about.outcome.02.body")}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
                   <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
-                    OUTCOME
+                    {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    Clean tracking
+                    {t(locale, "about.outcome.03.title")}
                   </div>
                   <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    A measurement layer so you can see what channels and creatives work.
+                    {t(locale, "about.outcome.03.body")}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
                   <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
-                    OUTCOME
+                    {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    Repeatable learnings
+                    {t(locale, "about.outcome.04.title")}
                   </div>
                   <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    Post-mortems and iterations that compound over time instead of resetting.
+                    {t(locale, "about.outcome.04.body")}
                   </p>
                 </div>
               </div>
@@ -232,9 +243,9 @@ export default function AboutUsPage() {
                 <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
               </div>
               <div className="mt-6">
-                <SectionTitle>Principles</SectionTitle>
+                <SectionTitle>{t(locale, "about.principles.title")}</SectionTitle>
                 <p className="mt-4 max-w-[52ch] text-[15px] leading-7 text-white/65">
-                  How we collaborate with studios: the non-negotiables.
+                  {t(locale, "about.principles.body")}
                 </p>
               </div>
             </div>
@@ -259,10 +270,10 @@ export default function AboutUsPage() {
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex items-center justify-center rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Let’s talk
+                  {t(locale, "cta.lets_talk")}
                 </Link>
                 <a
                   href="mailto:hello@trapplan.com"

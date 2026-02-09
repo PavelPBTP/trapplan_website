@@ -5,6 +5,8 @@ import Footer from "@/components/sections/Footer";
 import { CASE_STUDIES } from "@/lib/data/cases";
 import Link from "next/link";
 import Image from "next/image";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((c) => ({ slug: c.slug }));
@@ -15,11 +17,15 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   const c = CASE_STUDIES.find((x) => x.slug === slug);
   if (!c) return {};
 
-  const url = `/studios-cases/${slug}`;
+  const url = withLocale(locale, `/studios-cases/${slug}`);
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/studios-cases/${slug}`)]),
+  ) as Record<string, string>;
   const images = c.coverImage
     ? [
         {
@@ -34,6 +40,7 @@ export async function generateMetadata({
     description: c.excerpt,
     alternates: {
       canonical: url,
+      languages,
     },
     openGraph: {
       type: "article",
@@ -56,6 +63,7 @@ export default async function StudiosCasesPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   const c = CASE_STUDIES.find((x) => x.slug === slug);
   if (!c) notFound();
@@ -67,7 +75,10 @@ export default async function StudiosCasesPage({
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-6 pt-10 pb-14 lg:px-10">
           <div className="flex items-center justify-between">
-            <Link href="/our-cases" className="text-[13px] font-semibold text-black/60 hover:text-black">
+            <Link
+              href={withLocale(locale, "/our-cases")}
+              className="text-[13px] font-semibold text-black/60 hover:text-black"
+            >
               ← Back to cases
             </Link>
             <div className="text-[13px] font-semibold text-black/60">
@@ -125,7 +136,7 @@ export default async function StudiosCasesPage({
 
                   <div className="mt-6">
                     <Link
-                      href="/form"
+                      href={withLocale(locale, "/form")}
                       className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                     >
                       Work with us
@@ -224,7 +235,7 @@ export default async function StudiosCasesPage({
                   </p>
                   <div className="mt-6">
                     <Link
-                      href="/form"
+                      href={withLocale(locale, "/form")}
                       className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                     >
                       Contact us

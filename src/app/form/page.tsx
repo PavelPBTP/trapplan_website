@@ -1,28 +1,40 @@
 import type { Metadata } from "next";
 import Footer from "@/components/sections/Footer";
 import WorkWithUsForm from "@/components/forms/WorkWithUsForm";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { t } from "@/lib/copy";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 
-export const metadata: Metadata = {
-  title: "Work With Us",
-  description:
-    "Tell us about your game. We’ll help you clarify your goals, select the best promotion formats, and deliver a clear plan.",
-  alternates: {
-    canonical: "/form",
-  },
-  openGraph: {
-    type: "website",
-    url: "/form",
-    title: "Work With Us",
-    description:
-      "Tell us about your game. We’ll help you clarify your goals, select the best promotion formats, and deliver a clear plan.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Work With Us",
-    description:
-      "Tell us about your game. We’ll help you clarify your goals, select the best promotion formats, and deliver a clear plan.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/form");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/form")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "cta.work_with_us");
+  const description = t(locale, "form_page.subtitle");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function MailIcon() {
   return (
@@ -50,7 +62,8 @@ function MailIcon() {
   );
 }
 
-export default function FormPage() {
+export default async function FormPage() {
+  const locale = await getRequestLocale();
   return (
     <>
       <main className="bg-[#F3F3F3]">
@@ -58,29 +71,30 @@ export default function FormPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
               <h1 className="text-[40px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[44px]">
-                Level Up Your Game Marketing
-                <br />
-                With a Plan That Works
+                {t(locale, "form_page.title").split("\n").map((line, idx, arr) => (
+                  <span key={`form-title-${idx}`}>
+                    {line}
+                    {idx < arr.length - 1 ? <br /> : null}
+                  </span>
+                ))}
               </h1>
 
               <p className="mt-6 max-w-[52ch] text-[14px] leading-6 text-black/60">
-                We’ll help you clarify your goals, select the best promotion
-                formats, and deliver a clear plan, even if you’re not sure where
-                to start.
+                {t(locale, "form_page.subtitle")}
               </p>
 
               <ul className="mt-6 space-y-2 text-[14px] font-semibold text-black/70">
                 <li className="flex items-start gap-3">
                   <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF0A5B]" />
-                  Align with your goals
+                  {t(locale, "form_page.bullet.01")}
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF0A5B]" />
-                  Discover high-performing marketing formats
+                  {t(locale, "form_page.bullet.02")}
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF0A5B]" />
-                  Get a clear, actionable proposal
+                  {t(locale, "form_page.bullet.03")}
                 </li>
               </ul>
 
