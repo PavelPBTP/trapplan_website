@@ -10,9 +10,10 @@ import { t } from "@/lib/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/reddit-launch-support");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/reddit-launch-support"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/reddit-launch-support")]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/reddit-launch-support"), origin).toString()]),
   ) as Record<string, string>;
 
   const title = t(locale, "seo.reddit_launch_support.title");
@@ -23,7 +24,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/reddit-launch-support"), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",

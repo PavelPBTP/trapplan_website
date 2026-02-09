@@ -7,9 +7,10 @@ import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/content-rules");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/content-rules"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/content-rules")]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/content-rules"), origin).toString()]),
   ) as Record<string, string>;
 
   return {
@@ -17,7 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t(locale, "legal.content_rules.meta_desc"),
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/content-rules"), origin).toString(),
+      },
     },
   };
 }

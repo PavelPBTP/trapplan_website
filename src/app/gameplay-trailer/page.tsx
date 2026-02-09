@@ -9,9 +9,10 @@ import { t } from "@/lib/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/gameplay-trailer");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/gameplay-trailer"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/gameplay-trailer")]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/gameplay-trailer"), origin).toString()]),
   ) as Record<string, string>;
 
   const title = t(locale, "seo.gameplay_trailer.title");
@@ -22,7 +23,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/gameplay-trailer"), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",

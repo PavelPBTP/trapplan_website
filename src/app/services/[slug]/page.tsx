@@ -60,9 +60,13 @@ export async function generateMetadata({
   if (!SERVICE_SLUGS.includes(slug as ServiceSlug)) return {};
 
   const title = titleFromSlug(slug);
-  const canonical = withLocale(locale, `/services/${slug}`);
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, `/services/${slug}`), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/services/${slug}`)]),
+    SUPPORTED_LOCALES.map((l) => [
+      l,
+      new URL(withLocale(l, `/services/${slug}`), origin).toString(),
+    ]),
   ) as Record<string, string>;
   const description =
     SERVICE_DESCRIPTION_BY_SLUG.get(slug) ??
@@ -73,7 +77,10 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", `/services/${slug}`), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",

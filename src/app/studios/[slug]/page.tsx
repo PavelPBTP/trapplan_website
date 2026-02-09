@@ -20,9 +20,10 @@ export async function generateMetadata({
   const s = STUDIO_PAGES.find((x) => x.slug === slug);
   if (!s) return {};
 
-  const canonical = withLocale(locale, `/studios/${slug}`);
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, `/studios/${slug}`), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/studios/${slug}`)]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, `/studios/${slug}`), origin).toString()]),
   ) as Record<string, string>;
   const excerptUses = STUDIO_PAGES.reduce((acc, p) => acc + (p.excerpt === s.excerpt ? 1 : 0), 0);
   const description =
@@ -33,7 +34,10 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", `/studios/${slug}`), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",

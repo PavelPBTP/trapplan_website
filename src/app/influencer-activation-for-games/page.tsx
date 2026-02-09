@@ -7,9 +7,13 @@ import { t } from "@/lib/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/influencer-activation-for-games");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/influencer-activation-for-games"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/influencer-activation-for-games")]),
+    SUPPORTED_LOCALES.map((l) => [
+      l,
+      new URL(withLocale(l, "/influencer-activation-for-games"), origin).toString(),
+    ]),
   ) as Record<string, string>;
 
   const title = t(locale, "seo.influencer_activation.title");
@@ -20,7 +24,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/influencer-activation-for-games"), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",

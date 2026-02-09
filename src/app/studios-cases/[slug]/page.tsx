@@ -22,9 +22,13 @@ export async function generateMetadata({
   const c = CASE_STUDIES.find((x) => x.slug === slug);
   if (!c) return {};
 
-  const url = withLocale(locale, `/studios-cases/${slug}`);
+  const origin = "https://www.trapplan.com";
+  const url = new URL(withLocale(locale, `/studios-cases/${slug}`), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/studios-cases/${slug}`)]),
+    SUPPORTED_LOCALES.map((l) => [
+      l,
+      new URL(withLocale(l, `/studios-cases/${slug}`), origin).toString(),
+    ]),
   ) as Record<string, string>;
   const images = c.coverImage
     ? [
@@ -40,7 +44,10 @@ export async function generateMetadata({
     description: c.excerpt,
     alternates: {
       canonical: url,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", `/studios-cases/${slug}`), origin).toString(),
+      },
     },
     openGraph: {
       type: "article",

@@ -9,9 +9,10 @@ import { t } from "@/lib/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/tiktok-package-20-videos");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/tiktok-package-20-videos"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/tiktok-package-20-videos")]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/tiktok-package-20-videos"), origin).toString()]),
   ) as Record<string, string>;
 
   const title = t(locale, "seo.tiktok_20.title");
@@ -22,7 +23,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/tiktok-package-20-videos"), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",

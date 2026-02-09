@@ -10,9 +10,10 @@ import { t } from "@/lib/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/our-cases");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/our-cases"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/our-cases")]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/our-cases"), origin).toString()]),
   ) as Record<string, string>;
 
   const title = t(locale, "seo.our_cases.title");
@@ -23,7 +24,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/our-cases"), origin).toString(),
+      },
     },
   };
 }
