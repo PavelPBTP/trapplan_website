@@ -233,7 +233,7 @@ export default function CardArticle({
                 src={cover.src}
                 alt={cover.alt}
                 fill
-                className="object-cover object-[55%_50%] scale-[1.05]"
+                className="object-contain object-center"
                 sizes="100vw"
                 priority
               />
