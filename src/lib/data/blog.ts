@@ -36,6 +36,84 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "driving-traffic-but-wishlists-standing-still",
+    title: "I am driving traffic but my wishlists are standing still",
+    emoji: "🧯",
+    date: "2026-02-09",
+    excerpt:
+      "If you’re driving traffic but wishlists aren’t moving, you likely have a conversion leak: cold audience, tag mismatch, weak store page, or low-intent channels. This card-style Q&A breaks down where the funnel fails and how to fix it.",
+    readingMinutes: 7,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cardArticle: {
+      title: "I am driving traffic but my wishlists are standing still",
+      lead: "There is a leak in the funnel somewhere — but where exactly? And how do you properly \"warm up\" a cold audience so the Steam algorithm doesn't decide your game is a lost cause?",
+      cards: [
+        {
+          id: "pumping-money-into-ads",
+          question: "I am pumping money into ads but the wishlist counter is barely moving",
+          answer:
+            "Most likely you are driving cold traffic to a page that is not ready for conversion or your Conversion Rate is being destroyed by a mismatch in expectations. Effective marketing for games in the PC segment is built on precise alignment with genre tags because the Steam Algorithm analyzes user behavior to decide if your project deserves more impressions.\n\nIf people arrive from an external link but do not hit the wishlist button it sends a massive negative signal to the system that the project is not interesting which actually hurts your organic reach more than having no ads at all.",
+        },
+        {
+          id: "thousands-of-visitors",
+          question: "If I am bringing thousands of visitors why does Steam think my game is a failure",
+          answer:
+            "The platform does not care about raw traffic numbers but it cares deeply about the quality of those visitors and their intent to buy. When you run broad ads without a filtered audience you end up with a high bounce rate which ruins your internal metrics in Steamworks.\n\nThe algorithm interprets this low engagement as a sign that your game is poorly made or misleadingly marketed and it will quickly bury your project in the search results to protect the user experience of its shoppers.",
+        },
+        {
+          id: "reddit-bans",
+          question: "Reddit remains the gold standard for external traffic but how do I avoid getting banned",
+          answer:
+            "This platform is one of the few places where you can gain thousands of high quality wishlists overnight without spending a cent on an ad manager. Marketing for games here is about finding hyper specific subreddits where your direct target audience lives and understands your niche mechanics.\n\nThe mistake most developers make is dumping a cold ad into a massive board like r/gaming only to get banned whereas a transparent post about a technical breakthrough in a niche community yields a conversion rate several times higher.",
+        },
+        {
+          id: "twitter-viability",
+          question: "Twitter has been highly unstable lately so is it still a viable channel for growth",
+          answer:
+            "The effectiveness of this platform currently depends entirely on your project's visual style and your ability to trend within a very specific developer and publisher circle. In marketing for games Twitter often becomes an echo chamber where you are seen only by your peers which results in almost zero wishlist growth from actual players.\n\nHowever it remains indispensable for networking and catching the eye of platform scouts or major influencers who are constantly looking for fresh content for their upcoming showcases.",
+        },
+        {
+          id: "youtube-budget",
+          question: "YouTube is where the heavy hitters play but does budget always dictate success",
+          answer:
+            "If you have the resources for high quality integrations YouTube can be your primary source of high intent traffic because long form video allows for a deep dive into gameplay loops. Marketing for games through video platforms requires surgical selection of creators who specialize in your exact genre since a random shoutout from a massive generic channel might give you views but no sales.\n\nYour goal is to secure placements with creators who truly understand mechanics and can articulate to their audience why your project belongs on their wishlist.",
+        },
+        {
+          id: "tiktok-influencers",
+          question: "Short form video on TikTok works on volume but is it better to buy influencers instead",
+          answer:
+            "Attempting to grow a studio account on TikTok can be a long and fruitless journey unless you have a viral visual hook that can be understood in under two seconds. It is far more effective in marketing for games to leverage short form video through established influencers who already know how to craft engaging hooks for their loyal base.\n\nThese dynamic clips are great for awareness but remember that this traffic is often the coldest so your Steam page must be flawless to prevent these users from bouncing immediately.",
+        },
+        {
+          id: "influencer-waste",
+          question: "How do I stop influencer integrations from becoming a complete waste of my budget",
+          answer:
+            "The most common mistake is chasing follower counts while ignoring actual engagement and the overlap between the creator's audience and your genre. Professional marketing for games through influencers requires a deep dive into their comment sections and previous reviews to see if their recommendations actually carry weight with their viewers.\n\nYou do not just need views you need creators who can sell the idea of the game and generate genuine hype for your participation in festivals or your upcoming launch date.",
+        },
+        {
+          id: "what-is-working",
+          question: "If traffic is coming from five different places how do I know what is actually working",
+          answer:
+            "Steamworks provides tools for tracking external links through UTM tags but they often only provide a partial view of the customer journey. A sophisticated approach to marketing for games involves using the platform's native analytics in tandem with daily monitoring of wishlist dynamics after every major post or integration.\n\nThis is the only way to identify your most efficient channel and pivot your budget away from an underperforming Twitter thread toward a high performing Reddit post or YouTube video.",
+        },
+        {
+          id: "stop-spending-on-ads",
+          question: "Should I stop spending money on ads until I fix my internal conversion rate",
+          answer:
+            "If your conversion from a visit to a wishlist on external traffic drops below a critical threshold then no amount of budget will save your launch. In the world of PC marketing this is a clear signal that you have either picked the wrong audience or your store page is creating friction for the target player.\n\nStop and reevaluate your ad creatives and your tags because every ineffective click further convinces the Steam Algorithm that your game does not deserve a spot in the Discovery Queue.",
+        },
+      ],
+    },
+    content: [
+      {
+        type: "p",
+        text: "This article is presented in a card format. If you are seeing this text only, please open it in the updated blog template.",
+      },
+    ],
+  },
+  {
     slug: "steam-next-fest-the-masterclass-in-discovery",
     title: "Steam Next Fest: The Masterclass in Discovery",
     emoji: "🎪",
