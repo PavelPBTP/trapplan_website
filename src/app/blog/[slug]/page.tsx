@@ -8,7 +8,7 @@ import BackToTopButton from "@/components/ui/BackToTopButton";
 import BlogQuoteBanner from "@/components/ui/BlogQuoteBanner";
 import { BLOG_POSTS, type BlogBlock } from "@/lib/data/blog";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
-import { getBlogPost } from "@/lib/data/blog.i18n";
+import { getBlogPost, getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 
@@ -288,7 +288,10 @@ export async function generateMetadata({
     const candidate = `${baseTitle}: ${keyword}`;
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
-  const excerptUses = BLOG_POSTS.reduce((acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0), 0);
+  const excerptUses = getBlogPosts(locale).reduce(
+    (acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0),
+    0,
+  );
   const description =
     excerptUses > 1
       ? `${post.excerpt} (${post.category ? `${post.category} — ` : ""}${post.title})`

@@ -2591,6 +2591,13 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.blog.masterclass.title": "Steam Next Fest : la masterclass de la découverte",
     "seo.blog.masterclass.desc":
       "Une analyse approfondie (2026) de Steam Next Fest : ce qui compte aujourd’hui, les 48 premières heures, les signaux de conversion, la stratégie de page de démo, le timing influenceurs et comment passer du conseil à l’exécution.",
+    "legal.content_rules.meta_title": "Règles de contenu",
+    "legal.content_rules.meta_desc": "Règles de base pour utiliser le contenu et les ressources TrapPlan.",
+    "legal.copyright.meta_title": "Politique de copyright",
+    "legal.copyright.meta_desc": "Politique de copyright du contenu du site TrapPlan.",
+    "form_page.title": "Fais passer ton marketing\nau niveau supérieur",
+    "form_page.subtitle":
+      "On t’aide à clarifier tes objectifs, choisir les bons formats de promotion et revenir avec un plan clair — même si tu ne sais pas par où commencer.",
     "blog_quote_banner.banner.title": "Besoin d’aide pour ton plan marketing de jeu ?",
     "blog_quote_banner.banner.subtitle": "Envoie une demande rapide et nous répondrons avec les prochaines étapes",
     "blog_quote_banner.banner.cta": "Demander un devis",
@@ -2671,6 +2678,13 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Steam Next Fest: die Masterclass in Discovery",
     "seo.blog.masterclass.desc":
       "Ein Deep Dive (2026) zu Steam Next Fest: was jetzt zählt, die ersten 48 Stunden, Conversion-Signale, Demo-Page-Strategie, Influencer-Timing und wie du Guidance in Execution verwandelst.",
+    "legal.content_rules.meta_title": "Content-Regeln",
+    "legal.content_rules.meta_desc": "Grundregeln für die Nutzung von TrapPlan-Inhalten und Assets.",
+    "legal.copyright.meta_title": "Copyright-Richtlinie",
+    "legal.copyright.meta_desc": "Copyright-Richtlinie für Inhalte der TrapPlan-Website.",
+    "form_page.title": "Bring dein Game-Marketing\nauf das nächste Level",
+    "form_page.subtitle":
+      "Wir helfen dir, Ziele zu klären, die passenden Promotion-Formate zu wählen und mit einem klaren Plan zurückzukommen — auch wenn du noch nicht weißt, wo du anfangen sollst.",
     "blog_quote_banner.banner.title": "Brauchst du Hilfe mit deinem Game-Marketing-Plan?",
     "blog_quote_banner.banner.subtitle": "Sende eine kurze Anfrage und wir antworten mit den nächsten Schritten",
     "blog_quote_banner.banner.cta": "Angebot anfordern",
