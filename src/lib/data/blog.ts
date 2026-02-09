@@ -125,6 +125,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/make-a-great-game-avoid-a-flop-cover.png",
     cardArticle: {
       title:
         "Developers say the most important thing is to make a great game. But how do you avoid a total flop on Steam?",
