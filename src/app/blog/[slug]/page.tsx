@@ -226,9 +226,10 @@ export async function generateMetadata({
   const post = getBlogPost(locale, slug);
   if (!post) return {};
 
-  const url = withLocale(locale, `/blog/${post.slug}`);
+  const origin = "https://www.trapplan.com";
+  const url = new URL(withLocale(locale, `/blog/${post.slug}`), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, `/blog/${post.slug}`)]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, `/blog/${post.slug}`), origin).toString()]),
   ) as Record<string, string>;
   const titleFromSlug = (s: string) =>
     s
@@ -315,7 +316,10 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical: url,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", `/blog/${post.slug}`), origin).toString(),
+      },
     },
     openGraph: {
       type: "article",

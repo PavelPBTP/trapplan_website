@@ -16,9 +16,10 @@ const inter = Inter({
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const canonical = withLocale(locale, "/");
+  const origin = "https://www.trapplan.com";
+  const canonical = new URL(withLocale(locale, "/"), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/")]),
+    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/"), origin).toString()]),
   ) as Record<string, string>;
 
   const siteName = t(locale, "seo.site.name");
@@ -37,7 +38,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": new URL(withLocale("en", "/"), origin).toString(),
+      },
     },
     openGraph: {
       type: "website",
