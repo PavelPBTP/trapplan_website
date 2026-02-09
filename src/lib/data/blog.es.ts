@@ -1,6 +1,42 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ES_TRANSLATIONS: BlogTranslationsBySlug = {
+  "promote-a-game-without-a-budget-virality-myth": {
+    title: "¿De verdad puedes promocionar un juego sin presupuesto?",
+    excerpt:
+      "Un desglose en formato tarjetas del mito del lanzamiento sin presupuesto en 2026: qué significa realmente el potencial viral, por qué los likes no son intención, cuánto cuesta lo “gratis” y cómo trabajar con el algoritmo de Steam sin ads.",
+    category: "Steam",
+    cardArticle: {
+      title:
+        "¿De verdad puedes promocionar un juego sin presupuesto, basándote solo en la \"viralidad\"?",
+      lead: "El sueño del crecimiento orgánico choca con un mercado saturado. Este es el mito del lanzamiento sin presupuesto y por qué la “viralidad” no es una estrategia.",
+      cards: [],
+    },
+  },
+  "make-a-great-game-avoid-a-flop-on-steam": {
+    title:
+      "Todos dicen que lo más importante es hacer un gran juego. Pero ¿cómo evitas un flop total en Steam?",
+    excerpt:
+      "Guía práctica en formato tarjetas para construir una estrategia de marketing en Steam: tags/metadatos, ritmo semanal, tráfico orgánico, influencers, eventos, pricing, PR, curators, pivotes a consolas y objetivos de wishlists.",
+    category: "Steam",
+    cardArticle: {
+      title:
+        "Todos dicen que lo más importante es hacer un gran juego. Pero ¿cómo evitas un flop total en Steam?",
+      lead: "¿Y cuántas wishlists son realmente suficientes? Te explicamos cómo construir una estrategia de marketing sólida para tu proyecto.",
+      cards: [],
+    },
+  },
+  "driving-traffic-but-wishlists-standing-still": {
+    title: "Estoy llevando tráfico, pero mis wishlists están estancadas",
+    excerpt:
+      "Si estás llevando tráfico pero las wishlists no se mueven, suele haber una fuga de conversión: audiencia fría, tags mal alineados, página débil o canales de baja intención. Este Q&A en tarjetas muestra dónde falla el funnel y cómo arreglarlo.",
+    category: "Steam",
+    cardArticle: {
+      title: "Estoy llevando tráfico, pero mis wishlists están estancadas",
+      lead: "Hay una fuga en el embudo — ¿pero dónde exactamente? ¿Y cómo “calientas” a una audiencia fría para que el algoritmo de Steam no descarte tu juego?",
+      cards: [],
+    },
+  },
   "steam-next-fest-the-masterclass-in-discovery": {
     title: "Steam Next Fest: la clase magistral del descubrimiento",
     excerpt:

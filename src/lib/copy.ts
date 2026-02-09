@@ -2559,6 +2559,75 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "blog_quote_banner.error_network": "Échec de l’envoi. Réessaie.",
   },
   de: {
+    "seo.site.name": "TrapPlan",
+    "seo.site.description":
+      "TrapPlan hilft Game-Studios, Wishlists und Sales mit performanceorientiertem Marketing zu steigern.",
+    "seo.about.title": "Über uns",
+    "seo.about.desc":
+      "TrapPlan hilft Game-Studios, Wishlists und Sales mit performanceorientierten Marketing-Systemen zu steigern.",
+    "seo.blog.title": "Gaming-Marketing-Blog | Trends & Tipps",
+    "seo.blog.desc":
+      "Bleib auf dem Laufenden mit Trends im Gaming-Marketing. TrapPlans Blog deckt Tipps, Case Studies und Strategien ab, damit Brands im Games-Markt erfolgreich sind.",
+    "seo.our_cases.title": "Unsere Cases",
+    "seo.our_cases.desc": "Ausgewählte Ergebnisse und Case Studies von TrapPlan.",
+    "seo.no_wishlists.title": "Keine Wishlists auf Steam",
+    "seo.no_wishlists.desc":
+      "Was tun, wenn deine Steam-Seite Traffic bekommt, aber die Wishlists nicht wachsen.",
+    "seo.reddit_launch_support.title":
+      "Reddit Launch Support: Organischer Steam-Traffic ohne Backlash",
+    "seo.reddit_launch_support.desc":
+      "Eine organische Reddit-Kampagne mit 15 Posts, um Steam-Wishlists zu steigern, ohne den üblichen Marketing-Backlash auszulösen.",
+    "seo.pr_starter_pack.title": "PR Starter Pack: Die Coverage, die dein Game verdient",
+    "seo.pr_starter_pack.desc":
+      "PR-Outreach für Indie-Games: lesbares Press Release, gezielte Pitches, Follow-ups und eine klare Kontaktliste. Für Credibility und Steam-Wishlists.",
+    "seo.tiktok_20.title": "TikTok Paket: 20 Videos",
+    "seo.tiktok_20.desc":
+      "20 TikTok-Videos für dein Game: Hooks, Skripte, Editing und ein klarer Content-Plan für Wishlists und Awareness.",
+    "seo.influencer_micro.title":
+      "Influencer Micro Campaign: Kosteneffiziente Reichweite, die konvertiert",
+    "seo.influencer_micro.desc":
+      "Ein Micro-Influencer-Aktivierungs-Sprint für Games: Nischen-Creator-Selection, Outreach, Koordination, Tracking und ein klarer Report. Für sinnvolle Reichweite und Steam-Wishlists.",
+    "seo.influencer_activation.title":
+      "Influencer Activation für Games: Coverage, die konvertiert",
+    "seo.influencer_activation.desc":
+      "Strukturierte Influencer-Kampagnen: Sourcing, Outreach, Koordination, Tracking und Post-Campaign-Learnings. Wiederholbar, messbar und für Games gebaut.",
+    "seo.paid_ads_setup.title":
+      "Paid Ads Setup: Kampagnen richtig aufsetzen",
+    "seo.paid_ads_setup.desc":
+      "Wir setzen deine Paid-Ad-Kampagnen von A bis Z auf: Kanalwahl, Budget-Setup, Targeting und Creative-Placement. Danach übergeben wir das Konto. Monitoring/Optimierung sind nicht enthalten.",
+    "seo.gameplay_trailer.title": "Gameplay Trailer: Ein Trailer, der konvertiert",
+    "seo.gameplay_trailer.desc":
+      "Ein kompletter Gameplay-Trailer für dein Game: klares Storytelling, saubere Captures, Pace, Editing und Lieferung bereit für Steam, YouTube und Medien.",
+    "seo.steam_wishlist_calculator.title": "Steam Wishlist Calculator",
+    "seo.steam_wishlist_calculator.desc":
+      "Schätze erforderliche Wishlists, Traffic und Budget, um dein Steam-Sales-Ziel in Woche 1 zu erreichen.",
+    "seo.steam_pricing_planner.title": "Steam Pricing Planner & Calculator",
+    "seo.steam_pricing_planner.desc":
+      "Berechne empfohlene Steam-Regionalpreise mit Kaufkraftparität (PPP) und Live-FX-Kursen.",
+    "seo.steam_influencers_planner.title": "Steam Influencer Planner",
+    "seo.steam_influencers_planner.desc":
+      "Profi-Tool, um YouTube- und Twitch-Gaming-Influencer nach Genre und ähnlichen Games zu finden.",
+    "seo.steam_festival_planner.title": "Steam Festival Planner",
+    "seo.steam_festival_planner.desc":
+      "Durchsuche Steam-Festivals und Sales, filtere nach Typ und Genre und match Events mit deinem Game via AppID-Analyse.",
+    "seo.creative_content_pipeline.title":
+      "Creative Content Pipeline für Steam- und Console-Games",
+    "seo.creative_content_pipeline.desc":
+      "Eine kontinuierliche Content-Pipeline für Steam- und Console-Games: Trailer, Shorts, Store-Assets und iterative Produktion mit Fokus auf Wishlist-Wachstum und Conversion.",
+    "seo.paid_growth.title": "Paid Growth für Steam- und Console-Games",
+    "seo.paid_growth.desc":
+      "High-Ticket Paid Growth für Steam- und Console-Games: Channel-Strategie, sauberes Tracking, Attribution und strukturierter Handover.",
+    "seo.game_launch_blueprint.title":
+      "Game Launch Blueprint: Deine Strategie, unsere Standards.",
+    "seo.game_launch_blueprint.desc":
+      "Hör auf zu raten. Wir liefern das exakte Marketing-Framework, das Publisher nutzen: standardisiert, battle-tested und bereit, gemeinsam umzusetzen.",
+    "seo.games_co_publishing.title": "Games Co-Publishing: Marketing- & Distribution-Partner.",
+    "seo.games_co_publishing.desc":
+      "Eine marketinggetriebene Co-Publishing-Partnerschaft mit Fokus auf Sichtbarkeit, Marktvalidierung, Audience Growth und kommerzielle Performance.",
+    "seo.blog.masterclass.title":
+      "Steam Next Fest: die Masterclass in Discovery",
+    "seo.blog.masterclass.desc":
+      "Ein Deep Dive (2026) zu Steam Next Fest: was jetzt zählt, die ersten 48 Stunden, Conversion-Signale, Demo-Page-Strategie, Influencer-Timing und wie du Guidance in Execution verwandelst.",
     "blog_quote_banner.banner.title": "Brauchst du Hilfe mit deinem Game-Marketing-Plan?",
     "blog_quote_banner.banner.subtitle": "Sende eine kurze Anfrage und wir antworten mit den nächsten Schritten",
     "blog_quote_banner.banner.cta": "Angebot anfordern",
@@ -2570,6 +2639,34 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "blog_quote_banner.error_network": "Senden fehlgeschlagen. Bitte erneut versuchen.",
   },
   zh: {
+    "seo.site.name": "TrapPlan",
+    "seo.site.description": "TrapPlan 通过以效果为导向的营销，帮助游戏工作室增长愿望单与销量。",
+    "seo.about.title": "关于我们",
+    "seo.about.desc": "TrapPlan 通过以效果为导向的营销系统，帮助游戏工作室增长愿望单与销量。",
+    "seo.blog.title": "游戏营销博客｜趋势与实用技巧",
+    "seo.blog.desc": "跟进游戏营销最新趋势。TrapPlan 博客分享实用技巧、案例与策略，帮助品牌在游戏行业取得增长。",
+    "seo.our_cases.title": "案例",
+    "seo.our_cases.desc": "TrapPlan 精选成果与案例研究。",
+    "seo.no_wishlists.title": "Steam 上没有愿望单",
+    "seo.no_wishlists.desc": "当 Steam 页面有流量但愿望单不增长时，应该优先修复什么。",
+    "seo.reddit_launch_support.title": "Reddit 发售支持：无反感的自然流量",
+    "seo.reddit_launch_support.desc": "15 条高互动的 Reddit 自然内容投放，帮助提升 Steam 愿望单，并避免常见营销反感。",
+    "seo.pr_starter_pack.title": "PR 入门包：为你的游戏争取报道",
+    "seo.pr_starter_pack.desc": "面向独立游戏的 PR 外联：易读的新闻稿、精准投递、跟进，以及清晰的联系人列表。用于建立可信度并提升 Steam 愿望单。",
+    "seo.tiktok_20.title": "TikTok 套餐：20 条视频",
+    "seo.tiktok_20.desc": "为你的游戏制作 20 条 TikTok 视频：hook、脚本、剪辑与内容计划，目标是提升愿望单与认知。",
+    "seo.influencer_micro.title": "达人微型投放：高性价比的可转化曝光",
+    "seo.influencer_micro.desc": "面向游戏的微型达人激活冲刺：选择与匹配、外联、协同、追踪与报告。聚焦有效触达与 Steam 愿望单。",
+    "seo.paid_ads_setup.title": "付费广告搭建：正确启动你的投放",
+    "seo.paid_ads_setup.desc": "从渠道选择到预算、定向与素材位设置，我们完成完整投放搭建并交接账号。后续持续监控/优化不包含在内。",
+    "seo.gameplay_trailer.title": "Gameplay Trailer：为转化而生的预告片",
+    "seo.gameplay_trailer.desc": "为你的游戏制作完整 gameplay trailer：清晰叙事、优质录制、节奏、剪辑，并交付可用于 Steam、YouTube 与媒体传播的版本。",
+    "seo.steam_wishlist_calculator.title": "Steam 愿望单计算器",
+    "seo.steam_wishlist_calculator.desc": "估算达成 Steam 首周销量目标所需的愿望单、流量与预算。",
+    "seo.steam_pricing_planner.title": "Steam 定价规划器与计算器",
+    "seo.steam_pricing_planner.desc": "使用购买力平价（PPP）与实时汇率计算推荐的 Steam 区域定价。",
+    "seo.steam_influencers_planner.title": "Steam 达人规划器",
+    "seo.steam_influencers_planner.desc": "基于题材与相似游戏，发现 YouTube/Twitch 游戏达人并规划投放。",
     "seo.steam_festival_planner.title": "Steam 活动规划器",
     "seo.steam_festival_planner.desc": "浏览 Steam 节日与促销，按类型/题材筛选，并用 AppID 分析匹配适合你游戏的活动。",
     "seo.creative_content_pipeline.title": "Steam/主机创意内容流水线",
