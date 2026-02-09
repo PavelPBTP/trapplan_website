@@ -227,16 +227,18 @@ export default function CardArticle({
       </div>
 
       {cover ? (
-        <div className="mt-8 overflow-hidden bg-black">
+        <div className="mt-8 overflow-hidden">
           <div className="relative h-[320px] w-full sm:h-[420px] lg:h-[520px]">
               <Image
                 src={cover.src}
                 alt=""
                 fill
-                className="object-cover blur-2xl scale-110 opacity-55"
+                className="object-cover blur-2xl scale-110 opacity-100"
                 sizes="100vw"
                 priority
               />
+
+              <div className="pointer-events-none absolute inset-0 bg-black/55" />
 
               <div className="absolute inset-6 sm:inset-10 lg:inset-14">
                 <Image
