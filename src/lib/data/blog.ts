@@ -36,6 +36,109 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "make-a-great-game-avoid-a-flop-on-steam",
+    title: "Make a great game. Avoid a flop on Steam.",
+    emoji: "🚀",
+    date: "2026-02-09",
+    excerpt:
+      "A practical card-style guide to building a Steam marketing strategy: tags/metadata, weekly beats, organic traffic, influencer leverage, events, pricing, PR, curators, console pivots, and wishlist targets.",
+    readingMinutes: 10,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cardArticle: {
+      title: "Developers say the most important thing is to make a great game. But how do you avoid a total flop on Steam?",
+      lead: "And how many wishlists are actually enough? We explain how to build a proper marketing strategy for your project.",
+      cards: [
+        {
+          id: "masterpiece-invisible",
+          question:
+            "The hard truth is that even a masterpiece remains invisible without external signals for the platform",
+          answer:
+            "Quality is a prerequisite for success but it is never a guarantee of visibility because the Steam Algorithm operates on cold data rather than artistic merit. Think of the storefront as a high frequency trading floor where the platform only bets on winners who have already proven their Wishlist Velocity.\n\nIf you ignore marketing for games you are essentially launching into a vacuum and hoping that a player will stumble upon your app ID among fourteen thousand other releases this year without any external signals telling the system that your project is worth a slot in the Discovery Queue.",
+        },
+        {
+          id: "where-to-start",
+          question: "I understand the importance of promotion but where exactly should I start right now",
+          answer:
+            "Before you drive a single click of traffic you must ensure that your Metadata and tags in Steamworks are tuned for your target player rather than an abstract audience. Marketing for games begins with the technical optimization of the store page where every screenshot and every line of text works to increase your Conversion Rate.\n\nIf your tags conflict with the actual gameplay even a massive influx of users will lead to bounces which tells the system that your game is low quality and subsequently kills your organic reach.",
+        },
+        {
+          id: "keep-people-coming-back",
+          question: "Okay the page is a conversion funnel but how do I keep people coming back to it",
+          answer:
+            "You cannot simply announce a game once and go silent until launch because player attention is incredibly short lived and easily captured by competitors. A professional strategy involves scheduled marketing beats that force the wishlist counter to move upward every single week throughout the development cycle.\n\nEvery trailer update or mechanic reveal must function as a hook to rebuild awareness so that by the time you hit the release button you have a massive pool of primed users ready to buy.",
+        },
+        {
+          id: "no-ad-budget",
+          question: "That makes sense but where do I find this traffic if I have no ad budget",
+          answer:
+            "Platforms like Reddit or TikTok can generate thousands of wishlists overnight but they are notoriously toxic toward traditional advertising and require an organic approach. Marketing for games on these platforms is built on showing the development process or unique technical breakthroughs that provoke genuine discussion.\n\nIf a post hits the top of a subreddit the momentum carries over to your Steam page which dramatically increases your chances of being picked up by the platform's internal recommendation engines without spending a cent.",
+        },
+        {
+          id: "break-out-of-bubble",
+          question: "I am posting on social media but how do I break out of my existing bubble",
+          answer:
+            "A single YouTube video from a creator who specializes in your genre can provide a more powerful boost to your Conversion Rate than any solo social media effort. Marketing for games in this context is about identifying influencers whose viewers already love your specific mechanics and visual style.\n\nPartnering with creators allows you to verify your project in the eyes of the mass market and secure the explosive Wishlist Velocity needed to land on the New and Trending list on day one.",
+        },
+        {
+          id: "stress-test-before-launch",
+          question: "Is there a way to stress test all of this before I actually commit to a launch date",
+          answer:
+            "Participation in events like Steam Next Fest is not just a way to entertain fans but a brutal audit of your entire marketing strategy. At this stage marketing for games becomes a data game where you track engagement and player retention within your demo.\n\nIf the build shows high average playtime Steam interprets this as a signal of high potential and begins to aggressively promote the full version of your game in the Discovery Queue before you even go live.",
+        },
+        {
+          id: "regional-pricing",
+          question: "I have the wishlists but what if people are hesitant to pay the full price",
+          answer:
+            "You are leaving a significant amount of revenue on the table if you ignore Regional Pricing and simply convert your base currency without considering local market realities. Smart marketing for games includes fine tuning prices through Steamworks for regions like China or Latin America to exponentially increase unit volume.\n\nThis creates the necessary sales velocity for the algorithm to lock your game into the Global Top Sellers list which sustains organic traffic for weeks after the initial launch window.",
+        },
+        {
+          id: "press-and-curators",
+          question: "Everything is ready for release but how do I get the press and curators to notice me",
+          answer:
+            "Professional marketing for games requires moving away from mass emails toward surgical outreach targeting people who actually influence your specific subgenre. You need a Press Kit where screenshots and gifs are optimized for immediate use in articles without any extra editing required by the journalist.\n\nInstead of asking for a generic review you should pitch a unique angle like a technical innovation or how your game fills a specific void in the current market.",
+        },
+        {
+          id: "steam-curators-worth-it",
+          question: "Speaking of curators is it worth spending any time on the Steam Curator system",
+          answer:
+            "The majority of curators on Steam hold no real power but top tier groups can provide a measurable boost if your game fits their specific niche perfectly. Marketing for games here involves filtering through the noise to find groups that maintain active discussions and have a demonstrably loyal following.\n\nUse the Curator Connect tool in Steamworks with extreme caution and avoid sending keys to every requester as this often dilutes your stats without providing any high quality wishlist traffic.",
+        },
+        {
+          id: "console-marketing",
+          question: "If I plan on moving to consoles does the marketing change significantly",
+          answer:
+            "On PlayStation and Xbox you are operating in a much more closed ecosystem where success is often dictated by your ability to secure featuring from the platform holder itself. Marketing for games on consoles is built on long term relationship management and providing high quality trailers for the platform's official channels.\n\nUnlike Steam where algorithms dominate the consoles still rely heavily on human curators and your ability to participate in major promotional cycles or subscription services like Game Pass.",
+        },
+        {
+          id: "wishlists-break-even",
+          question: "Everyone mentions wishlists but what is the actual number needed to break even",
+          answer:
+            "In the current PC market a safe threshold for a successful launch that triggers the algorithm is generally between seven thousand and ten thousand wishlists. Marketing for games is a game of probability where you calculate your expected Conversion Rate to understand exactly how many people will buy the game in the first twenty four hours.\n\nIf your wishlist base is too small even a generous Launch Discount will fail to generate the critical mass of sales required to keep you on the front page.",
+        },
+        {
+          id: "reviews-impact",
+          question: "The sales are coming in but my reviews are dropping. How does this impact my growth",
+          answer:
+            "Your Steam review score is your most valuable marketing asset and it directly dictates your visibility in the Discovery Queue and the trust level of new visitors. If your rating drops below eighty percent positive the algorithm begins to throttle your impressions because it views the project as a risk to the user experience.\n\nIn this scenario marketing for games shifts into crisis management where you must use the Community Hub to address grievances and ship patches that prove to the audience you are committed to the long term.",
+        },
+        {
+          id: "ignore-marketing",
+          question: "What happens if I ignore all of this and just let the game speak for itself",
+          answer:
+            "The most likely outcome of launching without a marketing strategy is the Flatline where you see a tiny spike on day one followed by near zero daily sales. Without the momentum generated by pre launch beats you will never clear the threshold for the New and Trending list and your game will be buried at the bottom of the store.\n\nYour masterpiece becomes a commercial failure not because the code was bad but because you failed to give the platform's robots a reason to care about your success.",
+        },
+      ],
+    },
+    content: [
+      {
+        type: "p",
+        text: "This article is presented in a card format. If you are seeing this text only, please open it in the updated blog template.",
+      },
+    ],
+  },
+  {
     slug: "driving-traffic-but-wishlists-standing-still",
     title: "I am driving traffic but my wishlists are standing still",
     emoji: "🧯",
