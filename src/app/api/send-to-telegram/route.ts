@@ -1,13 +1,17 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
+  const requestId =
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
   try {
     const body = await request.json();
     const { name, company, email, source } = body;
 
     if (!name || !email) {
       return NextResponse.json(
-        { error: "Name and email are required" },
+        { error: "Name and email are required", requestId },
         { status: 400 }
       );
     }
@@ -17,11 +21,12 @@ export async function POST(request: Request) {
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error("Telegram credentials not configured", {
+        requestId,
         hasToken: Boolean(TELEGRAM_BOT_TOKEN),
         hasChatId: Boolean(TELEGRAM_CHAT_ID),
       });
       return NextResponse.json(
-        { error: "Telegram not configured" },
+        { error: "Telegram not configured", requestId },
         { status: 500 }
       );
     }
@@ -61,6 +66,7 @@ export async function POST(request: Request) {
       }
 
       console.error("Telegram API error", {
+        requestId,
         status: response.status,
         errorData,
       });
@@ -78,16 +84,17 @@ export async function POST(request: Request) {
           error: "Failed to send to Telegram",
           ...(description ? { details: description } : {}),
           status: response.status,
+          requestId,
         },
         { status: 502 }
       );
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, requestId });
   } catch (error) {
-    console.error("Error sending to Telegram", error);
+    console.error("Error sending to Telegram", { requestId, error });
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Internal server error", requestId },
       { status: 500 }
     );
   }

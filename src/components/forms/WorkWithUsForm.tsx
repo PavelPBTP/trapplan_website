@@ -57,18 +57,22 @@ export default function WorkWithUsForm() {
         setSubscribe(true);
       } else {
         let serverError: string | undefined;
+        let requestId: string | undefined;
         try {
           const data: unknown = await response.json();
           if (typeof data === "object" && data !== null) {
             const error = (data as { error?: unknown }).error;
             const details = (data as { details?: unknown }).details;
             const status = (data as { status?: unknown }).status;
+            const id = (data as { requestId?: unknown }).requestId;
 
             const parts: string[] = [];
             if (typeof error === "string") parts.push(error);
             if (typeof details === "string") parts.push(details);
             if (typeof status === "number") parts.push(`(${status})`);
             serverError = parts.length ? parts.join(" ") : undefined;
+
+            if (typeof id === "string" && id.trim()) requestId = id.trim();
           }
         } catch {
           serverError = undefined;
@@ -77,7 +81,8 @@ export default function WorkWithUsForm() {
         if (process.env.NODE_ENV !== "production" && serverError) {
           setStatusMessage(serverError);
         } else {
-          setStatusMessage(t(locale, "work_with_us_form.error_generic"));
+          const base = t(locale, "work_with_us_form.error_generic");
+          setStatusMessage(requestId ? `${base} (Error ID: ${requestId})` : base);
         }
       }
     } catch {
