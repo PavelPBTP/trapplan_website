@@ -851,7 +851,16 @@ export type CopyKey =
   | "form.get_a_quote.submit_send"
   | "form.get_a_quote.success"
   | "form.get_a_quote.error_generic"
-  | "form.get_a_quote.error_network";
+  | "form.get_a_quote.error_network"
+  | "blog_quote_banner.banner.title"
+  | "blog_quote_banner.banner.subtitle"
+  | "blog_quote_banner.banner.cta"
+  | "blog_quote_banner.modal.title"
+  | "blog_quote_banner.modal.subtitle"
+  | "blog_quote_banner.modal.close"
+  | "blog_quote_banner.success"
+  | "blog_quote_banner.error_generic"
+  | "blog_quote_banner.error_network";
 
 const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
   en: {
@@ -1902,6 +1911,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "form.get_a_quote.success": "Thank you! We'll contact you soon.",
     "form.get_a_quote.error_generic": "Something went wrong. Please try again.",
     "form.get_a_quote.error_network": "Failed to send. Please try again.",
+    "blog_quote_banner.banner.title": "Want help with your game marketing plan",
+    "blog_quote_banner.banner.subtitle": "Send a quick request and we will reply with next steps",
+    "blog_quote_banner.banner.cta": "Get a quote",
+    "blog_quote_banner.modal.title": "Let’s work together",
+    "blog_quote_banner.modal.subtitle": "Share your details and we will reach out",
+    "blog_quote_banner.modal.close": "Close",
+    "blog_quote_banner.success": "Thank you! We'll contact you soon.",
+    "blog_quote_banner.error_generic": "Something went wrong. Please try again.",
+    "blog_quote_banner.error_network": "Failed to send. Please try again.",
   },
   es: {
     "nav.about_us": "Sobre nosotros",
@@ -2183,6 +2201,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "form.get_a_quote.success": "¡Gracias! Te contactaremos pronto.",
     "form.get_a_quote.error_generic": "Algo salió mal. Inténtalo de nuevo.",
     "form.get_a_quote.error_network": "No se pudo enviar. Inténtalo de nuevo.",
+    "blog_quote_banner.banner.title": "¿Necesitas ayuda con tu plan de marketing para tu juego?",
+    "blog_quote_banner.banner.subtitle": "Envía una solicitud rápida y te responderemos con los siguientes pasos",
+    "blog_quote_banner.banner.cta": "Pedir presupuesto",
+    "blog_quote_banner.modal.title": "Trabajemos juntos",
+    "blog_quote_banner.modal.subtitle": "Comparte tus datos y nos pondremos en contacto",
+    "blog_quote_banner.modal.close": "Cerrar",
+    "blog_quote_banner.success": "¡Gracias! Te contactaremos pronto.",
+    "blog_quote_banner.error_generic": "Algo salió mal. Inténtalo de nuevo.",
+    "blog_quote_banner.error_network": "No se pudo enviar. Inténtalo de nuevo.",
   },
   it: {
     "nav.about_us": "Chi siamo",
@@ -2417,6 +2444,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "form.get_a_quote.success": "Grazie! Ti contatteremo presto.",
     "form.get_a_quote.error_generic": "Qualcosa è andato storto. Riprova.",
     "form.get_a_quote.error_network": "Invio non riuscito. Riprova.",
+    "blog_quote_banner.banner.title": "Vuoi aiuto con il piano marketing del tuo gioco?",
+    "blog_quote_banner.banner.subtitle": "Invia una richiesta rapida e ti risponderemo con i prossimi passi",
+    "blog_quote_banner.banner.cta": "Richiedi un preventivo",
+    "blog_quote_banner.modal.title": "Lavoriamo insieme",
+    "blog_quote_banner.modal.subtitle": "Condividi i tuoi dettagli e ti contatteremo",
+    "blog_quote_banner.modal.close": "Chiudi",
+    "blog_quote_banner.success": "Grazie! Ti contatteremo presto.",
+    "blog_quote_banner.error_generic": "Qualcosa è andato storto. Riprova.",
+    "blog_quote_banner.error_network": "Invio non riuscito. Riprova.",
   },
   fr: {
     "nav.about_us": "À propos",
@@ -2512,8 +2548,27 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.influencer_activation.title": "Activation d’influenceurs pour jeux : une couverture qui convertit",
     "seo.influencer_activation.desc":
       "Campagnes influenceurs structurées : sourcing, outreach, coordination, tracking et apprentissages post-campagne. Répétable, mesurable et conçu pour les jeux.",
+    "blog_quote_banner.banner.title": "Besoin d’aide pour ton plan marketing de jeu ?",
+    "blog_quote_banner.banner.subtitle": "Envoie une demande rapide et nous répondrons avec les prochaines étapes",
+    "blog_quote_banner.banner.cta": "Demander un devis",
+    "blog_quote_banner.modal.title": "Travaillons ensemble",
+    "blog_quote_banner.modal.subtitle": "Partage tes informations et nous te recontacterons",
+    "blog_quote_banner.modal.close": "Fermer",
+    "blog_quote_banner.success": "Merci ! Nous te contacterons bientôt.",
+    "blog_quote_banner.error_generic": "Une erreur est survenue. Réessaie.",
+    "blog_quote_banner.error_network": "Échec de l’envoi. Réessaie.",
   },
-  de: {},
+  de: {
+    "blog_quote_banner.banner.title": "Brauchst du Hilfe mit deinem Game-Marketing-Plan?",
+    "blog_quote_banner.banner.subtitle": "Sende eine kurze Anfrage und wir antworten mit den nächsten Schritten",
+    "blog_quote_banner.banner.cta": "Angebot anfordern",
+    "blog_quote_banner.modal.title": "Lass uns zusammenarbeiten",
+    "blog_quote_banner.modal.subtitle": "Teile deine Daten und wir melden uns",
+    "blog_quote_banner.modal.close": "Schließen",
+    "blog_quote_banner.success": "Danke! Wir melden uns bald.",
+    "blog_quote_banner.error_generic": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+    "blog_quote_banner.error_network": "Senden fehlgeschlagen. Bitte erneut versuchen.",
+  },
   zh: {
     "seo.steam_festival_planner.title": "Steam 活动规划器",
     "seo.steam_festival_planner.desc": "浏览 Steam 节日与促销，按类型/题材筛选，并用 AppID 分析匹配适合你游戏的活动。",
@@ -2626,6 +2681,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "form.get_a_quote.success": "感谢！我们会尽快联系你。",
     "form.get_a_quote.error_generic": "出错了，请重试。",
     "form.get_a_quote.error_network": "发送失败，请重试。",
+    "blog_quote_banner.banner.title": "需要帮助制定你的游戏营销计划吗",
+    "blog_quote_banner.banner.subtitle": "发送一个简短请求，我们会回复下一步",
+    "blog_quote_banner.banner.cta": "获取报价",
+    "blog_quote_banner.modal.title": "一起合作吧",
+    "blog_quote_banner.modal.subtitle": "留下你的信息，我们会联系你",
+    "blog_quote_banner.modal.close": "关闭",
+    "blog_quote_banner.success": "感谢！我们会尽快联系你。",
+    "blog_quote_banner.error_generic": "出错了，请重试。",
+    "blog_quote_banner.error_network": "发送失败，请重试。",
   },
 };
 

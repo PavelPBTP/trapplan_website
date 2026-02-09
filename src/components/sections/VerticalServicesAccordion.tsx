@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -77,27 +76,19 @@ export default function VerticalServicesAccordion() {
               const isActive = panel.id === activeId;
 
               return (
-                <motion.div
+                <div
                   key={panel.id}
                   onMouseEnter={() => setActiveId(panel.id)}
                   className="relative flex h-full cursor-pointer select-none flex-col justify-between"
-                  initial={false}
-                  animate={{
-                    width: isActive ? "60%" : "20%",
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
+                  style={{ width: isActive ? "60%" : "20%" }}
                 >
                   <div className="absolute inset-y-0 right-0 w-px bg-black/10" />
 
                   <div className="absolute inset-0">
-                    <motion.div
-                      initial={false}
-                      animate={{ opacity: isActive ? 1 : 0.35 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute inset-0"
+                    <div
+                      className={`absolute inset-0 transition-opacity duration-500 ease-out ${
+                        isActive ? "opacity-100" : "opacity-35"
+                      }`}
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-black/[0.03] via-transparent to-[#FF0A5B]/[0.06]" />
                       <div className="absolute inset-0">
@@ -122,7 +113,7 @@ export default function VerticalServicesAccordion() {
                           </div>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
 
                   <div className="relative z-10 p-8">
@@ -133,14 +124,10 @@ export default function VerticalServicesAccordion() {
                       <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
                     </div>
 
-                    <motion.div
-                      initial={false}
-                      animate={{
-                        opacity: isActive ? 1 : 0,
-                        y: isActive ? 0 : 8,
-                      }}
-                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                      className="mt-6"
+                    <div
+                      className={`mt-6 transition-[opacity,transform] duration-350 ease-out ${
+                        isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                      }`}
                       style={{ pointerEvents: isActive ? "auto" : "none" }}
                     >
                       <h3 className="text-[28px] font-extrabold leading-tight tracking-tight text-black">
@@ -149,13 +136,12 @@ export default function VerticalServicesAccordion() {
                       <p className="mt-4 max-w-md text-[15px] leading-relaxed text-black/60">
                         {panel.description}
                       </p>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                      initial={false}
-                      animate={{ opacity: isActive ? 0 : 1 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="mt-8"
+                    <div
+                      className={`mt-8 transition-opacity duration-250 ease-out ${
+                        isActive ? "opacity-0" : "opacity-100"
+                      }`}
                       style={{ pointerEvents: isActive ? "none" : "auto" }}
                     >
                       <div className="flex h-[320px] items-center justify-center">
@@ -169,9 +155,9 @@ export default function VerticalServicesAccordion() {
                           {panel.title}
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>

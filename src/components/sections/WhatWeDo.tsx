@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
 import { t } from "@/lib/copy";
@@ -45,67 +44,35 @@ function ServiceCard({
   href: string;
   accent?: boolean;
 }) {
-  const cardVariants = {
-    rest: {
-      y: 0,
-      scale: 1,
-      boxShadow: "0 30px 60px rgba(0,0,0,0.06)",
-    },
-    hover: {
-      y: -6,
-      scale: 1.01,
-      boxShadow: "0 40px 80px rgba(0,0,0,0.10)",
-    },
-  } as const;
-
-  const iconVariants = {
-    rest: { scale: 1, backgroundColor: "rgba(244,244,245,1)" },
-    hover: { scale: 1.05, backgroundColor: "rgba(228,228,231,1)" },
-  } as const;
-
-  const arrowVariants = {
-    rest: { rotate: 0, x: 0, y: 0 },
-    hover: { rotate: 12, x: 1, y: -1 },
-  } as const;
-
   return (
-    <motion.a
+    <a
       href={href}
       onClick={(e) => {
         if (href === "#") e.preventDefault();
       }}
-      className={`group relative block h-full rounded-[18px] bg-white px-7 pt-6 pb-7 transition-colors duration-200 ${
+      className={`group relative block h-full rounded-[18px] bg-white px-7 pt-6 pb-7 transition-[transform,box-shadow] duration-200 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_rgba(0,0,0,0.10)] shadow-[0_30px_60px_rgba(0,0,0,0.06)] ${
         accent ? "ring-1 ring-[#FF0A5B]/25" : "ring-1 ring-black/5"
       }`}
-      initial="rest"
-      animate="rest"
-      whileHover="hover"
-      variants={cardVariants}
-      transition={{ type: "spring", stiffness: 320, damping: 24 }}
     >
       <div className="flex items-start justify-between gap-6">
         <h3 className="text-[18px] font-extrabold leading-tight tracking-tight text-black">
           {title}
         </h3>
-        <motion.span
-          className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${
-            accent ? "bg-[#FF0A5B]/10" : "bg-zinc-100"
+        <span
+          className={`inline-flex h-10 w-10 items-center justify-center rounded-full transition-[transform,background-color] duration-200 group-hover:scale-[1.05] ${
+            accent
+              ? "bg-[#FF0A5B]/10 group-hover:bg-[#FF0A5B]/15"
+              : "bg-zinc-100 group-hover:bg-zinc-200"
           }`}
-          variants={iconVariants}
-          transition={{ type: "spring", stiffness: 380, damping: 26 }}
         >
-          <motion.span
-            className="inline-flex text-black"
-            variants={arrowVariants}
-            transition={{ type: "spring", stiffness: 420, damping: 24 }}
-          >
+          <span className="inline-flex text-black transition-transform duration-200 group-hover:rotate-[12deg] group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
             <ArrowIcon />
-          </motion.span>
-        </motion.span>
+          </span>
+        </span>
       </div>
 
       <p className="mt-4 text-[14px] leading-6 text-black/60">{description}</p>
-    </motion.a>
+    </a>
   );
 }
 

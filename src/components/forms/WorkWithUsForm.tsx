@@ -21,6 +21,9 @@ export default function WorkWithUsForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
 
+  const isEmailValid = email.trim().length > 3 && /^\S+@\S+\.\S+$/.test(email.trim());
+  const isFormValid = name.trim().length > 0 && company.trim().length > 0 && isEmailValid;
+
   useEffect(() => {
     if (didPrefillRef.current) return;
     if (typeof window === "undefined") return;
@@ -172,7 +175,7 @@ export default function WorkWithUsForm() {
       <div className="pt-1">
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isFormValid}
           className="h-[52px] w-full rounded-full bg-[#FF0A5B] text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting

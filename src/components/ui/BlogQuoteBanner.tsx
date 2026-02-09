@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
@@ -19,12 +22,21 @@ function Field({ label, type = "text", value, onChange }: { label: string; type?
 }
 
 export default function BlogQuoteBanner() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
+
+  const isEmailValid = email.trim().length > 3 && /^\S+@\S+\.\S+$/.test(email.trim());
+  const isFormValid = name.trim().length > 0 && company.trim().length > 0 && isEmailValid;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,16 +56,16 @@ export default function BlogQuoteBanner() {
       });
 
       if (response.ok) {
-        setMessage("✅ Thank you! We'll contact you soon.");
+        setMessage(t(locale, "blog_quote_banner.success"));
         setName("");
         setCompany("");
         setEmail("");
         setTimeout(() => setOpen(false), 2000);
       } else {
-        setMessage("❌ Something went wrong. Please try again.");
+        setMessage(t(locale, "blog_quote_banner.error_generic"));
       }
     } catch {
-      setMessage("❌ Failed to send. Please try again.");
+      setMessage(t(locale, "blog_quote_banner.error_network"));
     } finally {
       setIsSubmitting(false);
     }
@@ -73,10 +85,10 @@ export default function BlogQuoteBanner() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 lg:px-10">
           <div className="min-w-0">
             <div className="truncate text-[13px] font-semibold text-black">
-              Want help with your game marketing plan
+              {t(locale, "blog_quote_banner.banner.title")}
             </div>
             <div className="truncate text-[12px] font-medium text-black/55">
-              Send a quick request and we will reply with next steps
+              {t(locale, "blog_quote_banner.banner.subtitle")}
             </div>
           </div>
 
@@ -85,7 +97,7 @@ export default function BlogQuoteBanner() {
             onClick={() => setOpen(true)}
             className="shrink-0 rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
           >
-            Get a quote
+            {t(locale, "blog_quote_banner.banner.cta")}
           </button>
         </div>
       </div>
@@ -98,7 +110,7 @@ export default function BlogQuoteBanner() {
         >
           <button
             type="button"
-            aria-label="Close"
+            aria-label={t(locale, "blog_quote_banner.modal.close")}
             className="absolute inset-0 cursor-default"
             onClick={() => setOpen(false)}
           />
@@ -107,10 +119,10 @@ export default function BlogQuoteBanner() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h3 className="text-[22px] font-extrabold leading-none tracking-tight text-black">
-                  Let’s work together
+                  {t(locale, "blog_quote_banner.modal.title")}
                 </h3>
                 <p className="mt-3 text-[13px] font-medium leading-6 text-black/55">
-                  Share your details and we will reach out
+                  {t(locale, "blog_quote_banner.modal.subtitle")}
                 </p>
               </div>
 
@@ -118,16 +130,16 @@ export default function BlogQuoteBanner() {
                 type="button"
                 onClick={() => setOpen(false)}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-black/70 transition-colors hover:bg-zinc-200"
-                aria-label="Close"
+                aria-label={t(locale, "blog_quote_banner.modal.close")}
               >
                 ×
               </button>
             </div>
 
             <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
-              <Field label="Name*" value={name} onChange={(e) => setName(e.target.value)} />
-              <Field label="Company name*" value={company} onChange={(e) => setCompany(e.target.value)} />
-              <Field label="Work Email*" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <Field label={t(locale, "form.get_a_quote.field_name")} value={name} onChange={(e) => setName(e.target.value)} />
+              <Field label={t(locale, "form.get_a_quote.field_company")} value={company} onChange={(e) => setCompany(e.target.value)} />
+              <Field label={t(locale, "form.get_a_quote.field_email")} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
               {message && (
                 <div className="text-[13px] font-medium text-center">
@@ -137,10 +149,12 @@ export default function BlogQuoteBanner() {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !isFormValid}
                 className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,10,91,0.34)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,10,91,0.50)] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Send"}
+                {isSubmitting
+                  ? t(locale, "form.get_a_quote.submit_sending")
+                  : t(locale, "form.get_a_quote.submit_send")}
               </button>
             </form>
           </div>

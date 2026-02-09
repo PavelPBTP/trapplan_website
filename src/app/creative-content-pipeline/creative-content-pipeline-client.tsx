@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,8 +18,6 @@ type FAQItem = {
   q: string;
   a: string;
 };
-
-const EASE = [0.22, 1, 0.36, 1] as const;
 
 function Hero() {
   const pathname = usePathname() || "/";
@@ -219,32 +216,29 @@ function SideBySideFAQ() {
                       className="flex w-full items-center justify-between gap-6 bg-white px-5 py-4 text-left"
                     >
                       <div className="text-[14px] font-extrabold leading-6 text-black">{item.q}</div>
-                      <motion.div
-                        initial={false}
-                        animate={{ rotate: isOpen ? 90 : 0 }}
-                        transition={{ duration: 0.25, ease: EASE }}
-                        className="text-black/50"
+                      <div
+                        className={`text-black/50 transition-transform duration-200 ${isOpen ? "rotate-90" : "rotate-0"}`}
                         aria-hidden="true"
                       >
                         <ArrowRight className="h-4 w-4" />
-                      </motion.div>
+                      </div>
                     </button>
 
-                    <AnimatePresence initial={false}>
-                      {isOpen ? (
-                        <motion.div
-                          key="content"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.35, ease: EASE }}
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div
+                          className={`border-t border-black/10 bg-black/[0.02] px-5 py-4 text-[14px] leading-6 text-black/65 transition-opacity duration-200 ${
+                            isOpen ? "opacity-100" : "opacity-0"
+                          }`}
                         >
-                          <div className="border-t border-black/10 bg-black/[0.02] px-5 py-4 text-[14px] leading-6 text-black/65">
-                            {item.a}
-                          </div>
-                        </motion.div>
-                      ) : null}
-                    </AnimatePresence>
+                          {item.a}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 );
               })}

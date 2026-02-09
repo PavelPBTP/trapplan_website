@@ -4,7 +4,8 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Header from "@/components/layout/Header";
 import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
-import { getRequestLocale } from "@/lib/i18n.server";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 import "./globals.css";
 
@@ -15,6 +16,12 @@ const inter = Inter({
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/")]),
+  ) as Record<string, string>;
+
+  const siteName = t(locale, "seo.site.name");
   const description = t(locale, "seo.site.description");
 
   return {
@@ -24,28 +31,32 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
     },
     title: {
-      default: "TrapPlan",
-      template: "%s | TrapPlan",
+      default: siteName,
+      template: `%s | ${siteName}`,
     },
     description,
+    alternates: {
+      canonical,
+      languages,
+    },
     openGraph: {
       type: "website",
-      url: "https://www.trapplan.com/",
-      siteName: "TrapPlan",
-      title: "TrapPlan",
+      url: canonical,
+      siteName,
+      title: siteName,
       description,
       images: [
         {
           url: "/og",
           width: 1200,
           height: 630,
-          alt: "TrapPlan",
+          alt: siteName,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "TrapPlan",
+      title: siteName,
       description,
       images: ["/og"],
     },
