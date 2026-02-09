@@ -233,12 +233,12 @@ export default function CardArticle({
                 src={cover.src}
                 alt=""
                 fill
-                className="object-cover blur-2xl scale-110 opacity-100"
+                className="object-cover blur-xl scale-110 brightness-125 saturate-125"
                 sizes="100vw"
                 priority
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-black/55" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
 
               <div className="absolute inset-6 sm:inset-10 lg:inset-14">
                 <Image
