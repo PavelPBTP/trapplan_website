@@ -2041,6 +2041,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "paid_ads_setup.ui.section4.step4.text":
       "Tienes acceso completo y una configuración clara que puedes gestionar.",
     "paid_ads_setup.ui.section4.cta": "Empecemos",
+    "seo.site.name": "TrapPlan",
     "seo.site.description": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con marketing basado en rendimiento.",
     "seo.about.title": "Sobre nosotros",
     "seo.about.desc": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con sistemas de marketing basados en rendimiento.",
@@ -2285,6 +2286,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Gameplay Trailer",
     "packages.card.gameplay_trailer.desc":
       "Trailer gameplay completo e di alta qualità realizzato per il tuo gioco. Storytelling chiaro, capture curata, ritmo, editing e consegna pronta per Steam, YouTube e distribuzione media.",
+    "seo.site.name": "TrapPlan",
     "seo.site.description": "TrapPlan aiuta gli studi di videogiochi a far crescere wishlist e vendite con marketing performance-driven.",
     "seo.about.title": "Chi siamo",
     "seo.about.desc": "TrapPlan aiuta gli studi di videogiochi a far crescere wishlist e vendite con sistemi di marketing basati sulle performance.",
@@ -2528,6 +2530,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Trailer de gameplay",
     "packages.card.gameplay_trailer.desc":
       "Un trailer gameplay complet, premium, conçu pour votre jeu. Storytelling clair, capture soignée, rythme, montage et livraison prête pour Steam, YouTube et la distribution média.",
+    "seo.site.name": "TrapPlan",
     "seo.site.description": "TrapPlan aide les studios à augmenter les wishlists et les ventes grâce à un marketing orienté performance.",
     "seo.about.title": "À propos",
     "seo.about.desc": "TrapPlan aide les studios à augmenter les wishlists et les ventes avec des systèmes marketing orientés performance.",
@@ -2545,9 +2548,49 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.pr_starter_pack.desc":
       "PR pour indés : communiqué lisible, pitches ciblés, relances et liste de contacts. Pour crédibilité et wishlists Steam.",
     "seo.tiktok_20.title": "Pack TikTok : 20 vidéos",
+    "seo.tiktok_20.desc":
+      "20 vidéos TikTok sur mesure pour votre jeu : hooks, scripts, montage et plan de contenu conçu pour la notoriété et les wishlists.",
+    "seo.influencer_micro.title":
+      "Micro-campagne influenceurs : une portée efficiente qui convertit",
+    "seo.influencer_micro.desc":
+      "Sprint d’activation micro-influenceurs pour jeux : sélection de créateurs de niche, outreach, coordination, tracking et rapport clair. Conçu pour une portée utile et des wishlists Steam.",
     "seo.influencer_activation.title": "Activation d’influenceurs pour jeux : une couverture qui convertit",
     "seo.influencer_activation.desc":
       "Campagnes influenceurs structurées : sourcing, outreach, coordination, tracking et apprentissages post-campagne. Répétable, mesurable et conçu pour les jeux.",
+    "seo.paid_ads_setup.title": "Mise en place des ads payantes : lancer correctement",
+    "seo.paid_ads_setup.desc":
+      "On met en place vos campagnes payantes de A à Z : choix des canaux, budget, ciblage et placements créatifs. Après lancement, on vous transmet le compte. Pas de suivi/optimisation continue inclus.",
+    "seo.gameplay_trailer.title": "Trailer de gameplay : un trailer conçu pour convertir",
+    "seo.gameplay_trailer.desc":
+      "Un trailer gameplay complet conçu pour votre jeu : storytelling, capture soignée, rythme, montage et livraison prête pour Steam, YouTube et la distribution média.",
+    "seo.steam_wishlist_calculator.title": "Calculateur de wishlists Steam",
+    "seo.steam_wishlist_calculator.desc":
+      "Estimez les wishlists, le trafic et le budget nécessaires pour atteindre votre objectif de ventes Steam en semaine 1.",
+    "seo.steam_pricing_planner.title": "Planificateur et calculateur de prix Steam",
+    "seo.steam_pricing_planner.desc":
+      "Calculez des prix régionaux Steam recommandés avec la parité de pouvoir d’achat (PPP) et des taux de change en temps réel.",
+    "seo.steam_influencers_planner.title": "Planificateur d’influenceurs Steam",
+    "seo.steam_influencers_planner.desc":
+      "Outil pro pour découvrir des influenceurs gaming YouTube et Twitch selon le genre et des jeux similaires.",
+    "seo.steam_festival_planner.title": "Planificateur de festivals Steam",
+    "seo.steam_festival_planner.desc":
+      "Parcourez les festivals et promotions Steam, filtrez par type et genre, et matchez les événements à votre jeu via une analyse AppID.",
+    "seo.creative_content_pipeline.title":
+      "Pipeline de contenu créatif pour jeux Steam et consoles",
+    "seo.creative_content_pipeline.desc":
+      "Un pipeline continu pour trailers, shorts, assets de store et production itérative — orienté croissance des wishlists et conversion.",
+    "seo.paid_growth.title": "Croissance payante pour jeux Steam et consoles",
+    "seo.paid_growth.desc":
+      "Croissance payante high-ticket : stratégie de canaux, tracking propre, attribution et transfert structuré.",
+    "seo.game_launch_blueprint.title": "Plan de lancement : votre stratégie, nos standards.",
+    "seo.game_launch_blueprint.desc":
+      "Arrêtez de deviner. Nous fournissons le framework marketing utilisé par les éditeurs : standardisé, éprouvé, et prêt à exécuter ensemble.",
+    "seo.games_co_publishing.title": "Co-édition : partenaire marketing & distribution.",
+    "seo.games_co_publishing.desc":
+      "Partenariat de co-édition guidé par le marketing : visibilité, validation de marché, croissance d’audience et performance commerciale.",
+    "seo.blog.masterclass.title": "Steam Next Fest : la masterclass de la découverte",
+    "seo.blog.masterclass.desc":
+      "Une analyse approfondie (2026) de Steam Next Fest : ce qui compte aujourd’hui, les 48 premières heures, les signaux de conversion, la stratégie de page de démo, le timing influenceurs et comment passer du conseil à l’exécution.",
     "blog_quote_banner.banner.title": "Besoin d’aide pour ton plan marketing de jeu ?",
     "blog_quote_banner.banner.subtitle": "Envoie une demande rapide et nous répondrons avec les prochaines étapes",
     "blog_quote_banner.banner.cta": "Demander un devis",
