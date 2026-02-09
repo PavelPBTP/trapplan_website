@@ -36,6 +36,84 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "promote-a-game-without-a-budget-virality-myth",
+    title: "Can you actually promote a game without a budget?",
+    emoji: "🧪",
+    date: "2026-02-09",
+    excerpt:
+      "A card-style breakdown of the ‘zero budget launch’ myth in 2026: what viral potential actually means, why likes don’t equal intent, what ‘free’ promotion really costs, and how to work with Steam’s algorithm without paid ads.",
+    readingMinutes: 9,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cardArticle: {
+      title: "Can you actually promote a game without a budget, relying solely on \"virality\"?",
+      lead: "The dream of organic growth is hitting a wall because the Steam and Console markets have reached saturation where quality alone no longer guarantees visibility. This is the myth of the zero-budget launch — and why ‘virality’ is not a strategy.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "What happened?",
+          answer:
+            "The dream of organic growth is hitting a wall because the Steam and Console markets have reached a saturation point where quality alone is no longer a guarantee of visibility. We are specifically discussing the myth of the zero budget launch and why the term virality is often misused as a substitute for a real marketing strategy.\n\nThis matters now more than ever because the Steam Algorithm has become incredibly efficient at filtering out projects that lack professional polish or clear market positioning. Many developers are still operating under the 2018 playbook, believing a lucky tweet will be enough, but if you don't understand how Metadata affects your standing in the Discovery Queue, you are effectively invisible.",
+        },
+        {
+          id: "viral-potential-2026",
+          question: "First, explain what \"viral potential\" actually means in 2026",
+          answer:
+            "In the current market, viral potential is not about luck but about the mathematical probability of your content being shared and acted upon. It is the specific combination of a unique Hook, high quality visual assets, and a frictionless path to the Steam store page.\n\nReal virality happens when your Core Gameplay Loop is so clearly communicated in a five second clip that a viewer feels compelled to hit the wishlist button immediately. We are moving away from shouting into the void of social media and focusing instead on the technical and psychological triggers that turn a random browser into a long term follower.",
+        },
+        {
+          id: "not-trending-naturally",
+          question: "Am I doing something wrong if my game isn't trending naturally?",
+          answer:
+            "Not necessarily, but you are likely relying on a passive discovery model in an era of active algorithmic competition. If you are waiting for the world to discover your masterpiece without providing the Steam Algorithm with the right signals, such as consistent Wishlist Velocity and a high Conversion Rate (CR), the store will simply stop showing your game to new people.\n\nHigh social media engagement that does not translate into store traffic is a major red flag that your positioning is misaligned. You aren't failing at game design; you are failing at packaging your game for the robots that control the digital shelves.",
+        },
+        {
+          id: "likes-vs-wishlists",
+          question: "Why do my social media posts get likes while my Steam wishlists stay flat?",
+          answer:
+            "The problem is that you are confusing social approval with purchasing intent, and this is a classic trap for indie developers. People might like a pretty GIF of a water shader, but if that post lacks a direct Steam link or clear gameplay context, they won't even realize the product is for sale.\n\nVirality must convert a viewer into a user, and for that to happen, your content must demonstrate the Core Gameplay Loop rather than just an attractive image. If your Conversion Rate from social media to the store is near zero, it means you are selling a beautiful screenshot instead of a compelling gaming experience.",
+        },
+        {
+          id: "free-promotion-cost",
+          question: "How much does \"free\" promotion actually cost?",
+          answer:
+            "When you claim to promote a game without a budget, you are simply spending your most expensive resource: your time, which costs thousands of dollars when calculated in development hours. Instead of spending two weeks manually emailing a list of dead gaming outlets, it is more effective to spend a few hundred dollars on a high quality Capsule Art that will boost your Click Through Rate (CTR) on the Steam home page.\n\nRemember that every hour spent on ineffective guerrilla marketing is an hour stolen from polishing the build, which was supposed to trigger that very virality through the reviews of early players.",
+        },
+        {
+          id: "steam-algorithm-without-ads",
+          question: "How can I make Steam algorithms work for me if I have no money for ads?",
+          answer:
+            "The only legitimate way to hack the system without a budget is to work with tags and maintain high Wishlist Velocity within short timeframes. The Steam Algorithm does not see your social media posts; it only sees incoming traffic and how that traffic behaves on your page, whether they add to cart or leave after three seconds.\n\nIf you can synchronize a major demo update announcement with a thematic festival appearance, you will create an artificial spike in activity that pushes you into the More Like This blocks of major competitors. This is the real virality within the store, built on Steamworks knowledge rather than luck.",
+        },
+        {
+          id: "diy-trailer",
+          question: "Is a DIY trailer a death sentence or a viable tool?",
+          answer:
+            "PC and console audiences are spoiled by high quality editing, and your trailer is literally the face of your product, which a player judges for ten seconds before making a decision. If you cannot hire a professional editor, focus on honest gameplay without long logos and black screens at the start.\n\nPoor sound and shaky camera work will kill interest even in a brilliant mechanic, so a budget for audio cleaning and high quality capture is a basic survival requirement in the store. A player subconsciously projects the trailer quality onto the code quality: if the video stutters, they will assume the game will perform the same way.",
+        },
+        {
+          id: "word-of-mouth",
+          question: "Why isn't word of mouth working even though my friends say the game is great?",
+          answer:
+            "Real word of mouth only starts when a complete stranger is willing to risk their time and money to recommend a game to another stranger. For this to happen, the game must have a clear Hook, that specific unique feature that can be described in a single sentence.\n\nIf you cannot articulate how your game differs from a hundred similar ones on Steam, a random player won't be able to sell it to their acquaintances either. Your job as a marketer is to give people this short and concise thesis rather than hoping they will figure out how to praise your project on their own.",
+        },
+        {
+          id: "stay-sane",
+          question: "How do I stay sane while trying to control all metrics and feedback alone?",
+          answer:
+            "Game marketing in 2026 has become a full scale operational data job where it is easy to get buried in spreadsheets and lose sight of the game itself. This is exactly why Trap Plan exists: it is your navigator in the world of Steam marketing that translates dry Steamworks figures into human language.\n\nInstead of intuitively changing tags or guessing why your CTR dropped, you get a clear roadmap from page audits and Metadata optimization to festival release strategies. We at Trap Plan have already made every possible mistake while working with algorithms, so we help you focus on the most important part, development, while we handle the growth of your Wishlist Velocity.",
+        },
+      ],
+    },
+    content: [
+      {
+        type: "p",
+        text: "This article is presented in a card format. If you are seeing this text only, please open it in the updated blog template.",
+      },
+    ],
+  },
+  {
     slug: "make-a-great-game-avoid-a-flop-on-steam",
     title: "Make a great game. Avoid a flop on Steam.",
     emoji: "🚀",
