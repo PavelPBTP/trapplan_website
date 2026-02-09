@@ -46,6 +46,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/promote-a-game-without-a-budget-cover.png",
     cardArticle: {
       title: "Can you actually promote a game without a budget, relying solely on \"virality\"?",
       lead: "The dream of organic growth is hitting a wall because the Steam and Console markets have reached saturation where quality alone no longer guarantees visibility. This is the myth of the zero-budget launch — and why ‘virality’ is not a strategy.",
