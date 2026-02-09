@@ -22,6 +22,17 @@ export async function generateMetadata({
   const c = CASE_STUDIES.find((x) => x.slug === slug);
   if (!c) return {};
 
+  const localeLabel: Record<string, string> = {
+    en: "Case study",
+    es: "Caso",
+    it: "Caso studio",
+    fr: "Étude de cas",
+    de: "Case Study",
+    zh: "案例",
+  };
+  const label = localeLabel[locale] ?? localeLabel.en;
+  const description = `${c.excerpt} (${label}: ${c.client})`;
+
   const origin = "https://www.trapplan.com";
   const url = new URL(withLocale(locale, `/studios-cases/${slug}`), origin).toString();
   const languages = Object.fromEntries(
@@ -41,7 +52,7 @@ export async function generateMetadata({
 
   return {
     title: c.title,
-    description: c.excerpt,
+    description,
     alternates: {
       canonical: url,
       languages: {
@@ -53,13 +64,13 @@ export async function generateMetadata({
       type: "article",
       url,
       title: c.title,
-      description: c.excerpt,
+      description,
       images,
     },
     twitter: {
       card: "summary_large_image",
       title: c.title,
-      description: c.excerpt,
+      description,
       images: c.coverImage ? [c.coverImage.src] : undefined,
     },
   };

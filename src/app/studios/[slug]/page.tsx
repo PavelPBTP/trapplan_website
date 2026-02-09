@@ -26,8 +26,18 @@ export async function generateMetadata({
     SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, `/studios/${slug}`), origin).toString()]),
   ) as Record<string, string>;
   const excerptUses = STUDIO_PAGES.reduce((acc, p) => acc + (p.excerpt === s.excerpt ? 1 : 0), 0);
-  const description =
+  const baseDescription =
     excerptUses > 1 ? `${s.excerpt} (${s.client} — ${s.title})` : s.excerpt;
+  const localeLabel: Record<string, string> = {
+    en: "Studio page",
+    es: "Página de estudio",
+    it: "Pagina studio",
+    fr: "Page studio",
+    de: "Studio-Seite",
+    zh: "工作室页面",
+  };
+  const label = localeLabel[locale] ?? localeLabel.en;
+  const description = `${baseDescription} (${label})`;
 
   return {
     title: s.title,
