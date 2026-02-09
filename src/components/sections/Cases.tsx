@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -236,6 +235,13 @@ export default function Cases() {
     return () => window.clearTimeout(id);
   }, [index, prevIndex]);
 
+  const ease = "cubic-bezier(0.22, 1, 0.36, 1)";
+  const fadeStyle = {
+    transitionProperty: "opacity",
+    transitionDuration: `${FADE_MS}ms`,
+    transitionTimingFunction: ease,
+  } as const;
+
   return (
     <section className="bg-[#F3F3F3] pb-20">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
@@ -257,13 +263,10 @@ export default function Cases() {
             <div className="relative min-h-[620px]">
               {featured ? (
                 <>
-                  <motion.div
+                  <div
                     key={`featured-prev-${prevIndex}`}
                     className="absolute inset-0"
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 0 }}
-                    transition={{ duration: FADE_MS / 1000, ease: [0.22, 1, 0.36, 1] }}
-                    style={{ pointerEvents: "none" }}
+                    style={{ ...fadeStyle, opacity: prevIndex !== index ? 0 : 1, pointerEvents: "none" }}
                   >
                     {prevIndex !== index ? (
                       <FeaturedCase
@@ -284,15 +287,12 @@ export default function Cases() {
                         ctaLabel={t(locale, "cases.cta_view_case")}
                       />
                     ) : null}
-                  </motion.div>
+                  </div>
 
-                  <motion.div
+                  <div
                     key={`featured-${index}`}
                     className="absolute inset-0"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: FADE_MS / 1000, ease: [0.22, 1, 0.36, 1] }}
-                    style={{ pointerEvents: "auto" }}
+                    style={{ ...fadeStyle, opacity: 1, pointerEvents: "auto" }}
                   >
                     <FeaturedCase
                       title={featured.title}
@@ -307,7 +307,7 @@ export default function Cases() {
                       href={featured.href}
                       ctaLabel={t(locale, "cases.cta_view_case")}
                     />
-                  </motion.div>
+                  </div>
                 </>
               ) : null}
             </div>
@@ -315,13 +315,10 @@ export default function Cases() {
 
           <div className="lg:col-span-6">
             <div className="relative min-h-[620px]">
-              <motion.div
+              <div
                 key={`list-prev-${prevIndex}`}
                 className="absolute inset-0 rounded-[22px] bg-white px-7 pt-1 pb-2 shadow-[0_40px_90px_rgba(0,0,0,0.06)]"
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
-                transition={{ duration: FADE_MS / 1000, ease: [0.22, 1, 0.36, 1] }}
-                style={{ pointerEvents: "none" }}
+                style={{ ...fadeStyle, opacity: prevIndex !== index ? 0 : 1, pointerEvents: "none" }}
               >
                 {prevIndex !== index
                   ? (() => {
@@ -341,14 +338,12 @@ export default function Cases() {
                       />
                     ))
                   : null}
-              </motion.div>
+              </div>
 
-              <motion.div
+              <div
                 key={`list-${index}`}
                 className="absolute inset-0 rounded-[22px] bg-white px-7 pt-1 pb-2 shadow-[0_40px_90px_rgba(0,0,0,0.06)]"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: FADE_MS / 1000, ease: [0.22, 1, 0.36, 1] }}
+                style={{ ...fadeStyle, opacity: 1 }}
               >
                 {listCases.map((c, idx) => (
                   <CaseRow
@@ -360,7 +355,7 @@ export default function Cases() {
                     withDivider={idx !== 0}
                   />
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

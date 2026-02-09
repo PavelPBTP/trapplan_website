@@ -1,12 +1,5 @@
 "use client";
 
-import {
-  AnimatePresence,
-  animate,
-  motion,
-  useMotionValue,
-  type Variants,
-} from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -14,95 +7,26 @@ import { usePathname } from "next/navigation";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
 import { t } from "@/lib/copy";
 
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
-  },
-};
-
-type MarqueeController = {
-  pause: () => void;
-  play: () => void;
-};
-
-function useHorizontalMarquee(direction: "left" | "right", durationSeconds: number) {
-  const x = useMotionValue(0);
+function useMarqueeWidth() {
   const firstSetRef = useRef<HTMLDivElement | null>(null);
-  const animationRef = useRef<ReturnType<typeof animate> | null>(null);
-  const widthRef = useRef<number>(0);
-
-  const start = () => {
-    if (!widthRef.current) return;
-    animationRef.current?.stop();
-
-    const distance = widthRef.current;
-    const current = x.get();
-
-    if (direction === "left") {
-      const normalized = ((current % -distance) + -distance) % -distance;
-      x.set(normalized);
-      animationRef.current = animate(x, [normalized, normalized - distance], {
-        duration: durationSeconds,
-        ease: "linear",
-        repeat: Infinity,
-      });
-      return;
-    }
-
-    const normalized = ((current % distance) + distance) % distance;
-    x.set(normalized);
-    animationRef.current = animate(x, [normalized, normalized + distance], {
-      duration: durationSeconds,
-      ease: "linear",
-      repeat: Infinity,
-    });
-  };
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     if (!firstSetRef.current) return;
-
     const el = firstSetRef.current;
+
     const ro = new ResizeObserver(() => {
       const next = el.getBoundingClientRect().width;
-      if (!next) return;
-      widthRef.current = next;
-      start();
+      if (next) setWidth(next);
     });
-
     ro.observe(el);
-    widthRef.current = el.getBoundingClientRect().width;
-    start();
+    const next = el.getBoundingClientRect().width;
+    if (next) setWidth(next);
 
-    return () => {
-      ro.disconnect();
-      animationRef.current?.stop();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [direction, durationSeconds]);
+    return () => ro.disconnect();
+  }, []);
 
-  const controller: MarqueeController = useMemo(
-    () => ({
-      pause: () => animationRef.current?.pause(),
-      play: () => animationRef.current?.play(),
-    }),
-    [],
-  );
-
-  return { x, firstSetRef, controller };
+  return { firstSetRef, width };
 }
 
 export default function Hero() {
@@ -117,6 +41,14 @@ export default function Hero() {
     [locale],
   );
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const prevPhraseIndexRef = useRef(0);
+  const [prevPhraseIndex, setPrevPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    if (prevPhraseIndexRef.current === phraseIndex) return;
+    setPrevPhraseIndex(prevPhraseIndexRef.current);
+    prevPhraseIndexRef.current = phraseIndex;
+  }, [phraseIndex]);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -142,16 +74,8 @@ export default function Hero() {
     [],
   );
 
-  const {
-    x: marqueeTopX,
-    firstSetRef: marqueeTopFirstSetRef,
-    controller: marqueeTopController,
-  } = useHorizontalMarquee("left", 85);
-  const {
-    x: marqueeBottomX,
-    firstSetRef: marqueeBottomFirstSetRef,
-    controller: marqueeBottomController,
-  } = useHorizontalMarquee("left", 100);
+  const { firstSetRef: marqueeTopFirstSetRef, width: marqueeTopWidth } = useMarqueeWidth();
+  const { firstSetRef: marqueeBottomFirstSetRef, width: marqueeBottomWidth } = useMarqueeWidth();
 
   const topRow = useMemo(() => cards, [cards]);
   const bottomRow = useMemo(
@@ -209,61 +133,51 @@ export default function Hero() {
   return (
     <section className="bg-[#F3F3F3] text-black">
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-10 lg:px-10 lg:pt-20">
+        <style>{`
+          @keyframes tp-marquee {
+            from { transform: translate3d(0,0,0); }
+            to { transform: translate3d(calc(-1 * var(--tp-marquee-distance)),0,0); }
+          }
+        `}</style>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="lg:col-span-5"
-          >
-            <motion.div variants={item}>
+          <div className="lg:col-span-5">
+            <div className="opacity-100 translate-y-0 transition-[opacity,transform] duration-500 ease-out">
               <span className="inline-flex items-center bg-black px-2.5 py-1 text-[13px] font-semibold leading-none text-white">
                 <span className="relative h-[1em] overflow-hidden">
-                  <AnimatePresence mode="wait" initial={false}>
-                    <motion.span
-                      key={phrases[phraseIndex]}
-                      initial={{ y: "100%", opacity: 0 }}
-                      animate={{ y: "0%", opacity: 1 }}
-                      exit={{ y: "-100%", opacity: 0 }}
-                      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                      className="block whitespace-nowrap"
-                    >
-                      {phrases[phraseIndex]}
-                    </motion.span>
-                  </AnimatePresence>
+                  <span
+                    key={phrases[prevPhraseIndex] + "-prev"}
+                    className="absolute inset-0 block whitespace-nowrap opacity-0 -translate-y-full transition-[opacity,transform] duration-300"
+                    aria-hidden
+                  >
+                    {phrases[prevPhraseIndex]}
+                  </span>
+                  <span
+                    key={phrases[phraseIndex]}
+                    className="block whitespace-nowrap transition-[opacity,transform] duration-300 opacity-100 translate-y-0"
+                  >
+                    {phrases[phraseIndex]}
+                  </span>
                 </span>
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              variants={item}
-              className="mt-7 text-[54px] font-extrabold leading-[0.95] tracking-tight sm:text-[64px]"
-            >
+            <h1 className="mt-7 text-[54px] font-extrabold leading-[0.95] tracking-tight sm:text-[64px]">
               Trap Plan
-            </motion.h1>
+            </h1>
 
-            <motion.h2
-              variants={item}
-              className="mt-5 text-[18px] font-extrabold leading-tight tracking-tight"
-            >
+            <h2 className="mt-5 text-[18px] font-extrabold leading-tight tracking-tight">
               {t(locale, "hero.kicker")}
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              variants={item}
-              className="mt-5 max-w-[38ch] text-[14px] leading-6 text-zinc-700"
-            >
+            <p className="mt-5 max-w-[38ch] text-[14px] leading-6 text-zinc-700">
               {t(locale, "hero.subhead")}
-            </motion.p>
+            </p>
 
-            <motion.p
-              variants={item}
-              className="mt-4 max-w-[46ch] text-[14px] leading-6 text-zinc-700"
-            >
+            <p className="mt-4 max-w-[46ch] text-[14px] leading-6 text-zinc-700">
               {t(locale, "hero.body")}
-            </motion.p>
+            </p>
 
-            <motion.div variants={item} className="mt-8">
+            <div className="mt-8">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[14px] font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-[#E6004E] focus:outline-none focus:ring-2 focus:ring-[#FF0A5B] focus:ring-offset-2 focus:ring-offset-[#F3F3F3]"
@@ -273,8 +187,8 @@ export default function Hero() {
                   ↗
                 </span>
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           <div className="relative lg:col-span-7">
             <div className="relative mx-auto h-[380px] max-w-[560px] lg:mx-0 lg:ml-auto">
@@ -283,83 +197,31 @@ export default function Hero() {
                 <div className="absolute -right-6 top-0 h-full w-28 bg-gradient-to-l from-[#F3F3F3] via-[#F3F3F3]/95 to-transparent backdrop-blur-sm" />
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div
                   className="relative h-[320px] w-[520px]"
                   style={{ WebkitMaskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)", maskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)" }}
                 >
                   <div className="flex h-full flex-col justify-center gap-8">
-                    <motion.div style={{ x: marqueeTopX }} className="flex items-center gap-4 will-change-transform">
-                      <div ref={marqueeTopFirstSetRef} className="flex items-center gap-4">
-                        {topRow.map((c) => (
-                          <motion.div
-                            key={c.id}
-                            onHoverStart={() => marqueeTopController.pause()}
-                            onHoverEnd={() => marqueeTopController.play()}
-                            style={{ transform: `rotate(${c.rotate}deg) translateY(${c.y}px)` }}
-                            className={`group relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
-                              c.size === "small"
-                                ? "h-[84px] w-[104px]"
-                                : c.size === "large"
-                                  ? "h-[128px] w-[160px]"
-                                  : "h-[104px] w-[132px]"
-                            }`}
-                          >
-                            <Image
-                              src={c.image}
-                              alt={c.label}
-                              fill
-                              sizes="160px"
-                              className="scale-[1.06] object-cover"
-                            />
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      <div className="flex items-center gap-4">
-                        {topRow.map((c) => (
-                          <motion.div
-                            key={c.id + "-dup"}
-                            onHoverStart={() => marqueeTopController.pause()}
-                            onHoverEnd={() => marqueeTopController.play()}
-                            style={{ transform: `rotate(${c.rotate}deg) translateY(${c.y}px)` }}
-                            className={`group relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
-                              c.size === "small"
-                                ? "h-[84px] w-[104px]"
-                                : c.size === "large"
-                                  ? "h-[128px] w-[160px]"
-                                  : "h-[104px] w-[132px]"
-                            }`}
-                          >
-                            <Image
-                              src={c.image}
-                              alt={c.label}
-                              fill
-                              sizes="160px"
-                              className="scale-[1.06] object-cover"
-                            />
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
-
-                    <motion.div
-                      style={{ x: marqueeBottomX }}
-                      className="flex items-center gap-4 will-change-transform"
+                    <div
+                      className="group flex items-center gap-4 will-change-transform"
+                      style={
+                        marqueeTopWidth
+                          ? {
+                              animation: `tp-marquee 85s linear infinite`,
+                              transform: "translate3d(0,0,0)",
+                              // @ts-expect-error CSS var
+                              "--tp-marquee-distance": `${marqueeTopWidth}px`,
+                            }
+                          : undefined
+                      }
                     >
-                      <div ref={marqueeBottomFirstSetRef} className="flex items-center gap-4">
-                        {bottomRow.map((c) => (
-                          <motion.div
-                            key={c.id + "-b"}
-                            onHoverStart={() => marqueeBottomController.pause()}
-                            onHoverEnd={() => marqueeBottomController.play()}
-                            style={{ transform: `rotate(${-c.rotate}deg) translateY(${-c.y}px)` }}
-                            className={`group relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
+                      <div ref={marqueeTopFirstSetRef} className="flex items-center gap-4 group-hover:[animation-play-state:paused]">
+                        {topRow.map((c) => (
+                          <div
+                            key={c.id}
+                            style={{ transform: `rotate(${c.rotate}deg) translateY(${c.y}px)` }}
+                            className={`relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
                               c.size === "small"
                                 ? "h-[84px] w-[104px]"
                                 : c.size === "large"
@@ -374,18 +236,16 @@ export default function Hero() {
                               sizes="160px"
                               className="scale-[1.06] object-cover"
                             />
-                          </motion.div>
+                          </div>
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-4">
-                        {bottomRow.map((c) => (
-                          <motion.div
-                            key={c.id + "-b-dup"}
-                            onHoverStart={() => marqueeBottomController.pause()}
-                            onHoverEnd={() => marqueeBottomController.play()}
-                            style={{ transform: `rotate(${-c.rotate}deg) translateY(${-c.y}px)` }}
-                            className={`group relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
+                      <div className="flex items-center gap-4 group-hover:[animation-play-state:paused]">
+                        {topRow.map((c) => (
+                          <div
+                            key={c.id + "-dup"}
+                            style={{ transform: `rotate(${c.rotate}deg) translateY(${c.y}px)` }}
+                            className={`relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
                               c.size === "small"
                                 ? "h-[84px] w-[104px]"
                                 : c.size === "large"
@@ -400,13 +260,75 @@ export default function Hero() {
                               sizes="160px"
                               className="scale-[1.06] object-cover"
                             />
-                          </motion.div>
+                          </div>
                         ))}
                       </div>
-                    </motion.div>
+                    </div>
+
+                    <div
+                      className="group flex items-center gap-4 will-change-transform"
+                      style={
+                        marqueeBottomWidth
+                          ? {
+                              animation: `tp-marquee 100s linear infinite`,
+                              transform: "translate3d(0,0,0)",
+                              // @ts-expect-error CSS var
+                              "--tp-marquee-distance": `${marqueeBottomWidth}px`,
+                            }
+                          : undefined
+                      }
+                    >
+                      <div ref={marqueeBottomFirstSetRef} className="flex items-center gap-4 group-hover:[animation-play-state:paused]">
+                        {bottomRow.map((c) => (
+                          <div
+                            key={c.id + "-b"}
+                            style={{ transform: `rotate(${-c.rotate}deg) translateY(${-c.y}px)` }}
+                            className={`relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
+                              c.size === "small"
+                                ? "h-[84px] w-[104px]"
+                                : c.size === "large"
+                                  ? "h-[128px] w-[160px]"
+                                  : "h-[104px] w-[132px]"
+                            }`}
+                          >
+                            <Image
+                              src={c.image}
+                              alt={c.label}
+                              fill
+                              sizes="160px"
+                              className="scale-[1.06] object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center gap-4 group-hover:[animation-play-state:paused]">
+                        {bottomRow.map((c) => (
+                          <div
+                            key={c.id + "-b-dup"}
+                            style={{ transform: `rotate(${-c.rotate}deg) translateY(${-c.y}px)` }}
+                            className={`relative shrink-0 overflow-hidden rounded-2xl shadow-[0_14px_40px_rgba(0,0,0,0.14)] ${
+                              c.size === "small"
+                                ? "h-[84px] w-[104px]"
+                                : c.size === "large"
+                                  ? "h-[128px] w-[160px]"
+                                  : "h-[104px] w-[132px]"
+                            }`}
+                          >
+                            <Image
+                              src={c.image}
+                              alt={c.label}
+                              fill
+                              sizes="160px"
+                              className="scale-[1.06] object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
