@@ -115,7 +115,8 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "make-a-great-game-avoid-a-flop-on-steam",
-    title: "Make a great game. Avoid a flop on Steam.",
+    title:
+      "Developers say the most important thing is to make a great game. But how do you avoid a total flop on Steam?",
     emoji: "🚀",
     date: "2026-02-09",
     excerpt:
@@ -125,7 +126,8 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
     cardArticle: {
-      title: "Developers say the most important thing is to make a great game. But how do you avoid a total flop on Steam?",
+      title:
+        "Developers say the most important thing is to make a great game. But how do you avoid a total flop on Steam?",
       lead: "And how many wishlists are actually enough? We explain how to build a proper marketing strategy for your project.",
       cards: [
         {
@@ -227,6 +229,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/driving-traffic-but-wishlists-cover.png",
     cardArticle: {
       title: "I am driving traffic but my wishlists are standing still",
       lead: "There is a leak in the funnel somewhere — but where exactly? And how do you properly \"warm up\" a cold audience so the Steam algorithm doesn't decide your game is a lost cause?",
