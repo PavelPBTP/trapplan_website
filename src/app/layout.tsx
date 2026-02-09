@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     openGraph: {
       type: "website",
-      url: "/",
+      url: "https://www.trapplan.com/",
       siteName: "TrapPlan",
       title: "TrapPlan",
       description,

@@ -251,7 +251,7 @@ export default async function TikTokPackage20VideosPage() {
                     alt={t(locale, "tiktok_20.ui.section3.image_alt_01")}
                     width={900}
                     height={900}
-                    quality={95}
+                    quality={85}
                     className="w-[110px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.12)] lg:w-[130px]"
                     style={{ transform: "rotate(-8deg) translateY(10px)" }}
                   />
@@ -260,7 +260,7 @@ export default async function TikTokPackage20VideosPage() {
                     alt={t(locale, "tiktok_20.ui.section3.image_alt_03")}
                     width={900}
                     height={900}
-                    quality={95}
+                    quality={85}
                     className="w-[120px] drop-shadow-[0_24px_60px_rgba(0,0,0,0.14)] lg:w-[145px]"
                     style={{ transform: "rotate(-4deg)" }}
                   />
@@ -269,7 +269,7 @@ export default async function TikTokPackage20VideosPage() {
                     alt={t(locale, "tiktok_20.ui.section3.image_alt_05")}
                     width={900}
                     height={900}
-                    quality={95}
+                    quality={85}
                     className="w-[130px] drop-shadow-[0_28px_70px_rgba(0,0,0,0.16)] lg:w-[160px]"
                     priority
                   />
@@ -278,7 +278,7 @@ export default async function TikTokPackage20VideosPage() {
                     alt={t(locale, "tiktok_20.ui.section3.image_alt_02")}
                     width={900}
                     height={900}
-                    quality={95}
+                    quality={85}
                     className="w-[120px] drop-shadow-[0_24px_60px_rgba(0,0,0,0.14)] lg:w-[145px]"
                     style={{ transform: "rotate(4deg)" }}
                   />
@@ -287,7 +287,7 @@ export default async function TikTokPackage20VideosPage() {
                     alt={t(locale, "tiktok_20.ui.section3.image_alt_04")}
                     width={900}
                     height={900}
-                    quality={95}
+                    quality={85}
                     className="w-[110px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.12)] lg:w-[130px]"
                     style={{ transform: "rotate(8deg) translateY(10px)" }}
                   />

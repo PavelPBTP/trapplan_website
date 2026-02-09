@@ -18,7 +18,6 @@ export default function StructuredData({ locale }: { locale: Locale }) {
     ],
     address: {
       "@type": "PostalAddress",
-      addressCountry: "Global",
     },
     areaServed: "Worldwide",
     serviceType: [
@@ -53,12 +52,10 @@ export default function StructuredData({ locale }: { locale: Locale }) {
     image: "https://www.trapplan.com/images/logo.png",
     "@id": "https://www.trapplan.com",
     url: "https://www.trapplan.com",
-    telephone: "",
     email: "pb@trapplan.com",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressCountry: "Global",
     },
     geo: {
       "@type": "GeoCoordinates",

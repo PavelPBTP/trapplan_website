@@ -121,7 +121,6 @@ export default async function OurCasesPage() {
                       fill
                       sizes="(min-width: 1024px) 600px, 100vw"
                       className="object-cover"
-                      priority
                     />
                     <div className="absolute inset-0 bg-black/10" />
                   </div>
