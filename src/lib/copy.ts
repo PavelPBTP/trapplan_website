@@ -1786,6 +1786,52 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Tráiler de gameplay",
     "packages.card.gameplay_trailer.desc":
       "Un tráiler completo y de alta calidad hecho para tu juego. Storytelling claro, captura pulida, ritmo, edición y entrega lista para Steam, YouTube y distribución a medios.",
+    "paid_ads_setup.ui.hero.title_line_1": "Anuncios de pago.",
+    "paid_ads_setup.ui.hero.title_line_2": "Configura una vez. Lanza limpio.",
+    "paid_ads_setup.ui.hero.body":
+      "Configuramos tus campañas paid de principio a fin: selección de canales, configuración de presupuesto, segmentación y placements creativos. Tras el lanzamiento, te entregamos la cuenta. No incluye monitorización u optimización continua.",
+    "paid_ads_setup.ui.hero.cta": "Empecemos",
+    "paid_ads_setup.ui.hero.price": "Precio: €2 000",
+    "paid_ads_setup.ui.hero.image_alt": "Vista previa de la configuración de anuncios",
+    "paid_ads_setup.ui.section2.title_line_1": "Deja de quemar presupuesto.",
+    "paid_ads_setup.ui.section2.title_line_2": "Arregla la base.",
+    "paid_ads_setup.ui.section2.p1":
+      "La mayoría de campañas paid fallan porque la configuración está mal: tracking incorrecto, estructura equivocada, targeting poco claro y creatividades que no encajan.",
+    "paid_ads_setup.ui.section2.p2":
+      "Dejamos la cuenta configurada como debe ser para que lances con confianza y mantengas el control después del handoff.",
+    "paid_ads_setup.ui.section2.image_alt": "Vista general de la configuración de campaña",
+    "paid_ads_setup.ui.section3.image_alt": "Mockup de configuración de anuncios",
+    "paid_ads_setup.ui.section3.title": "La configuración de anuncios de pago",
+    "paid_ads_setup.ui.section3.bullet.channel_title": "Selección de canales:",
+    "paid_ads_setup.ui.section3.bullet.channel_text":
+      "elegimos las plataformas que encajan con tu audiencia y tu funnel.",
+    "paid_ads_setup.ui.section3.bullet.budget_title": "Configuración de presupuesto:",
+    "paid_ads_setup.ui.section3.bullet.budget_text":
+      "estructuramos el gasto para que sea controlable y medible.",
+    "paid_ads_setup.ui.section3.bullet.targeting_title": "Configuración de targeting:",
+    "paid_ads_setup.ui.section3.bullet.targeting_text":
+      "audiencias, exclusiones e higiene de cuenta.",
+    "paid_ads_setup.ui.section3.bullet.creative_title": "Placement creativo:",
+    "paid_ads_setup.ui.section3.bullet.creative_text":
+      "formatos y ubicaciones correctas por canal.",
+    "paid_ads_setup.ui.section3.bullet.handoff_title": "Handoff:",
+    "paid_ads_setup.ui.section3.bullet.handoff_text":
+      "te entregamos una cuenta limpia lista para operar.",
+    "paid_ads_setup.ui.section3.cta": "Empecemos",
+    "paid_ads_setup.ui.section4.title": "Cómo funciona",
+    "paid_ads_setup.ui.section4.step1.title": "Alcance",
+    "paid_ads_setup.ui.section4.step1.text":
+      "Alineamos objetivos, funnel, presupuesto y limitaciones.",
+    "paid_ads_setup.ui.section4.step2.title": "Configurar",
+    "paid_ads_setup.ui.section4.step2.text":
+      "Configuramos estructura, segmentación, placements y tracking.",
+    "paid_ads_setup.ui.section4.step3.title": "Lanzar",
+    "paid_ads_setup.ui.section4.step3.text":
+      "Te ayudamos a lanzar con los ajustes correctos en su sitio.",
+    "paid_ads_setup.ui.section4.step4.title": "Entrega",
+    "paid_ads_setup.ui.section4.step4.text":
+      "Tienes acceso completo y una configuración clara que puedes gestionar.",
+    "paid_ads_setup.ui.section4.cta": "Empecemos",
     "seo.site.description": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con marketing basado en rendimiento.",
     "seo.about.title": "Sobre nosotros",
     "seo.about.desc": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con sistemas de marketing basados en rendimiento.",
