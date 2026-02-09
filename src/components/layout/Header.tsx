@@ -5,10 +5,14 @@ import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import { withLocale, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 
-const SERVICES_DROPDOWN_LINKS = PACKAGES.map((p) => ({
-  label: p.title.replace(/\n/g, " "),
-  href: p.href,
-}));
+const COPY_BY_HREF: Record<string, string> = {
+  "/reddit-launch-support": "packages.card.reddit.title",
+  "/pr-starter-pack": "packages.card.pr_starter.title",
+  "/influencer-micro-campaign": "packages.card.influencer_micro.title",
+  "/tiktok-package-20-videos": "packages.card.tiktok_20.title",
+  "/paid-ads-setup": "packages.card.paid_ads_setup.title",
+  "/gameplay-trailer": "packages.card.gameplay_trailer.title",
+};
 
 function LinkedInIcon() {
   return (
@@ -60,6 +64,15 @@ function MailIcon() {
 }
 
 export default function Header({ locale }: { locale: Locale }) {
+  const servicesDropdownLinks = PACKAGES.map((p) => {
+    const key = COPY_BY_HREF[p.href];
+    const label = key ? t(locale, key as any) : p.title;
+    return {
+      label: label.replace(/\n/g, " "),
+      href: p.href,
+    };
+  });
+
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur">
       <div className="border-b border-black/10">
@@ -92,7 +105,7 @@ export default function Header({ locale }: { locale: Locale }) {
                 </Link>
                 <div className="pointer-events-none absolute left-0 top-full z-50 pt-3 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
                   <div className="w-[280px] rounded-2xl border border-black/10 bg-white p-2 shadow-lg">
-                    {SERVICES_DROPDOWN_LINKS.map((item) => (
+                    {servicesDropdownLinks.map((item) => (
                       <Link
                         key={item.label}
                         href={withLocale(locale, item.href)}

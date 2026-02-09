@@ -19,11 +19,11 @@ type FAQItem = {
   a: string;
 };
 
-function Hero() {
+function Hero({ locale }: { locale: "en" | "es" | "it" | "fr" | "de" | "zh" }) {
   const pathname = usePathname() || "/";
   const maybeLocale = pathname.split("/").filter(Boolean)[0];
-  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
-  const formHref = withLocale(locale, "/form");
+  const resolvedLocale = isLocale(maybeLocale) ? maybeLocale : locale;
+  const formHref = withLocale(resolvedLocale, "/form");
   return (
     <section className="mx-auto max-w-6xl px-6 pt-10 pb-10 lg:px-10 lg:pt-14">
       <div className="rounded-[28px] bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]">
@@ -31,14 +31,14 @@ function Hero() {
           <div className="lg:col-span-6">
             <div className="flex items-center gap-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-black/50">
               <span className="h-[8px] w-[8px] rounded-full bg-[#FF0A5B]" />
-              Global Service
+              {t(resolvedLocale, "paid_growth.ui.hero.kicker")}
             </div>
 
             <h1 className="mt-4 text-[44px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[56px]">
-              Paid Growth
+              {t(resolvedLocale, "paid_growth.ui.hero.title")}
             </h1>
             <p className="mt-4 max-w-[70ch] text-[14px] leading-6 text-black/60">
-              Paid growth for Steam and Console games. We define channel strategy, set up tracking and attribution, and deliver a clean handoff your team can run.
+              {t(resolvedLocale, "paid_growth.ui.hero.body")}
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
@@ -46,11 +46,13 @@ function Hero() {
                 href={formHref}
                 className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.30)] transition-colors hover:bg-[#E6004E]"
               >
-                Book a Strategy Call
+                {t(resolvedLocale, "paid_growth.ui.hero.cta")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
 
-              <div className="text-[13px] font-semibold text-black/60">Steam and Console only</div>
+              <div className="text-[13px] font-semibold text-black/60">
+                {t(resolvedLocale, "paid_growth.ui.hero.note")}
+              </div>
             </div>
           </div>
 
@@ -59,7 +61,7 @@ function Hero() {
               <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_25%_25%,rgba(255,10,91,0.14),transparent_58%),radial-gradient(circle_at_70%_70%,rgba(0,0,0,0.08),transparent_60%)]" />
               <Image
                 src="/images/PaidHero.avif"
-                alt={t(locale, "paid_growth.ui.hero.image_alt")}
+                alt={t(resolvedLocale, "paid_growth.ui.hero.image_alt")}
                 fill
                 sizes="(max-width: 1024px) 92vw, 520px"
                 className="object-contain opacity-90"
@@ -73,44 +75,41 @@ function Hero() {
   );
 }
 
-function CoreValueBlocks() {
+function CoreValueBlocks({ locale }: { locale: "en" | "es" | "it" | "fr" | "de" | "zh" }) {
   const blocks = useMemo<ValueBlock[]>(
     () => [
       {
-        title: "Channel Strategy",
-        body:
-          "We design a channel mix that matches the Steam and Console funnel. The goal is controlled spend, clean measurement, and channels where games actually win.",
+        title: t(locale, "paid_growth.ui.block1.title"),
+        body: t(locale, "paid_growth.ui.block1.body"),
         bullets: [
-          "Reddit for intent and community adjacency",
-          "YouTube for discovery, long-form, and creators",
-          "X for launch beats and audience targeting",
-          "TikTok for scalable reach and iteration",
+          t(locale, "paid_growth.ui.block1.bullet1"),
+          t(locale, "paid_growth.ui.block1.bullet2"),
+          t(locale, "paid_growth.ui.block1.bullet3"),
+          t(locale, "paid_growth.ui.block1.bullet4"),
         ],
       },
       {
-        title: "Steam and Console Analytics",
-        body:
-          "Paid growth needs measurement that fits the platform reality. We focus on Wishlist growth, UTM discipline, and attribution that makes sense for PC and Console ecosystems.",
+        title: t(locale, "paid_growth.ui.block2.title"),
+        body: t(locale, "paid_growth.ui.block2.body"),
         bullets: [
-          "Wishlist growth and conversion signals",
-          "UTM tracking and source discipline",
-          "Attribution tooling with providers like Gamesight",
-          "Reporting that your team can maintain",
+          t(locale, "paid_growth.ui.block2.bullet1"),
+          t(locale, "paid_growth.ui.block2.bullet2"),
+          t(locale, "paid_growth.ui.block2.bullet3"),
+          t(locale, "paid_growth.ui.block2.bullet4"),
         ],
       },
       {
-        title: "The Handoff",
-        body:
-          "We build structure your team can run. You get a clean account, clear naming conventions, and a handover that removes guesswork.",
+        title: t(locale, "paid_growth.ui.block3.title"),
+        body: t(locale, "paid_growth.ui.block3.body"),
         bullets: [
-          "Account structure and campaign taxonomy",
-          "Tracking and conversion setup documentation",
-          "Handover call with Q and A",
-          "Clear next steps and operating rhythm",
+          t(locale, "paid_growth.ui.block3.bullet1"),
+          t(locale, "paid_growth.ui.block3.bullet2"),
+          t(locale, "paid_growth.ui.block3.bullet3"),
+          t(locale, "paid_growth.ui.block3.bullet4"),
         ],
       },
     ],
-    [],
+    [locale],
   );
 
   return (
@@ -119,13 +118,13 @@ function CoreValueBlocks() {
         <div>
           <div className="flex items-center gap-3 text-[14px] font-extrabold text-[#FF0A5B]">
             <span className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-            Core Value
+            {t(locale, "paid_growth.ui.core_value.kicker")}
           </div>
           <h2 className="mt-4 text-[38px] font-extrabold leading-[1.02] tracking-tight text-black lg:text-[44px]">
-            Built for Steam and Console marketing.
+            {t(locale, "paid_growth.ui.core_value.title")}
           </h2>
           <p className="mt-4 max-w-[78ch] text-[14px] leading-6 text-black/60">
-            Strategy, tracking discipline, and a setup your team can operate.
+            {t(locale, "paid_growth.ui.core_value.subtitle")}
           </p>
         </div>
 
@@ -151,35 +150,35 @@ function CoreValueBlocks() {
   );
 }
 
-function IndieAccordionFAQ() {
+function IndieAccordionFAQ({ locale }: { locale: "en" | "es" | "it" | "fr" | "de" | "zh" }) {
   const pathname = usePathname() || "/";
   const maybeLocale = pathname.split("/").filter(Boolean)[0];
-  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
-  const formHref = withLocale(locale, "/form");
+  const resolvedLocale = isLocale(maybeLocale) ? maybeLocale : locale;
+  const formHref = withLocale(resolvedLocale, "/form");
   const items = useMemo<FAQItem[]>(
     () => [
       {
-        q: "How do you track performance on Steam and Consoles?",
-        a: "We focus on Wishlist growth signals, UTM discipline, and attribution tooling that fits PC and Console ecosystems. We can work with providers like Gamesight, and we keep reporting maintainable for your team.",
+        q: t(resolvedLocale, "paid_growth.ui.faq.q1"),
+        a: t(resolvedLocale, "paid_growth.ui.faq.a1"),
       },
       {
-        q: "Which platforms do you focus on?",
-        a: "Reddit, YouTube, X, and TikTok.",
+        q: t(resolvedLocale, "paid_growth.ui.faq.q2"),
+        a: t(resolvedLocale, "paid_growth.ui.faq.a2"),
       },
       {
-        q: "Do you work on pre-launch Wishlist growth?",
-        a: "Yes. We support pre-launch Wishlist growth with measurement-first setup, channel strategy, and structured campaign foundations.",
+        q: t(resolvedLocale, "paid_growth.ui.faq.q3"),
+        a: t(resolvedLocale, "paid_growth.ui.faq.a3"),
       },
       {
-        q: "What is included in the Clean Handoff?",
-        a: "A structured account you fully own, campaign taxonomy, tracking setup documentation, and a handover call. The goal is zero guesswork for your team.",
+        q: t(resolvedLocale, "paid_growth.ui.faq.q4"),
+        a: t(resolvedLocale, "paid_growth.ui.faq.a4"),
       },
       {
-        q: "Are ad creatives included?",
-        a: "No. Creative production is part of the Creative Content Pipeline. We can coordinate requirements, but the service scope here is paid growth strategy and setup.",
+        q: t(resolvedLocale, "paid_growth.ui.faq.q5"),
+        a: t(resolvedLocale, "paid_growth.ui.faq.a5"),
       },
     ],
-    [],
+    [resolvedLocale],
   );
 
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -189,10 +188,10 @@ function IndieAccordionFAQ() {
       <div className="rounded-[28px] bg-white px-6 py-10 shadow-[0_40px_90px_rgba(0,0,0,0.08)] lg:px-10">
         <div className="flex items-center gap-3 text-[14px] font-extrabold text-[#FF0A5B]">
           <span className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-          FAQ
+          {t(resolvedLocale, "paid_growth.ui.faq.kicker")}
         </div>
         <h2 className="mt-4 text-[38px] font-extrabold leading-[1.02] tracking-tight text-black lg:text-[44px]">
-          Paid Growth questions
+          {t(resolvedLocale, "paid_growth.ui.faq.title")}
         </h2>
 
         <div className="mt-8 space-y-3">
@@ -240,7 +239,7 @@ function IndieAccordionFAQ() {
             href={formHref}
             className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-[#E6004E]"
           >
-            Book a Strategy Call
+            {t(resolvedLocale, "paid_growth.ui.faq.cta")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
@@ -250,11 +249,15 @@ function IndieAccordionFAQ() {
 }
 
 export default function PaidGrowthClient() {
+  const pathname = usePathname() || "/";
+  const maybeLocale = pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
+
   return (
     <>
-      <Hero />
-      <CoreValueBlocks />
-      <IndieAccordionFAQ />
+      <Hero locale={locale} />
+      <CoreValueBlocks locale={locale} />
+      <IndieAccordionFAQ locale={locale} />
     </>
   );
 }

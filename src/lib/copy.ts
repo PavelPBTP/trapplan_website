@@ -61,6 +61,7 @@ export type CopyKey =
   | "packages.card.paid_ads_setup.desc"
   | "packages.card.gameplay_trailer.title"
   | "packages.card.gameplay_trailer.desc"
+  | "seo.site.name"
   | "seo.site.description"
   | "seo.about.title"
   | "seo.about.desc"
@@ -663,6 +664,89 @@ export type CopyKey =
   | "blog.inline.video_games_promote_violence"
   | "seo.paid_ads_setup.title"
   | "seo.paid_ads_setup.desc"
+  | "footer.group.ready_packages"
+  | "footer.group.free_tools"
+  | "footer.group.resources"
+  | "footer.group.support"
+  | "footer.link.cookies_policy"
+  | "footer.link.privacy_policy"
+  | "footer.link.no_wishlists"
+  | "home.services.section_title"
+  | "home.services.launch_and_growth"
+  | "paid_growth.ui.hero.kicker"
+  | "paid_growth.ui.hero.title"
+  | "paid_growth.ui.hero.body"
+  | "paid_growth.ui.hero.cta"
+  | "paid_growth.ui.hero.note"
+  | "paid_growth.ui.core_value.kicker"
+  | "paid_growth.ui.core_value.title"
+  | "paid_growth.ui.core_value.subtitle"
+  | "paid_growth.ui.block1.title"
+  | "paid_growth.ui.block1.body"
+  | "paid_growth.ui.block1.bullet1"
+  | "paid_growth.ui.block1.bullet2"
+  | "paid_growth.ui.block1.bullet3"
+  | "paid_growth.ui.block1.bullet4"
+  | "paid_growth.ui.block2.title"
+  | "paid_growth.ui.block2.body"
+  | "paid_growth.ui.block2.bullet1"
+  | "paid_growth.ui.block2.bullet2"
+  | "paid_growth.ui.block2.bullet3"
+  | "paid_growth.ui.block2.bullet4"
+  | "paid_growth.ui.block3.title"
+  | "paid_growth.ui.block3.body"
+  | "paid_growth.ui.block3.bullet1"
+  | "paid_growth.ui.block3.bullet2"
+  | "paid_growth.ui.block3.bullet3"
+  | "paid_growth.ui.block3.bullet4"
+  | "paid_growth.ui.faq.kicker"
+  | "paid_growth.ui.faq.title"
+  | "paid_growth.ui.faq.q1"
+  | "paid_growth.ui.faq.a1"
+  | "paid_growth.ui.faq.q2"
+  | "paid_growth.ui.faq.a2"
+  | "paid_growth.ui.faq.q3"
+  | "paid_growth.ui.faq.a3"
+  | "paid_growth.ui.faq.q4"
+  | "paid_growth.ui.faq.a4"
+  | "paid_growth.ui.faq.q5"
+  | "paid_growth.ui.faq.a5"
+  | "paid_growth.ui.faq.cta"
+  | "creative_content_pipeline.ui.hero.kicker"
+  | "creative_content_pipeline.ui.hero.title"
+  | "creative_content_pipeline.ui.hero.body"
+  | "creative_content_pipeline.ui.hero.cta"
+  | "creative_content_pipeline.ui.hero.note"
+  | "creative_content_pipeline.ui.hero.image_alt"
+  | "creative_content_pipeline.ui.pipeline.kicker"
+  | "creative_content_pipeline.ui.pipeline.title"
+  | "creative_content_pipeline.ui.pipeline.subtitle"
+  | "creative_content_pipeline.ui.block1.title"
+  | "creative_content_pipeline.ui.block1.body"
+  | "creative_content_pipeline.ui.block1.bullet1"
+  | "creative_content_pipeline.ui.block1.bullet2"
+  | "creative_content_pipeline.ui.block1.bullet3"
+  | "creative_content_pipeline.ui.block2.title"
+  | "creative_content_pipeline.ui.block2.body"
+  | "creative_content_pipeline.ui.block2.bullet1"
+  | "creative_content_pipeline.ui.block2.bullet2"
+  | "creative_content_pipeline.ui.block2.bullet3"
+  | "creative_content_pipeline.ui.block3.title"
+  | "creative_content_pipeline.ui.block3.body"
+  | "creative_content_pipeline.ui.block3.bullet1"
+  | "creative_content_pipeline.ui.block3.bullet2"
+  | "creative_content_pipeline.ui.block3.bullet3"
+  | "creative_content_pipeline.ui.faq.side_title"
+  | "creative_content_pipeline.ui.faq.side_body"
+  | "creative_content_pipeline.ui.faq.q1"
+  | "creative_content_pipeline.ui.faq.a1"
+  | "creative_content_pipeline.ui.faq.q2"
+  | "creative_content_pipeline.ui.faq.a2"
+  | "creative_content_pipeline.ui.faq.q3"
+  | "creative_content_pipeline.ui.faq.a3"
+  | "creative_content_pipeline.ui.faq.q4"
+  | "creative_content_pipeline.ui.faq.a4"
+  | "creative_content_pipeline.ui.faq.cta"
   | "seo.gameplay_trailer.title"
   | "seo.gameplay_trailer.desc"
   | "seo.steam_wishlist_calculator.title"
@@ -706,6 +790,7 @@ export type CopyKey =
   | "legal.copyright.section3.title"
   | "legal.copyright.section3.body"
   | "footer.tagline"
+  | "footer.all_rights_reserved"
   | "footer.notice_at_collection"
   | "footer.privacy_choices"
   | "about.hero.title"
@@ -841,6 +926,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Gameplay Trailer",
     "packages.card.gameplay_trailer.desc":
       "A complete, high quality gameplay trailer crafted specifically for your game. Clear storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
+    "seo.site.name": "TrapPlan",
     "seo.site.description": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
     "seo.about.title": "About Us",
     "seo.about.desc": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
@@ -1580,6 +1666,110 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "blog.inline.marketing_for_video_games": "Marketing for video games",
     "blog.inline.work_with_us": "Work with us",
     "blog.inline.video_games_promote_violence": "video games promote violence",
+    "footer.group.ready_packages": "Ready-to-Go Packages",
+    "footer.group.free_tools": "Free Tools",
+    "footer.group.resources": "Resources",
+    "footer.group.support": "Support",
+    "footer.link.cookies_policy": "Cookies Policy",
+    "footer.link.privacy_policy": "Privacy Policy",
+    "footer.link.no_wishlists": "No wishlists on Steam",
+    "home.services.section_title": "Game Marketing Services",
+    "home.services.launch_and_growth": "Launch and Growth",
+    "paid_growth.ui.hero.kicker": "Global Service",
+    "paid_growth.ui.hero.title": "Paid Growth",
+    "paid_growth.ui.hero.body":
+      "Paid growth for Steam and Console games. We define channel strategy, set up tracking and attribution, and deliver a clean handoff your team can run.",
+    "paid_growth.ui.hero.cta": "Book a Strategy Call",
+    "paid_growth.ui.hero.note": "Steam and Console only",
+    "paid_growth.ui.core_value.kicker": "Core Value",
+    "paid_growth.ui.core_value.title": "Built for Steam and Console marketing.",
+    "paid_growth.ui.core_value.subtitle":
+      "Strategy, tracking discipline, and a setup your team can operate.",
+    "paid_growth.ui.block1.title": "Channel Strategy",
+    "paid_growth.ui.block1.body":
+      "We design a channel mix that matches the Steam and Console funnel. The goal is controlled spend, clean measurement, and channels where games actually win.",
+    "paid_growth.ui.block1.bullet1": "Reddit for intent and community adjacency",
+    "paid_growth.ui.block1.bullet2": "YouTube for discovery, long-form, and creators",
+    "paid_growth.ui.block1.bullet3": "X for launch beats and audience targeting",
+    "paid_growth.ui.block1.bullet4": "TikTok for scalable reach and iteration",
+    "paid_growth.ui.block2.title": "Steam and Console Analytics",
+    "paid_growth.ui.block2.body":
+      "Paid growth needs measurement that fits the platform reality. We focus on Wishlist growth, UTM discipline, and attribution that makes sense for PC and Console ecosystems.",
+    "paid_growth.ui.block2.bullet1": "Wishlist growth and conversion signals",
+    "paid_growth.ui.block2.bullet2": "UTM tracking and source discipline",
+    "paid_growth.ui.block2.bullet3": "Attribution tooling with providers like Gamesight",
+    "paid_growth.ui.block2.bullet4": "Reporting that your team can maintain",
+    "paid_growth.ui.block3.title": "The Handoff",
+    "paid_growth.ui.block3.body":
+      "We build structure your team can run. You get a clean account, clear naming conventions, and a handover that removes guesswork.",
+    "paid_growth.ui.block3.bullet1": "Account structure and campaign taxonomy",
+    "paid_growth.ui.block3.bullet2": "Tracking and conversion setup documentation",
+    "paid_growth.ui.block3.bullet3": "Handover call with Q and A",
+    "paid_growth.ui.block3.bullet4": "Clear next steps and operating rhythm",
+    "paid_growth.ui.faq.kicker": "FAQ",
+    "paid_growth.ui.faq.title": "Paid Growth questions",
+    "paid_growth.ui.faq.q1": "How do you track performance on Steam and Consoles?",
+    "paid_growth.ui.faq.a1":
+      "We focus on Wishlist growth signals, UTM discipline, and attribution tooling that fits PC and Console ecosystems. We can work with providers like Gamesight, and we keep reporting maintainable for your team.",
+    "paid_growth.ui.faq.q2": "Which platforms do you focus on?",
+    "paid_growth.ui.faq.a2": "Reddit, YouTube, X, and TikTok.",
+    "paid_growth.ui.faq.q3": "Do you work on pre-launch Wishlist growth?",
+    "paid_growth.ui.faq.a3":
+      "Yes. We support pre-launch Wishlist growth with measurement-first setup, channel strategy, and structured campaign foundations.",
+    "paid_growth.ui.faq.q4": "What is included in the Clean Handoff?",
+    "paid_growth.ui.faq.a4":
+      "A structured account you fully own, campaign taxonomy, tracking setup documentation, and a handover call. The goal is zero guesswork for your team.",
+    "paid_growth.ui.faq.q5": "Are ad creatives included?",
+    "paid_growth.ui.faq.a5":
+      "No. Creative production is part of the Creative Content Pipeline. We can coordinate requirements, but the service scope here is paid growth strategy and setup.",
+    "paid_growth.ui.faq.cta": "Book a Strategy Call",
+    "creative_content_pipeline.ui.hero.kicker": "Global Service",
+    "creative_content_pipeline.ui.hero.title": "Creative Content Pipeline",
+    "creative_content_pipeline.ui.hero.body":
+      "Not a one-off trailer. A system that produces a steady flow of platform-native assets for Steam and consoles, from announcement to post-launch updates.",
+    "creative_content_pipeline.ui.hero.cta": "Book a Strategy Call",
+    "creative_content_pipeline.ui.hero.note": "Steam and Console focus",
+    "creative_content_pipeline.ui.hero.image_alt": "Creative content pipeline illustration",
+    "creative_content_pipeline.ui.pipeline.kicker": "The Pipeline",
+    "creative_content_pipeline.ui.pipeline.title": "A system that keeps shipping.",
+    "creative_content_pipeline.ui.pipeline.subtitle":
+      "The goal is not one deliverable. It is a continuous flow of high-performing assets.",
+    "creative_content_pipeline.ui.block1.title": "Platform-Native Formats",
+    "creative_content_pipeline.ui.block1.body":
+      "The pipeline covers the formats that move real outcomes on Steam and consoles. Each asset is built for the platform where it will live.",
+    "creative_content_pipeline.ui.block1.bullet1": "High-impact trailers for Steam and YouTube",
+    "creative_content_pipeline.ui.block1.bullet2":
+      "Shortform for TikTok and X that matches your game fantasy",
+    "creative_content_pipeline.ui.block1.bullet3":
+      "Steam page creative and store assets that improve conversion",
+    "creative_content_pipeline.ui.block2.title": "Iteration and Testing",
+    "creative_content_pipeline.ui.block2.body":
+      "We do not just produce. We iterate. The pipeline is designed to learn what drives Wishlists and clicks, then repeat what works.",
+    "creative_content_pipeline.ui.block2.bullet1": "Performance-informed creative iterations",
+    "creative_content_pipeline.ui.block2.bullet2": "Clear hypotheses and next versions",
+    "creative_content_pipeline.ui.block2.bullet3": "A feedback loop that compounds over time",
+    "creative_content_pipeline.ui.block3.title": "Consistency",
+    "creative_content_pipeline.ui.block3.body":
+      "A steady beat of updates keeps your game relevant. The system stays active from announcement through post-launch.",
+    "creative_content_pipeline.ui.block3.bullet1": "Structured cadence for beats and updates",
+    "creative_content_pipeline.ui.block3.bullet2": "Always-on production without chaos",
+    "creative_content_pipeline.ui.block3.bullet3": "Assets aligned to your launch calendar",
+    "creative_content_pipeline.ui.faq.side_title": "PC and Console focus",
+    "creative_content_pipeline.ui.faq.side_body":
+      "Answers scoped to Steam and consoles. Built for production speed and consistency.",
+    "creative_content_pipeline.ui.faq.q1": "What assets are included in the pipeline?",
+    "creative_content_pipeline.ui.faq.a1":
+      "Shorts, trailers, Steam page creative, key art adaptations, and high-performing ad creatives.",
+    "creative_content_pipeline.ui.faq.q2": "How do you ensure consistency with the game's art style?",
+    "creative_content_pipeline.ui.faq.a2":
+      "We integrate with your team’s vision. We align on references, tone, and constraints so every asset feels native to the game world.",
+    "creative_content_pipeline.ui.faq.q3": "Is this just for the launch?",
+    "creative_content_pipeline.ui.faq.a3":
+      "No. It is a full pipeline for speed and iteration across platforms, from announcement through post-launch updates.",
+    "creative_content_pipeline.ui.faq.q4": "Can you handle Steam page assets?",
+    "creative_content_pipeline.ui.faq.a4":
+      "Yes. We produce everything from headers to animated GIFs for the description to maximize conversion.",
+    "creative_content_pipeline.ui.faq.cta": "Book a Strategy Call",
     "seo.paid_ads_setup.title": "Paid Ads Setup: Launch Your Campaigns Correctly",
     "seo.paid_ads_setup.desc": "We set up your paid ad campaigns from start to finish: channel selection, budget configuration, targeting setup and creative placement. Once launched, we hand over the account. Ongoing monitoring or optimisation aren’t included.",
     "seo.gameplay_trailer.title": "Gameplay Trailer: A Trailer Built to Convert",
@@ -1641,6 +1831,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "If you believe your copyrighted work is used on this website in a way that constitutes infringement, please contact us and include relevant details.",
     "footer.tagline":
       "From first announcement to global release. Professional grade marketing workflows designed specifically for game studios who want better results and zero chaos.",
+    "footer.all_rights_reserved": "All rights Reserved.",
     "footer.notice_at_collection": "Notice at collection",
     "footer.privacy_choices": "Your Privacy Choices",
     "about.hero.title": "About TrapPlan",
@@ -1921,6 +2112,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Si crees que tu obra con copyright se usa en este sitio de forma que constituya infracción, contáctanos e incluye los detalles relevantes.",
     "footer.tagline":
       "Desde el primer anuncio hasta el lanzamiento global. Flujos de trabajo de marketing de nivel profesional, diseñados específicamente para estudios de videojuegos que quieren mejores resultados y cero caos.",
+    "footer.all_rights_reserved": "Todos los derechos reservados.",
     "footer.notice_at_collection": "Aviso en la recopilación",
     "footer.privacy_choices": "Tus opciones de privacidad",
     "about.hero.title": "Sobre TrapPlan",

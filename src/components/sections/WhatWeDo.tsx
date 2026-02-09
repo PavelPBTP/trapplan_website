@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 function ArrowIcon() {
   return (
@@ -107,23 +110,26 @@ function ServiceCard({
 }
 
 export default function WhatWeDo() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const launchAndGrowth = [
     {
-      title: "Game Launch Blueprint",
-      description:
-        "A clear launch plan for your game: positioning, audience, messaging, timeline and channel mix. Built to reduce chaos, align the team and execute with confidence.",
+      title: t(locale, "structured.service.blueprint.name"),
+      description: t(locale, "structured.service.blueprint.desc"),
       href: "#",
     },
     {
-      title: "Paid Growth",
-      description:
-        "We set up paid campaigns the right way: channel selection, tracking, targeting and structure. Built for control, measurement and clean handoff.",
+      title: t(locale, "structured.service.paid_growth.name"),
+      description: t(locale, "structured.service.paid_growth.desc"),
       href: "#",
     },
     {
-      title: "Creative Content Pipeline",
-      description:
-        "A consistent pipeline for trailers, shortform and store assets. Built for speed, iteration and platform-native distribution.",
+      title: t(locale, "structured.service.creative.name"),
+      description: t(locale, "structured.service.creative.desc"),
       href: "#",
     },
   ];
@@ -132,13 +138,13 @@ export default function WhatWeDo() {
     <section id="services" className="scroll-mt-[84px] bg-[#F3F3F3] pb-20">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <h2 className="pt-16 text-[44px] font-extrabold leading-none tracking-tight text-black">
-          Game Marketing Services
+          {t(locale, "home.services.section_title")}
         </h2>
 
         <div className="mt-10">
           <div className="inline-flex items-center gap-3 text-[14px] font-extrabold text-[#FF0A5B]">
             <span className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-            Launch and Growth
+            {t(locale, "home.services.launch_and_growth")}
           </div>
           <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-3">
             {launchAndGrowth.map((s, idx) => (

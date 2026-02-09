@@ -1,49 +1,49 @@
-export type FooterLink = { label: string; href: string };
+export type FooterLink = { labelKey: string; href: string };
 
 export const FOOTER_LINKS: {
-  title: string;
+  titleKey: string;
   links: FooterLink[];
 }[] = [
   {
-    title: "Ready-to-Go Packages",
+    titleKey: "footer.group.ready_packages",
     links: [
-      { label: "Reddit Launch Support", href: "/reddit-launch-support" },
-      { label: "PR Starter Pack", href: "/pr-starter-pack" },
-      { label: "Influencer Micro Campaign", href: "/influencer-micro-campaign" },
-      { label: "TikTok Package 20 videos", href: "/tiktok-package-20-videos" },
-      { label: "Paid Ads Setup", href: "/paid-ads-setup" },
-      { label: "Gameplay Trailer", href: "/gameplay-trailer" },
+      { labelKey: "packages.card.reddit.title", href: "/reddit-launch-support" },
+      { labelKey: "packages.card.pr_starter.title", href: "/pr-starter-pack" },
+      { labelKey: "packages.card.influencer_micro.title", href: "/influencer-micro-campaign" },
+      { labelKey: "packages.card.tiktok_20.title", href: "/tiktok-package-20-videos" },
+      { labelKey: "packages.card.paid_ads_setup.title", href: "/paid-ads-setup" },
+      { labelKey: "packages.card.gameplay_trailer.title", href: "/gameplay-trailer" },
     ],
   },
   {
-    title: "Free Tools",
+    titleKey: "footer.group.free_tools",
     links: [
-      { label: "Steam Wishlist Calculator", href: "/steam-wishlist-calculator" },
-      { label: "Steam Pricing Planner", href: "/steam-pricing-planner" },
-      { label: "Steam Influencer Planner", href: "/steam-influencers-planner" },
-      { label: "Steam Festival Planner", href: "/steam-festival-planner" },
+      { labelKey: "seo.steam_wishlist_calculator.title", href: "/steam-wishlist-calculator" },
+      { labelKey: "seo.steam_pricing_planner.title", href: "/steam-pricing-planner" },
+      { labelKey: "seo.steam_influencers_planner.title", href: "/steam-influencers-planner" },
+      { labelKey: "seo.steam_festival_planner.title", href: "/steam-festival-planner" },
     ],
   },
   {
-    title: "Resources",
+    titleKey: "footer.group.resources",
     links: [
-      { label: "About Us", href: "/about-us" },
-      { label: "Our Cases", href: "/our-cases" },
-      { label: "Blog", href: "/blog" },
-      { label: "No wishlists on Steam", href: "/no-wishlists-on-steam" },
-      { label: "Work with us", href: "/form" },
+      { labelKey: "nav.about_us", href: "/about-us" },
+      { labelKey: "nav.our_cases", href: "/our-cases" },
+      { labelKey: "nav.blog", href: "/blog" },
+      { labelKey: "footer.link.no_wishlists", href: "/no-wishlists-on-steam" },
+      { labelKey: "cta.work_with_us", href: "/form" },
     ],
   },
   {
-    title: "Support",
+    titleKey: "footer.group.support",
     links: [
-      { label: "Content Rules", href: "/content-rules" },
+      { labelKey: "legal.content_rules.title", href: "/content-rules" },
       {
-        label: "Cookies Policy",
+        labelKey: "footer.link.cookies_policy",
         href: "https://www.iubenda.com/privacy-policy/24291473/cookie-policy",
       },
-      { label: "Copyright Policy", href: "/copyright-policy" },
-      { label: "Privacy Policy", href: "https://www.iubenda.com/privacy-policy/24291473" },
+      { labelKey: "legal.copyright.title", href: "/copyright-policy" },
+      { labelKey: "footer.link.privacy_policy", href: "https://www.iubenda.com/privacy-policy/24291473" },
     ],
   },
 ];

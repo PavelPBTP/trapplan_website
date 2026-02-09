@@ -30,7 +30,7 @@ export default async function Footer() {
           <div className="lg:col-span-3">
             <Image
               src="/images/logo.png"
-              alt="TrapPlan"
+              alt={t(locale, "seo.site.name")}
               width={160}
               height={52}
               className="h-12 w-auto"
@@ -43,18 +43,18 @@ export default async function Footer() {
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
               {FOOTER_LINKS.map((group) => (
-                <div key={group.title}>
+                <div key={group.titleKey}>
                   <div className="text-[14px] font-extrabold text-[#FF0A5B]">
-                    {group.title}
+                    {t(locale, group.titleKey as any)}
                   </div>
                   <ul className="mt-4 space-y-2">
                     {group.links.map((l) => (
-                      <li key={l.label}>
+                      <li key={l.labelKey}>
                         <a
                           href={localizeHref(l.href)}
                           className="text-[14px] font-semibold text-black/80 transition-colors hover:text-black"
                         >
-                          {l.label}
+                          {t(locale, l.labelKey as any).replace(/\n/g, " ")}
                         </a>
                       </li>
                     ))}
@@ -75,7 +75,7 @@ export default async function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-6 border-t border-black/10 pt-8 sm:flex-row sm:items-center">
           <div className="text-[12px] font-semibold text-black/60">
-            © 2026 TrapPlan | All rights Reserved.
+            © 2026 TrapPlan | {t(locale, "footer.all_rights_reserved")}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { isLocale, withLocale } from "@/lib/i18n.shared";
 import { usePathname } from "next/navigation";
+import { t } from "@/lib/copy";
 
 type FlowBlock = {
   title: string;
@@ -33,14 +34,14 @@ function Hero() {
           <div className="lg:col-span-6">
             <div className="flex items-center gap-2 text-[12px] font-extrabold uppercase tracking-[0.18em] text-black/50">
               <span className="h-[8px] w-[8px] rounded-full bg-[#FF0A5B]" />
-              Global Service
+              {t(locale, "creative_content_pipeline.ui.hero.kicker")}
             </div>
 
             <h1 className="mt-4 text-[44px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[56px]">
-              Creative Content Pipeline
+              {t(locale, "creative_content_pipeline.ui.hero.title")}
             </h1>
             <p className="mt-4 max-w-[78ch] text-[14px] leading-6 text-black/60">
-              Not a one-off trailer. A system that produces a steady flow of platform-native assets for Steam and consoles, from announcement to post-launch updates.
+              {t(locale, "creative_content_pipeline.ui.hero.body")}
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
@@ -48,11 +49,13 @@ function Hero() {
                 href={formHref}
                 className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.30)] transition-colors hover:bg-[#E6004E]"
               >
-                Book a Strategy Call
+                {t(locale, "creative_content_pipeline.ui.hero.cta")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
 
-              <div className="text-[13px] font-semibold text-black/60">Steam and Console focus</div>
+              <div className="text-[13px] font-semibold text-black/60">
+                {t(locale, "creative_content_pipeline.ui.hero.note")}
+              </div>
             </div>
           </div>
 
@@ -61,7 +64,7 @@ function Hero() {
               <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_25%_25%,rgba(255,10,91,0.14),transparent_58%),radial-gradient(circle_at_70%_70%,rgba(0,0,0,0.08),transparent_60%)]" />
               <Image
                 src="/images/TrailerHero.avif"
-                alt="Creative content pipeline illustration"
+                alt={t(locale, "creative_content_pipeline.ui.hero.image_alt")}
                 fill
                 sizes="(max-width: 1024px) 92vw, 520px"
                 className="object-cover opacity-90"
@@ -77,40 +80,41 @@ function Hero() {
 }
 
 function PipelineFlow() {
+  const pathname = usePathname() || "/";
+  const maybeLocale = pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
+
   const blocks = useMemo<FlowBlock[]>(
     () => [
       {
-        title: "Platform-Native Formats",
-        body:
-          "The pipeline covers the formats that move real outcomes on Steam and consoles. Each asset is built for the platform where it will live.",
+        title: t(locale, "creative_content_pipeline.ui.block1.title"),
+        body: t(locale, "creative_content_pipeline.ui.block1.body"),
         bullets: [
-          "High-impact trailers for Steam and YouTube",
-          "Shortform for TikTok and X that matches your game fantasy",
-          "Steam page creative and store assets that improve conversion",
+          t(locale, "creative_content_pipeline.ui.block1.bullet1"),
+          t(locale, "creative_content_pipeline.ui.block1.bullet2"),
+          t(locale, "creative_content_pipeline.ui.block1.bullet3"),
         ],
       },
       {
-        title: "Iteration and Testing",
-        body:
-          "We do not just produce. We iterate. The pipeline is designed to learn what drives Wishlists and clicks, then repeat what works.",
+        title: t(locale, "creative_content_pipeline.ui.block2.title"),
+        body: t(locale, "creative_content_pipeline.ui.block2.body"),
         bullets: [
-          "Performance-informed creative iterations",
-          "Clear hypotheses and next versions",
-          "A feedback loop that compounds over time",
+          t(locale, "creative_content_pipeline.ui.block2.bullet1"),
+          t(locale, "creative_content_pipeline.ui.block2.bullet2"),
+          t(locale, "creative_content_pipeline.ui.block2.bullet3"),
         ],
       },
       {
-        title: "Consistency",
-        body:
-          "A steady beat of updates keeps your game relevant. The system stays active from announcement through post-launch.",
+        title: t(locale, "creative_content_pipeline.ui.block3.title"),
+        body: t(locale, "creative_content_pipeline.ui.block3.body"),
         bullets: [
-          "Structured cadence for beats and updates",
-          "Always-on production without chaos",
-          "Assets aligned to your launch calendar",
+          t(locale, "creative_content_pipeline.ui.block3.bullet1"),
+          t(locale, "creative_content_pipeline.ui.block3.bullet2"),
+          t(locale, "creative_content_pipeline.ui.block3.bullet3"),
         ],
       },
     ],
-    [],
+    [locale],
   );
 
   return (
@@ -119,13 +123,13 @@ function PipelineFlow() {
         <div>
           <div className="flex items-center gap-3 text-[14px] font-extrabold text-[#FF0A5B]">
             <span className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-            The Pipeline
+            {t(locale, "creative_content_pipeline.ui.pipeline.kicker")}
           </div>
           <h2 className="mt-4 text-[38px] font-extrabold leading-[1.02] tracking-tight text-black lg:text-[44px]">
-            A system that keeps shipping.
+            {t(locale, "creative_content_pipeline.ui.pipeline.title")}
           </h2>
           <p className="mt-4 max-w-[78ch] text-[14px] leading-6 text-black/60">
-            The goal is not one deliverable. It is a continuous flow of high-performing assets.
+            {t(locale, "creative_content_pipeline.ui.pipeline.subtitle")}
           </p>
         </div>
 
@@ -159,23 +163,23 @@ function SideBySideFAQ() {
   const items = useMemo<FAQItem[]>(
     () => [
       {
-        q: "What assets are included in the pipeline?",
-        a: "Shorts, trailers, Steam page creative, key art adaptations, and high-performing ad creatives.",
+        q: t(locale, "creative_content_pipeline.ui.faq.q1"),
+        a: t(locale, "creative_content_pipeline.ui.faq.a1"),
       },
       {
-        q: "How do you ensure consistency with the game's art style?",
-        a: "We integrate with your team’s vision. We align on references, tone, and constraints so every asset feels native to the game world.",
+        q: t(locale, "creative_content_pipeline.ui.faq.q2"),
+        a: t(locale, "creative_content_pipeline.ui.faq.a2"),
       },
       {
-        q: "Is this just for the launch?",
-        a: "No. It is a full pipeline for speed and iteration across platforms, from announcement through post-launch updates.",
+        q: t(locale, "creative_content_pipeline.ui.faq.q3"),
+        a: t(locale, "creative_content_pipeline.ui.faq.a3"),
       },
       {
-        q: "Can you handle Steam page assets?",
-        a: "Yes. We produce everything from headers to animated GIFs for the description to maximize conversion.",
+        q: t(locale, "creative_content_pipeline.ui.faq.q4"),
+        a: t(locale, "creative_content_pipeline.ui.faq.a4"),
       },
     ],
-    [],
+    [locale],
   );
 
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -194,10 +198,10 @@ function SideBySideFAQ() {
                 FAQ
               </div>
               <div className="mt-4 text-[32px] font-extrabold leading-[1.02] tracking-tight text-black">
-                PC and Console focus
+                {t(locale, "creative_content_pipeline.ui.faq.side_title")}
               </div>
               <p className="mt-4 max-w-[42ch] text-[14px] leading-6 text-black/60">
-                Answers scoped to Steam and consoles. Built for production speed and consistency.
+                {t(locale, "creative_content_pipeline.ui.faq.side_body")}
               </p>
             </div>
           </div>
@@ -251,7 +255,7 @@ function SideBySideFAQ() {
                 href={formHref}
                 className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-[#E6004E]"
               >
-                Book a Strategy Call
+                {t(locale, "creative_content_pipeline.ui.faq.cta")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>
