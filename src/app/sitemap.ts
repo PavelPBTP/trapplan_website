@@ -9,27 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const toAbs = (href: string) => `${siteUrl}${href.startsWith("/") ? href : `/${href}`}`;
   const localize = (path: string) => SUPPORTED_LOCALES.map((l) => withLocale(l, path));
 
-  const serviceRoutes: MetadataRoute.Sitemap = [
-    "performance-based-campaigns",
-    "influencer-marketing-remote-team",
-    "game-key-distibution",
-    "social-media-for-games",
-    "influencer-marketing-for-games",
-    "reddit-campaigns",
-    "go-to-market-strategy",
-    "paid-media",
-    "influencer",
-    "pr-and-communications",
-    "content-production",
-    "social-media",
-  ].flatMap((slug) =>
-    localize(`/services/${slug}`).map((url) => ({
-      url: toAbs(url),
-      changeFrequency: "yearly" as const,
-      priority: 0.2,
-    })),
-  );
-
   const studiosRoutes: MetadataRoute.Sitemap = [
     "influencer-remote-team-for-wargaming",
     "remote-influencer-team-for-gaijin-entertainment",
@@ -152,7 +131,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
-    ...serviceRoutes,
     ...studiosRoutes,
     ...studiosCasesRoutes,
     ...blogRoutes,
