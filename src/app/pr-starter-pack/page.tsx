@@ -3,28 +3,40 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "PR Starter Pack: Get the Coverage Your Game Deserves",
-  description:
-    "PR outreach for indie games. A readable press release, targeted pitches, follow ups, and a clear contact list. Built to earn credibility and Steam Wishlists.",
-  alternates: {
-    canonical: "/pr-starter-pack",
-  },
-  openGraph: {
-    type: "website",
-    url: "/pr-starter-pack",
-    title: "PR Starter Pack: Get the Coverage Your Game Deserves",
-    description:
-      "PR outreach for indie games. A readable press release, targeted pitches, follow ups, and a clear contact list. Built to earn credibility and Steam Wishlists.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PR Starter Pack: Get the Coverage Your Game Deserves",
-    description:
-      "PR outreach for indie games. A readable press release, targeted pitches, follow ups, and a clear contact list. Built to earn credibility and Steam Wishlists.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/pr-starter-pack");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/pr-starter-pack")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.pr_starter_pack.title");
+  const description = t(locale, "seo.pr_starter_pack.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function ArrowUpRightIcon() {
   return (
@@ -89,7 +101,8 @@ function Step({ index, title, text }: { index: string; title: string; text: stri
   );
 }
 
-export default function PRStarterPackPage() {
+export default async function PRStarterPackPage() {
+  const locale = await getRequestLocale();
   return (
     <>
       <main className="bg-[#F3F3F3]">
@@ -98,25 +111,37 @@ export default function PRStarterPackPage() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-6">
                 <h1 className="text-[42px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[48px]">
-                  Stop shouting into the void.
+                  {t(locale, "pr_starter_pack.ui.hero.title_01")}
                   <br />
-                  Get covered by the media.
+                  {t(locale, "pr_starter_pack.ui.hero.title_02")}
                 </h1>
 
                 <p className="mt-5 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                  Media coverage is not just vanity. It is <span className="font-extrabold text-black">credibility</span>. One solid article works like a
-                  <span className="font-extrabold text-black"> seal of approval</span> and pushes more players to hit
-                  <span className="font-extrabold text-black"> Steam Wishlist</span>. This package exists to take PR off your plate while you finish the game.
+                  {t(locale, "pr_starter_pack.ui.hero.body_pre")} {" "}
+                  <span className="font-extrabold text-black">
+                    {t(locale, "pr_starter_pack.ui.hero.body_bold_credibility")}
+                  </span>
+                  . One solid article works like a{" "}
+                  <span className="font-extrabold text-black">
+                    {t(locale, "pr_starter_pack.ui.hero.body_bold_seal")}
+                  </span>{" "}
+                  and pushes more players to hit{" "}
+                  <span className="font-extrabold text-black">
+                    {t(locale, "pr_starter_pack.ui.hero.body_bold_wishlist")}
+                  </span>
+                  . {t(locale, "pr_starter_pack.ui.hero.body_post")}
                 </p>
 
                 <div className="mt-8 flex items-center gap-6">
                   <Link
-                    href="/form"
+                    href={withLocale(locale, "/form")}
                     className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                   >
-                    Let’s Start <ArrowUpRightIcon />
+                    {t(locale, "pr_starter_pack.ui.hero.cta")} <ArrowUpRightIcon />
                   </Link>
-                  <div className="text-[18px] font-extrabold text-black">Price: €3 000</div>
+                  <div className="text-[18px] font-extrabold text-black">
+                    {t(locale, "pr_starter_pack.ui.hero.price")}
+                  </div>
                 </div>
               </div>
 
@@ -125,7 +150,7 @@ export default function PRStarterPackPage() {
                   <div className="overflow-hidden rounded-[24px] bg-black shadow-[0_40px_90px_rgba(0,0,0,0.14)]">
                     <Image
                       src="/images/PRHero.avif"
-                      alt="PR starter pack preview"
+                      alt={t(locale, "pr_starter_pack.ui.hero.image_alt")}
                       width={900}
                       height={720}
                       className="h-auto w-full object-cover"
@@ -146,7 +171,7 @@ export default function PRStarterPackPage() {
                   <div className="relative h-[280px] w-full max-w-[520px] overflow-hidden rounded-[22px]">
                     <Image
                       src="/images/Key Doc.png"
-                      alt="Press kit document preview"
+                      alt={t(locale, "pr_starter_pack.ui.section2.image_alt")}
                       fill
                       sizes="(max-width: 1024px) 90vw, 520px"
                       className="object-contain"
@@ -157,15 +182,15 @@ export default function PRStarterPackPage() {
             </div>
             <div className="lg:col-span-6">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                PR is leverage.
+                {t(locale, "pr_starter_pack.ui.section2.title_01")}
                 <br />
-                Not a lottery.
+                {t(locale, "pr_starter_pack.ui.section2.title_02")}
               </h2>
               <p className="mt-6 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                Most indie teams do not fail at PR because they lack talent. They fail because they send the wrong message, to the wrong people, at the wrong time.
+                {t(locale, "pr_starter_pack.ui.section2.p1")}
               </p>
               <p className="mt-4 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                We package your announcement so it is easy to understand, easy to trust, and easy for a journalist to turn into a story.
+                {t(locale, "pr_starter_pack.ui.section2.p2")}
               </p>
             </div>
           </div>
@@ -181,7 +206,7 @@ export default function PRStarterPackPage() {
                     <div className="relative h-[260px] w-full max-w-[740px] overflow-hidden rounded-[22px] border border-black/5 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.12)]">
                       <Image
                         src="/images/PR.jpg"
-                        alt="PR coverage montage"
+                        alt={t(locale, "pr_starter_pack.ui.section3.image_alt")}
                         fill
                         sizes="(max-width: 1024px) 90vw, 740px"
                         className="object-cover"
@@ -194,47 +219,64 @@ export default function PRStarterPackPage() {
             </div>
 
             <div className="px-6 pt-10 pb-10 lg:px-12">
-              <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">The PR Starter Pack</h2>
+              <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
+                {t(locale, "pr_starter_pack.ui.section3.title")}
+              </h2>
 
               <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Press release that gets read:</span> formatted for journalists who skim hundreds of emails.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "pr_starter_pack.ui.section3.bullet1.title")}
+                    </span>{" "}
+                    {t(locale, "pr_starter_pack.ui.section3.bullet1.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Targeted media list:</span> editors who actually cover your genre and platform.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "pr_starter_pack.ui.section3.bullet2.title")}
+                    </span>{" "}
+                    {t(locale, "pr_starter_pack.ui.section3.bullet2.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Pitch templates:</span> concise emails that land your core angle fast.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "pr_starter_pack.ui.section3.bullet3.title")}
+                    </span>{" "}
+                    {t(locale, "pr_starter_pack.ui.section3.bullet3.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Follow ups:</span> the persistence needed to cut through inbox noise.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "pr_starter_pack.ui.section3.bullet4.title")}
+                    </span>{" "}
+                    {t(locale, "pr_starter_pack.ui.section3.bullet4.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Clear deliverables:</span> you know exactly what to send, to who, and when.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "pr_starter_pack.ui.section3.bullet5.title")}
+                    </span>{" "}
+                    {t(locale, "pr_starter_pack.ui.section3.bullet5.text")}
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Let’s Start <ArrowUpRightIcon />
+                  {t(locale, "pr_starter_pack.ui.section3.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -243,21 +285,39 @@ export default function PRStarterPackPage() {
 
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-16 lg:px-10">
-            <h2 className="text-center text-[18px] font-extrabold text-black">How It Works</h2>
+            <h2 className="text-center text-[18px] font-extrabold text-black">
+              {t(locale, "pr_starter_pack.ui.how.title")}
+            </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-4">
-              <Step index="1" title="Position" text="We define your story angle and what makes the announcement newsworthy." />
-              <Step index="2" title="Write" text="We create a press release and pitch copy that is fast to understand." />
-              <Step index="3" title="Outreach" text="We build a targeted list and send the outreach in the right format." />
-              <Step index="4" title="Follow up" text="We follow up to maximize replies and coverage opportunities." />
+              <Step
+                index="1"
+                title={t(locale, "pr_starter_pack.ui.how.step1.title")}
+                text={t(locale, "pr_starter_pack.ui.how.step1.text")}
+              />
+              <Step
+                index="2"
+                title={t(locale, "pr_starter_pack.ui.how.step2.title")}
+                text={t(locale, "pr_starter_pack.ui.how.step2.text")}
+              />
+              <Step
+                index="3"
+                title={t(locale, "pr_starter_pack.ui.how.step3.title")}
+                text={t(locale, "pr_starter_pack.ui.how.step3.text")}
+              />
+              <Step
+                index="4"
+                title={t(locale, "pr_starter_pack.ui.how.step4.title")}
+                text={t(locale, "pr_starter_pack.ui.how.step4.text")}
+              />
             </div>
 
             <div className="mt-10 flex justify-center">
               <Link
-                href="/form"
+                href={withLocale(locale, "/form")}
                 className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
               >
-                Let’s Start <ArrowUpRightIcon />
+                {t(locale, "pr_starter_pack.ui.how.cta")} <ArrowUpRightIcon />
               </Link>
             </div>
           </div>

@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { isLocale, withLocale } from "@/lib/i18n.shared";
+import { usePathname } from "next/navigation";
 
 type FlowBlock = {
   title: string;
@@ -20,6 +22,10 @@ type FAQItem = {
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 function Hero() {
+  const pathname = usePathname() || "/";
+  const maybeLocale = pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
+  const formHref = withLocale(locale, "/form");
   return (
     <section className="mx-auto max-w-6xl px-6 pt-10 pb-10 lg:px-10 lg:pt-14">
       <div className="rounded-[28px] bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]">
@@ -39,7 +45,7 @@ function Hero() {
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Link
-                href="/form"
+                href={formHref}
                 className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.30)] transition-colors hover:bg-[#E6004E]"
               >
                 Book a Strategy Call
@@ -146,6 +152,10 @@ function PipelineFlow() {
 }
 
 function SideBySideFAQ() {
+  const pathname = usePathname() || "/";
+  const maybeLocale = pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(maybeLocale) ? maybeLocale : "en";
+  const formHref = withLocale(locale, "/form");
   const items = useMemo<FAQItem[]>(
     () => [
       {
@@ -238,7 +248,7 @@ function SideBySideFAQ() {
 
             <div className="mt-8">
               <Link
-                href="/form"
+                href={formHref}
                 className="group inline-flex h-[44px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-[#E6004E]"
               >
                 Book a Strategy Call

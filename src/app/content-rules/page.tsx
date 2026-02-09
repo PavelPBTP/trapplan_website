@@ -1,55 +1,74 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale } from "@/lib/i18n.server";
+import { t } from "@/lib/copy";
+import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 
-export const metadata: Metadata = {
-  title: "Content Rules",
-  description: "Basic rules for using TrapPlan content and assets.",
-  alternates: {
-    canonical: "/content-rules",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/content-rules");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/content-rules")]),
+  ) as Record<string, string>;
 
-export default function ContentRulesPage() {
+  return {
+    title: t(locale, "legal.content_rules.meta_title"),
+    description: t(locale, "legal.content_rules.meta_desc"),
+    alternates: {
+      canonical,
+      languages,
+    },
+  };
+}
+
+export default async function ContentRulesPage() {
+  const locale = await getRequestLocale();
   return (
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
           <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
-            Content Rules
+            {t(locale, "legal.content_rules.title")}
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-7 text-black/65">
-            This page defines how TrapPlan materials can be used.
+            {t(locale, "legal.content_rules.lede")}
           </p>
 
           <div className="mt-10 space-y-8 rounded-2xl border border-black/10 bg-white px-7 py-8">
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">1. Ownership</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.content_rules.section1.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                Unless explicitly stated otherwise, all content on this website is owned by TrapPlan.
+                {t(locale, "legal.content_rules.section1.body")}
               </p>
             </div>
 
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">2. Allowed use</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.content_rules.section2.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                You may share links to our pages and quote short excerpts with proper attribution.
+                {t(locale, "legal.content_rules.section2.body")}
               </p>
             </div>
 
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">3. Prohibited use</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.content_rules.section3.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                You may not copy, republish, or sell our materials as your own. You may not use our
-                brand assets in a way that implies partnership without written permission.
+                {t(locale, "legal.content_rules.section3.body")}
               </p>
             </div>
 
             <div>
-              <h2 className="text-[18px] font-bold tracking-tight text-black">4. Requests</h2>
+              <h2 className="text-[18px] font-bold tracking-tight text-black">
+                {t(locale, "legal.content_rules.section4.title")}
+              </h2>
               <p className="mt-2 text-[15px] leading-7 text-black/65">
-                If you want to reuse materials beyond what is described above, please contact us via
-                the form on this website.
+                {t(locale, "legal.content_rules.section4.body")}
               </p>
             </div>
           </div>

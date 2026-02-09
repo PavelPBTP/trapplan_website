@@ -3,28 +3,40 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Influencer Micro Campaign: Cost-Efficient Reach That Converts",
-  description:
-    "A micro-influencer activation sprint for games: niche creator selection, outreach, coordination, tracking and a clear report. Built for meaningful reach and Steam wishlists.",
-  alternates: {
-    canonical: "/influencer-micro-campaign",
-  },
-  openGraph: {
-    type: "website",
-    url: "/influencer-micro-campaign",
-    title: "Influencer Micro Campaign: Cost-Efficient Reach That Converts",
-    description:
-      "A micro-influencer activation sprint for games: niche creator selection, outreach, coordination, tracking and a clear report. Built for meaningful reach and Steam wishlists.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Influencer Micro Campaign: Cost-Efficient Reach That Converts",
-    description:
-      "A micro-influencer activation sprint for games: niche creator selection, outreach, coordination, tracking and a clear report. Built for meaningful reach and Steam wishlists.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/influencer-micro-campaign");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/influencer-micro-campaign")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.influencer_micro.title");
+  const description = t(locale, "seo.influencer_micro.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function ArrowUpRightIcon() {
   return (
@@ -89,7 +101,8 @@ function Step({ index, title, text }: { index: string; title: string; text: stri
   );
 }
 
-export default function InfluencerMicroCampaignPage() {
+export default async function InfluencerMicroCampaignPage() {
+  const locale = await getRequestLocale();
   return (
     <>
       <main className="bg-[#F3F3F3]">
@@ -98,24 +111,25 @@ export default function InfluencerMicroCampaignPage() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-6">
                 <h1 className="text-[42px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[48px]">
-                  Launch with creators.
+                  {t(locale, "influencer_micro.ui.hero.title_01")}
                   <br />
-                  Without wasting budget.
+                  {t(locale, "influencer_micro.ui.hero.title_02")}
                 </h1>
 
                 <p className="mt-5 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                  Micro creators are where trust lives. We identify the right niche creators, run outreach, coordinate content, and track performance.
-                  Built for meaningful reach and wishlist lift.
+                  {t(locale, "influencer_micro.ui.hero.body_01")} {t(locale, "influencer_micro.ui.hero.body_02")}
                 </p>
 
                 <div className="mt-8 flex items-center gap-6">
                   <Link
-                    href="/form"
+                    href={withLocale(locale, "/form")}
                     className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                   >
-                    Let’s Start <ArrowUpRightIcon />
+                    {t(locale, "influencer_micro.ui.hero.cta")} <ArrowUpRightIcon />
                   </Link>
-                  <div className="text-[18px] font-extrabold text-black">Price: €5 000</div>
+                  <div className="text-[18px] font-extrabold text-black">
+                    {t(locale, "influencer_micro.ui.hero.price")}
+                  </div>
                 </div>
               </div>
 
@@ -124,7 +138,7 @@ export default function InfluencerMicroCampaignPage() {
                   <div className="overflow-hidden rounded-[24px] bg-black shadow-[0_40px_90px_rgba(0,0,0,0.14)]">
                     <Image
                       src="/images/InflHero.avif"
-                      alt="Influencer micro campaign preview"
+                      alt={t(locale, "influencer_micro.ui.hero.image_alt")}
                       width={900}
                       height={720}
                       className="h-auto w-full object-cover"
@@ -145,7 +159,7 @@ export default function InfluencerMicroCampaignPage() {
                   <div className="relative h-[280px] w-full max-w-[520px] overflow-hidden rounded-[22px]">
                     <Image
                       src="/images/Audience.png"
-                      alt="Audience and creator targeting"
+                      alt={t(locale, "influencer_micro.ui.section2.image_alt")}
                       fill
                       sizes="(max-width: 1024px) 90vw, 520px"
                       className="object-contain"
@@ -156,15 +170,15 @@ export default function InfluencerMicroCampaignPage() {
             </div>
             <div className="lg:col-span-6">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                Small creators.
+                {t(locale, "influencer_micro.ui.section2.title_01")}
                 <br />
-                Big intent.
+                {t(locale, "influencer_micro.ui.section2.title_02")}
               </h2>
               <p className="mt-6 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                The win is not raw views. The win is the right people discovering your game with a trusted recommendation.
+                {t(locale, "influencer_micro.ui.section2.p1")}
               </p>
               <p className="mt-4 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                We run a structured micro campaign with targeting, sequencing, and follow ups so you get consistent coverage instead of random luck.
+                {t(locale, "influencer_micro.ui.section2.p2")}
               </p>
             </div>
           </div>
@@ -180,7 +194,7 @@ export default function InfluencerMicroCampaignPage() {
                     <div className="relative h-[260px] w-full max-w-[740px] overflow-hidden rounded-[22px] border border-black/5 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.12)]">
                       <Image
                         src="/images/InflHero.avif"
-                        alt="Influencer content collage"
+                        alt={t(locale, "influencer_micro.ui.section3.image_alt")}
                         fill
                         sizes="(max-width: 1024px) 90vw, 740px"
                         className="object-cover"
@@ -193,47 +207,64 @@ export default function InfluencerMicroCampaignPage() {
             </div>
 
             <div className="px-6 pt-10 pb-10 lg:px-12">
-              <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">The Influencer Micro Campaign</h2>
+              <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
+                {t(locale, "influencer_micro.ui.section3.title")}
+              </h2>
 
               <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Creator list:</span> niche creators mapped by audience fit and style.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "influencer_micro.ui.section3.bullet1.title")}
+                    </span>{" "}
+                    {t(locale, "influencer_micro.ui.section3.bullet1.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Outreach + follow ups:</span> structured sequencing to increase hit rate.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "influencer_micro.ui.section3.bullet2.title")}
+                    </span>{" "}
+                    {t(locale, "influencer_micro.ui.section3.bullet2.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Coordination:</span> scheduling, keys/build delivery, and brief alignment.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "influencer_micro.ui.section3.bullet3.title")}
+                    </span>{" "}
+                    {t(locale, "influencer_micro.ui.section3.bullet3.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Tracking:</span> coverage list, links, basic performance summary.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "influencer_micro.ui.section3.bullet4.title")}
+                    </span>{" "}
+                    {t(locale, "influencer_micro.ui.section3.bullet4.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
-                    <span className="font-extrabold text-black">Clear handoff:</span> you keep the system for the next sprint.
+                    <span className="font-extrabold text-black">
+                      {t(locale, "influencer_micro.ui.section3.bullet5.title")}
+                    </span>{" "}
+                    {t(locale, "influencer_micro.ui.section3.bullet5.text")}
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Let’s Start <ArrowUpRightIcon />
+                  {t(locale, "influencer_micro.ui.section3.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -242,21 +273,39 @@ export default function InfluencerMicroCampaignPage() {
 
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-16 lg:px-10">
-            <h2 className="text-center text-[18px] font-extrabold text-black">How It Works</h2>
+            <h2 className="text-center text-[18px] font-extrabold text-black">
+              {t(locale, "influencer_micro.ui.how.title")}
+            </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-4">
-              <Step index="1" title="Target" text="We define what creator profiles and audiences fit your game." />
-              <Step index="2" title="Outreach" text="We contact creators with clear angles and simple asks." />
-              <Step index="3" title="Activate" text="We coordinate the content drop and asset delivery." />
-              <Step index="4" title="Track" text="We track coverage and summarize results + learnings." />
+              <Step
+                index="1"
+                title={t(locale, "influencer_micro.ui.how.step1.title")}
+                text={t(locale, "influencer_micro.ui.how.step1.text")}
+              />
+              <Step
+                index="2"
+                title={t(locale, "influencer_micro.ui.how.step2.title")}
+                text={t(locale, "influencer_micro.ui.how.step2.text")}
+              />
+              <Step
+                index="3"
+                title={t(locale, "influencer_micro.ui.how.step3.title")}
+                text={t(locale, "influencer_micro.ui.how.step3.text")}
+              />
+              <Step
+                index="4"
+                title={t(locale, "influencer_micro.ui.how.step4.title")}
+                text={t(locale, "influencer_micro.ui.how.step4.text")}
+              />
             </div>
 
             <div className="mt-10 flex justify-center">
               <Link
-                href="/form"
+                href={withLocale(locale, "/form")}
                 className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
               >
-                Let’s Start <ArrowUpRightIcon />
+                {t(locale, "influencer_micro.ui.how.cta")} <ArrowUpRightIcon />
               </Link>
             </div>
           </div>

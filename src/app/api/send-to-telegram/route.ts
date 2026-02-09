@@ -16,13 +16,17 @@ export async function POST(request: Request) {
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-      console.error("Telegram credentials not configured");
+      console.error("Telegram credentials not configured", {
+        hasToken: Boolean(TELEGRAM_BOT_TOKEN),
+        hasChatId: Boolean(TELEGRAM_CHAT_ID),
+      });
       return NextResponse.json(
         { error: "Telegram not configured" },
         { status: 500 }
       );
     }
 
+    const receivedAt = new Date().toISOString();
     const message = `
 🎮 <b>New Lead from TrapPlan</b>
 
@@ -31,7 +35,7 @@ export async function POST(request: Request) {
 📧 <b>Email:</b> ${email}
 📍 <b>Source:</b> ${source || "Website"}
 
-<i>Received at ${new Date().toLocaleString("en-US", { timeZone: "Europe/Belgrade" })}</i>
+<i>Received at ${receivedAt}</i>
     `.trim();
 
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -49,17 +53,39 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Telegram API error:", errorData);
+      let errorData: unknown = null;
+      try {
+        errorData = await response.json();
+      } catch {
+        errorData = null;
+      }
+
+      console.error("Telegram API error", {
+        status: response.status,
+        errorData,
+      });
+
+      const description =
+        typeof errorData === "object" &&
+        errorData !== null &&
+        "description" in errorData &&
+        typeof (errorData as { description?: unknown }).description === "string"
+          ? (errorData as { description: string }).description
+          : undefined;
+
       return NextResponse.json(
-        { error: "Failed to send to Telegram" },
-        { status: 500 }
+        {
+          error: "Failed to send to Telegram",
+          ...(description ? { details: description } : {}),
+          status: response.status,
+        },
+        { status: 502 }
       );
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error sending to Telegram:", error);
+    console.error("Error sending to Telegram", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

@@ -6,6 +6,17 @@
   let db = [];
   let userGenres = [];
 
+  function i18n(key, fallback) {
+    try {
+      const dict =
+        window && window.__TP_I18N && window.__TP_I18N.steam_festival_planner
+          ? window.__TP_I18N.steam_festival_planner
+          : null;
+      if (dict && typeof dict[key] === "string") return dict[key];
+    } catch {}
+    return fallback;
+  }
+
   function esc(s) {
     return String(s || "")
       .replaceAll("&", "&amp;")
@@ -23,20 +34,32 @@
 
       if (!db.length) {
         grid.innerHTML =
-          '<div class="loading">No events loaded. Please try again later.</div>';
+          `<div class="loading">${esc(
+            i18n(
+              "empty_no_events_loaded",
+              "No events loaded. Please try again later.",
+            ),
+          )}</div>`;
         return;
       }
 
       render(db);
     } catch {
       grid.innerHTML =
-        '<div class="loading">Failed to load the events database.</div>';
+        `<div class="loading">${esc(
+          i18n(
+            "empty_failed_load_db",
+            "Failed to load the events database.",
+          ),
+        )}</div>`;
     }
   }
 
   function render(items) {
     if (items.length === 0) {
-      grid.innerHTML = '<div class="loading">No events found</div>';
+      grid.innerHTML = `<div class="loading">${esc(
+        i18n("empty_no_events_found", "No events found"),
+      )}</div>`;
       return;
     }
 
@@ -53,28 +76,35 @@
         const isFree = String(f.price || "").toLowerCase() === "free";
 
         const statusText = isClosed
-          ? "Closed"
+          ? i18n("status_closed", "Closed")
           : days === null
-            ? "Open"
-            : `Closes in ${days} days`;
+            ? i18n("status_open", "Open")
+            : i18n(
+                "status_closes_in_days",
+                `Closes in ${days} days`,
+              ).replace("{days}", String(days));
 
-        const applyText = isClosed ? "Closed" : "Apply for Festival";
+        const applyText = isClosed
+          ? i18n("cta_closed", "Closed")
+          : i18n("cta_apply", "Apply for Festival");
 
         return `
         <div class="tp-card ${match && userGenres.length ? "recommended" : ""}" style="opacity: ${
           isClosed ? 0.6 : 1
         }">
           <div class="tp-price-badge ${isFree ? "free" : ""}">${esc(
-            f.price || "Free",
+            f.price || i18n("fallback_free", "Free"),
           )}</div>
-          ${match && userGenres.length ? '<div class="tp-match-label">MATCH</div>' : ""}
+          ${match && userGenres.length ? `<div class="tp-match-label">${esc(i18n("badge_match", "MATCH"))}</div>` : ""}
           <div>
-            <div class="tp-cat">${esc(f.type || "Event")} / ${esc(
+            <div class="tp-cat">${esc(
+              f.type || i18n("fallback_event", "Event"),
+            )} / ${esc(
               (f.genres || []).join(", "),
             )}</div>
             <h3 class="tp-name">${esc(f.name || "Event")}</h3>
             <div class="tp-status">
-              <span style="color:#888; font-size:12px; display:block">Status</span>
+              <span style="color:#888; font-size:12px; display:block">${esc(i18n("field_status_label", "Status"))}</span>
               <b>${esc(statusText)}</b>
             </div>
           </div>
@@ -134,7 +164,7 @@
       if (!appId) return;
 
       const btn = document.getElementById("tp-analyze-btn");
-      btn.innerText = "Analyzing...";
+      btn.innerText = i18n("analyzing", "Analyzing...");
 
       try {
         const response = await fetch(
@@ -149,16 +179,16 @@
           document.getElementById("tp-game-icon").src = gameData.header_image;
           userGenres = (gameData.genres || []).map((g) => g.description);
           document.getElementById("tp-game-genres").innerText =
-            "Genres: " + userGenres.join(", ");
+            i18n("genres_prefix", "Genres: ") + userGenres.join(", ");
           update();
         } else {
-          alert("Game not found.");
+          alert(i18n("alert_game_not_found", "Game not found."));
         }
       } catch {
-        alert("Game not found.");
+        alert(i18n("alert_game_not_found", "Game not found."));
       }
 
-      btn.innerText = "Analyze";
+      btn.innerText = i18n("analyze", "Analyze");
     });
 
   loadData();

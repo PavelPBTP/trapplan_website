@@ -3,9 +3,40 @@
 import Image from "next/image";
 import Script from "next/script";
 
-export default function SteamFestivalPlannerClient() {
+import { t } from "@/lib/copy";
+
+type Locale = Parameters<typeof t>[0];
+
+export default function SteamFestivalPlannerClient({ locale }: { locale: Locale }) {
   return (
     <>
+      <Script
+        id="tp-i18n-steam-festival-planner"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.__TP_I18N = Object.assign({}, window.__TP_I18N || {}, {\
+  steam_festival_planner: {\
+    empty_no_events_loaded: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.empty.no_events_loaded"))},\
+    empty_failed_load_db: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.empty.failed_load_db"))},\
+    empty_no_events_found: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.empty.no_events_found"))},\
+    status_closed: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.status.closed"))},\
+    status_open: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.status.open"))},\
+    status_closes_in_days: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.status.closes_in_days"))},\
+    field_status_label: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.field.status_label"))},\
+    cta_apply: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.cta.apply"))},\
+    cta_closed: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.cta.closed"))},\
+    badge_match: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.badge.match"))},\
+    fallback_free: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.fallback.free"))},\
+    fallback_event: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.fallback.event"))},\
+    analyzing: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.analyzing"))},\
+    genres_prefix: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.genres_prefix"))},\
+    analyze: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.analyze"))},\
+    alert_game_not_found: ${JSON.stringify(t(locale, "tools.steam_festival_planner.script.alert_game_not_found"))}\
+  }\
+});`,
+        }}
+      />
+
       <Script
         id="steam-festival-planner-ld"
         type="application/ld+json"
@@ -14,10 +45,10 @@ export default function SteamFestivalPlannerClient() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Steam Festival Planner",
+            name: t(locale, "tools.steam_festival_planner.name"),
             url: "https://www.trapplan.com/steam-festival-planner",
             description:
-              "Browse Steam festivals and sales, filter by type and genre, and match events to your game using AppID analysis.",
+              t(locale, "tools.steam_festival_planner.ld.description"),
             applicationCategory: "MarketingApplication",
             operatingSystem: "Web",
             offers: {
@@ -41,19 +72,19 @@ export default function SteamFestivalPlannerClient() {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Home",
+                name: t(locale, "blog.ui.home"),
                 item: "https://www.trapplan.com/",
               },
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Free Tools",
+                name: t(locale, "tools.ui.free_tools"),
                 item: "https://www.trapplan.com/steam-festival-planner",
               },
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "Steam Festival Planner",
+                name: t(locale, "tools.steam_festival_planner.name"),
                 item: "https://www.trapplan.com/steam-festival-planner",
               },
             ],
@@ -62,22 +93,24 @@ export default function SteamFestivalPlannerClient() {
       />
 
       <div className="sr-only">
-        <h1>Steam Festival Planner</h1>
-        <p>
-          Browse Steam festivals and sales. Filter events by type and genre, and enter an AppID to highlight events that fit your game.
-        </p>
+        <h1>{t(locale, "tools.steam_festival_planner.sr.title")}</h1>
+        <p>{t(locale, "tools.steam_festival_planner.sr.body")}</p>
       </div>
 
       <div id="tp-planner-app" suppressHydrationWarning>
         <div className="tp-steam-analyzer">
           <div className="tp-analyzer-content">
-            <h4 className="tp-analyzer-title">Smart Match: Events for your game</h4>
+            <h4 className="tp-analyzer-title">{t(locale, "tools.steam_festival_planner.ui.smart_match.title")}</h4>
             <p style={{ fontSize: 14, color: "#666", marginBottom: 20 }}>
-              Enter a Steam AppID and the planner will highlight festivals that match your game genres.
+              {t(locale, "tools.steam_festival_planner.ui.smart_match.body")}
             </p>
             <div className="tp-input-group">
-              <input type="text" id="tp-steam-id" placeholder="AppID (example: 1086940)" />
-              <button id="tp-analyze-btn">Analyze</button>
+              <input
+                type="text"
+                id="tp-steam-id"
+                placeholder={t(locale, "tools.steam_festival_planner.ui.appid.placeholder")}
+              />
+              <button id="tp-analyze-btn">{t(locale, "tools.steam_festival_planner.ui.analyze")}</button>
             </div>
             <div id="tp-game-preview" className="tp-game-preview" style={{ display: "none" }}>
               <Image
@@ -89,8 +122,8 @@ export default function SteamFestivalPlannerClient() {
                 unoptimized
               />
               <div>
-                <div id="tp-game-name">Game name</div>
-                <div id="tp-game-genres">Genres</div>
+                <div id="tp-game-name">{t(locale, "tools.steam_festival_planner.ui.game_name")}</div>
+                <div id="tp-game-genres">{t(locale, "tools.steam_festival_planner.ui.genres")}</div>
               </div>
             </div>
           </div>
@@ -98,19 +131,33 @@ export default function SteamFestivalPlannerClient() {
 
         <div className="tp-toolbar">
           <div className="tp-search-bar">
-            <input type="text" id="tp-search" placeholder="Search events" />
+            <input
+              type="text"
+              id="tp-search"
+              placeholder={t(locale, "tools.steam_festival_planner.ui.search.placeholder")}
+            />
           </div>
           <div className="tp-filter-chips" id="tp-filters">
-            <button className="chip active" data-filter="all">All events</button>
-            <button className="chip" data-filter="Free">Free</button>
-            <button className="chip" data-filter="Major">Major</button>
-            <button className="chip" data-filter="Themed">Themed</button>
-            <button className="chip" data-filter="Indie">Indie showcases</button>
+            <button className="chip active" data-filter="all">
+              {t(locale, "tools.steam_festival_planner.ui.filters.all")}
+            </button>
+            <button className="chip" data-filter="Free">
+              {t(locale, "tools.steam_festival_planner.ui.filters.free")}
+            </button>
+            <button className="chip" data-filter="Major">
+              {t(locale, "tools.steam_festival_planner.ui.filters.major")}
+            </button>
+            <button className="chip" data-filter="Themed">
+              {t(locale, "tools.steam_festival_planner.ui.filters.themed")}
+            </button>
+            <button className="chip" data-filter="Indie">
+              {t(locale, "tools.steam_festival_planner.ui.filters.indie")}
+            </button>
           </div>
         </div>
 
         <div id="tp-grid" className="tp-grid">
-          <div className="loading">Loading events...</div>
+          <div className="loading">{t(locale, "tools.steam_festival_planner.ui.loading_events")}</div>
         </div>
       </div>
 

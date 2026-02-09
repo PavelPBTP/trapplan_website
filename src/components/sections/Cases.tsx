@@ -3,8 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import { CASE_STUDIES } from "@/lib/data/cases";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 function ArrowUpRightIcon() {
   return (
@@ -43,6 +46,7 @@ function FeaturedCase({
   theme,
   coverImage,
   href,
+  ctaLabel,
 }: {
   title: string;
   date: string;
@@ -55,6 +59,7 @@ function FeaturedCase({
     alt: string;
   };
   href: string;
+  ctaLabel: string;
 }) {
   return (
     <article className="h-full min-h-[620px] overflow-hidden rounded-[28px] bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]">
@@ -105,7 +110,7 @@ function FeaturedCase({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
           >
-            View case study
+            {ctaLabel}
             <ArrowUpRightIcon />
           </a>
         </div>
@@ -155,30 +160,36 @@ function CaseRow({
 }
 
 export default function Cases() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const ROTATE_MS = 9500;
   const FADE_MS = 520;
 
   const METRIC_BY_SLUG: Record<string, string> = {
-    "war-thunder-youtube-europe": "1M+ views per month",
-    "enlisted-twitch-ads": "Reached 1,500+ new players",
-    "crossout-new-players": "Expanded reach in Europe and the US",
-    "war-thunder-performance-based": "Monthly creator activations with KPI focus",
-    "world-of-tanks-usa": "Launched USA campaigns with structured creator delivery",
-    "brief-for-youtube-twitch": "Clear creator direction and execution system",
+    "war-thunder-youtube-europe": t(locale, "cases.metric.war_thunder_youtube_europe"),
+    "enlisted-twitch-ads": t(locale, "cases.metric.enlisted_twitch_ads"),
+    "crossout-new-players": t(locale, "cases.metric.crossout_new_players"),
+    "war-thunder-performance-based": t(locale, "cases.metric.war_thunder_performance_based"),
+    "world-of-tanks-usa": t(locale, "cases.metric.world_of_tanks_usa"),
+    "brief-for-youtube-twitch": t(locale, "cases.metric.brief_for_youtube_twitch"),
   };
 
   const RESULT_BY_SLUG: Record<string, string> = {
-    "enlisted-twitch-ads": "Reached 1,500+ new players",
-    "crossout-new-players": "Expanded reach in Europe and the US",
-    "war-thunder-performance-based": "Monthly creator activations with KPI focus",
-    "world-of-tanks-usa": "Launched USA campaigns with structured creator delivery",
-    "brief-for-youtube-twitch": "Clear creator direction and execution system",
-    "war-thunder-youtube-europe": "1M+ views per month",
+    "enlisted-twitch-ads": t(locale, "cases.result.enlisted_twitch_ads"),
+    "crossout-new-players": t(locale, "cases.result.crossout_new_players"),
+    "war-thunder-performance-based": t(locale, "cases.result.war_thunder_performance_based"),
+    "world-of-tanks-usa": t(locale, "cases.result.world_of_tanks_usa"),
+    "brief-for-youtube-twitch": t(locale, "cases.result.brief_for_youtube_twitch"),
+    "war-thunder-youtube-europe": t(locale, "cases.result.war_thunder_youtube_europe"),
   };
 
   const DESCRIPTION_OVERRIDE_BY_SLUG: Record<string, string> = {
     "war-thunder-youtube-europe":
-      "YouTube advertising campaigns for WarThunder consistently generating over 1,000,000 views per month across key European regions.",
+      t(locale, "cases.desc_override.war_thunder_youtube_europe"),
   };
 
   const [index, setIndex] = useState(0);
@@ -230,10 +241,10 @@ export default function Cases() {
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="pt-10 sm:pt-14">
           <h2 className="text-[44px] font-extrabold leading-none tracking-tight text-black">
-            Case Studies
+            {t(locale, "cases.title")}
           </h2>
           <p className="mt-4 text-[14px] leading-6 text-black/60">
-            Real campaigns for real games.
+            {t(locale, "cases.subtitle")}
           </p>
         </div>
 
@@ -260,7 +271,8 @@ export default function Cases() {
                         date={CASE_STUDIES[prevIndex % total].date}
                         client={CASE_STUDIES[prevIndex % total].client}
                         metric={
-                          METRIC_BY_SLUG[CASE_STUDIES[prevIndex % total].slug] ?? "Case study"
+                          METRIC_BY_SLUG[CASE_STUDIES[prevIndex % total].slug] ??
+                          t(locale, "cases.fallback_metric")
                         }
                         description={
                           DESCRIPTION_OVERRIDE_BY_SLUG[CASE_STUDIES[prevIndex % total].slug] ??
@@ -269,6 +281,7 @@ export default function Cases() {
                         theme={CASE_STUDIES[prevIndex % total].theme}
                         coverImage={CASE_STUDIES[prevIndex % total].coverImage}
                         href={CASE_STUDIES[prevIndex % total].href}
+                        ctaLabel={t(locale, "cases.cta_view_case")}
                       />
                     ) : null}
                   </motion.div>
@@ -285,13 +298,14 @@ export default function Cases() {
                       title={featured.title}
                       date={featured.date}
                       client={featured.client}
-                      metric={METRIC_BY_SLUG[featured.slug] ?? "Case study"}
+                      metric={METRIC_BY_SLUG[featured.slug] ?? t(locale, "cases.fallback_metric")}
                       description={
                         DESCRIPTION_OVERRIDE_BY_SLUG[featured.slug] ?? featured.excerpt
                       }
                       theme={featured.theme}
                       coverImage={featured.coverImage}
                       href={featured.href}
+                      ctaLabel={t(locale, "cases.cta_view_case")}
                     />
                   </motion.div>
                 </>
@@ -358,7 +372,7 @@ export default function Cases() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
           >
-            View all case studies
+            {t(locale, "cases.cta_view_all")}
             <span aria-hidden className="text-[16px] leading-none">
               ↗
             </span>

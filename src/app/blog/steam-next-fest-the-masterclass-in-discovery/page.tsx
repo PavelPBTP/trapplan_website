@@ -1,30 +1,43 @@
 import type { Metadata } from "next";
 
 import CardArticle from "@/components/ui/CardArticle";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Steam Next Fest: The Masterclass in Discovery",
-  description:
-    "A 2026 deep-dive on Steam Next Fest: what matters now, the first 48 hours, conversion signals, demo page strategy, influencer timing, and how to turn guidance into execution.",
-  alternates: {
-    canonical: "/blog/steam-next-fest-the-masterclass-in-discovery",
-  },
-  openGraph: {
-    type: "article",
-    url: "/blog/steam-next-fest-the-masterclass-in-discovery",
-    title: "Steam Next Fest: The Masterclass in Discovery",
-    description:
-      "A 2026 deep-dive on Steam Next Fest: what matters now, the first 48 hours, conversion signals, demo page strategy, influencer timing, and how to turn guidance into execution.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Steam Next Fest: The Masterclass in Discovery",
-    description:
-      "A 2026 deep-dive on Steam Next Fest: what matters now, the first 48 hours, conversion signals, demo page strategy, influencer timing, and how to turn guidance into execution.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/blog/steam-next-fest-the-masterclass-in-discovery");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/blog/steam-next-fest-the-masterclass-in-discovery")]),
+  ) as Record<string, string>;
 
-export default function SteamNextFestMasterclassPage() {
+  const title = t(locale, "seo.blog.masterclass.title");
+  const description = t(locale, "seo.blog.masterclass.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
+export default async function SteamNextFestMasterclassPage() {
+  const locale = await getRequestLocale();
   const coverPath = "/images/steam-next-fest-the-masterclass-in-discovery.png";
 
   const sections = [
@@ -125,8 +138,8 @@ export default function SteamNextFestMasterclassPage() {
   ];
 
   const data = {
-    title: metadata.title?.toString() ?? "Steam Next Fest: The Masterclass in Discovery",
-    lead: metadata.description?.toString(),
+    title: t(locale, "seo.blog.masterclass.title"),
+    lead: t(locale, "seo.blog.masterclass.desc"),
     cards: sections.map((s, idx) => ({
       id: `step-${idx + 1}`,
       question: s.title,

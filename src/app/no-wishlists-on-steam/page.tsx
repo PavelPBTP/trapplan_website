@@ -2,16 +2,32 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "No Wishlists on Steam",
-  description: "What to do when your Steam page gets traffic but wishlists do not grow.",
-  alternates: {
-    canonical: "/no-wishlists-on-steam",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/no-wishlists-on-steam");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/no-wishlists-on-steam")]),
+  ) as Record<string, string>;
 
-export default function NoWishlistsOnSteamPage() {
+  const title = t(locale, "seo.no_wishlists.title");
+  const description = t(locale, "seo.no_wishlists.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+  };
+}
+
+export default async function NoWishlistsOnSteamPage() {
+  const locale = await getRequestLocale();
   return (
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
@@ -48,7 +64,7 @@ export default function NoWishlistsOnSteamPage() {
               </p>
               <div className="mt-4">
                 <Link
-                  href="/steam-wishlist-calculator"
+                  href={withLocale(locale, "/steam-wishlist-calculator")}
                   className="inline-flex items-center rounded-full bg-black px-5 py-2 text-[14px] font-bold text-white"
                 >
                   Steam Wishlist Calculator

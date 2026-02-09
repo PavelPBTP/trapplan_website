@@ -2,6 +2,17 @@
   const mountId = "tp-steam-pricing-tool";
   let SHOW_ALL_COUNTRIES = false;
 
+  function i18n(key, fallback) {
+    try {
+      const dict =
+        window && window.__TP_I18N && window.__TP_I18N.steam_pricing_planner
+          ? window.__TP_I18N.steam_pricing_planner
+          : null;
+      if (dict && typeof dict[key] === "string") return dict[key];
+    } catch {}
+    return fallback;
+  }
+
   const TOP_COUNTRIES_ORDERED = [
     "United States",
     "Germany",
@@ -338,7 +349,9 @@
     if (box) {
       if (type === "error") {
         box.style.display = "block";
-        box.textContent = FX_ERROR || "Could not load FX rates.";
+        box.textContent =
+          FX_ERROR ||
+          i18n("status_could_not_load_fx", "Could not load FX rates.");
       } else {
         box.style.display = "none";
       }
@@ -377,36 +390,46 @@
       <div style="max-width: 1100px; margin: 100px auto 0 auto; padding-bottom: 96px; font-family: sans-serif;">
         <div style="text-align:center; padding: 20px 12px 40px 12px;">
           <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin:0;">
-            Steam Pricing Planner & Calculator
+            ${escapeHtml(
+              i18n(
+                "title",
+                "Steam Pricing Planner & Calculator",
+              ),
+            )}
           </h1>
           <div style="margin-top: 18px; font-size: 18px; color: rgba(0,0,0,0.72); max-width: 860px; margin-left:auto; margin-right:auto;">
-            Determine optimal game prices using FX rates and Purchasing Power Parity adjustments.
+            ${escapeHtml(
+              i18n(
+                "subtitle",
+                "Determine optimal game prices using FX rates and Purchasing Power Parity adjustments.",
+              ),
+            )}
           </div>
           <div style="width: 80px; height: 4px; background: #E11D2E; border-radius: 999px; margin: 24px auto 0 auto;"></div>
         </div>
 
         <div style="display:grid; grid-template-columns: 1fr; gap: 16px;">
           <div style="background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 22px; padding: 18px;">
-            <div style="font-size: 18px; font-weight: 900;">Game Parameters</div>
+            <div style="font-size: 18px; font-weight: 900;">${escapeHtml(i18n("section_game_parameters", "Game Parameters"))}</div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;">
               <label>
-                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">Genre</div>
+                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">${escapeHtml(i18n("field_genre", "Genre"))}</div>
                 <select id="tp-genre" style="width:100%; margin-top:6px; padding: 12px; border-radius: 12px; border: 1px solid #ddd;">
                   ${GENRES.map((g) => `<option value="${g.id}">${escapeHtml(g.label)}</option>`).join("")}
                 </select>
               </label>
               <label>
-                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">Gameplay Length (Hours)</div>
+                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">${escapeHtml(i18n("field_gameplay_length", "Gameplay Length (Hours)"))}</div>
                 <input id="tp-hours" type="number" min="0" step="0.5" value="12" style="width:100%; margin-top:6px; padding: 12px; border-radius: 12px; border: 1px solid #ddd;" />
               </label>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
               <label>
-                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">Base USD Price</div>
-                <input id="tp-usd" type="number" min="0.99" step="0.01" placeholder="Auto-suggest" style="width:100%; margin-top:6px; padding: 12px; border-radius: 12px; border: 1px solid #ddd;" />
+                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">${escapeHtml(i18n("field_base_usd_price", "Base USD Price"))}</div>
+                <input id="tp-usd" type="number" min="0.99" step="0.01" placeholder="${escapeHtml(i18n("field_base_usd_price_placeholder", "Auto-suggest"))}" style="width:100%; margin-top:6px; padding: 12px; border-radius: 12px; border: 1px solid #ddd;" />
               </label>
               <label>
-                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">Sale Discount</div>
+                <div style="font-size: 13px; font-weight: 800; color: rgba(0,0,0,0.72);">${escapeHtml(i18n("field_sale_discount", "Sale Discount"))}</div>
                 <div style="display:flex; gap: 10px; align-items:center; margin-top:6px;">
                   <input id="tp-discount" type="range" min="0" max="90" step="5" value="20" style="flex:1;">
                   <div id="tp-discount-label" style="min-width: 40px; font-weight: 900;">20%</div>
@@ -414,41 +437,41 @@
               </label>
             </div>
             <div style="margin-top: 20px; text-align:center;">
-               <button id="tp-calc" style="width: 100%; max-width: 400px; padding: 14px; border-radius: 999px; border: none; background: #E11D2E; color: #fff; font-weight: 900; cursor: pointer;">Calculate Regional Prices</button>
+               <button id="tp-calc" style="width: 100%; max-width: 400px; padding: 14px; border-radius: 999px; border: none; background: #E11D2E; color: #fff; font-weight: 900; cursor: pointer;">${escapeHtml(i18n("cta_calculate", "Calculate Regional Prices"))}</button>
             </div>
           </div>
 
           <div style="background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 22px; padding: 18px;">
             <div style="display:flex; justify-content: space-between; align-items: center;">
-                <div style="font-size: 18px; font-weight: 900;">Regional Recommendations</div>
+                <div style="font-size: 18px; font-weight: 900;">${escapeHtml(i18n("section_regional_recommendations", "Regional Recommendations"))}</div>
                 <div id="tp-fx-hint" style="font-size: 12px; color: #888;"></div>
             </div>
             <div id="tp-error" style="display:none; color: red; font-size: 12px; margin: 10px 0;"></div>
 
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;">
                 <div style="padding: 15px; background: #f9f9f9; border-radius: 15px;">
-                    <div style="font-size: 11px; color: #666; font-weight: 900; text-transform: uppercase;">Anchor Price</div>
+                    <div style="font-size: 11px; color: #666; font-weight: 900; text-transform: uppercase;">${escapeHtml(i18n("metric_anchor_price", "Anchor Price"))}</div>
                     <div id="tp-usd-base" style="font-size: 28px; font-weight: 900;">$0.00</div>
                     <div id="tp-usd-explain" style="font-size: 12px; color: #888; margin-top: 5px;"></div>
                 </div>
-                <input id="tp-filter" type="text" placeholder="Search country..." style="padding: 12px; border-radius: 12px; border: 1px solid #eee; align-self: center;" />
+                <input id="tp-filter" type="text" placeholder="${escapeHtml(i18n("filter_country_placeholder", "Search country..."))}" style="padding: 12px; border-radius: 12px; border: 1px solid #eee; align-self: center;" />
             </div>
 
             <div style="margin-top: 15px; overflow-x: auto;">
               <table style="width:100%; border-collapse: collapse; font-size: 13px;">
                 <thead>
                   <tr style="background: #f5f5f5; text-align:left;">
-                    <th style="padding: 12px;">Country</th>
-                    <th style="padding: 12px;">Currency</th>
-                    <th style="padding: 12px;">Suggested Price</th>
-                    <th style="padding: 12px;">Sale Price</th>
+                    <th style="padding: 12px;">${escapeHtml(i18n("table_country", "Country"))}</th>
+                    <th style="padding: 12px;">${escapeHtml(i18n("table_currency", "Currency"))}</th>
+                    <th style="padding: 12px;">${escapeHtml(i18n("table_suggested_price", "Suggested Price"))}</th>
+                    <th style="padding: 12px;">${escapeHtml(i18n("table_sale_price", "Sale Price"))}</th>
                   </tr>
                 </thead>
                 <tbody id="tp-rows"></tbody>
               </table>
             </div>
             <div style="text-align:center; padding-top: 15px;">
-                <button id="tp-show-all" style="background:none; border:none; text-decoration: underline; cursor:pointer; color: #666; font-size: 13px;">Show all 40+ countries</button>
+                <button id="tp-show-all" style="background:none; border:none; text-decoration: underline; cursor:pointer; color: #666; font-size: 13px;">${escapeHtml(i18n("show_all", "Show all 40+ countries"))}</button>
             </div>
           </div>
         </div>
@@ -494,7 +517,9 @@
       ? Number(document.getElementById("tp-usd").value)
       : null;
     let usd = override && isFinite(override) ? override : inferredBaseUsdPrice(hours, genreId);
-    const reason = override ? "Manual setting." : "Based on genre and length.";
+    const reason = override
+      ? i18n("reason_manual_setting", "Manual setting.")
+      : i18n("reason_based_on_genre_length", "Based on genre and length.");
     return { usd: validateUsdMinimums(usd), reason };
   }
 
@@ -534,7 +559,7 @@
 
     tbody.innerHTML =
       rows.join("") ||
-      '<tr><td colspan="4" style="padding:20px; text-align:center;">No countries found.</td></tr>';
+      `<tr><td colspan="4" style="padding:20px; text-align:center;">${escapeHtml(i18n("empty_no_countries", "No countries found."))}</td></tr>`;
   }
 
   async function calculate() {
@@ -545,17 +570,23 @@
     }
 
     try {
-      setStatus("Syncing FX...", "info");
+      setStatus(i18n("status_syncing_fx", "Syncing FX..."), "info");
       const fx = await fetchFxRatesMulti("USD");
       FX = fx.rates;
       FX_SOURCE = fx.source;
-      setStatus(`Source: ${FX_SOURCE}`, "info");
+      setStatus(
+        i18n("status_fx_source", "Source: {source}").replace(
+          "{source}",
+          String(FX_SOURCE || ""),
+        ),
+        "info",
+      );
       renderRows({
         usdBase: usd,
         filterText: document.getElementById("tp-filter")?.value,
       });
     } catch {
-      setStatus("FX Offline", "error");
+      setStatus(i18n("status_fx_offline", "FX Offline"), "error");
       renderRows({
         usdBase: usd,
         filterText: document.getElementById("tp-filter")?.value,

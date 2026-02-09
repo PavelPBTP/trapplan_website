@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
@@ -19,6 +22,12 @@ function Field({ label, type = "text", value, onChange }: { label: string; type?
 }
 
 export default function GetAQuote() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -43,15 +52,37 @@ export default function GetAQuote() {
       });
 
       if (response.ok) {
-        setMessage("✅ Thank you! We'll contact you soon.");
+        setMessage(t(locale, "form.get_a_quote.success"));
         setName("");
         setCompany("");
         setEmail("");
       } else {
-        setMessage("❌ Something went wrong. Please try again.");
+        let serverError: string | undefined;
+        try {
+          const data: unknown = await response.json();
+          if (typeof data === "object" && data !== null) {
+            const error = (data as { error?: unknown }).error;
+            const details = (data as { details?: unknown }).details;
+            const status = (data as { status?: unknown }).status;
+
+            const parts: string[] = [];
+            if (typeof error === "string") parts.push(error);
+            if (typeof details === "string") parts.push(details);
+            if (typeof status === "number") parts.push(`(${status})`);
+            serverError = parts.length ? parts.join(" ") : undefined;
+          }
+        } catch {
+          serverError = undefined;
+        }
+
+        if (process.env.NODE_ENV !== "production" && serverError) {
+          setMessage(serverError);
+        } else {
+          setMessage(t(locale, "form.get_a_quote.error_generic"));
+        }
       }
     } catch {
-      setMessage("❌ Failed to send. Please try again.");
+      setMessage(t(locale, "form.get_a_quote.error_network"));
     } finally {
       setIsSubmitting(false);
     }
@@ -65,10 +96,10 @@ export default function GetAQuote() {
           <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12">
             <div className="lg:col-span-2">
               <h2 className="text-[44px] font-extrabold leading-[0.92] tracking-tight text-white">
-                GET A QUOTE
+                {t(locale, "form.get_a_quote.title")}
               </h2>
               <p className="mt-6 max-w-[46ch] text-[14px] leading-6 text-[#A0A0A0]">
-                Let’s talk about your task, then we’ll go whisper and come back with a final offer.
+                {t(locale, "form.get_a_quote.subtitle")}
               </p>
 
               <div className="mt-10 flex items-center gap-4">
@@ -78,7 +109,7 @@ export default function GetAQuote() {
                     Pavel Beresnev
                   </div>
                   <div className="mt-1 text-[12px] font-semibold text-white/55">
-                    CEO Trap Plan Agency
+                    {t(locale, "get_a_quote.ceo_title")}
                   </div>
                 </div>
               </div>
@@ -90,7 +121,7 @@ export default function GetAQuote() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-full bg-white/10 px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-white/15"
                 >
-                  Message on WhatsApp
+                  {t(locale, "form.get_a_quote.message_whatsapp")}
                 </a>
               </div>
             </div>
@@ -98,13 +129,13 @@ export default function GetAQuote() {
             <div className="lg:col-span-3">
               <div className="relative rounded-[24px] bg-white px-8 py-8 shadow-[0_44px_120px_rgba(0,0,0,0.55)]">
                 <h3 className="text-[24px] font-extrabold leading-none tracking-tight text-black">
-                  Let’s work together
+                  {t(locale, "form.get_a_quote.card_title")}
                 </h3>
 
                 <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
-                  <Field label="Name*" value={name} onChange={(e) => setName(e.target.value)} />
-                  <Field label="Company name*" value={company} onChange={(e) => setCompany(e.target.value)} />
-                  <Field label="Work Email*" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <Field label={t(locale, "form.get_a_quote.field_name")} value={name} onChange={(e) => setName(e.target.value)} />
+                  <Field label={t(locale, "form.get_a_quote.field_company")} value={company} onChange={(e) => setCompany(e.target.value)} />
+                  <Field label={t(locale, "form.get_a_quote.field_email")} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                   {message && (
                     <div className="text-[13px] font-medium text-center">
@@ -117,7 +148,9 @@ export default function GetAQuote() {
                     disabled={isSubmitting}
                     className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,10,91,0.34)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,10,91,0.50)] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Sending..." : "Send"}
+                    {isSubmitting
+                      ? t(locale, "form.get_a_quote.submit_sending")
+                      : t(locale, "form.get_a_quote.submit_send")}
                   </button>
                 </form>
               </div>

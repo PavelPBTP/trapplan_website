@@ -3,28 +3,40 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "TikTok Package: 20 Videos",
-  description:
-    "Get 20 TikTok videos tailored for your game: hooks, scripts, editing, and a clear content plan designed to drive wishlists and awareness.",
-  alternates: {
-    canonical: "/tiktok-package-20-videos",
-  },
-  openGraph: {
-    type: "website",
-    url: "/tiktok-package-20-videos",
-    title: "TikTok Package: 20 Videos",
-    description:
-      "Get 20 TikTok videos tailored for your game: hooks, scripts, editing, and a clear content plan designed to drive wishlists and awareness.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TikTok Package: 20 Videos",
-    description:
-      "Get 20 TikTok videos tailored for your game: hooks, scripts, editing, and a clear content plan designed to drive wishlists and awareness.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/tiktok-package-20-videos");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/tiktok-package-20-videos")]),
+  ) as Record<string, string>;
+
+  const title = t(locale, "seo.tiktok_20.title");
+  const description = t(locale, "seo.tiktok_20.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 function ArrowUpRightIcon() {
   return (
@@ -93,11 +105,13 @@ function PackageCard({
   description,
   price,
   href,
+  locale,
 }: {
   title: string;
   description: string;
   price?: string;
   href: string;
+  locale: Parameters<typeof t>[0];
 }) {
   return (
     <a
@@ -121,13 +135,13 @@ function PackageCard({
 
       {price ? (
         <div className="mt-6 text-[13px] font-extrabold text-black">
-          Price: {price}
+          {t(locale, "tiktok_20.ui.package.price_prefix")} {price}
         </div>
       ) : null}
 
       <div className="mt-5">
         <span className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-5 py-2 text-[13px] font-semibold text-white transition-colors duration-200 group-hover:bg-[#E6004E]">
-          Learn more <ArrowUpRightIcon />
+          {t(locale, "tiktok_20.ui.package.learn_more")} <ArrowUpRightIcon />
         </span>
       </div>
     </a>
@@ -146,7 +160,8 @@ function Step({ index, title, text }: { index: string; title: string; text: stri
   );
 }
 
-export default function TikTokPackage20VideosPage() {
+export default async function TikTokPackage20VideosPage() {
+  const locale = await getRequestLocale();
   return (
     <>
       <main className="bg-[#F3F3F3]">
@@ -155,31 +170,28 @@ export default function TikTokPackage20VideosPage() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="lg:col-span-6">
                 <h1 className="text-[42px] font-extrabold leading-[0.98] tracking-tight text-black lg:text-[48px]">
-                  20 short videos
+                  {t(locale, "tiktok_20.ui.hero.title_01")}
                   <br />
-                  for your game to
+                  {t(locale, "tiktok_20.ui.hero.title_02")}
                   <br />
-                  grow your Steam
+                  {t(locale, "tiktok_20.ui.hero.title_03")}
                   <br />
-                  Wishlists.
+                  {t(locale, "tiktok_20.ui.hero.title_04")}
                 </h1>
 
                 <p className="mt-5 max-w-[58ch] text-[14px] leading-6 text-black/60">
-                  Twenty high impact TikTok videos crafted around your gameplay,
-                  hooks and audience triggers. This package gives you a steady
-                  flow of content that drives views, followers and wishlist
-                  momentum.
+                  {t(locale, "tiktok_20.ui.hero.body")}
                 </p>
 
                 <div className="mt-8 flex items-center gap-6">
                   <Link
-                    href="/form"
+                    href={withLocale(locale, "/form")}
                     className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                   >
-                    Start Now <ArrowUpRightIcon />
+                    {t(locale, "tiktok_20.ui.hero.cta")} <ArrowUpRightIcon />
                   </Link>
                   <div className="text-[18px] font-extrabold text-black">
-                    Price: €2 000
+                    {t(locale, "tiktok_20.ui.hero.price")}
                   </div>
                 </div>
               </div>
@@ -206,7 +218,7 @@ export default function TikTokPackage20VideosPage() {
               <div className="relative w-full max-w-[560px]">
                 <Image
                   src={LAPTOP_SRC}
-                  alt="Macbook chart preview"
+                  alt={t(locale, "tiktok_20.ui.section2.image_alt")}
                   width={900}
                   height={520}
                   quality={95}
@@ -216,18 +228,14 @@ export default function TikTokPackage20VideosPage() {
             </div>
             <div className="lg:col-span-6">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                Views are vanity.
+                {t(locale, "tiktok_20.ui.section2.title_01")}
                 <br />
-                Wishlists are what fund
+                {t(locale, "tiktok_20.ui.section2.title_02")}
                 <br />
-                your launch.
+                {t(locale, "tiktok_20.ui.section2.title_03")}
               </h2>
               <p className="mt-6 max-w-[62ch] text-[14px] leading-6 text-black/60">
-                A million views mean nothing if your Steam chart doesn&apos;t move.
-                We focus on <span className="font-extrabold text-black">high-intent viewers</span>. We
-                show the mechanics, the art style, and the “vibe” that appeals
-                to your specific niche, making sure the people who see your
-                TikTok are the same people who will actually buy your game.
+                {t(locale, "tiktok_20.ui.section2.p1")}
               </p>
             </div>
           </div>
@@ -240,7 +248,7 @@ export default function TikTokPackage20VideosPage() {
                 <div className="flex items-end justify-center gap-3 lg:gap-4">
                   <Image
                     src={WISHLIST_PHONES[0]}
-                    alt="TikTok example 1"
+                    alt={t(locale, "tiktok_20.ui.section3.image_alt_01")}
                     width={900}
                     height={900}
                     quality={95}
@@ -249,7 +257,7 @@ export default function TikTokPackage20VideosPage() {
                   />
                   <Image
                     src={WISHLIST_PHONES[2]}
-                    alt="TikTok example 3"
+                    alt={t(locale, "tiktok_20.ui.section3.image_alt_03")}
                     width={900}
                     height={900}
                     quality={95}
@@ -258,7 +266,7 @@ export default function TikTokPackage20VideosPage() {
                   />
                   <Image
                     src={WISHLIST_PHONES[4]}
-                    alt="TikTok example 5"
+                    alt={t(locale, "tiktok_20.ui.section3.image_alt_05")}
                     width={900}
                     height={900}
                     quality={95}
@@ -267,7 +275,7 @@ export default function TikTokPackage20VideosPage() {
                   />
                   <Image
                     src={WISHLIST_PHONES[1]}
-                    alt="TikTok example 2"
+                    alt={t(locale, "tiktok_20.ui.section3.image_alt_02")}
                     width={900}
                     height={900}
                     quality={95}
@@ -276,7 +284,7 @@ export default function TikTokPackage20VideosPage() {
                   />
                   <Image
                     src={WISHLIST_PHONES[3]}
-                    alt="TikTok example 4"
+                    alt={t(locale, "tiktok_20.ui.section3.image_alt_04")}
                     width={900}
                     height={900}
                     quality={95}
@@ -289,7 +297,7 @@ export default function TikTokPackage20VideosPage() {
 
             <div className="px-6 pt-10 pb-10 lg:px-12">
               <h2 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black">
-                The Wishlist-Driven Package
+                {t(locale, "tiktok_20.ui.section3.title")}
               </h2>
 
               <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -297,65 +305,55 @@ export default function TikTokPackage20VideosPage() {
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
                     <span className="font-extrabold text-black">
-                      20 Conversion-Ready Videos:
+                      {t(locale, "tiktok_20.ui.section3.bullet1.title")}
                     </span>{" "}
-                    We don&apos;t just edit gameplay; we build 20 entry points to
-                    your Steam store. Each video is optimized to turn a viewer
-                    into a &quot;Wishlister.&quot;
+                    {t(locale, "tiktok_20.ui.section3.bullet1.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
                     <span className="font-extrabold text-black">
-                      &quot;Wishlist Hook&quot; Editing:
+                      {t(locale, "tiktok_20.ui.section3.bullet2.title")}
                     </span>{" "}
-                    Most people skip in 2 seconds. We spend our time
-                    perfecting those first 2 seconds to make sure players
-                    don&apos;t just watch, but head to your bio to find the link.
+                    {t(locale, "tiktok_20.ui.section3.bullet2.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
                     <span className="font-extrabold text-black">
-                      We Record, You Build:
+                      {t(locale, "tiktok_20.ui.section3.bullet3.title")}
                     </span>{" "}
-                    You don&apos;t need to capture a thing. We&apos;ll dive into your
-                    build, find the most &quot;wishlist-worthy&quot; mechanics, and
-                    record the footage ourselves.
+                    {t(locale, "tiktok_20.ui.section3.bullet3.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
                     <span className="font-extrabold text-black">
-                      Native Discovery Style:
+                      {t(locale, "tiktok_20.ui.section3.bullet4.title")}
                     </span>{" "}
-                    Over-produced ads get ignored. We make your game look like
-                    a &quot;hidden gem&quot; discovery. This authentic vibe is what
-                    actually triggers an Add to Wishlist.
+                    {t(locale, "tiktok_20.ui.section3.bullet4.text")}
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <CheckIcon />
                   <div className="text-[14px] leading-6 text-black/60">
                     <span className="font-extrabold text-black">
-                      Steam-Focused Captions:
+                      {t(locale, "tiktok_20.ui.section3.bullet5.title")}
                     </span>{" "}
-                    We provide the text and call-to-actions that specifically
-                    tell people where and why to wishlist your game. Just hit
-                    upload.
+                    {t(locale, "tiktok_20.ui.section3.bullet5.text")}
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Book a Call <ArrowUpRightIcon />
+                  {t(locale, "tiktok_20.ui.section3.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -365,47 +363,47 @@ export default function TikTokPackage20VideosPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-16 lg:px-10">
             <h2 className="text-center text-[18px] font-extrabold text-black">
-              How It Works
+              {t(locale, "tiktok_20.ui.section4.title")}
             </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-4">
               <Step
                 index="1"
-                title="Briefing"
-                text="Tell us about your game and your target audience."
+                title={t(locale, "tiktok_20.ui.section4.step1.title")}
+                text={t(locale, "tiktok_20.ui.section4.step1.text")}
               />
               <Step
                 index="2"
-                title="Capture"
-                text="We play your game (or use your footage) to find the “magic moments.”"
+                title={t(locale, "tiktok_20.ui.section4.step2.title")}
+                text={t(locale, "tiktok_20.ui.section4.step2.text")}
               />
               <Step
                 index="3"
-                title="Edit"
-                text="We craft 20 high-retention videos with clear CTA to wishlist."
+                title={t(locale, "tiktok_20.ui.section4.step3.title")}
+                text={t(locale, "tiktok_20.ui.section4.step3.text")}
               />
               <Step
                 index="4"
-                title="Delivery"
-                text="You get a folder with ready-to-post content."
+                title={t(locale, "tiktok_20.ui.section4.step4.title")}
+                text={t(locale, "tiktok_20.ui.section4.step4.text")}
               />
             </div>
 
             <div className="mt-10 flex justify-center">
               <Link
-                href="/form"
+                href={withLocale(locale, "/form")}
                 className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
               >
-                Start Now <ArrowUpRightIcon />
+                {t(locale, "tiktok_20.ui.section4.cta")} <ArrowUpRightIcon />
               </Link>
             </div>
 
             <div className="pt-16">
               <h2 className="text-center text-[18px] font-extrabold text-black">
-                Why It Works
+                {t(locale, "tiktok_20.ui.why.title")}
               </h2>
               <p className="mx-auto mt-4 max-w-[62ch] text-center text-[14px] leading-6 text-black/60">
-                Real games. Real results. These indie studios used TikTok to grow their Steam wishlists organically.
+                {t(locale, "tiktok_20.ui.why.subtitle")}
               </p>
 
               <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -424,7 +422,7 @@ export default function TikTokPackage20VideosPage() {
                         20K
                       </div>
                       <div className="text-[13px] font-semibold text-white/70">
-                        wishlists
+                        {t(locale, "tiktok_20.ui.case.wishlists")}
                       </div>
                     </div>
                   </div>
@@ -441,22 +439,6 @@ export default function TikTokPackage20VideosPage() {
                     <div className="mt-2 text-[13px] text-white/70">
                       Survival Horror
                     </div>
-                    <div className="mt-6 flex items-baseline gap-2">
-                      <div className="text-[32px] font-extrabold text-white">
-                        13.6K
-                      </div>
-                      <div className="text-[13px] font-semibold text-white/70">
-                        wishlists
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#FF0A5B]/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
-
-                <div className="group relative overflow-hidden rounded-[18px] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_40px_80px_rgba(0,0,0,0.18)]">
-                  <div className="absolute inset-0 bg-[url('https://cdn.akamai.steamstatic.com/steam/apps/2080690/header.jpg')] bg-cover bg-center" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
-                  <div className="relative z-10">
                     <div className="text-[16px] font-extrabold text-white">
                       Sunkenland
                     </div>
@@ -468,7 +450,7 @@ export default function TikTokPackage20VideosPage() {
                         17.6K
                       </div>
                       <div className="text-[13px] font-semibold text-white/70">
-                        wishlists
+                        {t(locale, "tiktok_20.ui.case.wishlists")}
                       </div>
                     </div>
                   </div>
@@ -490,7 +472,7 @@ export default function TikTokPackage20VideosPage() {
                         25.6K
                       </div>
                       <div className="text-[13px] font-semibold text-white/70">
-                        wishlists
+                        {t(locale, "tiktok_20.ui.case.wishlists")}
                       </div>
                     </div>
                   </div>
@@ -500,10 +482,10 @@ export default function TikTokPackage20VideosPage() {
 
               <div className="mt-10 flex justify-center">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Start Now <ArrowUpRightIcon />
+                  {t(locale, "tiktok_20.ui.why.cta")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -520,24 +502,24 @@ export default function TikTokPackage20VideosPage() {
 
             <div className="relative">
               <div className="text-[22px] font-extrabold">
-                Ready to grow your wishlist?
+                {t(locale, "tiktok_20.ui.big_cta.title")}
               </div>
               <div className="mt-3 text-[13px] font-semibold text-white/80">
-                Get the strategy you need to launch with confidence.
+                {t(locale, "tiktok_20.ui.big_cta.subtitle")}
               </div>
 
               <div className="mt-9 flex flex-col items-center justify-center gap-4">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[44px] items-center gap-2 rounded-full bg-white px-8 text-[13px] font-semibold text-black transition-colors hover:bg-white/90"
                 >
-                  Book a Call <ArrowUpRightIcon />
+                  {t(locale, "tiktok_20.ui.big_cta.primary")} <ArrowUpRightIcon />
                 </Link>
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex h-[44px] items-center gap-2 rounded-full bg-black/65 px-8 text-[13px] font-semibold text-white transition-colors hover:bg-black/75"
                 >
-                  Or get started now for €2,000 <ArrowUpRightIcon />
+                  {t(locale, "tiktok_20.ui.big_cta.secondary")} <ArrowUpRightIcon />
                 </Link>
               </div>
             </div>
@@ -546,39 +528,44 @@ export default function TikTokPackage20VideosPage() {
 
         <section className="mx-auto max-w-7xl px-6 pt-4 pb-20 lg:px-10">
           <h2 className="text-[22px] font-extrabold leading-tight tracking-tight text-black">
-            Others Packages
+            {t(locale, "tiktok_20.ui.other_packages.title")}
           </h2>
 
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             <PackageCard
-              title="Reddit\nLaunch Support"
-              description="Posting on Reddit is a full time job. We take it off your plate by running a 15 post organic campaign designed to drive traffic and Steam wishlists without triggering bans, removals, or backlash."
+              title={t(locale, "seo.reddit_launch_support.title")}
+              description={t(locale, "seo.reddit_launch_support.desc")}
               price="€2 500"
-              href="/reddit-launch-support"
+              href={withLocale(locale, "/reddit-launch-support")}
+              locale={locale}
             />
             <PackageCard
-              title="PR Starter Pack"
-              description="PR outreach that gets your game covered. A readable press release, targeted pitches, follow ups, and the full contact list. Built for credibility and Steam wishlists."
+              title={t(locale, "seo.pr_starter_pack.title")}
+              description={t(locale, "seo.pr_starter_pack.desc")}
               price="€3 000"
-              href="/pr-starter-pack"
+              href={withLocale(locale, "/pr-starter-pack")}
+              locale={locale}
             />
             <PackageCard
-              title="Influencer Micro\nCampaign"
-              description="We connect you with niche creators who actually fit your game. You get a tracked micro campaign built to drive meaningful reach and wishlists without wasting budget on broad influencer lists."
+              title={t(locale, "seo.influencer_micro.title")}
+              description={t(locale, "seo.influencer_micro.desc")}
               price="€5 000"
-              href="https://www.trapplan.com/influencer-micro-campaign"
+              href={withLocale(locale, "/influencer-micro-campaign")}
+              locale={locale}
             />
             <PackageCard
-              title="Paid Ads Setup"
-              description="We set up your paid ad campaigns from start to finish: channel selection, budget configuration, targeting setup and creative placement. Once launched, we hand over the account. Ongoing monitoring or optimisation aren’t included."
+              title={t(locale, "seo.paid_ads_setup.title")}
+              description={t(locale, "seo.paid_ads_setup.desc")}
               price="€2 000"
-              href="https://www.trapplan.com/paid-ads-setup"
+              href={withLocale(locale, "/paid-ads-setup")}
+              locale={locale}
             />
             <PackageCard
-              title="Gameplay Trailer"
-              description="A complete, high quality gameplay trailer crafted specifically for your game. Clear storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution."
+              title={t(locale, "seo.gameplay_trailer.title")}
+              description={t(locale, "seo.gameplay_trailer.desc")}
               price="€5 000"
-              href="https://www.trapplan.com/gameplay-trailer"
+              href={withLocale(locale, "/gameplay-trailer")}
+              locale={locale}
             />
           </div>
         </section>

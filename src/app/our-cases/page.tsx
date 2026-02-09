@@ -4,16 +4,32 @@ import Footer from "@/components/sections/Footer";
 import Link from "next/link";
 import { CASE_STUDIES } from "@/lib/data/cases";
 import Image from "next/image";
+import { getRequestLocale, withLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 
-export const metadata: Metadata = {
-  title: "Our Cases",
-  description: "Selected outcomes and case studies from TrapPlan.",
-  alternates: {
-    canonical: "/our-cases",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const canonical = withLocale(locale, "/our-cases");
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((l) => [l, withLocale(l, "/our-cases")]),
+  ) as Record<string, string>;
 
-export default function OurCasesPage() {
+  const title = t(locale, "seo.our_cases.title");
+  const description = t(locale, "seo.our_cases.desc");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages,
+    },
+  };
+}
+
+export default async function OurCasesPage() {
+  const locale = await getRequestLocale();
   const featured = CASE_STUDIES[0];
 
   return (
@@ -35,7 +51,7 @@ export default function OurCasesPage() {
             <div className="mt-12">
               <div className="max-w-4xl">
                 <Link
-                  href={featured.href}
+                  href={withLocale(locale, featured.href)}
                   className="group block overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]"
                 >
                   <div className="relative h-[260px] overflow-hidden">
@@ -94,7 +110,7 @@ export default function OurCasesPage() {
             {CASE_STUDIES.map((c) => (
               <Link
                 key={c.slug}
-                href={c.href}
+                href={withLocale(locale, c.href)}
                 className="group rounded-3xl border border-black/10 bg-white p-6 transition-colors hover:bg-zinc-50"
               >
                 {c.coverImage ? (
@@ -144,7 +160,7 @@ export default function OurCasesPage() {
               </div>
               <div className="lg:col-span-4">
                 <Link
-                  href="/form"
+                  href={withLocale(locale, "/form")}
                   className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                 >
                   Contact us

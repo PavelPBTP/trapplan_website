@@ -9,6 +9,10 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -102,9 +106,15 @@ function useHorizontalMarquee(direction: "left" | "right", durationSeconds: numb
 }
 
 export default function Hero() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const phrases = useMemo(
-    () => ["Performance Marketing", "Social Media", "Go-to-Market Strategy"],
-    [],
+    () => [t(locale, "hero.badge.01"), t(locale, "hero.badge.02"), t(locale, "hero.badge.03")],
+    [locale],
   );
   const [phraseIndex, setPhraseIndex] = useState(0);
 
@@ -236,15 +246,21 @@ export default function Hero() {
               variants={item}
               className="mt-5 text-[18px] font-extrabold leading-tight tracking-tight"
             >
-              Marketing for Games
+              {t(locale, "hero.kicker")}
             </motion.h2>
 
             <motion.p
               variants={item}
               className="mt-5 max-w-[38ch] text-[14px] leading-6 text-zinc-700"
             >
-              We help studios, publisher, and indie developers launch, grow and
-              scale their games by polished marketing
+              {t(locale, "hero.subhead")}
+            </motion.p>
+
+            <motion.p
+              variants={item}
+              className="mt-4 max-w-[46ch] text-[14px] leading-6 text-zinc-700"
+            >
+              {t(locale, "hero.body")}
             </motion.p>
 
             <motion.div variants={item} className="mt-8">
@@ -252,7 +268,7 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[14px] font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-[#E6004E] focus:outline-none focus:ring-2 focus:ring-[#FF0A5B] focus:ring-offset-2 focus:ring-offset-[#F3F3F3]"
               >
-                Contact us
+                {t(locale, "hero.cta_contact")}
                 <span aria-hidden className="text-[16px] leading-none">
                   ↗
                 </span>

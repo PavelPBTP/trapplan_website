@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { t } from "@/lib/copy";
 
 type ServicePanel = {
   id: string;
@@ -13,37 +17,40 @@ type ServicePanel = {
 };
 
 export default function VerticalServicesAccordion() {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
+    ? seg
+    : DEFAULT_LOCALE) as Locale;
+
   const panels = useMemo<ServicePanel[]>(
     () => [
       {
         id: "blueprint",
-        title: "Game Launch Blueprint",
-        description:
-          "Positioning, messaging, timeline, and channel mix. A clear plan that removes chaos, aligns the team, and makes execution predictable.",
+        title: t(locale, "services.panel.blueprint.title"),
+        description: t(locale, "services.panel.blueprint.desc"),
         href: "/game-launch-blueprint",
         accentNumber: "01",
-        ghostLabel: "STRATEGY / MESSAGING / EXECUTION",
+        ghostLabel: t(locale, "services.panel.blueprint.ghost"),
       },
       {
         id: "paid-growth",
-        title: "Paid Growth",
-        description:
-          "We set up paid campaigns the right way: channel selection, tracking, targeting and structure. Built for control, measurement and clean handoff.",
+        title: t(locale, "services.panel.paid_growth.title"),
+        description: t(locale, "services.panel.paid_growth.desc"),
         href: "/paid-growth",
         accentNumber: "02",
-        ghostLabel: "ACQUISITION / ANALYTICS / SCALE",
+        ghostLabel: t(locale, "services.panel.paid_growth.ghost"),
       },
       {
         id: "creative",
-        title: "Creative Content Pipeline",
-        description:
-          "A consistent pipeline for trailers, shortform and store assets. Built for speed, iteration and platform-native distribution.",
+        title: t(locale, "services.panel.creative.title"),
+        description: t(locale, "services.panel.creative.desc"),
         href: "/creative-content-pipeline",
         accentNumber: "03",
-        ghostLabel: "PRODUCTION | ADAPTATION | PERFORMANCE",
+        ghostLabel: t(locale, "services.panel.creative.ghost"),
       },
     ],
-    [],
+    [locale],
   );
 
   const [activeId, setActiveId] = useState<string>(panels[0]?.id ?? "blueprint");
@@ -56,11 +63,10 @@ export default function VerticalServicesAccordion() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <h2 className="text-[44px] font-extrabold leading-none tracking-tight text-black">
-              Global Services
+              {t(locale, "services.title")}
             </h2>
             <p className="mt-4 max-w-2xl text-[18px] leading-relaxed text-black/70">
-              Deeper, end-to-end systems for studios that want predictable outcomes. Not
-              one-off tasks.
+              {t(locale, "services.subtitle")}
             </p>
           </div>
         </div>
@@ -173,7 +179,7 @@ export default function VerticalServicesAccordion() {
           <div className="lg:hidden">
             <div className="rounded-2xl border border-black/10 bg-white p-5">
               <div className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-black/50">
-                Tap to explore
+                {t(locale, "services.mobile_hint")}
               </div>
               <div className="mt-4 grid gap-3">
                 {panels.map((panel) => {
