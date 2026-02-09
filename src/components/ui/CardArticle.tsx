@@ -228,15 +228,27 @@ export default function CardArticle({
 
       {cover ? (
         <div className="mt-8 overflow-hidden bg-black">
-          <div className="relative h-[240px] w-full sm:h-[320px] lg:h-[420px]">
+          <div className="relative h-[320px] w-full sm:h-[420px] lg:h-[520px]">
               <Image
                 src={cover.src}
-                alt={cover.alt}
+                alt=""
                 fill
-                className="object-contain object-center"
+                className="object-cover blur-2xl scale-110 opacity-55"
                 sizes="100vw"
                 priority
               />
+
+              <div className="absolute inset-6 sm:inset-10 lg:inset-14">
+                <Image
+                  src={cover.src}
+                  alt={cover.alt}
+                  fill
+                  className="object-contain object-center"
+                  sizes="100vw"
+                  priority
+                />
+              </div>
+
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
               <div className="pointer-events-none absolute inset-0 flex items-end">
                 <div className="mx-auto w-full max-w-[800px] px-6 pb-6">
