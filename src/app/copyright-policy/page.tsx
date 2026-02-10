@@ -16,15 +16,36 @@ export async function generateMetadata(): Promise<Metadata> {
     ]),
   ) as Record<string, string>;
 
+  const title = t(locale, "legal.copyright.meta_title");
+  const description = t(locale, "legal.copyright.meta_desc");
+
   return {
-    title: t(locale, "legal.copyright.meta_title"),
-    description: t(locale, "legal.copyright.meta_desc"),
+    title,
+    description,
     alternates: {
       canonical,
       languages: {
         ...languages,
         "x-default": new URL(withLocale("en", "/copyright-policy"), origin).toString(),
       },
+    },
+    openGraph: {
+      url: canonical,
+      title,
+      description,
+      images: [
+        {
+          url: new URL("/og", origin).toString(),
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      title,
+      description,
+      images: [new URL("/og", origin).toString()],
     },
   };
 }

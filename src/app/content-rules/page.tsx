@@ -13,15 +13,36 @@ export async function generateMetadata(): Promise<Metadata> {
     SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/content-rules"), origin).toString()]),
   ) as Record<string, string>;
 
+  const title = t(locale, "legal.content_rules.meta_title");
+  const description = t(locale, "legal.content_rules.meta_desc");
+
   return {
-    title: t(locale, "legal.content_rules.meta_title"),
-    description: t(locale, "legal.content_rules.meta_desc"),
+    title,
+    description,
     alternates: {
       canonical,
       languages: {
         ...languages,
         "x-default": new URL(withLocale("en", "/content-rules"), origin).toString(),
       },
+    },
+    openGraph: {
+      url: canonical,
+      title,
+      description,
+      images: [
+        {
+          url: new URL("/og", origin).toString(),
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      title,
+      description,
+      images: [new URL("/og", origin).toString()],
     },
   };
 }
