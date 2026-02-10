@@ -20,7 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
   ) as Record<string, string>;
 
   const title = t(locale, "seo.blog.masterclass.title");
-  const description = t(locale, "seo.blog.masterclass.desc");
+  const clampText = (s: string, maxLen: number) => {
+    const t = (s ?? "").trim();
+    if (t.length <= maxLen) return t;
+    return t.slice(0, maxLen - 1).trimEnd() + "…";
+  };
+
+  const description = clampText(t(locale, "seo.blog.masterclass.desc"), 160);
 
   return {
     title,

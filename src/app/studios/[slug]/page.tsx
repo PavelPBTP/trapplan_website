@@ -37,7 +37,14 @@ export async function generateMetadata({
     zh: "工作室页面",
   };
   const label = localeLabel[locale] ?? localeLabel.en;
-  const description = `${baseDescription} (${label})`;
+
+  const clampText = (s: string, maxLen: number) => {
+    const t = (s ?? "").trim();
+    if (t.length <= maxLen) return t;
+    return t.slice(0, maxLen - 1).trimEnd() + "…";
+  };
+
+  const description = clampText(`${baseDescription} (${label})`, 160);
 
   return {
     title: s.title,

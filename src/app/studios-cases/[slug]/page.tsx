@@ -31,7 +31,14 @@ export async function generateMetadata({
     zh: "案例",
   };
   const label = localeLabel[locale] ?? localeLabel.en;
-  const description = `${c.excerpt} (${label}: ${c.client})`;
+
+  const clampText = (s: string, maxLen: number) => {
+    const t = (s ?? "").trim();
+    if (t.length <= maxLen) return t;
+    return t.slice(0, maxLen - 1).trimEnd() + "…";
+  };
+
+  const description = clampText(`${c.excerpt} (${label}: ${c.client})`, 160);
 
   const origin = "https://www.trapplan.com";
   const url = new URL(withLocale(locale, `/studios-cases/${slug}`), origin).toString();

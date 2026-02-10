@@ -31,10 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
       shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
     },
-    title: {
-      default: siteName,
-      template: `%s | ${siteName}`,
-    },
+    title: siteName,
     description,
     alternates: {
       canonical,

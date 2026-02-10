@@ -13,8 +13,14 @@ export async function generateMetadata(): Promise<Metadata> {
     SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/form"), origin).toString()]),
   ) as Record<string, string>;
 
+  const clampText = (s: string, maxLen: number) => {
+    const t = (s ?? "").trim();
+    if (t.length <= maxLen) return t;
+    return t.slice(0, maxLen - 1).trimEnd() + "…";
+  };
+
   const title = t(locale, "cta.work_with_us");
-  const description = t(locale, "form_page.subtitle");
+  const description = clampText(t(locale, "form_page.subtitle"), 160);
 
   return {
     title,
