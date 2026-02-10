@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
+import { clampWithSuffix } from "@/lib/seo";
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((c) => ({ slug: c.slug }));
@@ -31,23 +33,6 @@ export async function generateMetadata({
     zh: "案例",
   };
   const label = localeLabel[locale] ?? localeLabel.en;
-
-  const clampText = (s: string, maxLen: number) => {
-    const t = (s ?? "").trim();
-    if (t.length <= maxLen) return t;
-    return t.slice(0, maxLen - 1).trimEnd() + "…";
-  };
-
-  const clampWithSuffix = (base: string, suffix: string, maxLen: number) => {
-    const b = (base ?? "").trim();
-    const s = (suffix ?? "").trim();
-    if (!s) return clampText(b, maxLen);
-    const combined = `${b} ${s}`.trim();
-    if (combined.length <= maxLen) return combined;
-    const maxBase = Math.max(0, maxLen - s.length - 2);
-    const clippedBase = b.length > maxBase ? b.slice(0, Math.max(0, maxBase - 1)).trimEnd() + "…" : b;
-    return `${clippedBase} ${s}`.trim();
-  };
 
   const description = clampWithSuffix(c.excerpt, `(${label}: ${c.client})`, 160);
 
@@ -118,7 +103,7 @@ export default async function StudiosCasesPage({
               href={withLocale(locale, "/our-cases")}
               className="text-[13px] font-semibold text-black/60 hover:text-black"
             >
-              ← Back to cases
+              {t(locale, "studios_cases.ui.back_to_cases")}
             </Link>
             <div className="text-[13px] font-semibold text-black/60">
               {c.date} | {c.client}
@@ -151,25 +136,25 @@ export default async function StudiosCasesPage({
               <div className="lg:sticky lg:top-[92px]">
                 <div className="rounded-3xl border border-black/10 bg-white p-7">
                   <div className="text-[12px] font-extrabold tracking-[0.16em] text-black/50">
-                    CASE SNAPSHOT
+                    {t(locale, "studios_cases.ui.case_snapshot")}
                   </div>
                   <div className="mt-5 space-y-4">
                     <div>
-                      <div className="text-[12px] font-semibold text-black/55">Client</div>
+                      <div className="text-[12px] font-semibold text-black/55">{t(locale, "studios_cases.ui.client")}</div>
                       <div className="mt-1 text-[15px] font-extrabold text-black">{c.client}</div>
                     </div>
                     <div>
-                      <div className="text-[12px] font-semibold text-black/55">Date</div>
+                      <div className="text-[12px] font-semibold text-black/55">{t(locale, "studios_cases.ui.date")}</div>
                       <div className="mt-1 text-[15px] font-extrabold text-black">{c.date}</div>
                     </div>
                   </div>
 
                   <div className="mt-6 rounded-2xl border border-black/10 bg-zinc-50 px-5 py-5">
                     <div className="text-[12px] font-semibold tracking-wide text-black/55">
-                      Note
+                      {t(locale, "studios_cases.ui.note")}
                     </div>
                     <div className="mt-2 text-[14px] leading-6 text-black/65">
-                      This page is stored in the repo and does not load any external content.
+                      {t(locale, "studios_cases.ui.note_body")}
                     </div>
                   </div>
 
@@ -178,7 +163,7 @@ export default async function StudiosCasesPage({
                       href={withLocale(locale, "/form")}
                       className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                     >
-                      Work with us
+                      {t(locale, "studios_cases.ui.work_with_us")}
                     </Link>
                   </div>
                 </div>
@@ -197,16 +182,10 @@ export default async function StudiosCasesPage({
                   <div className="pointer-events-none absolute left-4 top-0 hidden h-full w-px bg-black/10 sm:block" />
                   <div className="space-y-8">
                     {sections.map((section, idx) => {
-                      const isResults = section.title.toLowerCase().includes("result");
-
                       return (
                         <div
                           key={section.title}
-                          className={
-                            isResults
-                              ? "rounded-3xl border border-black/10 bg-white px-7 py-7"
-                              : "rounded-3xl border border-black/10 bg-white px-7 py-7"
-                          }
+                          className="rounded-3xl border border-black/10 bg-white px-7 py-7"
                         >
                           <div className="flex items-start gap-4">
                             <div className="hidden shrink-0 sm:block">
@@ -253,10 +232,10 @@ export default async function StudiosCasesPage({
               ) : (
                 <div className="rounded-3xl border border-black/10 bg-white px-7 py-7">
                   <h2 className="text-[20px] font-extrabold leading-tight tracking-tight text-black">
-                    Summary
+                    {t(locale, "studios_cases.ui.summary")}
                   </h2>
                   <p className="mt-3 text-[15px] leading-7 text-black/65">
-                    This case does not have detailed sections yet.
+                    {t(locale, "studios_cases.ui.no_sections")}
                   </p>
                 </div>
               )}
@@ -265,19 +244,19 @@ export default async function StudiosCasesPage({
             <div className="lg:col-span-5">
               <div className="lg:sticky lg:top-[92px]">
                 <div className="rounded-3xl border border-black/10 bg-white p-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.16em] text-black/50">NEXT STEP</div>
+                  <div className="text-[12px] font-extrabold tracking-[0.16em] text-black/50">{t(locale, "studios_cases.ui.next_step")}</div>
                   <h3 className="mt-4 text-[22px] font-extrabold tracking-tight text-black">
-                    Want a similar outcome
+                    {t(locale, "studios_cases.ui.next_step_title")}
                   </h3>
                   <p className="mt-3 text-[14px] leading-6 text-black/65">
-                    Share your current stage and constraints. We will propose a repeatable plan.
+                    {t(locale, "studios_cases.ui.next_step_body")}
                   </p>
                   <div className="mt-6">
                     <Link
                       href={withLocale(locale, "/form")}
                       className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                     >
-                      Contact us
+                      {t(locale, "studios_cases.ui.contact_us")}
                     </Link>
                   </div>
                 </div>

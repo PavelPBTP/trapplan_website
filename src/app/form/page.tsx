@@ -4,6 +4,7 @@ import WorkWithUsForm from "@/components/forms/WorkWithUsForm";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { clampText } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -12,12 +13,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const languages = Object.fromEntries(
     SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/form"), origin).toString()]),
   ) as Record<string, string>;
-
-  const clampText = (s: string, maxLen: number) => {
-    const t = (s ?? "").trim();
-    if (t.length <= maxLen) return t;
-    return t.slice(0, maxLen - 1).trimEnd() + "…";
-  };
 
   const title = t(locale, "form_page.title").replace(/\s+/g, " ").trim();
   const description = clampText(t(locale, "form_page.subtitle"), 160);

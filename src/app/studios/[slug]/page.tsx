@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import { STUDIO_PAGES } from "@/lib/data/studios";
 import { getRequestLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
+import { clampWithSuffix } from "@/lib/seo";
 
 export function generateStaticParams() {
   return STUDIO_PAGES.map((s) => ({ slug: s.slug }));
@@ -37,23 +38,6 @@ export async function generateMetadata({
     zh: "工作室页面",
   };
   const label = localeLabel[locale] ?? localeLabel.en;
-
-  const clampText = (s: string, maxLen: number) => {
-    const t = (s ?? "").trim();
-    if (t.length <= maxLen) return t;
-    return t.slice(0, maxLen - 1).trimEnd() + "…";
-  };
-
-  const clampWithSuffix = (base: string, suffix: string, maxLen: number) => {
-    const b = (base ?? "").trim();
-    const s = (suffix ?? "").trim();
-    if (!s) return clampText(b, maxLen);
-    const combined = `${b} ${s}`.trim();
-    if (combined.length <= maxLen) return combined;
-    const maxBase = Math.max(0, maxLen - s.length - 2);
-    const clippedBase = b.length > maxBase ? b.slice(0, Math.max(0, maxBase - 1)).trimEnd() + "…" : b;
-    return `${clippedBase} ${s}`.trim();
-  };
 
   const description = clampWithSuffix(baseDescription, `(${label})`, 160);
 

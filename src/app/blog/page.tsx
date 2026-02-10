@@ -5,6 +5,7 @@ import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
+import { clampText } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -13,12 +14,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const languages = Object.fromEntries(
     SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/blog"), origin).toString()]),
   ) as Record<string, string>;
-
-  const clampText = (s: string, maxLen: number) => {
-    const t = (s ?? "").trim();
-    if (t.length <= maxLen) return t;
-    return t.slice(0, maxLen - 1).trimEnd() + "…";
-  };
 
   const title = t(locale, "seo.blog.title");
   const description = clampText(t(locale, "seo.blog.desc"), 160);
@@ -137,16 +132,16 @@ export default async function BlogIndexPage({
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           <aside className="lg:col-span-3">
             <h1 className="text-[26px] font-bold leading-tight tracking-tight text-black">
-              Trap Plan
-              <br />
-              Blog
+              {t(locale, "blog.ui.sidebar_title").split("\n").map((line, i) => (
+                <span key={i}>{i > 0 && <br />}{line}</span>
+              ))}
             </h1>
             <p className="mt-4 text-[15px] leading-[1.6] text-[#37352f]">
-              Notes, playbooks, and practical marketing systems for games.
+              {t(locale, "blog.ui.sidebar_subtitle")}
             </p>
 
             <div className="mt-10">
-              <div className="text-[13px] font-semibold text-black/50">Latest</div>
+              <div className="text-[13px] font-semibold text-black/50">{t(locale, "blog.ui.sidebar_latest")}</div>
               <div className="mt-4 flex flex-wrap gap-2 lg:flex-col lg:gap-1">
                 <Link
                   href={withLocale(locale, "/blog")}
@@ -157,7 +152,7 @@ export default async function BlogIndexPage({
                       : "text-black/70 hover:bg-black/[0.03] hover:text-black"
                   }`}
                 >
-                  All
+                  {t(locale, "blog.ui.sidebar_all")}
                 </Link>
                 {categories.map((c) => (
                   <Link

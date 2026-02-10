@@ -134,11 +134,11 @@ export default async function PRStarterPackPage() {
                   <span className="font-extrabold text-black">
                     {t(locale, "pr_starter_pack.ui.hero.body_bold_credibility")}
                   </span>
-                  . One solid article works like a{" "}
+                  {t(locale, "pr_starter_pack.ui.hero.body_connector_1")}{" "}
                   <span className="font-extrabold text-black">
                     {t(locale, "pr_starter_pack.ui.hero.body_bold_seal")}
                   </span>{" "}
-                  and pushes more players to hit{" "}
+                  {t(locale, "pr_starter_pack.ui.hero.body_connector_2")}{" "}
                   <span className="font-extrabold text-black">
                     {t(locale, "pr_starter_pack.ui.hero.body_bold_wishlist")}
                   </span>

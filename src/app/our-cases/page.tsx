@@ -63,10 +63,10 @@ export default async function OurCasesPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <h1 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[56px]">
-                Our Cases
+                {t(locale, "our_cases.ui.title")}
               </h1>
               <p className="mt-5 max-w-[60ch] text-[15px] leading-7 text-black/65">
-                A curated set of outcomes. We share what is useful publicly and keep sensitive details private.
+                {t(locale, "our_cases.ui.subtitle")}
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default async function OurCasesPage() {
                     </p>
 
                     <div className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]">
-                      View case study
+                      {t(locale, "our_cases.ui.view_case_study")}
                       <span className="transition-transform duration-200 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
                         ↗
                       </span>
@@ -173,12 +173,12 @@ export default async function OurCasesPage() {
           <div className="mt-12 rounded-3xl border border-black/10 bg-white p-7 sm:p-9">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-8">
-                <div className="text-[12px] font-extrabold tracking-[0.16em] text-black/50">NEXT STEP</div>
+                <div className="text-[12px] font-extrabold tracking-[0.16em] text-black/50">{t(locale, "our_cases.ui.next_step")}</div>
                 <h3 className="mt-4 text-[28px] font-extrabold tracking-tight text-black">
-                  Want a similar outcome
+                  {t(locale, "our_cases.ui.next_step_title")}
                 </h3>
                 <p className="mt-3 max-w-[64ch] text-[14px] leading-6 text-black/65">
-                  Share your timeline and goals. We will propose a repeatable plan and show relevant examples.
+                  {t(locale, "our_cases.ui.next_step_body")}
                 </p>
               </div>
               <div className="lg:col-span-4">
@@ -186,7 +186,7 @@ export default async function OurCasesPage() {
                   href={withLocale(locale, "/form")}
                   className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
                 >
-                  Contact us
+                  {t(locale, "our_cases.ui.contact_us")}
                 </Link>
               </div>
             </div>
