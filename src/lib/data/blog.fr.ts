@@ -6,6 +6,74 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Une analyse en cartes du mythe du lancement « zéro budget » en 2026 : ce que signifie vraiment le potentiel viral, pourquoi les likes ne sont pas de l’intention, le vrai coût du « gratuit » et comment tirer parti de l’algorithme Steam sans ads.",
     category: "Steam",
+    cardArticle: {
+      title:
+        "Peut-on vraiment promouvoir un jeu sans budget, en comptant uniquement sur la \"viralité\" ?",
+      lead: "Le rêve de la croissance organique se heurte à un mur car les marchés Steam et consoles ont atteint la saturation où la qualité seule ne garantit plus la visibilité. Voici le mythe du lancement sans budget — et pourquoi la \"viralité\" n'est pas une stratégie.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Que s'est-il passé ?",
+          answer:
+            "Le rêve de la croissance organique se heurte à un mur car les marchés Steam et consoles ont atteint un point de saturation où la qualité seule ne garantit plus la visibilité. Nous parlons spécifiquement du mythe du lancement sans budget et de la raison pour laquelle le terme viralité est souvent utilisé comme substitut d'une vraie stratégie marketing.\n\nC'est plus important que jamais car l'algorithme de Steam est devenu incroyablement efficace pour filtrer les projets qui manquent de finition professionnelle ou de positionnement clair. Beaucoup de développeurs fonctionnent encore avec le playbook de 2018, croyant qu'un tweet chanceux suffira, mais si vous ne comprenez pas comment les Metadata affectent votre position dans la Discovery Queue, vous êtes effectivement invisible.",
+        },
+        {
+          id: "viral-potential-2026",
+          question:
+            "D'abord, explique ce que signifie vraiment le \"potentiel viral\" en 2026",
+          answer:
+            "Sur le marché actuel, le potentiel viral ne concerne pas la chance mais la probabilité mathématique que votre contenu soit partagé et génère de l'action. C'est la combinaison spécifique d'un Hook unique, d'assets visuels de haute qualité et d'un chemin sans friction vers la page Steam.\n\nLa vraie viralité se produit quand votre Core Gameplay Loop est communiqué si clairement dans un clip de cinq secondes que le spectateur ressent le besoin d'appuyer immédiatement sur le bouton wishlist. Nous nous éloignons de crier dans le vide des réseaux sociaux pour nous concentrer sur les déclencheurs techniques et psychologiques qui transforment un navigateur aléatoire en follower à long terme.",
+        },
+        {
+          id: "not-trending-naturally",
+          question:
+            "Est-ce que je fais quelque chose de mal si mon jeu ne devient pas viral naturellement ?",
+          answer:
+            "Pas nécessairement, mais vous vous appuyez probablement sur un modèle de découverte passif dans une ère de compétition algorithmique active. Si vous attendez que le monde découvre votre chef-d'œuvre sans fournir à l'algorithme de Steam les bons signaux, comme une Wishlist Velocity constante et un Conversion Rate élevé, le store arrêtera simplement de montrer votre jeu.\n\nUn fort engagement sur les réseaux qui ne se traduit pas en trafic vers le store est un signal d'alarme que votre positionnement est désaligné. Vous n'échouez pas en game design ; vous échouez à emballer votre jeu pour les robots qui contrôlent les étagères numériques.",
+        },
+        {
+          id: "likes-vs-wishlists",
+          question:
+            "Pourquoi mes posts sur les réseaux reçoivent des likes mais mes wishlists ne bougent pas ?",
+          answer:
+            "Le problème est que vous confondez l'approbation sociale avec l'intention d'achat, un piège classique pour les développeurs indés. Les gens peuvent liker un joli GIF d'un water shader, mais si ce post n'a pas de lien direct vers Steam ou de contexte gameplay clair, ils ne sauront même pas que le produit est en vente.\n\nLa viralité doit convertir un spectateur en utilisateur, et pour cela votre contenu doit démontrer le Core Gameplay Loop plutôt qu'une simple image attractive. Si votre Conversion Rate des réseaux vers le store est proche de zéro, vous vendez un beau screenshot au lieu d'une expérience de jeu convaincante.",
+        },
+        {
+          id: "free-promotion-cost",
+          question: "Combien coûte vraiment la promotion \"gratuite\" ?",
+          answer:
+            "Quand vous dites promouvoir un jeu sans budget, vous dépensez simplement votre ressource la plus chère : votre temps, qui coûte des milliers de dollars calculé en heures de développement. Au lieu de passer deux semaines à envoyer manuellement des emails à une liste de médias gaming morts, il est plus efficace de dépenser quelques centaines de dollars en Capsule Art de haute qualité qui améliorera votre CTR sur la page d'accueil Steam.\n\nRappelez-vous que chaque heure passée en guerrilla marketing inefficace est une heure volée au polissage du build, qui était censé déclencher cette viralité à travers les avis des premiers joueurs.",
+        },
+        {
+          id: "steam-algorithm-without-ads",
+          question:
+            "Comment faire travailler l'algorithme de Steam pour moi sans argent pour les ads ?",
+          answer:
+            "La seule façon légitime de hacker le système sans budget est de travailler avec les tags et de maintenir une haute Wishlist Velocity sur de courtes périodes. L'algorithme de Steam ne voit pas vos posts sur les réseaux ; il ne voit que le trafic entrant et comment ce trafic se comporte sur votre page.\n\nSi vous synchronisez une annonce majeure de mise à jour de démo avec une apparition dans un festival thématique, vous créerez un pic artificiel d'activité qui vous pousse dans les blocs More Like This des grands concurrents. C'est la vraie viralité au sein du store, construite sur la connaissance de Steamworks.",
+        },
+        {
+          id: "diy-trailer",
+          question:
+            "Un trailer fait maison est-il une condamnation à mort ou un outil viable ?",
+          answer:
+            "Les audiences PC et consoles sont habituées à un montage de haute qualité, et votre trailer est littéralement le visage de votre produit, qu'un joueur juge en dix secondes. Si vous ne pouvez pas engager un monteur professionnel, concentrez-vous sur du gameplay honnête sans longs logos ni écrans noirs au début.\n\nUn son médiocre et une caméra instable tueront l'intérêt même dans une mécanique brillante. Un budget pour le nettoyage audio et la capture de haute qualité est un prérequis de survie basique dans le store.",
+        },
+        {
+          id: "word-of-mouth",
+          question:
+            "Pourquoi le bouche-à-oreille ne fonctionne pas alors que mes amis disent que le jeu est génial ?",
+          answer:
+            "Le vrai bouche-à-oreille ne commence que quand un parfait inconnu est prêt à risquer son temps et son argent pour recommander un jeu à un autre inconnu. Pour cela, le jeu doit avoir un Hook clair, cette caractéristique unique spécifique qui peut être décrite en une seule phrase.\n\nSi vous ne pouvez pas articuler comment votre jeu se différencie d'une centaine de similaires sur Steam, un joueur aléatoire ne pourra pas non plus le vendre à ses connaissances. Votre travail en tant que marketer est de donner aux gens cette thèse courte et concise.",
+        },
+        {
+          id: "stay-sane",
+          question:
+            "Comment garder la tête froide en essayant de contrôler toutes les métriques seul ?",
+          answer:
+            "Le game marketing en 2026 est devenu un travail opérationnel de données à part entière où il est facile de s'enterrer dans les tableurs et de perdre de vue le jeu lui-même. C'est exactement pour cela que Trap Plan existe : c'est votre navigateur dans le monde du marketing Steam qui traduit les chiffres secs de Steamworks en langage humain.\n\nAu lieu de changer les tags intuitivement ou de deviner pourquoi votre CTR a chuté, vous obtenez une feuille de route claire des audits de pages et de l'optimisation des Metadata aux stratégies de lancement en festival. Chez Trap Plan, nous avons déjà commis toutes les erreurs possibles en travaillant avec les algorithmes, pour que vous puissiez vous concentrer sur le plus important — le développement — pendant que nous gérons la croissance de votre Wishlist Velocity.",
+        },
+      ],
+    },
   },
   "make-a-great-game-avoid-a-flop-on-steam": {
     title:
@@ -13,12 +81,179 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Guide pratique en cartes pour bâtir une stratégie marketing Steam : tags/métadonnées, rythme hebdo, trafic organique, influenceurs, événements, pricing, PR, curators, pivot consoles et objectifs de wishlists.",
     category: "Steam",
+    cardArticle: {
+      title:
+        "Tout le monde dit que le plus important est de faire un super jeu. Mais comment éviter un flop total sur Steam ?",
+      lead: "Et combien de wishlists sont vraiment suffisantes ? Nous expliquons comment construire une stratégie marketing adaptée à votre projet.",
+      cards: [
+        {
+          id: "masterpiece-invisible",
+          question:
+            "La dure vérité : même un chef-d'œuvre reste invisible sans signaux externes",
+          answer:
+            "La qualité est un prérequis pour le succès mais jamais une garantie de visibilité car l'algorithme de Steam fonctionne avec des données froides, pas le mérite artistique. Pensez au store comme un trading floor où la plateforme ne mise que sur les gagnants qui ont déjà prouvé leur Wishlist Velocity.\n\nSi vous ignorez le marketing vous lancez dans le vide en espérant qu'un joueur tombe sur votre app ID parmi quatorze mille lancements cette année sans signaux externes qui disent au système que votre projet mérite une place dans la Discovery Queue.",
+        },
+        {
+          id: "where-to-start",
+          question:
+            "Je comprends l'importance de la promotion mais par où commencer ?",
+          answer:
+            "Avant de diriger un seul clic de trafic assurez-vous que vos Metadata et tags dans Steamworks sont calibrés pour votre joueur cible. Le marketing pour jeux commence par l'optimisation technique de la page store où chaque capture d'écran et chaque ligne de texte travaille à augmenter votre Conversion Rate.\n\nSi vos tags sont en conflit avec le gameplay réel, même un afflux massif d'utilisateurs générera des rebonds qui disent au système que votre jeu est de mauvaise qualité et tue votre portée organique.",
+        },
+        {
+          id: "keep-people-coming-back",
+          question:
+            "La page est un funnel de conversion, mais comment faire revenir les gens ?",
+          answer:
+            "Vous ne pouvez pas annoncer un jeu une fois et rester silencieux jusqu'au lancement car l'attention des joueurs est incroyablement éphémère. Une stratégie professionnelle implique des beats marketing programmés qui forcent le compteur de wishlists à monter chaque semaine.\n\nChaque mise à jour de trailer ou révélation de mécanique doit fonctionner comme un hook pour reconstruire la notoriété afin qu'au moment du lancement vous ayez un pool massif d'utilisateurs prêts à acheter.",
+        },
+        {
+          id: "no-ad-budget",
+          question:
+            "Où trouver du trafic si je n'ai pas de budget pour les ads ?",
+          answer:
+            "Des plateformes comme Reddit ou TikTok peuvent générer des milliers de wishlists du jour au lendemain mais sont notoirement toxiques envers la publicité traditionnelle et nécessitent une approche organique. Le marketing sur ces plateformes se construit en montrant le processus de développement ou des avancées techniques uniques qui provoquent une discussion authentique.\n\nSi un post atteint le sommet d'un subreddit l'élan se transfère à votre page Steam augmentant dramatiquement vos chances d'être repéré par les moteurs de recommandation internes sans dépenser un centime.",
+        },
+        {
+          id: "break-out-of-bubble",
+          question:
+            "Je publie sur les réseaux mais comment sortir de ma bulle ?",
+          answer:
+            "Une seule vidéo YouTube d'un créateur spécialisé dans votre genre peut donner un boost plus puissant à votre Conversion Rate que n'importe quel effort solo sur les réseaux. Le marketing ici consiste à identifier les influenceurs dont les spectateurs aiment déjà vos mécaniques et votre style visuel.\n\nS'associer avec des créateurs vous permet de valider votre projet aux yeux du marché de masse et d'assurer la Wishlist Velocity explosive nécessaire pour atterrir sur New and Trending le premier jour.",
+        },
+        {
+          id: "stress-test-before-launch",
+          question:
+            "Y a-t-il un moyen de tout tester avant de m'engager sur une date de lancement ?",
+          answer:
+            "La participation à des événements comme Steam Next Fest n'est pas juste divertir les fans mais un audit brutal de toute votre stratégie marketing. À cette étape le marketing devient un jeu de données où vous trackez l'engagement et la rétention des joueurs dans votre démo.\n\nSi le build montre un temps de jeu moyen élevé Steam l'interprète comme un signal de haut potentiel et commence à promouvoir agressivement la version complète dans la Discovery Queue avant même que vous ne soyez live.",
+        },
+        {
+          id: "regional-pricing",
+          question:
+            "J'ai les wishlists mais que faire si les gens hésitent à payer le prix plein ?",
+          answer:
+            "Vous laissez des revenus significatifs sur la table si vous ignorez le Regional Pricing et convertissez simplement votre devise de base sans considérer les réalités du marché local. Le marketing intelligent inclut l'ajustement des prix via Steamworks pour des régions comme la Chine ou l'Amérique latine pour augmenter exponentiellement le volume.\n\nCela crée la vélocité de ventes nécessaire pour que l'algorithme fixe votre jeu dans la liste Global Top Sellers qui maintient le trafic organique pendant des semaines après le lancement.",
+        },
+        {
+          id: "press-and-curators",
+          question:
+            "Tout est prêt pour le lancement mais comment attirer l'attention de la presse et des curators ?",
+          answer:
+            "Le marketing professionnel nécessite de passer des emails de masse à un outreach chirurgical ciblant les personnes qui influencent réellement votre sous-genre spécifique. Vous avez besoin d'un Press Kit où les captures d'écran et les gifs sont optimisés pour une utilisation immédiate dans les articles sans montage supplémentaire.\n\nAu lieu de demander une critique générique vous devriez pitcher un angle unique comme une innovation technique ou comment votre jeu comble un vide spécifique dans le marché actuel.",
+        },
+        {
+          id: "steam-curators-worth-it",
+          question:
+            "Ça vaut le coup de consacrer du temps au système Steam Curators ?",
+          answer:
+            "La majorité des curators sur Steam n'ont pas de vrai pouvoir mais les groupes de premier plan peuvent fournir un boost mesurable si votre jeu correspond parfaitement à leur niche. Le marketing ici implique de filtrer le bruit pour trouver des groupes avec des discussions actives et un suivi démontrablement loyal.\n\nUtilisez l'outil Curator Connect dans Steamworks avec une extrême prudence et évitez d'envoyer des clés à chaque demandeur car cela dilue souvent vos statistiques sans fournir de trafic wishlist de qualité.",
+        },
+        {
+          id: "console-marketing",
+          question:
+            "Si je prévois de passer aux consoles, le marketing change-t-il significativement ?",
+          answer:
+            "Sur PlayStation et Xbox vous opérez dans un écosystème beaucoup plus fermé où le succès est souvent dicté par votre capacité à obtenir du featuring du titulaire de la plateforme. Le marketing sur consoles se construit sur la gestion de relations à long terme et des trailers de haute qualité pour les canaux officiels de la plateforme.\n\nContrairement à Steam où les algorithmes dominent, les consoles dépendent encore largement des curators humains et de votre capacité à participer aux grands cycles promotionnels ou services d'abonnement comme Game Pass.",
+        },
+        {
+          id: "wishlists-break-even",
+          question:
+            "Tout le monde parle de wishlists mais quel est le nombre réel pour le break even ?",
+          answer:
+            "Sur le marché PC actuel un seuil sûr pour un lancement réussi qui active l'algorithme se situe généralement entre sept mille et dix mille wishlists. Le marketing pour jeux est un jeu de probabilité où vous calculez votre Conversion Rate attendu pour comprendre combien de personnes achèteront dans les premières vingt-quatre heures.\n\nSi votre base de wishlists est trop petite même un Launch Discount généreux échouera à générer la masse critique de ventes nécessaire pour rester en première page.",
+        },
+        {
+          id: "reviews-impact",
+          question:
+            "Les ventes arrivent mais mes avis chutent. Comment cela impacte ma croissance ?",
+          answer:
+            "Votre score d'avis sur Steam est votre actif marketing le plus précieux et dicte directement votre visibilité dans la Discovery Queue. Si votre note tombe en dessous de quatre-vingts pour cent positif l'algorithme commence à limiter vos impressions car il considère le projet comme un risque.\n\nDans ce scénario le marketing devient de la gestion de crise où vous devez utiliser le Community Hub pour répondre aux plaintes et publier des patchs qui montrent à l'audience votre engagement à long terme.",
+        },
+        {
+          id: "ignore-marketing",
+          question:
+            "Que se passe-t-il si j'ignore tout ça et laisse le jeu parler de lui-même ?",
+          answer:
+            "Le résultat le plus probable d'un lancement sans stratégie marketing est le Flatline : un petit pic le premier jour suivi de ventes quotidiennes proches de zéro. Sans l'élan généré par les beats pré-lancement vous ne dépasserez jamais le seuil pour la liste New and Trending et votre jeu sera enterré.\n\nVotre chef-d'œuvre devient un échec commercial non pas parce que le code était mauvais mais parce que vous n'avez pas donné aux robots de la plateforme une raison de se soucier de votre succès.",
+        },
+      ],
+    },
   },
   "driving-traffic-but-wishlists-standing-still": {
     title: "J’amène du trafic, mais mes wishlists restent bloquées",
     excerpt:
       "Si tu amènes du trafic mais que les wishlists ne bougent pas, tu as probablement une fuite de conversion : audience froide, tags incohérents, store page faible ou canaux peu intentionnels. Ce Q&A en cartes t’aide à trouver la fuite et la corriger.",
     category: "Steam",
+    cardArticle: {
+      title: "Je génère du trafic, mais mes wishlists stagnent",
+      lead: "Il y a une fuite dans le funnel quelque part — mais où exactement ? Et comment \"réchauffer\" correctement une audience froide pour que l'algorithme de Steam ne décide pas que votre jeu est une cause perdue ?",
+      cards: [
+        {
+          id: "pumping-money-into-ads",
+          question:
+            "J'investis dans les ads mais le compteur de wishlists bouge à peine",
+          answer:
+            "Très probablement vous dirigez du trafic froid vers une page pas prête à convertir ou votre Conversion Rate est détruit par un décalage d'attentes. Le marketing efficace pour jeux PC se construit sur un alignement précis avec les tags de genre car l'algorithme analyse le comportement utilisateur pour décider si vous méritez plus d'impressions.\n\nSi les gens arrivent d'un lien externe mais ne cliquent pas sur wishlist cela envoie un signal négatif massif au système qui nuit à votre portée organique plus que de ne pas avoir d'ads du tout.",
+        },
+        {
+          id: "thousands-of-visitors",
+          question:
+            "Si j'amène des milliers de visiteurs, pourquoi Steam pense que mon jeu est un échec ?",
+          answer:
+            "La plateforme ne se soucie pas des chiffres de trafic bruts mais se soucie profondément de la qualité de ces visiteurs et de leur intention d'achat. Quand vous lancez des ads larges sans audience filtrée vous finissez avec un taux de rebond élevé qui ruine vos métriques internes dans Steamworks.\n\nL'algorithme interprète ce faible engagement comme un signe que votre jeu est mal fait ou mal promu et enterrera rapidement votre projet dans les résultats de recherche.",
+        },
+        {
+          id: "reddit-bans",
+          question:
+            "Reddit reste le gold standard pour le trafic externe mais comment éviter de se faire bannir ?",
+          answer:
+            "Cette plateforme est l'un des rares endroits où vous pouvez gagner des milliers de wishlists de haute qualité sans dépenser un centime. Le marketing ici consiste à trouver des subreddits hyper-spécifiques où vit votre audience cible directe.\n\nL'erreur la plus courante est de poster une pub froide dans un board massif comme r/gaming juste pour se faire bannir, alors qu'un post transparent sur une avancée technique dans une communauté de niche produit un taux de conversion plusieurs fois supérieur.",
+        },
+        {
+          id: "twitter-viability",
+          question:
+            "Twitter a été très instable, est-ce encore un canal viable pour la croissance ?",
+          answer:
+            "L'efficacité de cette plateforme dépend entièrement du style visuel de votre projet et de votre capacité à faire tendance dans un cercle très spécifique de développeurs et éditeurs. En marketing pour jeux Twitter devient souvent une chambre d'écho où seuls vos pairs vous voient, résultant en quasi zéro croissance de wishlists de vrais joueurs.\n\nCependant il reste indispensable pour le networking et pour capter l'attention de scouts de plateformes ou d'influenceurs importants qui cherchent constamment du contenu frais pour leurs showcases.",
+        },
+        {
+          id: "youtube-budget",
+          question:
+            "YouTube c'est la cour des grands mais le budget dicte-t-il toujours le succès ?",
+          answer:
+            "Si vous avez les ressources pour des intégrations de haute qualité YouTube peut être votre source principale de trafic à haute intention car la vidéo longue permet une immersion profonde dans les gameplay loops. Le marketing via la vidéo nécessite une sélection chirurgicale de créateurs spécialisés dans votre genre exact.\n\nVotre objectif est de sécuriser des placements avec des créateurs qui comprennent vraiment les mécaniques et peuvent articuler à leur audience pourquoi votre projet mérite d'être dans leur wishlist.",
+        },
+        {
+          id: "tiktok-influencers",
+          question:
+            "La vidéo courte sur TikTok fonctionne par volume mais vaut-il mieux acheter des influenceurs ?",
+          answer:
+            "Essayer de faire grandir un compte studio sur TikTok peut être un long voyage sans fruit à moins d'avoir un hook visuel viral compréhensible en moins de deux secondes. Il est bien plus efficace d'exploiter la vidéo courte via des influenceurs établis qui savent déjà créer des hooks engageants pour leur base loyale.\n\nCes clips dynamiques sont excellents pour l'awareness mais rappelez-vous que ce trafic est souvent le plus froid donc votre page Steam doit être impeccable pour éviter les rebonds immédiats.",
+        },
+        {
+          id: "influencer-waste",
+          question:
+            "Comment éviter que les intégrations influenceurs soient un gaspillage total ?",
+          answer:
+            "L'erreur la plus courante est de courir après les compteurs de followers en ignorant l'engagement réel et le chevauchement entre l'audience du créateur et votre genre. Le marketing professionnel via influenceurs nécessite une plongée profonde dans leurs sections commentaires et critiques précédentes.\n\nVous n'avez pas seulement besoin de vues, vous avez besoin de créateurs qui peuvent vendre l'idée du jeu et générer un hype authentique pour votre participation aux festivals ou votre date de lancement.",
+        },
+        {
+          id: "what-is-working",
+          question:
+            "Si le trafic vient de cinq endroits différents, comment savoir ce qui fonctionne vraiment ?",
+          answer:
+            "Steamworks fournit des outils pour tracker les liens externes via des tags UTM mais ils ne donnent souvent qu'une vue partielle du parcours client. Une approche sophistiquée implique d'utiliser les analytics natives de la plateforme conjointement avec un monitoring quotidien de la dynamique des wishlists après chaque post ou intégration majeure.\n\nC'est le seul moyen d'identifier votre canal le plus efficace et de pivoter votre budget d'un thread Twitter sous-performant vers un post Reddit ou une vidéo YouTube à haute performance.",
+        },
+        {
+          id: "stop-spending-on-ads",
+          question:
+            "Devrais-je arrêter de dépenser en ads tant que je n'ai pas corrigé mon taux de conversion ?",
+          answer:
+            "Si votre conversion de visite à wishlist sur le trafic externe tombe en dessous d'un seuil critique alors aucun budget ne sauvera votre lancement. En marketing PC c'est un signal clair que vous avez choisi la mauvaise audience ou que votre page store crée de la friction pour le joueur cible.\n\nArrêtez et réévaluez vos créatifs ads et vos tags car chaque clic inefficace convainc davantage l'algorithme de Steam que votre jeu ne mérite pas une place dans la Discovery Queue.",
+        },
+      ],
+    },
   },
   "steam-next-fest-the-masterclass-in-discovery": {
     title: "Steam Next Fest : la masterclass de la découverte",
@@ -139,7 +374,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "p", text: "À ce moment-là, le mal est déjà fait." },
       {
         type: "p",
-        text: "Steam évalue les avis très tôt pour décider s’il est “safe” de montrer votre jeu.",
+        text: "Steam évalue les avis très tôt pour décider s’il est 'safe' de montrer votre jeu.",
       },
       { type: "h3", text: "LA SOLUTION : PLANIFIER LES AVIS AVANT LA SORTIE" },
       { type: "p", text: "Avant la sortie :" },
@@ -229,7 +464,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Une erreur fréquente est de montrer des images mises en scène ou trop “polish” qui ne reflètent pas l’expérience moment-to-moment du jeu. Les joueurs veulent des preuves et de la clarté. Ils veulent comprendre ce que le jeu “fait ressentir” en pratique. Les screenshots sont des réponses visuelles courtes à ces questions.",
+        text: "Une erreur fréquente est de montrer des images mises en scène ou trop 'polish' qui ne reflètent pas l’expérience moment-to-moment du jeu. Les joueurs veulent des preuves et de la clarté. Ils veulent comprendre ce que le jeu 'fait ressentir' en pratique. Les screenshots sont des réponses visuelles courtes à ces questions.",
       },
       {
         type: "image",
@@ -278,7 +513,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "• Une bande-annonce dynamique associée à des screenshots statiques ou vides • Un ton horror dans la vidéo mais des images lumineuses, “adventure-like” • Une ouverture cinématique polish suivie de screenshots qui paraissent datés",
+        text: "• Une bande-annonce dynamique associée à des screenshots statiques ou vides • Un ton horror dans la vidéo mais des images lumineuses, 'adventure-like' • Une ouverture cinématique polish suivie de screenshots qui paraissent datés",
       },
       {
         type: "p",
@@ -366,7 +601,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h2", text: "L’erreur classique : traiter la capsule comme un mini poster" },
       {
         type: "p",
-        text: "Les développeurs abordent souvent la capsule comme si c’était un poster de film compressé. Un poster est conçu pour être étudié. Une capsule est conçue pour être “glanced at”. Quand vous essayez de faire tenir un grand cast, un éclairage dramatique ou une scène de monde très large dans ce petit format, l’image devient du bruit visuel.",
+        text: "Les développeurs abordent souvent la capsule comme si c’était un poster de film compressé. Un poster est conçu pour être étudié. Une capsule est conçue pour être 'glanced at'. Quand vous essayez de faire tenir un grand cast, un éclairage dramatique ou une scène de monde très large dans ce petit format, l’image devient du bruit visuel.",
       },
       {
         type: "p",
@@ -435,7 +670,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h2", text: "Une composition qui convertit : la clarté avant la complexité" },
       {
         type: "p",
-        text: "Steam n’est pas un art book. Votre sujet doit “snap” instantanément. Les options les plus sûres pour une conversion élevée sont des compositions simples :",
+        text: "Steam n’est pas un art book. Votre sujet doit 'snap' instantanément. Les options les plus sûres pour une conversion élevée sont des compositions simples :",
       },
       {
         type: "p",
@@ -454,7 +689,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "p", text: "La capsule influence deux conversions majeures :" },
       {
         type: "p",
-        text: "Si la capsule attire la mauvaise audience, vous verrez un CTR fort mais un gros drop-off quand les joueurs consultent réellement la page. Par exemple, une capsule “cozy” appliquée à un jeu de survie gritty crée instantanément un mismatch d’audience.",
+        text: "Si la capsule attire la mauvaise audience, vous verrez un CTR fort mais un gros drop-off quand les joueurs consultent réellement la page. Par exemple, une capsule 'cozy' appliquée à un jeu de survie gritty crée instantanément un mismatch d’audience.",
       },
       {
         type: "p",
@@ -708,7 +943,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "De grosses réductions peuvent booster le volume à court terme, mais nuire à la perception.",
       },
-      { type: "p", text: "Les joueurs commencent à voir votre jeu comme “bon marché”." },
+      { type: "p", text: "Les joueurs commencent à voir votre jeu comme 'bon marché'." },
       { type: "h3", text: "LA SOLUTION : UTILISER DES PALIERS DE RÉDUCTION" },
       { type: "p", text: "Progression courante :" },
       {
@@ -2170,7 +2405,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Cet article explique pourquoi les wishlists Steam ne progressent pas si souvent, pourquoi la plupart des “correctifs” échouent, et comment construire une structure qui soutienne une croissance régulière des wishlists Steam dans le temps.",
+        text: "Cet article explique pourquoi les wishlists Steam ne progressent pas si souvent, pourquoi la plupart des 'correctifs' échouent, et comment construire une structure qui soutienne une croissance régulière des wishlists Steam dans le temps.",
       },
       { type: "h2", text: "Pourquoi, en pratique, les wishlists Steam ne progressent pas" },
       {
@@ -2206,12 +2441,12 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Elles montrent clairement les mécaniques, les visuels et les fonctionnalités. Du point de vue du développement, la page semble “finie”.",
+        text: "Elles montrent clairement les mécaniques, les visuels et les fonctionnalités. Du point de vue du développement, la page semble 'finie'.",
       },
       { type: "p", text: "Du point de vue du joueur, la page paraît souvent statique." },
       {
         type: "p",
-        text: "Si la page ne communique pas un mouvement, une direction ou une progression, les joueurs supposent qu’il n’y a pas d’urgence. Ils peuvent revenir plus tard. Le “plus tard” arrive rarement.",
+        text: "Si la page ne communique pas un mouvement, une direction ou une progression, les joueurs supposent qu’il n’y a pas d’urgence. Ils peuvent revenir plus tard. Le 'plus tard' arrive rarement.",
       },
       { type: "h3", text: "Le message est trop large pour convertir" },
       {
@@ -2322,7 +2557,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "Étape 1. Définir la vraie audience de wishlist" },
       {
         type: "p",
-        text: "Votre audience de wishlist n’est pas “tous ceux qui pourraient aimer le jeu un jour”.",
+        text: "Votre audience de wishlist n’est pas 'tous ceux qui pourraient aimer le jeu un jour'.",
       },
       {
         type: "p",
@@ -2353,7 +2588,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Quand les wishlists Steam ne progressent pas, cela signifie souvent que la page ne répond jamais à “pourquoi maintenant”.",
+        text: "Quand les wishlists Steam ne progressent pas, cela signifie souvent que la page ne répond jamais à 'pourquoi maintenant'.",
       },
       { type: "h3", text: "Étape 3. Structurer la page Steam comme un parcours de décision" },
       { type: "p", text: "Les pages Steam sont parcourues, pas lues." },
@@ -2542,7 +2777,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "Les posts sont déconnectés de la capacité à convertir" },
       {
         type: "p",
-        text: "Beaucoup de posts Reddit réussissent “selon leurs propres critères”. Ils reçoivent des commentaires. Ils déclenchent des discussions. Ils récoltent du feedback.",
+        text: "Beaucoup de posts Reddit réussissent 'selon leurs propres critères'. Ils reçoivent des commentaires. Ils déclenchent des discussions. Ils récoltent du feedback.",
       },
       { type: "p", text: "Mais la croissance des wishlists ne suit pas." },
       {
@@ -2587,7 +2822,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "Traiter Reddit comme une simple source de trafic" },
       {
         type: "p",
-        text: "Reddit est souvent utilisé comme un “lien drop” avec quelques étapes en plus.",
+        text: "Reddit est souvent utilisé comme un 'lien drop' avec quelques étapes en plus.",
       },
       { type: "p", text: "On écrit un post. On met un lien Steam. L’objectif est le clic." },
       {
@@ -2628,7 +2863,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Les joueurs se demandent ce que le jeu “fait ressentir”, ce qui le rend fun, et pourquoi il vaut leur temps. Sans ce cadrage, l’engagement reste superficiel.",
+        text: "Les joueurs se demandent ce que le jeu 'fait ressentir', ce qui le rend fun, et pourquoi il vaut leur temps. Sans ce cadrage, l’engagement reste superficiel.",
       },
       { type: "h3", text: "Envoyer le trafic Reddit vers une page Steam faible" },
       { type: "p", text: "C’est l’une des erreurs les plus dommageables." },
@@ -2658,7 +2893,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Les utilisateurs Reddit ne vont pas “chercher le sens”. Si ce n’est pas évident, ils partent.",
+        text: "Les utilisateurs Reddit ne vont pas 'chercher le sens'. Si ce n’est pas évident, ils partent.",
       },
       { type: "h3", text: "Couche 2. Construire une présence avant de demander de l’attention" },
       {
@@ -2925,7 +3160,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h2", text: "Erreurs courantes qui ne corrigent pas la conversion" },
       {
         type: "p",
-        text: "Quand les développeurs réalisent que leur page Steam a du trafic mais aucune wishlist, ils réagissent souvent vite. Malheureusement, beaucoup de “fixes” classiques renforcent le problème.",
+        text: "Quand les développeurs réalisent que leur page Steam a du trafic mais aucune wishlist, ils réagissent souvent vite. Malheureusement, beaucoup de 'fixes' classiques renforcent le problème.",
       },
       { type: "h3", text: "Ajouter plus d’informations sur la page" },
       { type: "p", text: "La réponse la plus courante est d’expliquer davantage." },
@@ -3600,7 +3835,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "La plupart du trafic early n’a pas d’intention d’achat" },
       {
         type: "p",
-        text: "Beaucoup de développeurs arrivent à générer du trafic vers leur page Steam, mais ce trafic convertit rarement. C’est là que le problème “zéro wishlist sur Steam” devient déroutant. Des gens visitent, mais rien ne se passe.",
+        text: "Beaucoup de développeurs arrivent à générer du trafic vers leur page Steam, mais ce trafic convertit rarement. C’est là que le problème 'zéro wishlist sur Steam' devient déroutant. Des gens visitent, mais rien ne se passe.",
       },
       {
         type: "p",
@@ -4381,7 +4616,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "p", text: "La croissance wishlist accélère par pics, pas en lignes." },
       {
         type: "p",
-        text: "La question “combien de wishlists pour lancer” compte moins que de savoir si ces wishlists reflètent un intérêt réel de joueurs.",
+        text: "La question 'combien de wishlists pour lancer' compte moins que de savoir si ces wishlists reflètent un intérêt réel de joueurs.",
       },
       {
         type: "p",
@@ -4453,7 +4688,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "Les influenceurs sont utilisés sans contexte" },
       {
         type: "p",
-        text: "Les influenceurs “steam wishlist growth” sont souvent abordés comme un jeu de volume. Plus de créateurs égale plus de wishlists.",
+        text: "Les influenceurs 'steam wishlist growth' sont souvent abordés comme un jeu de volume. Plus de créateurs égale plus de wishlists.",
       },
       {
         type: "p",
@@ -4504,7 +4739,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "Outreach massif auprès des influenceurs" },
       {
         type: "p",
-        text: "Envoyer des centaines de clés ou d’emails est inefficace pour des influenceurs orientés “steam wishlist growth”.",
+        text: "Envoyer des centaines de clés ou d’emails est inefficace pour des influenceurs orientés 'steam wishlist growth'.",
       },
       {
         type: "p",
@@ -4549,7 +4784,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Les influenceurs “steam wishlist growth” doivent être évalués selon cet alignement, pas selon la reach brute.",
+        text: "Les influenceurs 'steam wishlist growth' doivent être évalués selon cet alignement, pas selon la reach brute.",
       },
       { type: "h3", text: "Étape 2. Aligner les sources de trafic avec l’état d’esprit du joueur" },
       { type: "p", text: "Chaque canal crée un état mental différent." },
@@ -4585,7 +4820,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Les influenceurs “steam wishlist growth” sont les plus efficaces quand ils sont utilisés dans une boucle, pas comme des événements isolés.",
+        text: "Les influenceurs 'steam wishlist growth' sont les plus efficaces quand ils sont utilisés dans une boucle, pas comme des événements isolés.",
       },
       { type: "h3", text: "Étape 5. Renforcer avec le timing et les updates" },
       { type: "p", text: "La croissance des wishlists accélère quand les joueurs perçoivent une progression." },
@@ -4624,7 +4859,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Résultat : les influenceurs “steam wishlist growth” sont devenus un driver fiable plutôt qu’une vanity metric.",
+        text: "Résultat : les influenceurs 'steam wishlist growth' sont devenus un driver fiable plutôt qu’une vanity metric.",
       },
       { type: "h3", text: "Exemple 3. Jeu de simulation de niche" },
       { type: "p", text: "Le développeur postait régulièrement mais ne voyait aucune croissance." },
@@ -5530,14 +5765,14 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h2", text: "Le bon système derrière la croissance des wishlists Steam" },
       {
         type: "p",
-        text: "Quand les développeurs dépassent la question “pourquoi pas de wishlists sur Steam” et se concentrent sur la structure, les résultats changent.",
+        text: "Quand les développeurs dépassent la question 'pourquoi pas de wishlists sur Steam' et se concentrent sur la structure, les résultats changent.",
       },
       { type: "p", text: "Un système qui marche relie quatre éléments." },
       { type: "p", text: "Audience Intention Conversion Renforcement" },
       { type: "h3", text: "Étape un : définir l’audience wishlist spécifique" },
       {
         type: "p",
-        text: "Votre audience wishlist n’est pas “tout le monde” qui pourrait aimer votre jeu un jour.",
+        text: "Votre audience wishlist n’est pas 'tout le monde' qui pourrait aimer votre jeu un jour.",
       },
       { type: "p", text: "C’est le groupe le plus susceptible de s’y intéresser maintenant." },
       {
@@ -5551,7 +5786,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       { type: "h3", text: "Étape deux : créer un moment de décision clair" },
       {
         type: "p",
-        text: "Les wishlists augmentent quand les joueurs comprennent pourquoi “maintenant” compte.",
+        text: "Les wishlists augmentent quand les joueurs comprennent pourquoi 'maintenant' compte.",
       },
       {
         type: "p",
@@ -5794,7 +6029,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Les développeurs expérimentés tombent souvent dans des pièges “avancés”. Ce ne sont pas des erreurs de débutant. Ce sont des erreurs structurelles, logiques en apparence, mais inefficaces en pratique.",
+        text: "Les développeurs expérimentés tombent souvent dans des pièges 'avancés'. Ce ne sont pas des erreurs de débutant. Ce sont des erreurs structurelles, logiques en apparence, mais inefficaces en pratique.",
       },
       { type: "h3", text: "Chasser la visibilité sans diagnostiquer la conversion" },
       { type: "p", text: "Il est tentant de se focaliser sur la portée." },
@@ -6496,7 +6731,7 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "p",
-        text: "Pas une démographie. Pas “tous ceux qui aiment des jeux similaires”.",
+        text: "Pas une démographie. Pas 'tous ceux qui aiment des jeux similaires'.",
       },
       {
         type: "p",
