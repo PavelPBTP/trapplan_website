@@ -301,9 +301,14 @@ export async function generateMetadata({
   })();
 
   const localeMarker = locale === "en" ? "" : `(${locale.toUpperCase()})`;
-  const slugMarker = baseTitleForMeta.endsWith("…")
-    ? `(${slug.split("-").filter(Boolean).slice(-6).join("-") || slug})`
-    : "";
+  const slugMarker = (() => {
+    if (!baseTitleForMeta.endsWith("…")) return "";
+    const parts = slug.split("-").filter(Boolean);
+    const head = parts.slice(0, 3).join("-");
+    const tail = parts.slice(-3).join("-");
+    const combined = [head, tail].filter(Boolean).join("-");
+    return `(${combined || slug})`;
+  })();
   const titleSuffix = [localeMarker, slugMarker].filter(Boolean).join(" ");
   const title = titleSuffix ? clampWithSuffix(baseTitleForMeta, titleSuffix, 60) : baseTitleForMeta;
   const excerptUses = getBlogPosts(locale).reduce(
