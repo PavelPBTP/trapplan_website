@@ -54,11 +54,20 @@ export async function generateMetadata({
       url: canonical,
       title: s.title,
       description,
+      images: [
+        {
+          url: new URL("/og", origin).toString(),
+          width: 1200,
+          height: 630,
+          alt: s.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: s.title,
       description,
+      images: [new URL("/og", origin).toString()],
     },
   };
 }
