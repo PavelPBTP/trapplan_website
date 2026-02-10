@@ -935,7 +935,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Gameplay Trailer",
     "packages.card.gameplay_trailer.desc":
       "A complete, high quality gameplay trailer crafted specifically for your game. Clear storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
-    "seo.site.name": "TrapPlan",
+    "seo.site.name": "Videogames Marketing | Marketing for Indie Games",
     "seo.site.description": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
     "seo.about.title": "About Us",
     "seo.about.desc": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
@@ -2041,7 +2041,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "paid_ads_setup.ui.section4.step4.text":
       "Tienes acceso completo y una configuración clara que puedes gestionar.",
     "paid_ads_setup.ui.section4.cta": "Empecemos",
-    "seo.site.name": "TrapPlan",
+    "seo.site.name": "Marketing de videojuegos | Marketing para juegos indie",
     "seo.site.description": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con marketing basado en rendimiento.",
     "seo.about.title": "Sobre nosotros",
     "seo.about.desc": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con sistemas de marketing basados en rendimiento.",
@@ -2286,7 +2286,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Gameplay Trailer",
     "packages.card.gameplay_trailer.desc":
       "Trailer gameplay completo e di alta qualità realizzato per il tuo gioco. Storytelling chiaro, capture curata, ritmo, editing e consegna pronta per Steam, YouTube e distribuzione media.",
-    "seo.site.name": "TrapPlan",
+    "seo.site.name": "Marketing per videogiochi | Marketing per giochi indie",
     "seo.site.description": "TrapPlan aiuta gli studi di videogiochi a far crescere wishlist e vendite con marketing performance-driven.",
     "seo.about.title": "Chi siamo",
     "seo.about.desc": "TrapPlan aiuta gli studi di videogiochi a far crescere wishlist e vendite con sistemi di marketing basati sulle performance.",
@@ -2530,7 +2530,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.card.gameplay_trailer.title": "Trailer de gameplay",
     "packages.card.gameplay_trailer.desc":
       "Un trailer gameplay complet, premium, conçu pour votre jeu. Storytelling clair, capture soignée, rythme, montage et livraison prête pour Steam, YouTube et la distribution média.",
-    "seo.site.name": "TrapPlan",
+    "seo.site.name": "Marketing de jeux vidéo | Marketing pour jeux indie",
     "seo.site.description": "TrapPlan aide les studios à augmenter les wishlists et les ventes grâce à un marketing orienté performance.",
     "seo.about.title": "À propos",
     "seo.about.desc": "TrapPlan aide les studios à augmenter les wishlists et les ventes avec des systèmes marketing orientés performance.",
@@ -2609,7 +2609,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "blog_quote_banner.error_network": "Échec de l’envoi. Réessaie.",
   },
   de: {
-    "seo.site.name": "TrapPlan",
+    "seo.site.name": "Videospiel-Marketing | Marketing für Indie-Spiele",
     "seo.site.description":
       "TrapPlan hilft Game-Studios, Wishlists und Sales mit performanceorientiertem Marketing zu steigern.",
     "seo.about.title": "Über uns",
@@ -2696,7 +2696,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "blog_quote_banner.error_network": "Senden fehlgeschlagen. Bitte erneut versuchen.",
   },
   zh: {
-    "seo.site.name": "TrapPlan",
+    "seo.site.name": "游戏营销 | 独立游戏营销",
     "seo.site.description": "TrapPlan 通过以效果为导向的营销，帮助游戏工作室增长愿望单与销量。",
     "seo.about.title": "关于我们",
     "seo.about.desc": "TrapPlan 通过以效果为导向的营销系统，帮助游戏工作室增长愿望单与销量。",
