@@ -292,10 +292,12 @@ export async function generateMetadata({
     (acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0),
     0,
   );
-  const description =
+  const description = clampText(
     excerptUses > 1
       ? `${post.excerpt} (${post.category ? `${post.category} — ` : ""}${post.title})`
-      : post.excerpt;
+      : post.excerpt,
+    160,
+  );
 
   const ogFallback = (() => {
     const p = new URLSearchParams();
