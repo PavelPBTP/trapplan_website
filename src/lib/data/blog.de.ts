@@ -6,12 +6,6 @@ export const BLOG_DE_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Eine Karten-Analyse des „Zero-Budget-Launch“-Mythos 2026: Was virales Potenzial wirklich bedeutet, warum Likes keine Kaufabsicht sind, was „gratis“ Promotion kostet und wie du mit Steams Algorithmus ohne Paid Ads arbeiten kannst.",
     category: "Steam",
-    cardArticle: {
-      title:
-        "Kann man ein Spiel wirklich ohne Budget vermarkten – nur mit \"Viralität\"?",
-      lead: "Der Traum von rein organischem Wachstum scheitert, weil Steam und Konsolenmärkte gesättigt sind. Das ist der Mythos des Zero-Budget-Launch – und warum „Viralität“ keine Strategie ist.",
-      cards: [],
-    },
   },
   "make-a-great-game-avoid-a-flop-on-steam": {
     title:
@@ -19,23 +13,12 @@ export const BLOG_DE_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Ein praktischer Karten-Guide für eine Steam-Marketing-Strategie: Tags/Metadata, Weekly Beats, Organic Traffic, Influencer, Events, Pricing, PR, Curators, Console-Pivots und Wishlist-Ziele.",
     category: "Steam",
-    cardArticle: {
-      title:
-        "Alle sagen: Das Wichtigste ist ein großartiges Spiel. Aber wie vermeidest du einen totalen Flop auf Steam?",
-      lead: "Und wie viele Wishlists sind eigentlich genug? Wir erklären, wie du eine saubere Marketing-Strategie für dein Projekt aufbaust.",
-      cards: [],
-    },
   },
   "driving-traffic-but-wishlists-standing-still": {
     title: "Ich bringe Traffic, aber meine Wishlists stehen still",
     excerpt:
       "Wenn du Traffic hast, aber keine Wishlists, hast du meist ein Conversion-Leak: kalte Audience, Tag-Mismatch, schwache Store Page oder Low-Intent-Channels. Dieses Karten-Q&A zeigt, wo der Funnel bricht und wie du ihn fixst.",
     category: "Steam",
-    cardArticle: {
-      title: "Ich bringe Traffic, aber meine Wishlists stehen still",
-      lead: "Irgendwo im Funnel gibt es ein Leck – aber wo genau? Und wie „wärmst“ du eine kalte Audience, damit Steam dein Spiel nicht frühzeitig abschreibt?",
-      cards: [],
-    },
   },
   "steam-next-fest-the-masterclass-in-discovery": {
     title: "Steam Next Fest: die Masterclass in Discovery",

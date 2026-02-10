@@ -6,33 +6,18 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "用卡片问答拆解 2026 年“零预算发布”的迷思：什么才叫真正的病毒潜力、为什么点赞不等于购买意图、“免费”推广的真实成本，以及如何在不投广告的情况下利用 Steam 算法。",
     category: "Steam",
-    cardArticle: {
-      title: "真的能不花预算、只靠“病毒传播”推广一款游戏吗？",
-      lead: "纯靠自然增长的梦想正在撞墙：Steam 与主机市场已高度饱和。所谓零预算发布只是神话——“病毒传播”不是策略。",
-      cards: [],
-    },
   },
   "make-a-great-game-avoid-a-flop-on-steam": {
     title: "大家都说最重要的是做出好游戏。但如何避免在 Steam 上彻底扑街？",
     excerpt:
       "一份卡片式实战指南：如何搭建 Steam 营销策略——标签/元数据、每周节奏、自然流量、达人杠杆、活动、定价、PR、策展人、主机转向与愿望单目标。",
     category: "Steam",
-    cardArticle: {
-      title: "大家都说最重要的是做出好游戏。但如何避免在 Steam 上彻底扑街？",
-      lead: "到底需要多少愿望单才算够？我们解释如何为你的项目搭建一套真正可执行的营销策略。",
-      cards: [],
-    },
   },
   "driving-traffic-but-wishlists-standing-still": {
     title: "我在引流，但愿望单却一动不动",
     excerpt:
       "如果你在引流但愿望单不涨，往往是转化漏斗出问题：受众太冷、标签不匹配、商店页薄弱或渠道意图太低。这篇卡片问答会帮你定位漏点并给出修复方法。",
     category: "Steam",
-    cardArticle: {
-      title: "我在引流，但愿望单却一动不动",
-      lead: "漏斗里肯定有个地方在漏——但具体在哪？以及如何“预热”冷受众，避免 Steam 算法把你的游戏判定为无望项目？",
-      cards: [],
-    },
   },
   "steam-next-fest-the-masterclass-in-discovery": {
     title: "Steam 新品节：发现流量的大师课",

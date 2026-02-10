@@ -6,12 +6,6 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Un’analisi in formato card del mito del lancio a “zero budget” nel 2026: cosa significa davvero potenziale virale, perché i like non sono intenzione, quanto costa il “gratis” e come lavorare con l’algoritmo di Steam senza ads.",
     category: "Steam",
-    cardArticle: {
-      title:
-        "Si può davvero promuovere un gioco senza budget, contando solo sulla \"viralità\"?",
-      lead: "Il sogno della crescita organica sbatte contro un mercato saturo. Questo è il mito del lancio a zero budget — e perché la “viralità” non è una strategia.",
-      cards: [],
-    },
   },
   "make-a-great-game-avoid-a-flop-on-steam": {
     title:
@@ -19,23 +13,12 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Guida pratica in formato card per costruire una strategia marketing su Steam: tag/metadati, ritmo settimanale, traffico organico, influencer, eventi, pricing, PR, curators, pivot console e obiettivi di wishlists.",
     category: "Steam",
-    cardArticle: {
-      title:
-        "Tutti dicono che la cosa più importante è fare un grande gioco. Ma come eviti un flop totale su Steam?",
-      lead: "E quante wishlists sono davvero sufficienti? Spieghiamo come costruire una strategia marketing solida per il tuo progetto.",
-      cards: [],
-    },
   },
   "driving-traffic-but-wishlists-standing-still": {
     title: "Sto portando traffico, ma le mie wishlists sono ferme",
     excerpt:
       "Se stai portando traffico ma le wishlists non si muovono, probabilmente c’è una perdita di conversione: pubblico freddo, tag non coerenti, pagina store debole o canali a bassa intenzione. Questo Q&A a card ti mostra dove si rompe il funnel e come sistemarlo.",
     category: "Steam",
-    cardArticle: {
-      title: "Sto portando traffico, ma le mie wishlists sono ferme",
-      lead: "C’è una perdita nel funnel — ma dove esattamente? E come “scaldi” un pubblico freddo perché l’algoritmo di Steam non decida che il tuo gioco è una causa persa?",
-      cards: [],
-    },
   },
   "steam-next-fest-the-masterclass-in-discovery": {
     title: "Steam Next Fest: la masterclass della discovery",

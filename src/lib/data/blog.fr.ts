@@ -6,12 +6,6 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Une analyse en cartes du mythe du lancement « zéro budget » en 2026 : ce que signifie vraiment le potentiel viral, pourquoi les likes ne sont pas de l’intention, le vrai coût du « gratuit » et comment tirer parti de l’algorithme Steam sans ads.",
     category: "Steam",
-    cardArticle: {
-      title:
-        "Peut-on vraiment promouvoir un jeu sans budget, uniquement grâce à la \"viralité\" ?",
-      lead: "Le rêve de la croissance organique se heurte à un marché saturé. Voici le mythe du lancement zéro budget — et pourquoi la « viralité » n’est pas une stratégie.",
-      cards: [],
-    },
   },
   "make-a-great-game-avoid-a-flop-on-steam": {
     title:
@@ -19,23 +13,12 @@ export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
     excerpt:
       "Guide pratique en cartes pour bâtir une stratégie marketing Steam : tags/métadonnées, rythme hebdo, trafic organique, influenceurs, événements, pricing, PR, curators, pivot consoles et objectifs de wishlists.",
     category: "Steam",
-    cardArticle: {
-      title:
-        "Tout le monde dit que le plus important est de faire un bon jeu. Mais comment éviter un flop total sur Steam ?",
-      lead: "Et combien de wishlists sont vraiment suffisantes ? On t’explique comment construire une stratégie marketing solide pour ton projet.",
-      cards: [],
-    },
   },
   "driving-traffic-but-wishlists-standing-still": {
     title: "J’amène du trafic, mais mes wishlists restent bloquées",
     excerpt:
       "Si tu amènes du trafic mais que les wishlists ne bougent pas, tu as probablement une fuite de conversion : audience froide, tags incohérents, store page faible ou canaux peu intentionnels. Ce Q&A en cartes t’aide à trouver la fuite et la corriger.",
     category: "Steam",
-    cardArticle: {
-      title: "J’amène du trafic, mais mes wishlists restent bloquées",
-      lead: "Il y a une fuite dans le funnel — mais où exactement ? Et comment « réchauffer » une audience froide pour que l’algorithme Steam ne considère pas ton jeu comme perdu ?",
-      cards: [],
-    },
   },
   "steam-next-fest-the-masterclass-in-discovery": {
     title: "Steam Next Fest : la masterclass de la découverte",
