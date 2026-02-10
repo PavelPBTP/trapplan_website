@@ -38,7 +38,21 @@ export async function generateMetadata({
     return t.slice(0, maxLen - 1).trimEnd() + "…";
   };
 
-  const description = clampText(`${c.excerpt} (${label}: ${c.client})`, 160);
+  const clampWithSuffix = (base: string, suffix: string, maxLen: number) => {
+    const b = (base ?? "").trim();
+    const s = (suffix ?? "").trim();
+    if (!s) return clampText(b, maxLen);
+    const combined = `${b} ${s}`.trim();
+    if (combined.length <= maxLen) return combined;
+    const maxBase = Math.max(0, maxLen - s.length - 2);
+    const clippedBase = b.length > maxBase ? b.slice(0, Math.max(0, maxBase - 1)).trimEnd() + "…" : b;
+    return `${clippedBase} ${s}`.trim();
+  };
+
+  const description = clampWithSuffix(c.excerpt, `(${label}: ${c.client})`, 160);
+
+  const localeMarker = locale === "en" ? "" : `(${locale.toUpperCase()})`;
+  const title = localeMarker ? `${c.title} ${localeMarker}` : c.title;
 
   const origin = "https://www.trapplan.com";
   const url = new URL(withLocale(locale, `/studios-cases/${slug}`), origin).toString();
@@ -58,7 +72,7 @@ export async function generateMetadata({
     : undefined;
 
   return {
-    title: c.title,
+    title,
     description,
     alternates: {
       canonical: url,
@@ -70,13 +84,13 @@ export async function generateMetadata({
     openGraph: {
       type: "article",
       url,
-      title: c.title,
+      title,
       description,
       images,
     },
     twitter: {
       card: "summary_large_image",
-      title: c.title,
+      title,
       description,
       images: c.coverImage ? [c.coverImage.src] : undefined,
     },

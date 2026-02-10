@@ -254,6 +254,17 @@ export async function generateMetadata({
     return t.slice(0, maxLen - 1).trimEnd() + "…";
   };
 
+  const clampWithSuffix = (base: string, suffix: string, maxLen: number) => {
+    const b = (base ?? "").trim();
+    const s = (suffix ?? "").trim();
+    if (!s) return clampText(b, maxLen);
+    const combined = `${b} ${s}`.trim();
+    if (combined.length <= maxLen) return combined;
+    const maxBase = Math.max(0, maxLen - s.length - 2);
+    const clippedBase = b.length > maxBase ? b.slice(0, Math.max(0, maxBase - 1)).trimEnd() + "…" : b;
+    return `${clippedBase} ${s}`.trim();
+  };
+
   const baseTitle = looksSluggyTitle(post.title) ? titleFromSlug(slug) : post.title;
 
   const allText = `${post.title}\n${post.excerpt}\n${post.content
@@ -281,23 +292,33 @@ export async function generateMetadata({
   };
 
   const keyword = pickKeyword();
-  const title = (() => {
+  const baseTitleForMeta = (() => {
     const lower = baseTitle.toLowerCase();
     if (!keyword) return clampText(baseTitle, 60);
     if (lower.includes(keyword.toLowerCase())) return clampText(baseTitle, 60);
     const candidate = `${baseTitle}: ${keyword}`;
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
+
+  const localeMarker = locale === "en" ? "" : `(${locale.toUpperCase()})`;
+  const title = localeMarker ? clampWithSuffix(baseTitleForMeta, localeMarker, 60) : baseTitleForMeta;
   const excerptUses = getBlogPosts(locale).reduce(
     (acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0),
     0,
   );
-  const description = clampText(
-    excerptUses > 1
-      ? `${post.excerpt} (${post.category ? `${post.category} — ` : ""}${post.title})`
-      : post.excerpt,
-    160,
+  const excerptClamped = clampText(post.excerpt, 160);
+  const excerptClampedUses = getBlogPosts(locale).reduce(
+    (acc, p) => acc + (clampText(p.excerpt, 160) === excerptClamped ? 1 : 0),
+    0,
   );
+
+  const descriptionNeedsSuffix = excerptUses > 1 || excerptClampedUses > 1;
+  const descriptionSuffix = descriptionNeedsSuffix
+    ? `(${post.category ? `${post.category} — ` : ""}${post.title})`
+    : "";
+  const description = descriptionSuffix
+    ? clampWithSuffix(post.excerpt, descriptionSuffix, 160)
+    : excerptClamped;
 
   const ogFallback = (() => {
     const p = new URLSearchParams();

@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return t.slice(0, maxLen - 1).trimEnd() + "…";
   };
 
-  const title = t(locale, "cta.work_with_us");
+  const title = t(locale, "form_page.title").replace(/\s+/g, " ").trim();
   const description = clampText(t(locale, "form_page.subtitle"), 160);
 
   return {
