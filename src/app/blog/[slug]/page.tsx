@@ -304,6 +304,50 @@ export async function generateMetadata({
   const slugMarker = (() => {
     if (!baseTitleForMeta.endsWith("…")) return "";
     const parts = slug.split("-").filter(Boolean);
+
+    const stop = new Set([
+      "a",
+      "an",
+      "and",
+      "are",
+      "as",
+      "at",
+      "before",
+      "by",
+      "do",
+      "does",
+      "for",
+      "from",
+      "get",
+      "getting",
+      "guide",
+      "how",
+      "in",
+      "into",
+      "is",
+      "marketing",
+      "of",
+      "on",
+      "or",
+      "step",
+      "success",
+      "that",
+      "the",
+      "their",
+      "tips",
+      "to",
+      "understanding",
+      "what",
+      "when",
+      "who",
+      "why",
+      "with",
+    ]);
+
+    const meaningful = parts.filter((p) => !stop.has(p.toLowerCase()));
+    const pick = meaningful.slice(0, 2).join("-");
+    if (pick) return `(${pick})`;
+
     const head = parts.slice(0, 3).join("-");
     const tail = parts.slice(-3).join("-");
     const combined = [head, tail].filter(Boolean).join("-");
