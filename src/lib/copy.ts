@@ -1013,14 +1013,14 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "A complete, high quality gameplay trailer crafted specifically for your game. Clear storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
     "seo.site.name": "Videogames Marketing | Marketing for Indie Games",
     "seo.site.description": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
-    "seo.about.title": "About Us",
+    "seo.about.title": "About Us | TrapPlan Game Marketing Agency",
     "seo.about.desc": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
     "seo.blog.title": "Gaming Marketing Blog | Industry Trends & Tips",
     "seo.blog.desc":
       "Stay up-to-date with the latest trends in gaming influencer marketing. TrapPlan's blog covers tips, case studies, and strategies to help brands succeed in the gaming industry.",
-    "seo.our_cases.title": "Our Cases",
+    "seo.our_cases.title": "Our Cases | Game Marketing Results & Case Studies",
     "seo.our_cases.desc": "Selected outcomes and case studies from TrapPlan.",
-    "seo.no_wishlists.title": "No Wishlists on Steam",
+    "seo.no_wishlists.title": "No Wishlists on Steam | Fix Your Store Page Conversion",
     "seo.no_wishlists.desc": "What to do when your Steam page gets traffic but wishlists do not grow.",
     "seo.reddit_launch_support.title": "Reddit Launch Support: Organic Steam Traffic Without Backlash",
     "seo.reddit_launch_support.desc":
@@ -1028,7 +1028,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.pr_starter_pack.title": "PR Starter Pack: Get the Coverage Your Game Deserves",
     "seo.pr_starter_pack.desc":
       "PR outreach for indie games. A readable press release, targeted pitches, follow ups, and a clear contact list. Built to earn credibility and Steam Wishlists.",
-    "seo.tiktok_20.title": "TikTok Package: 20 Videos",
+    "seo.tiktok_20.title": "TikTok Package: 20 Videos for Game Marketing Campaigns",
     "seo.tiktok_20.desc":
       "Get 20 TikTok videos tailored for your game: hooks, scripts, editing, and a clear content plan designed to drive wishlists and awareness.",
     "seo.influencer_micro.title": "Influencer Micro Campaign: Cost-Efficient Reach That Converts",
@@ -1859,14 +1859,14 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.paid_ads_setup.desc": "We set up your paid ad campaigns from start to finish: channel selection, budget configuration, targeting setup and creative placement. Once launched, we hand over the account. Ongoing monitoring or optimisation aren’t included.",
     "seo.gameplay_trailer.title": "Gameplay Trailer: A Trailer Built to Convert",
     "seo.gameplay_trailer.desc": "A complete gameplay trailer crafted specifically for your game: storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
-    "seo.steam_wishlist_calculator.title": "Steam Wishlist Calculator",
+    "seo.steam_wishlist_calculator.title": "Steam Wishlist Calculator | Estimate Sales & Traffic Targets",
     "seo.steam_wishlist_calculator.desc": "Estimate required wishlists, traffic and budget to hit your week 1 Steam sales target.",
-    "seo.steam_pricing_planner.title": "Steam Pricing Planner & Calculator",
+    "seo.steam_pricing_planner.title": "Steam Pricing Planner & Calculator | Regional Price Tool",
     "seo.steam_pricing_planner.desc": "Calculate recommended Steam regional prices using Purchasing Power Parity (PPP) and live FX rates.",
-    "seo.steam_influencers_planner.title": "Steam Influencer Planner",
+    "seo.steam_influencers_planner.title": "Steam Influencer Planner | Find Gaming Creators by Genre",
     "seo.steam_influencers_planner.desc":
       "Professional tool for discovering YouTube and Twitch gaming influencers based on genre and similar games.",
-    "seo.steam_festival_planner.title": "Steam Festival Planner",
+    "seo.steam_festival_planner.title": "Steam Festival Planner | Match Events to Your Game",
     "seo.steam_festival_planner.desc":
       "Browse Steam festivals and sales, filter by type and genre, and match events to your game using AppID analysis.",
     "seo.creative_content_pipeline.title": "Creative Content Pipeline for Steam and Console Games",
@@ -1884,7 +1884,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.blog.masterclass.title": "Steam Next Fest: The Masterclass in Discovery",
     "seo.blog.masterclass.desc":
       "A 2026 deep-dive on Steam Next Fest: what matters now, the first 48 hours, conversion signals, demo page strategy, influencer timing, and how to turn guidance into execution.",
-    "legal.content_rules.meta_title": "Content Rules",
+    "legal.content_rules.meta_title": "Content Rules | TrapPlan Usage Guidelines",
     "legal.content_rules.meta_desc": "Basic rules for using TrapPlan content and assets.",
     "legal.content_rules.title": "Content Rules",
     "legal.content_rules.lede": "This page defines how TrapPlan materials can be used.",
@@ -1900,7 +1900,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "legal.content_rules.section4.title": "4. Requests",
     "legal.content_rules.section4.body":
       "If you want to reuse materials beyond what is described above, please contact us via the form on this website.",
-    "legal.copyright.meta_title": "Copyright Policy",
+    "legal.copyright.meta_title": "Copyright Policy | TrapPlan Intellectual Property",
     "legal.copyright.meta_desc": "Copyright policy for TrapPlan website content.",
     "legal.copyright.title": "Copyright Policy",
     "legal.copyright.lede":
@@ -2195,14 +2195,14 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "paid_ads_setup.ui.section4.cta": "Empecemos",
     "seo.site.name": "Marketing de videojuegos | Marketing para juegos indie",
     "seo.site.description": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con marketing basado en rendimiento.",
-    "seo.about.title": "Sobre nosotros",
+    "seo.about.title": "Sobre nosotros | TrapPlan Agencia de Marketing de Videojuegos",
     "seo.about.desc": "TrapPlan ayuda a estudios de juegos a aumentar wishlists y ventas con sistemas de marketing basados en rendimiento.",
     "seo.blog.title": "Blog de marketing para videojuegos | Tendencias y consejos",
     "seo.blog.desc":
       "Mantente al día con las últimas tendencias de marketing de influencers en videojuegos. El blog de TrapPlan comparte tips, casos y estrategias para crecer.",
-    "seo.our_cases.title": "Nuestros casos",
+    "seo.our_cases.title": "Nuestros casos | Resultados y casos de estudio de marketing gaming",
     "seo.our_cases.desc": "Resultados seleccionados y casos de estudio de TrapPlan.",
-    "seo.no_wishlists.title": "Sin wishlists en Steam",
+    "seo.no_wishlists.title": "Sin wishlists en Steam | Mejora la conversión de tu página",
     "seo.no_wishlists.desc": "Qué hacer cuando tu página de Steam recibe tráfico pero las wishlists no crecen.",
     "seo.reddit_launch_support.title": "Soporte de lanzamiento en Reddit: tráfico orgánico sin backlash",
     "seo.reddit_launch_support.desc":
@@ -2210,7 +2210,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.pr_starter_pack.title": "Pack inicial de PR: consigue la cobertura que tu juego merece",
     "seo.pr_starter_pack.desc":
       "PR para indies: nota de prensa clara, pitches segmentados, follow-ups y una lista de contactos. Para credibilidad y wishlists en Steam.",
-    "seo.tiktok_20.title": "Paquete TikTok: 20 vídeos",
+    "seo.tiktok_20.title": "Paquete TikTok: 20 vídeos para campañas de marketing gaming",
     "seo.tiktok_20.desc":
       "20 vídeos de TikTok para tu juego: hooks, guiones, edición y un plan de contenido pensado para awareness y wishlists.",
     "seo.influencer_micro.title": "Microcampaña con influencers: alcance eficiente que convierte",
@@ -2225,15 +2225,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.gameplay_trailer.title": "Tráiler de gameplay: un tráiler para convertir",
     "seo.gameplay_trailer.desc":
       "Tráiler gameplay completo: storytelling, captura pulida, ritmo y edición. Listo para Steam, YouTube y distribución a medios.",
-    "seo.steam_wishlist_calculator.title": "Calculadora de wishlists de Steam",
+    "seo.steam_wishlist_calculator.title": "Calculadora de wishlists de Steam | Estima ventas y tráfico",
     "seo.steam_wishlist_calculator.desc": "Estima wishlists, tráfico y presupuesto necesarios para alcanzar tu objetivo de ventas en la primera semana.",
-    "seo.steam_pricing_planner.title": "Planificador y calculadora de precios en Steam",
+    "seo.steam_pricing_planner.title": "Planificador y calculadora de precios en Steam | Herramienta regional",
     "seo.steam_pricing_planner.desc":
       "Calcula precios regionales recomendados en Steam usando PPP (paridad de poder adquisitivo) y tipos de cambio.",
-    "seo.steam_influencers_planner.title": "Planificador de influencers para Steam",
+    "seo.steam_influencers_planner.title": "Planificador de influencers para Steam | Encuentra creadores gaming",
     "seo.steam_influencers_planner.desc":
       "Herramienta profesional para descubrir influencers gaming en YouTube y Twitch según género y juegos similares.",
-    "seo.steam_festival_planner.title": "Planificador de festivales de Steam",
+    "seo.steam_festival_planner.title": "Planificador de festivales de Steam | Eventos para tu juego",
     "seo.steam_festival_planner.desc":
       "Explora festivales y rebajas de Steam, filtra por tipo y género y encuentra eventos adecuados usando análisis de AppID.",
     "seo.creative_content_pipeline.title": "Pipeline creativo de contenido para Steam y consolas",
@@ -2251,7 +2251,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.blog.masterclass.title": "Steam Next Fest: masterclass de descubrimiento",
     "seo.blog.masterclass.desc":
       "Análisis 2026 de Steam Next Fest: qué importa, primeras 48h, señales de conversión, estrategia de demo page, timing con influencers y ejecución.",
-    "legal.content_rules.meta_title": "Reglas de contenido",
+    "legal.content_rules.meta_title": "Reglas de contenido | Directrices de uso de TrapPlan",
     "legal.content_rules.meta_desc": "Reglas básicas para usar el contenido y los recursos de TrapPlan.",
     "legal.content_rules.title": "Reglas de contenido",
     "legal.content_rules.lede": "Esta página define cómo se pueden usar los materiales de TrapPlan.",
@@ -2267,7 +2267,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "legal.content_rules.section4.title": "4. Solicitudes",
     "legal.content_rules.section4.body":
       "Si quieres reutilizar materiales más allá de lo descrito arriba, contáctanos mediante el formulario del sitio.",
-    "legal.copyright.meta_title": "Política de copyright",
+    "legal.copyright.meta_title": "Política de copyright | Propiedad intelectual de TrapPlan",
     "legal.copyright.meta_desc": "Política de copyright del contenido del sitio de TrapPlan.",
     "legal.copyright.title": "Política de copyright",
     "legal.copyright.lede":
@@ -2516,14 +2516,14 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Trailer gameplay completo e di alta qualità realizzato per il tuo gioco. Storytelling chiaro, capture curata, ritmo, editing e consegna pronta per Steam, YouTube e distribuzione media.",
     "seo.site.name": "Marketing per videogiochi | Marketing per giochi indie",
     "seo.site.description": "TrapPlan aiuta gli studi di videogiochi a far crescere wishlist e vendite con marketing performance-driven.",
-    "seo.about.title": "Chi siamo",
+    "seo.about.title": "Chi siamo | TrapPlan Agenzia Marketing Videogiochi",
     "seo.about.desc": "TrapPlan aiuta gli studi di videogiochi a far crescere wishlist e vendite con sistemi di marketing basati sulle performance.",
     "seo.blog.title": "Blog di marketing gaming | Trend e consigli",
     "seo.blog.desc":
       "Resta aggiornato sui trend del marketing influencer nel gaming. Il blog TrapPlan include tips, case study e strategie per crescere.",
-    "seo.our_cases.title": "I nostri casi",
+    "seo.our_cases.title": "I nostri casi | Risultati e case study di marketing gaming",
     "seo.our_cases.desc": "Risultati selezionati e case study di TrapPlan.",
-    "seo.no_wishlists.title": "Nessuna wishlist su Steam",
+    "seo.no_wishlists.title": "Nessuna wishlist su Steam | Migliora la conversione della pagina",
     "seo.no_wishlists.desc": "Cosa fare quando la tua pagina Steam riceve traffico ma le wishlist non crescono.",
     "seo.reddit_launch_support.title": "Reddit Launch Support: traffico organico senza backlash",
     "seo.reddit_launch_support.desc":
@@ -2531,7 +2531,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.pr_starter_pack.title": "PR Starter Pack: la copertura che il tuo gioco merita",
     "seo.pr_starter_pack.desc":
       "PR per indie: comunicato stampa leggibile, pitch mirati, follow-up e lista contatti. Per credibilità e wishlist su Steam.",
-    "seo.tiktok_20.title": "Pacchetto TikTok: 20 video",
+    "seo.tiktok_20.title": "Pacchetto TikTok: 20 video per campagne marketing gaming",
     "seo.tiktok_20.desc":
       "20 video TikTok per il tuo gioco: hook, script, editing e piano contenuti pensato per awareness e wishlist.",
     "seo.influencer_micro.title": "Influencer Micro Campaign: reach efficiente che converte",
@@ -2546,15 +2546,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.gameplay_trailer.title": "Gameplay Trailer: un trailer fatto per convertire",
     "seo.gameplay_trailer.desc":
       "Trailer gameplay completo: storytelling, capture curata, ritmo ed editing. Pronto per Steam, YouTube e distribuzione media.",
-    "seo.steam_wishlist_calculator.title": "Calcolatore wishlist Steam",
+    "seo.steam_wishlist_calculator.title": "Calcolatore wishlist Steam | Stima vendite e traffico",
     "seo.steam_wishlist_calculator.desc": "Stima wishlist, traffico e budget necessari per raggiungere l’obiettivo di vendite nella prima settimana.",
-    "seo.steam_pricing_planner.title": "Planner e calcolatore prezzi Steam",
+    "seo.steam_pricing_planner.title": "Planner e calcolatore prezzi Steam | Strumento prezzi regionali",
     "seo.steam_pricing_planner.desc":
       "Calcola i prezzi regionali consigliati su Steam usando PPP (parità di potere d’acquisto) e cambi FX.",
-    "seo.steam_influencers_planner.title": "Planner influencer per Steam",
+    "seo.steam_influencers_planner.title": "Planner influencer per Steam | Trova creator gaming per genere",
     "seo.steam_influencers_planner.desc":
       "Strumento professionale per scoprire influencer gaming su YouTube e Twitch in base a genere e giochi simili.",
-    "seo.steam_festival_planner.title": "Planner festival Steam",
+    "seo.steam_festival_planner.title": "Planner festival Steam | Abbina eventi al tuo gioco",
     "seo.steam_festival_planner.desc":
       "Esplora festival e saldi Steam, filtra per tipo e genere e abbina eventi al tuo gioco con analisi AppID.",
     "seo.creative_content_pipeline.title": "Creative Content Pipeline per Steam e console",
@@ -2572,7 +2572,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.blog.masterclass.title": "Steam Next Fest: masterclass di discovery",
     "seo.blog.masterclass.desc":
       "Deep-dive 2026 su Steam Next Fest: cosa conta, prime 48 ore, segnali di conversione, strategia demo page, timing influencer e come eseguire.",
-    "legal.content_rules.meta_title": "Regole dei contenuti",
+    "legal.content_rules.meta_title": "Regole dei contenuti | Linee guida TrapPlan",
     "legal.content_rules.meta_desc": "Regole base per usare contenuti e asset di TrapPlan.",
     "legal.content_rules.title": "Regole dei contenuti",
     "legal.content_rules.lede": "Questa pagina definisce come possono essere usati i materiali TrapPlan.",
@@ -2588,7 +2588,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "legal.content_rules.section4.title": "4. Richieste",
     "legal.content_rules.section4.body":
       "Per riutilizzi oltre quanto descritto sopra, contattaci tramite il modulo sul sito.",
-    "legal.copyright.meta_title": "Politica sul copyright",
+    "legal.copyright.meta_title": "Politica sul copyright | Proprietà intellettuale TrapPlan",
     "legal.copyright.meta_desc": "Politica sul copyright per i contenuti del sito TrapPlan.",
     "legal.copyright.title": "Politica sul copyright",
     "legal.copyright.lede":
@@ -2836,14 +2836,14 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Un trailer gameplay complet, premium, conçu pour votre jeu. Storytelling clair, capture soignée, rythme, montage et livraison prête pour Steam, YouTube et la distribution média.",
     "seo.site.name": "Marketing de jeux vidéo | Marketing pour jeux indie",
     "seo.site.description": "TrapPlan aide les studios à augmenter les wishlists et les ventes grâce à un marketing orienté performance.",
-    "seo.about.title": "À propos",
+    "seo.about.title": "À propos | TrapPlan Agence Marketing Jeux Vidéo",
     "seo.about.desc": "TrapPlan aide les studios à augmenter les wishlists et les ventes avec des systèmes marketing orientés performance.",
     "seo.blog.title": "Blog marketing gaming | Tendances & conseils",
     "seo.blog.desc":
       "Restez à jour sur les tendances du marketing d’influence gaming. Le blog TrapPlan partage conseils, études de cas et stratégies pour performer.",
-    "seo.our_cases.title": "Nos cas",
+    "seo.our_cases.title": "Nos cas | Résultats et études de cas marketing gaming",
     "seo.our_cases.desc": "Résultats sélectionnés et études de cas de TrapPlan.",
-    "seo.no_wishlists.title": "Pas de wishlists sur Steam",
+    "seo.no_wishlists.title": "Pas de wishlists sur Steam | Améliorez la conversion de votre page",
     "seo.no_wishlists.desc": "Que faire quand votre page Steam a du trafic mais que les wishlists ne progressent pas.",
     "seo.reddit_launch_support.title": "Support de lancement Reddit : trafic organique sans backlash",
     "seo.reddit_launch_support.desc":
@@ -2851,7 +2851,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.pr_starter_pack.title": "Pack PR Starter : la couverture que votre jeu mérite",
     "seo.pr_starter_pack.desc":
       "PR pour indés : communiqué lisible, pitches ciblés, relances et liste de contacts. Pour crédibilité et wishlists Steam.",
-    "seo.tiktok_20.title": "Pack TikTok : 20 vidéos",
+    "seo.tiktok_20.title": "Pack TikTok : 20 vidéos pour campagnes marketing gaming",
     "seo.tiktok_20.desc":
       "20 vidéos TikTok sur mesure pour votre jeu : hooks, scripts, montage et plan de contenu conçu pour la notoriété et les wishlists.",
     "seo.influencer_micro.title":
@@ -2867,16 +2867,16 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.gameplay_trailer.title": "Trailer de gameplay : un trailer conçu pour convertir",
     "seo.gameplay_trailer.desc":
       "Un trailer gameplay complet conçu pour votre jeu : storytelling, capture soignée, rythme, montage et livraison prête pour Steam, YouTube et la distribution média.",
-    "seo.steam_wishlist_calculator.title": "Calculateur de wishlists Steam",
+    "seo.steam_wishlist_calculator.title": "Calculateur de wishlists Steam | Estimez ventes et trafic",
     "seo.steam_wishlist_calculator.desc":
       "Estimez les wishlists, le trafic et le budget nécessaires pour atteindre votre objectif de ventes Steam en semaine 1.",
-    "seo.steam_pricing_planner.title": "Planificateur et calculateur de prix Steam",
+    "seo.steam_pricing_planner.title": "Planificateur et calculateur de prix Steam | Outil régional",
     "seo.steam_pricing_planner.desc":
       "Calculez des prix régionaux Steam recommandés avec la parité de pouvoir d’achat (PPP) et des taux de change en temps réel.",
-    "seo.steam_influencers_planner.title": "Planificateur d’influenceurs Steam",
+    "seo.steam_influencers_planner.title": "Planificateur d’influenceurs Steam | Trouvez des créateurs gaming",
     "seo.steam_influencers_planner.desc":
       "Outil pro pour découvrir des influenceurs gaming YouTube et Twitch selon le genre et des jeux similaires.",
-    "seo.steam_festival_planner.title": "Planificateur de festivals Steam",
+    "seo.steam_festival_planner.title": "Planificateur de festivals Steam | Événements pour votre jeu",
     "seo.steam_festival_planner.desc":
       "Parcourez les festivals et promotions Steam, filtrez par type et genre, et matchez les événements à votre jeu via une analyse AppID.",
     "seo.creative_content_pipeline.title":
@@ -2895,9 +2895,9 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.blog.masterclass.title": "Steam Next Fest : la masterclass de la découverte",
     "seo.blog.masterclass.desc":
       "Une analyse approfondie (2026) de Steam Next Fest : ce qui compte aujourd’hui, les 48 premières heures, les signaux de conversion, la stratégie de page de démo, le timing influenceurs et comment passer du conseil à l’exécution.",
-    "legal.content_rules.meta_title": "Règles de contenu",
+    "legal.content_rules.meta_title": "Règles de contenu | Directives d'utilisation TrapPlan",
     "legal.content_rules.meta_desc": "Règles de base pour utiliser le contenu et les ressources TrapPlan.",
-    "legal.copyright.meta_title": "Politique de copyright",
+    "legal.copyright.meta_title": "Politique de copyright | Propriété intellectuelle TrapPlan",
     "legal.copyright.meta_desc": "Politique de copyright du contenu du site TrapPlan.",
     "form_page.title": "Fais passer ton marketing\nau niveau supérieur",
     "form_page.subtitle":
@@ -2992,15 +2992,15 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.site.name": "Videospiel-Marketing | Marketing für Indie-Spiele",
     "seo.site.description":
       "TrapPlan hilft Game-Studios, Wishlists und Sales mit performanceorientiertem Marketing zu steigern.",
-    "seo.about.title": "Über uns",
+    "seo.about.title": "Über uns | TrapPlan Game-Marketing-Agentur",
     "seo.about.desc":
       "TrapPlan hilft Game-Studios, Wishlists und Sales mit performanceorientierten Marketing-Systemen zu steigern.",
     "seo.blog.title": "Gaming-Marketing-Blog | Trends & Tipps",
     "seo.blog.desc":
       "Bleib auf dem Laufenden mit Trends im Gaming-Marketing. TrapPlans Blog deckt Tipps, Case Studies und Strategien ab, damit Brands im Games-Markt erfolgreich sind.",
-    "seo.our_cases.title": "Unsere Cases",
+    "seo.our_cases.title": "Unsere Cases | Game-Marketing-Ergebnisse & Case Studies",
     "seo.our_cases.desc": "Ausgewählte Ergebnisse und Case Studies von TrapPlan.",
-    "seo.no_wishlists.title": "Keine Wishlists auf Steam",
+    "seo.no_wishlists.title": "Keine Wishlists auf Steam | Store-Page-Conversion verbessern",
     "seo.no_wishlists.desc":
       "Was tun, wenn deine Steam-Seite Traffic bekommt, aber die Wishlists nicht wachsen.",
     "seo.reddit_launch_support.title":
@@ -3010,7 +3010,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.pr_starter_pack.title": "PR Starter Pack: Die Coverage, die dein Game verdient",
     "seo.pr_starter_pack.desc":
       "PR-Outreach für Indie-Games: lesbares Press Release, gezielte Pitches, Follow-ups und eine klare Kontaktliste. Für Credibility und Steam-Wishlists.",
-    "seo.tiktok_20.title": "TikTok Paket: 20 Videos",
+    "seo.tiktok_20.title": "TikTok Paket: 20 Videos für Game-Marketing-Kampagnen",
     "seo.tiktok_20.desc":
       "20 TikTok-Videos für dein Game: Hooks, Skripte, Editing und ein klarer Content-Plan für Wishlists und Awareness.",
     "seo.influencer_micro.title":
@@ -3028,16 +3028,16 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.gameplay_trailer.title": "Gameplay Trailer: Ein Trailer, der konvertiert",
     "seo.gameplay_trailer.desc":
       "Ein kompletter Gameplay-Trailer für dein Game: klares Storytelling, saubere Captures, Pace, Editing und Lieferung bereit für Steam, YouTube und Medien.",
-    "seo.steam_wishlist_calculator.title": "Steam-Wishlist-Rechner",
+    "seo.steam_wishlist_calculator.title": "Steam-Wishlist-Rechner | Sales & Traffic-Ziele schätzen",
     "seo.steam_wishlist_calculator.desc":
       "Schätze erforderliche Wishlists, Traffic und Budget, um dein Steam-Sales-Ziel in Woche 1 zu erreichen.",
-    "seo.steam_pricing_planner.title": "Steam-Preisplaner & Rechner",
+    "seo.steam_pricing_planner.title": "Steam-Preisplaner & Rechner | Regionales Preis-Tool",
     "seo.steam_pricing_planner.desc":
       "Berechne empfohlene Steam-Regionalpreise mit Kaufkraftparität (PPP) und Live-FX-Kursen.",
-    "seo.steam_influencers_planner.title": "Steam-Influencer-Planer",
+    "seo.steam_influencers_planner.title": "Steam-Influencer-Planer | Gaming-Creator nach Genre finden",
     "seo.steam_influencers_planner.desc":
       "Profi-Tool, um YouTube- und Twitch-Gaming-Influencer nach Genre und ähnlichen Games zu finden.",
-    "seo.steam_festival_planner.title": "Steam-Festival-Planer",
+    "seo.steam_festival_planner.title": "Steam-Festival-Planer | Events für dein Game finden",
     "seo.steam_festival_planner.desc":
       "Durchsuche Steam-Festivals und Sales, filtere nach Typ und Genre und match Events mit deinem Game via AppID-Analyse.",
     "seo.creative_content_pipeline.title":
@@ -3058,9 +3058,9 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Steam Next Fest: die Masterclass in Discovery",
     "seo.blog.masterclass.desc":
       "Ein Deep Dive (2026) zu Steam Next Fest: was jetzt zählt, die ersten 48 Stunden, Conversion-Signale, Demo-Page-Strategie, Influencer-Timing und wie du Guidance in Execution verwandelst.",
-    "legal.content_rules.meta_title": "Content-Regeln",
+    "legal.content_rules.meta_title": "Content-Regeln | TrapPlan Nutzungsrichtlinien",
     "legal.content_rules.meta_desc": "Grundregeln für die Nutzung von TrapPlan-Inhalten und Assets.",
-    "legal.copyright.meta_title": "Copyright-Richtlinie",
+    "legal.copyright.meta_title": "Copyright-Richtlinie | Geistiges Eigentum von TrapPlan",
     "legal.copyright.meta_desc": "Copyright-Richtlinie für Inhalte der TrapPlan-Website.",
     "form_page.title": "Bring dein Game-Marketing\nauf das nächste Level",
     "form_page.subtitle":
@@ -3154,19 +3154,19 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
   zh: {
     "seo.site.name": "游戏营销 | 独立游戏营销",
     "seo.site.description": "TrapPlan 通过以效果为导向的营销，帮助游戏工作室增长愿望单与销量。",
-    "seo.about.title": "关于我们",
+    "seo.about.title": "关于我们 | TrapPlan 游戏营销代理",
     "seo.about.desc": "TrapPlan 通过以效果为导向的营销系统，帮助游戏工作室增长愿望单与销量。",
     "seo.blog.title": "游戏营销博客｜趋势与实用技巧",
     "seo.blog.desc": "跟进游戏营销最新趋势。TrapPlan 博客分享实用技巧、案例与策略，帮助品牌在游戏行业取得增长。",
-    "seo.our_cases.title": "案例",
+    "seo.our_cases.title": "案例 | 游戏营销成果与案例研究",
     "seo.our_cases.desc": "TrapPlan 精选成果与案例研究。",
-    "seo.no_wishlists.title": "Steam 上没有愿望单",
+    "seo.no_wishlists.title": "Steam 上没有愿望单 | 提升商店页面转化率",
     "seo.no_wishlists.desc": "当 Steam 页面有流量但愿望单不增长时，应该优先修复什么。",
     "seo.reddit_launch_support.title": "Reddit 发售支持：无反感的自然流量",
     "seo.reddit_launch_support.desc": "15 条高互动的 Reddit 自然内容投放，帮助提升 Steam 愿望单，并避免常见营销反感。",
     "seo.pr_starter_pack.title": "PR 入门包：为你的游戏争取报道",
     "seo.pr_starter_pack.desc": "面向独立游戏的 PR 外联：易读的新闻稿、精准投递、跟进，以及清晰的联系人列表。用于建立可信度并提升 Steam 愿望单。",
-    "seo.tiktok_20.title": "TikTok 套餐：20 条视频",
+    "seo.tiktok_20.title": "TikTok 套餐：20 条视频 | 游戏营销推广方案",
     "seo.tiktok_20.desc": "为你的游戏制作 20 条 TikTok 视频：hook、脚本、剪辑与内容计划，目标是提升愿望单与认知。",
     "seo.influencer_micro.title": "达人微型投放：高性价比的可转化曝光",
     "seo.influencer_micro.desc": "面向游戏的微型达人激活冲刺：选择与匹配、外联、协同、追踪与报告。聚焦有效触达与 Steam 愿望单。",
@@ -3174,13 +3174,13 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.paid_ads_setup.desc": "从渠道选择到预算、定向与素材位设置，我们完成完整投放搭建并交接账号。后续持续监控/优化不包含在内。",
     "seo.gameplay_trailer.title": "Gameplay Trailer：为转化而生的预告片",
     "seo.gameplay_trailer.desc": "为你的游戏制作完整 gameplay trailer：清晰叙事、优质录制、节奏、剪辑，并交付可用于 Steam、YouTube 与媒体传播的版本。",
-    "seo.steam_wishlist_calculator.title": "Steam 愿望单计算器",
+    "seo.steam_wishlist_calculator.title": "Steam 愿望单计算器 | 估算销量与流量目标",
     "seo.steam_wishlist_calculator.desc": "估算达成 Steam 首周销量目标所需的愿望单、流量与预算。",
-    "seo.steam_pricing_planner.title": "Steam 定价规划器与计算器",
+    "seo.steam_pricing_planner.title": "Steam 定价规划器与计算器 | 区域定价工具",
     "seo.steam_pricing_planner.desc": "使用购买力平价（PPP）与实时汇率计算推荐的 Steam 区域定价。",
-    "seo.steam_influencers_planner.title": "Steam 达人规划器",
+    "seo.steam_influencers_planner.title": "Steam 达人规划器 | 按类型查找游戏创作者",
     "seo.steam_influencers_planner.desc": "基于题材与相似游戏，发现 YouTube/Twitch 游戏达人并规划投放。",
-    "seo.steam_festival_planner.title": "Steam 活动规划器",
+    "seo.steam_festival_planner.title": "Steam 活动规划器 | 为你的游戏匹配活动",
     "seo.steam_festival_planner.desc": "浏览 Steam 节日与促销，按类型/题材筛选，并用 AppID 分析匹配适合你游戏的活动。",
     "seo.creative_content_pipeline.title": "Steam/主机创意内容流水线",
     "seo.creative_content_pipeline.desc": "持续产出 trailer、短视频与商店素材的内容流水线，迭代制作，聚焦愿望单增长与转化。",
@@ -3195,7 +3195,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.influencer_activation.title": "面向游戏的达人投放：带来可转化的曝光",
     "seo.influencer_activation.desc":
       "结构化达人营销：筛选与匹配、外联、协同执行、追踪与复盘。可重复、可衡量，专为游戏打造。",
-    "legal.content_rules.meta_title": "内容规则",
+    "legal.content_rules.meta_title": "内容规则 | TrapPlan 使用指南",
     "legal.content_rules.meta_desc": "关于使用 TrapPlan 内容与素材的基本规则。",
     "legal.content_rules.title": "内容规则",
     "legal.content_rules.lede": "本页面说明 TrapPlan 材料的使用方式。",
@@ -3208,7 +3208,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "你不得将我们的材料复制、再发布或作为自己的内容出售。未经书面许可，不得以暗示合作关系的方式使用我们的品牌素材。",
     "legal.content_rules.section4.title": "4. 申请",
     "legal.content_rules.section4.body": "如需超出上述范围使用材料，请通过本网站表单联系我们。",
-    "legal.copyright.meta_title": "版权政策",
+    "legal.copyright.meta_title": "版权政策 | TrapPlan 知识产权",
     "legal.copyright.meta_desc": "TrapPlan 网站内容的版权政策。",
     "legal.copyright.title": "版权政策",
     "legal.copyright.lede":
