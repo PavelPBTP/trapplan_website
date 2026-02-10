@@ -2320,13 +2320,13 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Trailer gameplay completo: storytelling, capture curata, ritmo ed editing. Pronto per Steam, YouTube e distribuzione media.",
     "seo.steam_wishlist_calculator.title": "Calcolatore wishlist Steam",
     "seo.steam_wishlist_calculator.desc": "Stima wishlist, traffico e budget necessari per raggiungere l’obiettivo di vendite nella prima settimana.",
-    "seo.steam_pricing_planner.title": "Steam Pricing Planner & Calculator",
+    "seo.steam_pricing_planner.title": "Planner e calcolatore prezzi Steam",
     "seo.steam_pricing_planner.desc":
       "Calcola i prezzi regionali consigliati su Steam usando PPP (parità di potere d’acquisto) e cambi FX.",
-    "seo.steam_influencers_planner.title": "Steam Influencer Planner",
+    "seo.steam_influencers_planner.title": "Planner influencer per Steam",
     "seo.steam_influencers_planner.desc":
       "Strumento professionale per scoprire influencer gaming su YouTube e Twitch in base a genere e giochi simili.",
-    "seo.steam_festival_planner.title": "Steam Festival Planner",
+    "seo.steam_festival_planner.title": "Planner festival Steam",
     "seo.steam_festival_planner.desc":
       "Esplora festival e saldi Steam, filtra per tipo e genere e abbina eventi al tuo gioco con analisi AppID.",
     "seo.creative_content_pipeline.title": "Creative Content Pipeline per Steam e console",
@@ -2648,16 +2648,16 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.gameplay_trailer.title": "Gameplay Trailer: Ein Trailer, der konvertiert",
     "seo.gameplay_trailer.desc":
       "Ein kompletter Gameplay-Trailer für dein Game: klares Storytelling, saubere Captures, Pace, Editing und Lieferung bereit für Steam, YouTube und Medien.",
-    "seo.steam_wishlist_calculator.title": "Steam Wishlist Calculator",
+    "seo.steam_wishlist_calculator.title": "Steam-Wishlist-Rechner",
     "seo.steam_wishlist_calculator.desc":
       "Schätze erforderliche Wishlists, Traffic und Budget, um dein Steam-Sales-Ziel in Woche 1 zu erreichen.",
-    "seo.steam_pricing_planner.title": "Steam Pricing Planner & Calculator",
+    "seo.steam_pricing_planner.title": "Steam-Preisplaner & Rechner",
     "seo.steam_pricing_planner.desc":
       "Berechne empfohlene Steam-Regionalpreise mit Kaufkraftparität (PPP) und Live-FX-Kursen.",
-    "seo.steam_influencers_planner.title": "Steam Influencer Planner",
+    "seo.steam_influencers_planner.title": "Steam-Influencer-Planer",
     "seo.steam_influencers_planner.desc":
       "Profi-Tool, um YouTube- und Twitch-Gaming-Influencer nach Genre und ähnlichen Games zu finden.",
-    "seo.steam_festival_planner.title": "Steam Festival Planner",
+    "seo.steam_festival_planner.title": "Steam-Festival-Planer",
     "seo.steam_festival_planner.desc":
       "Durchsuche Steam-Festivals und Sales, filtere nach Typ und Genre und match Events mit deinem Game via AppID-Analyse.",
     "seo.creative_content_pipeline.title":

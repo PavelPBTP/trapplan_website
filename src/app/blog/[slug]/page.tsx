@@ -301,7 +301,9 @@ export async function generateMetadata({
   })();
 
   const localeMarker = locale === "en" ? "" : `(${locale.toUpperCase()})`;
-  const title = localeMarker ? clampWithSuffix(baseTitleForMeta, localeMarker, 60) : baseTitleForMeta;
+  const slugMarker = baseTitleForMeta.endsWith("…") ? `(${slug.split("-").filter(Boolean).slice(-1)[0] ?? slug})` : "";
+  const titleSuffix = [localeMarker, slugMarker].filter(Boolean).join(" ");
+  const title = titleSuffix ? clampWithSuffix(baseTitleForMeta, titleSuffix, 60) : baseTitleForMeta;
   const excerptUses = getBlogPosts(locale).reduce(
     (acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0),
     0,
