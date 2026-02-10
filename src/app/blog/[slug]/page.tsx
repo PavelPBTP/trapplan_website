@@ -296,7 +296,6 @@ export async function generateMetadata({
       "are",
       "as",
       "at",
-      "best",
       "before",
       "by",
       "do",
@@ -318,7 +317,6 @@ export async function generateMetadata({
       "of",
       "on",
       "or",
-      "practices",
       "proven",
       "step",
       "steam",
@@ -347,13 +345,31 @@ export async function generateMetadata({
     ]);
 
     const meaningful = parts.filter((p) => !stop.has(p.toLowerCase()));
-    const pick = meaningful.slice(0, 2).join("-");
-    if (pick) return `(${pick})`;
 
-    const head = parts.slice(0, 3).join("-");
-    const tail = parts.slice(-3).join("-");
-    const combined = [head, tail].filter(Boolean).join("-");
-    return `(${combined || slug})`;
+    // Build a unique marker from meaningful slug words.
+    // Check against all other posts to avoid duplicates.
+    const allSlugs = getBlogPosts(locale).map((p) => p.slug).filter((s) => s !== slug);
+    const markerOf = (s: string, count: number) => {
+      const sp = s.split("-").filter(Boolean);
+      const mf = sp.filter((p) => !stop.has(p.toLowerCase()));
+      return mf.slice(0, count).join("-");
+    };
+
+    for (let count = 2; count <= Math.max(4, meaningful.length); count++) {
+      const candidate = meaningful.slice(0, count).join("-");
+      if (!candidate) break;
+      const isDuplicate = allSlugs.some((s) => markerOf(s, count) === candidate);
+      if (!isDuplicate) return `(${candidate})`;
+    }
+
+    // Fallback: use raw slug parts (unfiltered) to guarantee uniqueness
+    const rawMarkerOf = (s: string, count: number) => s.split("-").filter(Boolean).slice(0, count).join("-");
+    for (let count = 3; count <= Math.min(6, parts.length); count++) {
+      const candidate = parts.slice(0, count).join("-");
+      const isDuplicate = allSlugs.some((s) => rawMarkerOf(s, count) === candidate);
+      if (!isDuplicate) return `(${candidate})`;
+    }
+    return `(${parts.slice(0, 5).join("-") || slug})`;
   })();
   const titleSuffix = [localeMarker, slugMarker].filter(Boolean).join(" ");
   const title = titleSuffix ? clampWithSuffix(baseTitleForMeta, titleSuffix, 60) : baseTitleForMeta;
