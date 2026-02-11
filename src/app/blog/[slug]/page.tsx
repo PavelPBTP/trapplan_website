@@ -8,10 +8,10 @@ import BackToTopButton from "@/components/ui/BackToTopButton";
 import BlogQuoteBanner from "@/components/ui/BlogQuoteBanner";
 import { BLOG_POSTS, type BlogBlock } from "@/lib/data/blog";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
-import { getBlogPost, getBlogPosts } from "@/lib/data/blog.i18n";
+import { getBlogPost } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
-import { clampText, clampWithSuffix } from "@/lib/seo";
+import { clampText } from "@/lib/seo";
 
 function formatDate(locale: string, iso: string) {
   const d = new Date(iso);
@@ -284,112 +284,8 @@ export async function generateMetadata({
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
 
-  const localeMarker = locale === "en" ? "" : `(${locale.toUpperCase()})`;
-  const slugMarker = (() => {
-    if (!baseTitleForMeta.endsWith("…")) return "";
-    const parts = slug.split("-").filter(Boolean);
-
-    const stop = new Set([
-      "a",
-      "an",
-      "and",
-      "are",
-      "as",
-      "at",
-      "before",
-      "by",
-      "do",
-      "does",
-      "for",
-      "from",
-      "get",
-      "getting",
-      "guide",
-      "how",
-      "in",
-      "indie",
-      "into",
-      "is",
-      "game",
-      "games",
-      "gaming",
-      "marketing",
-      "of",
-      "on",
-      "or",
-      "proven",
-      "step",
-      "steam",
-      "strategies",
-      "success",
-      "that",
-      "the",
-      "their",
-      "tips",
-      "to",
-      "understanding",
-      "video",
-      "videogame",
-      "videogames",
-      "wishlists",
-      "wishlist",
-      "what",
-      "when",
-      "who",
-      "why",
-      "with",
-      "influencer",
-      "influencers",
-      "agency",
-      "agencies",
-    ]);
-
-    const meaningful = parts.filter((p) => !stop.has(p.toLowerCase()));
-
-    // Build a unique marker from meaningful slug words.
-    // Check against all other posts to avoid duplicates.
-    const allSlugs = getBlogPosts(locale).map((p) => p.slug).filter((s) => s !== slug);
-    const markerOf = (s: string, count: number) => {
-      const sp = s.split("-").filter(Boolean);
-      const mf = sp.filter((p) => !stop.has(p.toLowerCase()));
-      return mf.slice(0, count).join("-");
-    };
-
-    for (let count = 2; count <= Math.max(4, meaningful.length); count++) {
-      const candidate = meaningful.slice(0, count).join("-");
-      if (!candidate) break;
-      const isDuplicate = allSlugs.some((s) => markerOf(s, count) === candidate);
-      if (!isDuplicate) return `(${candidate})`;
-    }
-
-    // Fallback: use raw slug parts (unfiltered) to guarantee uniqueness
-    const rawMarkerOf = (s: string, count: number) => s.split("-").filter(Boolean).slice(0, count).join("-");
-    for (let count = 3; count <= Math.min(6, parts.length); count++) {
-      const candidate = parts.slice(0, count).join("-");
-      const isDuplicate = allSlugs.some((s) => rawMarkerOf(s, count) === candidate);
-      if (!isDuplicate) return `(${candidate})`;
-    }
-    return `(${parts.slice(0, 5).join("-") || slug})`;
-  })();
-  const titleSuffix = [localeMarker, slugMarker].filter(Boolean).join(" ");
-  const title = titleSuffix ? clampWithSuffix(baseTitleForMeta, titleSuffix, 60) : baseTitleForMeta;
-  const excerptUses = getBlogPosts(locale).reduce(
-    (acc, p) => acc + (p.excerpt === post.excerpt ? 1 : 0),
-    0,
-  );
-  const excerptClamped = clampText(post.excerpt, 160);
-  const excerptClampedUses = getBlogPosts(locale).reduce(
-    (acc, p) => acc + (clampText(p.excerpt, 160) === excerptClamped ? 1 : 0),
-    0,
-  );
-
-  const descriptionNeedsSuffix = excerptUses > 1 || excerptClampedUses > 1;
-  const descriptionSuffix = descriptionNeedsSuffix
-    ? `(${post.category ? `${post.category} — ` : ""}${post.title})`
-    : "";
-  const description = descriptionSuffix
-    ? clampWithSuffix(post.excerpt, descriptionSuffix, 160)
-    : excerptClamped;
+  const title = clampText(baseTitleForMeta, 60);
+  const description = clampText(post.excerpt, 160);
 
   const ogFallback = (() => {
     const p = new URLSearchParams();
