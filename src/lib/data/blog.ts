@@ -121,8 +121,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover:
-      "/images/do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists.png",
+    cover: "/images/blog4.png",
     cardArticle: {
       title:
         "Do Shorts Videos from TikTok, Shorts and Reels Really Drive Steam Wishlists",
