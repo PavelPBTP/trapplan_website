@@ -593,10 +593,31 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       phrase: t(locale, "blog.inline.work_with_us").toLowerCase(),
       href: withLocale(locale, "/form"),
     },
+    // Package links
+    { phrase: t(locale, "blog.inline.tiktok_package"), href: withLocale(locale, "/tiktok-package-20-videos") },
+    { phrase: t(locale, "blog.inline.tiktok"), href: withLocale(locale, "/tiktok-package-20-videos") },
+    { phrase: t(locale, "blog.inline.tiktok").toLowerCase(), href: withLocale(locale, "/tiktok-package-20-videos") },
+    { phrase: t(locale, "blog.inline.reddit_launch"), href: withLocale(locale, "/reddit-launch-support") },
+    { phrase: t(locale, "blog.inline.reddit"), href: withLocale(locale, "/reddit-launch-support") },
+    { phrase: t(locale, "blog.inline.reddit").toLowerCase(), href: withLocale(locale, "/reddit-launch-support") },
+    { phrase: t(locale, "blog.inline.pr_campaign"), href: withLocale(locale, "/pr-starter-pack") },
+    { phrase: t(locale, "blog.inline.influencer_campaign"), href: withLocale(locale, "/influencer-micro-campaign") },
+    { phrase: t(locale, "blog.inline.influencers"), href: withLocale(locale, "/influencer-micro-campaign") },
+    { phrase: t(locale, "blog.inline.influencers").toLowerCase(), href: withLocale(locale, "/influencer-micro-campaign") },
+    { phrase: t(locale, "blog.inline.influencer"), href: withLocale(locale, "/influencer-micro-campaign") },
+    { phrase: t(locale, "blog.inline.influencer").toLowerCase(), href: withLocale(locale, "/influencer-micro-campaign") },
+    { phrase: t(locale, "blog.inline.paid_ads"), href: withLocale(locale, "/paid-ads-setup") },
+    { phrase: t(locale, "blog.inline.paid_ads").toLowerCase(), href: withLocale(locale, "/paid-ads-setup") },
+    { phrase: t(locale, "blog.inline.gameplay_trailer"), href: withLocale(locale, "/gameplay-trailer") },
+    { phrase: t(locale, "blog.inline.gameplay_trailer").toLowerCase(), href: withLocale(locale, "/gameplay-trailer") },
+    { phrase: t(locale, "blog.inline.trap_plan"), href: withLocale(locale, "/") },
+    { phrase: t(locale, "blog.inline.homepage"), href: withLocale(locale, "/") },
+    { phrase: t(locale, "blog.inline.game_marketing"), href: withLocale(locale, "/") },
+    { phrase: t(locale, "blog.inline.game_marketing").toLowerCase(), href: withLocale(locale, "/") },
     ...relatedPostLinks.map((p) => ({ phrase: p.label, href: p.href })),
   ];
 
-  const linkBudget: LinkifyBudget = { used: 0, max: 10, usedHrefs: {} };
+  const linkBudget: LinkifyBudget = { used: 0, max: 15, usedHrefs: {} };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -632,6 +653,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           data={post.cardArticle}
           cover={{ src: cover, alt: post.title }}
           hideProTips={post.slug === "steam-next-fest-2026-the-ultimate-strategy-guide"}
+          inlineLinks={inlineLinks}
+          linkBudget={linkBudget}
         />
         <BlogQuoteBanner />
       </>

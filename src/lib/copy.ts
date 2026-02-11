@@ -662,6 +662,19 @@ export type CopyKey =
   | "blog.inline.marketing_for_video_games"
   | "blog.inline.work_with_us"
   | "blog.inline.video_games_promote_violence"
+  | "blog.inline.tiktok"
+  | "blog.inline.tiktok_package"
+  | "blog.inline.trap_plan"
+  | "blog.inline.influencer"
+  | "blog.inline.influencers"
+  | "blog.inline.influencer_campaign"
+  | "blog.inline.reddit"
+  | "blog.inline.reddit_launch"
+  | "blog.inline.paid_ads"
+  | "blog.inline.gameplay_trailer"
+  | "blog.inline.pr_campaign"
+  | "blog.inline.game_marketing"
+  | "blog.inline.homepage"
   | "seo.paid_ads_setup.title"
   | "seo.paid_ads_setup.desc"
   | "footer.group.ready_packages"
@@ -1751,6 +1764,19 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "blog.inline.marketing_for_video_games": "Marketing for video games",
     "blog.inline.work_with_us": "Work with us",
     "blog.inline.video_games_promote_violence": "video games promote violence",
+    "blog.inline.tiktok": "TikTok",
+    "blog.inline.tiktok_package": "TikTok package",
+    "blog.inline.trap_plan": "Trap Plan",
+    "blog.inline.influencer": "influencer",
+    "blog.inline.influencers": "influencers",
+    "blog.inline.influencer_campaign": "influencer campaign",
+    "blog.inline.reddit": "Reddit",
+    "blog.inline.reddit_launch": "Reddit launch",
+    "blog.inline.paid_ads": "paid ads",
+    "blog.inline.gameplay_trailer": "gameplay trailer",
+    "blog.inline.pr_campaign": "PR campaign",
+    "blog.inline.game_marketing": "game marketing",
+    "blog.inline.homepage": "Trap Plan Agency",
     "footer.group.ready_packages": "Ready-to-Go Packages",
     "footer.group.free_tools": "Free Tools",
     "footer.group.resources": "Resources",

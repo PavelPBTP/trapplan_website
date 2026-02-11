@@ -26,15 +26,19 @@ export default function CardArticle({
   data,
   cover,
   hideProTips,
+  inlineLinks: externalLinks,
+  linkBudget: externalBudget,
 }: {
   data: CardArticleData;
   cover?: { src: string; alt: string };
   hideProTips?: boolean;
+  inlineLinks?: InlineLinkDef[];
+  linkBudget?: { used: number; max: number; usedHrefs: Record<string, true> };
 }) {
   const { cards } = data;
   const total = cards.length;
 
-  const inlineLinks: InlineLinkDef[] = useMemo(
+  const fallbackLinks: InlineLinkDef[] = useMemo(
     () => [
       { phrase: "Steam wishlist", href: "/steam-wishlist-calculator" },
       { phrase: "Steam wishlists", href: "/steam-wishlist-calculator" },
@@ -67,11 +71,21 @@ export default function CardArticle({
       { phrase: "video game pr", href: "/pr-starter-pack" },
       { phrase: "Steam no wishlist", href: "/no-wishlists-on-steam" },
       { phrase: "no wishlists on Steam", href: "/no-wishlists-on-steam" },
+      { phrase: "TikTok", href: "/tiktok-package-20-videos" },
+      { phrase: "tiktok", href: "/tiktok-package-20-videos" },
+      { phrase: "Trap Plan", href: "/" },
+      { phrase: "influencer", href: "/influencer-micro-campaign" },
+      { phrase: "Reddit", href: "/reddit-launch-support" },
+      { phrase: "reddit", href: "/reddit-launch-support" },
+      { phrase: "paid ads", href: "/paid-ads-setup" },
+      { phrase: "gameplay trailer", href: "/gameplay-trailer" },
     ],
     [],
   );
 
-  const linkBudget = useMemo(() => ({ used: 0, max: 10, usedHrefs: {} as Record<string, true> }), []);
+  const inlineLinks = externalLinks ?? fallbackLinks;
+
+  const linkBudget = externalBudget ?? useMemo(() => ({ used: 0, max: 15, usedHrefs: {} as Record<string, true> }), []);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
