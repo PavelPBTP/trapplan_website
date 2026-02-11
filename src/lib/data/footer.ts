@@ -18,10 +18,10 @@ export const FOOTER_LINKS: {
   {
     titleKey: "footer.group.free_tools",
     links: [
-      { labelKey: "seo.steam_wishlist_calculator.title", href: "/steam-wishlist-calculator" },
-      { labelKey: "seo.steam_pricing_planner.title", href: "/steam-pricing-planner" },
-      { labelKey: "seo.steam_influencers_planner.title", href: "/steam-influencers-planner" },
-      { labelKey: "seo.steam_festival_planner.title", href: "/steam-festival-planner" },
+      { labelKey: "tools.steam_wishlist_calculator.name", href: "/steam-wishlist-calculator" },
+      { labelKey: "tools.steam_pricing_planner.name", href: "/steam-pricing-planner" },
+      { labelKey: "tools.steam_influencers_planner.ui.title", href: "/steam-influencers-planner" },
+      { labelKey: "tools.steam_festival_planner.name", href: "/steam-festival-planner" },
     ],
   },
   {
