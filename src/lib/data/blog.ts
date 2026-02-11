@@ -36,6 +36,82 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists",
+    title:
+      "Do Shorts Videos from TikTok, Shorts and Reels Really Drive Steam Wishlists",
+    emoji: "🎬",
+    date: "2026-02-11",
+    excerpt:
+      "Short form video on TikTok, YouTube Shorts and Reels can generate massive reach, but does that attention actually convert into Steam Wishlists? This card-style breakdown covers Wishlist Velocity, Conversion Rate, Discovery Queue behavior, viral traps, and how to build a disciplined Shorts strategy.",
+    readingMinutes: 9,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover:
+      "/images/do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists.png",
+    cardArticle: {
+      title:
+        "Do Shorts Videos from TikTok, Shorts and Reels Really Drive Steam Wishlists",
+      lead: "You posted a few Shorts, maybe on YouTube, maybe on TikTok or Reels. One of them spikes. Views explode, comments look alive. You open Steamworks expecting Wishlist Velocity to jump. It barely moves. Now you are wondering if short form video is overhyped for PC and Console games or if you executed it wrong.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "What happened?",
+          answer:
+            "You posted a few Shorts, maybe on YouTube, maybe on TikTok or Reels. One of them spikes. Views explode, comments look alive, someone says this looks sick. You open Steamworks expecting Wishlist Velocity to jump. It barely moves. Now you are wondering if short form video is overhyped for PC and Console games or if you executed it wrong.",
+        },
+        {
+          id: "short-form-video-2026",
+          question: "What short form video actually means in 2026",
+          answer:
+            "In 2026, TikTok Steam wishlists and YouTube Shorts for game marketing are not separate tactics, they are acquisition layers feeding the same Steam Algorithm. Short form video is an attention filter, not a conversion engine. TikTok can generate massive reach inside seconds, YouTube Shorts can extend discovery through search and recommendation loops, but neither platform transfers value automatically. They generate curiosity and emotional spikes, which can increase outbound CTR toward your Steam page. Wishlist Velocity depends on what happens after the click. The Steam Algorithm does not care about views on TikTok or YouTube. It evaluates behavior inside Steam, including Conversion Rate from visit to wishlist, interaction with Metadata, and how players respond in Discovery Queue testing.",
+        },
+        {
+          id: "can-shorts-increase-velocity",
+          question:
+            "Can TikTok and YouTube Shorts increase Wishlist Velocity at all?",
+          answer:
+            "Yes, but only under specific structural conditions. TikTok Steam wishlists grow when the creative pre qualifies the audience before they ever click. The first seconds must communicate genre, tone, and gameplay fantasy clearly enough that only the right players feel compelled to visit Steam. The same applies to YouTube Shorts for game marketing, where search intent and recommendation signals differ but alignment principles stay identical. When Shorts clearly communicate gameplay fantasy and the Steam page mirrors that clarity through Capsule Art and Metadata, intent survives the jump. In that case, external traffic behaves predictably, Conversion Rate remains stable, and Wishlist Velocity ticks up in small but repeatable waves.",
+        },
+        {
+          id: "viral-vs-steam-growth",
+          question:
+            "Why do viral videos rarely translate into Steam growth?",
+          answer:
+            "Virality optimizes for reach, not alignment. A viral Short can reach millions who are not part of your target genre audience. High CTR with low Conversion Rate teaches the Steam Algorithm that your traffic is inconsistent. Discovery Queue tests become cautious because past visitors did not convert. From Steam's perspective, the video created noise, not signal.\n\nYou can see this pattern repeatedly in the market. For example, R.E.P.O., a horror multiplayer title, generated around 3,100,000 short form video views across platforms and converted that spike into roughly 20,000 additional wishlists. On paper this looks impressive, but the deeper insight is efficiency. The conversion from views to wishlist depended heavily on how clearly the gameplay fantasy was communicated and how well the Steam page confirmed it. When traffic aligned with genre expectations, Conversion Rate held steady and Wishlist Velocity reacted.\n\nAnother strong case is Fallen Aces, which accumulated approximately 6,500,000 views through short form distribution and translated that into around 25,600 wishlists. The raw ratio between views and wishlists again shows that views alone are not predictive. What mattered was cohesion between the short form creative, Capsule Art style, Metadata clarity, and store page positioning. In both examples, the Steam Algorithm responded not to virality itself, but to consistent in platform behavior after the click.",
+        },
+        {
+          id: "gameplay-or-emotion",
+          question:
+            "Should I design Shorts around gameplay or emotion?",
+          answer:
+            "Emotion without context attracts viewers, gameplay with context attracts buyers. Shorts that show raw mechanics without explaining stakes confuse casual viewers. Shorts that show pure emotion without mechanics confuse core players. The sweet spot is clarity of fantasy, genre cues, and pacing that matches your actual experience. When the promise is precise, Regional Pricing expectations and genre benchmarks feel coherent once players land on the page.",
+        },
+        {
+          id: "shorts-help-algorithm",
+          question: "Do Shorts help the Steam Algorithm indirectly?",
+          answer:
+            "They can, if they create clean behavior patterns. When external traffic from Shorts shows consistent Conversion Rate, reasonable time on page, and healthy wishlist adds relative to impressions, Steamworks data reinforces algorithm confidence. Discovery Queue exposure may expand because Steam sees proof of audience fit. Shorts become useful when they feed the system with disciplined traffic, not chaotic spikes.\n\nThere are also positive market cases. Several simulation and cozy titles have demonstrated steady wishlist accumulation through recurring TikTok and Reels formats that consistently showcased the core gameplay loop. Instead of chasing virality, creators repeated clear value propositions, such as farm progression, decorating systems, or satisfying crafting loops. View counts were moderate rather than explosive, but Wishlist Velocity increased in parallel with each content wave. In these cases, Conversion Rate remained stable during traffic growth, which allowed the Steam Algorithm to scale Discovery Queue impressions gradually.\n\nAnother pattern appeared with action roguelike and sandbox games using YouTube Shorts for game marketing. Developers repurposed tightly edited gameplay clips that highlighted skill expression and replayability. Shorts views were lower than on TikTok, but traffic arriving from YouTube showed higher intent and stronger Conversion Rate. Over time, consistent Shorts uploads correlated with predictable wishlist bumps before major beats such as demos or Launch Discount announcements. The key was alignment between the short form promise, Capsule Art, Metadata clarity, and the actual store page experience.",
+        },
+        {
+          id: "how-many-wishlists",
+          question:
+            "How many wishlists can Shorts realistically generate?",
+          answer:
+            "There is no fixed multiplier between views and wishlists. Ten thousand views can generate meaningful Wishlist Velocity if the audience is niche and aligned. One million views can generate almost nothing if intent is weak. Shorts are leverage, not magic. Their value depends on how tightly the creative, the Capsule Art, the Metadata, and the store page Conversion Rate work together.",
+        },
+        {
+          id: "stay-sane",
+          question:
+            "How do I stay sane while testing TikTok and YouTube Shorts?",
+          answer:
+            "You stay sane by treating TikTok and YouTube Shorts as structured campaigns, not random uploads. Consistency matters more than one viral spike, which is why structured production frameworks outperform isolated experiments. This is exactly how we approach short form at Trap Plan through our TikTok package built around twenty videos designed to test multiple hooks, gameplay angles, and audience segments in a controlled way. Instead of hoping for viral luck, the goal is to generate comparable data across creatives, measure outbound CTR, track Wishlist Velocity after each wave, and observe how Conversion Rate behaves inside Steamworks.\n\nWhen TikTok Steam wishlists start rising in correlation with stable Discovery Queue behavior and healthy CR, you know the system is learning. When views rise but Steam signals stay flat, the creative is entertaining but not qualifying. The goal is not to go viral, it is to teach the Steam Algorithm who cares about your game. That is where disciplined short form strategy turns attention into signal, and signal into sustainable wishlist growth before launch.",
+        },
+      ],
+    },
+    content: [],
+  },
+  {
     slug: "how-to-know-marketing-for-your-games-works-before-release",
     title: "How To Know Marketing for your games Works Before Release",
     emoji: "📊",

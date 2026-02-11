@@ -1,6 +1,66 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists": {
+    title: "TikTok、Shorts和Reels的短视频真的能带动Steam愿望单吗？",
+    excerpt:
+      "TikTok、YouTube Shorts和Reels上的短视频可以产生巨大的曝光量，但这些关注真的能转化为Steam愿望单吗？这篇卡片式分析涵盖了Wishlist Velocity、Conversion Rate、Discovery Queue行为、病毒式陷阱以及如何构建有纪律的Shorts策略。",
+    category: "Steam",
+    cardArticle: {
+      title: "TikTok、Shorts和Reels的短视频真的能带动Steam愿望单吗？",
+      lead: "TikTok、YouTube Shorts和Reels上的短视频可以产生巨大的曝光量，但这些关注真的能转化为Steam愿望单吗？这篇卡片式分析涵盖了Wishlist Velocity、Conversion Rate、Discovery Queue行为、病毒式陷阱以及如何构建有纪律的Shorts策略。",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么？",
+          answer:
+            "你发了几个Shorts，也许在YouTube上，也许在TikTok或Reels上。其中一个爆了。播放量飙升，评论区看起来很活跃，有人说这看起来太酷了。你打开Steamworks期待Wishlist Velocity跳涨。它几乎没动。现在你在想短视频对PC和主机游戏是否被高估了，还是你执行得不对。",
+        },
+        {
+          id: "short-form-video-2026",
+          question: "2026年短视频到底意味着什么",
+          answer:
+            "在2026年，TikTok Steam愿望单和YouTube Shorts游戏营销不是独立的策略，它们是喂养同一个Steam算法的获客层。短视频是注意力过滤器，不是转化引擎。TikTok可以在几秒内产生巨大的曝光，YouTube Shorts可以通过搜索和推荐循环扩展发现，但两个平台都不会自动传递价值。它们产生好奇心和情感高峰，可以增加指向你Steam页面的出站CTR。Wishlist Velocity取决于点击之后发生了什么。Steam算法不关心TikTok或YouTube上的播放量。它评估Steam内部的行为，包括从访问到愿望单的Conversion Rate、与Metadata的互动以及玩家在Discovery Queue测试中的反应。",
+        },
+        {
+          id: "can-shorts-increase-velocity",
+          question: "TikTok和YouTube Shorts能提高Wishlist Velocity吗？",
+          answer:
+            "可以，但只在特定的结构条件下。TikTok Steam愿望单在创意内容预先筛选受众后才会增长。前几秒必须足够清晰地传达类型、基调和游戏幻想，让只有合适的玩家才会被驱动去访问Steam。YouTube Shorts游戏营销也是如此，搜索意图和推荐信号不同，但对齐原则完全相同。当Shorts清晰地传达游戏幻想，而Steam页面通过Capsule Art和Metadata反映这种清晰度时，意图就能在跳转中存活。在这种情况下，外部流量表现可预测，Conversion Rate保持稳定，Wishlist Velocity以小而可重复的波浪上升。",
+        },
+        {
+          id: "viral-vs-steam-growth",
+          question: "为什么病毒式视频很少转化为Steam增长？",
+          answer:
+            "病毒式传播优化的是覆盖面，而不是对齐。一个病毒式Short可以触达数百万不属于你目标类型受众的人。高CTR配合低Conversion Rate会教会Steam算法你的流量是不一致的。Discovery Queue测试变得谨慎，因为之前的访客没有转化。从Steam的角度来看，视频制造了噪音，而不是信号。\n\n你可以在市场中反复看到这种模式。例如，R.E.P.O.，一款恐怖多人游戏，在所有平台上产生了约310万短视频播放量，并将这个高峰转化为大约2万个额外愿望单。表面上看这很令人印象深刻，但更深层的洞察是效率。从播放量到愿望单的转化在很大程度上取决于游戏幻想被传达得多清晰，以及Steam页面确认得多好。\n\n另一个强力案例是Fallen Aces，通过短视频分发积累了约650万播放量，并将其转化为约25600个愿望单。播放量与愿望单之间的原始比率再次表明，播放量本身不具有预测性。重要的是短视频创意、Capsule Art风格、Metadata清晰度和商店页面定位之间的一致性。",
+        },
+        {
+          id: "gameplay-or-emotion",
+          question: "我应该围绕游戏玩法还是情感来设计Shorts？",
+          answer:
+            "没有背景的情感吸引观众，有背景的游戏玩法吸引买家。展示原始机制而不解释利害关系的Shorts会让休闲观众困惑。展示纯粹情感而没有机制的Shorts会让核心玩家困惑。最佳点是幻想的清晰度、类型线索和与你实际体验匹配的节奏。当承诺精确时，Regional Pricing期望和类型基准在玩家到达页面后感觉连贯。",
+        },
+        {
+          id: "shorts-help-algorithm",
+          question: "Shorts能间接帮助Steam算法吗？",
+          answer:
+            "可以，如果它们创造干净的行为模式。当来自Shorts的外部流量显示一致的Conversion Rate、合理的页面停留时间和相对于展示量的健康愿望单添加时，Steamworks数据会加强算法信心。Discovery Queue曝光可能会扩大，因为Steam看到了受众匹配的证据。当Shorts用有纪律的流量而非混乱的高峰来喂养系统时，它们才变得有用。\n\n市场上也有积极的案例。几款模拟和休闲游戏通过反复出现的TikTok和Reels格式展示了稳定的愿望单积累，这些格式持续展示核心游戏循环。创作者没有追逐病毒式传播，而是重复清晰的价值主张。播放量是温和的而非爆炸性的，但Wishlist Velocity随着每波内容平行增长。\n\n另一个模式出现在使用YouTube Shorts进行游戏营销的动作roguelike和沙盒游戏中。开发者重新利用了紧凑剪辑的游戏片段，突出技能表达和可重玩性。Shorts播放量低于TikTok，但来自YouTube的流量显示出更高的意图和更强的Conversion Rate。关键是短视频承诺、Capsule Art、Metadata清晰度和实际商店页面体验之间的对齐。",
+        },
+        {
+          id: "how-many-wishlists",
+          question: "Shorts实际上能产生多少愿望单？",
+          answer:
+            "播放量和愿望单之间没有固定的乘数。如果受众是小众且对齐的，一万次播放可以产生有意义的Wishlist Velocity。如果意图薄弱，一百万次播放可能几乎什么都产生不了。Shorts是杠杆，不是魔法。它们的价值取决于创意、Capsule Art、Metadata和商店页面Conversion Rate配合得多紧密。",
+        },
+        {
+          id: "stay-sane",
+          question: "测试TikTok和YouTube Shorts时如何保持理智？",
+          answer:
+            "你通过将TikTok和YouTube Shorts视为结构化活动而非随机上传来保持理智。一致性比一次病毒式高峰更重要，这就是为什么结构化的制作框架优于孤立的实验。这正是我们在Trap Plan通过TikTok套餐处理短视频的方式，该套餐围绕二十个视频构建，旨在以受控方式测试多个钩子、游戏角度和受众细分。\n\n当TikTok Steam愿望单开始与稳定的Discovery Queue行为和健康的CR相关联地上升时，你就知道系统在学习。当播放量上升但Steam信号保持平稳时，创意是有趣的但没有筛选作用。目标不是走红，而是教会Steam算法谁关心你的游戏。",
+        },
+      ],
+    },
+  },
   "promote-a-game-without-a-budget-virality-myth": {
     title: "真的能不花预算推广一款游戏吗？",
     excerpt:
