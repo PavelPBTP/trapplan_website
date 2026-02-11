@@ -1,6 +1,138 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-important-is-price-in-a-pc-console-game-growth-strategy": {
+    title: "价格在PC和主机游戏增长策略中有多重要？",
+    excerpt:
+      "价格不是发行失败的根本原因——它是一个放大器。这篇卡片式分析涵盖了2026年定价的真正含义、它如何与Steam算法信号互动、Regional Pricing、Launch Discount以及何时价格才成为正确的杠杆。",
+    category: "Steam",
+    cardArticle: {
+      title: "价格在PC和主机游戏增长策略中有多重要？",
+      lead: "错误的策略配上正确的价格仍然会失败，而强大的策略配上错误的价格只会失败得更响。价格不是根本原因——它是一个放大器。",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么？",
+          answer:
+            "每次发行复盘最终都会落到同一个争论上。是价格错了还是其他一切先失败了？团队看到平坦的Wishlist Velocity、Capsule Art上微弱的CTR和一个从未真正醒来的Steam算法，本能反应是归咎于价格标签上的数字。定价成为最简单的解释，因为它可见、容易改变且情感负载重。但在大多数PC和主机发行中，价格不是根本原因。它是一个放大器。",
+        },
+        {
+          id: "pricing-in-2026",
+          question: "2026年定价到底意味着什么",
+          answer:
+            "在2026年，价格不再是一个单一决定。它是嵌入在Metadata、Regional Pricing逻辑、Launch Discount框架以及Steamworks如何将这些信息输入Steam算法测试中的增长信号。价格在定义价值之前先定义期望，而期望直接影响CTR、Wishlist Velocity和下游Conversion Rate。低价增加点击好奇心但提高CR期望。高价过滤点击但需要通过评论、类型基准和Capsule Art清晰度提供更强的证明。",
+        },
+        {
+          id: "game-feels-expensive",
+          question: "如果我的游戏感觉太贵，我是不是做错了什么？",
+          answer:
+            "通常不是，但其他东西没有对齐。当开发者觉得他们的游戏定价过高时，他们真正看到的是薄弱的理由。这个理由来自类型基准、评论速度、区域公平性以及核心幻想在商店页面上被传达得多清晰。如果Discovery Queue带来流量但CR崩溃，价格看起来有罪，即使真正的问题是定位。",
+        },
+        {
+          id: "lower-price-fix-wishlists",
+          question: "我应该降价来修复低愿望单吗？",
+          answer:
+            "降价很少能单独修复Wishlist Velocity。愿望单由感知的未来价值驱动，而非当前的可负担性。玩家将他们想要记住、关注和比较的游戏加入愿望单，而不是他们今天买得起的游戏。较低的价格可能略微提高商店页面CTR，但如果Metadata、Capsule Art和类型框架没有清楚解释为什么这个游戏属于玩家的Steam库，愿望单按钮就不会被触碰。",
+        },
+        {
+          id: "higher-price-visibility",
+          question: "更高的价格会损害Steam可见性吗？",
+          answer:
+            "不会直接损害。Steam可见性与参与循环相关。CTR、CR、每次展示的愿望单添加和早期购买行为反馈给Steam算法。更高的价格减少原始转化，但如果这些转化是干净和有意的，算法仍然在学习。当高价遇到模糊的Metadata和薄弱的Capsule Art时，问题就出现了。",
+        },
+        {
+          id: "launch-discount-vs-base",
+          question: "Launch Discount比基础价格更重要吗？",
+          answer:
+            "Launch Discount重要是因为它框定了紧迫感和转化行为，而不是因为它补偿了薄弱的基础价格。百分之十到十五的Launch Discount在基础价格已经与类型范围、游戏时间期望和可比的PC和主机游戏对齐时才有效。当基础价格感觉虚高时，即使是大折扣也显得人为，损害Conversion Rate。",
+        },
+        {
+          id: "regional-pricing-growth",
+          question: "Regional Pricing实际上如何影响增长？",
+          answer:
+            "Regional Pricing影响销量质量。糟糕的区域逻辑会推高退款率并损害Steam正在积极测试的地区的Conversion Rate。公平的区域定价增加长期参与度和评论密度，间接加强Discovery Queue表现。忽视区域不是中立的，它在悄悄破坏算法信任。",
+        },
+        {
+          id: "price-main-problem",
+          question: "价格什么时候才真正成为主要问题？",
+          answer:
+            "只有在其他一切都运作正常之后，价格才成为核心问题。当CTR健康、商店流量相关、评论积极，而Conversion Rate在所有地区仍然表现不佳时，价格才终于是正确的杠杆。在那个点上，价格优化变得精确而非情绪化。",
+        },
+        {
+          id: "stay-sane",
+          question: "在解决这一切的过程中如何保持理智？",
+          answer:
+            "你通过将价格视为系统的一部分而非对游戏的道德判断来保持理智。当定价、Metadata、Regional Pricing、Steamworks配置、Capsule Art测试和发行排序一起设计时，增长变得可预测。这就是Trap Plan通常介入的地方，不是为了猜测完美的数字，而是为了建立条件，让正确的价格通过Wishlist Velocity、Conversion Rate稳定性和Steam算法反馈自然显现。",
+        },
+      ],
+    },
+  },
+  "how-to-know-marketing-for-your-games-works-before-release": {
+    title: "如何在发行前知道你的游戏营销是否有效",
+    excerpt:
+      "发行前营销的成功不在于炒作或覆盖面——而在于Steam算法是否在学习你的游戏是为谁做的。这篇卡片式分析涵盖了Wishlist Velocity、Discovery Queue行为、商店页面信号、区域数据以及何时该担心。",
+    category: "Steam",
+    cardArticle: {
+      title: "如何在发行前知道你的游戏营销是否有效",
+      lead: "没有销售数据，营销感觉像信仰。一个图表上升，另一个保持平坦，没人知道哪个真正重要。",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么？",
+          answer:
+            "每个团队在发行前六到九个月都会经历同样的沉默恐慌。预告片已上线，影响者已接触构建版本，Steamworks显示活动，但收入仍然是虚构的。没有销售数据，营销感觉像信仰。一个图表上升，另一个保持平坦，没人知道哪个真正重要。这就是团队要么开始慌乱，要么学会发行前信号在PC和主机上如何真正运作的时刻。",
+        },
+        {
+          id: "pre-release-signal-2026",
+          question: "2026年发行前营销信号到底意味着什么",
+          answer:
+            "在2026年，发行前营销的成功不在于炒作、覆盖面或氛围。而在于Steam算法是否在学习你的游戏是为谁做的。Wishlist Velocity、Discovery Queue展示量、Capsule Art上的CTR和从页面访问到愿望单的Conversion Rate形成一个闭环反馈循环。当这些信号一起移动时，Steam正在建立信心。当它们孤立移动时，营销活动存在但学习不存在。",
+        },
+        {
+          id: "wishlists-no-clarity",
+          question: "如果我有愿望单但没有清晰度，我是不是做错了什么？",
+          answer:
+            "不一定，但你在问错误的问题。团队执着于发行前需要多少愿望单才够，期待一个通用数字。实际上，原始愿望单计数是一个滞后指标。重要的是随着发行临近Wishlist Velocity如何表现，以及流量扩大时Conversion Rate是否保持稳定。",
+        },
+        {
+          id: "velocity-vs-total",
+          question: "我应该更信任Wishlist Velocity还是总愿望单数？",
+          answer:
+            "是的，因为速度反映意图，而非记忆。总愿望单奖励时间，而非质量。Wishlist Velocity显示遇到你的Metadata和Capsule Art的新玩家是否足够快地理解了推销点。当速度在小节拍如演示、开发日志或更新后上升时，意味着Steam算法正在将你与正确的Discovery Queue受众匹配。",
+        },
+        {
+          id: "discovery-queue-behavior",
+          question: "健康的Discovery Queue行为是什么样的？",
+          answer:
+            "健康的Discovery Queue表现一开始看起来很无聊。展示量逐渐增长，CTR保持稳定，Conversion Rate不会在流量下崩溃。展示量剧烈波动伴随CR下降表明Steam在猜测。展示量稳定伴随CR稳定表明Steam在学习。",
+        },
+        {
+          id: "store-page-job",
+          question: "如何知道我的商店页面是否在发挥作用？",
+          answer:
+            "当Capsule Art CTR和页面Conversion Rate讲述同一个故事时，你的商店页面就在发挥作用。高CTR配低CR意味着美术过度承诺。低CTR配高CR意味着游戏清晰但不可见。当两者一起移动时，Metadata、视觉效果和定位就对齐了。",
+        },
+        {
+          id: "regional-data-early",
+          question: "区域数据这么早就重要吗？",
+          answer:
+            "是的，因为Regional Pricing和区域Conversion Rate能早期揭示受众不匹配。如果某些地区显示强CTR但弱CR，定价或类型期望有偏差。如果某些地区以低流量干净地转化，这些地区就是未来的增长杠杆。",
+        },
+        {
+          id: "marketing-not-working",
+          question: "什么时候该担心营销不起作用？",
+          answer:
+            "当愿望单数学不再有意义时你就该担心了。如果发行前需要多少愿望单这个问题在内部不断出现，通常意味着缺少的是信心而非数据。展示量上升但Wishlist Velocity下降、流量稳定但Conversion Rate崩溃、或每次节拍后反复重置，都意味着Steam从未锁定核心受众。",
+        },
+        {
+          id: "stay-sane",
+          question: "阅读所有这些数据时如何保持理智？",
+          answer:
+            "你通过用信号替代迷信来保持理智。对于发行前多少愿望单能保证PC或主机上的成功，没有神奇的答案。发行前的信心来自理解Wishlist Velocity趋势、Conversion Rate行为以及Steam算法在Steamworks内如何响应。这就是Trap Plan通常介入的地方，帮助团队将愿望单数据转化为决策而非神话。",
+        },
+      ],
+    },
+  },
   "do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists": {
     title: "TikTok、Shorts和Reels的短视频真的能带动Steam愿望单吗？",
     excerpt:

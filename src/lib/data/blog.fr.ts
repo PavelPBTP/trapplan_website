@@ -1,6 +1,138 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-important-is-price-in-a-pc-console-game-growth-strategy": {
+    title: "Quelle est l'importance du prix dans une stratégie de croissance pour jeux PC et console ?",
+    excerpt:
+      "Le prix n'est pas la cause principale d'un lancement raté — c'est un amplificateur. Cette analyse en cartes couvre ce que le pricing signifie vraiment en 2026, comment il interagit avec les signaux de l'Algorithme Steam, le Regional Pricing, le Launch Discount et quand le prix devient le bon levier.",
+    category: "Steam",
+    cardArticle: {
+      title: "Quelle est l'importance du prix dans une stratégie de croissance pour jeux PC et console ?",
+      lead: "Une mauvaise stratégie avec le bon prix échoue quand même, et une bonne stratégie avec le mauvais prix échoue juste plus fort. Le prix n'est pas la cause principale — c'est un amplificateur.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Que s'est-il passé ?",
+          answer:
+            "Chaque postmortem de lancement finit par arriver au même argument. Le prix était-il mauvais ou tout le reste a-t-il échoué d'abord ? Les équipes regardent un Wishlist Velocity plat, un CTR faible sur le Capsule Art et un Algorithme Steam qui ne s'est jamais vraiment réveillé, et l'instinct est de blâmer le chiffre sur l'étiquette de prix. Le pricing devient l'explication la plus simple parce qu'il est visible, facile à changer et émotionnellement chargé. Mais dans la plupart des lancements PC et console, le prix n'est pas la cause principale. C'est un amplificateur.",
+        },
+        {
+          id: "pricing-in-2026",
+          question: "Ce que le pricing signifie vraiment en 2026",
+          answer:
+            "En 2026, le prix n'est plus une décision unique. C'est un signal de croissance intégré dans les Metadata, la logique de Regional Pricing, le cadrage du Launch Discount et comment Steamworks alimente ces informations dans les tests de l'Algorithme Steam. Le prix définit l'attente avant de définir la valeur, et l'attente impacte directement le CTR, le Wishlist Velocity et le Conversion Rate en aval. Un prix bas augmente la curiosité du clic mais élève les attentes de CR. Un prix élevé filtre les clics mais exige des preuves plus fortes à travers les avis, les benchmarks de genre et la clarté du Capsule Art.",
+        },
+        {
+          id: "game-feels-expensive",
+          question: "Est-ce que je fais quelque chose de mal si mon jeu semble trop cher ?",
+          answer:
+            "Généralement non, mais quelque chose d'autre est désaligné. Quand les développeurs sentent que leur jeu est surévalué, ce qu'ils voient réellement est une justification faible. Cette justification vient des benchmarks de genre, de la vitesse des avis, de l'équité régionale et de la clarté avec laquelle la fantaisie centrale est communiquée sur la page du store.",
+        },
+        {
+          id: "lower-price-fix-wishlists",
+          question: "Devrais-je baisser le prix pour corriger des wishlists faibles ?",
+          answer:
+            "Baisser le prix corrige rarement le Wishlist Velocity seul. Les wishlists sont motivées par la valeur future perçue, pas par l'accessibilité actuelle. Les joueurs ajoutent en wishlist des jeux qu'ils veulent retenir, suivre et comparer, pas des jeux qu'ils peuvent se permettre aujourd'hui. Un prix plus bas peut légèrement augmenter le CTR de la page, mais si les Metadata, le Capsule Art et le cadrage du genre n'expliquent pas clairement pourquoi le jeu appartient à la bibliothèque Steam du joueur, le bouton wishlist reste intouché.",
+        },
+        {
+          id: "higher-price-visibility",
+          question: "Un prix plus élevé nuit-il à la visibilité Steam ?",
+          answer:
+            "Pas directement. La visibilité Steam est liée aux boucles d'engagement. CTR, CR, ajouts wishlist par impression et comportement d'achat précoce alimentent l'Algorithme Steam. Un prix plus élevé réduit les conversions brutes, mais si ces conversions sont propres et intentionnelles, l'algorithme continue d'apprendre. Les problèmes apparaissent quand un prix élevé rencontre des Metadata vagues et un Capsule Art faible.",
+        },
+        {
+          id: "launch-discount-vs-base",
+          question: "Le Launch Discount est-il plus important que le prix de base ?",
+          answer:
+            "Le Launch Discount compte parce qu'il cadre l'urgence et le comportement de conversion, pas parce qu'il compense un prix de base faible. Un Launch Discount de dix à quinze pour cent fonctionne quand le prix de base est déjà aligné avec la portée du genre, les attentes de temps de jeu et les titres comparables PC et console. Quand le prix de base semble gonflé, même une grosse réduction paraît artificielle et nuit au Conversion Rate.",
+        },
+        {
+          id: "regional-pricing-growth",
+          question: "Comment le Regional Pricing affecte-t-il réellement la croissance ?",
+          answer:
+            "Le Regional Pricing impacte la qualité du volume. Une logique régionale médiocre gonfle les taux de remboursement et endommage le Conversion Rate dans les territoires que Steam teste activement. Un pricing régional équitable augmente l'engagement à long terme et la densité des avis, renforçant indirectement les performances de la Discovery Queue. Ignorer les régions n'est pas neutre, cela sabote silencieusement la confiance de l'algorithme.",
+        },
+        {
+          id: "price-main-problem",
+          question: "Quand le prix devient-il réellement le problème principal ?",
+          answer:
+            "Le prix devient le problème central uniquement après que tout le reste fonctionne. Quand le CTR est sain, le trafic du store est pertinent, les avis sont positifs et le Conversion Rate sous-performe toujours dans toutes les régions, alors le prix est enfin le bon levier. À ce stade, l'optimisation du prix devient chirurgicale, pas émotionnelle.",
+        },
+        {
+          id: "stay-sane",
+          question: "Comment garder la tête froide en résolvant tout ça ?",
+          answer:
+            "Tu gardes la tête froide en traitant le prix comme partie d'un système, pas comme un jugement moral sur ton jeu. La croissance devient prévisible quand le pricing, les Metadata, le Regional Pricing, la configuration Steamworks, les tests de Capsule Art et le séquençage du lancement sont conçus ensemble. C'est là que Trap Plan intervient généralement, pas pour deviner le nombre parfait, mais pour construire les conditions où le bon prix se révèle à travers le Wishlist Velocity, la stabilité du Conversion Rate et le feedback de l'Algorithme Steam.",
+        },
+      ],
+    },
+  },
+  "how-to-know-marketing-for-your-games-works-before-release": {
+    title: "Comment savoir si le marketing de ton jeu fonctionne avant le lancement",
+    excerpt:
+      "Le succès du marketing pré-lancement ne concerne pas le hype ou la portée — il s'agit de savoir si l'Algorithme Steam apprend pour qui est ton jeu. Cette analyse en cartes couvre le Wishlist Velocity, le comportement de la Discovery Queue, les signaux de la page du store, les données régionales et quand s'inquiéter.",
+    category: "Steam",
+    cardArticle: {
+      title: "Comment savoir si le marketing de ton jeu fonctionne avant le lancement",
+      lead: "Sans données de vente, le marketing ressemble à un acte de foi. Un graphique monte, un autre reste plat, et personne ne sait lequel compte vraiment.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Que s'est-il passé ?",
+          answer:
+            "Chaque équipe atteint la même panique silencieuse six à neuf mois avant le lancement. Les trailers sont en ligne, les influenceurs ont touché le build, Steamworks montre de l'activité, mais les revenus sont encore imaginaires. Sans données de vente, le marketing ressemble à un acte de foi. Un graphique monte, un autre reste plat, et personne ne sait lequel compte vraiment.",
+        },
+        {
+          id: "pre-release-signal-2026",
+          question: "Ce que le signal marketing pré-lancement signifie vraiment en 2026",
+          answer:
+            "En 2026, le succès du marketing pré-lancement ne concerne pas le hype, la portée ou les vibes. Il s'agit de savoir si l'Algorithme Steam apprend pour qui est ton jeu. Wishlist Velocity, impressions de Discovery Queue, CTR sur Capsule Art et Conversion Rate de visites à wishlists forment une boucle de feedback fermée. Quand ces signaux bougent ensemble, Steam construit de la confiance. Quand ils bougent isolément, l'activité marketing existe mais l'apprentissage non.",
+        },
+        {
+          id: "wishlists-no-clarity",
+          question: "Est-ce que je fais quelque chose de mal si j'ai des wishlists mais pas de clarté ?",
+          answer:
+            "Pas nécessairement, mais tu poses la mauvaise question. Les équipes se fixent sur combien de wishlists avant le lancement suffisent, attendant un nombre universel. En réalité, le comptage brut de wishlists est un indicateur retardé. Ce qui compte est comment le Wishlist Velocity se comporte à mesure que le lancement approche et si le Conversion Rate reste stable pendant que le trafic augmente.",
+        },
+        {
+          id: "velocity-vs-total",
+          question: "Devrais-je faire plus confiance au Wishlist Velocity qu'au total de wishlists ?",
+          answer:
+            "Oui, parce que la velocity reflète l'intention, pas la mémoire. Le total de wishlists récompense le temps, pas la qualité. Le Wishlist Velocity montre si les nouveaux joueurs qui rencontrent tes Metadata et Capsule Art comprennent le pitch assez vite pour s'y intéresser. Quand la velocity monte après de petits beats comme des démos, devlogs ou mises à jour, cela signifie que l'Algorithme Steam te met en correspondance avec la bonne audience de Discovery Queue.",
+        },
+        {
+          id: "discovery-queue-behavior",
+          question: "À quoi ressemble un comportement sain de Discovery Queue ?",
+          answer:
+            "Les performances saines de Discovery Queue semblent ennuyeuses au début. Les impressions croissent graduellement, le CTR reste stable et le Conversion Rate ne s'effondre pas sous le volume. Des impressions en pics avec un CR en baisse signalent que Steam devine. Des impressions stables avec un CR constant signalent que Steam apprend.",
+        },
+        {
+          id: "store-page-job",
+          question: "Comment savoir si ma page du store fait son travail ?",
+          answer:
+            "Ta page du store fonctionne quand le CTR du Capsule Art et le Conversion Rate de la page racontent la même histoire. CTR élevé avec CR bas signifie que l'art surpromesse. CTR bas avec CR élevé signifie que le jeu est clair mais invisible. Quand les deux bougent ensemble, Metadata, visuels et positionnement sont alignés.",
+        },
+        {
+          id: "regional-data-early",
+          question: "Les données régionales comptent-elles si tôt ?",
+          answer:
+            "Oui, parce que le Regional Pricing et le Conversion Rate régional révèlent les décalages d'audience tôt. Si certaines régions montrent un CTR fort mais un CR faible, le pricing ou les attentes de genre sont décalés. Si certaines régions convertissent proprement avec un faible volume, ces régions sont des leviers de croissance futurs.",
+        },
+        {
+          id: "marketing-not-working",
+          question: "Quand devrais-je m'inquiéter que le marketing ne fonctionne pas ?",
+          answer:
+            "Tu devrais t'inquiéter quand les maths des wishlists n'ont plus de sens. Si la question combien de wishlists avant le lancement revient sans cesse en interne, cela signifie généralement que la confiance manque, pas les données. Des impressions croissantes avec un Wishlist Velocity en baisse, un trafic stable avec un Conversion Rate qui s'effondre, ou des resets répétés après chaque beat signifient que Steam ne se fixe jamais sur une audience centrale.",
+        },
+        {
+          id: "stay-sane",
+          question: "Comment garder la tête froide en lisant toutes ces données ?",
+          answer:
+            "Tu gardes la tête froide en remplaçant la superstition par le signal. Il n'y a pas de réponse magique à combien de wishlists avant le lancement garantissent le succès sur PC ou console. La confiance pré-lancement vient de la compréhension des tendances de Wishlist Velocity, du comportement du Conversion Rate et de la façon dont l'Algorithme Steam répond dans Steamworks. C'est là que Trap Plan intervient généralement, aidant les équipes à traduire les données de wishlists en décisions plutôt qu'en mythes.",
+        },
+      ],
+    },
+  },
   "do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists": {
     title: "Les vidéos courtes de TikTok, Shorts et Reels génèrent-elles vraiment des Wishlists Steam ?",
     excerpt:
