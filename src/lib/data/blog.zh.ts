@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "should-you-launch-tiktok-for-your-steam-game": {
+    title: "你应该为你的Steam游戏启动TikTok吗?",
+    excerpt:
+      "正在考虑为你的Steam游戏启动TikTok? 这个卡片式分析涵盖了TikTok何时真正帮助Wishlist Velocity, 何时损害Conversion Rate, 它如何与定价和发布计划互动, 以及如何将其作为结构化获客层而非干扰来对待.",
+    category: "Steam",
+    cardArticle: {
+      title: "你应该为你的Steam游戏启动TikTok吗?",
+      lead: "你正盯着Steamworks仪表板思考关注度的问题. Wishlist Velocity还不错但不算爆炸性增长. Discovery Queue展示量在波动. 有人告诉你TikTok可以改变一切. 现在你在想, 为你的Steam游戏启动TikTok账号到底是战略举措还是又一个干扰.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你正盯着Steamworks仪表板思考关注度的问题. Wishlist Velocity还不错但不算爆炸性增长. Discovery Queue展示量在波动. 有人告诉你TikTok可以改变一切. 现在你在想, 为你的Steam游戏启动TikTok账号到底是战略举措还是又一个干扰.",
+        },
+        {
+          id: "what-launching-tiktok-means",
+          question: "2026年为Steam游戏启动TikTok到底意味着什么",
+          answer:
+            "在2026年, PC和主机领域的TikTok游戏营销不是追逐播放量, 而是通过受控的受众对齐来创造TikTok Steam wishlists. TikTok是一个为快速创意测试和行为过滤优化的注意力引擎. 它可以增加指向你Steam页面的出站CTR并影响漏斗顶部需求, 但它不直接控制Conversion Rate或Wishlist Velocity. 这些结果取决于你的Capsule Art, Metadata, 类型定位和商店页面结构在用户到达Steam后转化兴趣的能力. 只有当TikTok的流量以Steam算法可以解读和扩展的方式运行时, TikTok才会成为增长渠道.",
+        },
+        {
+          id: "doing-something-wrong",
+          question: "如果我没有TikTok, 我做错了什么吗?",
+          answer:
+            "不一定. 许多游戏通过有机的Discovery Queue曝光, 强大的Capsule Art CTR和稳定的Conversion Rate在没有大量外部流量的情况下增长. TikTok是放大器, 不是必需品. 如果你的核心Steam指标不稳定, 添加TikTok会放大不稳定性而不是修复它. 问题不在于你是否有TikTok, 而在于你当前的Steam行为是否能吸收额外流量而不导致CR崩溃.",
+        },
+        {
+          id: "when-tiktok-helps",
+          question: "TikTok什么时候真正帮助Steam增长?",
+          answer:
+            "当你的游戏幻想在几秒内视觉上清晰, 并在用户点击之前预先筛选正确的受众时, TikTok才有帮助. 这就是TikTok Steam wishlists真正被创建的地方, 不是在平台本身, 而是在视频承诺和Steam页面确认之间的一致性中. 恐怖, 沙盒, 模拟和动作roguelike等类型往往表现更好, 因为循环容易展示也容易理解. 当创意清楚地传达类型和基调时, 到达你Steam页面的流量行为可预测. 稳定的Conversion Rate加上可重复的Wishlist Velocity提升告诉Steam算法受众匹配是真实的, 这可以支持Discovery Queue扩展.",
+        },
+        {
+          id: "when-tiktok-hurts",
+          question: "TikTok什么时候弊大于利?",
+          answer:
+            "当TikTok创造好奇心而没有清晰度时就会造成伤害. 一个有趣的bug, 震撼的时刻或夸张的反应可以带来高播放量和CTR, 但如果商店页面没有立即确认同样的承诺, Conversion Rate就会下降. Steam将这种不一致解读为低意图流量. Discovery Queue测试变得谨慎, 因为之前的访客没有转化为wishlists.",
+        },
+        {
+          id: "post-daily",
+          question: "我需要每天发布才能看到结果吗?",
+          answer:
+            "一致性比频率更重要. 在没有关于钩子, 类型框架或受众细分的明确假设的情况下每天发布会产生随机数据. TikTok在被视为结构化测试环境时最有用. 不同的钩子, 游戏角度和叙事框架应该针对可衡量的结果进行测试, 如出站CTR和Steamworks内产生的Wishlist Velocity. 没有结构, 内容就变成了噪音.",
+        },
+        {
+          id: "pricing-and-launch",
+          question: "TikTok如何与定价和发布计划互动?",
+          answer:
+            "TikTok流量在Launch Discount之前和期间表现不同. 发布前, 目标是wishlist积累和稳定的Conversion Rate. 发布期间, 定价, Regional Pricing预期和折扣框架影响TikTok驱动的流量如何转化为购买. 如果你的受众预期与价格定位不一致, 即使Wishlist Velocity之前看起来健康, 流量高峰也可能不会转化为收入.",
+        },
+        {
+          id: "viral-growth",
+          question: "我应该期待病毒式增长吗?",
+          answer:
+            "期待学习, 而不是奇迹. 病毒式增长是不可预测的, 很少可持续. 你应该期待的是数据. TikTok可以揭示哪些游戏循环驱动好奇心, 哪些类型线索产生共鸣, 哪些受众细分做出回应. 当这些洞察反映在Capsule Art, Metadata和商店页面消息中时, Steam算法接收到更干净的信号. 增长变成复合式而非爆炸式.",
+        },
+        {
+          id: "stay-sane",
+          question: "在决定是否启动TikTok时如何保持理智?",
+          answer:
+            "你通过将TikTok游戏营销视为可衡量的获客层而非文化义务来保持理智. 如果你的Steam基础强大, TikTok可以加速Wishlist Velocity, 产生合格的TikTok Steam wishlists, 并强化Discovery Queue学习. 如果你的基础薄弱, 先修复Conversion Rate, Capsule Art清晰度和Metadata定位. TikTok放大已经存在的东西.\n\n这就是Trap Plan通常支持团队的地方, 将短视频策略与Steamworks数据, 定价逻辑, Regional Pricing预期和发布排序对齐, 使TikTok成为结构化增长杠杆而非干扰.",
+        },
+      ],
+    },
+  },
   "how-important-is-price-in-a-pc-console-game-growth-strategy": {
     title: "价格在PC和主机游戏增长策略中有多重要？",
     excerpt:

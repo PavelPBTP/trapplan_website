@@ -36,6 +36,80 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "should-you-launch-tiktok-for-your-steam-game",
+    title: "Should You Launch TikTok For Your Steam Game",
+    emoji: "📱",
+    date: "2026-02-11",
+    excerpt:
+      "Thinking about launching TikTok for your Steam game? This card-style breakdown covers when TikTok actually helps Wishlist Velocity, when it hurts Conversion Rate, how it interacts with pricing and launch plans, and how to treat it as a structured acquisition layer instead of a distraction.",
+    readingMinutes: 8,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/blog3.png",
+    cardArticle: {
+      title: "Should You Launch TikTok For Your Steam Game",
+      lead: "You are staring at your Steamworks dashboard and thinking about attention. Wishlist Velocity is decent but not explosive. Discovery Queue impressions fluctuate. Someone tells you TikTok can change everything. Now you are wondering whether launching a TikTok account for your Steam game is a strategic move or just another distraction.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "What happened?",
+          answer:
+            "You are staring at your Steamworks dashboard and thinking about attention. Wishlist Velocity is decent but not explosive. Discovery Queue impressions fluctuate. Someone tells you TikTok can change everything. Now you are wondering whether launching a TikTok account for your Steam game is a strategic move or just another distraction.",
+        },
+        {
+          id: "what-launching-tiktok-means",
+          question: "What launching TikTok for a Steam game actually means in 2026",
+          answer:
+            "In 2026, TikTok for game marketing in the PC and Console space is not about chasing views, it is about engineering TikTok Steam wishlists through controlled audience alignment. TikTok is an attention engine optimized for rapid creative testing and behavioral filtering. It can increase outbound CTR toward your Steam page and influence top of funnel demand, but it does not control Conversion Rate or Wishlist Velocity directly. Those outcomes depend on how well your Capsule Art, Metadata, genre positioning, and store page structure convert interest once users land inside Steam. TikTok only becomes a growth channel when its traffic behaves in a way the Steam Algorithm can interpret and scale.",
+        },
+        {
+          id: "doing-something-wrong",
+          question: "Am I doing something wrong if I do not have TikTok?",
+          answer:
+            "Not automatically. Many games grow through organic Discovery Queue exposure, strong Capsule Art CTR, and consistent Conversion Rate without heavy external traffic. TikTok is an amplifier, not a requirement. If your core Steam metrics are unstable, adding TikTok will amplify instability rather than fix it. The question is not whether you have TikTok, but whether your current Steam behavior can absorb additional traffic without collapsing CR.",
+        },
+        {
+          id: "when-tiktok-helps",
+          question: "When does TikTok actually help Steam growth?",
+          answer:
+            "TikTok helps when your gameplay fantasy is visually clear within seconds and pre qualifies the correct audience before they ever click through. This is where TikTok Steam wishlists are actually created, not on the platform itself but in the consistency between video promise and Steam page confirmation. Genres like horror, sandbox, simulation, and action roguelike tend to perform better because the loop is easy to demonstrate and easy to understand. When the creative clearly signals genre and tone, traffic arriving on your Steam page behaves predictably. Stable Conversion Rate combined with repeatable Wishlist Velocity bumps tells the Steam Algorithm that the audience match is real, which can support Discovery Queue expansion.",
+        },
+        {
+          id: "when-tiktok-hurts",
+          question: "When does TikTok hurt more than it helps?",
+          answer:
+            "TikTok hurts when it creates curiosity without clarity. A funny glitch, shocking moment, or exaggerated reaction can drive high views and CTR, but if the store page does not immediately confirm the same promise, Conversion Rate drops. Steam interprets this inconsistency as low intent traffic. Discovery Queue testing becomes cautious because previous visitors did not convert into wishlists.",
+        },
+        {
+          id: "post-daily",
+          question: "Do I need to post daily to see results?",
+          answer:
+            "Consistency matters more than frequency. Posting daily without a clear hypothesis about hook, genre framing, or audience segment generates random data. TikTok is most useful when treated as a structured testing environment. Different hooks, gameplay angles, and narrative framings should be tested against measurable outcomes such as outbound CTR and resulting Wishlist Velocity inside Steamworks. Without structure, content becomes noise.",
+        },
+        {
+          id: "pricing-and-launch",
+          question: "How does TikTok interact with pricing and launch plans?",
+          answer:
+            "TikTok traffic behaves differently before and during a Launch Discount. Before release, the goal is wishlist accumulation and stable Conversion Rate. During launch, pricing, Regional Pricing expectations, and discount framing influence how TikTok driven traffic converts into purchases. If your audience expectations are misaligned with price positioning, traffic spikes may not translate into revenue even if Wishlist Velocity looked healthy earlier.",
+        },
+        {
+          id: "viral-growth",
+          question: "Should I expect viral growth?",
+          answer:
+            "Expect learning, not miracles. Viral growth is unpredictable and rarely sustainable. What you should expect is data. TikTok can reveal which gameplay loops drive curiosity, which genre cues resonate, and which audience segments respond. When those insights are reflected in Capsule Art, Metadata, and store page messaging, the Steam Algorithm receives cleaner signals. Growth becomes compounding rather than explosive.",
+        },
+        {
+          id: "stay-sane",
+          question: "How do I stay sane while deciding whether to launch TikTok?",
+          answer:
+            "You stay sane by treating TikTok for game marketing as a measurable acquisition layer, not a cultural obligation. If your Steam fundamentals are strong, TikTok can accelerate Wishlist Velocity, generate qualified TikTok Steam wishlists, and reinforce Discovery Queue learning. If your fundamentals are weak, fix Conversion Rate, Capsule Art clarity, and Metadata positioning first. TikTok amplifies what already exists.\\n\\nThis is where Trap Plan usually supports teams, aligning short form strategy with Steamworks data, pricing logic, Regional Pricing expectations, and launch sequencing so TikTok becomes a structured growth lever instead of a distraction.",
+        },
+      ],
+    },
+    content: [],
+  },
+  {
     slug: "do-shorts-videos-from-tiktok-shorts-and-reels-really-drive-steam-wishlists",
     title:
       "Do Shorts Videos from TikTok, Shorts and Reels Really Drive Steam Wishlists",
