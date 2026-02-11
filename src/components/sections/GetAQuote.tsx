@@ -97,7 +97,7 @@ export default function GetAQuote() {
   };
 
   return (
-    <section className="-mt-12 bg-[#F3F3F3] pb-24 pt-0">
+    <section id="contact" className="-mt-12 bg-[#F3F3F3] pb-24 pt-0">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="relative overflow-hidden rounded-[24px] bg-[#0F0F0F] px-8 py-10 shadow-[0_60px_140px_rgba(0,0,0,0.30)] lg:px-12 lg:py-12">
           <div className="pointer-events-none absolute inset-0 z-0 opacity-45 [background-image:radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.10),transparent_55%),radial-gradient(circle_at_70%_75%,rgba(255,10,91,0.16),transparent_60%)]" />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import Footer from "@/components/sections/Footer";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
@@ -458,36 +459,14 @@ export default async function GameLaunchBlueprintPage() {
                   {t(locale, "game_launch_blueprint.ui.contact.card_title")}
                 </div>
 
-                <form className="mt-7 space-y-5" action="#">
-                  <ContactField
-                    label={t(locale, "game_launch_blueprint.ui.contact.field.name.label")}
-                    placeholder={t(
-                      locale,
-                      "game_launch_blueprint.ui.contact.field.name.placeholder",
-                    )}
-                  />
-                  <ContactField
-                    label={t(locale, "game_launch_blueprint.ui.contact.field.studio.label")}
-                    placeholder={t(
-                      locale,
-                      "game_launch_blueprint.ui.contact.field.studio.placeholder",
-                    )}
-                  />
-                  <ContactField
-                    label={t(locale, "game_launch_blueprint.ui.contact.field.steam.label")}
-                    placeholder={t(
-                      locale,
-                      "game_launch_blueprint.ui.contact.field.steam.placeholder",
-                    )}
-                  />
-
-                  <button
-                    type="button"
+                <div className="mt-7">
+                  <Link
+                    href={withLocale(locale, "/form")}
                     className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[#FF1F6D] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,31,109,0.30)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.42)]"
                   >
                     {t(locale, "game_launch_blueprint.ui.contact.send")}
-                  </button>
-                </form>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
