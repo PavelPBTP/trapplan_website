@@ -572,22 +572,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       phrase: t(locale, "blog.inline.marketing_for_video_games").toLowerCase(),
       href: withLocale(locale, "/"),
     },
-    {
-      phrase: t(locale, "seo.steam_wishlist_calculator.title"),
-      href: withLocale(locale, "/steam-wishlist-calculator"),
-    },
-    {
-      phrase: t(locale, "seo.steam_pricing_planner.title"),
-      href: withLocale(locale, "/steam-pricing-planner"),
-    },
-    {
-      phrase: t(locale, "seo.steam_influencers_planner.title"),
-      href: withLocale(locale, "/steam-influencers-planner"),
-    },
-    {
-      phrase: t(locale, "seo.steam_festival_planner.title"),
-      href: withLocale(locale, "/steam-festival-planner"),
-    },
+    { phrase: "Steam Wishlist Calculator", href: withLocale(locale, "/steam-wishlist-calculator") },
+    { phrase: "Steam Pricing Planner", href: withLocale(locale, "/steam-pricing-planner") },
+    { phrase: "Steam Influencer Planner", href: withLocale(locale, "/steam-influencers-planner") },
+    { phrase: "Steam Festival Planner", href: withLocale(locale, "/steam-festival-planner") },
     { phrase: t(locale, "blog.inline.work_with_us"), href: withLocale(locale, "/form") },
     {
       phrase: t(locale, "blog.inline.work_with_us").toLowerCase(),
