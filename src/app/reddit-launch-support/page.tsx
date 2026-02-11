@@ -408,40 +408,6 @@ export default async function RedditLaunchSupportPage() {
               </Link>
             </div>
 
-            <div className="pt-16">
-              <h2 className="text-center text-[18px] font-extrabold text-black">
-                {t(locale, "reddit_launch_support.ui.results.title")}
-              </h2>
-              <p className="mx-auto mt-4 max-w-[62ch] text-center text-[14px] leading-6 text-black/60">
-                {t(locale, "reddit_launch_support.ui.results.subtitle")}
-              </p>
-
-              <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {Array.from({ length: 4 }).map((_, idx) => (
-                  <div
-                    key={idx}
-                    className="relative overflow-hidden rounded-[18px] bg-[#F3F3F3] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.08)]"
-                  >
-                    <div className="text-[12px] font-semibold tracking-wide text-black/45">
-                      {t(locale, "reddit_launch_support.ui.results.placeholder_kicker")}
-                    </div>
-                    <div className="mt-3 h-[120px] rounded-[14px] bg-white" />
-                    <div className="mt-4 text-[13px] leading-6 text-black/60">
-                      {t(locale, "reddit_launch_support.ui.results.placeholder_body")}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10 flex justify-center">
-                <Link
-                  href={withLocale(locale, "/form")}
-                  className="inline-flex h-[42px] items-center gap-2 rounded-full bg-[#FF0A5B] px-6 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(255,10,91,0.35)] transition-colors duration-200 hover:bg-[#E6004E]"
-                >
-                  {t(locale, "reddit_launch_support.ui.results.cta")} <ArrowUpRightIcon />
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
       </main>
