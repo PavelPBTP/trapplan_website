@@ -61,49 +61,49 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "real-steam-traffic-2026",
           question: "What real Steam traffic actually means in 2026",
           answer:
-            "In 2026, real traffic is not measured by clicks alone. It is measured by behavior quality inside Steam. The Steam Algorithm evaluates Conversion Rate, interaction with Metadata, CTR alignment between TikTok hooks and Capsule Art, and how visitors behave in Discovery Queue. Traffic becomes real only when it produces stable Wishlist Velocity and consistent in platform engagement. Views on TikTok are attention. Steam growth is intent.",
+            "In 2026, real traffic is not measured by clicks alone. It is measured by behavior quality inside Steam. The Steam Algorithm evaluates Conversion Rate, interaction with Metadata, CTR alignment between TikTok hooks and Capsule Art, and how visitors behave in Discovery Queue. Traffic becomes real only when it produces stable Wishlist Velocity and consistent in platform engagement. Views on TikTok are attention. Steam growth is intent. If you are still wondering whether short videos influence Steam wishlists at all, the behavioral mechanism is the same. External attention only matters when it produces measurable in platform action.",
         },
         {
           id: "viral-but-flat",
           question: "Am I doing something wrong if my TikTok goes viral but Steam stays flat?",
           answer:
-            "Probably the issue is qualification, not visibility. Viral content often optimizes for entertainment rather than clarity. If the first seconds of your video create curiosity without clearly communicating genre, tone, and core loop, the audience that clicks through may hesitate once they reach the store page. When Conversion Rate drops during traffic spikes, the Steam Algorithm reads that as weak alignment and reduces further exposure.",
+            "Probably the issue is qualification, not visibility. Viral content often optimizes for entertainment rather than clarity. If the first seconds of your video create curiosity without clearly communicating genre, tone, and core loop, the audience that clicks through may hesitate once they reach the store page. When Conversion Rate drops during traffic spikes, the Steam Algorithm reads that as weak alignment and reduces further exposure. Our breakdown on TikTok video formats that work best for Steam games explains which structures pre qualify intent before the click happens.",
         },
         {
           id: "design-tiktoks-steam-clicks",
           question: "How do I design TikToks that drive actual Steam clicks?",
           answer:
-            "Start by aligning the hook with the store page. The first three seconds must reflect what the player will see in Capsule Art and screenshots. If your game is a tactical roguelike, show the tactical loop immediately. If it is multiplayer horror, show tension and chaos right away. Outbound CTR improves when the promise is clear, but more importantly, in platform Conversion Rate remains stable because expectations are met. That stability is what allows Wishlist Velocity to rise instead of collapse.",
+            "Start by aligning the hook with the store page. The first three seconds must reflect what the player will see in Capsule Art and screenshots. If your game is a tactical roguelike, show the tactical loop immediately. If it is multiplayer horror, show tension and chaos right away. Outbound CTR improves when the promise is clear, but more importantly, in platform Conversion Rate remains stable because expectations are met. That stability is what allows Wishlist Velocity to rise instead of collapse. If you want a deeper look at how to promote a Steam game on TikTok with this kind of structural alignment, that guide covers the full framework.",
         },
         {
           id: "push-steam-link",
           question: "Should I push viewers directly to the Steam link?",
           answer:
-            "Clear calls to action matter, but they are not enough on their own. If the value proposition is weak, adding a link changes nothing. TikTok traffic converts when viewers already understand why they should care before they leave the platform. Strong alignment between short form narrative and store page Metadata protects Conversion Rate once they arrive. Without that alignment, pushing harder simply increases low intent clicks.",
+            "Clear calls to action matter, but they are not enough on their own. If the value proposition is weak, adding a link changes nothing. TikTok traffic converts when viewers already understand why they should care before they leave the platform. Strong alignment between short form narrative and store page Metadata protects Conversion Rate once they arrive. Without that alignment, pushing harder simply increases low intent clicks. If you are experiencing this exact pattern of driving traffic but wishlists standing still, the issue is almost always alignment rather than volume.",
         },
         {
           id: "regional-behavior",
           question: "How does regional behavior affect TikTok traffic on Steam?",
           answer:
-            "Regional Pricing expectations influence how traffic converts. TikTok often distributes content globally, which means visitors from different territories arrive simultaneously. If pricing perception does not align with regional expectations, Conversion Rate may vary widely. Steamworks data should be analyzed by region to see whether Wishlist Velocity changes correlate with stable behavior or are distorted by mismatched pricing assumptions.",
+            "Regional Pricing expectations influence how traffic converts. TikTok often distributes content globally, which means visitors from different territories arrive simultaneously. If pricing perception does not align with regional expectations, Conversion Rate may vary widely. Steamworks data should be analyzed by region to see whether Wishlist Velocity changes correlate with stable behavior or are distorted by mismatched pricing assumptions. For a deeper look at how important is price in a PC Console game growth strategy, that analysis covers the full interaction between pricing and algorithm behavior.",
         },
         {
           id: "discovery-queue-exposure",
           question: "Can TikTok traffic improve Discovery Queue exposure?",
           answer:
-            "Yes, when it creates consistent behavioral patterns. If each content wave produces moderate traffic that converts at a stable rate, the Steam Algorithm gains confidence. Discovery Queue impressions may expand because Steam sees reliable intent. If traffic spikes are followed by collapsing CR, the opposite happens. TikTok does not override Steam discovery. It trains it.",
+            "Yes, when it creates consistent behavioral patterns. If each content wave produces moderate traffic that converts at a stable rate, the Steam Algorithm gains confidence. Discovery Queue impressions may expand because Steam sees reliable intent. If traffic spikes are followed by collapsing CR, the opposite happens. TikTok does not override Steam discovery. It trains it. This is also why TikTok and YouTube Shorts became the main discovery channel for indie games. The feedback loop between external content and internal algorithm response is faster than any traditional channel.",
         },
         {
           id: "how-many-videos",
           question: "How many videos does it usually take to see real traffic impact?",
           answer:
-            "Rarely one or two. In multiple PC and Console campaigns, the first ten uploads functioned mostly as calibration. Around twenty coordinated videos began to show clearer patterns in outbound CTR and Wishlist Velocity. More significant impact often appeared closer to thirty structured uploads, when accumulated signal density allowed the Steam Algorithm to trust the audience alignment. Turning views into traffic is a volume and consistency game, not a viral lottery.",
+            "Rarely one or two. In multiple PC and Console campaigns, the first ten uploads functioned mostly as calibration. Around twenty coordinated videos began to show clearer patterns in outbound CTR and Wishlist Velocity. More significant impact often appeared closer to thirty structured uploads, when accumulated signal density allowed the Steam Algorithm to trust the audience alignment. Turning views into traffic is a volume and consistency game, not a viral lottery. Our analysis of how many short videos does a Steam game need breaks down the exact phases from calibration to compound growth.",
         },
         {
           id: "stay-sane",
           question: "How do I stay sane while trying to convert TikTok views into Steam traffic?",
           answer:
-            "You stay sane by treating TikTok as part of a structured Steam growth system. Define hypotheses, test formats in batches, monitor Conversion Rate and Wishlist Velocity inside Steamworks, and refine based on Discovery Queue response. This is where TrapPlan typically supports PC and Console teams, aligning TikTok experimentation with store page optimization, Capsule Art clarity, and pricing logic so attention turns into qualified traffic and qualified traffic compounds into sustainable growth.",
+            "You stay sane by treating TikTok as part of a structured Steam growth system. Define hypotheses, test formats in batches, monitor Conversion Rate and Wishlist Velocity inside Steamworks, and refine based on Discovery Queue response. If you are still deciding whether to invest in short form at all, our guide on should you launch TikTok for your Steam game covers the decision framework. And if you need hands on support, our breakdown of who can help you with TikTok for your Steam game explains what structured agency partnership looks like. This is where TrapPlan typically supports PC and Console teams, aligning TikTok experimentation with store page optimization, Capsule Art clarity, and pricing logic so attention turns into qualified traffic and qualified traffic compounds into sustainable growth.",
         },
       ],
     },
@@ -135,13 +135,13 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "format-meaning-2026",
           question: "What a TikTok format actually means in 2026",
           answer:
-            "In 2026, a format is not just an editing style. It is a repeatable structure that shapes audience expectation before they click through to Steam. TikTok indie game marketing works when format and gameplay fantasy align tightly enough to pre qualify intent. The Steam Algorithm does not reward views. It reacts to Conversion Rate, CTR alignment between the video hook and Capsule Art, consistent Wishlist Velocity, and behavioral stability in Discovery Queue. A strong format creates predictable behavior once traffic lands inside Steamworks.",
+            "In 2026, a format is not just an editing style. It is a repeatable structure that shapes audience expectation before they click through to Steam. TikTok indie game marketing works when format and gameplay fantasy align tightly enough to pre qualify intent. The Steam Algorithm does not reward views. It reacts to Conversion Rate, CTR alignment between the video hook and Capsule Art, consistent Wishlist Velocity, and behavioral stability in Discovery Queue. A strong format creates predictable behavior once traffic lands inside Steamworks. If you want to understand how short videos influence Steam wishlists at the behavioral level, that analysis explains the full mechanism.",
         },
         {
           id: "gameplay-clips-no-convert",
           question: "Am I doing something wrong if my gameplay clips do not convert?",
           answer:
-            "Not necessarily, but raw gameplay is rarely a format. A random thirty second capture without narrative framing leaves viewers unsure what they are watching. When genre, stakes, and core loop are unclear in the first seconds, outbound CTR may look decent while in platform Conversion Rate collapses. Steam interprets that inconsistency as weak alignment and slows Discovery Queue expansion.",
+            "Not necessarily, but raw gameplay is rarely a format. A random thirty second capture without narrative framing leaves viewers unsure what they are watching. When genre, stakes, and core loop are unclear in the first seconds, outbound CTR may look decent while in platform Conversion Rate collapses. Steam interprets that inconsistency as weak alignment and slows Discovery Queue expansion. This is the same pattern described in our guide on driving traffic but wishlists standing still where high volume low intent clicks damage algorithm trust.",
         },
         {
           id: "quick-hook-format",
@@ -159,25 +159,25 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "meme-trend-formats",
           question: "Do meme and trend based formats help Steam growth?",
           answer:
-            "They can generate reach but often struggle with intent. Meme formats attach the game to existing cultural signals, which may increase outbound CTR. However, if the trend overshadows the gameplay fantasy, traffic becomes entertainment focused rather than purchase focused. That usually results in weaker Conversion Rate and unstable Wishlist Velocity. Trend formats work only when the meme reinforces genre clarity instead of distracting from it.",
+            "They can generate reach but often struggle with intent. Meme formats attach the game to existing cultural signals, which may increase outbound CTR. However, if the trend overshadows the gameplay fantasy, traffic becomes entertainment focused rather than purchase focused. That usually results in weaker Conversion Rate and unstable Wishlist Velocity. Trend formats work only when the meme reinforces genre clarity instead of distracting from it. Understanding why TikTok and YouTube Shorts became the main discovery channel for indie games helps explain why clarity beats virality in the current algorithm environment.",
         },
         {
           id: "dev-face-cam",
           question: "Are dev face cam or commentary formats effective?",
           answer:
-            "For certain audiences, yes. Developer commentary builds trust and context. When a dev explains a mechanic, design choice, or upcoming feature, it can increase perceived depth and align expectations with pricing and future Launch Discount plans. This format often produces lower raw views but higher intent traffic. Stronger in platform behavior, even at lower volume, is more valuable for long term Steam growth.",
+            "For certain audiences, yes. Developer commentary builds trust and context. When a dev explains a mechanic, design choice, or upcoming feature, it can increase perceived depth and align expectations with pricing and future Launch Discount plans. This format often produces lower raw views but higher intent traffic. Stronger in platform behavior, even at lower volume, is more valuable for long term Steam growth. Our analysis of how important is price in a PC Console game growth strategy explains how pricing perception interacts with content framing.",
         },
         {
           id: "one-or-rotate",
           question: "Should I stick to one format or rotate between several?",
           answer:
-            "Rotation with structure works best. Testing multiple formats in controlled batches reveals which structures maintain Conversion Rate stability while increasing Wishlist Velocity. Steamworks data should guide the decision. If one format consistently drives traffic that holds CR and expands Discovery Queue impressions, double down. If another produces spikes followed by collapse, refine or remove it. TikTok formats are experiments feeding the Steam Algorithm, not just creative expressions.",
+            "Rotation with structure works best. Testing multiple formats in controlled batches reveals which structures maintain Conversion Rate stability while increasing Wishlist Velocity. Steamworks data should guide the decision. If one format consistently drives traffic that holds CR and expands Discovery Queue impressions, double down. If another produces spikes followed by collapse, refine or remove it. TikTok formats are experiments feeding the Steam Algorithm, not just creative expressions. Our breakdown of how many short videos does a Steam game need covers the exact volume thresholds where format testing becomes statistically meaningful.",
         },
         {
           id: "stay-sane",
           question: "How do I stay sane while choosing TikTok formats for my game?",
           answer:
-            "You stay sane by treating formats as hypotheses tied to measurable Steam outcomes. When developers search TikTok video formats for games, they often expect a creative shortcut. The real shortcut is structure. Formats should be tested in coordinated batches large enough to generate comparable data.\\n\\nThis is exactly why TrapPlan builds TikTok campaigns around structured packages such as our twenty video baseline. Those twenty videos are designed to test multiple hooks, storytelling angles, and gameplay framings while mapping outbound CTR to Conversion Rate and Wishlist Velocity inside Steamworks. From there, additional waves refine what works. Format selection stops being guesswork and becomes algorithm training that compounds across Discovery Queue exposure.",
+            "You stay sane by treating formats as hypotheses tied to measurable Steam outcomes. When developers search TikTok video formats for games, they often expect a creative shortcut. The real shortcut is structure. Formats should be tested in coordinated batches large enough to generate comparable data. If you are still deciding whether short form is right for your project, our guide on should you launch TikTok for your Steam game covers the decision framework. And if you want to understand how to turn TikTok views into real Steam traffic once you have chosen your formats, that guide connects format selection to Steamworks outcomes.\\n\\nThis is exactly why TrapPlan builds TikTok campaigns around structured packages such as our twenty video baseline. Those twenty videos are designed to test multiple hooks, storytelling angles, and gameplay framings while mapping outbound CTR to Conversion Rate and Wishlist Velocity inside Steamworks. From there, additional waves refine what works. Format selection stops being guesswork and becomes algorithm training that compounds across Discovery Queue exposure.",
         },
       ],
     },
@@ -215,7 +215,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "tiktok-not-working",
           question: "Am I doing something wrong if TikTok is not working for my indie game?",
           answer:
-            "Not automatically. TikTok is powerful, but only when the core fantasy of the game is visually clear within seconds. If your genre is hard to communicate quickly or your Metadata positioning is muddy, traffic will not convert. When Conversion Rate drops during traffic spikes, the Steam Algorithm becomes cautious. TikTok exposes clarity problems faster than older channels ever did.",
+            "Not automatically. TikTok is powerful, but only when the core fantasy of the game is visually clear within seconds. If your genre is hard to communicate quickly or your Metadata positioning is muddy, traffic will not convert. When Conversion Rate drops during traffic spikes, the Steam Algorithm becomes cautious. TikTok exposes clarity problems faster than older channels ever did. If you are experiencing this pattern, our guide on driving traffic but wishlists standing still explains the most common conversion leaks.",
         },
         {
           id: "short-video-vs-press",
@@ -227,31 +227,31 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "tiktok-suited-indie",
           question: "What makes TikTok especially suited for indie games?",
           answer:
-            "Indie games often rely on strong core loops, unique mechanics, or striking visual identity. These elements translate well into short form. A clear roguelike loop, a satisfying simulation mechanic, or an unexpected horror moment can communicate genre instantly. That immediate clarity improves outbound CTR and protects in platform Conversion Rate. When Metadata tags, visuals, and positioning reinforce what the video promised, Discovery Queue exposure grows organically.",
+            "Indie games often rely on strong core loops, unique mechanics, or striking visual identity. These elements translate well into short form. A clear roguelike loop, a satisfying simulation mechanic, or an unexpected horror moment can communicate genre instantly. That immediate clarity improves outbound CTR and protects in platform Conversion Rate. When Metadata tags, visuals, and positioning reinforce what the video promised, Discovery Queue exposure grows organically. Our breakdown of TikTok video formats that work best for Steam games covers which structures communicate genre most efficiently in the first seconds.",
         },
         {
           id: "real-examples",
           question: "Are there real examples of TikTok driving serious wishlist growth?",
           answer:
-            "Yes. R.E.P.O., a horror multiplayer title, generated around 3,100,000 short form views and translated that exposure into roughly 20,000 additional wishlists. Fallen Aces accumulated approximately 6,500,000 views and gained around 25,600 wishlists during its short form momentum. These numbers demonstrate that TikTok can function as a primary discovery engine when alignment between video promise and store page execution keeps Conversion Rate stable.",
+            "Yes. R.E.P.O., a horror multiplayer title, generated around 3,100,000 short form views and translated that exposure into roughly 20,000 additional wishlists. Fallen Aces accumulated approximately 6,500,000 views and gained around 25,600 wishlists during its short form momentum. These numbers demonstrate that TikTok can function as a primary discovery engine when alignment between video promise and store page execution keeps Conversion Rate stable. For a deeper look at the behavioral mechanism, our analysis of how short videos influence Steam wishlists explains why some views convert and others do not.",
         },
         {
           id: "replace-steam-algorithm",
           question: "Does TikTok replace the Steam Algorithm?",
           answer:
-            "No. TikTok feeds the Steam Algorithm. External discovery only matters when it strengthens in platform behavior. Stable Wishlist Velocity, consistent Conversion Rate across regions influenced by Regional Pricing expectations, and predictable user interaction patterns allow Steam to expand Discovery Queue testing. TikTok is powerful because it accelerates the learning process. It does not bypass it.",
+            "No. TikTok feeds the Steam Algorithm. External discovery only matters when it strengthens in platform behavior. Stable Wishlist Velocity, consistent Conversion Rate across regions influenced by Regional Pricing expectations, and predictable user interaction patterns allow Steam to expand Discovery Queue testing. TikTok is powerful because it accelerates the learning process. It does not bypass it. If you want to understand how to turn TikTok views into real Steam traffic that the algorithm can scale, that guide covers the full conversion path.",
         },
         {
           id: "tiktok-enough",
           question: "Is TikTok enough on its own for indie success?",
           answer:
-            "No single channel is enough. TikTok amplifies clarity, but Capsule Art must still capture attention inside Steam. Metadata must categorize the game accurately. Pricing and Launch Discount strategy must align with audience expectations created by content. TikTok became the main discovery channel because it can ignite attention quickly, but sustained growth still depends on system cohesion.",
+            "No single channel is enough. TikTok amplifies clarity, but Capsule Art must still capture attention inside Steam. Metadata must categorize the game accurately. Pricing and Launch Discount strategy must align with audience expectations created by content. TikTok became the main discovery channel because it can ignite attention quickly, but sustained growth still depends on system cohesion. Our analysis of how important is price in a PC Console game growth strategy explains how pricing interacts with the signals TikTok generates.",
         },
         {
           id: "stay-sane",
           question: "How do I stay sane while building discovery through short video platforms?",
           answer:
-            "You stay sane by treating short video, including TikTok and YouTube Shorts, as part of a broader growth architecture rather than a single platform bet. If you are investing in TikTok indie game marketing, measure its impact through Wishlist Velocity trends, Conversion Rate stability, and Discovery Queue expansion inside Steamworks. If those signals move together, TikTok Steam discovery is working.\\n\\nDiscovery works when short form experimentation, store page optimization, Regional Pricing logic, and launch sequencing are integrated and measured through Steamworks. This is where TrapPlan typically supports indie teams, aligning short video strategy with algorithm literacy so discovery becomes repeatable, not accidental.",
+            "You stay sane by treating short video, including TikTok and YouTube Shorts, as part of a broader growth architecture rather than a single platform bet. If you are investing in TikTok indie game marketing, measure its impact through Wishlist Velocity trends, Conversion Rate stability, and Discovery Queue expansion inside Steamworks. If those signals move together, TikTok Steam discovery is working. If you are still deciding whether to commit, our guide on should you launch TikTok for your Steam game covers the decision framework. And if you need structured support, our breakdown of who can help you with TikTok for your Steam game explains what agency partnership looks like.\\n\\nDiscovery works when short form experimentation, store page optimization, Regional Pricing logic, and launch sequencing are integrated and measured through Steamworks. This is where TrapPlan typically supports indie teams, aligning short video strategy with algorithm literacy so discovery becomes repeatable, not accidental.",
         },
       ],
     },
@@ -283,13 +283,13 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "stable-growth-2026",
           question: "What stable wishlist growth actually means in 2026",
           answer:
-            "In 2026, stable growth is not about one viral hit. It is about consistent behavioral patterns that the Steam Algorithm can scale. Stable Wishlist Velocity means repeatable increases after content waves without collapsing Conversion Rate. It means Discovery Queue impressions expand gradually instead of fluctuating randomly. Short videos influence Steam only when traffic behaves predictably inside Steamworks, interacting with Metadata, responding to Capsule Art, and converting at a steady rate.",
+            "In 2026, stable growth is not about one viral hit. It is about consistent behavioral patterns that the Steam Algorithm can scale. Stable Wishlist Velocity means repeatable increases after content waves without collapsing Conversion Rate. It means Discovery Queue impressions expand gradually instead of fluctuating randomly. Short videos influence Steam only when traffic behaves predictably inside Steamworks, interacting with Metadata, responding to Capsule Art, and converting at a steady rate. Our analysis of how short videos influence Steam wishlists explains the full behavioral mechanism behind this process.",
         },
         {
           id: "few-shorts-no-change",
           question: "Am I doing something wrong if three or five Shorts did not change anything?",
           answer:
-            "No. Three videos are not a strategy. They are a test sample too small to generate reliable signal. The Steam Algorithm reacts to consistent data, not isolated spikes. If your first few videos did not move Wishlist Velocity, it usually means the system has not gathered enough aligned traffic to learn from. The problem is rarely the exact number. It is the absence of structured volume.",
+            "No. Three videos are not a strategy. They are a test sample too small to generate reliable signal. The Steam Algorithm reacts to consistent data, not isolated spikes. If your first few videos did not move Wishlist Velocity, it usually means the system has not gathered enough aligned traffic to learn from. The problem is rarely the exact number. It is the absence of structured volume. If you are experiencing this exact pattern of driving traffic but wishlists standing still, the issue is almost always alignment rather than quantity.",
         },
         {
           id: "minimum-number",
@@ -301,7 +301,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "viral-few-clips",
           question: "Why do some games grow after just a few viral clips?",
           answer:
-            "They usually had strong foundations before the clips went live. Clear Capsule Art, accurate Metadata, genre alignment, and healthy Conversion Rate were already in place. When the short videos arrived, traffic converted efficiently and reinforced algorithm confidence. Without that foundation, even millions of views may not produce sustainable Wishlist Velocity. Virality exposes the structure that already exists.",
+            "They usually had strong foundations before the clips went live. Clear Capsule Art, accurate Metadata, genre alignment, and healthy Conversion Rate were already in place. When the short videos arrived, traffic converted efficiently and reinforced algorithm confidence. Without that foundation, even millions of views may not produce sustainable Wishlist Velocity. Virality exposes the structure that already exists. This is also why TikTok and YouTube Shorts became the main discovery channel for indie games. The platform rewards clarity, not just volume.",
         },
         {
           id: "enough-content",
@@ -313,19 +313,19 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "more-always-better",
           question: "Does posting more always lead to more wishlists?",
           answer:
-            "No. Volume without clarity creates noise. Twenty poorly aligned videos can hurt more than ten precise ones. If the hook in your first seconds attracts the wrong audience, outbound CTR may look strong while in platform Conversion Rate drops. That teaches the Steam Algorithm to be cautious. Stable growth requires alignment between video promise, store page positioning, Capsule Art readability, and genre tagging.",
+            "No. Volume without clarity creates noise. Twenty poorly aligned videos can hurt more than ten precise ones. If the hook in your first seconds attracts the wrong audience, outbound CTR may look strong while in platform Conversion Rate drops. That teaches the Steam Algorithm to be cautious. Stable growth requires alignment between video promise, store page positioning, Capsule Art readability, and genre tagging. Our breakdown of TikTok video formats that work best for Steam games explains which structures maintain that alignment at scale.",
         },
         {
           id: "before-after-launch",
           question: "Should I plan short videos differently before and after launch?",
           answer:
-            "Yes. Before launch, the objective is predictable Wishlist Velocity and stable CR. Short videos should focus on clearly communicating gameplay fantasy and core loop. After launch or during a Launch Discount, traffic must convert into purchases, so price perception and value framing become critical. The same number of videos may generate different outcomes depending on pricing, timing, and audience maturity.",
+            "Yes. Before launch, the objective is predictable Wishlist Velocity and stable CR. Short videos should focus on clearly communicating gameplay fantasy and core loop. After launch or during a Launch Discount, traffic must convert into purchases, so price perception and value framing become critical. The same number of videos may generate different outcomes depending on pricing, timing, and audience maturity. For a deeper look at how important is price in a PC Console game growth strategy, that analysis covers the full interaction between pricing and content volume.",
         },
         {
           id: "stay-sane",
           question: "How do I stay sane while deciding how many short videos to produce?",
           answer:
-            "You stay sane by replacing the obsession with a single number with a structured framework. The question how many short videos for Steam wishlists only makes sense when tied to measurable Steamworks outcomes. Ten videos test positioning. Twenty begin to reveal patterns. Thirty or more structured uploads often create the density required for stable Wishlist Velocity and confident Discovery Queue scaling.\\n\\nThis is why TrapPlan builds short form campaigns in coordinated batches, including our TikTok package structured around twenty videos as a baseline testing layer. Those twenty are not the finish line, they are the foundation for signal generation. From there, refinement and scaling continue based on Conversion Rate behavior, Regional Pricing response, and algorithm feedback. The goal is not to hit a content quota. The goal is to produce consistent data that the Steam Algorithm can compound into sustainable wishlist growth.",
+            "You stay sane by replacing the obsession with a single number with a structured framework. The question how many short videos for Steam wishlists only makes sense when tied to measurable Steamworks outcomes. Ten videos test positioning. Twenty begin to reveal patterns. Thirty or more structured uploads often create the density required for stable Wishlist Velocity and confident Discovery Queue scaling. If you are still deciding whether to invest in short form at all, our guide on should you launch TikTok for your Steam game covers the decision framework. And if you want to understand how to turn TikTok views into real Steam traffic once you have the volume, that guide connects content quantity to Steamworks outcomes.\\n\\nThis is why TrapPlan builds short form campaigns in coordinated batches, including our TikTok package structured around twenty videos as a baseline testing layer. Those twenty are not the finish line, they are the foundation for signal generation. From there, refinement and scaling continue based on Conversion Rate behavior, Regional Pricing response, and algorithm feedback. The goal is not to hit a content quota. The goal is to produce consistent data that the Steam Algorithm can compound into sustainable wishlist growth.",
         },
       ],
     },
@@ -363,7 +363,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "views-but-flat",
           question: "Am I doing something wrong if my Shorts get views but Wishlist Velocity stays flat?",
           answer:
-            "Not necessarily. Views measure entertainment value. Wishlist Velocity measures purchase intent. If your short video highlights a funny bug, a dramatic explosion, or a single surprising moment without clarifying genre and core loop, you may attract curiosity without commitment. When those users land on the store page and hesitate, Conversion Rate drops. The Steam Algorithm interprets that drop as weak alignment and reduces Discovery Queue expansion.",
+            "Not necessarily. Views measure entertainment value. Wishlist Velocity measures purchase intent. If your short video highlights a funny bug, a dramatic explosion, or a single surprising moment without clarifying genre and core loop, you may attract curiosity without commitment. When those users land on the store page and hesitate, Conversion Rate drops. The Steam Algorithm interprets that drop as weak alignment and reduces Discovery Queue expansion. If you are experiencing this exact pattern of driving traffic but wishlists standing still, the conversion leak is usually in the gap between video promise and store page delivery.",
         },
         {
           id: "increase-wishlists",
@@ -375,25 +375,25 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "viral-no-wishlists",
           question: "Why do some viral clips produce almost no wishlists?",
           answer:
-            "Virality optimizes for reach, not relevance. A short video can reach millions outside your target genre audience. High outbound CTR combined with falling in platform Conversion Rate teaches the Steam Algorithm that your traffic is inconsistent. Instead of expanding Discovery Queue exposure, Steam becomes cautious. The clip may succeed as content while failing as growth.",
+            "Virality optimizes for reach, not relevance. A short video can reach millions outside your target genre audience. High outbound CTR combined with falling in platform Conversion Rate teaches the Steam Algorithm that your traffic is inconsistent. Instead of expanding Discovery Queue exposure, Steam becomes cautious. The clip may succeed as content while failing as growth. Our breakdown of TikTok video formats that work best for Steam games explains which structures pre qualify intent so views translate into stable behavior.",
         },
         {
           id: "before-launch-or-discount",
           question: "Do short videos work better before launch or during Launch Discount?",
           answer:
-            "Before launch, short videos function primarily as wishlist acquisition tools. The objective is stable Wishlist Velocity and predictable Conversion Rate across regions, taking Regional Pricing expectations into account. During a Launch Discount, price framing interacts with audience expectations shaped by previous content. If the perceived value does not match the price, traffic may hesitate even if pre launch wishlist numbers were strong. Short videos influence perception long before they influence revenue.",
+            "Before launch, short videos function primarily as wishlist acquisition tools. The objective is stable Wishlist Velocity and predictable Conversion Rate across regions, taking Regional Pricing expectations into account. During a Launch Discount, price framing interacts with audience expectations shaped by previous content. If the perceived value does not match the price, traffic may hesitate even if pre launch wishlist numbers were strong. Short videos influence perception long before they influence revenue. For a deeper look at how important is price in a PC Console game growth strategy, that analysis covers the full interaction between pricing and content framing.",
         },
         {
           id: "measure-impact",
           question: "How do I measure how short videos increase Steam wishlists in practice?",
           answer:
-            "Look for correlation patterns that answer the question how short videos increase Steam wishlists for your specific genre. After each short form wave, analyze Wishlist Velocity changes, Conversion Rate stability, and Discovery Queue impressions inside Steamworks. Moderate traffic with stable CR and steady wishlist growth is more valuable than massive spikes followed by collapse. The Steam Algorithm scales consistency. Short videos increase Steam wishlists only when they produce repeatable behavioral patterns that reinforce Metadata clarity and audience alignment, not one time surges.",
+            "Look for correlation patterns that answer the question how short videos increase Steam wishlists for your specific genre. After each short form wave, analyze Wishlist Velocity changes, Conversion Rate stability, and Discovery Queue impressions inside Steamworks. Moderate traffic with stable CR and steady wishlist growth is more valuable than massive spikes followed by collapse. The Steam Algorithm scales consistency. Short videos increase Steam wishlists only when they produce repeatable behavioral patterns that reinforce Metadata clarity and audience alignment, not one time surges. Our analysis of how many short videos does a Steam game need explains the exact volume thresholds where measurement becomes statistically meaningful.",
         },
         {
           id: "enough-to-grow",
           question: "Are short videos enough to grow on Steam?",
           answer:
-            "No single channel is enough. Short videos amplify clarity. If Capsule Art fails to communicate genre, if Metadata misclassifies the game, or if the store page under explains the core loop, traffic will leak. Short form does not fix structural weaknesses. It reveals them. When fundamentals are strong, short videos accelerate growth. When fundamentals are weak, they accelerate disappointment.",
+            "No single channel is enough. Short videos amplify clarity. If Capsule Art fails to communicate genre, if Metadata misclassifies the game, or if the store page under explains the core loop, traffic will leak. Short form does not fix structural weaknesses. It reveals them. When fundamentals are strong, short videos accelerate growth. When fundamentals are weak, they accelerate disappointment. Understanding why TikTok and YouTube Shorts became the main discovery channel for indie games helps explain why short form amplifies whatever foundation already exists.",
         },
         {
           id: "stay-sane",
@@ -437,7 +437,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "views-but-flat",
           question: "Am I doing something wrong if my TikToks get views but Steam stays flat?",
           answer:
-            "Probably the issue is alignment, not reach. Views measure platform resonance. Steam measures intent. If the promise in your first three seconds does not match your store page positioning, Conversion Rate drops. When CR drops during traffic spikes, the Steam Algorithm becomes cautious. Discovery Queue exposure slows because past visitors did not convert consistently. TikTok success without Steam consistency is just entertainment.",
+            "Probably the issue is alignment, not reach. Views measure platform resonance. Steam measures intent. If the promise in your first three seconds does not match your store page positioning, Conversion Rate drops. When CR drops during traffic spikes, the Steam Algorithm becomes cautious. Discovery Queue exposure slows because past visitors did not convert consistently. TikTok success without Steam consistency is just entertainment. If you are experiencing this exact pattern of driving traffic but wishlists standing still, the conversion leak is almost always in the gap between video promise and store page delivery.",
         },
         {
           id: "content-drives-wishlists",
@@ -449,13 +449,13 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "posting-frequency",
           question: "How often should I post to see real impact?",
           answer:
-            "Frequency without structure creates random data. Posting daily without testing hypotheses about hooks, pacing, or audience segments produces views but no learning. The goal is controlled experimentation. Different gameplay angles, emotional triggers, and genre framings should be tested in batches, then measured against outbound CTR and in platform behavior inside Steamworks. TikTok becomes powerful when it generates comparable data, not when it generates random spikes.",
+            "Frequency without structure creates random data. Posting daily without testing hypotheses about hooks, pacing, or audience segments produces views but no learning. The goal is controlled experimentation. Different gameplay angles, emotional triggers, and genre framings should be tested in batches, then measured against outbound CTR and in platform behavior inside Steamworks. TikTok becomes powerful when it generates comparable data, not when it generates random spikes. Our analysis of how many short videos does a Steam game need breaks down the exact phases from calibration to compound growth.",
         },
         {
           id: "before-launch-or-discount",
           question: "Does TikTok help before launch or during Launch Discount?",
           answer:
-            "Before launch, TikTok is primarily a wishlist acquisition tool. The objective is stable Wishlist Velocity and predictable Conversion Rate across regions, taking Regional Pricing expectations into account. During a Launch Discount, the dynamic changes. Traffic must convert into purchases, and price positioning becomes critical. If audience expectations shaped by TikTok do not align with perceived value at launch, traffic may hesitate even if pre launch wishlist numbers looked strong.",
+            "Before launch, TikTok is primarily a wishlist acquisition tool. The objective is stable Wishlist Velocity and predictable Conversion Rate across regions, taking Regional Pricing expectations into account. During a Launch Discount, the dynamic changes. Traffic must convert into purchases, and price positioning becomes critical. If audience expectations shaped by TikTok do not align with perceived value at launch, traffic may hesitate even if pre launch wishlist numbers looked strong. For a deeper look at how important is price in a PC Console game growth strategy, that analysis covers the full interaction between pricing and content framing.",
         },
         {
           id: "connect-tiktok-steam",
@@ -467,13 +467,13 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "tiktok-enough",
           question: "Is TikTok enough to grow on Steam in 2026?",
           answer:
-            "No single channel is enough. TikTok amplifies clarity, it does not create it. Capsule Art must attract the right audience. Metadata must categorize the game accurately. The store page must convert efficiently. TikTok accelerates growth only when the foundation is stable. Without that foundation, it accelerates confusion.",
+            "No single channel is enough. TikTok amplifies clarity, it does not create it. Capsule Art must attract the right audience. Metadata must categorize the game accurately. The store page must convert efficiently. TikTok accelerates growth only when the foundation is stable. Without that foundation, it accelerates confusion. Understanding why TikTok and YouTube Shorts became the main discovery channel for indie games helps explain why platform clarity matters more than raw volume.",
         },
         {
           id: "stay-sane",
           question: "How do I stay sane while promoting my Steam game on TikTok?",
           answer:
-            "You stay sane by treating TikTok as part of a structured Steam growth system, not as a separate social experiment. If you have already explored whether short form video can drive wishlists or why external traffic sometimes fails to convert, you know the pattern. Traffic only matters when it produces consistent in platform behavior.\\n\\nPromotion works when short form creative, Capsule Art testing, Metadata clarity, Regional Pricing logic, and launch sequencing are aligned around measurable Conversion Rate and Wishlist Velocity goals. This is where TrapPlan typically operates as a TikTok agency for Steam games, integrating short form testing directly with Steamworks data so attention becomes signal and signal becomes scalable growth.",
+            "You stay sane by treating TikTok as part of a structured Steam growth system, not as a separate social experiment. If you have already explored whether short form video can drive wishlists or why external traffic sometimes fails to convert, you know the pattern. Traffic only matters when it produces consistent in platform behavior. Our guide on TikTok video formats that work best for Steam games covers which structures produce the most stable Conversion Rate. And if you want to understand how to turn TikTok views into real Steam traffic, that breakdown connects creative decisions to Steamworks outcomes. If you need hands on support, our analysis of who can help you with TikTok for your Steam game explains what structured agency partnership looks like.\\n\\nPromotion works when short form creative, Capsule Art testing, Metadata clarity, Regional Pricing logic, and launch sequencing are aligned around measurable Conversion Rate and Wishlist Velocity goals. This is where TrapPlan typically operates as a TikTok agency for Steam games, integrating short form testing directly with Steamworks data so attention becomes signal and signal becomes scalable growth.",
         },
       ],
     },
@@ -511,7 +511,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "doing-tiktok-myself",
           question: "Am I doing something wrong if I try to do TikTok myself?",
           answer:
-            "Not necessarily, but most teams underestimate the complexity. TikTok rewards creative speed and testing volume. Steam rewards behavioral consistency. When those two systems are not aligned, you get views without wishlists or traffic spikes that damage Conversion Rate. Doing it alone often means guessing which hooks will translate into actual Steam intent instead of structured experimentation.",
+            "Not necessarily, but most teams underestimate the complexity. TikTok rewards creative speed and testing volume. Steam rewards behavioral consistency. When those two systems are not aligned, you get views without wishlists or traffic spikes that damage Conversion Rate. Doing it alone often means guessing which hooks will translate into actual Steam intent instead of structured experimentation. If you are experiencing this exact pattern of driving traffic but wishlists standing still, the issue is almost always alignment rather than effort.",
         },
         {
           id: "tiktok-agency-steam",
@@ -529,13 +529,13 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "pricing-launch-strategy",
           question: "How does this connect to pricing and launch strategy?",
           answer:
-            "TikTok traffic does not exist in isolation. Regional Pricing expectations, launch timing, and upcoming Launch Discount framing all influence how traffic converts. If audience expectations created by short form do not align with price positioning, Conversion Rate suffers at launch. A strong TikTok strategy anticipates how attention gathered pre release will behave when real money decisions appear.",
+            "TikTok traffic does not exist in isolation. Regional Pricing expectations, launch timing, and upcoming Launch Discount framing all influence how traffic converts. If audience expectations created by short form do not align with price positioning, Conversion Rate suffers at launch. A strong TikTok strategy anticipates how attention gathered pre release will behave when real money decisions appear. For a deeper look at how important is price in a PC Console game growth strategy, that analysis covers the full interaction between pricing and content framing.",
         },
         {
           id: "niche-expertise",
           question: "Why is niche expertise important here?",
           answer:
-            "PC and Console marketing behaves differently from general consumer brands. Capsule Art readability, Metadata tagging, and genre benchmarks directly influence how the Steam Algorithm classifies your traffic. A team that understands Steamworks data can interpret whether TikTok traffic strengthens or weakens Discovery Queue testing. Without that lens, short form metrics look impressive while underlying algorithm confidence erodes.",
+            "PC and Console marketing behaves differently from general consumer brands. Capsule Art readability, Metadata tagging, and genre benchmarks directly influence how the Steam Algorithm classifies your traffic. A team that understands Steamworks data can interpret whether TikTok traffic strengthens or weakens Discovery Queue testing. Without that lens, short form metrics look impressive while underlying algorithm confidence erodes. This is also why TikTok and YouTube Shorts became the main discovery channel for indie games. The platform rewards niche clarity, and niche clarity requires specialized knowledge.",
         },
         {
           id: "who-can-help",
@@ -547,7 +547,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
           id: "stay-sane",
           question: "How do I stay sane while launching TikTok for my game?",
           answer:
-            "You stay sane by removing guesswork and working with a system that connects creative testing to Steam data. TikTok for game marketing works when it is integrated with store page optimization, Capsule Art testing, Metadata clarity, Regional Pricing logic, and launch sequencing. That integration is what turns short form from a trend into a repeatable growth engine.\\n\\nTrapPlan exists to build that engine. Instead of chasing random views, we align short form production with Steamworks metrics so your TikToks generate structured signals that the Steam Algorithm can scale into sustainable Wishlist Velocity before and during launch.",
+            "You stay sane by removing guesswork and working with a system that connects creative testing to Steam data. TikTok for game marketing works when it is integrated with store page optimization, Capsule Art testing, Metadata clarity, Regional Pricing logic, and launch sequencing. That integration is what turns short form from a trend into a repeatable growth engine. If you are still deciding whether to invest in short form at all, our guide on should you launch TikTok for your Steam game covers the decision framework. And if you want to understand how to turn TikTok views into real Steam traffic once you commit, that guide connects creative decisions to Steamworks outcomes. Our breakdown of TikTok video formats that work best for Steam games explains which structures produce the most stable Conversion Rate at scale.\\n\\nTrapPlan exists to build that engine. Instead of chasing random views, we align short form production with Steamworks metrics so your TikToks generate structured signals that the Steam Algorithm can scale into sustainable Wishlist Velocity before and during launch.",
         },
       ],
     },

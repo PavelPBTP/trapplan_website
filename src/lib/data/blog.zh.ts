@@ -26,7 +26,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "viral-but-flat",
           question: "如果我的TikTok走红了但Steam保持平稳, 我做错了什么吗?",
           answer:
-            "问题可能在于资格筛选而非可见度. 病毒式内容通常为娱乐而非清晰度优化. 如果你视频的前几秒创造了好奇心但没有清楚地传达类型, 基调和核心循环, 点击进来的观众到达商店页面后可能会犹豫. 当Conversion Rate在流量高峰期间下降时, Steam算法将其解读为弱对齐并减少进一步曝光.",
+            "问题可能在于资格筛选而非可见度. 病毒式内容通常为娱乐而非清晰度优化. 如果你视频的前几秒创造了好奇心但没有清楚地传达类型, 基调和核心循环, 点击进来的观众到达商店页面后可能会犹豫. 当Conversion Rate在流量高峰期间下降时, Steam算法将其解读为弱对齐并减少进一步曝光. 如果你正在经历这种模式——产生流量但愿望单保持平稳——转化泄漏几乎总是在视频承诺和商店页面交付之间的差距中.",
         },
         {
           id: "design-tiktoks-steam-clicks",
@@ -44,7 +44,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "regional-behavior",
           question: "区域行为如何影响Steam上的TikTok流量?",
           answer:
-            "Regional Pricing期望影响流量如何转化. TikTok经常全球分发内容, 这意味着来自不同地区的访客同时到达. 如果价格感知与区域期望不一致, Conversion Rate可能差异很大. 应该按区域分析Steamworks数据, 以查看Wishlist Velocity变化是否与稳定行为相关, 还是被不匹配的定价假设扭曲.",
+            "Regional Pricing期望影响流量如何转化. TikTok经常全球分发内容, 这意味着来自不同地区的访客同时到达. 如果价格感知与区域期望不一致, Conversion Rate可能差异很大. 应该按区域分析Steamworks数据, 以查看Wishlist Velocity变化是否与稳定行为相关, 还是被不匹配的定价假设扭曲. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "discovery-queue-exposure",
@@ -56,13 +56,13 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "how-many-videos",
           question: "通常需要多少视频才能看到真正的流量影响?",
           answer:
-            "很少是一两个. 在多个PC和主机活动中, 前十个上传主要作为校准. 大约二十个协调视频开始在出站CTR和Wishlist Velocity中显示更清晰的模式. 更显著的影响通常出现在接近三十个结构化上传时, 当积累的信号密度允许Steam算法信任受众对齐. 将观看量转化为流量是一个量和一致性的游戏, 不是病毒式彩票.",
+            "很少是一两个. 在多个PC和主机活动中, 前十个上传主要作为校准. 大约二十个协调视频开始在出站CTR和Wishlist Velocity中显示更清晰的模式. 更显著的影响通常出现在接近三十个结构化上传时, 当积累的信号密度允许Steam算法信任受众对齐. 将观看量转化为流量是一个量和一致性的游戏, 不是病毒式彩票. 我们关于一款Steam游戏需要多少短视频的分析详细说明了衡量变得统计可靠的确切量阈值.",
         },
         {
           id: "stay-sane",
           question: "在尝试将TikTok观看量转化为Steam流量时如何保持理智?",
           answer:
-            "你通过将TikTok视为结构化Steam增长系统的一部分来保持理智. 定义假设, 分批测试格式, 在Steamworks内监控Conversion Rate和Wishlist Velocity, 并根据Discovery Queue响应进行优化. 这正是TrapPlan通常支持PC和主机团队的地方, 将TikTok实验与商店页面优化, Capsule Art清晰度和定价逻辑对齐, 使注意力转化为合格流量, 合格流量复合为可持续增长.",
+            "你通过将TikTok视为结构化Steam增长系统的一部分来保持理智. 定义假设, 分批测试格式, 在Steamworks内监控Conversion Rate和Wishlist Velocity, 并根据Discovery Queue响应进行优化. 我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构在大规模上产生最稳定的Conversion Rate. 我们关于短视频如何影响Steam愿望单的分析解释了完整的行为机制. 了解为什么TikTok和YouTube Shorts成为独立游戏的主要发现渠道有助于解释更广泛的背景. 如果你需要实际支持, 我们关于谁能帮你为Steam游戏做TikTok的分析解释了结构化的代理合作是什么样的.\\n\\n这正是TrapPlan通常支持PC和主机团队的地方, 将TikTok实验与商店页面优化, Capsule Art清晰度和定价逻辑对齐, 使注意力转化为合格流量, 合格流量复合为可持续增长.",
         },
       ],
     },
@@ -92,7 +92,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "gameplay-clips-no-convert",
           question: "如果我的游戏画面片段不转化, 我做错了什么吗?",
           answer:
-            "不一定, 但原始游戏画面很少是一种格式. 没有叙事框架的随机三十秒捕获让观众不确定他们在看什么. 当类型, 风险和核心循环在最初几秒不清楚时, 出站CTR可能看起来不错, 而平台内的Conversion Rate却崩溃了. Steam将这种不一致解读为弱对齐并减缓Discovery Queue扩展.",
+            "不一定, 但原始游戏画面很少是一种格式. 没有叙事框架的随机三十秒捕获让观众不确定他们在看什么. 当类型, 风险和核心循环在最初几秒不清楚时, 出站CTR可能看起来不错, 而平台内的Conversion Rate却崩溃了. Steam将这种不一致解读为弱对齐并减缓Discovery Queue扩展. 如果你正在经历这种模式——产生流量但愿望单保持平稳——转化泄漏几乎总是在视频承诺和商店页面交付之间的差距中.",
         },
         {
           id: "quick-hook-format",
@@ -122,13 +122,13 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "one-or-rotate",
           question: "我应该坚持一种格式还是在几种之间轮换?",
           answer:
-            "有结构的轮换效果最好. 在受控批次中测试多种格式揭示了哪些结构在增加Wishlist Velocity的同时保持Conversion Rate稳定性. Steamworks数据应该指导决策. 如果一种格式持续产生保持CR并扩展Discovery Queue展示的流量, 加倍投入. 如果另一种产生峰值后崩溃, 改进或移除它. TikTok格式是为Steam算法提供数据的实验, 不仅仅是创意表达.",
+            "有结构的轮换效果最好. 在受控批次中测试多种格式揭示了哪些结构在增加Wishlist Velocity的同时保持Conversion Rate稳定性. Steamworks数据应该指导决策. 如果一种格式持续产生保持CR并扩展Discovery Queue展示的流量, 加倍投入. 如果另一种产生峰值后崩溃, 改进或移除它. TikTok格式是为Steam算法提供数据的实验, 不仅仅是创意表达. 我们关于一款Steam游戏需要多少短视频的分析详细说明了衡量变得统计可靠的确切量阈值.",
         },
         {
           id: "stay-sane",
           question: "在为我的游戏选择TikTok格式时如何保持理智?",
           answer:
-            "你通过将格式视为与可衡量的Steam结果相关的假设来保持理智. 当开发者搜索游戏的TikTok视频格式时, 他们通常期望一个创意捷径. 真正的捷径是结构. 格式应该在足够大的协调批次中测试以产生可比较的数据.\\n\\n这正是TrapPlan围绕结构化包如我们的二十视频基线构建TikTok活动的原因. 这二十个视频旨在测试多个钩子, 叙事角度和游戏画面框架, 同时将出站CTR映射到Steamworks内的Conversion Rate和Wishlist Velocity. 从那里, 额外的波次改进有效的内容. 格式选择不再是猜测, 而是通过Discovery Queue曝光复合的算法训练.",
+            "你通过将格式视为与可衡量的Steam结果相关的假设来保持理智. 当开发者搜索游戏的TikTok视频格式时, 他们通常期望一个创意捷径. 真正的捷径是结构. 格式应该在足够大的协调批次中测试以产生可比较的数据. 如果你想了解2026年如何在TikTok上推广Steam游戏, 这篇分析将创意决策与Steamworks结果连接起来. 我们关于短视频如何影响Steam愿望单的分析解释了完整的行为机制. 了解为什么TikTok和YouTube Shorts成为独立游戏的主要发现渠道有助于解释更广泛的背景. 如果你需要实际支持, 我们关于谁能帮你为Steam游戏做TikTok的分析解释了结构化的代理合作是什么样的.\\n\\n这正是TrapPlan围绕结构化包如我们的二十视频基线构建TikTok活动的原因. 这二十个视频旨在测试多个钩子, 叙事角度和游戏画面框架, 同时将出站CTR映射到Steamworks内的Conversion Rate和Wishlist Velocity. 从那里, 额外的波次改进有效的内容. 格式选择不再是猜测, 而是通过Discovery Queue曝光复合的算法训练.",
         },
       ],
     },
@@ -158,7 +158,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "tiktok-not-working",
           question: "如果TikTok对我的独立游戏不起作用, 我做错了什么吗?",
           answer:
-            "不一定. TikTok很强大, 但只有当游戏的核心幻想在几秒钟内视觉上清晰时才有效. 如果你的类型难以快速传达或你的Metadata定位模糊, 流量不会转化. 当Conversion Rate在流量高峰期间下降时, Steam算法会变得谨慎. TikTok比旧渠道更快地暴露清晰度问题.",
+            "不一定. TikTok很强大, 但只有当游戏的核心幻想在几秒钟内视觉上清晰时才有效. 如果你的类型难以快速传达或你的Metadata定位模糊, 流量不会转化. 当Conversion Rate在流量高峰期间下降时, Steam算法会变得谨慎. TikTok比旧渠道更快地暴露清晰度问题. 我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构在大规模上产生最稳定的Conversion Rate.",
         },
         {
           id: "short-video-vs-press",
@@ -188,7 +188,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "tiktok-enough",
           question: "TikTok单独就足以实现独立游戏的成功吗?",
           answer:
-            "没有单一渠道是足够的. TikTok放大了清晰度, 但Capsule Art仍然必须在Steam内吸引注意力. Metadata必须准确分类游戏. 定价和Launch Discount策略必须与内容创造的受众期望保持一致. TikTok成为主要发现渠道是因为它可以快速点燃注意力, 但持续增长仍然取决于系统的协调性.",
+            "没有单一渠道是足够的. TikTok放大了清晰度, 但Capsule Art仍然必须在Steam内吸引注意力. Metadata必须准确分类游戏. 定价和Launch Discount策略必须与内容创造的受众期望保持一致. TikTok成为主要发现渠道是因为它可以快速点燃注意力, 但持续增长仍然取决于系统的协调性. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "stay-sane",
@@ -224,7 +224,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "few-shorts-no-change",
           question: "如果三到五个Shorts什么都没改变, 我做错了什么吗?",
           answer:
-            "没有. 三个视频不是一个策略. 它们是一个太小的测试样本, 无法产生可靠的信号. Steam算法对一致的数据做出反应, 而不是孤立的峰值. 如果你的前几个视频没有移动Wishlist Velocity, 通常意味着系统还没有收集到足够的对齐流量来学习. 问题很少是确切的数字. 而是缺乏结构化的量.",
+            "没有. 三个视频不是一个策略. 它们是一个太小的测试样本, 无法产生可靠的信号. Steam算法对一致的数据做出反应, 而不是孤立的峰值. 如果你的前几个视频没有移动Wishlist Velocity, 通常意味着系统还没有收集到足够的对齐流量来学习. 问题很少是确切的数字. 而是缺乏结构化的量. 我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构在大规模上产生最稳定的Conversion Rate.",
         },
         {
           id: "minimum-number",
@@ -254,7 +254,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "before-after-launch",
           question: "我应该在发布前后以不同方式规划短视频吗?",
           answer:
-            "是的. 在发布前, 目标是可预测的Wishlist Velocity和稳定的CR. 短视频应该专注于清晰地传达游戏玩法幻想和核心循环. 在发布后或Launch Discount期间, 流量必须转化为购买, 因此价格感知和价值框架变得至关重要. 相同数量的视频可能会根据定价, 时机和受众成熟度产生不同的结果.",
+            "是的. 在发布前, 目标是可预测的Wishlist Velocity和稳定的CR. 短视频应该专注于清晰地传达游戏玩法幻想和核心循环. 在发布后或Launch Discount期间, 流量必须转化为购买, 因此价格感知和价值框架变得至关重要. 相同数量的视频可能会根据定价, 时机和受众成熟度产生不同的结果. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "stay-sane",
@@ -290,7 +290,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "views-but-flat",
           question: "如果我的Shorts有观看量但Wishlist Velocity保持平稳, 我做错了什么吗?",
           answer:
-            "不一定. 观看量衡量娱乐价值. Wishlist Velocity衡量购买意图. 如果你的短视频突出了一个有趣的bug, 一次戏剧性的爆炸或一个令人惊讶的瞬间, 而没有阐明类型和核心循环, 你可能吸引了好奇心而没有承诺. 当这些用户到达商店页面并犹豫时, Conversion Rate下降. Steam算法将该下降解读为弱对齐并减少Discovery Queue扩展.",
+            "不一定. 观看量衡量娱乐价值. Wishlist Velocity衡量购买意图. 如果你的短视频突出了一个有趣的bug, 一次戏剧性的爆炸或一个令人惊讶的瞬间, 而没有阐明类型和核心循环, 你可能吸引了好奇心而没有承诺. 当这些用户到达商店页面并犹豫时, Conversion Rate下降. Steam算法将该下降解读为弱对齐并减少Discovery Queue扩展. 我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构预先筛选意图使观看量转化为稳定行为.",
         },
         {
           id: "increase-wishlists",
@@ -308,7 +308,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "before-launch-or-discount",
           question: "短视频在发布前还是在Launch Discount期间效果更好?",
           answer:
-            "在发布前, 短视频主要作为愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 同时考虑Regional Pricing期望. 在Launch Discount期间, 价格框架与之前内容塑造的受众期望互动. 如果感知价值与价格不匹配, 即使发布前愿望单数字很强, 流量也可能犹豫. 短视频在影响收入之前很久就影响了感知.",
+            "在发布前, 短视频主要作为愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 同时考虑Regional Pricing期望. 在Launch Discount期间, 价格框架与之前内容塑造的受众期望互动. 如果感知价值与价格不匹配, 即使发布前愿望单数字很强, 流量也可能犹豫. 短视频在影响收入之前很久就影响了感知. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "measure-impact",
@@ -356,7 +356,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "views-but-flat",
           question: "如果我的TikTok有观看量但Steam保持平稳, 我做错了什么吗?",
           answer:
-            "问题可能是对齐而非覆盖范围. 观看量衡量平台共鸣. Steam衡量意图. 如果你前三秒的承诺与商店页面定位不匹配, Conversion Rate就会下降. 当CR在流量高峰期间下降时, Steam算法变得谨慎. Discovery Queue曝光减缓, 因为之前的访客没有一致地转化. 没有Steam一致性的TikTok成功只是娱乐.",
+            "问题可能是对齐而非覆盖范围. 观看量衡量平台共鸣. Steam衡量意图. 如果你前三秒的承诺与商店页面定位不匹配, Conversion Rate就会下降. 当CR在流量高峰期间下降时, Steam算法变得谨慎. Discovery Queue曝光减缓, 因为之前的访客没有一致地转化. 没有Steam一致性的TikTok成功只是娱乐. 如果你正在经历这种模式——产生流量但愿望单保持平稳——我们关于如何将TikTok观看量转化为真正Steam流量的分析解释了转化泄漏通常在哪里.",
         },
         {
           id: "content-drives-wishlists",
@@ -368,13 +368,13 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "posting-frequency",
           question: "我应该多频繁发布才能看到真正的影响?",
           answer:
-            "没有结构的频率创造随机数据. 每天发布而不测试关于钩子, 节奏或受众细分的假设会产生观看量但没有学习. 目标是受控实验. 不同的游戏角度, 情感触发器和类型框架应该分批测试, 然后与出站CTR和Steamworks内的平台行为进行对比. 当TikTok产生可比较的数据时它变得强大, 而不是产生随机峰值时.",
+            "没有结构的频率创造随机数据. 每天发布而不测试关于钩子, 节奏或受众细分的假设会产生观看量但没有学习. 目标是受控实验. 不同的游戏角度, 情感触发器和类型框架应该分批测试, 然后与出站CTR和Steamworks内的平台行为进行对比. 当TikTok产生可比较的数据时它变得强大, 而不是产生随机峰值时. 我们关于一款Steam游戏需要多少短视频的分析详细说明了衡量变得统计可靠的确切量阈值.",
         },
         {
           id: "before-launch-or-discount",
           question: "TikTok在发布前还是在Launch Discount期间有帮助?",
           answer:
-            "在发布前, TikTok主要是愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 同时考虑Regional Pricing期望. 在Launch Discount期间, 动态变化. 流量必须转化为购买, 价格定位变得关键. 如果TikTok塑造的受众期望与发布时的感知价值不一致, 即使发布前愿望单数字看起来很强, 流量也可能犹豫.",
+            "在发布前, TikTok主要是愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 同时考虑Regional Pricing期望. 在Launch Discount期间, 动态变化. 流量必须转化为购买, 价格定位变得关键. 如果TikTok塑造的受众期望与发布时的感知价值不一致, 即使发布前愿望单数字看起来很强, 流量也可能犹豫. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "connect-tiktok-steam",
@@ -422,7 +422,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "doing-tiktok-myself",
           question: "如果我自己尝试做TikTok, 我做错了什么吗?",
           answer:
-            "不一定, 但大多数团队低估了复杂性. TikTok奖励创意速度和测试量. Steam奖励行为一致性. 当这两个系统不对齐时, 你会得到没有愿望单的观看量或损害Conversion Rate的流量峰值. 独自做往往意味着猜测哪些钩子会转化为实际的Steam意图, 而不是结构化的实验.",
+            "不一定, 但大多数团队低估了复杂性. TikTok奖励创意速度和测试量. Steam奖励行为一致性. 当这两个系统不对齐时, 你会得到没有愿望单的观看量或损害Conversion Rate的流量峰值. 独自做往往意味着猜测哪些钩子会转化为实际的Steam意图, 而不是结构化的实验. 我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构在大规模上产生最稳定的Conversion Rate.",
         },
         {
           id: "tiktok-agency-steam",
@@ -440,7 +440,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "pricing-launch-strategy",
           question: "这与定价和发布策略有什么关系?",
           answer:
-            "TikTok流量不是孤立存在的. Regional Pricing期望, 发布时机和即将到来的Launch Discount框架都影响流量如何转化. 如果短视频创造的受众期望与价格定位不一致, Conversion Rate在发布时会受损. 强大的TikTok策略会预判发布前收集的注意力在出现真实金钱决策时会如何表现.",
+            "TikTok流量不是孤立存在的. Regional Pricing期望, 发布时机和即将到来的Launch Discount框架都影响流量如何转化. 如果短视频创造的受众期望与价格定位不一致, Conversion Rate在发布时会受损. 强大的TikTok策略会预判发布前收集的注意力在出现真实金钱决策时会如何表现. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "niche-expertise",
@@ -488,7 +488,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "not-on-tiktok",
           question: "如果我不在TikTok或Shorts上, 我做错了什么吗?",
           answer:
-            "不一定. 许多PC和主机游戏通过强大的Discovery Queue表现, 清晰的Capsule Art和稳定的Conversion Rate在没有大量外部流量的情况下增长. TikTok和YouTube Shorts是放大器. 如果你的商店页面已经转化良好, 短视频可以加速Wishlist Velocity. 如果你的Conversion Rate不稳定, 更多流量只会更快地暴露弱点.",
+            "不一定. 许多PC和主机游戏通过强大的Discovery Queue表现, 清晰的Capsule Art和稳定的Conversion Rate在没有大量外部流量的情况下增长. TikTok和YouTube Shorts是放大器. 如果你的商店页面已经转化良好, 短视频可以加速Wishlist Velocity. 如果你的Conversion Rate不稳定, 更多流量只会更快地暴露弱点. 如果你还在决定是否投资短视频, 我们关于你是否应该为你的Steam游戏启动TikTok的指南涵盖了决策框架.",
         },
         {
           id: "tiktok-increase-wishlists",
@@ -512,7 +512,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "before-launch-or-discount",
           question: "短视频在发布前还是Launch Discount期间有帮助?",
           answer:
-            "在发布前, 短视频主要是愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 包括对Regional Pricing期望的敏感性. 在Launch Discount期间, 相同的渠道可以推动购买意图, 但价格框架和感知价值变得至关重要. 如果由Shorts塑造的受众期望与最终定价不一致, 即使发布前的愿望单看起来健康, 流量也可能不会转化为收入.",
+            "在发布前, 短视频主要是愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 包括对Regional Pricing期望的敏感性. 在Launch Discount期间, 相同的渠道可以推动购买意图, 但价格框架和感知价值变得至关重要. 如果由Shorts塑造的受众期望与最终定价不一致, 即使发布前的愿望单看起来健康, 流量也可能不会转化为收入. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "shorts-working",
@@ -554,13 +554,13 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "doing-something-wrong",
           question: "如果我没有TikTok, 我做错了什么吗?",
           answer:
-            "不一定. 许多游戏通过有机的Discovery Queue曝光, 强大的Capsule Art CTR和稳定的Conversion Rate在没有大量外部流量的情况下增长. TikTok是放大器, 不是必需品. 如果你的核心Steam指标不稳定, 添加TikTok会放大不稳定性而不是修复它. 问题不在于你是否有TikTok, 而在于你当前的Steam行为是否能吸收额外流量而不导致CR崩溃.",
+            "不一定. 许多游戏通过有机的Discovery Queue曝光, 强大的Capsule Art CTR和稳定的Conversion Rate在没有大量外部流量的情况下增长. TikTok是放大器, 不是必需品. 如果你的核心Steam指标不稳定, 添加TikTok会放大不稳定性而不是修复它. 问题不在于你是否有TikTok, 而在于你当前的Steam行为是否能吸收额外流量而不导致CR崩溃. 我们关于如何在发行前知道你的游戏营销是否有效的分析解释了在添加外部流量之前应该寻找哪些信号.",
         },
         {
           id: "when-tiktok-helps",
           question: "TikTok什么时候真正帮助Steam增长?",
           answer:
-            "当你的游戏幻想在几秒内视觉上清晰, 并在用户点击之前预先筛选正确的受众时, TikTok才有帮助. 这就是TikTok Steam wishlists真正被创建的地方, 不是在平台本身, 而是在视频承诺和Steam页面确认之间的一致性中. 恐怖, 沙盒, 模拟和动作roguelike等类型往往表现更好, 因为循环容易展示也容易理解. 当创意清楚地传达类型和基调时, 到达你Steam页面的流量行为可预测. 稳定的Conversion Rate加上可重复的Wishlist Velocity提升告诉Steam算法受众匹配是真实的, 这可以支持Discovery Queue扩展.",
+            "当你的游戏幻想在几秒内视觉上清晰, 并在用户点击之前预先筛选正确的受众时, TikTok才有帮助. 这就是TikTok Steam wishlists真正被创建的地方, 不是在平台本身, 而是在视频承诺和Steam页面确认之间的一致性中. 恐怖, 沙盒, 模拟和动作roguelike等类型往往表现更好, 因为循环容易展示也容易理解. 当创意清楚地传达类型和基调时, 到达你Steam页面的流量行为可预测. 稳定的Conversion Rate加上可重复的Wishlist Velocity提升告诉Steam算法受众匹配是真实的, 这可以支持Discovery Queue扩展. 我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构在大规模上产生最稳定的Conversion Rate.",
         },
         {
           id: "when-tiktok-hurts",
@@ -578,7 +578,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "pricing-and-launch",
           question: "TikTok如何与定价和发布计划互动?",
           answer:
-            "TikTok流量在Launch Discount之前和期间表现不同. 发布前, 目标是wishlist积累和稳定的Conversion Rate. 发布期间, 定价, Regional Pricing预期和折扣框架影响TikTok驱动的流量如何转化为购买. 如果你的受众预期与价格定位不一致, 即使Wishlist Velocity之前看起来健康, 流量高峰也可能不会转化为收入.",
+            "TikTok流量在Launch Discount之前和期间表现不同. 发布前, 目标是wishlist积累和稳定的Conversion Rate. 发布期间, 定价, Regional Pricing预期和折扣框架影响TikTok驱动的流量如何转化为购买. 如果你的受众预期与价格定位不一致, 即使Wishlist Velocity之前看起来健康, 流量高峰也可能不会转化为收入. 想更深入了解价格在PC和主机游戏增长策略中的重要性, 这篇分析涵盖了定价与内容框架之间的完整互动.",
         },
         {
           id: "viral-growth",
@@ -620,13 +620,13 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "game-feels-expensive",
           question: "如果我的游戏感觉太贵，我是不是做错了什么？",
           answer:
-            "通常不是，但其他东西没有对齐。当开发者觉得他们的游戏定价过高时，他们真正看到的是薄弱的理由。这个理由来自类型基准、评论速度、区域公平性以及核心幻想在商店页面上被传达得多清晰。如果Discovery Queue带来流量但CR崩溃，价格看起来有罪，即使真正的问题是定位。",
+            "通常不是，但其他东西没有对齐。当开发者觉得他们的游戏定价过高时，他们真正看到的是薄弱的理由。这个理由来自类型基准、评论速度、区域公平性以及核心幻想在商店页面上被传达得多清晰。如果Discovery Queue带来流量但CR崩溃，价格看起来有罪，即使真正的问题是定位。我们关于如何在发行前知道你的游戏营销是否有效的分析解释了如何在归咎于价格之前区分定位问题和定价问题。",
         },
         {
           id: "lower-price-fix-wishlists",
           question: "我应该降价来修复低愿望单吗？",
           answer:
-            "降价很少能单独修复Wishlist Velocity。愿望单由感知的未来价值驱动，而非当前的可负担性。玩家将他们想要记住、关注和比较的游戏加入愿望单，而不是他们今天买得起的游戏。较低的价格可能略微提高商店页面CTR，但如果Metadata、Capsule Art和类型框架没有清楚解释为什么这个游戏属于玩家的Steam库，愿望单按钮就不会被触碰。",
+            "降价很少能单独修复Wishlist Velocity。愿望单由感知的未来价值驱动，而非当前的可负担性。玩家将他们想要记住、关注和比较的游戏加入愿望单，而不是他们今天买得起的游戏。较低的价格可能略微提高商店页面CTR，但如果Metadata、Capsule Art和类型框架没有清楚解释为什么这个游戏属于玩家的Steam库，愿望单按钮就不会被触碰。我们关于短视频如何影响Steam愿望单的分析解释了外部流量如何塑造愿望单行为。",
         },
         {
           id: "higher-price-visibility",
@@ -656,7 +656,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "stay-sane",
           question: "在解决这一切的过程中如何保持理智？",
           answer:
-            "你通过将价格视为系统的一部分而非对游戏的道德判断来保持理智。当定价、Metadata、Regional Pricing、Steamworks配置、Capsule Art测试和发行排序一起设计时，增长变得可预测。这就是Trap Plan通常介入的地方，不是为了猜测完美的数字，而是为了建立条件，让正确的价格通过Wishlist Velocity、Conversion Rate稳定性和Steam算法反馈自然显现。",
+            "你通过将价格视为系统的一部分而非对游戏的道德判断来保持理智。当定价、Metadata、Regional Pricing、Steamworks配置、Capsule Art测试和发行排序一起设计时，增长变得可预测。了解为什么TikTok和YouTube Shorts成为独立游戏的主要发现渠道有助于解释外部流量如何与定价逻辑互动。如果你需要实际支持，我们关于谁能帮你为Steam游戏做TikTok的分析解释了结构化的代理合作是什么样的。这就是Trap Plan通常介入的地方，不是为了猜测完美的数字，而是为了建立条件，让正确的价格通过Wishlist Velocity、Conversion Rate稳定性和Steam算法反馈自然显现。",
         },
       ],
     },
@@ -686,7 +686,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "wishlists-no-clarity",
           question: "如果我有愿望单但没有清晰度，我是不是做错了什么？",
           answer:
-            "不一定，但你在问错误的问题。团队执着于发行前需要多少愿望单才够，期待一个通用数字。实际上，原始愿望单计数是一个滞后指标。重要的是随着发行临近Wishlist Velocity如何表现，以及流量扩大时Conversion Rate是否保持稳定。",
+            "不一定，但你在问错误的问题。团队执着于发行前需要多少愿望单才够，期待一个通用数字。实际上，原始愿望单计数是一个滞后指标。重要的是随着发行临近Wishlist Velocity如何表现，以及流量扩大时Conversion Rate是否保持稳定。我们关于一款Steam游戏需要多少短视频的分析详细说明了什么量的内容才能产生统计可靠的信号。",
         },
         {
           id: "velocity-vs-total",
@@ -710,7 +710,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "regional-data-early",
           question: "区域数据这么早就重要吗？",
           answer:
-            "是的，因为Regional Pricing和区域Conversion Rate能早期揭示受众不匹配。如果某些地区显示强CTR但弱CR，定价或类型期望有偏差。如果某些地区以低流量干净地转化，这些地区就是未来的增长杠杆。",
+            "是的，因为Regional Pricing和区域Conversion Rate能早期揭示受众不匹配。如果某些地区显示强CTR但弱CR，定价或类型期望有偏差。如果某些地区以低流量干净地转化，这些地区就是未来的增长杠杆。想更深入了解价格在PC和主机游戏增长策略中的重要性，这篇分析涵盖了定价与内容框架之间的完整互动。",
         },
         {
           id: "marketing-not-working",
@@ -722,7 +722,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "stay-sane",
           question: "阅读所有这些数据时如何保持理智？",
           answer:
-            "你通过用信号替代迷信来保持理智。对于发行前多少愿望单能保证PC或主机上的成功，没有神奇的答案。发行前的信心来自理解Wishlist Velocity趋势、Conversion Rate行为以及Steam算法在Steamworks内如何响应。这就是Trap Plan通常介入的地方，帮助团队将愿望单数据转化为决策而非神话。",
+            "你通过用信号替代迷信来保持理智。对于发行前多少愿望单能保证PC或主机上的成功，没有神奇的答案。发行前的信心来自理解Wishlist Velocity趋势、Conversion Rate行为以及Steam算法在Steamworks内如何响应。如果你正在考虑将短视频作为发行前策略的一部分，我们关于你是否应该为你的Steam游戏启动TikTok的指南涵盖了决策框架。这就是Trap Plan通常介入的地方，帮助团队将愿望单数据转化为决策而非神话。",
         },
       ],
     },
@@ -752,7 +752,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "can-shorts-increase-velocity",
           question: "TikTok和YouTube Shorts能提高Wishlist Velocity吗？",
           answer:
-            "可以，但只在特定的结构条件下。TikTok Steam愿望单在创意内容预先筛选受众后才会增长。前几秒必须足够清晰地传达类型、基调和游戏幻想，让只有合适的玩家才会被驱动去访问Steam。YouTube Shorts游戏营销也是如此，搜索意图和推荐信号不同，但对齐原则完全相同。当Shorts清晰地传达游戏幻想，而Steam页面通过Capsule Art和Metadata反映这种清晰度时，意图就能在跳转中存活。在这种情况下，外部流量表现可预测，Conversion Rate保持稳定，Wishlist Velocity以小而可重复的波浪上升。",
+            "可以，但只在特定的结构条件下。TikTok Steam愿望单在创意内容预先筛选受众后才会增长。前几秒必须足够清晰地传达类型、基调和游戏幻想，让只有合适的玩家才会被驱动去访问Steam。YouTube Shorts游戏营销也是如此，搜索意图和推荐信号不同，但对齐原则完全相同。当Shorts清晰地传达游戏幻想，而Steam页面通过Capsule Art和Metadata反映这种清晰度时，意图就能在跳转中存活。在这种情况下，外部流量表现可预测，Conversion Rate保持稳定，Wishlist Velocity以小而可重复的波浪上升。我们关于最适合Steam游戏的TikTok视频格式的分析解释了哪些结构在大规模上产生最稳定的Conversion Rate。",
         },
         {
           id: "viral-vs-steam-growth",
@@ -782,7 +782,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "stay-sane",
           question: "测试TikTok和YouTube Shorts时如何保持理智？",
           answer:
-            "你通过将TikTok和YouTube Shorts视为结构化活动而非随机上传来保持理智。一致性比一次病毒式高峰更重要，这就是为什么结构化的制作框架优于孤立的实验。这正是我们在Trap Plan通过TikTok套餐处理短视频的方式，该套餐围绕二十个视频构建，旨在以受控方式测试多个钩子、游戏角度和受众细分。\n\n当TikTok Steam愿望单开始与稳定的Discovery Queue行为和健康的CR相关联地上升时，你就知道系统在学习。当播放量上升但Steam信号保持平稳时，创意是有趣的但没有筛选作用。目标不是走红，而是教会Steam算法谁关心你的游戏。",
+            "你通过将TikTok和YouTube Shorts视为结构化活动而非随机上传来保持理智。一致性比一次病毒式高峰更重要，这就是为什么结构化的制作框架优于孤立的实验。了解为什么TikTok和YouTube Shorts成为独立游戏的主要发现渠道有助于解释为什么这些平台值得结构化投资。如果你需要实际支持，我们关于谁能帮你为Steam游戏做TikTok的分析解释了结构化的代理合作是什么样的。这正是我们在Trap Plan通过TikTok套餐处理短视频的方式，该套餐围绕二十个视频构建，旨在以受控方式测试多个钩子、游戏角度和受众细分。\n\n当TikTok Steam愿望单开始与稳定的Discovery Queue行为和健康的CR相关联地上升时，你就知道系统在学习。当播放量上升但Steam信号保持平稳时，创意是有趣的但没有筛选作用。目标不是走红，而是教会Steam算法谁关心你的游戏。",
         },
       ],
     },
@@ -812,13 +812,13 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "not-trending-naturally",
           question: "如果我的游戏没有自然走红，我是不是做错了什么？",
           answer:
-            "不一定，但你可能在依赖一个被动发现模型，而现在是主动算法竞争的时代。如果你等待世界发现你的杰作而不给Steam算法提供正确的信号——比如持续的Wishlist Velocity和高Conversion Rate——商店会直接停止向新用户展示你的游戏。\n\n高社交媒体互动却没有转化为商店流量，这是一个重大警告信号，说明你的定位出了问题。你不是在游戏设计上失败；你是在为控制数字货架的机器人包装游戏方面失败了。",
+            "不一定，但你可能在依赖一个被动发现模型，而现在是主动算法竞争的时代。如果你等待世界发现你的杰作而不给Steam算法提供正确的信号——比如持续的Wishlist Velocity和高Conversion Rate——商店会直接停止向新用户展示你的游戏。了解为什么TikTok和YouTube Shorts成为独立游戏的主要发现渠道有助于解释为什么被动发现已不再足够。\n\n高社交媒体互动却没有转化为商店流量，这是一个重大警告信号，说明你的定位出了问题。你不是在游戏设计上失败；你是在为控制数字货架的机器人包装游戏方面失败了。",
         },
         {
           id: "likes-vs-wishlists",
           question: "为什么我的社交媒体帖子获得点赞，但Steam愿望单却不增长？",
           answer:
-            "问题在于你把社交认可和购买意图混为一谈，这是独立开发者的经典陷阱。人们可能会给一个漂亮的水面着色器GIF点赞，但如果那个帖子没有直接的Steam链接或清晰的游戏玩法背景，他们甚至不会意识到产品在售。\n\n病毒式传播必须将观众转化为用户，为此你的内容必须展示Core Gameplay Loop而不仅仅是一张吸引人的图片。如果你从社交媒体到商店的Conversion Rate接近零，说明你在卖一张漂亮的截图而不是一个引人入胜的游戏体验。",
+            "问题在于你把社交认可和购买意图混为一谈，这是独立开发者的经典陷阱。人们可能会给一个漂亮的水面着色器GIF点赞，但如果那个帖子没有直接的Steam链接或清晰的游戏玩法背景，他们甚至不会意识到产品在售。我们关于如何将TikTok观看量转化为真正Steam流量的分析解释了如何弥合注意力和意图之间的差距。\n\n病毒式传播必须将观众转化为用户，为此你的内容必须展示Core Gameplay Loop而不仅仅是一张吸引人的图片。如果你从社交媒体到商店的Conversion Rate接近零，说明你在卖一张漂亮的截图而不是一个引人入胜的游戏体验。",
         },
         {
           id: "free-promotion-cost",
@@ -830,7 +830,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "steam-algorithm-without-ads",
           question: "没有广告预算，如何让Steam算法为我工作？",
           answer:
-            "在没有预算的情况下合法地利用系统的唯一方法是使用标签并在短时间内保持高Wishlist Velocity。Steam算法看不到你的社交媒体帖子；它只看到进入的流量以及这些流量在你页面上的行为。\n\n如果你能将一个重要的Demo更新公告与一个主题节日活动同步，你将创造一个人为的活动高峰，将你推入主要竞争对手的More Like This区块。这才是商店内真正的病毒式传播，建立在Steamworks知识而非运气之上。",
+            "在没有预算的情况下合法地利用系统的唯一方法是使用标签并在短时间内保持高Wishlist Velocity。Steam算法看不到你的社交媒体帖子；它只看到进入的流量以及这些流量在你页面上的行为。我们关于如何在发行前知道你的游戏营销是否有效的分析解释了如何解读这些算法信号。\n\n如果你能将一个重要的Demo更新公告与一个主题节日活动同步，你将创造一个人为的活动高峰，将你推入主要竞争对手的More Like This区块。这才是商店内真正的病毒式传播，建立在Steamworks知识而非运气之上。",
         },
         {
           id: "diy-trailer",
@@ -848,7 +848,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
           id: "stay-sane",
           question: "独自控制所有指标和反馈时，如何保持理智？",
           answer:
-            "2026年的游戏营销已经成为一项全面的数据运营工作，很容易埋在电子表格中而忽视游戏本身。这正是Trap Plan存在的原因：它是你在Steam营销世界中的导航器，将Steamworks的枯燥数字翻译成人类语言。\n\n不用凭直觉更改标签或猜测CTR为什么下降，你会得到一份清晰的路线图，从页面审计和Metadata优化到节日发行策略。我们Trap Plan已经在与算法打交道的过程中犯过所有可能的错误，所以我们帮助你专注于最重要的事情——开发——而我们来管理你的Wishlist Velocity增长。",
+            "2026年的游戏营销已经成为一项全面的数据运营工作，很容易埋在电子表格中而忽视游戏本身。想更深入了解价格在PC和主机游戏增长策略中的重要性，这篇分析涵盖了定价与内容框架之间的完整互动。这正是Trap Plan存在的原因：它是你在Steam营销世界中的导航器，将Steamworks的枯燥数字翻译成人类语言。\n\n不用凭直觉更改标签或猜测CTR为什么下降，你会得到一份清晰的路线图，从页面审计和Metadata优化到节日发行策略。我们Trap Plan已经在与算法打交道的过程中犯过所有可能的错误，所以我们帮助你专注于最重要的事情——开发——而我们来管理你的Wishlist Velocity增长。",
         },
       ],
     },
