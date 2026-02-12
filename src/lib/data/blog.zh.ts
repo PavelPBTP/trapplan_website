@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-short-videos-influence-steam-wishlists": {
+    title: "短视频如何影响Steam愿望单",
+    excerpt:
+      "短视频究竟如何影响Steam愿望单? 这篇卡片式分析涵盖了2026年短视频影响背后的行为机制, R.E.P.O.和Fallen Aces的真实市场数据, 为什么病毒式传播的片段有时不产生愿望单, 以及如何在Steamworks中衡量短视频的影响.",
+    category: "Steam",
+    cardArticle: {
+      title: "短视频如何影响Steam愿望单",
+      lead: "你发布了一个简短的游戏片段. 也许在TikTok上, 也许在YouTube Shorts上. 观看量飙升. 评论看起来很有希望. 然后你打开Steamworks, 发现Wishlist Velocity几乎没有变动. 现在你在问真正的问题. 短视频究竟如何影响Steam愿望单, 为什么效果有时感觉不可见.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你发布了一个简短的游戏片段. 也许在TikTok上, 也许在YouTube Shorts上. 观看量飙升. 评论看起来很有希望. 然后你打开Steamworks, 发现Wishlist Velocity几乎没有变动. 现在你在问真正的问题. 短视频究竟如何影响Steam愿望单, 为什么效果有时感觉不可见.",
+        },
+        {
+          id: "short-video-influence-2026",
+          question: "2026年短视频影响的真正含义",
+          answer:
+            "当开发者搜索短视频如何增加Steam愿望单时, 他们通常期望一个简单的公式. 在2026年, 机制是行为性的, 不是魔法. 短视频通过塑造点击前的意图和在受众到达你的商店页面之前过滤他们来间接影响Steam愿望单. Steam算法对Steam内部的行为做出反应, 而不是对外部平台上的观看量. 从访问到愿望单的Conversion Rate, 视频钩子与Capsule Art之间的CTR一致性, Metadata清晰度以及Discovery Queue中的用户行为决定了流量是否变成算法信心. 短视频创造期望. Steam衡量该期望是否被满足.",
+        },
+        {
+          id: "views-but-flat",
+          question: "如果我的Shorts有观看量但Wishlist Velocity保持平稳, 我做错了什么吗?",
+          answer:
+            "不一定. 观看量衡量娱乐价值. Wishlist Velocity衡量购买意图. 如果你的短视频突出了一个有趣的bug, 一次戏剧性的爆炸或一个令人惊讶的瞬间, 而没有阐明类型和核心循环, 你可能吸引了好奇心而没有承诺. 当这些用户到达商店页面并犹豫时, Conversion Rate下降. Steam算法将该下降解读为弱对齐并减少Discovery Queue扩展.",
+        },
+        {
+          id: "increase-wishlists",
+          question: "短视频能显著增加Steam愿望单吗?",
+          answer:
+            "是的, 当对齐精确时. 市场案例清楚地说明了这一点. R.E.P.O., 一款恐怖多人游戏, 产生了约310万短视频观看量, 并将该关注转化为约20,000个额外愿望单. Fallen Aces累积了约650万观看量, 在其短视频势头期间获得了约25,600个愿望单. 数字表明短视频可以影响Steam愿望单增长, 但观看量与愿望单之间的比率证明并非每次展示都能转化.\\n\\n在两个案例中, 短视频内容立即传达了类型, 基调和游戏玩法幻想. Steam页面通过强大的Capsule Art, 连贯的Metadata和清晰的定位确认了该承诺. Conversion Rate在流量高峰期间保持稳定, 这使得Wishlist Velocity以Steam算法可以扩展的方式增长.",
+        },
+        {
+          id: "viral-no-wishlists",
+          question: "为什么一些病毒式传播的片段几乎不产生愿望单?",
+          answer:
+            "病毒式传播优化的是覆盖范围, 而非相关性. 一个短视频可以触达你目标类型受众之外的数百万人. 高出站CTR加上平台内Conversion Rate下降教会Steam算法你的流量不一致. Steam不会扩展Discovery Queue曝光, 而是变得谨慎. 该片段可能作为内容成功, 但作为增长失败.",
+        },
+        {
+          id: "before-launch-or-discount",
+          question: "短视频在发布前还是在Launch Discount期间效果更好?",
+          answer:
+            "在发布前, 短视频主要作为愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 同时考虑Regional Pricing期望. 在Launch Discount期间, 价格框架与之前内容塑造的受众期望互动. 如果感知价值与价格不匹配, 即使发布前愿望单数字很强, 流量也可能犹豫. 短视频在影响收入之前很久就影响了感知.",
+        },
+        {
+          id: "measure-impact",
+          question: "如何在实践中衡量短视频如何增加Steam愿望单?",
+          answer:
+            "寻找回答短视频如何为你的特定类型增加Steam愿望单这个问题的相关模式. 在每波短视频之后, 分析Steamworks内的Wishlist Velocity变化, Conversion Rate稳定性和Discovery Queue展示. 适度流量加上稳定的CR和稳定的愿望单增长比大规模峰值后崩溃更有价值. Steam算法扩展一致性. 短视频只有在产生可重复的行为模式来强化Metadata清晰度和受众对齐时才能增加Steam愿望单, 而非一次性激增.",
+        },
+        {
+          id: "enough-to-grow",
+          question: "短视频足以在Steam上成长吗?",
+          answer:
+            "没有单一渠道是足够的. 短视频放大清晰度. 如果Capsule Art未能传达类型, 如果Metadata错误分类游戏, 或者商店页面未充分解释核心循环, 流量将流失. 短视频不能修复结构性弱点. 它揭示它们. 当基础稳固时, 短视频加速增长. 当基础薄弱时, 它们加速失望.",
+        },
+        {
+          id: "stay-sane",
+          question: "在测试短视频促进Steam愿望单增长时如何保持理智?",
+          answer:
+            "你通过将短视频视为更广泛的Steam增长框架的一部分来保持理智. 如果你已经探索过我们关于TikTok是否能增加Steam愿望单的分析或我们关于2026年如何在TikTok上推广Steam游戏的分析, 你就知道这个模式. 流量只有在产生Steam算法可以扩展的稳定平台内行为时才有用.\\n\\n定义假设, 分批测试钩子, 监控Conversion Rate, 并将流量波映射到Steamworks内的Wishlist Velocity. 短视频影响只有在与算法响应对比衡量时才变得可见. 这就是TrapPlan通常支持PC和主机团队的地方, 将TikTok和Shorts实验直接与Steam数据集成, 使短视频产生结构化信号, 这些信号通过Discovery Queue曝光和长期愿望单增长进行复合.",
+        },
+      ],
+    },
+  },
   "how-to-promote-a-steam-game-on-tiktok-in-2026": {
     title: "2026年如何在TikTok上推广Steam游戏",
     excerpt:

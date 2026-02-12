@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_FR_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-short-videos-influence-steam-wishlists": {
+    title: "Comment les videos courtes influencent les wishlists Steam",
+    excerpt:
+      "Comment les videos courtes influencent-elles reellement les wishlists Steam? Cette analyse en cartes couvre le mecanisme comportemental derriere l'influence du format court en 2026, des donnees reelles de marche de R.E.P.O. et Fallen Aces, pourquoi les clips viraux ne produisent parfois aucune wishlist, et comment mesurer l'impact des videos courtes dans Steamworks.",
+    category: "Steam",
+    cardArticle: {
+      title: "Comment les videos courtes influencent les wishlists Steam",
+      lead: "Vous avez poste un court clip de gameplay. Peut-etre sur TikTok, peut-etre sur YouTube Shorts. Les vues ont grimpe. Les commentaires semblaient prometteurs. Puis vous avez ouvert Steamworks et constate presque aucun mouvement dans la Wishlist Velocity. Maintenant vous posez la vraie question. Comment les videos courtes influencent-elles reellement les wishlists Steam, et pourquoi l'effet semble-t-il parfois invisible.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Que s'est-il passe?",
+          answer:
+            "Vous avez poste un court clip de gameplay. Peut-etre sur TikTok, peut-etre sur YouTube Shorts. Les vues ont grimpe. Les commentaires semblaient prometteurs. Puis vous avez ouvert Steamworks et constate presque aucun mouvement dans la Wishlist Velocity. Maintenant vous posez la vraie question. Comment les videos courtes influencent-elles reellement les wishlists Steam, et pourquoi l'effet semble-t-il parfois invisible.",
+        },
+        {
+          id: "short-video-influence-2026",
+          question: "Ce que l'influence des videos courtes signifie reellement en 2026",
+          answer:
+            "Quand les developpeurs cherchent comment les videos courtes augmentent les wishlists Steam, ils s'attendent generalement a une formule simple. En 2026, le mecanisme est comportemental, pas magique. Les videos courtes influencent les wishlists Steam indirectement en faconnant l'intention pre-clic et en filtrant l'audience avant qu'elle n'atteigne votre page boutique. L'algorithme Steam reagit au comportement a l'interieur de Steam, pas aux vues sur les plateformes externes. La Conversion Rate de visite a wishlist, la coherence du CTR entre le hook video et le Capsule Art, la clarte des Metadata et le comportement dans la Discovery Queue determinent si le trafic devient confiance algorithmique. Les videos courtes creent l'attente. Steam mesure si cette attente est satisfaite.",
+        },
+        {
+          id: "views-but-flat",
+          question: "Est-ce que je fais quelque chose de mal si mes Shorts ont des vues mais la Wishlist Velocity reste plate?",
+          answer:
+            "Pas necessairement. Les vues mesurent la valeur de divertissement. La Wishlist Velocity mesure l'intention d'achat. Si votre video courte met en avant un bug amusant, une explosion dramatique ou un moment surprenant sans clarifier le genre et le core loop, vous pouvez attirer la curiosite sans engagement. Quand ces utilisateurs arrivent sur la page boutique et hesitent, la Conversion Rate chute. L'algorithme Steam interprete cette chute comme un alignement faible et reduit l'expansion de la Discovery Queue.",
+        },
+        {
+          id: "increase-wishlists",
+          question: "Les videos courtes peuvent-elles augmenter significativement les wishlists Steam?",
+          answer:
+            "Oui, quand l'alignement est precis. Les exemples du marche le montrent clairement. R.E.P.O., un titre multijoueur horreur, a genere environ 3 100 000 vues de format court et a traduit cette attention en environ 20 000 wishlists supplementaires. Fallen Aces a accumule environ 6 500 000 vues et a gagne environ 25 600 wishlists pendant son elan de format court. Les chiffres montrent que les videos courtes peuvent influencer la croissance des wishlists Steam, mais le ratio entre vues et wishlists prouve que chaque impression ne convertit pas.\\n\\nDans les deux cas, le contenu de format court a communique le genre, le ton et la fantaisie de gameplay immediatement. La page Steam a confirme cette promesse par un Capsule Art fort, des Metadata coherents et un positionnement clair. La Conversion Rate est restee stable pendant les pics de trafic, ce qui a permis a la Wishlist Velocity d'augmenter d'une maniere que l'algorithme Steam pouvait scaler.",
+        },
+        {
+          id: "viral-no-wishlists",
+          question: "Pourquoi certains clips viraux ne produisent-ils presque aucune wishlist?",
+          answer:
+            "La viralite optimise pour la portee, pas pour la pertinence. Une video courte peut atteindre des millions en dehors de votre audience cible de genre. Un CTR sortant eleve combine a une Conversion Rate en baisse au sein de la plateforme enseigne a l'algorithme Steam que votre trafic est incoherent. Au lieu d'etendre l'exposition dans la Discovery Queue, Steam devient prudent. Le clip peut reussir comme contenu tout en echouant comme croissance.",
+        },
+        {
+          id: "before-launch-or-discount",
+          question: "Les videos courtes fonctionnent-elles mieux avant le lancement ou pendant le Launch Discount?",
+          answer:
+            "Avant le lancement, les videos courtes fonctionnent principalement comme outils d'acquisition de wishlists. L'objectif est une Wishlist Velocity stable et une Conversion Rate previsible a travers les regions, en tenant compte des attentes de Regional Pricing. Pendant un Launch Discount, le cadrage des prix interagit avec les attentes du public faconnees par le contenu precedent. Si la valeur percue ne correspond pas au prix, le trafic peut hesiter meme si les chiffres de wishlists pre-lancement etaient solides. Les videos courtes influencent la perception bien avant d'influencer les revenus.",
+        },
+        {
+          id: "measure-impact",
+          question: "Comment mesurer comment les videos courtes augmentent les wishlists Steam en pratique?",
+          answer:
+            "Cherchez des schemas de correlation qui repondent a la question de comment les videos courtes augmentent les wishlists Steam pour votre genre specifique. Apres chaque vague de format court, analysez les changements de Wishlist Velocity, la stabilite de la Conversion Rate et les impressions de Discovery Queue dans Steamworks. Un trafic modere avec une CR stable et une croissance constante des wishlists est plus precieux que des pics massifs suivis d'un effondrement. L'algorithme Steam scale la coherence. Les videos courtes augmentent les wishlists Steam uniquement quand elles produisent des schemas comportementaux repetables qui renforcent la clarte des Metadata et l'alignement de l'audience, pas des poussees uniques.",
+        },
+        {
+          id: "enough-to-grow",
+          question: "Les videos courtes suffisent-elles pour croitre sur Steam?",
+          answer:
+            "Aucun canal unique ne suffit. Les videos courtes amplifient la clarte. Si le Capsule Art ne communique pas le genre, si les Metadata classifient mal le jeu, ou si la page boutique n'explique pas suffisamment le core loop, le trafic fuira. Le format court ne corrige pas les faiblesses structurelles. Il les revele. Quand les fondamentaux sont solides, les videos courtes accelerent la croissance. Quand les fondamentaux sont faibles, elles accelerent la deception.",
+        },
+        {
+          id: "stay-sane",
+          question: "Comment garder la tete froide en testant des videos courtes pour la croissance des wishlists Steam?",
+          answer:
+            "Vous gardez la tete froide en traitant les videos courtes comme partie d'un cadre de croissance Steam plus large. Si vous avez deja explore notre analyse sur la question de savoir si TikTok peut augmenter les wishlists Steam ou notre analyse sur comment promouvoir un jeu Steam sur TikTok en 2026, vous connaissez le schema. Le trafic n'est utile que quand il produit un comportement stable au sein de la plateforme que l'algorithme Steam peut scaler.\\n\\nDefinissez des hypotheses, testez des hooks par lots, surveillez la Conversion Rate et mappez les vagues de trafic sur la Wishlist Velocity dans Steamworks. L'influence du format court ne devient visible que lorsqu'elle est mesuree par rapport a la reponse de l'algorithme. C'est la que TrapPlan soutient typiquement les equipes PC et Console, en integrant l'experimentation TikTok et Shorts avec les donnees Steam pour que les videos courtes generent des signaux structures qui se composent a travers l'exposition dans la Discovery Queue et la croissance des wishlists a long terme.",
+        },
+      ],
+    },
+  },
   "how-to-promote-a-steam-game-on-tiktok-in-2026": {
     title: "Comment promouvoir un jeu Steam sur TikTok en 2026",
     excerpt:
