@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-to-turn-tiktok-views-into-real-steam-traffic": {
+    title: "如何将TikTok观看量转化为真正的Steam流量",
+    excerpt:
+      "如何将TikTok观看量转化为真正能转化的Steam流量? 这篇卡片式分析涵盖了2026年真正的Steam流量意味着什么, 为什么病毒式TikTok往往无法推动Steamworks数据, 如何设计与Capsule Art对齐的钩子, Regional Pricing在跨境转化中的作用, 以及结构化视频批次如何训练Steam算法.",
+    category: "Steam",
+    cardArticle: {
+      title: "如何将TikTok观看量转化为真正的Steam流量",
+      lead: "你的TikTok视频正在获得观看量. 有些甚至在走红. 评论很活跃, 分享看起来很有前景, 数字令人兴奋. 然后你打开Steamworks, 流量几乎没有变化. Wishlist Velocity是平的. Discovery Queue展示没有扩展. 现在你在问唯一重要的问题. 如何将TikTok观看量转化为真正能转化的Steam流量.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你的TikTok视频正在获得观看量. 有些甚至在走红. 评论很活跃, 分享看起来很有前景, 数字令人兴奋. 然后你打开Steamworks, 流量几乎没有变化. Wishlist Velocity是平的. Discovery Queue展示没有扩展. 现在你在问唯一重要的问题. 如何将TikTok观看量转化为真正能转化的Steam流量.",
+        },
+        {
+          id: "real-steam-traffic-2026",
+          question: "2026年真正的Steam流量究竟意味着什么",
+          answer:
+            "在2026年, 真正的流量不仅仅用点击来衡量. 它用Steam内部的行为质量来衡量. Steam算法评估Conversion Rate, 与Metadata的互动, TikTok钩子与Capsule Art之间的CTR对齐, 以及访客在Discovery Queue中的行为. 流量只有在产生稳定的Wishlist Velocity和一致的平台内参与度时才变得真实. TikTok上的观看量是注意力. Steam增长是意图.",
+        },
+        {
+          id: "viral-but-flat",
+          question: "如果我的TikTok走红了但Steam保持平稳, 我做错了什么吗?",
+          answer:
+            "问题可能在于资格筛选而非可见度. 病毒式内容通常为娱乐而非清晰度优化. 如果你视频的前几秒创造了好奇心但没有清楚地传达类型, 基调和核心循环, 点击进来的观众到达商店页面后可能会犹豫. 当Conversion Rate在流量高峰期间下降时, Steam算法将其解读为弱对齐并减少进一步曝光.",
+        },
+        {
+          id: "design-tiktoks-steam-clicks",
+          question: "如何设计能驱动真正Steam点击的TikTok?",
+          answer:
+            "从将钩子与商店页面对齐开始. 前三秒必须反映玩家在Capsule Art和截图中将看到的内容. 如果你的游戏是战术roguelike, 立即展示战术循环. 如果是多人恐怖游戏, 立即展示紧张感和混乱. 当承诺清晰时出站CTR会改善, 但更重要的是, 平台内的Conversion Rate保持稳定因为期望得到满足. 这种稳定性是让Wishlist Velocity上升而非崩溃的关键.",
+        },
+        {
+          id: "push-steam-link",
+          question: "我应该直接将观众引导到Steam链接吗?",
+          answer:
+            "清晰的行动号召很重要, 但单独来看不够. 如果价值主张薄弱, 添加链接不会改变任何事情. TikTok流量在观众离开平台之前已经理解为什么应该关心时才会转化. 短视频叙事与商店页面Metadata之间的强对齐在他们到达后保护Conversion Rate. 没有这种对齐, 更用力地推只会增加低意图点击.",
+        },
+        {
+          id: "regional-behavior",
+          question: "区域行为如何影响Steam上的TikTok流量?",
+          answer:
+            "Regional Pricing期望影响流量如何转化. TikTok经常全球分发内容, 这意味着来自不同地区的访客同时到达. 如果价格感知与区域期望不一致, Conversion Rate可能差异很大. 应该按区域分析Steamworks数据, 以查看Wishlist Velocity变化是否与稳定行为相关, 还是被不匹配的定价假设扭曲.",
+        },
+        {
+          id: "discovery-queue-exposure",
+          question: "TikTok流量能改善Discovery Queue曝光吗?",
+          answer:
+            "是的, 当它创造一致的行为模式时. 如果每波内容产生以稳定速率转化的适度流量, Steam算法就会获得信心. Discovery Queue展示可能会扩展因为Steam看到了可靠的意图. 如果流量高峰后CR崩溃, 则相反. TikTok不会覆盖Steam发现. 它训练Steam发现.",
+        },
+        {
+          id: "how-many-videos",
+          question: "通常需要多少视频才能看到真正的流量影响?",
+          answer:
+            "很少是一两个. 在多个PC和主机活动中, 前十个上传主要作为校准. 大约二十个协调视频开始在出站CTR和Wishlist Velocity中显示更清晰的模式. 更显著的影响通常出现在接近三十个结构化上传时, 当积累的信号密度允许Steam算法信任受众对齐. 将观看量转化为流量是一个量和一致性的游戏, 不是病毒式彩票.",
+        },
+        {
+          id: "stay-sane",
+          question: "在尝试将TikTok观看量转化为Steam流量时如何保持理智?",
+          answer:
+            "你通过将TikTok视为结构化Steam增长系统的一部分来保持理智. 定义假设, 分批测试格式, 在Steamworks内监控Conversion Rate和Wishlist Velocity, 并根据Discovery Queue响应进行优化. 这正是TrapPlan通常支持PC和主机团队的地方, 将TikTok实验与商店页面优化, Capsule Art清晰度和定价逻辑对齐, 使注意力转化为合格流量, 合格流量复合为可持续增长.",
+        },
+      ],
+    },
+  },
   "tiktok-video-formats-that-work-best-for-steam-games": {
     title: "最适合Steam游戏的TikTok视频格式",
     excerpt:

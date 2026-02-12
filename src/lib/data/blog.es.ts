@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ES_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-to-turn-tiktok-views-into-real-steam-traffic": {
+    title: "Como convertir las vistas de TikTok en trafico real de Steam",
+    excerpt:
+      "Como conviertes las vistas de TikTok en trafico real de Steam que realmente convierte? Este desglose en tarjetas cubre que significa trafico real de Steam en 2026, por que los TikToks virales a menudo no mueven los numeros de Steamworks, como disenar hooks que se alineen con el Capsule Art, el papel del Regional Pricing en la conversion transfronteriza, y como los lotes estructurados de videos entrenan al algoritmo de Steam.",
+    category: "Steam",
+    cardArticle: {
+      title: "Como convertir las vistas de TikTok en trafico real de Steam",
+      lead: "Tus videos de TikTok estan obteniendo vistas. Algunos incluso se estan volviendo virales. Los comentarios estan activos, las comparticiones parecen prometedoras y los numeros se sienten emocionantes. Luego abres Steamworks y el trafico apenas se movio. La Wishlist Velocity esta plana. Las impresiones de Discovery Queue no se expandieron. Ahora haces la unica pregunta que importa. Como conviertes las vistas de TikTok en trafico real de Steam que realmente convierte.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Que paso?",
+          answer:
+            "Tus videos de TikTok estan obteniendo vistas. Algunos incluso se estan volviendo virales. Los comentarios estan activos, las comparticiones parecen prometedoras y los numeros se sienten emocionantes. Luego abres Steamworks y el trafico apenas se movio. La Wishlist Velocity esta plana. Las impresiones de Discovery Queue no se expandieron. Ahora haces la unica pregunta que importa. Como conviertes las vistas de TikTok en trafico real de Steam que realmente convierte.",
+        },
+        {
+          id: "real-steam-traffic-2026",
+          question: "Que significa realmente trafico real de Steam en 2026",
+          answer:
+            "En 2026, el trafico real no se mide solo por clics. Se mide por la calidad del comportamiento dentro de Steam. El algoritmo de Steam evalua la Conversion Rate, la interaccion con los Metadata, la alineacion del CTR entre los hooks de TikTok y el Capsule Art, y como se comportan los visitantes en la Discovery Queue. El trafico se vuelve real solo cuando produce una Wishlist Velocity estable y un engagement consistente dentro de la plataforma. Las vistas en TikTok son atencion. El crecimiento en Steam es intencion.",
+        },
+        {
+          id: "viral-but-flat",
+          question: "Estoy haciendo algo mal si mi TikTok se vuelve viral pero Steam se queda plano?",
+          answer:
+            "Probablemente el problema es la cualificacion, no la visibilidad. El contenido viral a menudo optimiza para el entretenimiento en lugar de la claridad. Si los primeros segundos de tu video crean curiosidad sin comunicar claramente el genero, el tono y el core loop, la audiencia que hace clic puede dudar una vez que llega a la pagina de la tienda. Cuando la Conversion Rate cae durante los picos de trafico, el algoritmo de Steam lo interpreta como alineacion debil y reduce la exposicion adicional.",
+        },
+        {
+          id: "design-tiktoks-steam-clicks",
+          question: "Como diseno TikToks que generen clics reales hacia Steam?",
+          answer:
+            "Comienza alineando el hook con la pagina de la tienda. Los primeros tres segundos deben reflejar lo que el jugador vera en el Capsule Art y las capturas de pantalla. Si tu juego es un roguelike tactico, muestra el loop tactico inmediatamente. Si es horror multijugador, muestra tension y caos de inmediato. El CTR de salida mejora cuando la promesa es clara, pero mas importante aun, la Conversion Rate dentro de la plataforma se mantiene estable porque las expectativas se cumplen. Esa estabilidad es lo que permite que la Wishlist Velocity suba en lugar de colapsar.",
+        },
+        {
+          id: "push-steam-link",
+          question: "Debo dirigir a los espectadores directamente al enlace de Steam?",
+          answer:
+            "Las llamadas a la accion claras importan, pero no son suficientes por si solas. Si la propuesta de valor es debil, agregar un enlace no cambia nada. El trafico de TikTok convierte cuando los espectadores ya entienden por que deberian interesarse antes de abandonar la plataforma. Una fuerte alineacion entre la narrativa de formato corto y los Metadata de la pagina de la tienda protege la Conversion Rate una vez que llegan. Sin esa alineacion, presionar mas simplemente aumenta los clics de baja intencion.",
+        },
+        {
+          id: "regional-behavior",
+          question: "Como afecta el comportamiento regional al trafico de TikTok en Steam?",
+          answer:
+            "Las expectativas de Regional Pricing influyen en como convierte el trafico. TikTok a menudo distribuye contenido globalmente, lo que significa que visitantes de diferentes territorios llegan simultaneamente. Si la percepcion de precio no se alinea con las expectativas regionales, la Conversion Rate puede variar ampliamente. Los datos de Steamworks deben analizarse por region para ver si los cambios en la Wishlist Velocity se correlacionan con comportamiento estable o estan distorsionados por suposiciones de precios desajustadas.",
+        },
+        {
+          id: "discovery-queue-exposure",
+          question: "Puede el trafico de TikTok mejorar la exposicion en la Discovery Queue?",
+          answer:
+            "Si, cuando crea patrones de comportamiento consistentes. Si cada ola de contenido produce trafico moderado que convierte a una tasa estable, el algoritmo de Steam gana confianza. Las impresiones de la Discovery Queue pueden expandirse porque Steam ve intencion confiable. Si los picos de trafico son seguidos por un colapso de la CR, ocurre lo contrario. TikTok no anula el descubrimiento de Steam. Lo entrena.",
+        },
+        {
+          id: "how-many-videos",
+          question: "Cuantos videos se necesitan normalmente para ver un impacto real en el trafico?",
+          answer:
+            "Rara vez uno o dos. En multiples campanas de PC y Consola, las primeras diez subidas funcionaron principalmente como calibracion. Alrededor de veinte videos coordinados comenzaron a mostrar patrones mas claros en CTR de salida y Wishlist Velocity. Un impacto mas significativo a menudo aparecio cerca de treinta subidas estructuradas, cuando la densidad de senal acumulada permitio al algoritmo de Steam confiar en la alineacion de audiencia. Convertir vistas en trafico es un juego de volumen y consistencia, no una loteria viral.",
+        },
+        {
+          id: "stay-sane",
+          question: "Como mantengo la cordura mientras intento convertir vistas de TikTok en trafico de Steam?",
+          answer:
+            "Mantienes la cordura tratando TikTok como parte de un sistema estructurado de crecimiento en Steam. Define hipotesis, prueba formatos en lotes, monitorea la Conversion Rate y la Wishlist Velocity dentro de Steamworks, y refina basandote en la respuesta de la Discovery Queue. Aqui es donde TrapPlan tipicamente apoya a equipos de PC y Consola, alineando la experimentacion en TikTok con la optimizacion de la pagina de la tienda, la claridad del Capsule Art y la logica de precios para que la atencion se convierta en trafico cualificado y el trafico cualificado se componga en crecimiento sostenible.",
+        },
+      ],
+    },
+  },
   "tiktok-video-formats-that-work-best-for-steam-games": {
     title: "Formatos de video de TikTok que mejor funcionan para juegos de Steam",
     excerpt:
