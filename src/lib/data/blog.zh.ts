@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "can-tiktok-and-youtube-shorts-increase-steam-wishlists": {
+    title: "TikTok和YouTube Shorts能增加Steam愿望单吗?",
+    excerpt:
+      "TikTok和YouTube Shorts真的能增加Steam愿望单吗? 这个卡片式分析涵盖了R.E.P.O.和Fallen Aces的真实市场数据, 短视频何时帮助Wishlist Velocity, 何时损害Conversion Rate, 以及如何将Shorts作为结构化获客系统而非创意赌博来对待.",
+    category: "Steam",
+    cardArticle: {
+      title: "TikTok和YouTube Shorts能增加Steam愿望单吗?",
+      lead: "你正在为Steam开发一款游戏, 像监测心跳一样关注Wishlist Velocity. 流量存在, 但增长感觉缓慢. 然后你从各个方向听到同样的建议. 在TikTok和YouTube Shorts上发布短视频, 走红, 愿望单就会跟上. 现在你在想短视频是否能真正增加Steam愿望单, 还是这只是另一个营销神话.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你正在为Steam开发一款游戏, 像监测心跳一样关注Wishlist Velocity. 流量存在, 但增长感觉缓慢. 然后你从各个方向听到同样的建议. 在TikTok和YouTube Shorts上发布短视频, 走红, 愿望单就会跟上. 现在你在想短视频是否能真正增加Steam愿望单, 还是这只是另一个营销神话.",
+        },
+        {
+          id: "short-form-video-2026",
+          question: "2026年短视频对Steam游戏的真正含义",
+          answer:
+            "在2026年, TikTok Steam愿望单和YouTube Shorts游戏营销不是关于病毒式传播, 而是关于信号质量. 短视频平台大规模产生注意力, 但Steam只对其生态系统内的行为做出反应. Steam算法评估Conversion Rate, Wishlist Velocity, Capsule Art的CTR以及Discovery Queue中的交互模式. 一个Short可以带来数千次访问, 但如果Metadata, 类型清晰度和商店定位与视频的承诺不匹配, 算法就会收到弱信号. 短视频只有在外部好奇心转化为平台内一致意图时才有效.",
+        },
+        {
+          id: "not-on-tiktok",
+          question: "如果我不在TikTok或Shorts上, 我做错了什么吗?",
+          answer:
+            "不一定. 许多PC和主机游戏通过强大的Discovery Queue表现, 清晰的Capsule Art和稳定的Conversion Rate在没有大量外部流量的情况下增长. TikTok和YouTube Shorts是放大器. 如果你的商店页面已经转化良好, 短视频可以加速Wishlist Velocity. 如果你的Conversion Rate不稳定, 更多流量只会更快地暴露弱点.",
+        },
+        {
+          id: "tiktok-increase-wishlists",
+          question: "TikTok真的能增加Steam愿望单吗?",
+          answer:
+            "这通常更直接地表述为TikTok是否增加Steam愿望单, 诚实的回答是可以, 但只在严格条件下. 真实市场数据支持这一点. R.E.P.O., 一款恐怖多人游戏, 产生了约310万短视频观看量, 并将这种曝光转化为约20,000个额外愿望单. Fallen Aces积累了约650万观看量, 在其短视频势头期间获得了约25,600个愿望单. 原始数据证明TikTok可以推动Steam愿望单, 但观看量与愿望单之间的比率也表明仅靠注意力是不够的.\\n\\n在两种情况下, 表现都取决于对齐. 视频的前几秒清楚地传达了类型和基调, Steam页面通过强大的Capsule Art, 连贯的Metadata和清晰的游戏定位确认了这一承诺. Conversion Rate在流量高峰期间保持稳定, 这使得Wishlist Velocity以Steam算法可以自信地扩展的方式上升.",
+        },
+        {
+          id: "youtube-shorts",
+          question: "YouTube Shorts在游戏营销方面如何?",
+          answer:
+            "YouTube Shorts的行为略有不同. 发现受搜索意图和推荐历史的影响, 这通常导致较低的覆盖范围但更高意图的流量. 对于某些类型, 特别是策略, roguelike或模拟游戏, YouTube Shorts游戏营销可能产生比TikTok更少的点击, 但一旦用户到达Steam, Conversion Rate更强. 在这种情况下, 算法重视一致性而非数量, Discovery Queue曝光可能逐渐扩展而非爆发式增长.",
+        },
+        {
+          id: "viral-no-wishlists",
+          question: "为什么一些病毒视频根本不推动愿望单?",
+          answer:
+            "病毒式传播优化的是娱乐性, 而非对齐. 一个有趣的时刻或令人震惊的片段可以产生大量观看和高出站CTR, 但如果商店页面没有确认相同的核心幻想, 访客就会犹豫. Conversion Rate下降, Wishlist Velocity保持平坦, Steamworks数据发出不一致信号. 从Steam算法的角度来看, 不转化的流量是噪音, 不是增长.",
+        },
+        {
+          id: "before-launch-or-discount",
+          question: "短视频在发布前还是Launch Discount期间有帮助?",
+          answer:
+            "在发布前, 短视频主要是愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 包括对Regional Pricing期望的敏感性. 在Launch Discount期间, 相同的渠道可以推动购买意图, 但价格框架和感知价值变得至关重要. 如果由Shorts塑造的受众期望与最终定价不一致, 即使发布前的愿望单看起来健康, 流量也可能不会转化为收入.",
+        },
+        {
+          id: "shorts-working",
+          question: "我如何知道Shorts是否对我的游戏有效?",
+          answer:
+            "寻找相关性, 而非峰值. 当每波内容导致可衡量的Wishlist Velocity增长而不会崩溃Conversion Rate时, 你正在建立一个系统. 当流量激增而CR下降时, 创意和商店页面不对齐. 密切监控Steamworks数据, 将出站CTR与平台内行为进行比较. 短视频只有在Steam可以基于一致的用户行为自信地扩展Discovery Queue测试时才有效.",
+        },
+        {
+          id: "stay-sane",
+          question: "在测试TikTok和YouTube Shorts时如何保持理智?",
+          answer:
+            "你通过将短视频视为结构化获客系统而非创意赌博来保持理智. TikTok游戏营销在测试是有意识的时候才有效. 不要上传随机片段, 而是构建批量受控实验, 测试不同的钩子, 游戏角度和受众细分, 同时在Steamworks中跟踪出站CTR和由此产生的Wishlist Velocity.\\n\\n这正是我们围绕二十个视频构建TikTok套餐的原因, 旨在跨多个创意方向生成可比较的数据. 目标不是追逐病毒式传播, 而是了解哪种格式产生合格的TikTok Steam愿望单而不损害Conversion Rate. 当短视频活动与Capsule Art, Metadata清晰度, Regional Pricing期望和发布排序对齐时, Steam算法接收到一致的信号. 注意力变成可衡量的意图, 可衡量的意图变成发布前可持续的愿望单增长.",
+        },
+      ],
+    },
+  },
   "should-you-launch-tiktok-for-your-steam-game": {
     title: "你应该为你的Steam游戏启动TikTok吗?",
     excerpt:

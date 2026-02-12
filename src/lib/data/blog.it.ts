@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
+  "can-tiktok-and-youtube-shorts-increase-steam-wishlists": {
+    title: "TikTok e YouTube Shorts possono aumentare le wishlist di Steam?",
+    excerpt:
+      "TikTok e YouTube Shorts possono davvero aumentare le wishlist di Steam? Questa analisi a schede copre dati reali di mercato da R.E.P.O. e Fallen Aces, quando il video breve aiuta la Wishlist Velocity, quando danneggia la Conversion Rate, e come trattare gli Shorts come un sistema di acquisizione strutturato invece di una scommessa creativa.",
+    category: "Steam",
+    cardArticle: {
+      title: "TikTok e YouTube Shorts possono aumentare le wishlist di Steam?",
+      lead: "Stai sviluppando un gioco per Steam e osservi la Wishlist Velocity come fosse un monitor cardiaco. Il traffico esiste, ma la crescita sembra lenta. Poi senti lo stesso consiglio da ogni direzione. Pubblica video brevi su TikTok e YouTube Shorts, diventa virale e le wishlist seguiranno. Ora ti chiedi se il video breve puo realisticamente aumentare le wishlist di Steam o se questo e solo un altro mito del marketing.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Cosa e successo?",
+          answer:
+            "Stai sviluppando un gioco per Steam e osservi la Wishlist Velocity come fosse un monitor cardiaco. Il traffico esiste, ma la crescita sembra lenta. Poi senti lo stesso consiglio da ogni direzione. Pubblica video brevi su TikTok e YouTube Shorts, diventa virale e le wishlist seguiranno. Ora ti chiedi se il video breve puo realisticamente aumentare le wishlist di Steam o se questo e solo un altro mito del marketing.",
+        },
+        {
+          id: "short-form-video-2026",
+          question: "Cosa significa realmente il video breve per i giochi Steam nel 2026",
+          answer:
+            "Nel 2026, le TikTok Steam wishlists e YouTube Shorts per il marketing dei giochi non riguardano la viralita, ma la qualita del segnale. Le piattaforme di formato breve generano attenzione su larga scala, ma Steam reagisce solo al comportamento all'interno del suo ecosistema. L'algoritmo di Steam valuta la Conversion Rate, la Wishlist Velocity, il CTR sul Capsule Art e i pattern di interazione nella Discovery Queue. Uno Short puo generare migliaia di visite, ma se i Metadata, la chiarezza del genere e il posizionamento dello store non corrispondono alla promessa del video, l'algoritmo riceve un segnale debole. Il formato breve funziona solo quando la curiosita esterna si trasforma in intenzione coerente all'interno della piattaforma.",
+        },
+        {
+          id: "not-on-tiktok",
+          question: "Sto facendo qualcosa di sbagliato se non sono su TikTok o Shorts?",
+          answer:
+            "Non necessariamente. Molti titoli PC e Console crescono attraverso forti prestazioni nella Discovery Queue, Capsule Art chiaro e Conversion Rate stabile senza traffico esterno pesante. TikTok e YouTube Shorts sono amplificatori. Se la tua pagina dello store converte gia bene, il formato breve puo accelerare la Wishlist Velocity. Se la tua Conversion Rate e instabile, piu traffico esporra semplicemente la debolezza piu velocemente.",
+        },
+        {
+          id: "tiktok-increase-wishlists",
+          question: "TikTok puo davvero aumentare le wishlist di Steam?",
+          answer:
+            "Questo viene solitamente formulato piu direttamente come TikTok aumenta le wishlist di Steam, e la risposta onesta e si, ma solo sotto condizioni rigorose. I dati reali del mercato lo confermano. R.E.P.O., un titolo multiplayer horror, ha generato circa 3.100.000 visualizzazioni di video brevi e ha tradotto quell'esposizione in circa 20.000 wishlist aggiuntive. Fallen Aces ha accumulato circa 6.500.000 visualizzazioni e ha guadagnato circa 25.600 wishlist durante il suo slancio di formato breve. I numeri grezzi dimostrano che TikTok puo guidare le wishlist di Steam, ma il rapporto tra visualizzazioni e wishlist mostra anche che l'attenzione da sola non e sufficiente.\\n\\nIn entrambi i casi, le prestazioni dipendevano dall'allineamento. I primi secondi del video comunicavano chiaramente genere e tono, e la pagina Steam confermava quella promessa attraverso un Capsule Art forte, Metadata coerenti e un posizionamento chiaro del gameplay. La Conversion Rate e rimasta stabile durante i picchi di traffico, il che ha permesso alla Wishlist Velocity di salire in un modo che l'algoritmo di Steam poteva scalare con fiducia.",
+        },
+        {
+          id: "youtube-shorts",
+          question: "E YouTube Shorts per il marketing dei giochi?",
+          answer:
+            "YouTube Shorts si comporta in modo leggermente diverso. La scoperta e influenzata dall'intento di ricerca e dalla cronologia delle raccomandazioni, il che spesso risulta in una portata inferiore ma traffico con intento piu elevato. Per certi generi, specialmente strategia, roguelike o simulazione, YouTube Shorts per il marketing dei giochi puo produrre meno clic di TikTok ma una Conversion Rate piu forte una volta che gli utenti raggiungono Steam. In quello scenario, l'algoritmo valorizza la coerenza rispetto al volume e l'esposizione nella Discovery Queue puo espandersi gradualmente piuttosto che esplosivamente.",
+        },
+        {
+          id: "viral-no-wishlists",
+          question: "Perche alcuni video virali non muovono affatto le wishlist?",
+          answer:
+            "La viralita ottimizza per l'intrattenimento, non per l'allineamento. Un momento divertente o un clip scioccante puo generare visualizzazioni massive e alto CTR in uscita, ma se la pagina dello store non conferma la stessa fantasia centrale, i visitatori esitano. La Conversion Rate cala, la Wishlist Velocity resta piatta e i dati di Steamworks segnalano incoerenza. Dal punto di vista dell'algoritmo di Steam, il traffico che non converte e rumore, non crescita.",
+        },
+        {
+          id: "before-launch-or-discount",
+          question: "Il formato breve aiuta prima del lancio o durante il Launch Discount?",
+          answer:
+            "Prima del lancio, il formato breve e principalmente uno strumento di acquisizione wishlist. L'obiettivo e una Wishlist Velocity stabile e una Conversion Rate prevedibile in tutte le regioni, inclusa la sensibilita alle aspettative di Regional Pricing. Durante un Launch Discount, gli stessi canali possono guidare l'intento di acquisto, ma il framing del prezzo e il valore percepito diventano critici. Se le aspettative del pubblico plasmate dagli Shorts non si allineano con il prezzo finale, il traffico potrebbe non convertirsi in ricavi anche se le wishlist pre-lancio sembravano sane.",
+        },
+        {
+          id: "shorts-working",
+          question: "Come faccio a sapere se gli Shorts funzionano per il mio gioco?",
+          answer:
+            "Cerca correlazione, non picchi. Quando ogni ondata di contenuto porta ad aumenti misurabili della Wishlist Velocity senza far crollare la Conversion Rate, stai costruendo un sistema. Quando il traffico sale e la CR scende, il creativo e la pagina dello store sono disallineati. Monitora i dati di Steamworks da vicino e confronta il CTR in uscita con il comportamento all'interno della piattaforma. Il formato breve funziona solo quando Steam puo espandere con fiducia i test della Discovery Queue basandosi su azioni coerenti degli utenti.",
+        },
+        {
+          id: "stay-sane",
+          question: "Come mantengo la lucidita mentre testo TikTok e YouTube Shorts?",
+          answer:
+            "Mantieni la lucidita trattando il video breve come un sistema di acquisizione strutturato, non come una scommessa creativa. TikTok per il marketing dei giochi funziona quando i test sono deliberati. Invece di caricare clip casuali, costruisci lotti di esperimenti controllati che testino diversi hook, angoli di gameplay e segmenti di pubblico mentre tracci il CTR in uscita e la Wishlist Velocity risultante in Steamworks.\\n\\nE esattamente per questo che abbiamo strutturato il nostro pacchetto TikTok attorno a venti video progettati per generare dati comparabili su piu direzioni creative. L'obiettivo non e inseguire la viralita ma capire quale formato produce TikTok Steam wishlists qualificate senza danneggiare la Conversion Rate. Quando le campagne di formato breve sono allineate con il Capsule Art, la chiarezza dei Metadata, le aspettative di Regional Pricing e la sequenza di lancio, l'algoritmo di Steam riceve segnali coerenti. L'attenzione diventa intenzione misurabile, e l'intenzione misurabile diventa crescita sostenibile delle wishlist prima del lancio.",
+        },
+      ],
+    },
+  },
   "should-you-launch-tiktok-for-your-steam-game": {
     title: "Dovresti lanciare TikTok per il tuo gioco Steam?",
     excerpt:
