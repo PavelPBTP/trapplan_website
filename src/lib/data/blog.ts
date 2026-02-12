@@ -36,6 +36,80 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "who-can-help-you-with-tiktok-for-your-steam-game",
+    title: "Who Can Help You With TikTok For Your Steam Game",
+    emoji: "🤝",
+    date: "2026-02-12",
+    excerpt:
+      "Looking for a TikTok agency for Steam games? This card-style breakdown covers what TikTok for game marketing actually means in 2026, why generic agencies fail, how structured short form testing connects to Wishlist Velocity and Conversion Rate, and how TrapPlan builds TikTok campaigns aligned with Steamworks data.",
+    readingMinutes: 9,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/blog6.png",
+    cardArticle: {
+      title: "Who Can Help You With TikTok For Your Steam Game",
+      lead: "You have decided you want to make TikToks for your game. Not someday, not maybe, but now. You see competitors getting traction, you hear about TikTok Steam wishlists, and you know short form video is shaping discovery for PC and Console titles. The only problem is execution. Who actually knows how to turn TikTok for game marketing into measurable Wishlist Velocity instead of random views.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "What happened?",
+          answer:
+            "You have decided you want to make TikToks for your game. Not someday, not maybe, but now. You see competitors getting traction, you hear about TikTok Steam wishlists, and you know short form video is shaping discovery for PC and Console titles. The only problem is execution. Who actually knows how to turn TikTok for game marketing into measurable Wishlist Velocity instead of random views.",
+        },
+        {
+          id: "tiktok-game-marketing-2026",
+          question: "What TikTok for game marketing actually means in 2026",
+          answer:
+            "In 2026, TikTok for game marketing is not about posting clips, it is about building a controlled traffic layer that feeds the Steam Algorithm with qualified intent. TikTok generates attention at scale, but Steam reacts only to behavior inside Steamworks. Conversion Rate, Wishlist Velocity, CTR alignment with Capsule Art, and Discovery Queue response determine whether traffic becomes growth. If short form creative does not match Metadata clarity and store positioning, the algorithm reads inconsistency and slows expansion.",
+        },
+        {
+          id: "doing-tiktok-myself",
+          question: "Am I doing something wrong if I try to do TikTok myself?",
+          answer:
+            "Not necessarily, but most teams underestimate the complexity. TikTok rewards creative speed and testing volume. Steam rewards behavioral consistency. When those two systems are not aligned, you get views without wishlists or traffic spikes that damage Conversion Rate. Doing it alone often means guessing which hooks will translate into actual Steam intent instead of structured experimentation.",
+        },
+        {
+          id: "tiktok-agency-steam",
+          question: "Can a TikTok agency for Steam games really increase wishlists?",
+          answer:
+            "This is where the phrase TikTok agency for Steam games becomes important. Most agencies understand social media metrics, but very few understand how the Steam Algorithm interprets traffic. A generalist team will optimize for views and engagement. A specialized TikTok agency for Steam games focuses on Conversion Rate stability, Wishlist Velocity growth, Capsule Art alignment, and Discovery Queue response.\\n\\nA micro case from the market illustrates this difference. A mid scope PC horror title generated roughly 800,000 short form views across several TikTok waves and translated that into around 6,000 incremental wishlists while maintaining stable Conversion Rate during traffic spikes. The result was gradual Discovery Queue expansion instead of algorithm hesitation. The numbers were not viral, but the behavior was clean, and clean behavior is what Steam scales.",
+        },
+        {
+          id: "structured-approach",
+          question: "What does a structured TikTok approach look like?",
+          answer:
+            "A structured approach starts with hypotheses. Different gameplay loops, emotional angles, and genre framings are tested in batches. Instead of uploading one video and hoping, you launch coordinated waves designed to produce comparable data. Outbound CTR is measured, then matched against in platform Conversion Rate and resulting Wishlist Velocity inside Steamworks. The goal is not a viral hit, it is a predictable signal that the Steam Algorithm can scale through Discovery Queue exposure.",
+        },
+        {
+          id: "pricing-launch-strategy",
+          question: "How does this connect to pricing and launch strategy?",
+          answer:
+            "TikTok traffic does not exist in isolation. Regional Pricing expectations, launch timing, and upcoming Launch Discount framing all influence how traffic converts. If audience expectations created by short form do not align with price positioning, Conversion Rate suffers at launch. A strong TikTok strategy anticipates how attention gathered pre release will behave when real money decisions appear.",
+        },
+        {
+          id: "niche-expertise",
+          question: "Why is niche expertise important here?",
+          answer:
+            "PC and Console marketing behaves differently from general consumer brands. Capsule Art readability, Metadata tagging, and genre benchmarks directly influence how the Steam Algorithm classifies your traffic. A team that understands Steamworks data can interpret whether TikTok traffic strengthens or weakens Discovery Queue testing. Without that lens, short form metrics look impressive while underlying algorithm confidence erodes.",
+        },
+        {
+          id: "who-can-help",
+          question: "So who can actually help me do this properly?",
+          answer:
+            "You need a partner who operates as a TikTok agency for Steam games, not a generic content studio. At TrapPlan, TikTok is treated as part of a broader wishlist acquisition system that also includes store page optimization, Capsule Art testing, and Metadata refinement. Our TikTok package is organized around twenty coordinated videos that test multiple hooks and gameplay angles while mapping outbound behavior to Conversion Rate and Wishlist Velocity inside Steamworks. The objective is not content for the sake of content, it is measurable TikTok Steam wishlists supported by algorithm learning and Discovery Queue expansion.\\n\\nIf you have read our breakdowns on whether short form can drive wishlists or why external traffic sometimes fails to convert, you already know the core principle. Traffic is only valuable when it produces consistent in platform behavior. TrapPlan builds TikTok campaigns around that exact principle.",
+        },
+        {
+          id: "stay-sane",
+          question: "How do I stay sane while launching TikTok for my game?",
+          answer:
+            "You stay sane by removing guesswork and working with a system that connects creative testing to Steam data. TikTok for game marketing works when it is integrated with store page optimization, Capsule Art testing, Metadata clarity, Regional Pricing logic, and launch sequencing. That integration is what turns short form from a trend into a repeatable growth engine.\\n\\nTrapPlan exists to build that engine. Instead of chasing random views, we align short form production with Steamworks metrics so your TikToks generate structured signals that the Steam Algorithm can scale into sustainable Wishlist Velocity before and during launch.",
+        },
+      ],
+    },
+    content: [],
+  },
+  {
     slug: "can-tiktok-and-youtube-shorts-increase-steam-wishlists",
     title: "Can TikTok and YouTube Shorts Increase Steam Wishlists",
     emoji: "🎬",

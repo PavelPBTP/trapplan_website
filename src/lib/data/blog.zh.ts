@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "who-can-help-you-with-tiktok-for-your-steam-game": {
+    title: "谁能帮你为Steam游戏做TikTok",
+    excerpt:
+      "在寻找Steam游戏TikTok代理机构? 这篇卡片式分析涵盖了2026年TikTok游戏营销的真正含义, 为什么通用代理机构会失败, 结构化短视频测试如何与Wishlist Velocity和Conversion Rate相连, 以及TrapPlan如何构建与Steamworks数据对齐的TikTok活动.",
+    category: "Steam",
+    cardArticle: {
+      title: "谁能帮你为Steam游戏做TikTok",
+      lead: "你已经决定要为你的游戏制作TikTok. 不是某天, 不是也许, 而是现在. 你看到竞争对手获得牵引力, 听说TikTok Steam愿望单, 知道短视频正在塑造PC和主机游戏的发现方式. 唯一的问题是执行. 谁真正知道如何将TikTok游戏营销转化为可衡量的Wishlist Velocity而不是随机观看量.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你已经决定要为你的游戏制作TikTok. 不是某天, 不是也许, 而是现在. 你看到竞争对手获得牵引力, 听说TikTok Steam愿望单, 知道短视频正在塑造PC和主机游戏的发现方式. 唯一的问题是执行. 谁真正知道如何将TikTok游戏营销转化为可衡量的Wishlist Velocity而不是随机观看量.",
+        },
+        {
+          id: "tiktok-game-marketing-2026",
+          question: "2026年TikTok游戏营销的真正含义",
+          answer:
+            "在2026年, TikTok游戏营销不是发布片段, 而是构建一个受控的流量层, 用合格的意图喂养Steam算法. TikTok大规模产生注意力, 但Steam只对Steamworks内部的行为做出反应. Conversion Rate, Wishlist Velocity, CTR与Capsule Art的对齐以及Discovery Queue响应决定了流量是否变成增长. 如果短视频创意与Metadata清晰度和商店定位不匹配, 算法就会读取不一致并减缓扩展.",
+        },
+        {
+          id: "doing-tiktok-myself",
+          question: "如果我自己尝试做TikTok, 我做错了什么吗?",
+          answer:
+            "不一定, 但大多数团队低估了复杂性. TikTok奖励创意速度和测试量. Steam奖励行为一致性. 当这两个系统不对齐时, 你会得到没有愿望单的观看量或损害Conversion Rate的流量峰值. 独自做往往意味着猜测哪些钩子会转化为实际的Steam意图, 而不是结构化的实验.",
+        },
+        {
+          id: "tiktok-agency-steam",
+          question: "Steam游戏TikTok代理机构真的能增加愿望单吗?",
+          answer:
+            "这就是Steam游戏TikTok代理机构这个短语变得重要的地方. 大多数代理机构理解社交媒体指标, 但很少有人理解Steam算法如何解读流量. 通用团队会为观看量和互动优化. 专业的Steam游戏TikTok代理机构专注于Conversion Rate稳定性, Wishlist Velocity增长, Capsule Art对齐和Discovery Queue响应.\\n\\n市场上的一个微型案例说明了这种差异. 一款中等规模的PC恐怖游戏通过几波TikTok产生了约80万短视频观看量, 并将其转化为约6,000个增量愿望单, 同时在流量高峰期间保持稳定的Conversion Rate. 结果是Discovery Queue的逐步扩展而非算法犹豫. 数字不是病毒式的, 但行为是干净的, 而干净的行为正是Steam所扩展的.",
+        },
+        {
+          id: "structured-approach",
+          question: "结构化的TikTok方法是什么样的?",
+          answer:
+            "结构化方法从假设开始. 不同的游戏循环, 情感角度和类型框架分批测试. 不是上传一个视频然后祈祷, 而是启动协调的波次, 旨在产生可比较的数据. 出站CTR被测量, 然后与平台内Conversion Rate和Steamworks中产生的Wishlist Velocity进行匹配. 目标不是病毒式成功, 而是Steam算法可以通过Discovery Queue曝光扩展的可预测信号.",
+        },
+        {
+          id: "pricing-launch-strategy",
+          question: "这与定价和发布策略有什么关系?",
+          answer:
+            "TikTok流量不是孤立存在的. Regional Pricing期望, 发布时机和即将到来的Launch Discount框架都影响流量如何转化. 如果短视频创造的受众期望与价格定位不一致, Conversion Rate在发布时会受损. 强大的TikTok策略会预判发布前收集的注意力在出现真实金钱决策时会如何表现.",
+        },
+        {
+          id: "niche-expertise",
+          question: "为什么利基专业知识在这里很重要?",
+          answer:
+            "PC和主机营销与一般消费品牌的行为不同. Capsule Art可读性, Metadata标签和类型基准直接影响Steam算法如何分类你的流量. 理解Steamworks数据的团队可以解读TikTok流量是加强还是削弱Discovery Queue测试. 没有这个视角, 短视频指标看起来令人印象深刻, 而底层算法信心却在侵蚀.",
+        },
+        {
+          id: "who-can-help",
+          question: "那么谁能真正帮我正确地做这件事?",
+          answer:
+            "你需要一个作为Steam游戏TikTok代理机构运营的合作伙伴, 而不是通用内容工作室. 在TrapPlan, TikTok被视为更广泛的愿望单获取系统的一部分, 该系统还包括商店页面优化, Capsule Art测试和Metadata精炼. 我们的TikTok套餐围绕二十个协调视频组织, 测试多个钩子和游戏角度, 同时将出站行为映射到Steamworks中的Conversion Rate和Wishlist Velocity. 目标不是为了内容而内容, 而是由算法学习和Discovery Queue扩展支持的可衡量的TikTok Steam愿望单.\\n\\n如果你已经阅读了我们关于短视频是否能推动愿望单或为什么外部流量有时无法转化的分析, 你已经知道核心原则. 流量只有在产生平台内一致行为时才有价值. TrapPlan围绕这个确切原则构建TikTok活动.",
+        },
+        {
+          id: "stay-sane",
+          question: "在为我的游戏启动TikTok时如何保持理智?",
+          answer:
+            "你通过消除猜测并使用将创意测试与Steam数据连接的系统来保持理智. TikTok游戏营销在与商店页面优化, Capsule Art测试, Metadata清晰度, Regional Pricing逻辑和发布排序集成时才有效. 这种集成将短视频从趋势转变为可重复的增长引擎.\\n\\nTrapPlan的存在就是为了构建这个引擎. 我们不追逐随机观看量, 而是将短视频制作与Steamworks指标对齐, 使你的TikTok产生结构化信号, Steam算法可以在发布前和发布期间将其扩展为可持续的Wishlist Velocity.",
+        },
+      ],
+    },
+  },
   "can-tiktok-and-youtube-shorts-increase-steam-wishlists": {
     title: "TikTok和YouTube Shorts能增加Steam愿望单吗?",
     excerpt:
