@@ -1,6 +1,138 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "why-tiktok-and-youtube-shorts-became-the-main-discovery-channel-for-indie-games": {
+    title: "为什么TikTok和YouTube Shorts成为了独立游戏的主要发现渠道",
+    excerpt:
+      "为什么TikTok和YouTube Shorts成为了独立游戏的主要发现渠道? 这篇卡片式分析涵盖了2026年发现渠道的含义, 为什么短视频超越了传统媒体, R.E.P.O.和Fallen Aces的真实市场数据, 以及TikTok如何为Steam算法提供数据而非取代它.",
+    category: "Steam",
+    cardArticle: {
+      title: "为什么TikTok和YouTube Shorts成为了独立游戏的主要发现渠道",
+      lead: "五年前, 大多数独立游戏发现的对话围绕着节日活动, 媒体报道和希望Steam算法注意到早期牵引力. 今天你打开Steamworks, 查看流量来源, 短视频平台如TikTok和YouTube Shorts作为重要贡献者出现在那里. 片段传播速度比试玩版快得多. Wishlist Velocity在几天内就有反应. 现在出现了那个令人不安的问题. 为什么短视频, 尤其是TikTok, 成为了独立游戏的主要发现渠道.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "五年前, 大多数独立游戏发现的对话围绕着节日活动, 媒体报道和希望Steam算法注意到早期牵引力. 今天你打开Steamworks, 查看流量来源, 短视频平台如TikTok和YouTube Shorts作为重要贡献者出现在那里. 片段传播速度比试玩版快得多. Wishlist Velocity在几天内就有反应. 现在出现了那个令人不安的问题. 为什么短视频, 尤其是TikTok, 成为了独立游戏的主要发现渠道.",
+        },
+        {
+          id: "discovery-channel-2026",
+          question: "2026年发现渠道究竟意味着什么",
+          answer:
+            "在2026年, 发现渠道不仅仅是人们看到你游戏的地方. 它是一个生成合格意图的系统, Steam算法可以扩展这种意图. 真正的发现发生在外部曝光转化为稳定的Conversion Rate, 与Capsule Art一致的CTR对齐, 以及Steam内可衡量的Wishlist Velocity增长时. Discovery Queue扩展跟随行为, 而非炒作.\\n\\n短视频平台主导这一层是因为它们结合了覆盖范围, 迭代速度和受众自我筛选. TikTok独立游戏营销尤其将测试周期压缩到几天而非几个月. YouTube Shorts通过推荐和搜索行为扩展了这种发现. 它们共同创造了快速反馈循环, 为Steamworks提供可解读的数据, 这就是为什么TikTok Steam发现成为如此显著的增长驱动力.",
+        },
+        {
+          id: "tiktok-not-working",
+          question: "如果TikTok对我的独立游戏不起作用, 我做错了什么吗?",
+          answer:
+            "不一定. TikTok很强大, 但只有当游戏的核心幻想在几秒钟内视觉上清晰时才有效. 如果你的类型难以快速传达或你的Metadata定位模糊, 流量不会转化. 当Conversion Rate在流量高峰期间下降时, Steam算法会变得谨慎. TikTok比旧渠道更快地暴露清晰度问题.",
+        },
+        {
+          id: "short-video-vs-press",
+          question: "为什么短视频比传统媒体对独立游戏更强大?",
+          answer:
+            "速度和规模. 媒体周期缓慢且有限. 短视频平台可以在几小时内产生数十万次展示. 更重要的是, 观众会自我筛选. 如果游戏画面的前几秒引起共鸣, 正确的受众就会点击. 这就是TikTok独立游戏营销脱颖而出的地方, 因为算法积极地将利基兴趣与特定的视觉钩子匹配.\\n\\n当这些用户到达Steam并持续与Capsule Art, 截图和描述互动时, Wishlist Velocity以Steam算法可以识别的模式增长. 传统媒体很少产生那种体量的行为数据或那种快速迭代水平, 这就是为什么TikTok Steam发现经常超越旧渠道.",
+        },
+        {
+          id: "tiktok-suited-indie",
+          question: "是什么让TikTok特别适合独立游戏?",
+          answer:
+            "独立游戏通常依赖强大的核心循环, 独特的机制或引人注目的视觉身份. 这些元素很好地转化为短视频形式. 一个清晰的roguelike循环, 一个令人满意的模拟机制, 或一个意想不到的恐怖时刻可以即时传达类型. 这种即时清晰度改善了出站CTR并保护了平台内的Conversion Rate. 当Metadata标签, 视觉效果和定位强化了视频承诺的内容时, Discovery Queue曝光会有机增长.",
+        },
+        {
+          id: "real-examples",
+          question: "有TikTok推动严肃愿望单增长的真实案例吗?",
+          answer:
+            "有. R.E.P.O., 一款恐怖多人游戏, 产生了约3,100,000次短视频观看, 并将该曝光转化为约20,000个额外愿望单. Fallen Aces累计约6,500,000次观看, 在其短视频势头期间获得了约25,600个愿望单. 这些数字表明, 当视频承诺和商店页面执行之间的对齐保持Conversion Rate稳定时, TikTok可以作为主要发现引擎运作.",
+        },
+        {
+          id: "replace-steam-algorithm",
+          question: "TikTok会取代Steam算法吗?",
+          answer:
+            "不会. TikTok为Steam算法提供数据. 外部发现只有在加强平台内行为时才重要. 稳定的Wishlist Velocity, 受Regional Pricing期望影响的跨区域一致Conversion Rate, 以及可预测的用户互动模式允许Steam扩展Discovery Queue测试. TikTok之所以强大是因为它加速了学习过程. 它不会绕过它.",
+        },
+        {
+          id: "tiktok-enough",
+          question: "TikTok单独就足以实现独立游戏的成功吗?",
+          answer:
+            "没有单一渠道是足够的. TikTok放大了清晰度, 但Capsule Art仍然必须在Steam内吸引注意力. Metadata必须准确分类游戏. 定价和Launch Discount策略必须与内容创造的受众期望保持一致. TikTok成为主要发现渠道是因为它可以快速点燃注意力, 但持续增长仍然取决于系统的协调性.",
+        },
+        {
+          id: "stay-sane",
+          question: "在通过短视频平台建立发现时如何保持理智?",
+          answer:
+            "你通过将短视频, 包括TikTok和YouTube Shorts, 视为更广泛增长架构的一部分而非单一平台赌注来保持理智. 如果你正在投资TikTok独立游戏营销, 通过Wishlist Velocity趋势, Conversion Rate稳定性和Steamworks内的Discovery Queue扩展来衡量其影响. 如果这些信号一起移动, TikTok Steam发现就在起作用.\\n\\n当短视频实验, 商店页面优化, Regional Pricing逻辑和发布排序被整合并通过Steamworks衡量时, 发现就会起作用. 这就是TrapPlan通常支持独立团队的地方, 将短视频策略与算法素养对齐, 使发现变得可重复而非偶然.",
+        },
+      ],
+    },
+  },
+  "how-many-short-videos-does-a-steam-game-need-for-stable-wishlist-growth": {
+    title: "一款Steam游戏需要多少短视频才能实现稳定的愿望单增长",
+    excerpt:
+      "一款Steam游戏究竟需要多少短视频才能实现稳定的愿望单增长? 这篇卡片式分析涵盖了2026年稳定增长的含义, 为什么三个片段不够, 从十到三十多个上传的真实活动阶段, 以及如何衡量短视频量何时在Steamworks中成为算法信号.",
+    category: "Steam",
+    cardArticle: {
+      title: "一款Steam游戏需要多少短视频才能实现稳定的愿望单增长",
+      lead: "你开始为你的Steam游戏发布短视频. 前十个几乎没有任何效果. 到了大约二十个时, 你开始看到稍好的参与度和Wishlist Velocity的小幅提升. 然后在大约第三十个视频时, 终于出现了一个真正的峰值. 现在你在问那个没人清楚回答的实际问题. Steam愿望单究竟需要多少短视频才能创造稳定增长而非随机波动.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你开始为你的Steam游戏发布短视频. 前十个几乎没有任何效果. 到了大约二十个时, 你开始看到稍好的参与度和Wishlist Velocity的小幅提升. 然后在大约第三十个视频时, 终于出现了一个真正的峰值. 现在你在问那个没人清楚回答的实际问题. Steam愿望单究竟需要多少短视频才能创造稳定增长而非随机波动.",
+        },
+        {
+          id: "stable-growth-2026",
+          question: "2026年稳定的愿望单增长究竟意味着什么",
+          answer:
+            "在2026年, 稳定增长不是关于一次病毒式传播的成功. 而是关于Steam算法可以扩展的一致行为模式. 稳定的Wishlist Velocity意味着内容波之后的可重复增长而不会导致Conversion Rate崩溃. 这意味着Discovery Queue展示逐步扩展而非随机波动. 短视频只有在流量在Steamworks内表现可预测时才能影响Steam, 与Metadata互动, 响应Capsule Art, 并以稳定的速率转化.",
+        },
+        {
+          id: "few-shorts-no-change",
+          question: "如果三到五个Shorts什么都没改变, 我做错了什么吗?",
+          answer:
+            "没有. 三个视频不是一个策略. 它们是一个太小的测试样本, 无法产生可靠的信号. Steam算法对一致的数据做出反应, 而不是孤立的峰值. 如果你的前几个视频没有移动Wishlist Velocity, 通常意味着系统还没有收集到足够的对齐流量来学习. 问题很少是确切的数字. 而是缺乏结构化的量.",
+        },
+        {
+          id: "minimum-number",
+          question: "有最低数量的短视频要求吗?",
+          answer:
+            "当开发者搜索Steam愿望单需要多少短视频时, 他们期望一个固定的阈值. 没有通用的魔法数字, 但真实的活动模式显示出清晰的阶段. 前十个视频通常作为校准. 大约二十个协调的作品开始在钩子, 游戏角度和受众细分之间产生可比较的数据. 在多个PC和主机活动中, 有意义的算法响应只在接近三十个结构化上传时才出现, 此时Steam算法拥有足够一致的行为数据来扩展Discovery Queue测试.\\n\\n在这个规模上, 你可以观察Conversion Rate在流量波期间是否保持稳定, 以及Wishlist Velocity是否以持续的方式做出反应. 稳定的愿望单增长通常出现在重复的曝光周期之后, 这些周期教会算法谁会转化, 而不是在单一的创意实验之后.",
+        },
+        {
+          id: "viral-few-clips",
+          question: "为什么有些游戏在几个病毒式片段后就增长了?",
+          answer:
+            "他们通常在片段上线之前就有了坚实的基础. 清晰的Capsule Art, 准确的Metadata, 类型对齐和健康的Conversion Rate已经到位. 当短视频到来时, 流量高效转化并强化了算法信心. 没有这个基础, 即使数百万的观看量也可能无法产生可持续的Wishlist Velocity. 病毒式传播暴露的是已经存在的结构.",
+        },
+        {
+          id: "enough-content",
+          question: "我怎么知道我已经制作了足够的内容?",
+          answer:
+            "当相关性取代随机性时, 你就制作了足够的短视频. 真实案例说明了这一点. 一款中等规模的模拟游戏在TikTok和YouTube Shorts上发布了超过三十五个短视频, 才看到每波之后Wishlist Velocity的持续提升. 在达到那个量之前, 流量峰值未能稳定Conversion Rate. 在持续发布之后, Steamworks数据显示了更稳定的CR和逐步的Discovery Queue扩展.\\n\\n另一款动作游戏在其前十二个上传中看到了最小的影响, 到二十个时有了适度的牵引力, 而其第一个显著的愿望单峰值只在第三十个视频与Capsule Art和Metadata定位完美对齐之后才出现. 教训不是关于运气. 而是关于Steam算法最终可以信任的累积信号密度. 如果展示和CR剧烈波动, 你需要的是精炼和结构化批处理, 而不是盲目的量.",
+        },
+        {
+          id: "more-always-better",
+          question: "发布更多总是会带来更多愿望单吗?",
+          answer:
+            "不会. 没有清晰度的量会制造噪音. 二十个对齐不良的视频可能比十个精确的视频造成更大的伤害. 如果你前几秒的钩子吸引了错误的受众, 出站CTR可能看起来很强, 而平台内的Conversion Rate却在下降. 这教会Steam算法变得谨慎. 稳定增长需要视频承诺, 商店页面定位, Capsule Art可读性和类型标签之间的对齐.",
+        },
+        {
+          id: "before-after-launch",
+          question: "我应该在发布前后以不同方式规划短视频吗?",
+          answer:
+            "是的. 在发布前, 目标是可预测的Wishlist Velocity和稳定的CR. 短视频应该专注于清晰地传达游戏玩法幻想和核心循环. 在发布后或Launch Discount期间, 流量必须转化为购买, 因此价格感知和价值框架变得至关重要. 相同数量的视频可能会根据定价, 时机和受众成熟度产生不同的结果.",
+        },
+        {
+          id: "stay-sane",
+          question: "在决定制作多少短视频时如何保持理智?",
+          answer:
+            "你通过用结构化框架取代对单一数字的执念来保持理智. Steam愿望单需要多少短视频这个问题只有在与可衡量的Steamworks结果挂钩时才有意义. 十个视频测试定位. 二十个开始揭示模式. 三十个或更多结构化上传通常创造稳定Wishlist Velocity和自信的Discovery Queue扩展所需的密度.\\n\\n这就是为什么TrapPlan以协调批次构建短视频活动, 包括我们围绕二十个视频作为基线测试层构建的TikTok套餐. 这二十个不是终点线, 它们是信号生成的基础. 从那里开始, 精炼和扩展基于Conversion Rate行为, Regional Pricing响应和算法反馈继续进行. 目标不是达到内容配额. 目标是产生Steam算法可以复合为可持续愿望单增长的一致数据.",
+        },
+      ],
+    },
+  },
   "how-short-videos-influence-steam-wishlists": {
     title: "短视频如何影响Steam愿望单",
     excerpt:

@@ -36,6 +36,154 @@ export type BlogPost = {
 
 export const MANUAL_BLOG_POSTS: BlogPost[] = [
   {
+    slug: "why-tiktok-and-youtube-shorts-became-the-main-discovery-channel-for-indie-games",
+    title: "Why TikTok and YouTube Shorts Became The Main Discovery Channel For Indie Games",
+    emoji: "🎮",
+    date: "2026-02-12",
+    excerpt:
+      "Why did TikTok and YouTube Shorts become the main discovery channel for indie games? This card-style breakdown covers what discovery channel means in 2026, why short video outpaces traditional press, real market data from R.E.P.O. and Fallen Aces, and how TikTok feeds the Steam Algorithm instead of replacing it.",
+    readingMinutes: 10,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/blog10.png",
+    cardArticle: {
+      title: "Why TikTok and YouTube Shorts Became The Main Discovery Channel For Indie Games",
+      lead: "Five years ago, most indie discovery conversations revolved around festivals, press coverage, and hoping the Steam Algorithm would notice early traction. Today you open Steamworks, look at traffic sources, and short video platforms such as TikTok and YouTube Shorts are sitting there as serious contributors. Clips travel faster than demos ever did. Wishlist Velocity reacts within days. Now the uncomfortable question appears. Why did short video, especially TikTok, become the main discovery channel for indie games.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "What happened?",
+          answer:
+            "Five years ago, most indie discovery conversations revolved around festivals, press coverage, and hoping the Steam Algorithm would notice early traction. Today you open Steamworks, look at traffic sources, and short video platforms such as TikTok and YouTube Shorts are sitting there as serious contributors. Clips travel faster than demos ever did. Wishlist Velocity reacts within days. Now the uncomfortable question appears. Why did short video, especially TikTok, become the main discovery channel for indie games.",
+        },
+        {
+          id: "discovery-channel-2026",
+          question: "What discovery channel actually means in 2026",
+          answer:
+            "In 2026, a discovery channel is not simply a place where people see your game. It is a system that generates qualified intent that the Steam Algorithm can scale. True discovery happens when external exposure translates into stable Conversion Rate, consistent CTR alignment with Capsule Art, and measurable Wishlist Velocity growth inside Steam. Discovery Queue expansion follows behavior, not hype.\\n\\nShort video platforms dominate this layer because they combine reach, speed of iteration, and audience self selection. TikTok indie game marketing in particular compresses testing cycles into days instead of months. YouTube Shorts extends that discovery through recommendation and search behavior. Together they create fast feedback loops that feed Steamworks with interpretable data, which is why TikTok Steam discovery became such a visible growth driver.",
+        },
+        {
+          id: "tiktok-not-working",
+          question: "Am I doing something wrong if TikTok is not working for my indie game?",
+          answer:
+            "Not automatically. TikTok is powerful, but only when the core fantasy of the game is visually clear within seconds. If your genre is hard to communicate quickly or your Metadata positioning is muddy, traffic will not convert. When Conversion Rate drops during traffic spikes, the Steam Algorithm becomes cautious. TikTok exposes clarity problems faster than older channels ever did.",
+        },
+        {
+          id: "short-video-vs-press",
+          question: "Why is short video more powerful than traditional press for indies?",
+          answer:
+            "Speed and scale. Press cycles are slow and limited. Short video platforms can generate hundreds of thousands of impressions within hours. More importantly, viewers self filter. If the first seconds of gameplay resonate, the right audience clicks through. This is where TikTok indie game marketing stands out, because the algorithm aggressively matches niche interests with specific visual hooks.\\n\\nWhen those users land on Steam and interact consistently with Capsule Art, screenshots, and description, Wishlist Velocity increases in patterns that the Steam Algorithm can recognize. Traditional press rarely produces that volume of behavioral data or that level of rapid iteration, which is why TikTok Steam discovery often outpaces older channels.",
+        },
+        {
+          id: "tiktok-suited-indie",
+          question: "What makes TikTok especially suited for indie games?",
+          answer:
+            "Indie games often rely on strong core loops, unique mechanics, or striking visual identity. These elements translate well into short form. A clear roguelike loop, a satisfying simulation mechanic, or an unexpected horror moment can communicate genre instantly. That immediate clarity improves outbound CTR and protects in platform Conversion Rate. When Metadata tags, visuals, and positioning reinforce what the video promised, Discovery Queue exposure grows organically.",
+        },
+        {
+          id: "real-examples",
+          question: "Are there real examples of TikTok driving serious wishlist growth?",
+          answer:
+            "Yes. R.E.P.O., a horror multiplayer title, generated around 3,100,000 short form views and translated that exposure into roughly 20,000 additional wishlists. Fallen Aces accumulated approximately 6,500,000 views and gained around 25,600 wishlists during its short form momentum. These numbers demonstrate that TikTok can function as a primary discovery engine when alignment between video promise and store page execution keeps Conversion Rate stable.",
+        },
+        {
+          id: "replace-steam-algorithm",
+          question: "Does TikTok replace the Steam Algorithm?",
+          answer:
+            "No. TikTok feeds the Steam Algorithm. External discovery only matters when it strengthens in platform behavior. Stable Wishlist Velocity, consistent Conversion Rate across regions influenced by Regional Pricing expectations, and predictable user interaction patterns allow Steam to expand Discovery Queue testing. TikTok is powerful because it accelerates the learning process. It does not bypass it.",
+        },
+        {
+          id: "tiktok-enough",
+          question: "Is TikTok enough on its own for indie success?",
+          answer:
+            "No single channel is enough. TikTok amplifies clarity, but Capsule Art must still capture attention inside Steam. Metadata must categorize the game accurately. Pricing and Launch Discount strategy must align with audience expectations created by content. TikTok became the main discovery channel because it can ignite attention quickly, but sustained growth still depends on system cohesion.",
+        },
+        {
+          id: "stay-sane",
+          question: "How do I stay sane while building discovery through short video platforms?",
+          answer:
+            "You stay sane by treating short video, including TikTok and YouTube Shorts, as part of a broader growth architecture rather than a single platform bet. If you are investing in TikTok indie game marketing, measure its impact through Wishlist Velocity trends, Conversion Rate stability, and Discovery Queue expansion inside Steamworks. If those signals move together, TikTok Steam discovery is working.\\n\\nDiscovery works when short form experimentation, store page optimization, Regional Pricing logic, and launch sequencing are integrated and measured through Steamworks. This is where TrapPlan typically supports indie teams, aligning short video strategy with algorithm literacy so discovery becomes repeatable, not accidental.",
+        },
+      ],
+    },
+    content: [],
+  },
+  {
+    slug: "how-many-short-videos-does-a-steam-game-need-for-stable-wishlist-growth",
+    title: "How Many Short Videos Does A Steam Game Need For Stable Wishlist Growth",
+    emoji: "📊",
+    date: "2026-02-12",
+    excerpt:
+      "How many short videos does a Steam game actually need for stable wishlist growth? This card-style breakdown covers what stable growth means in 2026, why three clips are not enough, real campaign phases from ten to thirty plus uploads, and how to measure when short form volume becomes algorithmic signal inside Steamworks.",
+    readingMinutes: 11,
+    category: "Steam",
+    authorName: "Pavel Beresnev",
+    authorRole: "CEO Trap Plan Agency, Marketing Expert",
+    cover: "/images/blog9.png",
+    cardArticle: {
+      title: "How Many Short Videos Does A Steam Game Need For Stable Wishlist Growth",
+      lead: "You started posting short videos for your Steam game. The first ten did almost nothing. Around twenty, you began to see slightly better engagement and a small lift in Wishlist Velocity. Then somewhere around the thirtieth video, a real spike finally happened. Now you are asking the practical question nobody answers clearly. How many short videos for Steam wishlists are actually needed to create stable growth instead of random movement.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "What happened?",
+          answer:
+            "You started posting short videos for your Steam game. The first ten did almost nothing. Around twenty, you began to see slightly better engagement and a small lift in Wishlist Velocity. Then somewhere around the thirtieth video, a real spike finally happened. Now you are asking the practical question nobody answers clearly. How many short videos for Steam wishlists are actually needed to create stable growth instead of random movement.",
+        },
+        {
+          id: "stable-growth-2026",
+          question: "What stable wishlist growth actually means in 2026",
+          answer:
+            "In 2026, stable growth is not about one viral hit. It is about consistent behavioral patterns that the Steam Algorithm can scale. Stable Wishlist Velocity means repeatable increases after content waves without collapsing Conversion Rate. It means Discovery Queue impressions expand gradually instead of fluctuating randomly. Short videos influence Steam only when traffic behaves predictably inside Steamworks, interacting with Metadata, responding to Capsule Art, and converting at a steady rate.",
+        },
+        {
+          id: "few-shorts-no-change",
+          question: "Am I doing something wrong if three or five Shorts did not change anything?",
+          answer:
+            "No. Three videos are not a strategy. They are a test sample too small to generate reliable signal. The Steam Algorithm reacts to consistent data, not isolated spikes. If your first few videos did not move Wishlist Velocity, it usually means the system has not gathered enough aligned traffic to learn from. The problem is rarely the exact number. It is the absence of structured volume.",
+        },
+        {
+          id: "minimum-number",
+          question: "Is there a minimum number of short videos needed?",
+          answer:
+            "When developers search how many short videos for Steam wishlists are enough, they expect a fixed threshold. There is no universal magic number, but real campaign patterns show clear phases. The first ten videos often function as calibration. Around twenty coordinated pieces begin to generate comparable data across hooks, gameplay angles, and audience segments. In multiple PC and Console campaigns, meaningful algorithm response only appeared closer to thirty structured uploads, when the Steam Algorithm had enough consistent behavioral data to expand Discovery Queue testing.\\n\\nAt that scale, you can observe whether Conversion Rate remains stable during traffic waves and whether Wishlist Velocity reacts in a sustained way. Stable wishlist growth usually appears after repeated exposure cycles that teach the algorithm who converts, not after a single creative experiment.",
+        },
+        {
+          id: "viral-few-clips",
+          question: "Why do some games grow after just a few viral clips?",
+          answer:
+            "They usually had strong foundations before the clips went live. Clear Capsule Art, accurate Metadata, genre alignment, and healthy Conversion Rate were already in place. When the short videos arrived, traffic converted efficiently and reinforced algorithm confidence. Without that foundation, even millions of views may not produce sustainable Wishlist Velocity. Virality exposes the structure that already exists.",
+        },
+        {
+          id: "enough-content",
+          question: "How do I know when I have produced enough content?",
+          answer:
+            "You have produced enough short videos when correlation replaces randomness. Real examples illustrate this. One mid scope simulation title published over thirty five short videos across TikTok and YouTube Shorts before seeing consistent Wishlist Velocity lifts after each wave. Before that volume, traffic spikes failed to stabilize Conversion Rate. After sustained publishing, Steamworks data showed steadier CR and gradual Discovery Queue expansion.\\n\\nAnother action title saw minimal impact across its first twelve uploads, moderate traction by twenty, and its first significant wishlist spike only after the thirtieth video aligned perfectly with Capsule Art and Metadata positioning. The lesson was not about luck. It was about accumulated signal density that the Steam Algorithm could finally trust. If impressions and CR fluctuate wildly, you need refinement and structured batching, not blind volume.",
+        },
+        {
+          id: "more-always-better",
+          question: "Does posting more always lead to more wishlists?",
+          answer:
+            "No. Volume without clarity creates noise. Twenty poorly aligned videos can hurt more than ten precise ones. If the hook in your first seconds attracts the wrong audience, outbound CTR may look strong while in platform Conversion Rate drops. That teaches the Steam Algorithm to be cautious. Stable growth requires alignment between video promise, store page positioning, Capsule Art readability, and genre tagging.",
+        },
+        {
+          id: "before-after-launch",
+          question: "Should I plan short videos differently before and after launch?",
+          answer:
+            "Yes. Before launch, the objective is predictable Wishlist Velocity and stable CR. Short videos should focus on clearly communicating gameplay fantasy and core loop. After launch or during a Launch Discount, traffic must convert into purchases, so price perception and value framing become critical. The same number of videos may generate different outcomes depending on pricing, timing, and audience maturity.",
+        },
+        {
+          id: "stay-sane",
+          question: "How do I stay sane while deciding how many short videos to produce?",
+          answer:
+            "You stay sane by replacing the obsession with a single number with a structured framework. The question how many short videos for Steam wishlists only makes sense when tied to measurable Steamworks outcomes. Ten videos test positioning. Twenty begin to reveal patterns. Thirty or more structured uploads often create the density required for stable Wishlist Velocity and confident Discovery Queue scaling.\\n\\nThis is why TrapPlan builds short form campaigns in coordinated batches, including our TikTok package structured around twenty videos as a baseline testing layer. Those twenty are not the finish line, they are the foundation for signal generation. From there, refinement and scaling continue based on Conversion Rate behavior, Regional Pricing response, and algorithm feedback. The goal is not to hit a content quota. The goal is to produce consistent data that the Steam Algorithm can compound into sustainable wishlist growth.",
+        },
+      ],
+    },
+    content: [],
+  },
+  {
     slug: "how-short-videos-influence-steam-wishlists",
     title: "How Short Videos Influence Steam Wishlists",
     emoji: "🎥",
