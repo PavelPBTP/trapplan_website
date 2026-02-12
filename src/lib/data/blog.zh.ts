@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-to-promote-a-steam-game-on-tiktok-in-2026": {
+    title: "2026年如何在TikTok上推广Steam游戏",
+    excerpt:
+      "2026年如何在TikTok上推广Steam游戏而不变成空洞的噪音? 这篇卡片式分析涵盖了TikTok推广对Steam的真正含义, R.E.P.O.和Fallen Aces的真实市场数据, 如何将TikTok表现与Steamworks指标连接, 以及如何构建Steam算法可以扩展的结构化短视频系统.",
+    category: "Steam",
+    cardArticle: {
+      title: "2026年如何在TikTok上推广Steam游戏",
+      lead: "你启动了Steam页面, 优化了Capsule Art, 精炼了Metadata, 然后看着Wishlist Velocity比预期移动得更慢. Discovery Queue展示来来去去. 与此同时, 竞争对手发布短视频, 突然所有人都在谈论TikTok. 现在真正的问题出现了. 2026年如何在TikTok上推广Steam游戏而不变成空洞的噪音.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你启动了Steam页面, 优化了Capsule Art, 精炼了Metadata, 然后看着Wishlist Velocity比预期移动得更慢. Discovery Queue展示来来去去. 与此同时, 竞争对手发布短视频, 突然所有人都在谈论TikTok. 现在真正的问题出现了. 2026年如何在TikTok上推广Steam游戏而不变成空洞的噪音.",
+        },
+        {
+          id: "promoting-steam-tiktok-2026",
+          question: "2026年在TikTok上推广Steam游戏的真正含义",
+          answer:
+            "当开发者搜索如何在TikTok上推广Steam游戏时, 他们通常期望创意技巧. 在2026年, 真正的答案是结构性的. 在TikTok上推广Steam游戏是关于设计Steam算法可以解读和扩展的合格流量. TikTok产生注意力, 但Steam评估行为. 从访问到愿望单的Conversion Rate, Wishlist Velocity的稳定性, 视频钩子与Capsule Art之间的CTR对齐, 以及用户在Discovery Queue中的行为决定了TikTok流量是否变成增长. TikTok是火花. Steamworks数据决定火焰是否蔓延.",
+        },
+        {
+          id: "views-but-flat",
+          question: "如果我的TikTok有观看量但Steam保持平稳, 我做错了什么吗?",
+          answer:
+            "问题可能是对齐而非覆盖范围. 观看量衡量平台共鸣. Steam衡量意图. 如果你前三秒的承诺与商店页面定位不匹配, Conversion Rate就会下降. 当CR在流量高峰期间下降时, Steam算法变得谨慎. Discovery Queue曝光减缓, 因为之前的访客没有一致地转化. 没有Steam一致性的TikTok成功只是娱乐.",
+        },
+        {
+          id: "content-drives-wishlists",
+          question: "什么类型的TikTok内容真正推动Steam愿望单?",
+          answer:
+            "真实的市场案例使这更清晰. R.E.P.O., 一款恐怖多人游戏, 产生了约310万短视频观看量, 并将该曝光转化为约20,000个额外愿望单. Fallen Aces累积了约650万观看量, 在其短视频势头期间获得了约25,600个愿望单. 这些例子表明在TikTok上推广Steam游戏可以奏效, 但只有当受众与类型紧密对齐且Steam页面立即确认承诺时.\\n\\n立即传达游戏玩法幻想的内容表现最佳. 在2026年, 用户在几秒内决定你的游戏是否符合他们的口味. 清晰的类型线索, 可见的核心循环和基调一致性比电影化剪辑更重要. 当受众在点击前自我筛选时, TikTok Steam愿望单就会增长. 当视频承诺和商店页面Metadata相互强化时, Conversion Rate保持稳定, Wishlist Velocity以可重复的波次上升, Steam算法可以自信地扩展.",
+        },
+        {
+          id: "posting-frequency",
+          question: "我应该多频繁发布才能看到真正的影响?",
+          answer:
+            "没有结构的频率创造随机数据. 每天发布而不测试关于钩子, 节奏或受众细分的假设会产生观看量但没有学习. 目标是受控实验. 不同的游戏角度, 情感触发器和类型框架应该分批测试, 然后与出站CTR和Steamworks内的平台行为进行对比. 当TikTok产生可比较的数据时它变得强大, 而不是产生随机峰值时.",
+        },
+        {
+          id: "before-launch-or-discount",
+          question: "TikTok在发布前还是在Launch Discount期间有帮助?",
+          answer:
+            "在发布前, TikTok主要是愿望单获取工具. 目标是稳定的Wishlist Velocity和跨区域可预测的Conversion Rate, 同时考虑Regional Pricing期望. 在Launch Discount期间, 动态变化. 流量必须转化为购买, 价格定位变得关键. 如果TikTok塑造的受众期望与发布时的感知价值不一致, 即使发布前愿望单数字看起来很强, 流量也可能犹豫.",
+        },
+        {
+          id: "connect-tiktok-steam",
+          question: "如何将TikTok表现与Steam指标连接?",
+          answer:
+            "你通过行为相关性来连接它们. 每波TikTok应该与Steamworks内的Wishlist Velocity变化, Conversion Rate稳定性和Discovery Queue扩展进行映射. 高出站CTR加上下降的CR信号表示不对齐. 适度流量加上稳定的CR和稳定的愿望单增长信号表示算法信心. Steam算法扩展一致性, 而非炒作.",
+        },
+        {
+          id: "tiktok-enough",
+          question: "TikTok足以在2026年在Steam上成长吗?",
+          answer:
+            "没有单一渠道是足够的. TikTok放大清晰度, 它不创造清晰度. Capsule Art必须吸引正确的受众. Metadata必须准确分类游戏. 商店页面必须高效转化. TikTok只有在基础稳定时才加速增长. 没有那个基础, 它加速混乱.",
+        },
+        {
+          id: "stay-sane",
+          question: "在TikTok上推广我的Steam游戏时如何保持理智?",
+          answer:
+            "你通过将TikTok视为结构化Steam增长系统的一部分来保持理智, 而不是作为单独的社交实验. 如果你已经探索过短视频是否能推动愿望单或为什么外部流量有时无法转化, 你就知道这个模式. 流量只有在产生平台内一致行为时才重要.\\n\\n推广在短视频创意, Capsule Art测试, Metadata清晰度, Regional Pricing逻辑和发布排序围绕可衡量的Conversion Rate和Wishlist Velocity目标对齐时才有效. 这就是TrapPlan通常作为Steam游戏TikTok代理机构运营的地方, 将短视频测试直接与Steamworks数据集成, 使注意力变成信号, 信号变成可扩展的增长.",
+        },
+      ],
+    },
+  },
   "who-can-help-you-with-tiktok-for-your-steam-game": {
     title: "谁能帮你为Steam游戏做TikTok",
     excerpt:

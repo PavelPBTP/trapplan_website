@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
+  "how-to-promote-a-steam-game-on-tiktok-in-2026": {
+    title: "Come promuovere un gioco Steam su TikTok nel 2026",
+    excerpt:
+      "Come promuovere un gioco Steam su TikTok nel 2026 senza trasformarlo in rumore vuoto? Questa analisi a schede copre cosa significa realmente la promozione TikTok per Steam, dati reali di mercato da R.E.P.O. e Fallen Aces, come collegare le performance TikTok alle metriche Steamworks, e come costruire un sistema strutturato di formato breve che l'algoritmo Steam puo scalare.",
+    category: "Steam",
+    cardArticle: {
+      title: "Come promuovere un gioco Steam su TikTok nel 2026",
+      lead: "Hai lanciato la tua pagina Steam, ottimizzato il Capsule Art, raffinato i Metadata e osservato la Wishlist Velocity muoversi piu lentamente del previsto. Le impressioni della Discovery Queue vanno e vengono. Nel frattempo, i concorrenti pubblicano video brevi e improvvisamente tutti parlano di TikTok. Ora appare la vera domanda. Come promuovere un gioco Steam su TikTok nel 2026 senza trasformarlo in rumore vuoto.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Cosa e successo?",
+          answer:
+            "Hai lanciato la tua pagina Steam, ottimizzato il Capsule Art, raffinato i Metadata e osservato la Wishlist Velocity muoversi piu lentamente del previsto. Le impressioni della Discovery Queue vanno e vengono. Nel frattempo, i concorrenti pubblicano video brevi e improvvisamente tutti parlano di TikTok. Ora appare la vera domanda. Come promuovere un gioco Steam su TikTok nel 2026 senza trasformarlo in rumore vuoto.",
+        },
+        {
+          id: "promoting-steam-tiktok-2026",
+          question: "Cosa significa realmente promuovere un gioco Steam su TikTok nel 2026",
+          answer:
+            "Quando gli sviluppatori cercano come promuovere un gioco Steam su TikTok, di solito si aspettano consigli creativi. Nel 2026, la vera risposta e strutturale. Promuovere un gioco Steam su TikTok significa progettare traffico qualificato che l'algoritmo Steam puo interpretare e scalare. TikTok genera attenzione, ma Steam valuta il comportamento. La Conversion Rate da visita a wishlist, la stabilita della Wishlist Velocity, l'allineamento del CTR tra hook video e Capsule Art, e il comportamento utente nella Discovery Queue determinano se il traffico TikTok diventa crescita. TikTok e la scintilla. I dati Steamworks decidono se il fuoco si propaga.",
+        },
+        {
+          id: "views-but-flat",
+          question: "Sto facendo qualcosa di sbagliato se i miei TikTok hanno visualizzazioni ma Steam resta piatto?",
+          answer:
+            "Probabilmente il problema e l'allineamento, non la portata. Le visualizzazioni misurano la risonanza della piattaforma. Steam misura l'intenzione. Se la promessa nei tuoi primi tre secondi non corrisponde al posizionamento della tua pagina store, la Conversion Rate cala. Quando la CR cala durante i picchi di traffico, l'algoritmo Steam diventa cauto. L'esposizione nella Discovery Queue rallenta perche i visitatori precedenti non hanno convertito in modo coerente. Il successo su TikTok senza coerenza su Steam e solo intrattenimento.",
+        },
+        {
+          id: "content-drives-wishlists",
+          question: "Che tipo di contenuto TikTok genera realmente wishlist Steam?",
+          answer:
+            "I casi reali di mercato rendono questo piu chiaro. R.E.P.O., un titolo horror multiplayer, ha generato circa 3.100.000 visualizzazioni di formato breve e ha tradotto quell'esposizione in circa 20.000 wishlist aggiuntive. Fallen Aces ha accumulato circa 6.500.000 visualizzazioni e ha guadagnato circa 25.600 wishlist durante il suo slancio di formato breve. Questi esempi mostrano che promuovere un gioco Steam su TikTok puo funzionare, ma solo quando il pubblico e strettamente allineato con il genere e la pagina Steam conferma la promessa istantaneamente.\\n\\nIl contenuto che comunica la fantasia di gameplay immediatamente performa meglio. Nel 2026, gli utenti decidono in pochi secondi se il tuo gioco si adatta al loro gusto. Segnali di genere chiari, core loop visibile e coerenza di tono contano piu dei montaggi cinematografici. Le TikTok Steam wishlist crescono quando il pubblico si autoseleziona prima di cliccare. Quando la promessa video e i Metadata della pagina store si rafforzano a vicenda, la Conversion Rate resta stabile e la Wishlist Velocity sale in ondate ripetibili che l'algoritmo Steam puo scalare con fiducia.",
+        },
+        {
+          id: "posting-frequency",
+          question: "Con quale frequenza devo pubblicare per vedere un impatto reale?",
+          answer:
+            "La frequenza senza struttura crea dati casuali. Pubblicare quotidianamente senza testare ipotesi su hook, ritmo o segmenti di pubblico produce visualizzazioni ma nessun apprendimento. L'obiettivo e la sperimentazione controllata. Diversi angoli di gameplay, trigger emotivi e inquadrature di genere dovrebbero essere testati in lotti, poi misurati contro il CTR in uscita e il comportamento all'interno della piattaforma in Steamworks. TikTok diventa potente quando genera dati comparabili, non quando genera picchi casuali.",
+        },
+        {
+          id: "before-launch-or-discount",
+          question: "TikTok aiuta prima del lancio o durante il Launch Discount?",
+          answer:
+            "Prima del lancio, TikTok e principalmente uno strumento di acquisizione wishlist. L'obiettivo e una Wishlist Velocity stabile e una Conversion Rate prevedibile tra le regioni, tenendo conto delle aspettative di Regional Pricing. Durante un Launch Discount, la dinamica cambia. Il traffico deve convertirsi in acquisti, e il posizionamento del prezzo diventa critico. Se le aspettative del pubblico plasmate da TikTok non si allineano con il valore percepito al lancio, il traffico puo esitare anche se i numeri di wishlist pre-lancio sembravano solidi.",
+        },
+        {
+          id: "connect-tiktok-steam",
+          question: "Come collego le performance TikTok alle metriche Steam?",
+          answer:
+            "Li colleghi attraverso la correlazione comportamentale. Ogni ondata TikTok dovrebbe essere mappata contro i cambiamenti di Wishlist Velocity, la stabilita della Conversion Rate e l'espansione della Discovery Queue in Steamworks. Un CTR in uscita elevato combinato con una CR in calo segnala disallineamento. Traffico moderato con CR stabile e crescita costante delle wishlist segnala fiducia dell'algoritmo. L'algoritmo Steam scala la coerenza, non l'hype.",
+        },
+        {
+          id: "tiktok-enough",
+          question: "TikTok e sufficiente per crescere su Steam nel 2026?",
+          answer:
+            "Nessun singolo canale e sufficiente. TikTok amplifica la chiarezza, non la crea. Il Capsule Art deve attrarre il pubblico giusto. I Metadata devono categorizzare il gioco con precisione. La pagina store deve convertire efficientemente. TikTok accelera la crescita solo quando la fondazione e stabile. Senza quella fondazione, accelera la confusione.",
+        },
+        {
+          id: "stay-sane",
+          question: "Come mantengo la lucidita mentre promuovo il mio gioco Steam su TikTok?",
+          answer:
+            "Mantieni la lucidita trattando TikTok come parte di un sistema strutturato di crescita Steam, non come un esperimento sociale separato. Se hai gia esplorato se il video di formato breve puo generare wishlist o perche il traffico esterno a volte non converte, conosci lo schema. Il traffico conta solo quando produce comportamento coerente all'interno della piattaforma.\\n\\nLa promozione funziona quando il creativo di formato breve, i test del Capsule Art, la chiarezza dei Metadata, la logica di Regional Pricing e la sequenza di lancio sono allineati attorno a obiettivi misurabili di Conversion Rate e Wishlist Velocity. E qui che TrapPlan opera tipicamente come agenzia TikTok per giochi Steam, integrando i test di formato breve direttamente con i dati Steamworks in modo che l'attenzione diventi segnale e il segnale diventi crescita scalabile.",
+        },
+      ],
+    },
+  },
   "who-can-help-you-with-tiktok-for-your-steam-game": {
     title: "Chi puo aiutarti con TikTok per il tuo gioco Steam",
     excerpt:
