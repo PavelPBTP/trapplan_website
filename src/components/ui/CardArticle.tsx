@@ -85,7 +85,9 @@ export default function CardArticle({
 
   const inlineLinks = externalLinks ?? fallbackLinks;
 
-  const linkBudget = externalBudget ?? useMemo(() => ({ used: 0, max: 15, usedHrefs: {} as Record<string, true> }), []);
+  const linkBudget = externalBudget
+    ? { used: 0, max: externalBudget.max, usedHrefs: {} as Record<string, true> }
+    : { used: 0, max: 15, usedHrefs: {} as Record<string, true> };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
