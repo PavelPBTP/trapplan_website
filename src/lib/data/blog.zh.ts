@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
+  "tiktok-video-formats-that-work-best-for-steam-games": {
+    title: "最适合Steam游戏的TikTok视频格式",
+    excerpt:
+      "哪些TikTok视频格式真正推动了Steam上可衡量的愿望单增长? 这篇卡片式分析涵盖了2026年TikTok格式的含义, 为什么原始游戏画面片段无法转化, 哪些结构如快速钩子和问题-解决方案叙事产生稳定的Conversion Rate, 以及如何在协调的批次中测试格式来为Steam算法提供数据.",
+    category: "Steam",
+    cardArticle: {
+      title: "最适合Steam游戏的TikTok视频格式",
+      lead: "你正在为你的Steam游戏发布TikTok, 结果感觉不一致. 一个片段获得了不错的观看量但没有Wishlist Velocity. 另一个获得了更少的观看量却不知何故产生了实际的愿望单增长. 你搜索游戏的TikTok视频格式希望得到一个明确的答案, 但大多数建议关注的是趋势而非Steam结果. 现在你在问真正的问题. 哪些游戏的TikTok视频格式真正推动了Steam上可衡量的愿望单增长.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "发生了什么?",
+          answer:
+            "你正在为你的Steam游戏发布TikTok, 结果感觉不一致. 一个片段获得了不错的观看量但没有Wishlist Velocity. 另一个获得了更少的观看量却不知何故产生了实际的愿望单增长. 你搜索游戏的TikTok视频格式希望得到一个明确的答案, 但大多数建议关注的是趋势而非Steam结果. 现在你在问真正的问题. 哪些游戏的TikTok视频格式真正推动了Steam上可衡量的愿望单增长.",
+        },
+        {
+          id: "format-meaning-2026",
+          question: "2026年TikTok格式究竟意味着什么",
+          answer:
+            "在2026年, 格式不仅仅是一种编辑风格. 它是一种可重复的结构, 在观众点击进入Steam之前塑造他们的期望. TikTok独立游戏营销在格式和游戏幻想紧密对齐以预先筛选意图时才有效. Steam算法不奖励观看量. 它对Conversion Rate, 视频钩子与Capsule Art之间的CTR对齐, 一致的Wishlist Velocity以及Discovery Queue中的行为稳定性做出反应. 一个强大的格式在流量进入Steamworks后创造可预测的行为.",
+        },
+        {
+          id: "gameplay-clips-no-convert",
+          question: "如果我的游戏画面片段不转化, 我做错了什么吗?",
+          answer:
+            "不一定, 但原始游戏画面很少是一种格式. 没有叙事框架的随机三十秒捕获让观众不确定他们在看什么. 当类型, 风险和核心循环在最初几秒不清楚时, 出站CTR可能看起来不错, 而平台内的Conversion Rate却崩溃了. Steam将这种不一致解读为弱对齐并减缓Discovery Queue扩展.",
+        },
+        {
+          id: "quick-hook-format",
+          question: "快速钩子格式对游戏有效吗?",
+          answer:
+            "是的, 当钩子即时传达类型时. 前两三秒必须回答这是什么类型的游戏以及为什么重要. 对于恐怖游戏, 紧张感或威胁应该立即可见. 对于模拟或沙盒游戏, 令人满意的循环必须快速出现. 一个PC恐怖项目在十二个结构化上传中测试了这种格式并看到了适度的影响. 在改进前三秒以立即展示威胁和多人混乱后, 一批八个额外视频产生了超过900,000次综合观看并贡献了大约6,500个增量愿望单, 同时保持稳定的Conversion Rate. 当钩子与Metadata和Capsule Art对齐时, 到达Steam的流量行为一致, 保护了CR并支持了稳定的Wishlist Velocity增长.",
+        },
+        {
+          id: "problem-solution-storytelling",
+          question: "问题-解决方案叙事怎么样?",
+          answer:
+            "问题-解决方案格式对机制驱动的游戏特别有效. 展示一个挑战然后是一个巧妙的游戏内解决方案可以快速传达深度. 这种结构在不误导观众的情况下建立好奇心. 在一个模拟游戏的活动中, 二十四个使用一致问题-解决方案结构的视频总共产生了约1,200,000次观看, 并在几周内带来了约8,000个额外愿望单. 关键不是原始覆盖范围而是流量波期间稳定的Conversion Rate, 这增强了Steam算法的信心并改善了Discovery Queue测试.",
+        },
+        {
+          id: "meme-trend-formats",
+          question: "模因和趋势格式有助于Steam增长吗?",
+          answer:
+            "它们可以产生覆盖范围但通常在意图方面挣扎. 模因格式将游戏附加到现有的文化信号上, 这可能增加出站CTR. 然而, 如果趋势掩盖了游戏幻想, 流量就变成了以娱乐为导向而非以购买为导向. 这通常导致较弱的Conversion Rate和不稳定的Wishlist Velocity. 趋势格式只有在模因强化类型清晰度而非分散注意力时才有效.",
+        },
+        {
+          id: "dev-face-cam",
+          question: "开发者面部摄像头或评论格式有效吗?",
+          answer:
+            "对某些受众来说是的. 开发者评论建立信任和背景. 当开发者解释一个机制, 设计选择或即将推出的功能时, 它可以增加感知深度并将期望与定价和未来的Launch Discount计划对齐. 这种格式通常产生较低的原始观看量但更高意图的流量. 更强的平台内行为, 即使在较低的量下, 对长期Steam增长更有价值.",
+        },
+        {
+          id: "one-or-rotate",
+          question: "我应该坚持一种格式还是在几种之间轮换?",
+          answer:
+            "有结构的轮换效果最好. 在受控批次中测试多种格式揭示了哪些结构在增加Wishlist Velocity的同时保持Conversion Rate稳定性. Steamworks数据应该指导决策. 如果一种格式持续产生保持CR并扩展Discovery Queue展示的流量, 加倍投入. 如果另一种产生峰值后崩溃, 改进或移除它. TikTok格式是为Steam算法提供数据的实验, 不仅仅是创意表达.",
+        },
+        {
+          id: "stay-sane",
+          question: "在为我的游戏选择TikTok格式时如何保持理智?",
+          answer:
+            "你通过将格式视为与可衡量的Steam结果相关的假设来保持理智. 当开发者搜索游戏的TikTok视频格式时, 他们通常期望一个创意捷径. 真正的捷径是结构. 格式应该在足够大的协调批次中测试以产生可比较的数据.\\n\\n这正是TrapPlan围绕结构化包如我们的二十视频基线构建TikTok活动的原因. 这二十个视频旨在测试多个钩子, 叙事角度和游戏画面框架, 同时将出站CTR映射到Steamworks内的Conversion Rate和Wishlist Velocity. 从那里, 额外的波次改进有效的内容. 格式选择不再是猜测, 而是通过Discovery Queue曝光复合的算法训练.",
+        },
+      ],
+    },
+  },
   "why-tiktok-and-youtube-shorts-became-the-main-discovery-channel-for-indie-games": {
     title: "为什么TikTok和YouTube Shorts成为了独立游戏的主要发现渠道",
     excerpt:

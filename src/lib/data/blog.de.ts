@@ -1,6 +1,72 @@
 import type { BlogTranslationsBySlug } from "@/lib/data/blog.i18n";
 
 export const BLOG_DE_TRANSLATIONS: BlogTranslationsBySlug = {
+  "tiktok-video-formats-that-work-best-for-steam-games": {
+    title: "TikTok-Videoformate die am besten fuer Steam-Spiele funktionieren",
+    excerpt:
+      "Welche TikTok-Videoformate treiben tatsaechlich messbares Wishlist-Wachstum auf Steam an? Diese Kartenanalyse behandelt, was ein TikTok-Format im Jahr 2026 bedeutet, warum rohe Gameplay-Clips nicht konvertieren, welche Strukturen wie schnelle Hooks und Problem-Loesung-Storytelling eine stabile Conversion Rate erzeugen, und wie man Formate in koordinierten Batches testet die den Steam-Algorithmus fuettern.",
+    category: "Steam",
+    cardArticle: {
+      title: "TikTok-Videoformate die am besten fuer Steam-Spiele funktionieren",
+      lead: "Du postest TikToks fuer dein Steam-Spiel und die Ergebnisse fuehlen sich inkonsistent an. Ein Clip bekommt solide Views aber keine Wishlist Velocity. Ein anderer bekommt weniger Views produziert aber irgendwie echtes Wishlist-Wachstum. Du suchst nach TikTok-Videoformaten fuer Spiele in der Hoffnung auf eine klare Antwort, aber die meisten Ratschlaege konzentrieren sich auf Trends statt auf Steam-Ergebnisse. Jetzt stellst du die eigentliche Frage. Welche TikTok-Videoformate fuer Spiele treiben tatsaechlich messbares Wishlist-Wachstum auf Steam an.",
+      cards: [
+        {
+          id: "what-happened",
+          question: "Was ist passiert?",
+          answer:
+            "Du postest TikToks fuer dein Steam-Spiel und die Ergebnisse fuehlen sich inkonsistent an. Ein Clip bekommt solide Views aber keine Wishlist Velocity. Ein anderer bekommt weniger Views produziert aber irgendwie echtes Wishlist-Wachstum. Du suchst nach TikTok-Videoformaten fuer Spiele in der Hoffnung auf eine klare Antwort, aber die meisten Ratschlaege konzentrieren sich auf Trends statt auf Steam-Ergebnisse. Jetzt stellst du die eigentliche Frage. Welche TikTok-Videoformate fuer Spiele treiben tatsaechlich messbares Wishlist-Wachstum auf Steam an.",
+        },
+        {
+          id: "format-meaning-2026",
+          question: "Was ein TikTok-Format im Jahr 2026 wirklich bedeutet",
+          answer:
+            "Im Jahr 2026 ist ein Format nicht nur ein Bearbeitungsstil. Es ist eine wiederholbare Struktur, die die Erwartung des Publikums formt, bevor sie zu Steam durchklicken. TikTok Indie-Game-Marketing funktioniert, wenn Format und Gameplay-Fantasie eng genug aufeinander abgestimmt sind, um Absicht vorzuqualifizieren. Der Steam-Algorithmus belohnt keine Views. Er reagiert auf Conversion Rate, CTR-Ausrichtung zwischen dem Video-Hook und Capsule Art, konsistente Wishlist Velocity und Verhaltensstabilitaet in der Discovery Queue. Ein starkes Format erzeugt vorhersagbares Verhalten, sobald Traffic in Steamworks landet.",
+        },
+        {
+          id: "gameplay-clips-no-convert",
+          question: "Mache ich etwas falsch, wenn meine Gameplay-Clips nicht konvertieren?",
+          answer:
+            "Nicht unbedingt, aber rohes Gameplay ist selten ein Format. Eine zufaellige dreissig-Sekunden-Aufnahme ohne narrativen Rahmen laesst Zuschauer unsicher, was sie sehen. Wenn Genre, Einsaetze und Core Loop in den ersten Sekunden unklar sind, kann der ausgehende CTR anstaendig aussehen, waehrend die plattforminterne Conversion Rate zusammenbricht. Steam interpretiert diese Inkonsistenz als schwache Ausrichtung und verlangsamt die Discovery Queue-Expansion.",
+        },
+        {
+          id: "quick-hook-format",
+          question: "Funktioniert das Quick-Hook-Format fuer Spiele?",
+          answer:
+            "Ja, wenn der Hook das Genre sofort kommuniziert. Die ersten zwei oder drei Sekunden muessen beantworten, was fuer ein Spiel das ist und warum es wichtig ist. Bei Horror-Titeln sollte Spannung oder Bedrohung sofort sichtbar sein. Bei Simulations- oder Sandbox-Spielen muss der befriedigende Loop schnell erscheinen. Ein PC-Horror-Projekt testete dieses Format ueber zwoelf strukturierte Uploads und sah bescheidene Wirkung. Nach der Verfeinerung der ersten drei Sekunden um Bedrohung und Multiplayer-Chaos sofort zu zeigen, generierte ein Batch von acht zusaetzlichen Videos ueber 900.000 kombinierte Views und trug etwa 6.500 inkrementelle Wishlists bei, waehrend eine stabile Conversion Rate beibehalten wurde. Als der Hook mit Metadata und Capsule Art uebereinstimmte, verhielt sich der auf Steam ankommende Traffic konsistent, schuetzte die CR und unterstuetzte stetiges Wishlist Velocity-Wachstum.",
+        },
+        {
+          id: "problem-solution-storytelling",
+          question: "Was ist mit Problem-Loesung-Storytelling?",
+          answer:
+            "Das Problem-Loesung-Format funktioniert besonders gut fuer mechanikgetriebene Spiele. Eine Herausforderung gefolgt von einer cleveren Ingame-Loesung zu zeigen, kommuniziert Tiefe schnell. Diese Struktur baut Neugier auf, ohne das Publikum in die Irre zu fuehren. In einer Simulationstitel-Kampagne generierten vierundzwanzig Videos mit einer konsistenten Problem-Loesung-Struktur insgesamt rund 1.200.000 Views und fuehrten zu etwa 8.000 zusaetzlichen Wishlists ueber mehrere Wochen. Der Schluessel war nicht die rohe Reichweite, sondern die stabile Conversion Rate waehrend der Traffic-Wellen, was das Vertrauen des Steam-Algorithmus staerkte und die Discovery Queue-Tests verbesserte.",
+        },
+        {
+          id: "meme-trend-formats",
+          question: "Helfen Meme- und Trend-basierte Formate beim Steam-Wachstum?",
+          answer:
+            "Sie koennen Reichweite generieren, kaempfen aber oft mit der Absicht. Meme-Formate verknuepfen das Spiel mit bestehenden kulturellen Signalen, was den ausgehenden CTR erhoehen kann. Wenn der Trend jedoch die Gameplay-Fantasie ueberschattet, wird der Traffic unterhaltungsorientiert statt kauforientiert. Das fuehrt normalerweise zu schwaecher Conversion Rate und instabiler Wishlist Velocity. Trend-Formate funktionieren nur, wenn das Meme die Genre-Klarheit verstaerkt, anstatt davon abzulenken.",
+        },
+        {
+          id: "dev-face-cam",
+          question: "Sind Entwickler-Facecam- oder Kommentar-Formate effektiv?",
+          answer:
+            "Fuer bestimmte Zielgruppen ja. Entwicklerkommentare bauen Vertrauen und Kontext auf. Wenn ein Dev eine Mechanik, Designentscheidung oder kommendes Feature erklaert, kann das die wahrgenommene Tiefe erhoehen und Erwartungen mit Preisgestaltung und zukuenftigen Launch Discount-Plaenen abstimmen. Dieses Format produziert oft weniger rohe Views, aber Traffic mit hoeherer Absicht. Staerkeres plattforminternes Verhalten, selbst bei geringerem Volumen, ist wertvoller fuer langfristiges Steam-Wachstum.",
+        },
+        {
+          id: "one-or-rotate",
+          question: "Sollte ich bei einem Format bleiben oder zwischen mehreren rotieren?",
+          answer:
+            "Rotation mit Struktur funktioniert am besten. Das Testen mehrerer Formate in kontrollierten Batches zeigt, welche Strukturen die Conversion Rate-Stabilitaet aufrechterhalten und gleichzeitig die Wishlist Velocity erhoehen. Steamworks-Daten sollten die Entscheidung leiten. Wenn ein Format konsistent Traffic generiert, der die CR haelt und Discovery Queue-Impressionen erweitert, verdopple den Einsatz. Wenn ein anderes Spitzen gefolgt von Zusammenbruch produziert, verfeinere oder entferne es. TikTok-Formate sind Experimente, die den Steam-Algorithmus fuettern, nicht nur kreative Ausdruecke.",
+        },
+        {
+          id: "stay-sane",
+          question: "Wie bleibe ich bei Verstand, waehrend ich TikTok-Formate fuer mein Spiel waehle?",
+          answer:
+            "Du bleibst bei Verstand, indem du Formate als Hypothesen behandelst, die an messbare Steam-Ergebnisse gebunden sind. Wenn Entwickler nach TikTok-Videoformaten fuer Spiele suchen, erwarten sie oft eine kreative Abkuerzung. Die echte Abkuerzung ist Struktur. Formate sollten in koordinierten Batches getestet werden, die gross genug sind, um vergleichbare Daten zu generieren.\\n\\nGenau deshalb baut TrapPlan TikTok-Kampagnen um strukturierte Pakete wie unsere Zwanzig-Video-Baseline. Diese zwanzig Videos sind darauf ausgelegt, mehrere Hooks, Storytelling-Winkel und Gameplay-Rahmungen zu testen, waehrend ausgehender CTR auf Conversion Rate und Wishlist Velocity innerhalb von Steamworks abgebildet wird. Von dort aus verfeinern zusaetzliche Wellen, was funktioniert. Die Formatauswahl hoert auf, Raterei zu sein, und wird zu Algorithmus-Training, das sich ueber Discovery Queue-Exposition zusammensetzt.",
+        },
+      ],
+    },
+  },
   "why-tiktok-and-youtube-shorts-became-the-main-discovery-channel-for-indie-games": {
     title: "Warum TikTok und YouTube Shorts zum wichtigsten Entdeckungskanal fuer Indie-Spiele wurden",
     excerpt:
