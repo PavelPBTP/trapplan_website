@@ -252,6 +252,8 @@ export type CopyKey =
   | "tools.steam_wishlist_calculator.ui.results.required_visits"
   | "tools.steam_wishlist_calculator.ui.results.net_revenue"
   | "tools.steam_wishlist_calculator.ui.results.paid_budget"
+  | "tools.steam_wishlist_calculator.ui.results.year1_net"
+  | "tools.steam_wishlist_calculator.ui.results.year3_net"
   | "tools.steam_wishlist_calculator.ui.bottom_note"
   | "get_a_quote.ceo_title"
   | "tools.steam_pricing_planner.script.title"
@@ -1259,6 +1261,8 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "tools.steam_wishlist_calculator.ui.results.required_visits": "Required Steam page visits",
     "tools.steam_wishlist_calculator.ui.results.net_revenue": "Estimated week 1 net revenue",
     "tools.steam_wishlist_calculator.ui.results.paid_budget": "Estimated paid budget",
+    "tools.steam_wishlist_calculator.ui.results.year1_net": "Year 1 net (12 mo)",
+    "tools.steam_wishlist_calculator.ui.results.year3_net": "Year 3 net (36 mo)",
     "tools.steam_wishlist_calculator.ui.bottom_note":
       "Numbers don't launch games. Execution does.",
     "get_a_quote.ceo_title": "CEO Trap Plan Agency",

@@ -63,6 +63,9 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
 
   const budget = inputs.paidToggle ? requiredVisits * clampNum(inputs.cpc, 0) : 0;
 
+  const year1Net = netRev * 3.5;
+  const year3Net = netRev * 6;
+
   return (
     <>
       <Script
@@ -279,6 +282,15 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
             <div className="tpw-metric">
               <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.net_revenue")}</div>
               <div className="tpw-metric-value">{fmtInt(locale, netRev)}</div>
+            </div>
+
+            <div className="tpw-metric">
+              <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.year1_net")}</div>
+              <div className="tpw-metric-value">{fmtInt(locale, year1Net)}</div>
+            </div>
+            <div className="tpw-metric">
+              <div className="tpw-metric-label">{t(locale, "tools.steam_wishlist_calculator.ui.results.year3_net")}</div>
+              <div className="tpw-metric-value">{fmtInt(locale, year3Net)}</div>
             </div>
 
             {inputs.paidToggle ? (

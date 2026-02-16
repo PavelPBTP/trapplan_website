@@ -5416,7 +5416,7 @@ export const BLOG_ES_TRANSLATIONS: BlogTranslationsBySlug = {
     title:
       "Marketing de wishlists en Steam para indies enfocados en crecimiento orgánico",
     excerpt:
-      "Marketing de wishlists en Steam para desarrolladores indie de PC que dependen del crecimiento orgánico. Aprende por qué las wishlists se estancan y cómo construir un crecimiento orgánico sostenible antes del lanzamiento.",
+      "Por qué el marketing orgánico de wishlists en Steam falla para desarrolladores indie con proyectos activos. Cubre brechas de posicionamiento, fallos de conversión en la página, descubrimiento inconsistente y cómo alinear señales algorítmicas para un crecimiento orgánico compuesto.",
     category: "Steam",
     content: [
       { type: "h2", text: "El verdadero reto detrás del marketing de wishlists en Steam" },

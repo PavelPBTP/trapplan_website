@@ -97,20 +97,16 @@ export default function CardArticle({
 
   const cardElsRef = useRef<HTMLElement[]>([]);
 
-  const cardProps: CardProps[] = useMemo(
-    () =>
-      cards.map((c, index) => ({
-        id: c.id,
-        index,
-        total,
-        question: c.question,
-        answer: c.answer,
-        proTip: hideProTips ? undefined : c.proTip,
-        inlineLinks,
-        linkBudget,
-      })),
-    [cards, hideProTips, inlineLinks, linkBudget, total],
-  );
+  const cardProps: CardProps[] = cards.map((c, index) => ({
+    id: c.id,
+    index,
+    total,
+    question: c.question,
+    answer: c.answer,
+    proTip: hideProTips ? undefined : c.proTip,
+    inlineLinks,
+    linkBudget,
+  }));
 
   useEffect(() => {
     cardElsRef.current = Array.from(

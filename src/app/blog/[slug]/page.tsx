@@ -241,11 +241,11 @@ export async function generateMetadata({
   const looksSluggyTitle = (t: string) => {
     const s = (t ?? "").trim();
     if (!s) return true;
-    if (s.includes("-") || s.includes("_")) return true;
     const letters = s.replace(/[^a-zA-Z]/g, "");
     if (!letters) return false;
     const hasUpper = /[A-Z]/.test(letters);
     if (!hasUpper) return true;
+    if (s.includes("_")) return true;
     return false;
   };
 
@@ -284,8 +284,9 @@ export async function generateMetadata({
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
 
-  const title = clampText(baseTitleForMeta, 60);
-  const description = clampText(post.excerpt, 160);
+  const localeSuffix = locale !== "en" ? ` [${locale.toUpperCase()}]` : "";
+  const title = clampText(baseTitleForMeta, 60 - localeSuffix.length) + localeSuffix;
+  const description = clampText(post.excerpt, 160 - localeSuffix.length) + localeSuffix;
 
   const ogFallback = (() => {
     const p = new URLSearchParams();

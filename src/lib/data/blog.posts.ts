@@ -4075,7 +4075,7 @@ export const BLOG_IMPORTED_POSTS: BlogPost[] = [
     slug: "steam-wishlist-marketing-for-indie-developers-focused-on-organic-growth",
     title: "Steam wishlist marketing for Indie Developers focused on organic growth",
     date: "2025-12-25",
-    excerpt: "Steam wishlist marketing for indie PC developers who rely on organic growth. Learn why wishlists stall in practice and how to build sustainable organic Steam wishlist growth before launch.",
+    excerpt: "Why organic Steam wishlist marketing breaks down for indie developers with active projects. Covers positioning gaps, page conversion failures, inconsistent discovery, and how to align algorithm signals for compound organic growth.",
     readingMinutes: 7,
     category: "Steam",
     authorName: "pavel-beresnev",
