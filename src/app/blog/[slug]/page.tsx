@@ -284,9 +284,27 @@ export async function generateMetadata({
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
 
-  const localeSuffix = locale !== "en" ? ` [${locale.toUpperCase()}]` : "";
-  const title = clampText(baseTitleForMeta, 60 - localeSuffix.length) + localeSuffix;
-  const description = clampText(post.excerpt, 160 - localeSuffix.length) + localeSuffix;
+  const title = clampText(baseTitleForMeta, 60);
+
+  const description = (() => {
+    const exc = (post.excerpt ?? "").trim();
+    if (exc.length >= 155) return clampText(exc, 160);
+    const bodyParagraphs = post.content
+      .filter((b): b is Extract<typeof b, { type: "p" }> => b.type === "p" && "text" in b && b.text.trim().length > 20)
+      .map((b) => b.text.trim());
+    let desc = exc;
+    for (const p of bodyParagraphs) {
+      if (desc.length >= 155) break;
+      const candidate = desc ? `${desc} ${p}` : p;
+      if (candidate.length <= 160) {
+        desc = candidate;
+      } else {
+        desc = clampText(candidate, 160);
+        break;
+      }
+    }
+    return clampText(desc, 160);
+  })();
 
   const ogFallback = (() => {
     const p = new URLSearchParams();
