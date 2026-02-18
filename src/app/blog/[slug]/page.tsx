@@ -8,8 +8,8 @@ import BackToTopButton from "@/components/ui/BackToTopButton";
 import BlogQuoteBanner from "@/components/ui/BlogQuoteBanner";
 import { BLOG_POSTS, type BlogBlock } from "@/lib/data/blog";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
-import { getBlogPost } from "@/lib/data/blog.i18n";
-import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { getBlogPost, getBlogPosts } from "@/lib/data/blog.i18n";
+import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 import { clampText } from "@/lib/seo";
 
@@ -217,6 +217,26 @@ export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
 }
 
+const _titleCollisions: Set<string> = (() => {
+  const set = new Set<string>();
+  const isSluggy = (t: string) => /^[a-z0-9]+(-[a-z0-9]+)*$/.test((t ?? "").trim());
+  const fromSlug = (s: string) => s.split("-").map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w)).join(" ");
+  for (const locale of SUPPORTED_LOCALES) {
+    const titleMap = new Map<string, string[]>();
+    const posts = getBlogPosts(locale as Locale);
+    for (const p of posts) {
+      const base = isSluggy(p.title) ? fromSlug(p.slug) : p.title;
+      const clamped = clampText(base, 60);
+      if (!titleMap.has(clamped)) titleMap.set(clamped, []);
+      titleMap.get(clamped)!.push(p.slug);
+    }
+    for (const [, slugs] of titleMap) {
+      if (slugs.length > 1) slugs.forEach((s) => set.add(`${locale}:${s}`));
+    }
+  }
+  return set;
+})();
+
 export async function generateMetadata({
   params,
 }: {
@@ -241,11 +261,7 @@ export async function generateMetadata({
   const looksSluggyTitle = (t: string) => {
     const s = (t ?? "").trim();
     if (!s) return true;
-    const letters = s.replace(/[^a-zA-Z]/g, "");
-    if (!letters) return false;
-    const hasUpper = /[A-Z]/.test(letters);
-    if (!hasUpper) return true;
-    if (s.includes("_")) return true;
+    if (/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s)) return true;
     return false;
   };
 
@@ -284,7 +300,15 @@ export async function generateMetadata({
     return candidate.length <= 60 ? candidate : clampText(baseTitle, 60);
   })();
 
-  const title = clampText(baseTitleForMeta, 60);
+  const title = (() => {
+    if (!_titleCollisions.has(`${locale}:${slug}`)) return clampText(baseTitleForMeta, 60);
+    if (baseTitle.length > 60) return baseTitle;
+    const slugWords = slug.split("-");
+    const titleLower = baseTitle.toLowerCase();
+    const extra = slugWords.find((w) => w.length > 3 && !titleLower.includes(w));
+    if (extra) return `${baseTitle}: ${extra[0].toUpperCase() + extra.slice(1)}`;
+    return `${baseTitle} (${post.date.slice(0, 4)})`;
+  })();
 
   const description = (() => {
     const exc = (post.excerpt ?? "").trim();
