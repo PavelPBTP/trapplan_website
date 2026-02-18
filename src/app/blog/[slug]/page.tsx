@@ -217,24 +217,44 @@ export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
 }
 
-const _titleCollisions: Set<string> = (() => {
-  const set = new Set<string>();
+const { _titleCollisions, _descCollisions } = (() => {
+  const titleSet = new Set<string>();
+  const descSet = new Set<string>();
   const isSluggy = (t: string) => /^[a-z0-9]+(-[a-z0-9]+)*$/.test((t ?? "").trim());
   const fromSlug = (s: string) => s.split("-").map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w)).join(" ");
+  const makeDesc = (post: { excerpt: string; content: { type: string; text?: string }[] }) => {
+    const exc = (post.excerpt ?? "").trim();
+    if (exc.length >= 155) return clampText(exc, 160);
+    const paras = post.content.filter((b) => b.type === "p" && b.text && b.text.trim().length > 20).map((b) => b.text!.trim());
+    let d = exc;
+    for (const p of paras) {
+      if (d.length >= 155) break;
+      const c = d ? `${d} ${p}` : p;
+      if (c.length <= 160) { d = c; } else { d = clampText(c, 160); break; }
+    }
+    return clampText(d, 160);
+  };
   for (const locale of SUPPORTED_LOCALES) {
     const titleMap = new Map<string, string[]>();
+    const descMap = new Map<string, string[]>();
     const posts = getBlogPosts(locale as Locale);
     for (const p of posts) {
       const base = isSluggy(p.title) ? fromSlug(p.slug) : p.title;
       const clamped = clampText(base, 60);
       if (!titleMap.has(clamped)) titleMap.set(clamped, []);
       titleMap.get(clamped)!.push(p.slug);
+      const desc = makeDesc(p as any);
+      if (!descMap.has(desc)) descMap.set(desc, []);
+      descMap.get(desc)!.push(p.slug);
     }
     for (const [, slugs] of titleMap) {
-      if (slugs.length > 1) slugs.forEach((s) => set.add(`${locale}:${s}`));
+      if (slugs.length > 1) slugs.forEach((s) => titleSet.add(`${locale}:${s}`));
+    }
+    for (const [, slugs] of descMap) {
+      if (slugs.length > 1) slugs.forEach((s) => descSet.add(`${locale}:${s}`));
     }
   }
-  return set;
+  return { _titleCollisions: titleSet, _descCollisions: descSet };
 })();
 
 export async function generateMetadata({
@@ -330,6 +350,10 @@ export async function generateMetadata({
     return clampText(desc, 160);
   })();
 
+  const finalDescription = _descCollisions.has(`${locale}:${slug}`)
+    ? clampText(`${description} ${title}`, 160)
+    : description;
+
   const ogFallback = (() => {
     const p = new URLSearchParams();
     p.set("title", title);
@@ -349,7 +373,7 @@ export async function generateMetadata({
 
   return {
     title,
-    description,
+    description: finalDescription,
     alternates: {
       canonical: url,
       languages: {
@@ -361,13 +385,13 @@ export async function generateMetadata({
       type: "article",
       url,
       title,
-      description,
+      description: finalDescription,
       images,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: finalDescription,
       images: [cover],
     },
   };
