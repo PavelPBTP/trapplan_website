@@ -615,12 +615,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: [cover],
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.trapplan.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `https://www.trapplan.com${withLocale(locale, "/blog")}` },
+      { "@type": "ListItem", position: 3, name: post.title },
+    ],
+  };
+
   if (post.cardArticle) {
     return (
       <>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbLd]) }}
         />
         <BackToTopButton />
         <CardArticle
@@ -661,7 +671,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <main className="bg-white pb-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbLd]) }}
       />
       <BackToTopButton />
       <div className="mx-auto max-w-3xl px-6 pb-20 pt-12 lg:px-0">
