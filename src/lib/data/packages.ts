@@ -12,7 +12,7 @@ export const PACKAGES: PackageCard[] = [
   {
     title: "Reddit\nLaunch Support",
     description:
-      "We drive a launch burst on Reddit in the most relevant subreddits for your game: we’ll craft and publish 15 high engagement posts, spark meaningful discussions and generate organic interest at release by real users",
+      "We run your Reddit presence from your studio’s official account. 15 targeted posts across the right subreddits, written to fit each community and drive wishlists.",
     price: "€2 500",
     accent: "from-zinc-900 via-zinc-800 to-zinc-700",
     media: "phone",
