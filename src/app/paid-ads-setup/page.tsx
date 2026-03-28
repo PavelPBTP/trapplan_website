@@ -317,6 +317,18 @@ export default async function PaidAdsSetupPage() {
           </div>
         </section>
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: t(locale, "faq.paid_ads.q1"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.paid_ads.a1") } },
+              { "@type": "Question", name: t(locale, "faq.paid_ads.q2"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.paid_ads.a2") } },
+              { "@type": "Question", name: t(locale, "faq.paid_ads.q3"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.paid_ads.a3") } },
+            ],
+          }) }}
+        />
         <Footer />
       </main>
     </>

@@ -293,6 +293,18 @@ export default async function InfluencerActivationForGamesPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: t(locale, "faq.influencer_activation.q1"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.influencer_activation.a1") } },
+            { "@type": "Question", name: t(locale, "faq.influencer_activation.q2"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.influencer_activation.a2") } },
+            { "@type": "Question", name: t(locale, "faq.influencer_activation.q3"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.influencer_activation.a3") } },
+          ],
+        }) }}
+      />
       <Footer />
     </main>
   );

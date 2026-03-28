@@ -512,6 +512,27 @@ export type CopyKey =
   | "reddit_launch_support.ui.section4.step4.title"
   | "reddit_launch_support.ui.section4.step4.text"
   | "reddit_launch_support.ui.section4.cta"
+  | "faq.reddit.q1" | "faq.reddit.a1"
+  | "faq.reddit.q2" | "faq.reddit.a2"
+  | "faq.reddit.q3" | "faq.reddit.a3"
+  | "faq.tiktok.q1" | "faq.tiktok.a1"
+  | "faq.tiktok.q2" | "faq.tiktok.a2"
+  | "faq.tiktok.q3" | "faq.tiktok.a3"
+  | "faq.paid_ads.q1" | "faq.paid_ads.a1"
+  | "faq.paid_ads.q2" | "faq.paid_ads.a2"
+  | "faq.paid_ads.q3" | "faq.paid_ads.a3"
+  | "faq.trailer.q1" | "faq.trailer.a1"
+  | "faq.trailer.q2" | "faq.trailer.a2"
+  | "faq.trailer.q3" | "faq.trailer.a3"
+  | "faq.pr.q1" | "faq.pr.a1"
+  | "faq.pr.q2" | "faq.pr.a2"
+  | "faq.pr.q3" | "faq.pr.a3"
+  | "faq.influencer_micro.q1" | "faq.influencer_micro.a1"
+  | "faq.influencer_micro.q2" | "faq.influencer_micro.a2"
+  | "faq.influencer_micro.q3" | "faq.influencer_micro.a3"
+  | "faq.influencer_activation.q1" | "faq.influencer_activation.a1"
+  | "faq.influencer_activation.q2" | "faq.influencer_activation.a2"
+  | "faq.influencer_activation.q3" | "faq.influencer_activation.a3"
   | "reddit_launch_support.ui.results.title"
   | "reddit_launch_support.ui.results.subtitle"
   | "reddit_launch_support.ui.results.placeholder_kicker"
@@ -1592,6 +1613,56 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "reddit_launch_support.ui.results.placeholder_body": "Add a Steam traffic graph screenshot.",
     "reddit_launch_support.ui.results.placeholder_card_body": "PLACEHOLDER",
     "reddit_launch_support.ui.results.cta": "Let’s Start",
+
+    "faq.reddit.q1": "How much does Reddit marketing for games cost?",
+    "faq.reddit.a1": "The Reddit Launch Package is priced at \u20AC2,500. It includes 15 targeted posts from your studio’s official account, subreddit research, content writing, and active thread management.",
+    "faq.reddit.q2": "Will my studio get banned from Reddit?",
+    "faq.reddit.a2": "We post transparently from your official studio account, following each subreddit’s rules. There’s no fake identity or stealth marketing involved — just well-crafted developer content that fits each community.",
+    "faq.reddit.q3": "How long does a Reddit campaign take to show results?",
+    "faq.reddit.a3": "Posts are published over 2-3 weeks. You’ll typically see wishlist and traffic spikes within the first few days as posts gain traction across targeted subreddits.",
+
+    "faq.tiktok.q1": "How many TikTok videos do I need for a game launch?",
+    "faq.tiktok.a1": "Our package includes 20 TikTok videos, which is enough to test hooks, formats, and audiences while building momentum. We handle scripting, recording, and editing — you provide access to your game build.",
+    "faq.tiktok.q2": "Do I need to provide gameplay footage?",
+    "faq.tiktok.a2": "No. We capture all footage ourselves from your game build. We find the most engaging mechanics and moments, then craft videos around them.",
+    "faq.tiktok.q3": "Can TikTok actually drive Steam wishlists?",
+    "faq.tiktok.a3": "Yes — when videos are structured with Steam-focused captions, direct links, and hooks designed to convert curiosity into store visits. We optimise every video for wishlist conversion, not just views.",
+
+    "faq.paid_ads.q1": "What does the Paid Ads Setup include?",
+    "faq.paid_ads.a1": "We set up your paid ad campaigns from scratch: channel selection, budget allocation, targeting, creative placement, and tracking. After setup, we hand over the account for you or your team to run.",
+    "faq.paid_ads.q2": "Do you manage the ads after setup?",
+    "faq.paid_ads.a2": "This package covers setup only. Ongoing management and optimisation are not included, but the account is fully configured and ready to run.",
+    "faq.paid_ads.q3": "Which platforms do you set up ads on?",
+    "faq.paid_ads.a3": "We work with the platforms that make sense for your game — typically Google Ads, Meta (Facebook/Instagram), TikTok Ads, and YouTube. Channel selection is part of the strategy phase.",
+
+    "faq.trailer.q1": "How long does it take to produce a gameplay trailer?",
+    "faq.trailer.a1": "Typically 2-3 weeks from receiving your game build to final delivery. This includes capture, scripting, editing, and revisions.",
+    "faq.trailer.q2": "What format is the trailer delivered in?",
+    "faq.trailer.a2": "You receive a finished trailer ready for Steam, YouTube, and press use. We deliver in standard formats with proper resolution and encoding for each platform.",
+    "faq.trailer.q3": "Do I need to provide a script or storyboard?",
+    "faq.trailer.a3": "No. We play your game, identify the strongest moments, and build the narrative ourselves. You review and approve before final delivery.",
+
+    "faq.pr.q1": "What does the PR Starter Pack include?",
+    "faq.pr.a1": "A professionally written press release, a curated media contact list, targeted pitches to relevant journalists and outlets, and follow-up outreach. Everything you need to get press coverage for your game.",
+    "faq.pr.q2": "Is PR worth it for indie games?",
+    "faq.pr.a2": "Yes. Press coverage builds credibility, drives organic traffic, and generates Steam wishlists. Even a few well-placed articles can significantly boost visibility during a launch window.",
+    "faq.pr.q3": "How many journalists will you contact?",
+    "faq.pr.a3": "We build a targeted list based on your game’s genre and platform. Quality over quantity — we focus on outlets and journalists who actually cover games like yours.",
+
+    "faq.influencer_micro.q1": "What is a micro-influencer campaign for games?",
+    "faq.influencer_micro.a1": "We activate a batch of niche gaming creators (typically 1K-50K followers) who cover your genre. Includes creator selection, outreach, coordination, tracking, and a post-campaign report.",
+    "faq.influencer_micro.q2": "How do you select the right influencers?",
+    "faq.influencer_micro.a2": "We match creators by genre, audience demographics, engagement rate, and content style. Every creator is vetted to ensure they’re a genuine fit for your game.",
+    "faq.influencer_micro.q3": "What results can I expect from a micro-influencer campaign?",
+    "faq.influencer_micro.a3": "Micro-influencers deliver highly targeted reach with strong engagement. You’ll see direct wishlist growth, authentic gameplay content you can reuse, and measurable traffic to your Steam page.",
+
+    "faq.influencer_activation.q1": "What does an influencer activation campaign include?",
+    "faq.influencer_activation.a1": "End-to-end campaign execution: creator sourcing, outreach, contract negotiation, content coordination, performance tracking, and post-campaign learnings. Fully managed and repeatable.",
+    "faq.influencer_activation.q2": "How is this different from the micro-influencer campaign?",
+    "faq.influencer_activation.a2": "Influencer activation is a larger-scale, fully managed campaign with bigger creators and deeper integration. The micro campaign is a focused sprint with niche creators at a lower price point.",
+    "faq.influencer_activation.q3": "Can you guarantee a certain number of views or wishlists?",
+    "faq.influencer_activation.a3": "We don’t guarantee vanity metrics. We optimise for real outcomes — wishlists, store visits, and conversion — and provide full transparency on performance data so you can measure ROI.",
+
     "gameplay_trailer.ui.hero.title_01": "Your gameplay.",
     "gameplay_trailer.ui.hero.title_02": "Cut into a story.",
     "gameplay_trailer.ui.hero.body":

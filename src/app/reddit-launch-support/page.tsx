@@ -418,6 +418,18 @@ export default async function RedditLaunchSupportPage() {
         </section>
       </main>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: t(locale, "faq.reddit.q1"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.reddit.a1") } },
+            { "@type": "Question", name: t(locale, "faq.reddit.q2"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.reddit.a2") } },
+            { "@type": "Question", name: t(locale, "faq.reddit.q3"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.reddit.a3") } },
+          ],
+        }) }}
+      />
       <Footer />
     </>
   );

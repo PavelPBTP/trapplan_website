@@ -317,6 +317,18 @@ export default async function GameplayTrailerPage() {
           </div>
         </section>
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: t(locale, "faq.trailer.q1"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.trailer.a1") } },
+              { "@type": "Question", name: t(locale, "faq.trailer.q2"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.trailer.a2") } },
+              { "@type": "Question", name: t(locale, "faq.trailer.q3"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.trailer.a3") } },
+            ],
+          }) }}
+        />
         <Footer />
       </main>
     </>

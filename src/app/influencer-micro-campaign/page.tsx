@@ -315,6 +315,18 @@ export default async function InfluencerMicroCampaignPage() {
           </div>
         </section>
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: t(locale, "faq.influencer_micro.q1"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.influencer_micro.a1") } },
+              { "@type": "Question", name: t(locale, "faq.influencer_micro.q2"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.influencer_micro.a2") } },
+              { "@type": "Question", name: t(locale, "faq.influencer_micro.q3"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.influencer_micro.a3") } },
+            ],
+          }) }}
+        />
         <Footer />
       </main>
     </>

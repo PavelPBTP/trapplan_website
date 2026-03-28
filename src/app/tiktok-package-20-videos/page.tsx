@@ -583,6 +583,18 @@ export default async function TikTokPackage20VideosPage() {
           </div>
         </section>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: t(locale, "faq.tiktok.q1"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.tiktok.a1") } },
+            { "@type": "Question", name: t(locale, "faq.tiktok.q2"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.tiktok.a2") } },
+            { "@type": "Question", name: t(locale, "faq.tiktok.q3"), acceptedAnswer: { "@type": "Answer", text: t(locale, "faq.tiktok.a3") } },
+          ],
+        }) }}
+      />
       <Footer />
     </>
   );
