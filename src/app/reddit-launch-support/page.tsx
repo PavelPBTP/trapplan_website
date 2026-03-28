@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 
 import Footer from "@/components/sections/Footer";
+import RelatedServices from "@/components/sections/RelatedServices";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -418,6 +419,7 @@ export default async function RedditLaunchSupportPage() {
         </section>
       </main>
 
+      <RelatedServices locale={locale} currentHref="/reddit-launch-support" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

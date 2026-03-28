@@ -512,6 +512,7 @@ export type CopyKey =
   | "reddit_launch_support.ui.section4.step4.title"
   | "reddit_launch_support.ui.section4.step4.text"
   | "reddit_launch_support.ui.section4.cta"
+  | "related_services.title"
   | "faq.reddit.q1" | "faq.reddit.a1"
   | "faq.reddit.q2" | "faq.reddit.a2"
   | "faq.reddit.q3" | "faq.reddit.a3"
@@ -1613,6 +1614,8 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "reddit_launch_support.ui.results.placeholder_body": "Add a Steam traffic graph screenshot.",
     "reddit_launch_support.ui.results.placeholder_card_body": "PLACEHOLDER",
     "reddit_launch_support.ui.results.cta": "Let’s Start",
+
+    "related_services.title": "You might also need",
 
     "faq.reddit.q1": "How much does Reddit marketing for games cost?",
     "faq.reddit.a1": "The Reddit Launch Package is priced at \u20AC2,500. It includes 15 targeted posts from your studio’s official account, subreddit research, content writing, and active thread management.",

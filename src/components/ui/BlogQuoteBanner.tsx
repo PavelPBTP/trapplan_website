@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
 import { t } from "@/lib/copy";
@@ -71,13 +71,30 @@ export default function BlogQuoteBanner() {
     }
   };
 
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const trapFocus = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") { setOpen(false); return; }
+    if (e.key !== "Tab" || !dialogRef.current) return;
+    const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }, []);
+
+  useEffect(() => {
+    if (open) {
+      window.addEventListener("keydown", trapFocus);
+      const timer = setTimeout(() => dialogRef.current?.querySelector<HTMLElement>("button, input")?.focus(), 50);
+      return () => { window.removeEventListener("keydown", trapFocus); clearTimeout(timer); };
+    }
+    triggerRef.current?.focus();
+  }, [open, trapFocus]);
 
   return (
     <>
@@ -93,6 +110,7 @@ export default function BlogQuoteBanner() {
           </div>
 
           <button
+            ref={triggerRef}
             type="button"
             onClick={() => setOpen(true)}
             className="shrink-0 rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
@@ -105,6 +123,7 @@ export default function BlogQuoteBanner() {
       {open ? (
         <div
           className="fixed inset-0 z-50 flex items-end justify-center bg-black/35 px-4 pb-6 pt-10 sm:items-center"
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
         >

@@ -47,8 +47,18 @@ export default function VerticalServicesAccordion({ translations: tx }: { transl
               return (
                 <div
                   key={panel.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={panel.id === activeId}
                   onMouseEnter={() => setActiveId(panel.id)}
-                  className="relative flex h-full cursor-pointer select-none flex-col justify-between"
+                  onFocus={() => setActiveId(panel.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveId(panel.id);
+                    }
+                  }}
+                  className="relative flex h-full cursor-pointer select-none flex-col justify-between focus:outline-2 focus:outline-offset-[-2px] focus:outline-[#FF0A5B]"
                   style={{ width: isActive ? "60%" : "20%" }}
                 >
                   <div className="absolute inset-y-0 right-0 w-px bg-black/10" />

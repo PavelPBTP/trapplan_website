@@ -103,7 +103,7 @@ export default function Header({ locale }: { locale: Locale }) {
                     ▾
                   </span>
                 </Link>
-                <div className="pointer-events-none absolute left-0 top-full z-50 pt-3 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
+                <div className="pointer-events-none absolute left-0 top-full z-50 pt-3 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
                   <div className="w-[280px] rounded-2xl border border-black/10 bg-white p-2 shadow-lg">
                     {servicesDropdownLinks.map((item) => (
                       <Link

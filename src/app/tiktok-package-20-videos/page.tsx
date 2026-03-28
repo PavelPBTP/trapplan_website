@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import RelatedServices from "@/components/sections/RelatedServices";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -583,6 +584,7 @@ export default async function TikTokPackage20VideosPage() {
           </div>
         </section>
       </main>
+      <RelatedServices locale={locale} currentHref="/tiktok-package-20-videos" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
