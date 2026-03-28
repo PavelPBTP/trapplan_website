@@ -2,10 +2,14 @@
 
 import { PACKAGES } from "@/lib/data/packages";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
-import { t } from "@/lib/copy";
+export type PackagesTranslations = {
+  title: string;
+  priceLabel: string;
+  ctaLearnMore: string;
+  mediaVideoLabel: string;
+  cardCopy: Record<string, { title: string; desc: string }>;
+};
 
 function LogoPill({ label }: { label: string }) {
   return (
@@ -54,14 +58,14 @@ function PackageMedia({
   logos,
   packageTitle,
   packageHref,
-  locale,
+  mediaVideoLabel,
 }: {
   variant: "phone" | "laptop" | "collage" | "video";
   accent: string;
   logos?: string[];
   packageTitle?: string;
   packageHref?: string;
-  locale: Locale;
+  mediaVideoLabel: string;
 }) {
   if (variant === "phone" && packageHref === "/reddit-launch-support") {
     return (
@@ -175,7 +179,7 @@ function PackageMedia({
         <div className={"absolute inset-0 rounded-[26px] bg-gradient-to-br opacity-10 " + accent} />
         <div className="relative w-[360px] rounded-[22px] bg-zinc-950 shadow-[0_40px_90px_rgba(0,0,0,0.22)] ring-1 ring-black/10">
           <div className="flex items-center justify-between px-4 py-3 text-[11px] font-semibold text-white/60">
-            <span>{t(locale, "packages.media_video_label")}</span>
+            <span>{mediaVideoLabel}</span>
             <span className="text-white/40">00:32</span>
           </div>
           <div className="relative h-[210px] overflow-hidden rounded-b-[22px] bg-gradient-to-br from-zinc-800 to-zinc-700">
@@ -247,7 +251,9 @@ function PackageCard({
   href,
   media,
   logos,
-  locale,
+  priceLabel,
+  ctaLearnMore,
+  mediaVideoLabel,
 }: {
   title: string;
   description: string;
@@ -256,7 +262,9 @@ function PackageCard({
   href: string;
   media: "phone" | "laptop" | "collage" | "video";
   logos?: string[];
-  locale: Locale;
+  priceLabel: string;
+  ctaLearnMore: string;
+  mediaVideoLabel: string;
 }) {
   return (
     <article className="grid min-h-[360px] grid-cols-1 gap-10 overflow-hidden rounded-[28px] bg-white px-8 py-8 shadow-[0_30px_60px_rgba(0,0,0,0.06)] lg:grid-cols-2 lg:gap-0 lg:px-10">
@@ -268,7 +276,7 @@ function PackageCard({
         <p className="mt-4 text-[13px] leading-6 text-black/60">{description}</p>
 
         <div className="mt-7 text-[17px] font-extrabold tracking-tight text-black">
-          {t(locale, "packages.price_label")} {price}
+          {priceLabel} {price}
         </div>
 
         <div className="mt-7">
@@ -276,7 +284,7 @@ function PackageCard({
             href={href}
             className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[12px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
           >
-            {t(locale, "packages.cta_learn_more")}
+            {ctaLearnMore}
             <span aria-hidden className="text-[16px] leading-none">
               ↗
             </span>
@@ -291,76 +299,41 @@ function PackageCard({
           logos={logos}
           packageTitle={title}
           packageHref={href}
-          locale={locale}
+          mediaVideoLabel={mediaVideoLabel}
         />
       </div>
     </article>
   );
 }
 
-export default function ReadyToGoPackages() {
-  const pathname = usePathname() || "/";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
-    ? seg
-    : DEFAULT_LOCALE) as Locale;
-
-  const COPY_BY_HREF: Record<string, { titleKey: string; descKey: string }> = {
-    "/reddit-launch-support": {
-      titleKey: "packages.card.reddit.title",
-      descKey: "packages.card.reddit.desc",
-    },
-    "/pr-starter-pack": {
-      titleKey: "packages.card.pr_starter.title",
-      descKey: "packages.card.pr_starter.desc",
-    },
-    "/influencer-micro-campaign": {
-      titleKey: "packages.card.influencer_micro.title",
-      descKey: "packages.card.influencer_micro.desc",
-    },
-    "/tiktok-package-20-videos": {
-      titleKey: "packages.card.tiktok_20.title",
-      descKey: "packages.card.tiktok_20.desc",
-    },
-    "/paid-ads-setup": {
-      titleKey: "packages.card.paid_ads_setup.title",
-      descKey: "packages.card.paid_ads_setup.desc",
-    },
-    "/gameplay-trailer": {
-      titleKey: "packages.card.gameplay_trailer.title",
-      descKey: "packages.card.gameplay_trailer.desc",
-    },
-  };
+export default function ReadyToGoPackages({ translations: tx }: { translations: PackagesTranslations }) {
 
   return (
     <section className="bg-[#F3F3F3] pb-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <h2 className="pt-8 text-[44px] font-extrabold leading-none tracking-tight text-black sm:pt-14">
-          {t(locale, "packages.title")}
+          {tx.title}
         </h2>
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {PACKAGES.map((p) => (
-            (() => {
-              const keys = COPY_BY_HREF[p.href];
-              const title = keys ? t(locale, keys.titleKey as any) : p.title;
-              const description = keys ? t(locale, keys.descKey as any) : p.description;
-
-              return (
-            <PackageCard
-              key={p.title}
-              title={title}
-              description={description}
-              price={p.price}
-              accent={p.accent}
-              href={p.href}
-              logos={p.logos}
-              media={p.media}
-              locale={locale}
-            />
-              );
-            })()
-          ))}
+          {PACKAGES.map((p) => {
+            const copy = tx.cardCopy[p.href];
+            return (
+              <PackageCard
+                key={p.title}
+                title={copy?.title ?? p.title}
+                description={copy?.desc ?? p.description}
+                price={p.price}
+                accent={p.accent}
+                href={p.href}
+                logos={p.logos}
+                media={p.media}
+                priceLabel={tx.priceLabel}
+                ctaLearnMore={tx.ctaLearnMore}
+                mediaVideoLabel={tx.mediaVideoLabel}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

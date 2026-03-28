@@ -2,11 +2,19 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 import { CASE_STUDIES } from "@/lib/data/cases";
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
-import { t } from "@/lib/copy";
+
+export type CasesTranslations = {
+  title: string;
+  subtitle: string;
+  fallbackMetric: string;
+  ctaViewCase: string;
+  ctaViewAll: string;
+  metricBySlug: Record<string, string>;
+  resultBySlug: Record<string, string>;
+  descOverrideBySlug: Record<string, string>;
+};
 
 function ArrowUpRightIcon() {
   return (
@@ -158,38 +166,9 @@ function CaseRow({
   );
 }
 
-export default function Cases() {
-  const pathname = usePathname() || "/";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
-    ? seg
-    : DEFAULT_LOCALE) as Locale;
-
+export default function Cases({ translations: tx }: { translations: CasesTranslations }) {
   const ROTATE_MS = 9500;
   const FADE_MS = 520;
-
-  const METRIC_BY_SLUG: Record<string, string> = {
-    "war-thunder-youtube-europe": t(locale, "cases.metric.war_thunder_youtube_europe"),
-    "enlisted-twitch-ads": t(locale, "cases.metric.enlisted_twitch_ads"),
-    "crossout-new-players": t(locale, "cases.metric.crossout_new_players"),
-    "war-thunder-performance-based": t(locale, "cases.metric.war_thunder_performance_based"),
-    "world-of-tanks-usa": t(locale, "cases.metric.world_of_tanks_usa"),
-    "brief-for-youtube-twitch": t(locale, "cases.metric.brief_for_youtube_twitch"),
-  };
-
-  const RESULT_BY_SLUG: Record<string, string> = {
-    "enlisted-twitch-ads": t(locale, "cases.result.enlisted_twitch_ads"),
-    "crossout-new-players": t(locale, "cases.result.crossout_new_players"),
-    "war-thunder-performance-based": t(locale, "cases.result.war_thunder_performance_based"),
-    "world-of-tanks-usa": t(locale, "cases.result.world_of_tanks_usa"),
-    "brief-for-youtube-twitch": t(locale, "cases.result.brief_for_youtube_twitch"),
-    "war-thunder-youtube-europe": t(locale, "cases.result.war_thunder_youtube_europe"),
-  };
-
-  const DESCRIPTION_OVERRIDE_BY_SLUG: Record<string, string> = {
-    "war-thunder-youtube-europe":
-      t(locale, "cases.desc_override.war_thunder_youtube_europe"),
-  };
 
   const [index, setIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
@@ -247,10 +226,10 @@ export default function Cases() {
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="pt-10 sm:pt-14">
           <h2 className="text-[44px] font-extrabold leading-none tracking-tight text-black">
-            {t(locale, "cases.title")}
+            {tx.title}
           </h2>
           <p className="mt-4 text-[14px] leading-6 text-black/60">
-            {t(locale, "cases.subtitle")}
+            {tx.subtitle}
           </p>
         </div>
 
@@ -274,17 +253,17 @@ export default function Cases() {
                         date={CASE_STUDIES[prevIndex % total].date}
                         client={CASE_STUDIES[prevIndex % total].client}
                         metric={
-                          METRIC_BY_SLUG[CASE_STUDIES[prevIndex % total].slug] ??
-                          t(locale, "cases.fallback_metric")
+                          tx.metricBySlug[CASE_STUDIES[prevIndex % total].slug] ??
+                          tx.fallbackMetric
                         }
                         description={
-                          DESCRIPTION_OVERRIDE_BY_SLUG[CASE_STUDIES[prevIndex % total].slug] ??
+                          tx.descOverrideBySlug[CASE_STUDIES[prevIndex % total].slug] ??
                           CASE_STUDIES[prevIndex % total].excerpt
                         }
                         theme={CASE_STUDIES[prevIndex % total].theme}
                         coverImage={CASE_STUDIES[prevIndex % total].coverImage}
                         href={CASE_STUDIES[prevIndex % total].href}
-                        ctaLabel={t(locale, "cases.cta_view_case")}
+                        ctaLabel={tx.ctaViewCase}
                       />
                     ) : null}
                   </div>
@@ -298,14 +277,14 @@ export default function Cases() {
                       title={featured.title}
                       date={featured.date}
                       client={featured.client}
-                      metric={METRIC_BY_SLUG[featured.slug] ?? t(locale, "cases.fallback_metric")}
+                      metric={tx.metricBySlug[featured.slug] ?? tx.fallbackMetric}
                       description={
-                        DESCRIPTION_OVERRIDE_BY_SLUG[featured.slug] ?? featured.excerpt
+                        tx.descOverrideBySlug[featured.slug] ?? featured.excerpt
                       }
                       theme={featured.theme}
                       coverImage={featured.coverImage}
                       href={featured.href}
-                      ctaLabel={t(locale, "cases.cta_view_case")}
+                      ctaLabel={tx.ctaViewCase}
                     />
                   </div>
                 </>
@@ -332,7 +311,7 @@ export default function Cases() {
                         key={c.slug}
                         title={c.title}
                         meta={`${c.date} | ${c.client}`}
-                        result={RESULT_BY_SLUG[c.slug] ?? c.excerpt}
+                        result={tx.resultBySlug[c.slug] ?? c.excerpt}
                         href={c.href}
                         withDivider={idx !== 0}
                       />
@@ -350,7 +329,7 @@ export default function Cases() {
                     key={c.slug}
                     title={c.title}
                     meta={`${c.date} | ${c.client}`}
-                    result={RESULT_BY_SLUG[c.slug] ?? c.excerpt}
+                    result={tx.resultBySlug[c.slug] ?? c.excerpt}
                     href={c.href}
                     withDivider={idx !== 0}
                   />
@@ -367,7 +346,7 @@ export default function Cases() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
           >
-            {t(locale, "cases.cta_view_all")}
+            {tx.ctaViewAll}
             <span aria-hidden className="text-[16px] leading-none">
               ↗
             </span>

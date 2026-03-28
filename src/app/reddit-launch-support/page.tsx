@@ -229,6 +229,9 @@ export default async function RedditLaunchSupportPage() {
                       priority
                     />
                   </div>
+                  <p className="mt-3 text-center text-[11px] leading-4 text-black/40">
+                    {t(locale, "reddit_launch_support.ui.hero.image_disclaimer")}
+                  </p>
                 </div>
               </div>
             </div>

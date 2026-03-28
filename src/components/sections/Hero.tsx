@@ -2,10 +2,16 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
 
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
-import { t } from "@/lib/copy";
+export type HeroTranslations = {
+  badge01: string;
+  badge02: string;
+  badge03: string;
+  kicker: string;
+  subhead: string;
+  body: string;
+  ctaContact: string;
+};
 
 function useMarqueeWidth() {
   const firstSetRef = useRef<HTMLDivElement | null>(null);
@@ -29,16 +35,10 @@ function useMarqueeWidth() {
   return { firstSetRef, width };
 }
 
-export default function Hero() {
-  const pathname = usePathname() || "/";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
-    ? seg
-    : DEFAULT_LOCALE) as Locale;
-
+export default function Hero({ translations: tx }: { translations: HeroTranslations }) {
   const phrases = useMemo(
-    () => [t(locale, "hero.badge.01"), t(locale, "hero.badge.02"), t(locale, "hero.badge.03")],
-    [locale],
+    () => [tx.badge01, tx.badge02, tx.badge03],
+    [tx.badge01, tx.badge02, tx.badge03],
   );
   const [phraseIndex, setPhraseIndex] = useState(0);
   const prevPhraseIndexRef = useRef(0);
@@ -91,12 +91,7 @@ export default function Hero() {
           alt: "Gaijin logo",
           src: "/images/682c675f1536e849a0fb1016_gaijin-logo.svg",
         },
-        {
-          id: "saber",
-          alt: "Saber Interactive logo",
-          src: "/images/690a085d403e36f9268bf556_tps_company_12_Saber Interactive Inc_logo 1.avif",
-        },
-        {
+{
           id: "daedalic",
           alt: "Daedalic Entertainment logo",
           src: "/images/690a085de3ed39378962cc19_tps_company_5_Daedalic Entertainment_logo 1.avif",
@@ -166,15 +161,15 @@ export default function Hero() {
             </h1>
 
             <h2 className="mt-5 text-[18px] font-extrabold leading-tight tracking-tight">
-              {t(locale, "hero.kicker")}
+              {tx.kicker}
             </h2>
 
             <p className="mt-5 max-w-[38ch] text-[14px] leading-6 text-zinc-700">
-              {t(locale, "hero.subhead")}
+              {tx.subhead}
             </p>
 
             <p className="mt-4 max-w-[46ch] text-[14px] leading-6 text-zinc-700">
-              {t(locale, "hero.body")}
+              {tx.body}
             </p>
 
             <div className="mt-8">
@@ -182,7 +177,7 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[14px] font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-[#E6004E] focus:outline-none focus:ring-2 focus:ring-[#FF0A5B] focus:ring-offset-2 focus:ring-offset-[#F3F3F3]"
               >
-                {t(locale, "hero.cta_contact")}
+                {tx.ctaContact}
                 <span aria-hidden className="text-[16px] leading-none">
                   ↗
                 </span>

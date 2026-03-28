@@ -1,9 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
-import { t } from "@/lib/copy";
+
+export type GetAQuoteTranslations = {
+  title: string;
+  subtitle: string;
+  ceoTitle: string;
+  messageWhatsapp: string;
+  cardTitle: string;
+  fieldName: string;
+  fieldCompany: string;
+  fieldEmail: string;
+  submitSending: string;
+  submitSend: string;
+  success: string;
+  errorGeneric: string;
+  errorNetwork: string;
+};
 
 function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
@@ -21,13 +34,7 @@ function Field({ label, type = "text", value, onChange }: { label: string; type?
   );
 }
 
-export default function GetAQuote() {
-  const pathname = usePathname() || "/";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
-    ? seg
-    : DEFAULT_LOCALE) as Locale;
-
+export default function GetAQuote({ translations: tx }: { translations: GetAQuoteTranslations }) {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -55,7 +62,7 @@ export default function GetAQuote() {
       });
 
       if (response.ok) {
-        setMessage(t(locale, "form.get_a_quote.success"));
+        setMessage(tx.success);
         setName("");
         setCompany("");
         setEmail("");
@@ -85,12 +92,12 @@ export default function GetAQuote() {
         if (process.env.NODE_ENV !== "production" && serverError) {
           setMessage(serverError);
         } else {
-          const base = t(locale, "form.get_a_quote.error_generic");
+          const base = tx.errorGeneric;
           setMessage(requestId ? `${base} (Error ID: ${requestId})` : base);
         }
       }
     } catch {
-      setMessage(t(locale, "form.get_a_quote.error_network"));
+      setMessage(tx.errorNetwork);
     } finally {
       setIsSubmitting(false);
     }
@@ -104,10 +111,10 @@ export default function GetAQuote() {
           <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12">
             <div className="lg:col-span-2">
               <h2 className="text-[44px] font-extrabold leading-[0.92] tracking-tight text-white">
-                {t(locale, "form.get_a_quote.title")}
+                {tx.title}
               </h2>
               <p className="mt-6 max-w-[46ch] text-[14px] leading-6 text-[#A0A0A0]">
-                {t(locale, "form.get_a_quote.subtitle")}
+                {tx.subtitle}
               </p>
 
               <div className="mt-10 flex items-center gap-4">
@@ -117,7 +124,7 @@ export default function GetAQuote() {
                     Pavel Beresnev
                   </div>
                   <div className="mt-1 text-[12px] font-semibold text-white/55">
-                    {t(locale, "get_a_quote.ceo_title")}
+                    {tx.ceoTitle}
                   </div>
                 </div>
               </div>
@@ -129,7 +136,7 @@ export default function GetAQuote() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-full bg-white/10 px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-white/15"
                 >
-                  {t(locale, "form.get_a_quote.message_whatsapp")}
+                  {tx.messageWhatsapp}
                 </a>
               </div>
             </div>
@@ -137,13 +144,13 @@ export default function GetAQuote() {
             <div className="lg:col-span-3">
               <div className="relative rounded-[24px] bg-white px-8 py-8 shadow-[0_44px_120px_rgba(0,0,0,0.55)]">
                 <h3 className="text-[24px] font-extrabold leading-none tracking-tight text-black">
-                  {t(locale, "form.get_a_quote.card_title")}
+                  {tx.cardTitle}
                 </h3>
 
                 <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
-                  <Field label={t(locale, "form.get_a_quote.field_name")} value={name} onChange={(e) => setName(e.target.value)} />
-                  <Field label={t(locale, "form.get_a_quote.field_company")} value={company} onChange={(e) => setCompany(e.target.value)} />
-                  <Field label={t(locale, "form.get_a_quote.field_email")} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <Field label={tx.fieldName} value={name} onChange={(e) => setName(e.target.value)} />
+                  <Field label={tx.fieldCompany} value={company} onChange={(e) => setCompany(e.target.value)} />
+                  <Field label={tx.fieldEmail} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                   {message && (
                     <div className="text-[13px] font-medium text-center">
@@ -157,8 +164,8 @@ export default function GetAQuote() {
                     className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,10,91,0.34)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,10,91,0.50)] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting
-                      ? t(locale, "form.get_a_quote.submit_sending")
-                      : t(locale, "form.get_a_quote.submit_send")}
+                      ? tx.submitSending
+                      : tx.submitSend}
                   </button>
                 </form>
               </div>

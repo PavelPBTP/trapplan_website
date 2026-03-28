@@ -1,10 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { usePathname } from "next/navigation";
-
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
-import { t } from "@/lib/copy";
+import { useState } from "react";
 
 type ServicePanel = {
   id: string;
@@ -15,42 +11,15 @@ type ServicePanel = {
   ghostLabel: string;
 };
 
-export default function VerticalServicesAccordion() {
-  const pathname = usePathname() || "/";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
-    ? seg
-    : DEFAULT_LOCALE) as Locale;
+export type ServicesAccordionTranslations = {
+  title: string;
+  subtitle: string;
+  mobileHint: string;
+  panels: ServicePanel[];
+};
 
-  const panels = useMemo<ServicePanel[]>(
-    () => [
-      {
-        id: "blueprint",
-        title: t(locale, "services.panel.blueprint.title"),
-        description: t(locale, "services.panel.blueprint.desc"),
-        href: "/game-launch-blueprint",
-        accentNumber: "01",
-        ghostLabel: t(locale, "services.panel.blueprint.ghost"),
-      },
-      {
-        id: "paid-growth",
-        title: t(locale, "services.panel.paid_growth.title"),
-        description: t(locale, "services.panel.paid_growth.desc"),
-        href: "/paid-growth",
-        accentNumber: "02",
-        ghostLabel: t(locale, "services.panel.paid_growth.ghost"),
-      },
-      {
-        id: "creative",
-        title: t(locale, "services.panel.creative.title"),
-        description: t(locale, "services.panel.creative.desc"),
-        href: "/creative-content-pipeline",
-        accentNumber: "03",
-        ghostLabel: t(locale, "services.panel.creative.ghost"),
-      },
-    ],
-    [locale],
-  );
+export default function VerticalServicesAccordion({ translations: tx }: { translations: ServicesAccordionTranslations }) {
+  const panels = tx.panels;
 
   const [activeId, setActiveId] = useState<string>(panels[0]?.id ?? "blueprint");
 
@@ -62,10 +31,10 @@ export default function VerticalServicesAccordion() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <h2 className="text-[44px] font-extrabold leading-none tracking-tight text-black">
-              {t(locale, "services.title")}
+              {tx.title}
             </h2>
             <p className="mt-4 max-w-2xl text-[18px] leading-relaxed text-black/70">
-              {t(locale, "services.subtitle")}
+              {tx.subtitle}
             </p>
           </div>
         </div>
@@ -165,7 +134,7 @@ export default function VerticalServicesAccordion() {
           <div className="lg:hidden">
             <div className="rounded-2xl border border-black/10 bg-white p-5">
               <div className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-black/50">
-                {t(locale, "services.mobile_hint")}
+                {tx.mobileHint}
               </div>
               <div className="mt-4 grid gap-3">
                 {panels.map((panel) => {
