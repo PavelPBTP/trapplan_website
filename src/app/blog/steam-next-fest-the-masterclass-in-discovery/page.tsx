@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import CardArticle from "@/components/ui/CardArticle";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
-import { t } from "@/lib/copy";
+import { t, type CopyKey } from "@/lib/copy";
 import { clampText } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -68,9 +68,9 @@ export default async function SteamNextFestMasterclassPage() {
     const idx = i + 1;
     const prefix = `blog.masterclass.s${String(idx).padStart(2, "0")}` as const;
     return {
-      title: t(locale, `${prefix}.title` as any),
+      title: t(locale, `${prefix}.title` as CopyKey),
       paragraphs: Array.from({ length: paraCounts[i] }, (_, j) =>
-        t(locale, `${prefix}.p${String(j + 1).padStart(2, "0")}` as any),
+        t(locale, `${prefix}.p${String(j + 1).padStart(2, "0")}` as CopyKey),
       ),
       ...(idx === 11 ? { isCta: true } : {}),
     };

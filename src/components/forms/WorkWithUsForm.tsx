@@ -1,16 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 import { t } from "@/lib/copy";
 
-export default function WorkWithUsForm() {
-  const pathname = usePathname() || "/";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  const locale = (seg && (SUPPORTED_LOCALES as readonly string[]).includes(seg)
-    ? seg
-    : DEFAULT_LOCALE) as Locale;
+export default function WorkWithUsForm({ locale }: { locale: Locale }) {
 
   const didPrefillRef = useRef(false);
   const [name, setName] = useState("");

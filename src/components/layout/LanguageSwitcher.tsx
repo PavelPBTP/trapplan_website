@@ -43,19 +43,19 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
   }, [pathname, suffix]);
 
   return (
-    <div className="relative">
+    <nav className="relative" aria-label="Select language">
       <details
         className="group"
         open={open}
         onToggle={(e) => setOpen((e.currentTarget as HTMLDetailsElement).open)}
       >
-        <summary className="list-none">
+        <summary className="list-none" aria-haspopup="listbox" aria-expanded={open}>
           <span className="inline-flex h-10 items-center gap-2 rounded-full bg-zinc-100 px-4 text-[13px] font-semibold text-black/80 transition-colors hover:bg-zinc-200">
             {LOCALE_LABELS[current]}
             <span className="text-[12px] text-black/55">▾</span>
           </span>
         </summary>
-        <div className="absolute right-0 top-full z-50 mt-3 w-[160px] overflow-hidden rounded-2xl border border-black/10 bg-white p-2 shadow-lg">
+        <div className="absolute right-0 top-full z-50 mt-3 w-[160px] overflow-hidden rounded-2xl border border-black/10 bg-white p-2 shadow-lg" role="listbox" aria-label="Languages">
           {SUPPORTED_LOCALES.map((l) => {
             const href = withLocale(l, `${strippedPath}${suffix}`);
             const active = l === current;
@@ -63,6 +63,8 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
               <Link
                 key={l}
                 href={href}
+                role="option"
+                aria-selected={active}
                 onClick={() => {
                   setLocaleCookie(l);
                   setOpen(false);
@@ -77,6 +79,6 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
           })}
         </div>
       </details>
-    </div>
+    </nav>
   );
 }

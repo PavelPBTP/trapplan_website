@@ -3,12 +3,14 @@ import Image from "next/image";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
 
-function SocialIcon({ label }: { label: string }) {
+function SocialIcon({ label, href }: { label: string; href: string }) {
+  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
   return (
     <a
-      href="#"
+      href={href}
       className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-[14px] font-extrabold text-black transition-colors duration-200 hover:bg-zinc-200"
       aria-label={label}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {label}
     </a>
@@ -45,7 +47,7 @@ export default async function Footer() {
               {FOOTER_LINKS.map((group) => (
                 <div key={group.titleKey}>
                   <div className="text-[14px] font-extrabold text-[#FF0A5B]">
-                    {t(locale, group.titleKey as any)}
+                    {t(locale, group.titleKey)}
                   </div>
                   <ul className="mt-4 space-y-2">
                     {group.links.map((l) => (
@@ -54,7 +56,7 @@ export default async function Footer() {
                           href={localizeHref(l.href)}
                           className="text-[14px] font-semibold text-black/80 transition-colors hover:text-black"
                         >
-                          {t(locale, l.labelKey as any).replace(/\n/g, " ")}
+                          {t(locale, l.labelKey).replace(/\n/g, " ")}
                         </a>
                       </li>
                     ))}
@@ -66,9 +68,10 @@ export default async function Footer() {
 
           <div className="lg:col-span-2">
             <div className="flex items-center justify-start gap-2 lg:justify-end">
-              <SocialIcon label="in" />
-              <SocialIcon label="X" />
-              <SocialIcon label="@" />
+              <SocialIcon label="in" href="https://www.linkedin.com/company/trapplan" />
+              {/* TODO: add real Twitter/X handle */}
+              <SocialIcon label="X" href="#" />
+              <SocialIcon label="@" href="mailto:hello@trapplan.com" />
             </div>
           </div>
         </div>

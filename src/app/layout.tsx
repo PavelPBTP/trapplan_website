@@ -79,6 +79,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getRequestLocale();
+  // suppressHydrationWarning: browser extensions and GTM may inject attributes before React hydrates
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>

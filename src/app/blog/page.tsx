@@ -173,7 +173,7 @@ export default async function BlogIndexPage({
           </aside>
 
           <section className="lg:col-span-9">
-            <div suppressHydrationWarning className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
               {cards.map(({ post, cover, ogCover }, idx) => (
                 <article key={post.slug} className="group">
                   <Link href={withLocale(locale, `/blog/${post.slug}`)} className="block">
@@ -199,10 +199,12 @@ export default async function BlogIndexPage({
                         </>
                       ) : (
                         <>
-                          <img
+                          <Image
                             src={ogCover}
                             alt={post.title}
-                            className="absolute inset-0 h-full w-full object-cover"
+                            fill
+                            sizes="(max-width: 640px) 100vw, 50vw"
+                            className="object-cover"
                           />
                           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                           <div className="pointer-events-none absolute inset-0 flex items-end p-5">

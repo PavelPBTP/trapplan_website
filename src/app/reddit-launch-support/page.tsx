@@ -306,6 +306,9 @@ export default async function RedditLaunchSupportPage() {
                   />
                 </div>
               </div>
+              <p className="absolute bottom-2 left-0 right-0 text-center text-[11px] leading-4 text-black/40">
+                {t(locale, "reddit_launch_support.ui.section3.cards_disclaimer")}
+              </p>
             </div>
 
             <div className="px-6 pt-10 pb-10 lg:px-12">

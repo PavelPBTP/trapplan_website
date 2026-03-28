@@ -3,9 +3,9 @@ import Image from "next/image";
 import { PACKAGES } from "@/lib/data/packages";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import { withLocale, type Locale } from "@/lib/i18n.shared";
-import { t } from "@/lib/copy";
+import { t, type CopyKey } from "@/lib/copy";
 
-const COPY_BY_HREF: Record<string, string> = {
+const COPY_BY_HREF: Record<string, CopyKey> = {
   "/reddit-launch-support": "packages.card.reddit.title",
   "/pr-starter-pack": "packages.card.pr_starter.title",
   "/influencer-micro-campaign": "packages.card.influencer_micro.title",
@@ -66,7 +66,7 @@ function MailIcon() {
 export default function Header({ locale }: { locale: Locale }) {
   const servicesDropdownLinks = PACKAGES.map((p) => {
     const key = COPY_BY_HREF[p.href];
-    const label = key ? t(locale, key as any) : p.title;
+    const label = key ? t(locale, key) : p.title;
     return {
       label: label.replace(/\n/g, " "),
       href: p.href,

@@ -1,10 +1,50 @@
 import { NextResponse } from "next/server";
 
+const WINDOW_MS = 60_000;
+const MAX_REQUESTS = 5;
+
+type RateLimitEntry = { readonly count: number; readonly resetAt: number };
+const rateLimitMap = new Map<string, RateLimitEntry>();
+
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of rateLimitMap) {
+    if (entry.resetAt <= now) rateLimitMap.delete(ip);
+  }
+}, WINDOW_MS);
+
+function getClientIp(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0].trim();
+  return request.headers.get("x-real-ip") ?? "unknown";
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || entry.resetAt <= now) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= MAX_REQUESTS) return true;
+  rateLimitMap.set(ip, { ...entry, count: entry.count + 1 });
+  return false;
+}
+
 export async function POST(request: Request) {
   const requestId =
     typeof crypto !== "undefined" && "randomUUID" in crypto
       ? crypto.randomUUID()
       : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  const clientIp = getClientIp(request);
+  if (isRateLimited(clientIp)) {
+    return NextResponse.json(
+      { error: "Too many requests", requestId },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { name, company, email, source } = body;

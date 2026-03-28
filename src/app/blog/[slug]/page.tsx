@@ -243,7 +243,7 @@ const { _titleCollisions, _descCollisions } = (() => {
       const clamped = clampText(base, 60);
       if (!titleMap.has(clamped)) titleMap.set(clamped, []);
       titleMap.get(clamped)!.push(p.slug);
-      const desc = makeDesc(p as any);
+      const desc = makeDesc({ excerpt: p.excerpt, content: p.content as { type: string; text?: string }[] });
       if (!descMap.has(desc)) descMap.set(desc, []);
       descMap.get(desc)!.push(p.slug);
     }

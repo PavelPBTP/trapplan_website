@@ -484,6 +484,7 @@ export type CopyKey =
   | "reddit_launch_support.ui.hero.price"
   | "reddit_launch_support.ui.hero.image_alt"
   | "reddit_launch_support.ui.hero.image_disclaimer"
+  | "reddit_launch_support.ui.section3.cards_disclaimer"
   | "reddit_launch_support.ui.section2.image_alt"
   | "reddit_launch_support.ui.section2.title_01"
   | "reddit_launch_support.ui.section2.title_02"
@@ -1552,6 +1553,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
       "Reddit is a minefield. The rules are rarely written the way they’re enforced, and the penalty for looking like marketing can be instant. Removals, bans, and backlash that follows your game.",
     "reddit_launch_support.ui.section2.p2":
       "Our job is to handle the scary part. Navigating each subreddit’s culture, positioning the post like a real developer story, and managing the thread so you can enjoy the traffic without getting burned.",
+    "reddit_launch_support.ui.section3.cards_disclaimer": "*The posts shown above are not examples of our work — they are random Reddit posts used for illustration purposes.",
     "reddit_launch_support.ui.section3.title": "The Stealth Reddit Package",
     "reddit_launch_support.ui.section3.bullet1.title": "15 High Engagement Posts:",
     "reddit_launch_support.ui.section3.bullet1.text":

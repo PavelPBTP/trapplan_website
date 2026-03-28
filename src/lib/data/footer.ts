@@ -1,7 +1,9 @@
-export type FooterLink = { labelKey: string; href: string };
+import type { CopyKey } from "@/lib/copy";
+
+export type FooterLink = { labelKey: CopyKey; href: string };
 
 export const FOOTER_LINKS: {
-  titleKey: string;
+  titleKey: CopyKey;
   links: FooterLink[];
 }[] = [
   {

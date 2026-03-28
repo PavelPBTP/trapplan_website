@@ -125,7 +125,7 @@ export default async function FormPage() {
 
             <div className="lg:col-span-7 lg:flex lg:justify-end">
               <div className="w-full max-w-[520px] rounded-[22px] bg-white px-8 pt-8 pb-9 shadow-[0_30px_70px_rgba(0,0,0,0.10)]">
-                <WorkWithUsForm />
+                <WorkWithUsForm locale={locale} />
               </div>
             </div>
           </div>
