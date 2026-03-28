@@ -8,7 +8,7 @@ function SocialIcon({ label, href }: { label: string; href: string }) {
   return (
     <a
       href={href}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-[14px] font-extrabold text-black transition-colors duration-200 hover:bg-zinc-200"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-[14px] font-extrabold text-black transition-colors duration-200 hover:bg-zinc-200 focus:outline-2 focus:outline-offset-2 focus:outline-[#FF0A5B]"
       aria-label={label}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >

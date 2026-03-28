@@ -92,7 +92,7 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
   return (
     <form className="space-y-9" onSubmit={handleSubmit}>
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/45">
+        <span className="text-[13px] font-semibold text-black/70">
           {t(locale, "work_with_us_form.field_full_name")}
         </span>
         <input
@@ -100,14 +100,14 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/30 focus:outline-none"
+          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
           placeholder=""
           required
         />
       </label>
 
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/45">
+        <span className="text-[13px] font-semibold text-black/70">
           {t(locale, "work_with_us_form.field_company")}
         </span>
         <input
@@ -115,14 +115,14 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name="company"
           value={company}
           onChange={(e) => setCompany(e.target.value)}
-          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/30 focus:outline-none"
+          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
           placeholder=""
           required
         />
       </label>
 
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/45">
+        <span className="text-[13px] font-semibold text-black/70">
           {t(locale, "work_with_us_form.field_email")}
         </span>
         <input
@@ -130,14 +130,14 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/30 focus:outline-none"
+          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
           placeholder=""
           required
         />
       </label>
 
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/45">
+        <span className="text-[13px] font-semibold text-black/70">
           {t(locale, "work_with_us_form.field_message")}
         </span>
         <textarea
@@ -145,7 +145,7 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="mt-3 w-full resize-none border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/30 focus:outline-none"
+          className="mt-3 w-full resize-none border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
           placeholder=""
         />
       </label>

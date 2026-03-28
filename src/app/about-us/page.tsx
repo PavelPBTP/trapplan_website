@@ -161,7 +161,7 @@ export default async function AboutUsPage() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
+                        <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
                           {p.n}
                         </div>
                         <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
@@ -198,7 +198,7 @@ export default async function AboutUsPage() {
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
+                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
                     {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
@@ -209,7 +209,7 @@ export default async function AboutUsPage() {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
+                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
                     {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
@@ -220,7 +220,7 @@ export default async function AboutUsPage() {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
+                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
                     {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
@@ -231,7 +231,7 @@ export default async function AboutUsPage() {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/40">
+                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
                     {t(locale, "about.outcome.label")}
                   </div>
                   <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">

@@ -73,7 +73,7 @@ export default function VerticalServicesAccordion({ translations: tx }: { transl
                         </div>
                         <div className="absolute inset-0 px-10">
                           <div className="absolute right-10 bottom-10 text-right">
-                            <div className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-black/30">
+                            <div className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-black/60">
                               {panel.ghostLabel}
                             </div>
                             <div className="mt-2 text-[40px] font-extrabold leading-none tracking-tight text-black/[0.035]">
@@ -164,7 +164,7 @@ export default function VerticalServicesAccordion({ translations: tx }: { transl
 
                       {isActive ? (
                         <div className="mt-3">
-                          <div className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-black/40">
+                          <div className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-black/60">
                             {panel.ghostLabel}
                           </div>
                           <p className="mt-3 text-[15px] leading-relaxed text-black/60">
@@ -185,7 +185,7 @@ export default function VerticalServicesAccordion({ translations: tx }: { transl
                   <div className="absolute -right-24 -bottom-24 h-[240px] w-[240px] rounded-full border border-black/10" />
                 </div>
                 <div className="relative">
-                  <div className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-black/40">
+                  <div className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-black/60">
                     {activePanel?.ghostLabel}
                   </div>
                   <div className="mt-4 text-[28px] font-extrabold leading-[0.95] tracking-tight text-black/[0.06]">

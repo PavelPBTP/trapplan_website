@@ -1503,9 +1503,9 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "tiktok_20.ui.section3.bullet3.title": "We Record, You Build:",
     "tiktok_20.ui.section3.bullet3.text":
       "You don't need to capture a thing. We'll dive into your build, find the most \"wishlist-worthy\" mechanics, and record the footage ourselves.",
-    "tiktok_20.ui.section3.bullet4.title": "Native Discovery Style:",
+    "tiktok_20.ui.section3.bullet4.title": "Platform-Native Format:",
     "tiktok_20.ui.section3.bullet4.text":
-      "Over-produced ads get ignored. We make your game look like a \"hidden gem\" discovery. This authentic vibe is what actually triggers an Add to Wishlist.",
+      "Over-produced ads get ignored. We create TikTok videos that feel native to the platform — real gameplay, genuine reactions, and storytelling that makes viewers want to try your game.",
     "tiktok_20.ui.section3.bullet5.title": "Steam-Focused Captions:",
     "tiktok_20.ui.section3.bullet5.text":
       "We provide the text and call-to-actions that specifically tell people where and why to wishlist your game. Just hit upload.",
