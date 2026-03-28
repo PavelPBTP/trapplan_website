@@ -78,11 +78,6 @@ export default function StructuredData({ locale }: { locale: Locale }) {
       "https://www.linkedin.com/company/trapplan",
       "https://twitter.com/trapplan",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "50",
-    },
   };
 
   const serviceSchema = {
