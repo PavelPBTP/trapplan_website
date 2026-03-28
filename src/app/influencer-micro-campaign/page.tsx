@@ -163,7 +163,7 @@ export default async function InfluencerMicroCampaignPage() {
                 <div className="absolute inset-0 flex items-center justify-center px-6">
                   <div className="relative h-[280px] w-full max-w-[520px] overflow-hidden rounded-[22px]">
                     <Image
-                      src="/images/Audience.png"
+                      src="/images/Audience.avif"
                       alt={t(locale, "influencer_micro.ui.section2.image_alt")}
                       fill
                       sizes="(max-width: 1024px) 90vw, 520px"

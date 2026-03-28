@@ -46,7 +46,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog12.png",
+    cover: "/images/blog12.avif",
     cardArticle: {
       title: "How To Turn TikTok Views Into Real Steam Traffic",
       lead: "Your TikTok videos are getting views. Some of them are even going viral. Comments are active, shares look promising, and the numbers feel exciting. Then you open Steamworks and traffic barely moved. Wishlist Velocity is flat. Discovery Queue impressions did not expand. Now you are asking the only question that matters. How do you turn TikTok views into real Steam traffic that actually converts.",
@@ -120,7 +120,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog11.png",
+    cover: "/images/blog11.avif",
     cardArticle: {
       title: "TikTok Video Formats That Work Best For Steam Games",
       lead: "You are posting TikToks for your Steam game and results feel inconsistent. One clip gets solid views but no Wishlist Velocity. Another gets fewer views yet somehow produces actual wishlist growth. You search for TikTok video formats for games hoping for a clear answer, but most advice focuses on trends instead of Steam outcomes. Now you are asking the real question. Which TikTok video formats for games actually drive measurable wishlist growth on Steam.",
@@ -194,7 +194,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog10.png",
+    cover: "/images/blog10.avif",
     cardArticle: {
       title: "Why TikTok and YouTube Shorts Became The Main Discovery Channel For Indie Games",
       lead: "Five years ago, most indie discovery conversations revolved around festivals, press coverage, and hoping the Steam Algorithm would notice early traction. Today you open Steamworks, look at traffic sources, and short video platforms such as TikTok and YouTube Shorts are sitting there as serious contributors. Clips travel faster than demos ever did. Wishlist Velocity reacts within days. Now the uncomfortable question appears. Why did short video, especially TikTok, become the main discovery channel for indie games.",
@@ -268,7 +268,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog9.png",
+    cover: "/images/blog9.avif",
     cardArticle: {
       title: "How Many Short Videos Does A Steam Game Need For Stable Wishlist Growth",
       lead: "You started posting short videos for your Steam game. The first ten did almost nothing. Around twenty, you began to see slightly better engagement and a small lift in Wishlist Velocity. Then somewhere around the thirtieth video, a real spike finally happened. Now you are asking the practical question nobody answers clearly. How many short videos for Steam wishlists are actually needed to create stable growth instead of random movement.",
@@ -342,7 +342,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog8.png",
+    cover: "/images/blog8.avif",
     cardArticle: {
       title: "How Short Videos Influence Steam Wishlists",
       lead: "You posted a short gameplay clip. Maybe on TikTok, maybe on YouTube Shorts. Views jumped. Comments looked promising. Then you opened Steamworks and saw almost no movement in Wishlist Velocity. Now you are asking the real question. How do short videos actually influence Steam wishlists, and why does the effect sometimes feel invisible.",
@@ -416,7 +416,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog7.png",
+    cover: "/images/blog7.avif",
     cardArticle: {
       title: "How To Promote A Steam Game On TikTok In 2026",
       lead: "You launched your Steam page, optimized Capsule Art, refined Metadata, and watched Wishlist Velocity move slower than you expected. Discovery Queue impressions come and go. Meanwhile, competitors post short videos and suddenly everyone is talking about TikTok. Now the real question appears. How do you promote a Steam game on TikTok in 2026 without turning it into empty noise.",
@@ -490,7 +490,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog6.png",
+    cover: "/images/blog6.avif",
     cardArticle: {
       title: "Who Can Help You With TikTok For Your Steam Game",
       lead: "You have decided you want to make TikToks for your game. Not someday, not maybe, but now. You see competitors getting traction, you hear about TikTok Steam wishlists, and you know short form video is shaping discovery for PC and Console titles. The only problem is execution. Who actually knows how to turn TikTok for game marketing into measurable Wishlist Velocity instead of random views.",
@@ -564,7 +564,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog5.png",
+    cover: "/images/blog5.avif",
     cardArticle: {
       title: "Can TikTok and YouTube Shorts Increase Steam Wishlists",
       lead: "You are building a game for Steam and watching Wishlist Velocity like it is a heartbeat monitor. Traffic exists, but growth feels slow. Then you hear the same advice from every direction. Post short videos on TikTok and YouTube Shorts, go viral, and the wishlists will follow. Now you are wondering whether short form video can realistically increase Steam wishlists or if this is just another marketing myth.",
@@ -638,7 +638,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog3.png",
+    cover: "/images/blog3.avif",
     cardArticle: {
       title: "Should You Launch TikTok For Your Steam Game",
       lead: "You are staring at your Steamworks dashboard and thinking about attention. Wishlist Velocity is decent but not explosive. Discovery Queue impressions fluctuate. Someone tells you TikTok can change everything. Now you are wondering whether launching a TikTok account for your Steam game is a strategic move or just another distraction.",
@@ -713,7 +713,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/blog4.png",
+    cover: "/images/blog4.avif",
     cardArticle: {
       title:
         "Do Shorts Videos from TikTok, Shorts and Reels Really Drive Steam Wishlists",
@@ -787,7 +787,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/how-to-know-marketing-for-your-games-works-before-release.png",
+    cover: "/images/how-to-know-marketing-for-your-games-works-before-release.avif",
     cardArticle: {
       title: "How To Know Marketing for your games Works Before Release",
       lead: "Without sales data, marketing feels like faith. One graph goes up, another stays flat, and nobody knows which one actually matters.",
@@ -866,7 +866,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/how-important-is-price-in-a-pc-console-game-growth-strategy.png",
+    cover: "/images/how-important-is-price-in-a-pc-console-game-growth-strategy.avif",
     cardArticle: {
       title: "How Important Is Price In A PC Console Game Growth Strategy",
       lead: "A bad strategy with the right price still fails, and a strong strategy with the wrong price just fails louder. Price is not the root cause — it is an amplifier.",
@@ -945,7 +945,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/promote-a-game-without-a-budget-cover.png",
+    cover: "/images/promote-a-game-without-a-budget-cover.avif",
     cardArticle: {
       title: "Can you actually promote a game without a budget, relying solely on \"virality\"?",
       lead: "The dream of organic growth is hitting a wall because the Steam and Console markets have reached saturation where quality alone no longer guarantees visibility. This is the myth of the zero-budget launch — and why ‘virality’ is not a strategy.",
@@ -1025,7 +1025,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/make-a-great-game-avoid-a-flop-cover.png",
+    cover: "/images/make-a-great-game-avoid-a-flop-cover.avif",
     cardArticle: {
       title:
         "Developers say the most important thing is to make a great game. But how do you avoid a total flop on Steam?",
@@ -1130,7 +1130,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/driving-traffic-but-wishlists-cover.png",
+    cover: "/images/driving-traffic-but-wishlists-cover.avif",
     cardArticle: {
       title: "I am driving traffic but my wishlists are standing still",
       lead: "There is a leak in the funnel somewhere — but where exactly? And how do you properly \"warm up\" a cold audience so the Steam algorithm doesn't decide your game is a lost cause?",
@@ -1209,7 +1209,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/steam-next-fest-the-masterclass-in-discovery.png",
+    cover: "/images/steam-next-fest-the-masterclass-in-discovery.avif",
     content: [
       {
         type: "p",
@@ -1228,7 +1228,7 @@ export const MANUAL_BLOG_POSTS: BlogPost[] = [
     category: "Steam",
     authorName: "Pavel Beresnev",
     authorRole: "CEO Trap Plan Agency, Marketing Expert",
-    cover: "/images/steam-next-fest-2026-the-ultimate-strategy-guide.png",
+    cover: "/images/steam-next-fest-2026-the-ultimate-strategy-guide.avif",
     cardArticle: {
       title: "Steam Next Fest 2026: The Ultimate Strategy Guide",
       lead: "Participating in the February Steam Next Fest is a high-stakes move. In 2026, the sheer volume of high-quality demos means that just \"being there\" isn't enough. You have to understand that Steam isn't just a store. It’s a massive algorithm that rewards specific player behaviors. This guide covers how to prepare your demo and your page to ensure you don't get lost in the noise.",

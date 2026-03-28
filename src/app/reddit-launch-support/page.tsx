@@ -222,7 +222,7 @@ export default async function RedditLaunchSupportPage() {
                 <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[420px]">
                   <div className="overflow-hidden rounded-[24px] bg-black shadow-[0_40px_90px_rgba(0,0,0,0.14)]">
                     <Image
-                      src="/images/Reddit Hero.png"
+                      src="/images/Reddit Hero.avif"
                       alt={t(locale, "reddit_launch_support.ui.hero.image_alt")}
                       width={900}
                       height={720}
@@ -281,7 +281,7 @@ export default async function RedditLaunchSupportPage() {
                   <RedditPostCard
                     subreddit="r gaming"
                     title="The Super Mario Galaxy Movie. Yoshi first look"
-                    imageSrc="/images/RLS-1.png"
+                    imageSrc="/images/RLS-1.avif"
                     objectPosition="50% 25%"
                     className="absolute left-0 top-10 w-[290px]"
                     style={{ transform: "rotate(-6deg)" }}
@@ -290,7 +290,7 @@ export default async function RedditLaunchSupportPage() {
                   <RedditPostCard
                     subreddit="r gaming"
                     title="Fable gameplay overview. Xbox Developer Direct 2026"
-                    imageSrc="/images/RLS-2.png"
+                    imageSrc="/images/RLS-2.avif"
                     objectPosition="50% 40%"
                     className="absolute left-1/2 top-0 w-[320px] -translate-x-1/2"
                     style={{ transform: "rotate(2deg)" }}
@@ -299,7 +299,7 @@ export default async function RedditLaunchSupportPage() {
                   <RedditPostCard
                     subreddit="r gaming"
                     title="When mobile gaming peaked"
-                    imageSrc="/images/RLS-3.png"
+                    imageSrc="/images/RLS-3.avif"
                     objectPosition="50% 55%"
                     className="absolute right-0 top-12 w-[290px]"
                     style={{ transform: "rotate(7deg)" }}

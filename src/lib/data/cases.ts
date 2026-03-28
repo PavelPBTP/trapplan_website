@@ -30,7 +30,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "Clear creator direction and execution system.",
     theme: "from-sky-700 via-blue-700 to-indigo-700",
     coverImage: {
-      src: "/images/brief-case.png",
+      src: "/images/brief-case.avif",
       alt: "Created a brief for YouTube and Twitch",
     },
     body: [
@@ -72,7 +72,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "Dedicated advertising campaign with structured creator delivery.",
     theme: "from-emerald-700 via-teal-600 to-sky-500",
     coverImage: {
-      src: "/images/CZC.png",
+      src: "/images/CZC.avif",
       alt: "Czech audience case",
     },
     body: [
@@ -134,7 +134,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "Monthly creator activations with KPI focus.",
     theme: "from-lime-600 via-emerald-500 to-sky-500",
     coverImage: {
-      src: "/images/WTP.png",
+      src: "/images/WTP.avif",
       alt: "WarThunder performance case",
     },
     body: [
@@ -195,7 +195,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "Expanded reach in Europe and the US.",
     theme: "from-fuchsia-700 via-pink-600 to-rose-500",
     coverImage: {
-      src: "/images/Crossout_case.png",
+      src: "/images/Crossout_case.avif",
       alt: "CrossOut case",
     },
     body: [
@@ -244,7 +244,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "Reached 1,500+ new players.",
     theme: "from-slate-800 via-slate-700 to-slate-600",
     coverImage: {
-      src: "/images/Twitch-ad_enlisted.png",
+      src: "/images/Twitch-ad_enlisted.avif",
       alt: "Twitch ad campaigns for Enlisted",
     },
     body: [
@@ -312,7 +312,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "1M+ views per month.",
     theme: "from-zinc-700 via-stone-600 to-stone-500",
     coverImage: {
-      src: "/images/WarThunder-EU_Case.png",
+      src: "/images/WarThunder-EU_Case.avif",
       alt: "WarThunder EU Case",
     },
     body: [
@@ -382,7 +382,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "Launched USA campaigns with structured creator delivery.",
     theme: "from-orange-600 via-amber-500 to-yellow-400",
     coverImage: {
-      src: "/images/WOT-case.png",
+      src: "/images/WOT-case.avif",
       alt: "World of Tanks USA case",
     },
     body: [
@@ -436,7 +436,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt: "YouTube campaigns across major European regions with consistent delivery.",
     theme: "from-indigo-700 via-violet-600 to-fuchsia-500",
     coverImage: {
-      src: "/images/warships-case.png",
+      src: "/images/warships-case.avif",
       alt: "World of Warships Europe case",
     },
   },

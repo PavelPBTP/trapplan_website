@@ -184,7 +184,7 @@ export default async function PRStarterPackPage() {
                 <div className="absolute inset-0 flex items-center justify-center px-6">
                   <div className="relative h-[280px] w-full max-w-[520px] overflow-hidden rounded-[22px]">
                     <Image
-                      src="/images/Key Doc.png"
+                      src="/images/Key Doc.avif"
                       alt={t(locale, "pr_starter_pack.ui.section2.image_alt")}
                       fill
                       sizes="(max-width: 1024px) 90vw, 520px"

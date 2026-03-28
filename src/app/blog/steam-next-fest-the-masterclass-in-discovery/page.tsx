@@ -61,7 +61,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function SteamNextFestMasterclassPage() {
   const locale = await getRequestLocale();
-  const coverPath = "/images/steam-next-fest-the-masterclass-in-discovery.png";
+  const coverPath = "/images/steam-next-fest-the-masterclass-in-discovery.avif";
 
   const paraCounts = [1, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3];
   const sections = Array.from({ length: 11 }, (_, i) => {
