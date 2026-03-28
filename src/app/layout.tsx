@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/layout/Header";
 import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
@@ -104,6 +105,7 @@ export default async function RootLayout({
         <div id="main-content">{children}</div>
         <Analytics />
         <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );

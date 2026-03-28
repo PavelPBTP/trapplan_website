@@ -1451,7 +1451,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/af3a03a890dcfae36853f1b4b2b1701190c85273.png",
+        src: "/blog-assets/af3a03a890dcfae36853f1b4b2b1701190c85273.avif",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "L’errore comune: trattare la capsule come un mini poster" },
@@ -1465,12 +1465,12 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/5e204afdd2362442d22d5a05ba20ddd038a1482a.png",
+        src: "/blog-assets/5e204afdd2362442d22d5a05ba20ddd038a1482a.avif",
         alt: "__wf_reserved_inherit",
       },
       {
         type: "image",
-        src: "/blog-assets/a9ba9529936ef6319a6d06cce63b316c0218c926.png",
+        src: "/blog-assets/a9ba9529936ef6319a6d06cce63b316c0218c926.avif",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "Silhouette: la base di una capsule ad alta conversione" },
@@ -1506,7 +1506,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/a175c9c0f4029af891ffb7ab2dd4478489e6f9ea.png",
+        src: "/blog-assets/a175c9c0f4029af891ffb7ab2dd4478489e6f9ea.avif",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "Perché la tipografia raramente funziona dentro una capsule Steam" },
@@ -1553,7 +1553,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/92d7cbaf7f8e3f5bb15ecfc079e033fa2403e34c.png",
+        src: "/blog-assets/92d7cbaf7f8e3f5bb15ecfc079e033fa2403e34c.avif",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "Come le capsule influenzano la retention sulla store page" },
@@ -1586,7 +1586,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.png",
+        src: "/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.avif",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "Un workflow pratico per produrre una capsule ad alta conversione" },

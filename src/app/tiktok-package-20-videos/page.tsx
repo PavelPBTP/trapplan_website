@@ -597,6 +597,26 @@ export default async function TikTokPackage20VideosPage() {
           ],
         }) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: t(locale, "seo.tiktok_20.title"),
+          description: t(locale, "seo.tiktok_20.desc"),
+          provider: {
+            "@type": "Organization",
+            name: "TrapPlan",
+            url: "https://www.trapplan.com",
+          },
+          areaServed: "Worldwide",
+          offers: {
+            "@type": "Offer",
+            price: "2000",
+            priceCurrency: "EUR",
+          },
+        }) }}
+      />
       <Footer />
     </>
   );

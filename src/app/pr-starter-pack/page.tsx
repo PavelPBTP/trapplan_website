@@ -350,6 +350,26 @@ export default async function PRStarterPackPage() {
             ],
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: t(locale, "seo.pr_starter_pack.title"),
+            description: t(locale, "seo.pr_starter_pack.desc"),
+            provider: {
+              "@type": "Organization",
+              name: "TrapPlan",
+              url: "https://www.trapplan.com",
+            },
+            areaServed: "Worldwide",
+            offers: {
+              "@type": "Offer",
+              price: "3000",
+              priceCurrency: "EUR",
+            },
+          }) }}
+        />
         <Footer />
       </main>
     </>

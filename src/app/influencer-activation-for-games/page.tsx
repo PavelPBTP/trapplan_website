@@ -307,6 +307,21 @@ export default async function InfluencerActivationForGamesPage() {
           ],
         }) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: t(locale, "seo.influencer_activation.title"),
+          description: t(locale, "seo.influencer_activation.desc"),
+          provider: {
+            "@type": "Organization",
+            name: "TrapPlan",
+            url: "https://www.trapplan.com",
+          },
+          areaServed: "Worldwide",
+        }) }}
+      />
       <Footer />
     </main>
   );

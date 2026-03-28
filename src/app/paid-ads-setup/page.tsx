@@ -331,6 +331,26 @@ export default async function PaidAdsSetupPage() {
             ],
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: t(locale, "seo.paid_ads_setup.title"),
+            description: t(locale, "seo.paid_ads_setup.desc"),
+            provider: {
+              "@type": "Organization",
+              name: "TrapPlan",
+              url: "https://www.trapplan.com",
+            },
+            areaServed: "Worldwide",
+            offers: {
+              "@type": "Offer",
+              price: "2000",
+              priceCurrency: "EUR",
+            },
+          }) }}
+        />
         <Footer />
       </main>
     </>

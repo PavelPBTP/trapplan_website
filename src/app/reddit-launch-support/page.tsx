@@ -432,6 +432,26 @@ export default async function RedditLaunchSupportPage() {
           ],
         }) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: t(locale, "seo.reddit_launch_support.title"),
+          description: t(locale, "seo.reddit_launch_support.desc"),
+          provider: {
+            "@type": "Organization",
+            name: "TrapPlan",
+            url: "https://www.trapplan.com",
+          },
+          areaServed: "Worldwide",
+          offers: {
+            "@type": "Offer",
+            price: "2500",
+            priceCurrency: "EUR",
+          },
+        }) }}
+      />
       <Footer />
     </>
   );

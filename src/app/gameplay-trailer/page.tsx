@@ -331,6 +331,26 @@ export default async function GameplayTrailerPage() {
             ],
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: t(locale, "seo.gameplay_trailer.title"),
+            description: t(locale, "seo.gameplay_trailer.desc"),
+            provider: {
+              "@type": "Organization",
+              name: "TrapPlan",
+              url: "https://www.trapplan.com",
+            },
+            areaServed: "Worldwide",
+            offers: {
+              "@type": "Offer",
+              price: "3000",
+              priceCurrency: "EUR",
+            },
+          }) }}
+        />
         <Footer />
       </main>
     </>
