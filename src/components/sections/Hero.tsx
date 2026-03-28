@@ -83,48 +83,6 @@ export default function Hero({ translations: tx }: { translations: HeroTranslati
     [cards],
   );
 
-  const clientLogos = useMemo(
-    () =>
-      [
-        {
-          id: "gaijin",
-          alt: "Gaijin logo",
-          src: "/images/682c675f1536e849a0fb1016_gaijin-logo.svg",
-        },
-{
-          id: "daedalic",
-          alt: "Daedalic Entertainment logo",
-          src: "/images/690a085de3ed39378962cc19_tps_company_5_Daedalic Entertainment_logo 1.avif",
-        },
-        {
-          id: "wargaming",
-          alt: "Wargaming logo",
-          src: "/images/682c675f30b396a45d2ee328_wargaming-logo.svg",
-        },
-        {
-          id: "ytopia",
-          alt: "Ytopia logo",
-          src: "/images/690a085d53af5dce05ff5a87_tps_company_11_YTOPIA LLC_logo.avif",
-        },
-        {
-          id: "aerosoft",
-          alt: "Aerosoft logo",
-          src: "/images/690a085da845c8536d7af1ef_tps_company_9_Aerosoft_logo 1.avif",
-        },
-        {
-          id: "megadev",
-          alt: "Megadev logo",
-          src: "/images/690a085de6e5cc0882bdd71f_tps_company_8_MegaDev_logo 1.avif",
-        },
-        {
-          id: "untold-tales",
-          alt: "Untold Tales logo",
-          src: "/images/690a097fda1e64256b171332_tps_company_6_Untold Tales _logo 1.avif",
-        },
-      ] as const,
-    [],
-  );
-
   return (
     <section className="bg-[#F3F3F3] text-black">
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-10 lg:px-10 lg:pt-20">
@@ -328,25 +286,6 @@ export default function Hero({ translations: tx }: { translations: HeroTranslati
           </div>
         </div>
 
-        <div className="mt-12 -mx-6 lg:-mx-10">
-          <div className="w-full rounded-[18px] bg-white/65 px-6 py-5 ring-1 ring-black/5 backdrop-blur lg:px-10">
-            <div className="mx-auto max-w-6xl">
-              <div className="grid grid-cols-2 place-items-center gap-x-10 gap-y-8 sm:grid-cols-4 lg:grid-cols-8">
-                {clientLogos.map((l) => (
-                  <div key={l.id} className="flex h-12 w-full min-w-0 items-center justify-center overflow-hidden px-2">
-                    <Image
-                      src={l.src}
-                      alt={l.alt}
-                      width={220}
-                      height={48}
-                      className="h-full w-auto object-contain opacity-70"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
