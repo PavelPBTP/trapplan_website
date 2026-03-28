@@ -1034,11 +1034,11 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.about.desc": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
     "seo.blog.title": "Gaming Marketing Blog | Industry Trends & Tips",
     "seo.blog.desc":
-      "Stay up-to-date with the latest trends in gaming influencer marketing. TrapPlan's blog covers tips, case studies, and strategies to help brands succeed in the gaming industry.",
+      "Tips, case studies, and strategies for game marketing. Steam wishlists, influencer campaigns, TikTok, Reddit, and paid growth — from the TrapPlan team.",
     "seo.our_cases.title": "Our Cases | Game Marketing Results & Case Studies",
-    "seo.our_cases.desc": "Selected outcomes and case studies from TrapPlan.",
+    "seo.our_cases.desc": "Real campaign results: YouTube, Twitch, TikTok, and Reddit case studies for game launches. See how TrapPlan drives wishlists, installs, and revenue.",
     "seo.no_wishlists.title": "No Wishlists on Steam | Fix Your Store Page Conversion",
-    "seo.no_wishlists.desc": "What to do when your Steam page gets traffic but wishlists do not grow.",
+    "seo.no_wishlists.desc": "Your Steam page gets traffic but wishlists don't grow? Diagnose conversion blockers — capsule art, description, tags, pricing — and fix what's costing you wishlists.",
     "seo.reddit_launch_support.title": "Reddit Launch Support: Organic Steam Traffic Without Backlash",
     "seo.reddit_launch_support.desc":
       "A 15 post organic Reddit campaign designed to drive Steam wishlists without triggering the usual marketing backlash.",
@@ -1899,25 +1899,25 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "seo.steam_pricing_planner.desc": "Calculate recommended Steam regional prices using Purchasing Power Parity (PPP) and live FX rates.",
     "seo.steam_influencers_planner.title": "Steam Influencer Planner | Find Gaming Creators by Genre",
     "seo.steam_influencers_planner.desc":
-      "Professional tool for discovering YouTube and Twitch gaming influencers based on genre and similar games.",
+      "Find YouTube and Twitch gaming creators by genre, audience size, and similar games. Free influencer discovery tool for indie and AA studios planning campaigns.",
     "seo.steam_festival_planner.title": "Steam Festival Planner | Match Events to Your Game",
     "seo.steam_festival_planner.desc":
-      "Browse Steam festivals and sales, filter by type and genre, and match events to your game using AppID analysis.",
+      "Browse upcoming Steam festivals and sales. Filter by type, genre, and dates. Match events to your game with AppID analysis and plan your visibility calendar.",
     "seo.creative_content_pipeline.title": "Creative Content Pipeline for Steam and Console Games",
     "seo.creative_content_pipeline.desc":
       "A continuous content pipeline for Steam and Console games. Trailers, shorts, store assets, and iterative production focused on Wishlist growth and conversion.",
     "seo.paid_growth.title": "Paid Growth for Steam and Console Games",
     "seo.paid_growth.desc":
-      "High-ticket paid growth for Steam and Console games. Channel strategy, clean tracking, attribution, and a structured handoff.",
+      "Paid acquisition for Steam and console games. We build channel strategy, set up clean tracking and attribution, then run and optimise campaigns with structured reporting.",
     "seo.game_launch_blueprint.title": "Game Launch Blueprint: Your Strategy, Our Standards.",
     "seo.game_launch_blueprint.desc":
       "Stop guessing your next move. We provide the exact marketing framework used by publishers. Standardized, battle tested, and ready to execute together.",
     "seo.games_co_publishing.title": "Games Co-Publishing: Marketing & Distribution Partner.",
     "seo.games_co_publishing.desc":
-      "A marketing-driven co-publishing partnership focused on visibility, market validation, audience growth, and commercial performance.",
+      "Co-publishing for indie and AA games. We handle marketing, distribution, and audience growth — you focus on development. Revenue-share model with full transparency.",
     "seo.blog.masterclass.title": "Steam Next Fest: The Masterclass in Discovery",
     "seo.blog.masterclass.desc":
-      "A 2026 deep-dive on Steam Next Fest: what matters now, the first 48 hours, conversion signals, demo page strategy, influencer timing, and how to turn guidance into execution.",
+      "Steam Next Fest 2026 deep-dive: the first 48 hours, conversion signals, demo page strategy, influencer timing, and turning guidance into execution.",
     "legal.content_rules.meta_title": "Content Rules | TrapPlan Usage Guidelines",
     "legal.content_rules.meta_desc": "Basic rules for using TrapPlan content and assets.",
     "legal.content_rules.title": "Content Rules",

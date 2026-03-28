@@ -36,12 +36,12 @@ const nextConfig: NextConfig = {
       {
         source: "/wishlist-calculator",
         destination: "/steam-wishlist-calculator",
-        permanent: false,
+        permanent: true,
       },
       {
         source: "/redditlaunch-support",
         destination: "/reddit-launch-support",
-        permanent: false,
+        permanent: true,
       },
     ];
   },

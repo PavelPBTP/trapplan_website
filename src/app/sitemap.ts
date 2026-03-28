@@ -118,6 +118,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
+    ...localize("/influencer-micro-campaign").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...localize("/paid-ads-setup").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...localize("/gameplay-trailer").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...localize("/game-launch-blueprint").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...localize("/games-co-publishing").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...localize("/paid-growth").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...localize("/creative-content-pipeline").map((url) => ({
+      url: toAbs(url),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.flatMap((p) =>

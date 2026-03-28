@@ -387,6 +387,9 @@ export async function generateMetadata({
       title,
       description: finalDescription,
       images,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: post.authorName ? [post.authorName] : undefined,
     },
     twitter: {
       card: "summary_large_image",
