@@ -1034,7 +1034,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.media_video_label": "Video",
     "packages.card.reddit.title": "Reddit\nLaunch Support",
     "packages.card.reddit.desc":
-      "We drive a launch burst on Reddit in the most relevant subreddits for your game: we’ll craft and publish 15 high engagement posts, spark meaningful discussions and generate organic interest at release by real users",
+      "We run your Reddit presence from your studio’s official account. 15 targeted posts across the right subreddits, written to fit each community and drive wishlists.",
     "packages.card.pr_starter.title": "PR Starter Pack",
     "packages.card.pr_starter.desc":
       "PR outreach that gets your game covered. A readable press release, targeted pitches, follow ups, and the full contact list. Built for credibility and Steam wishlists.",
@@ -2239,7 +2239,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.media_video_label": "Vídeo",
     "packages.card.reddit.title": "Soporte de lanzamiento\nen Reddit",
     "packages.card.reddit.desc":
-      "Impulsamos un burst de lanzamiento en Reddit en los subreddits más relevantes para tu juego: crearemos y publicaremos 15 posts de alta interacción, generaremos conversaciones significativas y despertaremos interés orgánico en el lanzamiento con usuarios reales.",
+      "Gestionamos la presencia de tu estudio en Reddit desde su cuenta oficial. 15 publicaciones en los subreddits adecuados, escritas para encajar en cada comunidad y generar wishlists.",
     "packages.card.pr_starter.title": "Pack inicial de PR",
     "packages.card.pr_starter.desc":
       "PR para conseguir cobertura: nota de prensa clara, pitches segmentados, follow-ups y lista completa de contactos. Diseñado para credibilidad y wishlists en Steam.",
@@ -2606,7 +2606,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.media_video_label": "Video",
     "packages.card.reddit.title": "Supporto lancio\nReddit",
     "packages.card.reddit.desc":
-      "Creiamo un burst di lancio su Reddit nei subreddit più rilevanti per il tuo gioco: realizziamo e pubblichiamo 15 post ad alta interazione, attiviamo discussioni e generiamo interesse organico al lancio da utenti reali.",
+      "Gestiamo la presenza del tuo studio su Reddit dal suo account ufficiale. 15 post mirati nei subreddit giusti, scritti per adattarsi a ogni community e generare wishlist.",
     "packages.card.pr_starter.title": "PR Starter Pack",
     "packages.card.pr_starter.desc":
       "PR per ottenere copertura: comunicato stampa leggibile, pitch mirati, follow-up e lista completa contatti. Pensato per credibilità e wishlist su Steam.",
@@ -2926,7 +2926,7 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "packages.media_video_label": "Vidéo",
     "packages.card.reddit.title": "Support de lancement\nReddit",
     "packages.card.reddit.desc":
-      "Nous orchestrons un burst de lancement sur Reddit dans les subreddits les plus pertinents pour votre jeu : 15 posts à forte interaction, des discussions utiles et un intérêt organique au moment de la sortie via de vrais utilisateurs.",
+      "Nous gérons la présence de votre studio sur Reddit depuis son compte officiel. 15 publications ciblées dans les bons subreddits, rédigées pour chaque communauté et générer des wishlists.",
     "packages.card.pr_starter.title": "Pack PR Starter",
     "packages.card.pr_starter.desc":
       "PR pour obtenir de la couverture : communiqué de presse lisible, pitches ciblés, relances, et liste complète de contacts. Conçu pour la crédibilité et les wishlists Steam.",
