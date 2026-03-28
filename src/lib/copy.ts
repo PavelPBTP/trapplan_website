@@ -1539,9 +1539,9 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "reddit_launch_support.ui.post.share": "Share",
     "reddit_launch_support.ui.post.image_alt": "Reddit post screenshot",
     "reddit_launch_support.ui.hero.title_01": "Get your game to the front page of Reddit.",
-    "reddit_launch_support.ui.hero.title_02": "Without the “marketing” backlash.",
+    "reddit_launch_support.ui.hero.title_02": "Without the \u201Cmarketing\u201D backlash.",
     "reddit_launch_support.ui.hero.body":
-      "Posting on Reddit is a full time job and a massive headache. One wrong move and you're banned. We take that risk for you. We drop 15 targeted posts about your game. We seed the comments, handle the feedback, and help you to grow wishlists.",
+      "Reddit can make or break a launch — but most studios don't know how to post there without getting roasted. We run your Reddit presence from your studio's official account: pick the right subreddits, write posts that spark real conversation, and manage the threads so you get wishlists instead of bans.",
     "reddit_launch_support.ui.hero.cta": "Let’s Start",
     "reddit_launch_support.ui.hero.price": "Price: €2 500",
     "reddit_launch_support.ui.hero.image_alt": "Reddit post example",
@@ -1550,40 +1550,40 @@ const COPY_PARTIAL: Record<Locale, Partial<Record<CopyKey, string>>> = {
     "reddit_launch_support.ui.section2.title_01": "Reddit hates marketing.",
     "reddit_launch_support.ui.section2.title_02": "But it loves developers.",
     "reddit_launch_support.ui.section2.p1":
-      "Reddit is a minefield. The rules are rarely written the way they’re enforced, and the penalty for looking like marketing can be instant. Removals, bans, and backlash that follows your game.",
+      "Every subreddit has its own unwritten rules. Post the wrong way and your game gets flagged, removed, or worse — mocked. Most studios either avoid Reddit entirely or post once, get burned, and never come back.",
     "reddit_launch_support.ui.section2.p2":
-      "Our job is to handle the scary part. Navigating each subreddit’s culture, positioning the post like a real developer story, and managing the thread so you can enjoy the traffic without getting burned.",
+      "We post from your studio’s official account — transparently, as you. We learn each community’s culture, write content that fits, and manage the conversation so your game gets the attention it deserves.",
     "reddit_launch_support.ui.section3.cards_disclaimer": "*The posts shown above are not examples of our work — they are random Reddit posts used for illustration purposes.",
-    "reddit_launch_support.ui.section3.title": "The Stealth Reddit Package",
-    "reddit_launch_support.ui.section3.bullet1.title": "15 High Engagement Posts:",
+    "reddit_launch_support.ui.section3.title": "The Reddit Launch Package",
+    "reddit_launch_support.ui.section3.bullet1.title": "15 Targeted Posts:",
     "reddit_launch_support.ui.section3.bullet1.text":
-      "tailored to each community’s content style and appetite.",
-    "reddit_launch_support.ui.section3.bullet2.title": "Community Native Strategy:",
+      "written for each subreddit’s tone and posted from your studio’s account.",
+    "reddit_launch_support.ui.section3.bullet2.title": "Your Voice, Our Writing:",
     "reddit_launch_support.ui.section3.bullet2.text":
-      "no corporate accounts. We keep it developer to player.",
-    "reddit_launch_support.ui.section3.bullet3.title": "Wishlist Spike Mechanics:",
+      "we write as your studio — developer updates, behind-the-scenes, gameplay highlights. Transparent and on-brand.",
+    "reddit_launch_support.ui.section3.bullet3.title": "Wishlist-Driven Content:",
     "reddit_launch_support.ui.section3.bullet3.text":
-      "designed to convert curiosity into store visits and wishlists.",
+      "every post is designed to turn curiosity into store visits and wishlists.",
     "reddit_launch_support.ui.section3.bullet4.title": "Subreddit Curation:",
     "reddit_launch_support.ui.section3.bullet4.text":
-      "we pick the communities that actually fit your game.",
-    "reddit_launch_support.ui.section3.bullet5.title": "Active Management:",
+      "we research and pick the communities where your game actually belongs.",
+    "reddit_launch_support.ui.section3.bullet5.title": "Thread Management:",
     "reddit_launch_support.ui.section3.bullet5.text":
-      "seeding engagement and guiding the thread while it is live.",
+      "we monitor replies, answer questions, and keep the conversation going while posts are live.",
     "reddit_launch_support.ui.section3.cta": "Let’s Start",
     "reddit_launch_support.ui.section4.title": "How It Works",
-    "reddit_launch_support.ui.section4.step1.title": "Subreddit map",
+    "reddit_launch_support.ui.section4.step1.title": "Research",
     "reddit_launch_support.ui.section4.step1.text":
-      "We curate the right communities and define the safe posting angles.",
+      "We map the subreddits that matter for your genre and define the right posting angles for each one.",
     "reddit_launch_support.ui.section4.step2.title": "Write",
     "reddit_launch_support.ui.section4.step2.text":
-      "We craft posts that feel native and invite discussion, not suspicion.",
+      "We draft posts in your studio's voice — dev updates, gameplay reveals, behind-the-scenes stories that fit each community.",
     "reddit_launch_support.ui.section4.step3.title": "Post",
     "reddit_launch_support.ui.section4.step3.text":
-      "We publish through community compatible accounts and monitor reactions.",
+      "We publish from your official account at the right times and monitor how each post lands.",
     "reddit_launch_support.ui.section4.step4.title": "Manage",
     "reddit_launch_support.ui.section4.step4.text":
-      "We seed engagement, reply, and steer the thread while it is live.",
+      "We handle replies, answer player questions, and keep threads active while they're getting traction.",
     "reddit_launch_support.ui.section4.cta": "Let’s Start",
     "reddit_launch_support.ui.results.title": "Steam Traffic Results",
     "reddit_launch_support.ui.results.subtitle":
