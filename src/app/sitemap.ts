@@ -6,6 +6,7 @@ import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://www.trapplan.com";
 
+  const now = new Date();
   const toAbs = (href: string) => `${siteUrl}${href.startsWith("/") ? href : `/${href}`}`;
   const localize = (path: string) => SUPPORTED_LOCALES.map((l) => withLocale(l, path));
 
@@ -38,8 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.2,
     })),
   );
-
-  const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     ...localize("/").map((url) => ({
