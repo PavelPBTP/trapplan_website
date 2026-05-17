@@ -7,6 +7,7 @@ import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 import { clampText } from "@/lib/seo";
 import Pagination from "@/components/ui/Pagination";
+import BlogSearch, { type BlogSearchEntry } from "@/components/ui/BlogSearch";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -129,6 +130,18 @@ export default async function BlogIndexPage({
     ogCover: ogFallbackForPost(locale, p.title, p.category),
   }));
 
+  const searchIndex: BlogSearchEntry[] = dedupeBySlug(
+    allPosts.slice().sort((a, b) => toDateMs(b.date) - toDateMs(a.date)),
+  ).map((p) => ({
+    slug: p.slug,
+    href: withLocale(locale, `/blog/${p.slug}`),
+    title: p.title,
+    excerpt: p.excerpt,
+    cover: p.cover ?? ogFallbackForPost(locale, p.title, p.category),
+    category: p.category,
+    date: p.date,
+  }));
+
   return (
     <main className="bg-white">
       <div className="mx-auto max-w-6xl px-6 pt-10 pb-16 lg:px-10 lg:pt-14">
@@ -188,6 +201,13 @@ export default async function BlogIndexPage({
           </aside>
 
           <section className="lg:col-span-9">
+            <BlogSearch
+              index={searchIndex}
+              placeholder={t(locale, "ui.blog_search.placeholder")}
+              clearLabel={t(locale, "ui.blog_search.clear")}
+              noResultsLabel={t(locale, "ui.blog_search.no_results")}
+              countLabel={(n) => t(locale, "ui.blog_search.count").replace("{n}", String(n))}
+            >
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
               {cards.map(({ post, cover, ogCover }, idx) => (
                 <article key={post.slug} className="group">
@@ -288,6 +308,7 @@ export default async function BlogIndexPage({
                 }}
               />
             )}
+            </BlogSearch>
           </section>
         </div>
       </div>

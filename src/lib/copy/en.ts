@@ -73,9 +73,9 @@ const translations: Partial<Record<CopyKey, string>> = {
     "packages.card.gameplay_trailer.desc":
       "A complete, high quality gameplay trailer crafted specifically for your game. Clear storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
     "seo.site.name": "Videogames Marketing | Marketing for Indie Games",
-    "seo.site.description": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing.",
+    "seo.site.description": "TrapPlan grows wishlists, installs and sales for game studios through influencer marketing, paid media, Reddit and content production — run by a senior in-industry team.",
     "seo.about.title": "About Us | TrapPlan Game Marketing Agency",
-    "seo.about.desc": "TrapPlan helps game studios grow wishlists and sales with performance-driven marketing systems.",
+    "seo.about.desc": "Meet the TrapPlan team — game-industry strategists and creators who run influencer, paid media, PR and content programs for studios shipping on every major platform.",
     "seo.blog.title": "Gaming Marketing Blog | Industry Trends & Tips",
     "seo.blog.desc":
       "Tips, case studies, and strategies for game marketing. Steam wishlists, influencer campaigns, TikTok, Reddit, and paid growth — from the TrapPlan team.",
@@ -85,7 +85,7 @@ const translations: Partial<Record<CopyKey, string>> = {
     "seo.no_wishlists.desc": "Your Steam page gets traffic but wishlists don't grow? Diagnose conversion blockers — capsule art, description, tags, pricing — and fix what's costing you wishlists.",
     "seo.reddit_launch_support.title": "Reddit Launch Support: Organic Steam Traffic Without Backlash",
     "seo.reddit_launch_support.desc":
-      "A 15 post organic Reddit campaign designed to drive Steam wishlists without triggering the usual marketing backlash.",
+      "A 15-post organic Reddit campaign that drives Steam wishlists for your launch window without triggering the usual mod or community backlash. Researched subreddits, mod outreach, drafts and live moderation.",
     "seo.pr_starter_pack.title": "PR Starter Pack: Get the Coverage Your Game Deserves",
     "seo.pr_starter_pack.desc":
       "PR outreach for indie games. A readable press release, targeted pitches, follow ups, and a clear contact list. Built to earn credibility and Steam Wishlists.",
@@ -93,7 +93,7 @@ const translations: Partial<Record<CopyKey, string>> = {
     "seo.tiktok_20.desc":
       "Get 20 TikTok videos tailored for your game: hooks, scripts, editing, and a clear content plan designed to drive wishlists and awareness.",
     "seo.influencer_micro.title": "Influencer Micro Campaign: Cost-Efficient Reach That Converts",
-    "seo.influencer_micro.desc": "A micro-influencer activation sprint for games: niche creator selection, outreach, coordination, tracking and a clear report. Built for meaningful reach and Steam wishlists.",
+    "seo.influencer_micro.desc": "A micro-influencer sprint for games: niche creator picks, outreach, coordination, tracking and a clean report — built for meaningful reach and Steam wishlists.",
     "seo.influencer_activation.title": "Influencer Activation for Games: Coverage That Converts.",
     "seo.influencer_activation.desc": "We run structured influencer campaigns: sourcing, outreach, coordination, tracking, and post-campaign learnings. Repeatable, measurable, and built for games.",
     "influencer_activation.badge": "Service",
@@ -986,13 +986,13 @@ const translations: Partial<Record<CopyKey, string>> = {
       "Yes. We produce everything from headers to animated GIFs for the description to maximize conversion.",
     "creative_content_pipeline.ui.faq.cta": "Book a Strategy Call",
     "seo.paid_ads_setup.title": "Paid Ads Setup: Launch Your Campaigns Correctly",
-    "seo.paid_ads_setup.desc": "We set up your paid ad campaigns from start to finish: channel selection, budget configuration, targeting setup and creative placement. Once launched, we hand over the account. Ongoing monitoring or optimisation aren’t included.",
+    "seo.paid_ads_setup.desc": "We set up paid ad campaigns end-to-end: channel pick, budget, targeting and creative. Account handed to your team once launched (no ongoing management).",
     "seo.gameplay_trailer.title": "Gameplay Trailer: A Trailer Built to Convert",
-    "seo.gameplay_trailer.desc": "A complete gameplay trailer crafted specifically for your game: storytelling, polished capture, pacing, editing and delivery ready for Steam, YouTube and media distribution.",
+    "seo.gameplay_trailer.desc": "A complete gameplay trailer for your game — storytelling, polished capture, pacing and edit, delivered ready for Steam, YouTube and media outreach.",
     "seo.steam_wishlist_calculator.title": "Steam Wishlist Calculator | Estimate Sales & Traffic Targets",
-    "seo.steam_wishlist_calculator.desc": "Estimate required wishlists, traffic and budget to hit your week 1 Steam sales target.",
+    "seo.steam_wishlist_calculator.desc": "Free calculator: estimate the wishlists, daily traffic and marketing budget your indie game needs to hit a specific week-one Steam sales target.",
     "seo.steam_pricing_planner.title": "Steam Pricing Planner & Calculator | Regional Price Tool",
-    "seo.steam_pricing_planner.desc": "Calculate recommended Steam regional prices using Purchasing Power Parity (PPP) and live FX rates.",
+    "seo.steam_pricing_planner.desc": "Free pricing tool: get recommended Steam regional prices using Purchasing Power Parity (PPP), live FX rates and indie-friendly rounding for every supported country.",
     "seo.steam_influencers_planner.title": "Steam Influencer Planner | Find Gaming Creators by Genre",
     "seo.steam_influencers_planner.desc":
       "Find YouTube and Twitch gaming creators by genre, audience size, and similar games. Free influencer discovery tool for indie and AA studios planning campaigns.",
@@ -1004,13 +1004,13 @@ const translations: Partial<Record<CopyKey, string>> = {
       "A continuous content pipeline for Steam and Console games. Trailers, shorts, store assets, and iterative production focused on Wishlist growth and conversion.",
     "seo.paid_growth.title": "Paid Growth for Steam and Console Games",
     "seo.paid_growth.desc":
-      "Paid acquisition for Steam and console games. We build channel strategy, set up clean tracking and attribution, then run and optimise campaigns with structured reporting.",
+      "Paid acquisition for Steam and console games — channel strategy, tracking, attribution, run and optimisation with structured weekly reporting.",
     "seo.game_launch_blueprint.title": "Game Launch Blueprint: Your Strategy, Our Standards.",
     "seo.game_launch_blueprint.desc":
       "Stop guessing your next move. We provide the exact marketing framework used by publishers. Standardized, battle tested, and ready to execute together.",
     "seo.games_co_publishing.title": "Games Co-Publishing: Marketing & Distribution Partner.",
     "seo.games_co_publishing.desc":
-      "Co-publishing for indie and AA games. We handle marketing, distribution, and audience growth — you focus on development. Revenue-share model with full transparency.",
+      "Co-publishing for indie and AA games — marketing, distribution and audience growth handled by our team while you focus on development. Revenue-share model.",
     "seo.blog.masterclass.title": "Steam Next Fest: The Masterclass in Discovery",
     "seo.blog.masterclass.desc":
       "Steam Next Fest 2026 deep-dive: the first 48 hours, conversion signals, demo page strategy, influencer timing, and turning guidance into execution.",
@@ -1220,6 +1220,20 @@ const translations: Partial<Record<CopyKey, string>> = {
     "services_hub.cta_learn_more": "Learn more →",
     "services_hub.packages_title": "Fixed-scope packages",
     "services_hub.packages_subtitle": "Smaller engagements with a clear price, a clear scope and a clear deliverable.",
+    "legal.cookies.title": "Cookies policy",
+    "legal.cookies.lede": "The cookies we set on trapplan.com, what each one does, and how you can control your consent.",
+    "legal.cookies.s1.title": "What cookies are",
+    "legal.cookies.s1.body": "Cookies are small text files a site asks your browser to store. They let the site remember your choices, keep you signed in, or measure traffic. Some are essential to make the site work; others are optional.",
+    "legal.cookies.s2.title": "How we use them",
+    "legal.cookies.s2.body": "We use a minimal set of essential cookies. With your consent, we also enable anonymous analytics so we can see which guides and case studies are actually useful. No third-party advertising or behavioural targeting cookies are set on this site.",
+    "legal.cookies.s3.title": "Managing your consent",
+    "legal.cookies.s3.body": "Click 'Reject non-essential' on the banner to opt out, or 'Accept all' to enable analytics. You can clear the choice by deleting the tp-consent value in your browser — the banner will then ask again on your next visit.",
+    "legal.cookies.s4.title": "Browser controls",
+    "legal.cookies.s4.body": "All major browsers let you block, delete or be notified about cookies. Search for 'cookie settings' in Chrome, Firefox, Safari or Edge. Blocking essential cookies may break parts of this site.",
+    "ui.blog_search.placeholder": "Search the blog…",
+    "ui.blog_search.clear": "Clear",
+    "ui.blog_search.no_results": "No matches. Try a different query.",
+    "ui.blog_search.count": "{n} matches",
 };
 
 export default translations;

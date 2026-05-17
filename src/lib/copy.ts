@@ -993,7 +993,21 @@ export type CopyKey =
   | "services_hub.subtitle"
   | "services_hub.cta_learn_more"
   | "services_hub.packages_title"
-  | "services_hub.packages_subtitle";
+  | "services_hub.packages_subtitle"
+  | "legal.cookies.title"
+  | "legal.cookies.lede"
+  | "legal.cookies.s1.title"
+  | "legal.cookies.s1.body"
+  | "legal.cookies.s2.title"
+  | "legal.cookies.s2.body"
+  | "legal.cookies.s3.title"
+  | "legal.cookies.s3.body"
+  | "legal.cookies.s4.title"
+  | "legal.cookies.s4.body"
+  | "ui.blog_search.placeholder"
+  | "ui.blog_search.clear"
+  | "ui.blog_search.no_results"
+  | "ui.blog_search.count";
 
 
 import en from "@/lib/copy/en";

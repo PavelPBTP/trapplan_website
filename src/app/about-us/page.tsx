@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -106,7 +107,14 @@ export default async function AboutUsPage() {
     <main className="bg-[#F3F3F3]">
       <section className="relative overflow-hidden bg-white">
         <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_18%_20%,rgba(255,10,91,0.14),transparent_55%),radial-gradient(circle_at_76%_10%,rgba(0,0,0,0.06),transparent_50%)]" />
-        <div className="mx-auto max-w-6xl px-6 pt-14 pb-14 lg:px-10 lg:pt-18">
+        <div className="mx-auto max-w-6xl px-6 pt-10 pb-14 lg:px-10 lg:pt-14">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "nav.about_us"), href: withLocale(locale, "/about-us") },
+            ]}
+            className="mb-6"
+          />
           <div className="flex items-center justify-between">
             <NumberBadge n="01" />
             <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />

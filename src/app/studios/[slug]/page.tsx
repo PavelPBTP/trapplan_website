@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import Footer from "@/components/sections/Footer";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { STUDIO_PAGES } from "@/lib/data/studios";
 import { getRequestLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 import { clampWithSuffix } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -82,6 +84,7 @@ export default async function StudioPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   const s = STUDIO_PAGES.find((x) => x.slug === slug);
   if (!s) notFound();
@@ -89,7 +92,15 @@ export default async function StudioPage({
   return (
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
+        <div className="mx-auto max-w-5xl px-6 pt-10 pb-14 lg:px-10">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "nav.our_cases"), href: withLocale(locale, "/our-cases") },
+              { name: s.title, href: withLocale(locale, `/studios/${slug}`) },
+            ]}
+            className="mb-6"
+          />
           <div className={`h-[220px] w-full rounded-3xl bg-gradient-to-br ${s.theme}`} />
           <div className="mt-10">
             <div className="text-[13px] font-semibold text-black/60">

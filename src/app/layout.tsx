@@ -115,7 +115,7 @@ export default async function RootLayout({
           acceptLabel={t(locale, "ui.cookie.accept")}
           rejectLabel={t(locale, "ui.cookie.reject")}
           learnMoreLabel={t(locale, "ui.cookie.learn_more")}
-          learnMoreHref={withLocale(locale, "/copyright-policy")}
+          learnMoreHref={withLocale(locale, "/cookies-policy")}
         />
         <Analytics />
         <VercelAnalytics />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/sections/Footer";
 import WorkWithUsForm from "@/components/forms/WorkWithUsForm";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
@@ -81,7 +82,14 @@ export default async function FormPage() {
   return (
     <>
       <main className="bg-[#F3F3F3]">
-        <section className="mx-auto max-w-6xl px-6 pt-14 pb-24 lg:px-10 lg:pt-20">
+        <section className="mx-auto max-w-6xl px-6 pt-10 pb-24 lg:px-10 lg:pt-14">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "cta.work_with_us"), href: withLocale(locale, "/form") },
+            ]}
+            className="mb-6"
+          />
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
               <h1 className="text-[40px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[44px]">

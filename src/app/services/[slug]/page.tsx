@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import Footer from "@/components/sections/Footer";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { SERVICES } from "@/lib/data/services";
 import { getRequestLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
@@ -112,7 +113,15 @@ export default async function ServicePage({
   return (
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
+        <div className="mx-auto max-w-5xl px-6 pt-10 pb-14 lg:px-10">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "nav.services"), href: withLocale(locale, "/services") },
+              { name: title, href: withLocale(locale, `/services/${slug}`) },
+            ]}
+            className="mb-6"
+          />
           <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
             {title}
           </h1>

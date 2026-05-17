@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
 import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
@@ -53,7 +54,14 @@ export default async function ContentRulesPage() {
   return (
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
+        <div className="mx-auto max-w-5xl px-6 pt-10 pb-14 lg:px-10">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "legal.content_rules.title"), href: withLocale(locale, "/content-rules") },
+            ]}
+            className="mb-6"
+          />
           <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
             {t(locale, "legal.content_rules.title")}
           </h1>

@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import { CASE_STUDIES } from "@/lib/data/cases";
 import Link from "next/link";
 import Image from "next/image";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -98,6 +99,14 @@ export default async function StudiosCasesPage({
     <main className="bg-[#F3F3F3]">
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-6 pt-10 pb-14 lg:px-10">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "nav.our_cases"), href: withLocale(locale, "/our-cases") },
+              { name: c.title, href: withLocale(locale, `/studios-cases/${c.slug}`) },
+            ]}
+            className="mb-4"
+          />
           <div className="flex items-center justify-between">
             <Link
               href={withLocale(locale, "/our-cases")}
