@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/layout/Header";
 import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
+import CookieConsent from "@/components/ui/CookieConsent";
+import MobileCTA from "@/components/ui/MobileCTA";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -103,6 +105,18 @@ export default async function RootLayout({
         </a>
         <Header locale={locale} />
         <div id="main-content">{children}</div>
+        <MobileCTA
+          href={withLocale(locale, "/form")}
+          label={t(locale, "ui.mobile_cta.label")}
+        />
+        <CookieConsent
+          title={t(locale, "ui.cookie.title")}
+          body={t(locale, "ui.cookie.body")}
+          acceptLabel={t(locale, "ui.cookie.accept")}
+          rejectLabel={t(locale, "ui.cookie.reject")}
+          learnMoreLabel={t(locale, "ui.cookie.learn_more")}
+          learnMoreHref={withLocale(locale, "/copyright-policy")}
+        />
         <Analytics />
         <VercelAnalytics />
         <SpeedInsights />

@@ -975,7 +975,25 @@ export type CopyKey =
   | "blog.masterclass.s11.title"
   | "blog.masterclass.s11.p01"
   | "blog.masterclass.s11.p02"
-  | "blog.masterclass.s11.p03";
+  | "blog.masterclass.s11.p03"
+  | "ui.pagination.previous"
+  | "ui.pagination.next"
+  | "ui.pagination.page_aria"
+  | "ui.mobile_cta.label"
+  | "ui.cookie.title"
+  | "ui.cookie.body"
+  | "ui.cookie.accept"
+  | "ui.cookie.reject"
+  | "ui.cookie.learn_more"
+  | "ui.breadcrumb.home"
+  | "ui.breadcrumb.blog"
+  | "ui.breadcrumb.our_cases"
+  | "ui.breadcrumb.about"
+  | "services_hub.title"
+  | "services_hub.subtitle"
+  | "services_hub.cta_learn_more"
+  | "services_hub.packages_title"
+  | "services_hub.packages_subtitle";
 
 
 import en from "@/lib/copy/en";

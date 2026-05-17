@@ -6,6 +6,7 @@ import { getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 import { clampText } from "@/lib/seo";
+import Pagination from "@/components/ui/Pagination";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -75,14 +76,19 @@ function ogFallbackForPost(locale: Locale, title: string, category?: string) {
   return `/og?${p.toString()}`;
 }
 
+const POSTS_PER_PAGE = 24;
+
 export default async function BlogIndexPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ category?: string }> | { category?: string };
+  searchParams?:
+    | Promise<{ category?: string; page?: string }>
+    | { category?: string; page?: string };
 }) {
   const locale = await getRequestLocale();
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const selectedCategory = resolvedSearchParams?.category;
+  const requestedPage = Math.max(1, Number.parseInt(resolvedSearchParams?.page ?? "1", 10) || 1);
 
   const allPosts = getBlogPosts(locale);
 
@@ -99,7 +105,7 @@ export default async function BlogIndexPage({
     new Set(allPosts.map((p) => p.category).filter(Boolean) as string[]),
   ).sort((a, b) => a.localeCompare(b, locale, { sensitivity: "base" }));
 
-  const posts = dedupeBySlug(
+  const filteredAndSorted = dedupeBySlug(
     (selectedCategory
     ? allPosts.filter((p) => p.category === selectedCategory)
     : allPosts
@@ -107,6 +113,15 @@ export default async function BlogIndexPage({
       .slice()
       .sort((a, b) => toDateMs(b.date) - toDateMs(a.date)),
   );
+
+  const totalPages = Math.max(1, Math.ceil(filteredAndSorted.length / POSTS_PER_PAGE));
+  const currentPage = Math.min(requestedPage, totalPages);
+  const start = (currentPage - 1) * POSTS_PER_PAGE;
+  const posts = filteredAndSorted.slice(start, start + POSTS_PER_PAGE);
+
+  const paginationBasePath = withLocale(locale, "/blog");
+  const paginationQuery = new URLSearchParams();
+  if (selectedCategory) paginationQuery.set("category", selectedCategory);
 
   const cards = posts.map((p) => ({
     post: p,
@@ -259,7 +274,20 @@ export default async function BlogIndexPage({
               <div className="rounded-[16px] bg-black/[0.02] px-5 py-5 text-[15px] text-black/60">
                 {t(locale, "blog.ui.no_posts_found")}
               </div>
-            ) : null}
+            ) : (
+              <Pagination
+                page={currentPage}
+                totalPages={totalPages}
+                basePath={paginationBasePath}
+                extraQuery={paginationQuery.toString()}
+                labels={{
+                  previous: t(locale, "ui.pagination.previous"),
+                  next: t(locale, "ui.pagination.next"),
+                  pageAria: (n) =>
+                    t(locale, "ui.pagination.page_aria").replace("{n}", String(n)),
+                }}
+              />
+            )}
           </section>
         </div>
       </div>

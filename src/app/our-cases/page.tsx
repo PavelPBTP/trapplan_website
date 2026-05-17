@@ -4,6 +4,7 @@ import Footer from "@/components/sections/Footer";
 import Link from "next/link";
 import { CASE_STUDIES } from "@/lib/data/cases";
 import Image from "next/image";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -56,10 +57,35 @@ export default async function OurCasesPage() {
   const locale = await getRequestLocale();
   const featured = CASE_STUDIES[0];
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: t(locale, "our_cases.ui.title"),
+    url: `https://www.trapplan.com${withLocale(locale, "/our-cases")}`,
+    numberOfItems: CASE_STUDIES.length,
+    itemListElement: CASE_STUDIES.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.title,
+      url: `https://www.trapplan.com${withLocale(locale, c.href)}`,
+    })),
+  };
+
   return (
     <main className="bg-[#F3F3F3]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 pt-14 pb-14 lg:px-10">
+        <div className="mx-auto max-w-6xl px-6 pt-10 pb-14 lg:px-10 lg:pt-14">
+          <Breadcrumbs
+            trail={[
+              { name: t(locale, "ui.breadcrumb.home"), href: withLocale(locale, "/") },
+              { name: t(locale, "nav.our_cases"), href: withLocale(locale, "/our-cases") },
+            ]}
+            className="mb-6"
+          />
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <h1 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[56px]">
