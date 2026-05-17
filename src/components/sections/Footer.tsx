@@ -40,13 +40,19 @@ export default async function Footer() {
             <p className="mt-6 max-w-[38ch] text-[14px] leading-6 text-black/60">
               {t(locale, "footer.tagline")}
             </p>
+            <a
+              href="mailto:hello@trapplan.com"
+              className="mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-black transition-colors hover:text-[#FF0A5B]"
+            >
+              hello@trapplan.com
+            </a>
           </div>
 
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
               {FOOTER_LINKS.map((group) => (
                 <div key={group.titleKey}>
-                  <div className="text-[14px] font-extrabold text-[#FF0A5B]">
+                  <div className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-black/45">
                     {t(locale, group.titleKey)}
                   </div>
                   <ul className="mt-4 space-y-2">

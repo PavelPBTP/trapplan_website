@@ -310,7 +310,7 @@ export default function Cases({ translations: tx }: { translations: CasesTransla
                       <CaseRow
                         key={c.slug}
                         title={c.title}
-                        meta={`${c.date} | ${c.client}`}
+                        meta={c.client}
                         result={tx.resultBySlug[c.slug] ?? c.excerpt}
                         href={c.href}
                         withDivider={idx !== 0}

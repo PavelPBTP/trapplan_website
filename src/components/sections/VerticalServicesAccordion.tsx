@@ -59,7 +59,7 @@ export default function VerticalServicesAccordion({ translations: tx }: { transl
                     }
                   }}
                   className="relative flex h-full cursor-pointer select-none flex-col justify-between focus:outline-2 focus:outline-offset-[-2px] focus:outline-[#FF0A5B]"
-                  style={{ width: isActive ? "60%" : "20%" }}
+                  style={{ width: isActive ? "50%" : "25%" }}
                 >
                   <div className="absolute inset-y-0 right-0 w-px bg-black/10" />
 
@@ -123,16 +123,11 @@ export default function VerticalServicesAccordion({ translations: tx }: { transl
                       }`}
                       style={{ pointerEvents: isActive ? "none" : "auto" }}
                     >
-                      <div className="flex h-[320px] items-center justify-center">
-                        <div
-                          className="text-[18px] font-extrabold tracking-tight text-black"
-                          style={{
-                            writingMode: "vertical-rl",
-                            transform: "rotate(180deg)",
-                          }}
-                        >
-                          {panel.title}
-                        </div>
+                      <h3 className="text-[22px] font-extrabold leading-tight tracking-tight text-black">
+                        {panel.title}
+                      </h3>
+                      <div className="mt-6 inline-flex items-center gap-1 text-[12px] font-semibold text-[#FF0A5B]">
+                        Hover to expand <span aria-hidden>→</span>
                       </div>
                     </div>
                   </div>

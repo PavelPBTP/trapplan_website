@@ -114,13 +114,14 @@ export default function Hero({ translations: tx }: { translations: HeroTranslati
               </span>
             </div>
 
-            <h1 className="mt-7 text-[54px] font-extrabold leading-[0.95] tracking-tight sm:text-[64px]">
-              Trap Plan
+            <h1 className="mt-7">
+              <span className="block text-[54px] font-extrabold leading-[0.95] tracking-tight sm:text-[64px]">
+                Trap Plan
+              </span>
+              <span className="mt-5 block text-[18px] font-extrabold leading-tight tracking-tight">
+                {tx.kicker}
+              </span>
             </h1>
-
-            <h2 className="mt-5 text-[18px] font-extrabold leading-tight tracking-tight">
-              {tx.kicker}
-            </h2>
 
             <p className="mt-5 max-w-[38ch] text-[14px] leading-6 text-zinc-700">
               {tx.subhead}
@@ -130,7 +131,7 @@ export default function Hero({ translations: tx }: { translations: HeroTranslati
               {tx.body}
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[14px] font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-[#E6004E] focus:outline-none focus:ring-2 focus:ring-[#FF0A5B] focus:ring-offset-2 focus:ring-offset-[#F3F3F3]"
@@ -138,6 +139,15 @@ export default function Hero({ translations: tx }: { translations: HeroTranslati
                 {tx.ctaContact}
                 <span aria-hidden className="text-[16px] leading-none">
                   ↗
+                </span>
+              </a>
+              <a
+                href="#cases"
+                className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white px-6 py-3 text-[14px] font-semibold text-black transition-colors duration-200 hover:border-black/30 hover:bg-black/[0.03]"
+              >
+                See case studies
+                <span aria-hidden className="text-[16px] leading-none">
+                  →
                 </span>
               </a>
             </div>

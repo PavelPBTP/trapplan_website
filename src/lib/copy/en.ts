@@ -1106,7 +1106,7 @@ const translations: Partial<Record<CopyKey, string>> = {
     "work_with_us_form.error_network": "Failed to send. Please try again.",
     "form.get_a_quote.title": "GET A QUOTE",
     "form.get_a_quote.subtitle":
-      "Let’s talk about your task, then we’ll go whisper and come back with a final offer.",
+      "Tell us about your game and goals. We reply within one business day with a tailored plan and a clear price.",
     "form.get_a_quote.message_whatsapp": "Message on WhatsApp",
     "form.get_a_quote.card_title": "Let’s work together",
     "form.get_a_quote.field_name": "Name*",

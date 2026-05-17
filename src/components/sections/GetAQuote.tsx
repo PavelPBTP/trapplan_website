@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export type GetAQuoteTranslations = {
@@ -118,7 +119,15 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
               </p>
 
               <div className="mt-10 flex items-center gap-4">
-                <div className="h-14 w-14 overflow-hidden rounded-full bg-gradient-to-br from-emerald-400 to-sky-500 ring-2 ring-white/15" />
+                <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-white/15">
+                  <Image
+                    src="/images/pavel-beresnev.avif"
+                    alt="Pavel Beresnev"
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
+                </div>
                 <div>
                   <div className="text-[16px] font-extrabold leading-tight text-white">
                     Pavel Beresnev
