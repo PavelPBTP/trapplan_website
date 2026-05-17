@@ -14,7 +14,7 @@ export const STUDIO_PAGES: StudioCase[] = [
     date: "May 28, 2025",
     client: "Wargaming",
     excerpt:
-      "Local studio page created for the migration. Summary details can be expanded later without relying on any external source.",
+      "A dedicated remote pod ran YouTube, Twitch and Discord creator campaigns for World of Warships and World of Tanks, working with 400+ creators to bring new players into the games.",
     theme: "from-sky-700 via-blue-700 to-indigo-700",
   },
   {
@@ -23,7 +23,7 @@ export const STUDIO_PAGES: StudioCase[] = [
     date: "May 28, 2025",
     client: "Gaijin",
     excerpt:
-      "Local studio page created for the migration. Summary details can be expanded later without relying on any external source.",
+      "A remote team of five specialists ran Gaijin's creator campaigns end-to-end — from YouTube activations to detailed Reddit launches — focused on attracting fresh players to the live games.",
     theme: "from-lime-600 via-emerald-500 to-sky-500",
   },
 ];

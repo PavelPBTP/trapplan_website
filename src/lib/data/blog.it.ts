@@ -1536,11 +1536,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "Wide shot, personaggi piccoli e dettagli distribuiti in modo uniforme underperformano quasi sempre. Il giocatore non dovrebbe mai dover 'scansionare' l’immagine per trovare il soggetto.",
       },
-      {
-        type: "image",
-        src: "/blog-assets/d524c6bf041e1ee7840bbddef3723e052365eb06.jpeg",
-        alt: "__wf_reserved_inherit",
-      },
+
       { type: "h2", text: "Capire il funnel di traffico: dove si vincono e si perdono le conversioni" },
       { type: "p", text: "La capsule influenza due conversioni principali:" },
       {
@@ -1586,7 +1582,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.avif",
+        src: "/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.png",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "Un workflow pratico per produrre una capsule ad alta conversione" },
@@ -2337,11 +2333,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "È per questo che molti sviluppatori si sentono invisibili anche quando promuovono attivamente. Steam non ti sta ignorando. Sta aspettando segnali più chiari.",
       },
-      {
-        type: "image",
-        src: "/blog-assets/916f361bb10d15b6fe43db492773004439cd1f6b.jpeg",
-        alt: "__wf_reserved_inherit",
-      },
+
       { type: "h3", text: "I dati iniziali modellano tutto ciò che segue" },
       {
         type: "p",
@@ -6196,11 +6188,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "Per esempio, il case study 'The Future of Decision Based Gaming' dimostra come la collaborazione tra partecipanti e sviluppatori possa creare agency games capaci di rimodellare il panorama dell’intrattenimento. Questa collaborazione produce storie ricche di profondità e risonanza emotiva, trasformando l’esperienza interattiva per tutte le parti coinvolte. Di conseguenza, questo approccio al game design che privilegia libertà e controllo dell’utente migliora l’esperienza e rafforza il legame tra le persone e il mondo virtuale che abitano.",
       },
-      {
-        type: "image",
-        src: "/blog-assets/e988b0a58e1f72560ee079b75bfcdb3512fc4f9f.avif",
-        alt: "Empowered Choices in Gaming",
-      },
+
       {
         type: "h2",
         text: "L’importanza dell’agency: migliorare engagement ed esperienza del giocatore",
@@ -6249,11 +6237,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "Inoltre, l’affidabilità dell’analisi della rappresentazione dei partecipanti è rafforzata dai valori di Alpha di Cronbach calcolati per ciascun fattore.",
       },
-      {
-        type: "image",
-        src: "/blog-assets/2ada9157c06582651de9a22161379445ba10bc07.avif",
-        alt: "Engaging Player Agency in Gaming",
-      },
+
       {
         type: "h2",
         text: "Agency vs. illusione della scelta: capire la distinzione",
@@ -6274,11 +6258,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "Competitor provenienti dalla Cina si sono dimostrati tra i maggiori guadagnatori negli eSports, con entrate totali vicine a 300 milioni di dollari, evidenziando le notevoli conseguenze finanziarie associate alle scelte dei partecipanti. Comprendere la differenza tra autonomia e scelta percepita è di massima importanza per i game creator che vogliono creare agency games in grado di promuovere engagement genuino e dedizione.",
       },
-      {
-        type: "image",
-        src: "/blog-assets/fcea6e9de4f8a125ad98c4594873b31e3aa5d06a.avif",
-        alt: "Gamer Engaged in Agency vs. Illusion of Choice",
-      },
+
       {
         type: "h2",
         text: "Il futuro dell’agency nel gaming: trend e innovazioni",
@@ -6299,11 +6279,7 @@ export const BLOG_IT_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "Man mano che l’industria evolve, gli sviluppatori devono concentrarsi sulla creazione di agency games che offrano esperienze interattive e significative, connettendosi con un pubblico vario e sottolineando la necessità di adattarsi a questi trend.",
       },
-      {
-        type: "image",
-        src: "/blog-assets/47b2a3b98c050dbdcb8ffb329bce1053d35f2b67.avif",
-        alt: "Immersive Future of Gaming",
-      },
+
       { type: "h2", text: "Conclusione" },
       {
         type: "p",

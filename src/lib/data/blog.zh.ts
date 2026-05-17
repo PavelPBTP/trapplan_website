@@ -1410,11 +1410,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "远景、很小的角色以及均匀分布的细节几乎总是表现更差。玩家不应该需要在图里“找”主体。",
       },
-      {
-        type: "image",
-        src: "/blog-assets/d524c6bf041e1ee7840bbddef3723e052365eb06.jpeg",
-        alt: "__wf_reserved_inherit",
-      },
+
       { type: "h2", text: "理解流量漏斗：转化在哪里赢、在哪里输" },
       { type: "p", text: "capsule 影响两个关键转化：" },
       {
@@ -1460,7 +1456,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
       },
       {
         type: "image",
-        src: "/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.avif",
+        src: "/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.png",
         alt: "__wf_reserved_inherit",
       },
       { type: "h2", text: "制作高转化 capsule 的实用工作流" },
@@ -2054,11 +2050,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "这就是为什么很多开发者即使积极推广也感觉“隐身”。Steam 并不是忽视你，而是在等待更清晰的信号。",
       },
-      {
-        type: "image",
-        src: "/blog-assets/916f361bb10d15b6fe43db492773004439cd1f6b.jpeg",
-        alt: "__wf_reserved_inherit",
-      },
+
       { type: "h3", text: "早期数据会塑造后续的一切" },
       {
         type: "p",
@@ -5267,11 +5259,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "例如，案例研究《The Future of Decision Based Gaming》展示了参与者与游戏开发者之间的协作如何创造出能重塑娱乐版图的 agency games。这种协作带来深度更强、情感共鸣更丰富的叙事，进而改变整体互动体验。当游戏设计把用户自由与控制作为优先事项时，体验会更强，也会让人们与所处的虚拟世界建立更深的连接。",
       },
-      {
-        type: "image",
-        src: "/blog-assets/e988b0a58e1f72560ee079b75bfcdb3512fc4f9f.avif",
-        alt: "Empowered Choices in Gaming",
-      },
+
       { type: "h2", text: "Agency 的重要性：提升玩家参与度与体验" },
       {
         type: "p",
@@ -5314,11 +5302,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "此外，对参与者表征分析的可靠性，也通过为每个因子计算的 Cronbach’s Alpha 值得到强化。",
       },
-      {
-        type: "image",
-        src: "/blog-assets/2ada9157c06582651de9a22161379445ba10bc07.avif",
-        alt: "Engaging Player Agency in Gaming",
-      },
+
       { type: "h2", text: "Agency vs. 选择幻觉：理解两者差异" },
       {
         type: "p",
@@ -5336,11 +5320,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "来自中国的选手在电竞领域的总收入接近 3 亿美元，强调了参与者选择在行业中的巨大经济后果。对于希望打造真正促进玩家投入与忠诚的 agency games 的创作者而言，理解“自主性”与“被感知的选择”之间的差别至关重要。",
       },
-      {
-        type: "image",
-        src: "/blog-assets/fcea6e9de4f8a125ad98c4594873b31e3aa5d06a.avif",
-        alt: "Gamer Engaged in Agency vs. Illusion of Choice",
-      },
+
       { type: "h2", text: "Agency 的未来：趋势与创新" },
       {
         type: "p",
@@ -5358,11 +5338,7 @@ export const BLOG_ZH_TRANSLATIONS: BlogTranslationsBySlug = {
         type: "p",
         text: "随着行业持续演进，开发者需要把注意力放在打造能提供互动性与意义感的 agency games 上，以连接这类多元受众，并强调适应趋势的必要性。",
       },
-      {
-        type: "image",
-        src: "/blog-assets/47b2a3b98c050dbdcb8ffb329bce1053d35f2b67.avif",
-        alt: "Immersive Future of Gaming",
-      },
+
       { type: "h2", text: "结论" },
       {
         type: "p",

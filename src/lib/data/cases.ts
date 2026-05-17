@@ -27,7 +27,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Created a brief for YouTube and Twitch",
     date: "May 28, 2025",
     client: "Wargaming",
-    excerpt: "Clear creator direction and execution system.",
+    excerpt: "We rewrote Wargaming's YouTube and Twitch creator briefs — clearer copy, faster sign-offs, fewer surprises for the creators producing the content.",
     theme: "from-sky-700 via-blue-700 to-indigo-700",
     coverImage: {
       src: "/images/brief-case.avif",
@@ -69,7 +69,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Dedicated ad campaign for the Czech audience",
     date: "May 28, 2025",
     client: "Wargaming",
-    excerpt: "Dedicated advertising campaign with structured creator delivery.",
+    excerpt: "A six-month Czech-region campaign for World of Warships, built around a folklore hero and run with local Twitch creators — results beat the original forecast.",
     theme: "from-emerald-700 via-teal-600 to-sky-500",
     coverImage: {
       src: "/images/CZC.avif",
@@ -131,7 +131,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Performance based Campaigns for WarThunder",
     date: "May 28, 2025",
     client: "Gaijin",
-    excerpt: "Monthly creator activations with KPI focus.",
+    excerpt: "Monthly Twitch creator campaigns for War Thunder across Europe and the USA — negotiated rates, signed scopes and player-acquisition KPIs hit every wave.",
     theme: "from-lime-600 via-emerald-500 to-sky-500",
     coverImage: {
       src: "/images/WTP.avif",
@@ -192,7 +192,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "How we reached new players for CrossOut",
     date: "May 28, 2025",
     client: "Gaijin",
-    excerpt: "Expanded reach in Europe and the US.",
+    excerpt: "Twitch campaigns for the post-apocalyptic MMO CrossOut, reaching new players across Europe and the US through creators tuned to the game's existing community.",
     theme: "from-fuchsia-700 via-pink-600 to-rose-500",
     coverImage: {
       src: "/images/Crossout_case.avif",
@@ -241,7 +241,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Twitch ad campaigns for Enlisted",
     date: "May 28, 2025",
     client: "Gaijin",
-    excerpt: "Reached 1,500+ new players.",
+    excerpt: "Global Twitch campaigns for the WWII shooter Enlisted — vetted creators, signed briefs and reporting tied to 1,500+ new players brought into the game.",
     theme: "from-slate-800 via-slate-700 to-slate-600",
     coverImage: {
       src: "/images/Twitch-ad_enlisted.avif",
@@ -309,7 +309,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "YouTube ad campaigns for WarThunder in Europe",
     date: "May 28, 2025",
     client: "Gaijin",
-    excerpt: "1M+ views per month.",
+    excerpt: "YouTube campaigns for War Thunder across Europe — Germany, France, Spain and beyond — generating 1M+ views per month with rate-controlled creator placements.",
     theme: "from-zinc-700 via-stone-600 to-stone-500",
     coverImage: {
       src: "/images/WarThunder-EU_Case.avif",
@@ -379,7 +379,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "YouTube ad campaigns for World Of Tanks in USA",
     date: "May 28, 2025",
     client: "Wargaming",
-    excerpt: "Launched USA campaigns with structured creator delivery.",
+    excerpt: "YouTube campaigns for World of Tanks USA — English-speaking creators with focused content direction and quality control on every video published.",
     theme: "from-orange-600 via-amber-500 to-yellow-400",
     coverImage: {
       src: "/images/WOT-case.avif",
@@ -433,7 +433,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "YouTube ad campaigns for World of Warships in Europe",
     date: "May 28, 2025",
     client: "Wargaming",
-    excerpt: "YouTube campaigns across major European regions with consistent delivery.",
+    excerpt: "Ongoing YouTube campaigns for World of Warships across Europe (Germany, France, Balkans, Nordics) — 1M+ views per month with consistent creator quality.",
     theme: "from-indigo-700 via-violet-600 to-fuchsia-500",
     coverImage: {
       src: "/images/warships-case.avif",

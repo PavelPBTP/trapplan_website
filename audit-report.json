@@ -1,0 +1,1868 @@
+{
+  "generatedAt": "2026-05-17T08:47:38.560Z",
+  "sitemapUrl": "https://www.trapplan.com/sitemap.xml",
+  "counts": {
+    "total": 1428,
+    "failed": 2,
+    "redirects": 0,
+    "pagesWithBrokenImages": 151,
+    "uniqueBrokenImages": 206,
+    "missingDescription": 2,
+    "missingOgImage": 14,
+    "missingOgUrl": 2,
+    "shortTitle": 89,
+    "longTitle": 15,
+    "shortDescription": 126,
+    "longDescription": 53,
+    "duplicateMetaDescriptionGroups": 2
+  },
+  "duplicateDescriptionGroups": [
+    {
+      "count": 2,
+      "desc": "Crecimiento de wishlists en Steam explicado para desarrolladores indie de PC con proyectos activos. Aprende por qué el impulso se estanca y cómo una estrategia…",
+      "urls": [
+        "https://www.trapplan.com/es/blog/steam-wishlist-growth-for-indie-games-that-need-momentum-before-launch",
+        "https://www.trapplan.com/es/blog/steam-wishlist-growth-for-indie-developers-who-need-predictable-momentum"
+      ]
+    },
+    {
+      "count": 2,
+      "desc": "Marketing delle wishlist su Steam per sviluppatori indie PC che puntano sulla crescita organica. Scopri perché le wishlist si bloccano e come costruire una cre…",
+      "urls": [
+        "https://www.trapplan.com/it/blog/steam-wishlist-growth-for-indie-games-before-launch",
+        "https://www.trapplan.com/it/blog/steam-wishlist-marketing-for-indie-developers-focused-on-organic-growth"
+      ]
+    }
+  ],
+  "brokenImages": [
+    {
+      "img": "https://www.trapplan.com/blog-assets/ac9fd4bc2fe7b5cd855169a3cc695e698d9713df.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3051c856d912bc3f8133a6196970291bc307c482.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c0b3399bad3f69b1d796764f09b599050dc8e61a.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/93405301b8e7b8acd8896e6fe8adcebd0018e329.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/2ddd3e7f38992f7789154e992966e9b67b6d9237.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8d2e338c12a8758f27d1b3284def2eaed6be3f4c.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/33d9f1edc606722dd12579cf3465b950d5af08f1.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/975f4abc1a43df92e91bdd7cfae0e09ec0d0ed0f.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/19ceea619c0717a820f2b955e1d6a98cd036c55d.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c17e72d5001735c373483aede02801dc4a178f9f.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/b6f1187e227b12b5aaf1facc86378cb4d3e46a65.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/841f5571f18d56d67ee5fd29fc4fc404a5dd1033.webp",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c239ac85dbd315c4023b1f95848f659a01270e8c.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c06b7bac309373bcf01d6db5801f0cab22dc1b4d.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/7ae0a1599ab6495e566d3b8908b349560aefedb3.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/03c0a61afbab9e38993a5b9bbccd6e8f043138c9.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/760d75934a4b9916d892f78a06073b4e33cdb798.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8ad5d225eeebe231af7c2e1c7275bfdf4a1022d0.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/0167c0092d32bf9d0e3535b7de9045521740cd74.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/89eabc64a2753ba1153485e308ea4947199399aa.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/35fcb0ef33e0a0e58a0431986f76bad2c44ca9b6.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f5ff8ddf3140ea2f1810fae91c8ae18998922184.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/7fe344b0ec03c35565dd194c152695008997e092.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1932fadd7c9bd657f249097b1f5acc1547eade41.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/6e0a8cf1e845929507ad7c0bb217428135586493.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/fr/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/4de244661df4b3ea03d52ff452614791bb288bab.webp",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/891a49b4c54d251f0cd111b223cff8ddbe78480f.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/e62069e6892b9b7048ff3098a73a93031588533b.jpeg",
+      "pageCount": 3,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/90ad8bdaca7a60deee1931b41dcf897a291f6366.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/cbfaad6b9e7c8ccb0595acb831e71840229c150d.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/51fd084f0f5883bcfd32c315ae1d26099a5c7c21.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/22cffe1456b6b161b4cd16ec9f22fd23ff76de3c.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d84440af30e55b98a4191701b7b1755708edfae2.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/924281ecba13e622f5ce4db43648253963566cc6.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3aed30ca1c3f3ec2e3ffee94040f82446f6338e8.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/5aac2f755baa75bdcf0baabfb357ce66e8cb43a2.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1b1b873f82349ef362472314d6687b79fedcf96d.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/2d4b7d1d2ca1942db4818a4d5a666019b3f7dc97.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/cbe005f46d5f82967220214a18505afd091b369c.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/765d8e010708a8d203b3a9312a14e8bb73e74c57.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1ab942894052d513891c065a96be941f58b6d6e5.webp",
+      "pageCount": 3,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f4c1be7bfd60b985a5d3e926a4d078c22c76f810.webp",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog",
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/blog9.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/blog8.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/blog7.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/blog6.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/how-to-know-marketing-for-your-games-works-before-release.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/driving-traffic-but-wishlists-cover.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/781fc5ec437679a620de1a79b7c7221fcf9221ec.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/ef23afaa61c42ed5e44178156a062849e108dff6.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/339b69c875c8d8b60674b8573ab3d5a73220db26.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/93c3653a5fcb52f15be07b41b7a4daa9c42e10c2.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/512f0fe5b275d420d2aed5b5c0a95d857c217f89.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3f7265410dae9d8331f25d9acd323e1843739dbe.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/e2e87716f53c7a882475d47aa465a8d83ed75893.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/91ad56cc30deb19a01ef6cafa07141ebe2f01f49.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1cd877b2720ce97ddcbabc8edffcf3004b87e5e8.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/02683193476177fa27f9f264428b27f13171394e.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3f82268c646fe631fc4b8ddf99c7d06fbf7921b6.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/68a4c91658ecfc9f518e30d3a476f209b34f5d11.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/5222481ce2ee6ee1e7125c2a9b004d7bcb12a41b.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8e4410f25a32b93f9a0d13bcdcf23956334df668.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9d38f1618dfc733393c93d3e4f9679345e122ce8.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/20781b8a90d5f2bbc70ecfb5b3c128b633cd738a.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a46f21daeba92e7fb428b10c5149318daa27477f.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/08f845889f4d5d1f3172b905a1997470b7b27a11.webp",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1d9e893952a17433eab5161bc9ce001b9c044133.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/080186e6edae98cb68ec78a2aad3eaf89a4c14b1.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/b24e5e0838b050c3507a0ff58d08fe549f1a11e8.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/150ab4153841fd603fce525a49635cf27dc9244c.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3d1d67dfbd1bd6ce7e386a2a3c05769858ed16b6.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/214ee2775b7bc60df45ca592d982a26d9dd3210b.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/90fca43ca445eaffdc4212a5e998ddc70109e7af.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c721c3d4f7f21da9dede6e6c617086186bc8bf38.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/76376842c42465cee42cb15ade29f49dc3a2098e.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9ae518a0cd9f865ceb20c32772f6d927b5c03bda.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/5ec049047569238c8f22b61b91f402e31456830f.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/feeab6b39489e8162aa636c3981f760dca30644e.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/bf392d59837ec31ee61bc722a5c88f9c7b6d44ce.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1ec5c7f6de51470272a74a857bdf33cf5272f339.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d4371fd399069265d74e0ac41e0d92136dafaebb.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/5b622e07a479a2f0942b2b0b05b9f8eaa8c7915c.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/80e5d5371b0b7ac3eed315291fff089eb1124a1e.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c13374f69b4b9f4f789910a1e4faa39d08f9dfd4.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/0a4111260585e242480f958adbfa3e14b9a2edf6.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1a7e2cb597a3df52882256c664440a35f5ebba9a.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/70c5b43229f9fe56bc7e7a0bc4e4a861449cc43e.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c5b8932ec24bfe405b939f2a7526009d926893ad.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1d4c43b4a87cb5058cf55fd7af28a618960444ae.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/035f6fa871c8f4db7596efab09d2a69a61996fba.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/4107d5b04cf104e83da7e44e7c48f95c02be37af.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/858a8dcf76d777854f06ffa7e201a4794dcb453c.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/45ea4ad2053a20b8f002f1197c34b485afe06e99.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d94a960e17f1d77edca5326beb2b8be25466682c.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/bf3393799e80c7cc65ce0a99cfcb69aeac1c0c60.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c9d82b7e3f9bf03124f17101c2b6869ff6265836.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c938a9839049f80eb027879178f71da314a3ef0c.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/74046f40cc5036422e81e3ed23e6d67e84194062.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/aefa9b88c07ae9a896b8e8af9f00f11f4ddca121.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/bf05927782241c779422a04a8116261b06f8b919.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9e842d89467a22835b7282770272a429ff46c5f5.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/0062232ea72e638f525d26e87f63b7e4dd6edb68.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/bafa5718f945e3c73d2a233b39c8ee45383c076e.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/fd892107234182647eea87466dcd76be402bcd40.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f67cb0afc6a4153bd309fab45dc3c7d7e088e9d8.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/06bbe332973d9e5b7965df70cb0ff2c47b722daa.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/4424bcc5c515bec8e29fbaec3f058f1f8c6865d2.webp",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/dfc8d799dd773a4053524eb8c360a5de62592221.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a4f36805fc8691023de258caf63c5151bcfbfc6e.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/13c0e65cbc0ae0667b4431daa634f8453f874a32.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3d4f94d560edaa929f92bdc06d556958dfecb808.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/b385cd9bd60e3914056278810377851fe12e5c05.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/106b97a66bfefc2a3ced9f8aae81f41117cae43a.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9f7c6cac321845676dbc7b7b5811d8ac9e02fd2f.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9612e8e9abf9233f3ed6f91e62d1b6c61f7b057b.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/753bbefb714337abe7b43b346a1820dfdeebe694.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8f3b417b5d51d69233ec8d159d36b5c0480b2f74.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c5b8a5036ae3a708522f62d942b45d20dd356cc6.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/ac0c8c69e3003d749e4f0236d4f7146cde0d19c4.jpeg",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c545c9d0689e988eeb87ce639e2c5e7689895134.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3f073830574c9de62878d3fc49ad7004a71f6f1a.jpeg",
+      "pageCount": 3,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/de/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/69865ea9b1b1120803edd4a1341834749b0e4905.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f62ac7b519fda642e8ded122a343610b8f3651a3.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/699f2a3d43a4143385f70b20b70c7f91ee28ffbd.avif",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/it/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a64418d65e3652f8841fe77f0bacc0766dcdef82.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/de/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8832b9bee91393ea81f8c57c169cac825fdd26ea.webp",
+      "pageCount": 2,
+      "samplePages": [
+        "https://www.trapplan.com/de/blog",
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/blog5.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/promote-a-game-without-a-budget-cover.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/make-a-great-game-avoid-a-flop-cover.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/steam-next-fest-2026-the-ultimate-strategy-guide.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/images/steam-next-fest-the-masterclass-in-discovery.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/720550b1cab8c75374e0c98e5b941161d41d4d7c.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d128be202adb76928ecf5a2877474a9fa433b1a4.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/aa577b9627377bf4ff74893247e0a595909b6eee.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9cd15f27d73fa6846708494fd5388897b6981660.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/b1f5d24757cc0efb5545ee14853f1f941f2faada.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c3881da8a499669ea506cb95373dfd8a237090db.jpg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/31f81edd4a532fb8fe2f71a624853ded36ec0e54.webp",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c7f5634d02e722909da7f229203973d47fdb9644.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/188d623defe9c78971aaa15d1e76f91a22116f65.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/6233c288a34f65eab2cb2316983a47a9c47b2c24.jpeg",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/75abde2aaf63a1b0e24bb2feed84edefb7270dd0.avif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/zh/blog"
+      ]
+    },
+    {
+      "img": "https://www.facebook.com/tr?id=716455854423705&amp;ev=PageView&amp;noscript=1",
+      "pageCount": 5,
+      "samplePages": [
+        "https://www.trapplan.com/zh/studios/influencer-remote-team-for-wargaming",
+        "https://www.trapplan.com/de/blog/how-to-make-a-perfect-brief-for-an-influencer",
+        "https://www.trapplan.com/es/blog/how-to-select-the-right-influencer",
+        "https://www.trapplan.com/it/blog/mastering-video-game-public-relations-a-definitive-step-by-step-guide",
+        "https://www.trapplan.com/en/blog/what-are-nintendo-switch-you-tubers-understanding-their-impact-on-gaming-culture"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d524c6bf041e1ee7840bbddef3723e052365eb06.jpeg",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/es/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/it/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/fr/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/de/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/481004885f9ec033daf47d5aabe957ba1b84e6dc.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/es/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/it/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/fr/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists",
+        "https://www.trapplan.com/de/blog/how-to-create-a-high-performing-steam-capsule-that-drives-clicks-and-wishlists"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/916f361bb10d15b6fe43db492773004439cd1f6b.jpeg",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-market-a-game-on-steam-when-wishlists-do-not-grow",
+        "https://www.trapplan.com/es/blog/how-to-market-a-game-on-steam-when-wishlists-do-not-grow",
+        "https://www.trapplan.com/it/blog/how-to-market-a-game-on-steam-when-wishlists-do-not-grow",
+        "https://www.trapplan.com/fr/blog/how-to-market-a-game-on-steam-when-wishlists-do-not-grow",
+        "https://www.trapplan.com/de/blog/how-to-market-a-game-on-steam-when-wishlists-do-not-grow"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/249108929aee50dfc75630fa4147496e1496e185.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/es/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/it/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/fr/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/de/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a70bd0fd25949b117c43112eea73e216fd72a036.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/es/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/it/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/fr/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/de/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9b49c4ec26d13e94cfc5f4d976b1c1d8a22ed64d.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/es/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/it/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/fr/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable",
+        "https://www.trapplan.com/de/blog/how-to-market-a-game-on-steam-when-wishlists-stop-growing-and-nothing-feels-predictable"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/c36fe7485bd03eeef7f2d61b218978cfeaca9530.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/cddc61f0d7a40d959112ec72d6220cde6103bff3.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f6aec233f23e91716ba62972be3a2ab4832c3c3f.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a0104d2c1360a8edbbf2f2236e5e82df4bb0ae87.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-on-you-tube-a-step-by-step-guide-for-creators"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/aff39c898b92d1909f0a032ab5e7f8f51e229e27.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/steam-wishlist-marketing-for-indie-games-that-struggle-to-gain-traction",
+        "https://www.trapplan.com/es/blog/steam-wishlist-marketing-for-indie-games-that-struggle-to-gain-traction",
+        "https://www.trapplan.com/it/blog/steam-wishlist-marketing-for-indie-games-that-struggle-to-gain-traction",
+        "https://www.trapplan.com/fr/blog/steam-wishlist-marketing-for-indie-games-that-struggle-to-gain-traction",
+        "https://www.trapplan.com/de/blog/steam-wishlist-marketing-for-indie-games-that-struggle-to-gain-traction"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/e988b0a58e1f72560ee079b75bfcdb3512fc4f9f.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/es/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/it/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/fr/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/de/blog/what-are-agency-games-understanding-the-concept-and-its-importance"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/2ada9157c06582651de9a22161379445ba10bc07.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/es/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/it/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/fr/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/de/blog/what-are-agency-games-understanding-the-concept-and-its-importance"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/fcea6e9de4f8a125ad98c4594873b31e3aa5d06a.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/es/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/it/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/fr/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/de/blog/what-are-agency-games-understanding-the-concept-and-its-importance"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/47b2a3b98c050dbdcb8ffb329bce1053d35f2b67.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/es/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/it/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/fr/blog/what-are-agency-games-understanding-the-concept-and-its-importance",
+        "https://www.trapplan.com/de/blog/what-are-agency-games-understanding-the-concept-and-its-importance"
+      ]
+    },
+    {
+      "img": "https://px.ads.linkedin.com/collect/?pid=7050836&amp;fmt=gif",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/es/blog/steam-wishlist-marketing-for-indie-developers-who-need-results-before-launch"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9da784826e58cdbc4340f356b81351fc22704431.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/es/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/it/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/fr/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/de/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8fdb530bedd73f89bfc0dc4419203f0ba31ed61d.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/es/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/it/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/fr/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/de/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d7d4e1dfd3e5986eeff5da7c7fc92659a61a716e.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/es/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/it/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/fr/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros",
+        "https://www.trapplan.com/de/blog/best-practices-for-crafting-the-best-gaming-campaigns-insights-from-the-pros"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/81bbcf4a5f42a39e64144d1514b6ce5382d3a373.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/es/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/it/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/fr/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/de/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/03b31a9886aeddacdb7c5dd1177be6963d47b33b.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/es/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/it/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/fr/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/de/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3ba9a991baf3d309b7b388e54de63387c5832fad.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/es/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/it/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/fr/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success",
+        "https://www.trapplan.com/de/blog/best-practices-for-gamers-you-tubers-proven-strategies-for-success"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/40945f2c62811754c9b7ffbae1e459aeee8ec6c8.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-partnering-with-gaming-creators-strategies-for-success",
+        "https://www.trapplan.com/es/blog/best-practices-for-partnering-with-gaming-creators-strategies-for-success",
+        "https://www.trapplan.com/it/blog/best-practices-for-partnering-with-gaming-creators-strategies-for-success",
+        "https://www.trapplan.com/fr/blog/best-practices-for-partnering-with-gaming-creators-strategies-for-success",
+        "https://www.trapplan.com/de/blog/best-practices-for-partnering-with-gaming-creators-strategies-for-success"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f707777e84c26eafc36a8edc37f53113d1daccb6.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/es/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/it/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/fr/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/de/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/ad35569f4ce108905ab29fe29c4814f4a8f46fcd.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/es/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/it/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/fr/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/de/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9718f7a6e20936c1a8cd664054bcd3093b03cb82.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/es/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/it/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/fr/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation",
+        "https://www.trapplan.com/de/blog/best-practices-for-you-tubers-playing-games-tips-for-success-in-content-creation"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8d815bc8761dc1046b3b9da978991b29f00f20c6.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-accurately-calculate-your-instagram-engagement-rate-a-step-by-step-guide",
+        "https://www.trapplan.com/es/blog/how-to-accurately-calculate-your-instagram-engagement-rate-a-step-by-step-guide",
+        "https://www.trapplan.com/it/blog/how-to-accurately-calculate-your-instagram-engagement-rate-a-step-by-step-guide",
+        "https://www.trapplan.com/fr/blog/how-to-accurately-calculate-your-instagram-engagement-rate-a-step-by-step-guide",
+        "https://www.trapplan.com/de/blog/how-to-accurately-calculate-your-instagram-engagement-rate-a-step-by-step-guide"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/2267cbb6fa7d71c875e810b765e2ee62bc77a2e9.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/78e54bb4c660a0140e15192bb708fd904d91a263.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/4232aff589749a6d42aa2b132e29ccdbed03291b.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/es/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/it/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/fr/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship",
+        "https://www.trapplan.com/de/blog/how-to-get-sponsored-a-step-by-step-guide-to-securing-your-first-sponsorship"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9984beae3764d46d3384a5260bfe5ff4d52ede23.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/es/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/it/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/fr/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/de/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/ed43dd606e61ae68fda427c984664e5c0fa6be28.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/es/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/it/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/fr/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/de/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/175cadf9a25cd4149fef3cfd61cf517f6f8ad454.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/es/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/it/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/fr/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/de/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a33a31bfc02c5ddabeaa61f6dbdcf8ec82687bcb.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/es/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/it/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/fr/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide",
+        "https://www.trapplan.com/de/blog/how-to-manage-your-steam-wishlist-list-a-step-by-step-guide"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/08cb2d5df770dc0550502c594e2c139e516b0382.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/es/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/it/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/fr/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/de/blog/understanding-english-gamers-a-complete-tutorial-for-brands"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a98cd81caf4d44bf08cc5ff25ed95147e6b3d957.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/es/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/it/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/fr/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/de/blog/understanding-english-gamers-a-complete-tutorial-for-brands"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/726f795522a4eb35aa571c06944899ebf217c9e9.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/es/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/it/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/fr/blog/understanding-english-gamers-a-complete-tutorial-for-brands",
+        "https://www.trapplan.com/de/blog/understanding-english-gamers-a-complete-tutorial-for-brands"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/9edaf3aa1f132cf0a9fcc084d48ee20e313d9ade.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/es/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/it/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/fr/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/de/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/e9a9c50f607428ccc2ed925ab82fc10960653003.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/es/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/it/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/fr/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/de/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/903b56a339ef3f618a8e35d63cca25af2e551c49.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/es/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/it/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/fr/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture",
+        "https://www.trapplan.com/de/blog/what-are-nintendo-you-tubers-understanding-their-impact-on-gaming-culture"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/311629091a6c315e642013865e9fea8d140cc3b2.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/es/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/it/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/fr/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/de/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/f19a59233f416a5fdf6058c52cbc2d3cf5775557.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/es/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/it/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/fr/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/de/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1cf89b3a83d044024d9073008efadddb9f9abde7.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/es/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/it/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/fr/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/de/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/4f6d0e606baaa75d4cfde1b5b956dfbc5ca822a4.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/es/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/it/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/fr/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/de/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/dd47c45f24c69a41af5eebfb8b0a922a66ce51b1.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/es/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/it/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/fr/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence",
+        "https://www.trapplan.com/de/blog/what-are-popular-streamers-on-twitch-understanding-their-impact-and-influence"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/101937402ad90f8497b0ec1a25d3161451df322b.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-sponsored-you-tubers-understanding-the-influencer-marketing-landscape",
+        "https://www.trapplan.com/es/blog/what-are-sponsored-you-tubers-understanding-the-influencer-marketing-landscape",
+        "https://www.trapplan.com/it/blog/what-are-sponsored-you-tubers-understanding-the-influencer-marketing-landscape",
+        "https://www.trapplan.com/fr/blog/what-are-sponsored-you-tubers-understanding-the-influencer-marketing-landscape",
+        "https://www.trapplan.com/de/blog/what-are-sponsored-you-tubers-understanding-the-influencer-marketing-landscape"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/94c0a4fbd0b4c9c66abb079d1efce56930e361c9.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/es/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/it/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/fr/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/de/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/74724493e69c052a8003f84f103c3c82103037f9.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/es/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/it/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/fr/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world",
+        "https://www.trapplan.com/de/blog/what-are-twitch-streamers-understanding-their-role-in-the-gaming-world"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/3cc834d2bd65509c8a97106dd9c93d7a1a0a7e41.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/es/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/it/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/fr/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/de/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/8f9641f0efa24dcd0ad9f881e35aad81c586a942.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/es/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/it/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/fr/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/de/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/5289299f4f0aa32dfc7d92fc16239398f9aa75ff.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/es/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/it/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/fr/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance",
+        "https://www.trapplan.com/de/blog/what-is-a-marketing-influencer-agency-understanding-its-role-and-importance"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/547990ef5ae1045a332566c7c6414bfa237bb4ee.webp",
+      "pageCount": 1,
+      "samplePages": [
+        "https://www.trapplan.com/de/blog/what-is-a-video-game-marketing-career-understanding-roles-and-responsibilities"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/fe359daeb99ba91f0b95149e9db68c99f0a52539.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/es/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/it/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/fr/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/de/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/e455a8c4210106fa3ffe654031778c95ce697991.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/es/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/it/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/fr/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/de/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/89242cba5c0b13c063eb81ff6d874d20d537ab29.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/es/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/it/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/fr/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities",
+        "https://www.trapplan.com/de/blog/what-is-an-influencer-marketing-career-understanding-roles-and-opportunities"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/1b5e23b52968046b0609b39e1c996b75e4854004.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/es/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/it/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/fr/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/de/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/5b0decbfc978422ad4f7fb9644157e088902c416.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/es/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/it/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/fr/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact",
+        "https://www.trapplan.com/de/blog/what-is-an-influencer-in-spanish-understanding-the-role-and-impact"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/62ab76f022e81d0d706c19b6ddc505c27e0daccf.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/es/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/it/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/fr/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/de/blog/what-makes-the-most-popular-gamers-insights-into-their-success"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/61c8faaf74b35481665ec28bce43f1d2aee80e4c.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/es/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/it/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/fr/blog/what-makes-the-most-popular-gamers-insights-into-their-success",
+        "https://www.trapplan.com/de/blog/what-makes-the-most-popular-gamers-insights-into-their-success"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/2398e8110ed9317b646e983f6de3d0d30f75b5c8.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/es/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/it/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/fr/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/de/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/a935c25e8614bd92fe8363580171d38b97bc8514.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/es/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/it/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/fr/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/de/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/97f044f94eb3679edfe0989e3a05831ede90a037.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/es/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/it/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/fr/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/de/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming"
+      ]
+    },
+    {
+      "img": "https://www.trapplan.com/blog-assets/d45bb1b62a30a6c86e48357232deaa7510c08de6.avif",
+      "pageCount": 6,
+      "samplePages": [
+        "https://www.trapplan.com/en/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/es/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/it/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/fr/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming",
+        "https://www.trapplan.com/de/blog/what-is-a-steam-wishlist-understanding-its-importance-in-gaming"
+      ]
+    }
+  ],
+  "redirects": [],
+  "failed": [
+    {
+      "url": "https://www.trapplan.com/zh/reddit-launch-support",
+      "issues": [
+        "fetch failed: fetch failed"
+      ]
+    },
+    {
+      "url": "https://www.trapplan.com/de/blog/how-to-discord-promote-your-server-a-step-by-step-guide",
+      "issues": [
+        "fetch failed: This operation was aborted"
+      ]
+    }
+  ]
+}
