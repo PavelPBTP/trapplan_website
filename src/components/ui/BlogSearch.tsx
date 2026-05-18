@@ -19,7 +19,7 @@ interface BlogSearchProps {
   placeholder: string;
   clearLabel: string;
   noResultsLabel: string;
-  countLabel: (n: number) => string;
+  countTemplate: string;
   children: React.ReactNode;
 }
 
@@ -38,7 +38,7 @@ export default function BlogSearch({
   placeholder,
   clearLabel,
   noResultsLabel,
-  countLabel,
+  countTemplate,
   children,
 }: BlogSearchProps) {
   const [query, setQuery] = useState("");
@@ -95,7 +95,9 @@ export default function BlogSearch({
       {active ? (
         <div>
           <p className="mb-4 text-[13px] text-black/60">
-            {results.length === 0 ? noResultsLabel : countLabel(results.length)}
+            {results.length === 0
+              ? noResultsLabel
+              : countTemplate.replace("{n}", String(results.length))}
           </p>
           <ul className="grid gap-3">
             {results.map((entry) => (

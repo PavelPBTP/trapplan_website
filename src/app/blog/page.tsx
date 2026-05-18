@@ -236,7 +236,7 @@ export default async function BlogIndexPage({
               placeholder={t(locale, "ui.blog_search.placeholder")}
               clearLabel={t(locale, "ui.blog_search.clear")}
               noResultsLabel={t(locale, "ui.blog_search.no_results")}
-              countLabel={(n) => t(locale, "ui.blog_search.count").replace("{n}", String(n))}
+              countTemplate={t(locale, "ui.blog_search.count")}
             >
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
               {cards.map(({ post, cover, ogCover }, idx) => (
