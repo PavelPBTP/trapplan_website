@@ -12,12 +12,29 @@ export type GetAQuoteTranslations = {
   fieldName: string;
   fieldCompany: string;
   fieldEmail: string;
+  fieldBudget?: string;
+  fieldGoals?: string;
+  budgetPrompt?: string;
+  emailInvalid?: string;
+  spamNote?: string;
   submitSending: string;
   submitSend: string;
   success: string;
   errorGeneric: string;
   errorNetwork: string;
 };
+
+const BUDGET_OPTIONS = [
+  { value: "", label: "Select a range" },
+  { value: "<5k", label: "Under €5k" },
+  { value: "5k-15k", label: "€5k – €15k" },
+  { value: "15k-50k", label: "€15k – €50k" },
+  { value: "50k-150k", label: "€50k – €150k" },
+  { value: ">150k", label: "€150k+" },
+  { value: "not-sure", label: "Not sure yet" },
+];
+
+const EMAIL_RE = /^\S+@\S+\.\S+$/;
 
 function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
@@ -39,14 +56,31 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [emailTouched, setEmailTouched] = useState(false);
+  const [budget, setBudget] = useState("");
+  const [goals, setGoals] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
-  const isEmailValid = email.trim().length > 3 && /^\S+@\S+\.\S+$/.test(email.trim());
+  const isEmailValid = email.trim().length > 3 && EMAIL_RE.test(email.trim());
+  const showEmailError = emailTouched && email.length > 0 && !isEmailValid;
   const isFormValid = name.trim().length > 0 && company.trim().length > 0 && isEmailValid;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (honeypot.trim().length > 0) {
+      // Silently succeed for bots
+      setMessage(tx.success);
+      setName("");
+      setCompany("");
+      setEmail("");
+      setBudget("");
+      setGoals("");
+      return;
+    }
+
     setIsSubmitting(true);
     setMessage("");
 
@@ -58,6 +92,8 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
           name,
           company,
           email,
+          budget,
+          goals,
           source: "Get A Quote (Homepage)",
         }),
       });
@@ -157,15 +193,78 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
                 </h3>
 
                 <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    name="company_website"
+                    autoComplete="off"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    className="absolute -left-[10000px] h-0 w-0 opacity-0"
+                  />
+
                   <Field label={tx.fieldName} value={name} onChange={(e) => setName(e.target.value)} />
                   <Field label={tx.fieldCompany} value={company} onChange={(e) => setCompany(e.target.value)} />
-                  <Field label={tx.fieldEmail} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-black/70">{tx.fieldEmail}</span>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      onBlur={() => setEmailTouched(true)}
+                      className={`mt-2 w-full rounded-[12px] bg-[#F5F5F5] px-4 py-4 text-[14px] text-black placeholder:text-black/40 outline-none ring-2 transition-shadow focus:ring-[#FF0A5B]/35 ${
+                        showEmailError ? "ring-[#FF0A5B]/60" : "ring-transparent"
+                      }`}
+                      required
+                    />
+                    {showEmailError ? (
+                      <span className="mt-1.5 block text-[11px] font-medium text-[#FF0A5B]">
+                        {tx.emailInvalid ?? "Please enter a valid email"}
+                      </span>
+                    ) : null}
+                  </label>
+
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-black/70">
+                      {tx.fieldBudget ?? "Budget"}
+                    </span>
+                    <select
+                      value={budget}
+                      onChange={(e) => setBudget(e.target.value)}
+                      className="mt-2 w-full rounded-[12px] bg-[#F5F5F5] px-4 py-4 text-[14px] text-black outline-none ring-2 ring-transparent transition-shadow focus:ring-[#FF0A5B]/35"
+                    >
+                      {BUDGET_OPTIONS.map((o) => (
+                        <option key={o.value} value={o.value}>
+                          {o.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-black/70">
+                      {tx.fieldGoals ?? "Tell us about your game"}
+                    </span>
+                    <textarea
+                      value={goals}
+                      onChange={(e) => setGoals(e.target.value)}
+                      rows={4}
+                      placeholder="Genre, target launch window, what you want help with…"
+                      className="mt-2 w-full resize-y rounded-[12px] bg-[#F5F5F5] px-4 py-4 text-[14px] text-black placeholder:text-black/40 outline-none ring-2 ring-transparent transition-shadow focus:ring-[#FF0A5B]/35"
+                    />
+                  </label>
 
                   {message && (
                     <div className="text-[13px] font-medium text-center">
                       {message}
                     </div>
                   )}
+
+                  {tx.spamNote ? (
+                    <p className="text-[11px] text-black/40">{tx.spamNote}</p>
+                  ) : null}
 
                   <button
                     type="submit"

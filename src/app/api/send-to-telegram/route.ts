@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { name, company, email, source } = body;
+    const { name, company, email, source, budget, goals } = body;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -72,13 +72,17 @@ export async function POST(request: Request) {
     }
 
     const receivedAt = new Date().toISOString();
+    const budgetLine = budget ? `\n💶 <b>Budget:</b> ${budget}` : "";
+    const goalsLine = goals
+      ? `\n\n🎯 <b>Goals:</b>\n${String(goals).slice(0, 2000)}`
+      : "";
     const message = `
 🎮 <b>New Lead from TrapPlan</b>
 
 👤 <b>Name:</b> ${name}
 🏢 <b>Company:</b> ${company || "Not provided"}
-📧 <b>Email:</b> ${email}
-📍 <b>Source:</b> ${source || "Website"}
+📧 <b>Email:</b> ${email}${budgetLine}
+📍 <b>Source:</b> ${source || "Website"}${goalsLine}
 
 <i>Received at ${receivedAt}</i>
     `.trim();

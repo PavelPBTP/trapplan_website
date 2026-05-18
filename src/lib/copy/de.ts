@@ -207,6 +207,20 @@ const translations: Partial<Record<CopyKey, string>> = {
     "services_hub.cta_learn_more": "Mehr erfahren →",
     "services_hub.packages_title": "Pakete mit festem Umfang",
     "services_hub.packages_subtitle": "Kleinere Engagements mit klarem Preis, klarem Umfang und klarem Ergebnis.",
+    "legal.cookies.title": "Cookie-Richtlinie",
+    "legal.cookies.lede": "Die Cookies, die wir auf trapplan.com setzen, was sie tun und wie du deine Einwilligung verwaltest.",
+    "legal.cookies.s1.title": "Was Cookies sind",
+    "legal.cookies.s1.body": "Cookies sind kleine Textdateien, die die Website deinem Browser zum Speichern anbietet. Sie merken sich deine Auswahl, halten dich eingeloggt oder messen Traffic. Einige sind essenziell, andere optional.",
+    "legal.cookies.s2.title": "Wie wir sie nutzen",
+    "legal.cookies.s2.body": "Wir nutzen ein minimales Set essenzieller Cookies. Mit deiner Einwilligung helfen uns anonyme Analysen zu sehen, welche Guides Studios wirklich helfen. Keine Werbe- oder Verhaltens-Tracking-Cookies.",
+    "legal.cookies.s3.title": "Einwilligung verwalten",
+    "legal.cookies.s3.body": "Klicke 'Nicht erforderliche ablehnen' zum Ablehnen oder 'Alle akzeptieren' für die Analysen. Du kannst die Wahl löschen, indem du den tp-consent-Wert im Browser löschst — das Banner erscheint dann wieder.",
+    "legal.cookies.s4.title": "Browser-Einstellungen",
+    "legal.cookies.s4.body": "Alle großen Browser erlauben das Blockieren, Löschen oder Benachrichtigen über Cookies. Suche 'Cookie-Einstellungen' in Chrome, Firefox, Safari oder Edge.",
+    "ui.blog_search.placeholder": "Im Blog suchen…",
+    "ui.blog_search.clear": "Löschen",
+    "ui.blog_search.no_results": "Keine Treffer. Versuche eine andere Suche.",
+    "ui.blog_search.count": "{n} Treffer",
 };
 
 export default translations;

@@ -5,20 +5,46 @@ import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
-import { clampText } from "@/lib/seo";
+import { clampText, ogImageUrl } from "@/lib/seo";
 import Pagination from "@/components/ui/Pagination";
 import BlogSearch, { type BlogSearchEntry } from "@/components/ui/BlogSearch";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams?:
+    | Promise<{ category?: string; page?: string }>
+    | { category?: string; page?: string };
+}): Promise<Metadata> {
   const locale = await getRequestLocale();
   const origin = "https://www.trapplan.com";
-  const canonical = new URL(withLocale(locale, "/blog"), origin).toString();
+  const resolvedParams = await Promise.resolve(searchParams);
+  const pageNum = Math.max(1, Number.parseInt(resolvedParams?.page ?? "1", 10) || 1);
+  const category = resolvedParams?.category;
+
+  const buildPath = (p: number) => {
+    const qs = new URLSearchParams();
+    if (category) qs.set("category", category);
+    if (p > 1) qs.set("page", String(p));
+    const suffix = qs.toString();
+    return withLocale(locale, suffix ? `/blog?${suffix}` : "/blog");
+  };
+
+  const canonical = new URL(buildPath(pageNum), origin).toString();
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/blog"), origin).toString()]),
+    SUPPORTED_LOCALES.map((l) => {
+      const qs = new URLSearchParams();
+      if (category) qs.set("category", category);
+      if (pageNum > 1) qs.set("page", String(pageNum));
+      const suffix = qs.toString();
+      return [l, new URL(withLocale(l, suffix ? `/blog?${suffix}` : "/blog"), origin).toString()];
+    }),
   ) as Record<string, string>;
 
-  const title = t(locale, "seo.blog.title");
+  const baseTitle = t(locale, "seo.blog.title");
+  const title = pageNum > 1 ? `${baseTitle} — Page ${pageNum}` : baseTitle;
   const description = clampText(t(locale, "seo.blog.desc"), 160);
+
   return {
     title,
     description,
@@ -26,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical,
       languages: {
         ...languages,
-        "x-default": new URL(withLocale("en", "/blog"), origin).toString(),
+        "x-default": new URL(buildPath(pageNum), origin).toString(),
       },
     },
     openGraph: {
@@ -36,7 +62,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [
         {
-          url: new URL("/og", origin).toString(),
+          url: ogImageUrl(origin, { title }),
           width: 1200,
           height: 630,
           alt: title,
@@ -47,8 +73,12 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [new URL("/og", origin).toString()],
+      images: [ogImageUrl(origin, { title })],
     },
+    robots:
+      pageNum > 1
+        ? { index: true, follow: true }
+        : undefined,
   };
 }
 

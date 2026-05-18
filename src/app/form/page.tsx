@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
-import { clampText } from "@/lib/seo";
+import { clampText, ogImageUrl } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [
         {
-          url: new URL("/og", origin).toString(),
+          url: ogImageUrl(origin, { title }),
           width: 1200,
           height: 630,
           alt: title,
@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [new URL("/og", origin).toString()],
+      images: [ogImageUrl(origin, { title })],
     },
   };
 }

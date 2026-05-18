@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
+import { ogImageUrl } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -35,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [
         {
-          url: new URL("/og", origin).toString(),
+          url: ogImageUrl(origin, { title }),
           width: 1200,
           height: 630,
           alt: title,
@@ -46,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [new URL("/og", origin).toString()],
+      images: [ogImageUrl(origin, { title })],
     },
   };
 }
@@ -103,8 +104,28 @@ export default async function AboutUsPage() {
     },
   ];
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Pavel Beresnev",
+    jobTitle: t(locale, "get_a_quote.ceo_title"),
+    worksFor: {
+      "@type": "Organization",
+      name: "TrapPlan",
+      url: "https://www.trapplan.com",
+    },
+    image: "https://www.trapplan.com/images/pavel-beresnev.avif",
+    email: "pb@trapplan.com",
+    url: `https://www.trapplan.com${withLocale(locale, "/about-us")}`,
+    sameAs: ["https://www.linkedin.com/in/pavel-beresnev"],
+  };
+
   return (
     <main className="bg-[#F3F3F3]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <section className="relative overflow-hidden bg-white">
         <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_18%_20%,rgba(255,10,91,0.14),transparent_55%),radial-gradient(circle_at_76%_10%,rgba(0,0,0,0.06),transparent_50%)]" />
         <div className="mx-auto max-w-6xl px-6 pt-10 pb-14 lg:px-10 lg:pt-14">

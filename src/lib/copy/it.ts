@@ -337,6 +337,20 @@ const translations: Partial<Record<CopyKey, string>> = {
     "services_hub.cta_learn_more": "Scopri di più →",
     "services_hub.packages_title": "Pacchetti a scope fisso",
     "services_hub.packages_subtitle": "Impegni più piccoli con prezzo chiaro, scope chiaro e deliverable chiaro.",
+    "legal.cookies.title": "Informativa cookie",
+    "legal.cookies.lede": "I cookie usati su trapplan.com, cosa fanno e come gestire il tuo consenso.",
+    "legal.cookies.s1.title": "Cosa sono i cookie",
+    "legal.cookies.s1.body": "I cookie sono piccoli file di testo che il sito chiede al browser di memorizzare. Permettono di ricordare le tue scelte, mantenere la sessione o misurare il traffico. Alcuni sono essenziali, altri opzionali.",
+    "legal.cookies.s2.title": "Come li usiamo",
+    "legal.cookies.s2.body": "Usiamo un set minimo di cookie essenziali. Con il tuo consenso, analisi anonime ci aiutano a capire quali guide aiutano davvero gli studi. Nessun cookie pubblicitario o di tracciamento comportamentale.",
+    "legal.cookies.s3.title": "Gestire il consenso",
+    "legal.cookies.s3.body": "Clicca 'Rifiuta non essenziali' per negare o 'Accetta tutto' per attivare le analisi. Puoi cancellare la scelta eliminando il valore tp-consent nel browser — il banner riapparirà.",
+    "legal.cookies.s4.title": "Controlli del browser",
+    "legal.cookies.s4.body": "Tutti i browser principali permettono di bloccare, eliminare o essere avvisati sui cookie. Cerca 'impostazioni cookie' in Chrome, Firefox, Safari o Edge.",
+    "ui.blog_search.placeholder": "Cerca nel blog…",
+    "ui.blog_search.clear": "Pulisci",
+    "ui.blog_search.no_results": "Nessun risultato. Prova un'altra ricerca.",
+    "ui.blog_search.count": "{n} risultati",
 };
 
 export default translations;

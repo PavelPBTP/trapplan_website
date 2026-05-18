@@ -1,5 +1,6 @@
 import { FOOTER_LINKS } from "@/lib/data/footer";
 import Image from "next/image";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
 
@@ -46,6 +47,14 @@ export default async function Footer() {
             >
               hello@trapplan.com
             </a>
+            <NewsletterSignup
+              title={t(locale, "ui.newsletter.title")}
+              placeholder={t(locale, "ui.newsletter.placeholder")}
+              submitLabel={t(locale, "ui.newsletter.submit")}
+              successLabel={t(locale, "ui.newsletter.success")}
+              errorLabel={t(locale, "ui.newsletter.error")}
+              privacyNote={t(locale, "ui.newsletter.privacy_note")}
+            />
           </div>
 
           <div className="lg:col-span-7">

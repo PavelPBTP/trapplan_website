@@ -243,6 +243,20 @@ const translations: Partial<Record<CopyKey, string>> = {
     "services_hub.cta_learn_more": "了解更多 →",
     "services_hub.packages_title": "固定范围套餐",
     "services_hub.packages_subtitle": "更小的合作，价格清晰、范围清晰、交付物清晰。",
+    "legal.cookies.title": "Cookie 政策",
+    "legal.cookies.lede": "我们在 trapplan.com 设置的 Cookie，每个 Cookie 的作用，以及如何管理你的同意。",
+    "legal.cookies.s1.title": "什么是 Cookie",
+    "legal.cookies.s1.body": "Cookie 是网站请求浏览器存储的小型文本文件。它们让网站记住你的选择，保持登录状态，或衡量流量。有些是必要的，有些是可选的。",
+    "legal.cookies.s2.title": "我们如何使用",
+    "legal.cookies.s2.body": "我们使用最少的必要 Cookie。在你同意后，匿名分析帮助我们了解哪些指南真正帮助了工作室。我们不使用广告或行为追踪 Cookie。",
+    "legal.cookies.s3.title": "管理你的同意",
+    "legal.cookies.s3.body": "点击「拒绝非必要」表示拒绝，或「全部接受」启用分析。你可以通过删除浏览器中的 tp-consent 值来清除选择 — 横幅将再次出现。",
+    "legal.cookies.s4.title": "浏览器控制",
+    "legal.cookies.s4.body": "所有主流浏览器都允许阻止、删除或通知 Cookie。在 Chrome、Firefox、Safari 或 Edge 中搜索「Cookie 设置」。",
+    "ui.blog_search.placeholder": "搜索博客…",
+    "ui.blog_search.clear": "清除",
+    "ui.blog_search.no_results": "无匹配项。请尝试其他搜索。",
+    "ui.blog_search.count": "{n} 个结果",
 };
 
 export default translations;

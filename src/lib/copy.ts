@@ -1007,7 +1007,17 @@ export type CopyKey =
   | "ui.blog_search.placeholder"
   | "ui.blog_search.clear"
   | "ui.blog_search.no_results"
-  | "ui.blog_search.count";
+  | "ui.blog_search.count"
+  | "form.get_a_quote.field_budget"
+  | "form.get_a_quote.field_goals"
+  | "form.get_a_quote.email_invalid"
+  | "form.get_a_quote.spam_note"
+  | "ui.newsletter.title"
+  | "ui.newsletter.placeholder"
+  | "ui.newsletter.submit"
+  | "ui.newsletter.success"
+  | "ui.newsletter.error"
+  | "ui.newsletter.privacy_note";
 
 
 import en from "@/lib/copy/en";

@@ -89,6 +89,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.9,
     })),
+    ...(() => {
+      const POSTS_PER_PAGE = 24;
+      const totalPages = Math.max(1, Math.ceil(BLOG_POSTS.length / POSTS_PER_PAGE));
+      const entries: MetadataRoute.Sitemap = [];
+      for (let p = 2; p <= totalPages; p++) {
+        for (const url of localize(`/blog?page=${p}`)) {
+          entries.push({
+            url: toAbs(url),
+            lastModified: now,
+            changeFrequency: "weekly" as const,
+            priority: 0.4,
+          });
+        }
+      }
+      return entries;
+    })(),
+    ...localize("/services").map((url) => ({
+      url: toAbs(url),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
+    ...localize("/cookies-policy").map((url) => ({
+      url: toAbs(url),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.2,
+    })),
     ...localize("/form").map((url) => ({
       url: toAbs(url),
       lastModified: now,

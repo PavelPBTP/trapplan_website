@@ -4,6 +4,7 @@ import Footer from "@/components/sections/Footer";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getRequestLocale } from "@/lib/i18n.server";
 import { t } from "@/lib/copy";
+import { ogImageUrl } from "@/lib/seo";
 import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [
         {
-          url: new URL("/og", origin).toString(),
+          url: ogImageUrl(origin, { title }),
           width: 1200,
           height: 630,
           alt: title,
@@ -47,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       title,
       description,
-      images: [new URL("/og", origin).toString()],
+      images: [ogImageUrl(origin, { title })],
     },
   };
 }
