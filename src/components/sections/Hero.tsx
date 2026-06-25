@@ -6,7 +6,7 @@ import { withLocale, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 
 const HERO_TILES = [
-  { art: GAME_ART.misery, ghostSize: 26, offset: false },
+  { art: GAME_ART.wot, ghostSize: 24, offset: false },
   { art: GAME_ART.warthunder, ghostSize: 22, offset: true },
   { art: GAME_ART.crossout, ghostSize: 24, offset: false },
   { art: GAME_ART.warships, ghostSize: 20, offset: true },

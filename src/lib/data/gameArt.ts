@@ -3,8 +3,8 @@
  *
  * Each tile renders a designed gradient fallback (radial hue over a warm dark
  * linear gradient) so it never looks broken, with an optional real/mock cover
- * image layered on top. Mock covers live in /public/mockups and are placeholders
- * for licensed key art.
+ * image layered on top. Covers are the real Steam capsule/library art for the
+ * client games (Wargaming / Gaijin titles), self-hosted under /public/games.
  */
 
 export interface GameArt {
@@ -25,13 +25,14 @@ export interface GameArt {
 }
 
 export const GAME_ART = {
-  misery: {
-    id: "misery",
-    ghostName: "Misery",
-    tag: "STEAM",
+  wot: {
+    id: "wot",
+    ghostName: "World of Tanks",
+    tag: "WARGAMING",
     rgb: "176,42,48",
     base: "#241a17",
-    portrait: "/mockups/misery.png",
+    portrait: "/games/wot.jpg",
+    landscape: "/games/wot-l.jpg",
   },
   warthunder: {
     id: "warthunder",
@@ -39,8 +40,8 @@ export const GAME_ART = {
     tag: "GAIJIN",
     rgb: "178,126,46",
     base: "#231f15",
-    portrait: "/mockups/warthunder.png",
-    landscape: "/mockups/warthunder-l.png",
+    portrait: "/games/warthunder.jpg",
+    landscape: "/games/warthunder-l.jpg",
   },
   warthunderEu: {
     id: "warthunderEu",
@@ -48,7 +49,7 @@ export const GAME_ART = {
     tag: "GAIJIN",
     rgb: "178,126,46",
     base: "#231f15",
-    landscape: "/mockups/warthunder-eu.png",
+    landscape: "/games/warthunder-l.jpg",
   },
   crossout: {
     id: "crossout",
@@ -56,8 +57,8 @@ export const GAME_ART = {
     tag: "GAIJIN",
     rgb: "194,90,42",
     base: "#241c16",
-    portrait: "/mockups/crossout.png",
-    landscape: "/mockups/crossout-l.png",
+    portrait: "/games/crossout.jpg",
+    landscape: "/games/crossout-l.jpg",
   },
   warships: {
     id: "warships",
@@ -65,8 +66,8 @@ export const GAME_ART = {
     tag: "WARGAMING",
     rgb: "64,124,138",
     base: "#161f20",
-    portrait: "/mockups/warships.png",
-    landscape: "/mockups/warships-l.png",
+    portrait: "/games/warships.jpg",
+    landscape: "/games/warships-l.jpg",
   },
   enlisted: {
     id: "enlisted",
@@ -74,8 +75,8 @@ export const GAME_ART = {
     tag: "GAIJIN",
     rgb: "116,130,78",
     base: "#1d2017",
-    portrait: "/mockups/enlisted.png",
-    landscape: "/mockups/enlisted-l.png",
+    portrait: "/games/enlisted.jpg",
+    landscape: "/games/enlisted-l.jpg",
   },
   briefs: {
     id: "briefs",
@@ -83,7 +84,7 @@ export const GAME_ART = {
     tag: "FEATURED CASE",
     rgb: "176,42,48",
     base: "#241a17",
-    landscape: "/mockups/briefs.png",
+    landscape: "/games/wot-l.jpg",
   },
 } as const satisfies Record<string, GameArt>;
 
