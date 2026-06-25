@@ -9,7 +9,7 @@ import { getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 import { clampText } from "@/lib/seo";
-import { blogGradient } from "@/lib/data/blogArt";
+import { blogGradient, blogCover } from "@/lib/data/blogArt";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -106,7 +106,7 @@ export default async function BlogIndexPage({
 
   const cards = posts.map((p) => ({
     post: p,
-    cover: p.cover,
+    cover: p.cover ?? blogCover(p.category, p.slug),
   }));
 
   return (
@@ -210,7 +210,7 @@ export default async function BlogIndexPage({
                           </span>
                         </div>
                       )}
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[62%] bg-gradient-to-t from-[#0c0b0a] via-[#0c0b0a]/40 to-transparent" />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[36%] bg-gradient-to-t from-[#0c0b0a]/85 to-transparent" />
                     </div>
 
                     <div className="flex flex-1 flex-col p-[22px] pb-6">

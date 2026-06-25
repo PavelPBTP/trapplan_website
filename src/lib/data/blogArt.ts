@@ -31,3 +31,39 @@ export function blogTileArt(category?: string): Hue {
 export function blogGradient(category?: string): string {
   return artGradient(blogTileArt(category), { alpha: 0.5, pos: "32% 24%", spread: "60%" });
 }
+
+/**
+ * Self-hosted topical cover images per category (dark gamer-editorial art),
+ * served from /public/blog-assets/covers. Each category has N numbered variants;
+ * a post is assigned one deterministically from its slug so the same post always
+ * shows the same image while a category spreads across its variants.
+ *
+ * Keep these counts in sync with the files in public/blog-assets/covers.
+ */
+const COVER_VARIANTS: Record<string, number> = {
+  marketing: 3,
+  community: 3,
+  steam: 3,
+  pr: 3,
+  tiktok: 3,
+  influencers: 3,
+  youtube: 2,
+  twitch: 2,
+  mobile: 2,
+};
+
+function hashSlug(slug: string): number {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+/** Topical category cover for a post without a bespoke cover, or undefined. */
+export function blogCover(category: string | undefined, slug: string): string | undefined {
+  if (!category) return undefined;
+  const key = category.toLowerCase();
+  const count = COVER_VARIANTS[key];
+  if (!count) return undefined;
+  const variant = (hashSlug(slug) % count) + 1;
+  return `/blog-assets/covers/${key}-${variant}.jpg`;
+}
