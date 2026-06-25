@@ -19,14 +19,13 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
   const isFormValid = name.trim().length > 0 && company.trim().length > 0 && isEmailValid;
 
   useEffect(() => {
-    if (didPrefillRef.current) return;
-    if (typeof window === "undefined") return;
+    // Prefill the message from ?message= once on mount (e.g. from the influencer planner).
+    if (didPrefillRef.current || typeof window === "undefined") return;
     const m = new URLSearchParams(window.location.search).get("message");
     if (!m) return;
-    if (message.trim().length > 0) return;
     setMessage(m);
     didPrefillRef.current = true;
-  }, [message]);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +40,8 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name,
           company,
           email,
-          source: `Work With Us Form${message ? ` - Message: ${message}` : ""}`,
+          message: message || undefined,
+          source: "Work With Us Form",
         }),
       });
 
@@ -92,7 +92,7 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
   return (
     <form className="space-y-9" onSubmit={handleSubmit}>
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/70">
+        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary">
           {t(locale, "work_with_us_form.field_full_name")}
         </span>
         <input
@@ -100,14 +100,14 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
+          className="mt-3 w-full border-b border-[rgba(244,241,234,0.18)] bg-transparent pb-3 text-[15px] font-medium text-bone placeholder:text-tertiary focus:border-[var(--accent)] focus:outline-none"
           placeholder=""
           required
         />
       </label>
 
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/70">
+        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary">
           {t(locale, "work_with_us_form.field_company")}
         </span>
         <input
@@ -115,14 +115,14 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name="company"
           value={company}
           onChange={(e) => setCompany(e.target.value)}
-          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
+          className="mt-3 w-full border-b border-[rgba(244,241,234,0.18)] bg-transparent pb-3 text-[15px] font-medium text-bone placeholder:text-tertiary focus:border-[var(--accent)] focus:outline-none"
           placeholder=""
           required
         />
       </label>
 
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/70">
+        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary">
           {t(locale, "work_with_us_form.field_email")}
         </span>
         <input
@@ -130,14 +130,14 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-3 w-full border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
+          className="mt-3 w-full border-b border-[rgba(244,241,234,0.18)] bg-transparent pb-3 text-[15px] font-medium text-bone placeholder:text-tertiary focus:border-[var(--accent)] focus:outline-none"
           placeholder=""
           required
         />
       </label>
 
       <label className="block">
-        <span className="text-[13px] font-semibold text-black/70">
+        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary">
           {t(locale, "work_with_us_form.field_message")}
         </span>
         <textarea
@@ -145,17 +145,17 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="mt-3 w-full resize-none border-b border-black/45 bg-transparent pb-3 text-[14px] font-semibold text-black placeholder:text-black/50 focus:outline-none focus:border-[#FF0A5B]"
+          className="mt-3 w-full resize-none border-b border-[rgba(244,241,234,0.18)] bg-transparent pb-3 text-[15px] font-medium text-bone placeholder:text-tertiary focus:border-[var(--accent)] focus:outline-none"
           placeholder=""
         />
       </label>
 
-      <label className="flex items-center gap-3 text-[13px] font-semibold text-black/70">
+      <label className="flex items-center gap-3 text-[13px] font-medium text-secondary">
         <input
           type="checkbox"
           checked={subscribe}
           onChange={(e) => setSubscribe(e.target.checked)}
-          className="h-4 w-4 rounded border-black/30 text-[#FF0A5B] accent-[#FF0A5B]"
+          className="h-4 w-4 rounded accent-[var(--accent)]"
         />
         {t(locale, "work_with_us_form.subscribe")}
       </label>
@@ -170,14 +170,15 @@ export default function WorkWithUsForm({ locale }: { locale: Locale }) {
         <button
           type="submit"
           disabled={isSubmitting || !isFormValid}
-          className="h-[52px] w-full rounded-full bg-[#FF0A5B] text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="h-[52px] w-full rounded-[6px] bg-[var(--accent)] font-display text-[15px] font-semibold text-[var(--accent-on)] transition hover:brightness-[1.06] disabled:cursor-not-allowed disabled:opacity-50"
+          style={{ boxShadow: "var(--cta-glow)" }}
         >
           {isSubmitting
             ? t(locale, "work_with_us_form.submit_sending")
             : t(locale, "work_with_us_form.submit")}
         </button>
 
-        <p className="mt-4 text-center text-[12px] font-semibold text-black/45">
+        <p className="mt-4 text-center text-[12px] font-medium text-tertiary">
           {t(locale, "work_with_us_form.privacy_note")}
         </p>
       </div>

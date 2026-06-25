@@ -110,13 +110,13 @@ export default async function ServicePage({
   const title = titleFromSlug(slug);
 
   return (
-    <main className="bg-[#F3F3F3]">
-      <section className="bg-white">
+    <main className="bg-void-alt">
+      <section className="bg-card">
         <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
-          <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
+          <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-bone sm:text-[48px]">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-black/65">
+          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-secondary">
             {t(locale, "services.legacy_placeholder")}
           </p>
         </div>

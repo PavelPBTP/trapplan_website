@@ -1,356 +1,138 @@
-"use client";
+import Link from "next/link";
+import Reveal from "@/components/ui/Reveal";
+import { stagger } from "@/lib/stagger";
+import ArtTile from "@/components/ui/ArtTile";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { CASE_STUDIES, type CaseStudy } from "@/lib/data/cases";
+import { GAME_ART, CASE_ART, HOME_CASE_SLUGS, artGradient, type GameArt } from "@/lib/data/gameArt";
+import { t } from "@/lib/copy";
+import { withLocale, type Locale } from "@/lib/i18n.shared";
 
-import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
-
-import { CASE_STUDIES } from "@/lib/data/cases";
-
-export type CasesTranslations = {
-  title: string;
-  subtitle: string;
-  fallbackMetric: string;
-  ctaViewCase: string;
-  ctaViewAll: string;
-  metricBySlug: Record<string, string>;
-  resultBySlug: Record<string, string>;
-  descOverrideBySlug: Record<string, string>;
-};
-
-function ArrowUpRightIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M7 17L17 7"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M10 7H17V14"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+function bySlug(slug: string): CaseStudy | undefined {
+  return CASE_STUDIES.find((c) => c.slug === slug);
 }
 
-function FeaturedCase({
-  title,
-  date,
-  client,
-  metric,
-  description,
-  theme,
-  coverImage,
-  href,
-  ctaLabel,
-}: {
-  title: string;
-  date: string;
-  client: string;
-  metric: string;
-  description: string;
-  theme: string;
-  coverImage?: {
-    src: string;
-    alt: string;
-  };
-  href: string;
-  ctaLabel: string;
-}) {
+function ReadCase({ locale }: { locale: Locale }) {
   return (
-    <article className="h-full min-h-[620px] overflow-hidden rounded-[28px] bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]">
-      <div className="relative h-[220px] overflow-hidden sm:h-[260px]">
-        {coverImage ? (
-          <>
-            <Image
-              src={coverImage.src}
-              alt={coverImage.alt}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/10" />
-          </>
-        ) : (
-          <>
-            <div className={"absolute inset-0 bg-gradient-to-br " + theme} />
-            <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.85),transparent_55%),radial-gradient(circle_at_75%_45%,rgba(255,255,255,0.35),transparent_60%)]" />
-          </>
-        )}
-      </div>
-
-      <div className="px-8 pt-8 pb-9">
-        <div className="text-[12px] font-semibold leading-none text-black/60">
-          <span>{date}</span>
-          <span className="px-2">|</span>
-          <span>{client}</span>
-        </div>
-
-        <h3 className="mt-4 min-h-[58px] text-[28px] font-extrabold leading-[1.05] tracking-tight text-black">
-          {title}
-        </h3>
-
-        <div className="mt-5 text-[18px] font-extrabold tracking-tight text-black">
-          {metric}
-        </div>
-
-        <p className="mt-3 max-w-[64ch] overflow-hidden text-[14px] leading-6 text-black/60 [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical]">
-          {description}
-        </p>
-
-        <div className="mt-7">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
-          >
-            {ctaLabel}
-            <ArrowUpRightIcon />
-          </a>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function CaseRow({
-  title,
-  meta,
-  result,
-  href,
-  withDivider,
-}: {
-  title: string;
-  meta: string;
-  result: string;
-  href: string;
-  withDivider: boolean;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`group flex items-start justify-between gap-6 py-5 transition-colors hover:bg-black/[0.02] ${
-        withDivider ? "border-t border-black/10" : ""
-      }`}
-    >
-      <div className="min-w-0">
-        <div className="truncate text-[16px] font-extrabold leading-snug tracking-tight text-black">
-          {title}
-        </div>
-        <div className="mt-2 truncate text-[12px] font-semibold leading-none text-black/55">
-          {meta}
-        </div>
-        <div className="mt-3 truncate text-[14px] leading-6 text-black/60">{result}</div>
-      </div>
-      <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-black transition-colors duration-200 group-hover:bg-zinc-200">
-        <span className="transition-transform duration-200 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
-          <ArrowUpRightIcon />
-        </span>
+    <div className="mt-auto flex items-center justify-between">
+      <span className="font-mono text-[12px] text-[var(--accent)]">
+        {t(locale, "cases.read_case")} →
       </span>
-    </a>
+      <span className="text-tertiary transition-transform group-hover:translate-x-[3px] group-hover:-translate-y-[3px]">
+        ↗
+      </span>
+    </div>
   );
 }
 
-export default function Cases({ translations: tx }: { translations: CasesTranslations }) {
-  const ROTATE_MS = 9500;
-  const FADE_MS = 520;
-
-  const [index, setIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const total = CASE_STUDIES.length;
-
-  const featured = useMemo(() => {
-    if (!total) return null;
-    return CASE_STUDIES[index % total];
-  }, [index, total]);
-
-  const listCases = useMemo(() => {
-    if (!total) return [];
-    const res = [] as typeof CASE_STUDIES;
-    for (let i = 1; i <= Math.min(5, total - 1); i += 1) {
-      res.push(CASE_STUDIES[(index + i) % total]);
-    }
-    return res;
-  }, [index, total]);
-
-  useEffect(() => {
-    if (paused) return;
-    if (total <= 1) return;
-
-    const id = window.setInterval(() => {
-      setIndex((v) => {
-        setPrevIndex(v);
-        return (v + 1) % total;
-      });
-    }, ROTATE_MS);
-
-    return () => window.clearInterval(id);
-  }, [paused, total]);
-
-  useEffect(() => {
-    if (prevIndex === index) return;
-
-    const id = window.setTimeout(() => {
-      setPrevIndex(index);
-    }, FADE_MS + 60);
-
-    return () => window.clearTimeout(id);
-  }, [index, prevIndex]);
-
-  const ease = "cubic-bezier(0.22, 1, 0.36, 1)";
-  const fadeStyle = {
-    transitionProperty: "opacity",
-    transitionDuration: `${FADE_MS}ms`,
-    transitionTimingFunction: ease,
-  } as const;
+export default function Cases({ locale }: { locale: Locale }) {
+  const [featuredSlug, ...cardSlugs] = HOME_CASE_SLUGS;
+  const featured = bySlug(featuredSlug);
 
   return (
-    <section className="bg-[#F3F3F3] pb-20">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="pt-10 sm:pt-14">
-          <h2 className="text-[44px] font-extrabold leading-none tracking-tight text-black">
-            {tx.title}
-          </h2>
-          <p className="mt-4 text-[14px] leading-6 text-black/60">
-            {tx.subtitle}
-          </p>
-        </div>
-
-        <div
-          className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
-          <div className="lg:col-span-6">
-            <div className="relative min-h-[620px]">
-              {featured ? (
-                <>
-                  <div
-                    key={`featured-prev-${prevIndex}`}
-                    className="absolute inset-0"
-                    style={{ ...fadeStyle, opacity: prevIndex !== index ? 0 : 1, pointerEvents: "none" }}
-                  >
-                    {prevIndex !== index ? (
-                      <FeaturedCase
-                        title={CASE_STUDIES[prevIndex % total].title}
-                        date={CASE_STUDIES[prevIndex % total].date}
-                        client={CASE_STUDIES[prevIndex % total].client}
-                        metric={
-                          tx.metricBySlug[CASE_STUDIES[prevIndex % total].slug] ??
-                          tx.fallbackMetric
-                        }
-                        description={
-                          tx.descOverrideBySlug[CASE_STUDIES[prevIndex % total].slug] ??
-                          CASE_STUDIES[prevIndex % total].excerpt
-                        }
-                        theme={CASE_STUDIES[prevIndex % total].theme}
-                        coverImage={CASE_STUDIES[prevIndex % total].coverImage}
-                        href={CASE_STUDIES[prevIndex % total].href}
-                        ctaLabel={tx.ctaViewCase}
-                      />
-                    ) : null}
-                  </div>
-
-                  <div
-                    key={`featured-${index}`}
-                    className="absolute inset-0"
-                    style={{ ...fadeStyle, opacity: 1, pointerEvents: "auto" }}
-                  >
-                    <FeaturedCase
-                      title={featured.title}
-                      date={featured.date}
-                      client={featured.client}
-                      metric={tx.metricBySlug[featured.slug] ?? tx.fallbackMetric}
-                      description={
-                        tx.descOverrideBySlug[featured.slug] ?? featured.excerpt
-                      }
-                      theme={featured.theme}
-                      coverImage={featured.coverImage}
-                      href={featured.href}
-                      ctaLabel={tx.ctaViewCase}
-                    />
-                  </div>
-                </>
-              ) : null}
-            </div>
+    <section id="cases" className="border-t border-[rgba(244,241,234,0.07)] bg-void-alt">
+      <div className="mx-auto max-w-[1240px] px-6 py-[110px] lg:px-8">
+        <div className="mb-12 flex flex-wrap items-end justify-between gap-10">
+          <div>
+            <Eyebrow number="02" label={t(locale, "cases.eyebrow")} className="mb-5" />
+            <h2 className="font-display text-[46px] font-bold leading-[1.05] tracking-[-0.025em] text-bone">
+              {t(locale, "cases.subtitle")}
+            </h2>
           </div>
-
-          <div className="lg:col-span-6">
-            <div className="relative min-h-[620px]">
-              <div
-                key={`list-prev-${prevIndex}`}
-                className="absolute inset-0 rounded-[22px] bg-white px-7 pt-1 pb-2 shadow-[0_40px_90px_rgba(0,0,0,0.06)]"
-                style={{ ...fadeStyle, opacity: prevIndex !== index ? 0 : 1, pointerEvents: "none" }}
-              >
-                {prevIndex !== index
-                  ? (() => {
-                      const res = [] as typeof CASE_STUDIES;
-                      for (let i = 1; i <= Math.min(5, total - 1); i += 1) {
-                        res.push(CASE_STUDIES[(prevIndex + i) % total]);
-                      }
-                      return res;
-                    })().map((c, idx) => (
-                      <CaseRow
-                        key={c.slug}
-                        title={c.title}
-                        meta={`${c.date} | ${c.client}`}
-                        result={tx.resultBySlug[c.slug] ?? c.excerpt}
-                        href={c.href}
-                        withDivider={idx !== 0}
-                      />
-                    ))
-                  : null}
-              </div>
-
-              <div
-                key={`list-${index}`}
-                className="absolute inset-0 rounded-[22px] bg-white px-7 pt-1 pb-2 shadow-[0_40px_90px_rgba(0,0,0,0.06)]"
-                style={{ ...fadeStyle, opacity: 1 }}
-              >
-                {listCases.map((c, idx) => (
-                  <CaseRow
-                    key={c.slug}
-                    title={c.title}
-                    meta={`${c.date} | ${c.client}`}
-                    result={tx.resultBySlug[c.slug] ?? c.excerpt}
-                    href={c.href}
-                    withDivider={idx !== 0}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <a
-            href="https://www.trapplan.com/our-cases"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
+          <Link
+            href={withLocale(locale, "/our-cases")}
+            className="font-mono text-[13px] tracking-[0.06em] text-secondary no-underline transition-colors hover:text-bone"
           >
-            {tx.ctaViewAll}
-            <span aria-hidden className="text-[16px] leading-none">
-              ↗
+            {t(locale, "cases.cta_view_all")} ↗
+          </Link>
+        </div>
+
+        {/* Featured */}
+        {featured ? (
+          <Reveal className="mb-[18px] block">
+            <Link
+              href={withLocale(locale, featured.href)}
+              className="art-zoom group grid grid-cols-1 overflow-hidden rounded-[16px] border border-[rgba(244,241,234,0.08)] bg-card no-underline transition-colors hover:border-[rgba(244,241,234,0.18)] lg:grid-cols-[1.12fr_0.88fr]"
+            >
+              <ArtTile
+                className="min-h-[320px]"
+                radius={0}
+                gradient={artGradient(GAME_ART.briefs, { alpha: 0.5, pos: "32% 28%", spread: "64%" })}
+                ghostName={GAME_ART.briefs.ghostName}
+                ghostSize={48}
+                ghostBottom={24}
+                tag={GAME_ART.briefs.tag}
+                cover={GAME_ART.briefs.landscape}
+                coverAlt={featured.title}
+                sizes="(max-width: 1024px) 100vw, 55vw"
+              />
+              <div className="flex flex-col justify-center p-10">
+                <div className="mb-4 font-mono text-[11px] tracking-[0.1em] text-tertiary">
+                  {featured.client.toUpperCase()} · YOUTUBE + TWITCH
+                </div>
+                <h3 className="mb-[14px] font-display text-[28px] font-semibold leading-[1.15] tracking-[-0.015em] text-bone">
+                  {featured.title}
+                </h3>
+                <p className="mb-[26px] text-[15.5px] leading-[1.6] text-secondary">
+                  {featured.excerpt}
+                </p>
+                <ReadCase locale={locale} />
+              </div>
+            </Link>
+          </Reveal>
+        ) : null}
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 gap-[18px] md:grid-cols-2 min-[1024px]:grid-cols-3">
+          {cardSlugs.map((slug, i) => {
+            const c = bySlug(slug);
+            if (!c) return null;
+            const art: GameArt = GAME_ART[CASE_ART[slug]];
+            return (
+              <Reveal key={slug} delay={stagger(i)} className="block">
+                <Link
+                  href={withLocale(locale, c.href)}
+                  className="art-zoom group flex h-full flex-col overflow-hidden rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card no-underline transition-colors hover:border-[rgba(244,241,234,0.18)]"
+                >
+                  <ArtTile
+                    className="aspect-[16/10]"
+                    radius={0}
+                    gradient={artGradient(art, { alpha: 0.5, pos: "32% 26%", spread: "64%" })}
+                    ghostName={art.ghostName}
+                    ghostSize={24}
+                    tag={art.tag}
+                    cover={art.landscape}
+                    coverAlt={c.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="flex flex-1 flex-col p-[22px] pb-6">
+                    <div className="mb-3 font-mono text-[11px] tracking-[0.1em] text-tertiary">
+                      {c.client.toUpperCase()}
+                    </div>
+                    <h3 className="mb-[10px] font-display text-[19px] font-semibold leading-[1.25] text-bone">
+                      {c.title}
+                    </h3>
+                    <p className="mb-[18px] text-[14px] leading-[1.55] text-secondary">{c.excerpt}</p>
+                    <ReadCase locale={locale} />
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
+
+          {/* View-all tile */}
+          <Link
+            href={withLocale(locale, "/our-cases")}
+            className="flex min-h-[220px] flex-col items-center justify-center gap-[10px] rounded-[14px] border border-dashed border-[rgba(244,241,234,0.16)] no-underline transition-colors hover:border-[rgba(244,241,234,0.32)]"
+          >
+            <span className="font-display text-[34px] font-bold text-[rgba(244,241,234,0.16)]">+</span>
+            <span className="font-display text-[16px] font-semibold text-bone">
+              {t(locale, "cases.cta_view_all")}
             </span>
-          </a>
+            <span className="font-mono text-[12px] text-tertiary">
+              {t(locale, "cases.view_all_tile_sub")}
+            </span>
+          </Link>
         </div>
       </div>
     </section>

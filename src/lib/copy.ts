@@ -975,7 +975,138 @@ export type CopyKey =
   | "blog.masterclass.s11.title"
   | "blog.masterclass.s11.p01"
   | "blog.masterclass.s11.p02"
-  | "blog.masterclass.s11.p03";
+  | "blog.masterclass.s11.p03"
+  // ===== REDESIGN 2026 (dark theme) =====
+  | "nav.publishing"
+  | "nav.packages"
+  | "cta.request_quote"
+  // Home — hero
+  | "hero.title_l1"
+  | "hero.title_l2_pre"
+  | "hero.title_accent"
+  | "hero.cta_cases"
+  // Home — trusted by
+  | "trusted.label"
+  // Home — services rows
+  | "services.eyebrow"
+  | "services.global_title"
+  | "services.global_subtitle"
+  | "services.row.blueprint.title"
+  | "services.row.blueprint.sub"
+  | "services.row.blueprint.body"
+  | "services.row.blueprint.tags"
+  | "services.row.paid.title"
+  | "services.row.paid.sub"
+  | "services.row.paid.body"
+  | "services.row.paid.tags"
+  | "services.row.organic.title"
+  | "services.row.organic.sub"
+  | "services.row.organic.body"
+  | "services.row.organic.tags"
+  // Home + Publishing promo band
+  | "publishing.promo.eyebrow"
+  | "publishing.promo.title_l1"
+  | "publishing.promo.title_l2_pre"
+  | "publishing.promo.title_accent"
+  | "publishing.promo.title_l2_post"
+  | "publishing.promo.body_pre"
+  | "publishing.promo.body_ip"
+  | "publishing.promo.cta"
+  | "publishing.promo.row1.title"
+  | "publishing.promo.row1.desc"
+  | "publishing.promo.row2.title"
+  | "publishing.promo.row2.desc"
+  | "publishing.promo.row3.title"
+  | "publishing.promo.row3.desc"
+  | "publishing.promo.row4.title"
+  | "publishing.promo.row4.desc"
+  // Home — cases
+  | "cases.eyebrow"
+  | "cases.read_case"
+  | "cases.view_all_tile_sub"
+  | "cases.catalog.sub"
+  | "cases.filter.all"
+  | "cases.filter.wargaming"
+  | "cases.filter.gaijin"
+  // Home — packages
+  | "packages.eyebrow"
+  | "packages.home_title"
+  | "packages.home_subtitle"
+  // Home — get a quote
+  | "form.get_a_quote.eyebrow"
+  | "form.get_a_quote.field_budget"
+  | "form.get_a_quote.budget_placeholder"
+  | "form.get_a_quote.field_message"
+  | "form.get_a_quote.footnote"
+  // Publishing — nav / chrome
+  | "nav.why_us"
+  | "nav.how_we_help"
+  | "nav.your_ip"
+  | "nav.agency"
+  | "cta.submit_game"
+  // Publishing — hero
+  | "publishing.hero.badge"
+  | "publishing.hero.title_l1"
+  | "publishing.hero.title_l2_pre"
+  | "publishing.hero.title_accent"
+  | "publishing.hero.title_l2_post"
+  | "publishing.hero.lede"
+  | "publishing.marquee"
+  // Publishing — values
+  | "publishing.value1.title"
+  | "publishing.value1.body"
+  | "publishing.value2.title"
+  | "publishing.value2.body"
+  // Publishing — IP band
+  | "publishing.ip.eyebrow"
+  | "publishing.ip.title"
+  | "publishing.ip.body"
+  // Publishing — how we help
+  | "publishing.how.title"
+  | "publishing.how.card1.title"
+  | "publishing.how.card1.body"
+  | "publishing.how.card1.tags"
+  | "publishing.how.card2.title"
+  | "publishing.how.card2.body"
+  | "publishing.how.card2.tags"
+  | "publishing.how.card3.title"
+  | "publishing.how.card3.body"
+  | "publishing.how.card3.tags"
+  | "publishing.how.card4.title"
+  | "publishing.how.card4.body"
+  | "publishing.how.card4.tags"
+  // Publishing — compare
+  | "publishing.compare.eyebrow"
+  | "publishing.compare.title"
+  | "publishing.compare.agency.label"
+  | "publishing.compare.agency.title"
+  | "publishing.compare.agency.body"
+  | "publishing.compare.agency.cta"
+  | "publishing.compare.pub.label"
+  | "publishing.compare.pub.title"
+  | "publishing.compare.pub.body"
+  // Publishing — final CTA
+  | "publishing.cta.title"
+  | "publishing.cta.body"
+  // Publishing — SEO
+  | "seo.publishing.title"
+  | "seo.publishing.description"
+  // Tools (calculators) — shared chrome
+  | "tools.ui.free_tool"
+  | "tools.ui.free_tool_sub"
+  | "tools.cta.title"
+  | "tools.cta.body"
+  // Package detail template (shared chrome)
+  | "packages.detail.eyebrow"
+  | "packages.detail.fixed_price"
+  | "packages.detail.one_time"
+  | "packages.detail.request"
+  | "packages.detail.talk"
+  | "packages.detail.included_eyebrow"
+  | "packages.detail.process_eyebrow"
+  | "packages.detail.pairs_well"
+  | "packages.detail.all_packages"
+  | "packages.detail.breadcrumb_packages";
 
 
 import en from "@/lib/copy/en";
@@ -995,5 +1126,6 @@ const COPY: Record<Locale, Record<CopyKey, string>> = {
 };
 
 export function t(locale: Locale, key: CopyKey): string {
-  return COPY[locale][key];
+  // EN-first fallback: locale value → English value → the key itself.
+  return COPY[locale][key] ?? COPY.en[key] ?? key;
 }

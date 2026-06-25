@@ -6,6 +6,8 @@ export type PackageCard = {
   media: "phone" | "laptop" | "collage" | "video";
   href: string;
   logos?: string[];
+  /** Short category label shown above the title (redesign 2026). */
+  tag?: string;
 };
 
 export const PACKAGES: PackageCard[] = [
@@ -17,6 +19,7 @@ export const PACKAGES: PackageCard[] = [
     accent: "from-zinc-900 via-zinc-800 to-zinc-700",
     media: "phone",
     href: "/reddit-launch-support",
+    tag: "Reddit · wishlists",
   },
   {
     title: "PR Starter Pack",
@@ -27,6 +30,7 @@ export const PACKAGES: PackageCard[] = [
     media: "laptop",
     href: "/pr-starter-pack",
     logos: ["IGN", "VICE", "polygon"],
+    tag: "PR · earned media",
   },
   {
     title: "Influencer\nMicro Campaign",
@@ -37,6 +41,7 @@ export const PACKAGES: PackageCard[] = [
     media: "collage",
     href: "/influencer-micro-campaign",
     logos: ["Twitch", "YouTube", "TikTok"],
+    tag: "Influencers · UGC",
   },
   {
     title: "TikTok Package:\n20 videos",
@@ -47,6 +52,7 @@ export const PACKAGES: PackageCard[] = [
     media: "phone",
     href: "/tiktok-package-20-videos",
     logos: ["TikTok"],
+    tag: "TikTok · short-form",
   },
   {
     title: "Paid Ads Setup",
@@ -57,6 +63,7 @@ export const PACKAGES: PackageCard[] = [
     media: "laptop",
     href: "/paid-ads-setup",
     logos: ["reddit", "TikTok", "X"],
+    tag: "Paid media · setup",
   },
   {
     title: "Gameplay Trailer",
@@ -66,5 +73,6 @@ export const PACKAGES: PackageCard[] = [
     accent: "from-emerald-900 via-teal-900 to-slate-900",
     media: "video",
     href: "/gameplay-trailer",
+    tag: "Video · trailer",
   },
 ];

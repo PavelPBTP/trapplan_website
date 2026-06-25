@@ -93,7 +93,7 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
       />
 
       <div className="sr-only">
-        <h1>{t(locale, "tools.steam_festival_planner.sr.title")}</h1>
+        <h2>{t(locale, "tools.steam_festival_planner.sr.title")}</h2>
         <p>{t(locale, "tools.steam_festival_planner.sr.body")}</p>
       </div>
 
@@ -101,7 +101,7 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
         <div className="tp-steam-analyzer">
           <div className="tp-analyzer-content">
             <h4 className="tp-analyzer-title">{t(locale, "tools.steam_festival_planner.ui.smart_match.title")}</h4>
-            <p style={{ fontSize: 14, color: "#666", marginBottom: 20 }}>
+            <p style={{ fontSize: 14, color: "#9a938a", marginBottom: 20 }}>
               {t(locale, "tools.steam_festival_planner.ui.smart_match.body")}
             </p>
             <div className="tp-input-group">
@@ -163,29 +163,30 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
 
       <style jsx global>{`
         :root {
-          --tp-pink: #ff1e4d;
-          --tp-border: #eeeeee;
+          --tp-pink: var(--accent);
+          --tp-border: rgba(244, 241, 234, 0.08);
         }
         #tp-planner-app {
-          font-family: "Inter", sans-serif;
-          max-width: 1200px;
+          font-family: var(--font-body);
+          max-width: 1240px;
           margin: 0 auto;
-          padding: 120px 20px 60px 20px;
-          color: #111;
+          padding: 16px 8px 8px;
+          color: #f4f1ea;
         }
 
         .tp-steam-analyzer {
-          background: #fff;
-          border-radius: 24px;
+          background: #131110;
+          border-radius: 18px;
           padding: 32px;
           border: 1px solid var(--tp-border);
           margin-bottom: 30px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
         .tp-analyzer-title {
           margin: 0;
+          font-family: var(--font-display);
           font-size: 22px;
-          font-weight: 800;
+          font-weight: 600;
+          color: #f4f1ea;
         }
         .tp-input-group {
           display: flex;
@@ -194,23 +195,29 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
         }
         #tp-steam-id {
           flex-grow: 1;
-          padding: 16px;
-          border-radius: 12px;
-          border: 1px solid #ddd;
+          padding: 14px 16px;
+          border-radius: 6px;
+          border: 1px solid rgba(244, 241, 234, 0.12);
+          background: #0c0b0a;
+          color: #f4f1ea;
           outline: none;
         }
+        #tp-steam-id:focus {
+          border-color: var(--accent);
+        }
         #tp-analyze-btn {
-          background: #111;
-          color: #fff;
+          background: var(--accent);
+          color: var(--accent-on);
           border: none;
           padding: 0 30px;
-          border-radius: 12px;
-          font-weight: 700;
+          border-radius: 6px;
+          font-family: var(--font-display);
+          font-weight: 600;
           cursor: pointer;
-          transition: 0.3s;
+          transition: 0.2s;
         }
         #tp-analyze-btn:hover {
-          background: var(--tp-pink);
+          filter: brightness(1.06);
         }
 
         .tp-toolbar {
@@ -220,13 +227,17 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
           margin-bottom: 40px;
         }
         #tp-search {
-          padding: 16px 24px;
-          border-radius: 14px;
-          border: 1px solid #eee;
-          background: #f9f9f9;
+          padding: 14px 18px;
+          border-radius: 6px;
+          border: 1px solid rgba(244, 241, 234, 0.12);
+          background: #0c0b0a;
+          color: #f4f1ea;
           width: 100%;
           max-width: 400px;
           outline: none;
+        }
+        #tp-search:focus {
+          border-color: var(--accent);
         }
         .tp-filter-chips {
           display: flex;
@@ -234,51 +245,51 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
           flex-wrap: wrap;
         }
         .chip {
-          background: #f1f1f1;
-          border: none;
-          padding: 10px 22px;
-          border-radius: 100px;
+          background: transparent;
+          border: 1px solid rgba(244, 241, 234, 0.18);
+          padding: 9px 18px;
+          border-radius: 6px;
           cursor: pointer;
+          font-family: var(--font-display);
           font-size: 14px;
-          font-weight: 700;
-          color: #555;
+          font-weight: 600;
+          color: #9a938a;
         }
         .chip.active {
-          background: var(--tp-pink);
-          color: #fff;
+          background: var(--accent);
+          border-color: var(--accent);
+          color: var(--accent-on);
         }
 
         .tp-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-          gap: 30px;
+          gap: 18px;
         }
         .loading {
           grid-column: 1 / -1;
           text-align: center;
           padding: 50px;
-          color: #888;
+          color: #6b655b;
         }
 
         .tp-card {
-          background: white;
+          background: #131110;
           border: 1px solid var(--tp-border);
-          border-radius: 28px;
+          border-radius: 16px;
           padding: 32px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          transition: 0.4s ease;
+          transition: 0.25s ease;
           min-height: 320px;
           position: relative;
         }
         .tp-card.recommended {
-          border: 2px solid var(--tp-pink);
-          box-shadow: 0 10px 30px rgba(255, 30, 77, 0.1);
+          border: 1px solid var(--accent);
         }
         .tp-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+          border-color: rgba(244, 241, 234, 0.18);
         }
 
         .tp-price-badge {
@@ -287,62 +298,63 @@ export default function SteamFestivalPlannerClient({ locale }: { locale: Locale 
           right: 20px;
           padding: 5px 12px;
           border-radius: 100px;
+          font-family: var(--font-mono);
           font-size: 11px;
-          font-weight: 800;
-          background: #f0f0f0;
-          color: #555;
+          font-weight: 500;
+          background: rgba(244, 241, 234, 0.06);
+          color: #9a938a;
         }
         .tp-price-badge.free {
-          background: #e6fffa;
-          color: #008673;
+          background: rgba(91, 214, 176, 0.12);
+          color: #9fe1cb;
         }
         .tp-match-label {
           position: absolute;
           top: 55px;
           right: 20px;
-          background: var(--tp-pink);
-          color: #fff;
+          background: var(--accent);
+          color: var(--accent-on);
           font-size: 9px;
-          font-weight: 900;
+          font-weight: 700;
           padding: 3px 8px;
           border-radius: 4px;
         }
 
         .tp-cat {
-          color: var(--tp-pink);
+          color: var(--accent);
+          font-family: var(--font-mono);
           font-size: 11px;
-          font-weight: 900;
+          font-weight: 500;
+          letter-spacing: 0.1em;
           text-transform: uppercase;
           margin-bottom: 12px;
         }
         .tp-name {
+          font-family: var(--font-display);
           font-size: 24px;
-          font-weight: 800;
+          font-weight: 600;
+          color: #f4f1ea;
           margin: 0 0 16px 0;
           line-height: 1.2;
         }
         .tp-status {
-          background: #f8f8f9;
+          background: rgba(244, 241, 234, 0.04);
           padding: 18px;
-          border-radius: 20px;
+          border-radius: 12px;
           margin-bottom: 24px;
+          color: #9a938a;
         }
 
         .tp-btn {
-          background: var(--tp-pink);
-          color: white;
+          background: var(--accent);
+          color: var(--accent-on);
           text-align: center;
           padding: 16px;
-          border-radius: 100px;
-          font-weight: 800;
+          border-radius: 6px;
+          font-family: var(--font-display);
+          font-weight: 600;
           text-decoration: none;
           display: block;
-        }
-
-        @media (max-width: 480px) {
-          #tp-planner-app {
-            padding-top: 100px;
-          }
         }
       `}</style>
 

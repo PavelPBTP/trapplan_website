@@ -5,9 +5,12 @@ const translations: Partial<Record<CopyKey, string>> = {
     "nav.services": "Services",
     "nav.our_cases": "Our Cases",
     "nav.blog": "Blog",
+    "nav.publishing": "Publishing",
+    "nav.packages": "Packages",
     "cta.work_with_us": "Work with us",
     "cta.read_the_blog": "Read the blog",
     "cta.lets_talk": "Let’s talk",
+    "cta.request_quote": "Request a quote",
     "hero.badge.01": "Performance Marketing",
     "hero.badge.02": "Social Media",
     "hero.badge.03": "Go-to-Market Strategy",
@@ -1202,6 +1205,149 @@ const translations: Partial<Record<CopyKey, string>> = {
     "blog.masterclass.s11.p01": 'It is a common trap: the desire to "strike while the iron is hot" leads many developers to launch at the exact same time as hundreds of other Next Fest participants.',
     "blog.masterclass.s11.p02": 'During this window, competition for a spot in "New and Trending" is abnormally high, and you risk being pushed out by larger studios with bigger budgets.',
     "blog.masterclass.s11.p03": 'Unless you have at least 20,000 wishlists and are confident you were one of the absolute top performers of the fest, it is often better to wait. Let the market cool down, continue updating your demo, and maintain the connection with your new audience for a more stable launch window.',
+
+    // ===== REDESIGN 2026 (dark theme) =====
+    // Home — hero
+    "hero.title_l1": "Marketing for games,",
+    "hero.title_l2_pre": "built for ",
+    "hero.title_accent": "Steam realities.",
+    "hero.cta_cases": "See case studies",
+    // Home — trusted by
+    "trusted.label": "Trusted by studios shipping on every platform",
+    // Home — services rows
+    "services.eyebrow": "What we do",
+    "services.global_title": "Global services",
+    "services.global_subtitle": "Deeper, end-to-end systems for studios that want predictable outcomes — not one-off tasks.",
+    "services.row.blueprint.title": "Game Launch Blueprint",
+    "services.row.blueprint.sub": "Strategy · Messaging · Execution",
+    "services.row.blueprint.body": "Positioning, messaging, timeline, and channel mix. A clear plan that removes chaos, aligns the team, and makes execution predictable.",
+    "services.row.blueprint.tags": "Positioning|Launch timeline|Channel mix",
+    "services.row.paid.title": "Paid Growth",
+    "services.row.paid.sub": "Acquisition · Analytics · Scale",
+    "services.row.paid.body": "Paid campaigns set up the right way: channel selection, tracking, targeting, and structure. Built for control, measurement, and a clean handoff.",
+    "services.row.paid.tags": "Channel selection|Tracking & targeting|Clean handoff",
+    "services.row.organic.title": "Organic Growth",
+    "services.row.organic.sub": "Reddit · Community · Wishlists",
+    "services.row.organic.body": "Sustainable wishlist momentum without leaning on ad spend — Reddit presence, community seeding, and organic short-form that compounds over time.",
+    "services.row.organic.tags": "Reddit|Community|Wishlist velocity",
+    // Home + Publishing promo band
+    "publishing.promo.eyebrow": "Also from TrapPlan",
+    "publishing.promo.title_l1": "We don’t just market games.",
+    "publishing.promo.title_l2_pre": "We ",
+    "publishing.promo.title_accent": "publish",
+    "publishing.promo.title_l2_post": " them.",
+    "publishing.promo.body_pre": "A selective publishing partnership — funding, production support and a full launch. You keep your game and ",
+    "publishing.promo.body_ip": "100% of your IP",
+    "publishing.promo.cta": "Explore Trap Plan Publishing",
+    "publishing.promo.row1.title": "Marketing Tests",
+    "publishing.promo.row1.desc": " · validate hooks before you scale spend",
+    "publishing.promo.row2.title": "Production support",
+    "publishing.promo.row2.desc": " · QA and store assets, with you",
+    "publishing.promo.row3.title": "Full go-to-market",
+    "publishing.promo.row3.desc": " · wishlists, creators, PR, paid",
+    "publishing.promo.row4.title": "Distribution & long-tail",
+    "publishing.promo.row4.desc": " · growth and platform expansion",
+    // Home — cases
+    "cases.eyebrow": "Case studies",
+    "cases.read_case": "Read case",
+    "cases.view_all_tile_sub": "Wargaming · Gaijin",
+    "cases.catalog.sub": "Real campaigns, real games",
+    "cases.filter.all": "All cases",
+    "cases.filter.wargaming": "Wargaming",
+    "cases.filter.gaijin": "Gaijin",
+    // Home — packages
+    "packages.eyebrow": "Ready-to-go packages",
+    "packages.home_title": "Packages with a fixed price",
+    "packages.home_subtitle": "Scoped, priced, and ready to start. Pick a lane or combine — no discovery call required.",
+    // Home — get a quote
+    "form.get_a_quote.eyebrow": "Get a quote",
+    "form.get_a_quote.field_budget": "Budget",
+    "form.get_a_quote.budget_placeholder": "Select a range",
+    "form.get_a_quote.field_message": "Tell us about your game",
+    "form.get_a_quote.footnote": "We reply within one business day. No spam, ever.",
+
+    // Publishing — nav / chrome
+    "nav.why_us": "Why us",
+    "nav.how_we_help": "How we help",
+    "nav.your_ip": "Your IP",
+    "nav.agency": "Agency",
+    "cta.submit_game": "Submit your game",
+    // Publishing — hero
+    "publishing.hero.badge": "Now accepting submissions",
+    "publishing.hero.title_l1": "We publish games",
+    "publishing.hero.title_l2_pre": "we ",
+    "publishing.hero.title_accent": "believe",
+    "publishing.hero.title_l2_post": " in.",
+    "publishing.hero.lede":
+      "Funding, a senior marketing team and a full launch — for a small number of games each year. You keep 100% of your IP. We win when you win.",
+    "publishing.marquee": "Funding|Marketing|Creators|PR|Porting|Localization|QA|Storefront",
+    // Publishing — values
+    "publishing.value1.title": "Performance first",
+    "publishing.value1.body":
+      "We invest in marketing with confidence in the outcome. Every euro is tied to wishlists, installs and sales — measured, not hoped for.",
+    "publishing.value2.title": "Release less, release better",
+    "publishing.value2.body":
+      "We take on a handful of games a year and put a real team behind each one. We only publish games we genuinely believe in — and back them properly.",
+    // Publishing — IP band
+    "publishing.ip.eyebrow": "No IP grab · ever",
+    "publishing.ip.title": "You keep 100% of your IP.",
+    "publishing.ip.body":
+      "We fund and publish — you stay the owner. No buyouts, no hostage clauses, no fine print. Your game, characters and brand remain entirely yours.",
+    // Publishing — how we help
+    "publishing.how.title": "A full team across the whole launch.",
+    "publishing.how.card1.title": "Disruptive marketing",
+    "publishing.how.card1.body":
+      "Cost-effective campaigns that build real player awareness — so you can focus on the game.",
+    "publishing.how.card1.tags": "Strategy & plan|Creators|PR",
+    "publishing.how.card2.title": "Strategic publishing",
+    "publishing.how.card2.body":
+      "Funding and lifecycle planning that maximise revenue across every platform and storefront.",
+    "publishing.how.card2.tags": "Platform relations|Storefront|Porting|Localization",
+    "publishing.how.card3.title": "Comprehensive support",
+    "publishing.how.card3.body":
+      "A team alongside yours — QA, design feedback and partners for the content that lifts the game.",
+    "publishing.how.card3.tags": "QA & feedback|Soundtrack|Art & cinematics",
+    "publishing.how.card4.title": "Funding & resources",
+    "publishing.how.card4.body":
+      "Capital to finish and launch — invested where it actually moves wishlists, installs and sales.",
+    "publishing.how.card4.tags": "Dev funding|Launch budget|Marketing spend",
+    // Publishing — compare
+    "publishing.compare.eyebrow": "Agency or publishing?",
+    "publishing.compare.title": "Two ways to work with us.",
+    "publishing.compare.agency.label": "The agency",
+    "publishing.compare.agency.title": "You drive, we execute",
+    "publishing.compare.agency.body":
+      "Scoped packages and campaigns at a fixed price. You keep full control and start in days.",
+    "publishing.compare.agency.cta": "See packages",
+    "publishing.compare.pub.label": "Publishing",
+    "publishing.compare.pub.title": "We partner on the whole game",
+    "publishing.compare.pub.body":
+      "Funding, production and the full launch — for a share of the upside, never your IP. Selective, by application.",
+    // Publishing — final CTA
+    "publishing.cta.title": "Think your game’s a fit?",
+    "publishing.cta.body":
+      "Send us the build and the vision. If it’s a match, we’ll come back with a real partnership offer — your IP stays yours, always.",
+    // Publishing — SEO
+    "seo.publishing.title": "Trap Plan Publishing — we publish games we believe in",
+    "seo.publishing.description":
+      "A selective game publishing partnership: funding, a senior marketing team and a full launch. You keep 100% of your IP.",
+
+    // Tools (calculators) — shared chrome
+    "tools.ui.free_tool": "Free tool",
+    "tools.ui.free_tool_sub": "Steam launch math",
+    "tools.cta.title": "Want to actually hit these numbers?",
+    "tools.cta.body": "The math is the input. We build the campaigns that grow your wishlists — and convert them at launch.",
+    // Package detail template (shared chrome)
+    "packages.detail.eyebrow": "Package",
+    "packages.detail.fixed_price": "Fixed price",
+    "packages.detail.one_time": "one-time",
+    "packages.detail.request": "Request this package",
+    "packages.detail.talk": "Talk to us first",
+    "packages.detail.included_eyebrow": "What’s included",
+    "packages.detail.process_eyebrow": "How it works",
+    "packages.detail.pairs_well": "Pairs well with",
+    "packages.detail.all_packages": "All packages",
+    "packages.detail.breadcrumb_packages": "Packages",
 };
 
 export default translations;

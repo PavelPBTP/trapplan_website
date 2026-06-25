@@ -3,41 +3,45 @@
 import { useState } from "react";
 
 export type GetAQuoteTranslations = {
+  eyebrow: string;
   title: string;
   subtitle: string;
   ceoTitle: string;
   messageWhatsapp: string;
-  cardTitle: string;
   fieldName: string;
   fieldCompany: string;
   fieldEmail: string;
+  fieldBudget: string;
+  budgetPlaceholder: string;
+  fieldMessage: string;
   submitSending: string;
   submitSend: string;
+  footnote: string;
   success: string;
   errorGeneric: string;
   errorNetwork: string;
 };
 
-function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
-  return (
-    <label className="block">
-      <span className="text-[12px] font-semibold text-black/70">{label}</span>
-      <input
-        type={type}
-        value={value}
-        onChange={onChange}
-        className="mt-2 w-full rounded-[12px] bg-[#F5F5F5] px-4 py-4 text-[14px] text-black placeholder:text-black/40 outline-none ring-2 ring-transparent transition-shadow focus:ring-[#FF0A5B]/35"
-        placeholder=""
-        required
-      />
-    </label>
-  );
-}
+const BUDGET_OPTIONS = [
+  "Under €5k",
+  "€5k – €15k",
+  "€15k – €50k",
+  "€50k – €150k",
+  "€150k+",
+  "Not sure yet",
+];
+
+const labelClass =
+  "mb-2 block font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary";
+const inputClass =
+  "h-[46px] w-full rounded-[6px] border border-[rgba(244,241,234,0.12)] bg-void px-[14px] text-[15px] text-bone outline-none transition-colors focus:border-[var(--accent)]";
 
 export default function GetAQuote({ translations: tx }: { translations: GetAQuoteTranslations }) {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [budget, setBudget] = useState("");
+  const [details, setDetails] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -46,6 +50,7 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFormValid) return;
     setIsSubmitting(true);
     setMessage("");
 
@@ -57,6 +62,8 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
           name,
           company,
           email,
+          budget: budget || undefined,
+          message: details || undefined,
           source: "Get A Quote (Homepage)",
         }),
       });
@@ -66,35 +73,20 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
         setName("");
         setCompany("");
         setEmail("");
+        setBudget("");
+        setDetails("");
       } else {
-        let serverError: string | undefined;
         let requestId: string | undefined;
         try {
           const data: unknown = await response.json();
           if (typeof data === "object" && data !== null) {
-            const error = (data as { error?: unknown }).error;
-            const details = (data as { details?: unknown }).details;
-            const status = (data as { status?: unknown }).status;
             const id = (data as { requestId?: unknown }).requestId;
-
-            const parts: string[] = [];
-            if (typeof error === "string") parts.push(error);
-            if (typeof details === "string") parts.push(details);
-            if (typeof status === "number") parts.push(`(${status})`);
-            serverError = parts.length ? parts.join(" ") : undefined;
-
             if (typeof id === "string" && id.trim()) requestId = id.trim();
           }
         } catch {
-          serverError = undefined;
+          requestId = undefined;
         }
-
-        if (process.env.NODE_ENV !== "production" && serverError) {
-          setMessage(serverError);
-        } else {
-          const base = tx.errorGeneric;
-          setMessage(requestId ? `${base} (Error ID: ${requestId})` : base);
-        }
+        setMessage(requestId ? `${tx.errorGeneric} (Error ID: ${requestId})` : tx.errorGeneric);
       }
     } catch {
       setMessage(tx.errorNetwork);
@@ -104,74 +96,126 @@ export default function GetAQuote({ translations: tx }: { translations: GetAQuot
   };
 
   return (
-    <section id="contact" className="-mt-12 bg-[#F3F3F3] pb-24 pt-0">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="relative overflow-hidden rounded-[24px] bg-[#0F0F0F] px-8 py-10 shadow-[0_60px_140px_rgba(0,0,0,0.30)] lg:px-12 lg:py-12">
-          <div className="pointer-events-none absolute inset-0 z-0 opacity-45 [background-image:radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.10),transparent_55%),radial-gradient(circle_at_70%_75%,rgba(255,10,91,0.16),transparent_60%)]" />
-          <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12">
-            <div className="lg:col-span-2">
-              <h2 className="text-[44px] font-extrabold leading-[0.92] tracking-tight text-white">
-                {tx.title}
-              </h2>
-              <p className="mt-6 max-w-[46ch] text-[14px] leading-6 text-[#A0A0A0]">
-                {tx.subtitle}
-              </p>
+    <section id="contact" className="border-t border-[rgba(244,241,234,0.07)] bg-void-alt">
+      <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-start gap-[64px] px-6 py-[110px] lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+        <div>
+          <div className="mb-5 flex items-center gap-[14px]">
+            <span className="font-display text-[13px] font-bold text-[var(--accent)]">04</span>
+            <span className="h-px w-[30px] bg-[rgba(244,241,234,0.2)]" />
+            <span className="text-[14px] text-secondary">{tx.eyebrow}</span>
+          </div>
+          <h2 className="mb-5 font-display text-[42px] font-bold leading-[1.06] tracking-[-0.025em] text-bone">
+            {tx.title}
+          </h2>
+          <p className="mb-10 max-w-[380px] text-[16px] leading-[1.6] text-secondary">{tx.subtitle}</p>
 
-              <div className="mt-10 flex items-center gap-4">
-                <div className="h-14 w-14 overflow-hidden rounded-full bg-gradient-to-br from-emerald-400 to-sky-500 ring-2 ring-white/15" />
-                <div>
-                  <div className="text-[16px] font-extrabold leading-tight text-white">
-                    Pavel Beresnev
-                  </div>
-                  <div className="mt-1 text-[12px] font-semibold text-white/55">
-                    {tx.ceoTitle}
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <a
-                  href="https://wa.me/381631808155"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-full bg-white/10 px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-white/15"
-                >
-                  {tx.messageWhatsapp}
-                </a>
-              </div>
+          <div className="flex max-w-[380px] items-center gap-4 rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card p-[18px]">
+            <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-sky-500 font-display text-[15px] font-bold text-[#06120E]">
+              PB
+            </span>
+            <div>
+              <div className="font-display text-[16px] font-semibold text-bone">Pavel Beresnev</div>
+              <div className="text-[13px] text-secondary">{tx.ceoTitle}</div>
             </div>
-
-            <div className="lg:col-span-3">
-              <div className="relative rounded-[24px] bg-white px-8 py-8 shadow-[0_44px_120px_rgba(0,0,0,0.55)]">
-                <h3 className="text-[24px] font-extrabold leading-none tracking-tight text-black">
-                  {tx.cardTitle}
-                </h3>
-
-                <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
-                  <Field label={tx.fieldName} value={name} onChange={(e) => setName(e.target.value)} />
-                  <Field label={tx.fieldCompany} value={company} onChange={(e) => setCompany(e.target.value)} />
-                  <Field label={tx.fieldEmail} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-
-                  {message && (
-                    <div className="text-[13px] font-medium text-center">
-                      {message}
-                    </div>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting || !isFormValid}
-                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,10,91,0.34)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,10,91,0.50)] disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting
-                      ? tx.submitSending
-                      : tx.submitSend}
-                  </button>
-                </form>
-              </div>
-            </div>
+            <a
+              href="https://wa.me/381631808155"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto font-mono text-[12px] text-[var(--accent)] no-underline transition-colors hover:brightness-110"
+            >
+              {tx.messageWhatsapp} ↗
+            </a>
           </div>
         </div>
+
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-[16px] border border-[rgba(244,241,234,0.08)] bg-card p-[34px]"
+        >
+          <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="gaq-name" className={labelClass}>{tx.fieldName} *</label>
+              <input
+                id="gaq-name"
+                name="name"
+                autoComplete="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className={inputClass}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="gaq-company" className={labelClass}>{tx.fieldCompany} *</label>
+              <input
+                id="gaq-company"
+                name="organization"
+                autoComplete="organization"
+                type="text"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className={inputClass}
+                required
+              />
+            </div>
+          </div>
+          <div className="mb-4">
+            <label htmlFor="gaq-email" className={labelClass}>{tx.fieldEmail} *</label>
+            <input
+              id="gaq-email"
+              name="email"
+              autoComplete="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={inputClass}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="gaq-budget" className={labelClass}>{tx.fieldBudget}</label>
+            <select
+              id="gaq-budget"
+              name="budget"
+              value={budget}
+              onChange={(e) => setBudget(e.target.value)}
+              className={`${inputClass} ${budget ? "text-bone" : "text-secondary"}`}
+            >
+              <option value="">{tx.budgetPlaceholder}</option>
+              {BUDGET_OPTIONS.map((opt) => (
+                <option key={opt} value={opt} className="text-bone">
+                  {opt}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-6">
+            <label htmlFor="gaq-message" className={labelClass}>{tx.fieldMessage}</label>
+            <textarea
+              id="gaq-message"
+              name="message"
+              rows={4}
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+              className="w-full resize-y rounded-[6px] border border-[rgba(244,241,234,0.12)] bg-void px-[14px] py-3 text-[15px] text-bone outline-none transition-colors focus:border-[var(--accent)]"
+            />
+          </div>
+
+          {message ? (
+            <div className="mb-4 text-center text-[13px] font-medium text-secondary">{message}</div>
+          ) : null}
+
+          <button
+            type="submit"
+            disabled={isSubmitting || !isFormValid}
+            className="h-[52px] w-full rounded-[6px] bg-[var(--accent)] font-display text-[16px] font-semibold text-[var(--accent-on)] transition hover:brightness-[1.06] disabled:cursor-not-allowed disabled:opacity-50"
+            style={{ boxShadow: "var(--cta-glow)" }}
+          >
+            {isSubmitting ? tx.submitSending : tx.submitSend}
+          </button>
+          <p className="mt-[14px] text-center text-[13px] text-tertiary">{tx.footnote}</p>
+        </form>
       </div>
     </section>
   );

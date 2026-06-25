@@ -1,9 +1,15 @@
 "use client";
 
 import Script from "next/script";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import { t } from "@/lib/copy";
+
+const PRESETS = {
+  conservative: { wlToSalesPct: 5, visitToWlPct: 8 },
+  base: { wlToSalesPct: 10, visitToWlPct: 10 },
+  optimistic: { wlToSalesPct: 20, visitToWlPct: 12 },
+} as const;
 
 type PresetKey = "conservative" | "base" | "optimistic";
 
@@ -29,23 +35,14 @@ function fmtInt(locale: Locale, n: number) {
 }
 
 export default function SteamWishlistCalculatorClient({ locale }: { locale: Locale }) {
-  const presets = useMemo(
-    () => ({
-      conservative: { wlToSalesPct: 5, visitToWlPct: 8 },
-      base: { wlToSalesPct: 10, visitToWlPct: 10 },
-      optimistic: { wlToSalesPct: 20, visitToWlPct: 12 },
-    }),
-    [],
-  );
-
   const [activePreset, setActivePreset] = useState<PresetKey>("conservative");
   const [inputs, setInputs] = useState<Inputs>({
     targetSales: 2000,
     price: 19.99,
     steamCutPct: 30,
     adjustPct: 10,
-    wlToSalesPct: presets.conservative.wlToSalesPct,
-    visitToWlPct: presets.conservative.visitToWlPct,
+    wlToSalesPct: PRESETS.conservative.wlToSalesPct,
+    visitToWlPct: PRESETS.conservative.visitToWlPct,
     paidToggle: true,
     cpc: 0.6,
   });
@@ -125,7 +122,7 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
         </div>
 
         <div className="tpw-head">
-          <h1 className="tpw-title">{t(locale, "tools.steam_wishlist_calculator.ui.title")}</h1>
+          <h2 className="tpw-title">{t(locale, "tools.steam_wishlist_calculator.ui.title")}</h2>
           <div className="tpw-sub">{t(locale, "tools.steam_wishlist_calculator.ui.subtitle")}</div>
           <div className="tpw-accent" aria-hidden="true" />
         </div>
@@ -188,7 +185,7 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
                 type="button"
                 onClick={() => {
                   setActivePreset("conservative");
-                  setInputs((p) => ({ ...p, ...presets.conservative }));
+                  setInputs((p) => ({ ...p, ...PRESETS.conservative }));
                 }}
               >
                 {t(locale, "tools.steam_wishlist_calculator.ui.funnel.preset.conservative")}
@@ -198,7 +195,7 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
                 type="button"
                 onClick={() => {
                   setActivePreset("base");
-                  setInputs((p) => ({ ...p, ...presets.base }));
+                  setInputs((p) => ({ ...p, ...PRESETS.base }));
                 }}
               >
                 {t(locale, "tools.steam_wishlist_calculator.ui.funnel.preset.base")}
@@ -208,7 +205,7 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
                 type="button"
                 onClick={() => {
                   setActivePreset("optimistic");
-                  setInputs((p) => ({ ...p, ...presets.optimistic }));
+                  setInputs((p) => ({ ...p, ...PRESETS.optimistic }));
                 }}
               >
                 {t(locale, "tools.steam_wishlist_calculator.ui.funnel.preset.optimistic")}
@@ -306,40 +303,20 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
       </div>
 
       <style jsx global>{`
-        /* Restored embed styles, scoped to the calculator root */
+        /* Dark theme, scoped to the calculator root */
         [data-tp-root] {
-          font-family: system-ui, -apple-system, sans-serif;
-          max-width: 1120px;
-          margin: 120px auto 0;
-          padding: 0 16px;
+          font-family: var(--font-body);
+          color: #f4f1ea;
+          max-width: 1240px;
+          margin: 8px auto 0;
+          padding: 0 8px;
         }
         [data-tp-root] * {
           box-sizing: border-box;
         }
+        /* The shared ToolShell provides the page hero. */
         [data-tp-root] .tpw-head {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-        [data-tp-root] .tpw-title {
-          font-size: 56px;
-          font-weight: 900;
-          letter-spacing: -0.03em;
-          line-height: 1.03;
-          margin: 0;
-        }
-        [data-tp-root] .tpw-sub {
-          margin: 24px auto 0;
-          max-width: 680px;
-          font-size: 18px;
-          opacity: 0.75;
-          line-height: 1.45;
-        }
-        [data-tp-root] .tpw-accent {
-          width: 64px;
-          height: 6px;
-          border-radius: 999px;
-          margin: 32px auto 0;
-          background: #e31d3b;
+          display: none;
         }
         [data-tp-root] .tpw-grid {
           display: grid;
@@ -347,32 +324,42 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
           gap: 18px;
         }
         [data-tp-root] .tpw-card {
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: 22px;
-          padding: 24px;
-          background: #fff;
-          box-shadow: 0 14px 40px rgba(0, 0, 0, 0.07);
+          border: 1px solid rgba(244, 241, 234, 0.08);
+          border-radius: 18px;
+          padding: 28px;
+          background: #131110;
           display: flex;
           flex-direction: column;
         }
         [data-tp-root] .tpw-card-title {
+          font-family: var(--font-display);
           font-size: 18px;
-          font-weight: 900;
+          font-weight: 600;
+          color: #f4f1ea;
           margin-bottom: 10px;
         }
         [data-tp-root] .tpw-label {
           display: block;
-          font-size: 13px;
-          font-weight: 800;
-          opacity: 0.82;
-          margin: 12px 0 8px;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #6b655b;
+          margin: 16px 0 8px;
         }
         [data-tp-root] .tpw-input {
           width: 100%;
-          padding: 12px;
-          border-radius: 14px;
-          border: 1px solid rgba(0, 0, 0, 0.14);
+          padding: 12px 14px;
+          border-radius: 6px;
+          border: 1px solid rgba(244, 241, 234, 0.12);
+          background: #0c0b0a;
+          color: #f4f1ea;
+          font-family: var(--font-body);
           font-size: 15px;
+          outline: none;
+        }
+        [data-tp-root] .tpw-input:focus {
+          border-color: var(--accent);
         }
         [data-tp-root] .tpw-row {
           display: grid;
@@ -380,50 +367,64 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
           gap: 12px;
         }
         [data-tp-root] .tpw-chip {
-          border: 1px solid rgba(0, 0, 0, 0.14);
-          background: #fff;
-          border-radius: 999px;
-          padding: 10px 12px;
+          border: 1px solid rgba(244, 241, 234, 0.18);
+          background: transparent;
+          color: #9a938a;
+          border-radius: 6px;
+          padding: 9px 14px;
+          font-family: var(--font-display);
           font-size: 13px;
           cursor: pointer;
-          font-weight: 800;
+          font-weight: 600;
         }
         [data-tp-root] .tpw-chip.is-active {
-          background: rgba(0, 0, 0, 0.04);
-          border-color: rgba(0, 0, 0, 0.22);
+          background: var(--accent);
+          border-color: var(--accent);
+          color: var(--accent-on);
         }
         [data-tp-root] .tpw-btn {
           width: 100%;
-          border-radius: 999px;
+          border-radius: 6px;
           padding: 14px;
           border: none;
-          background: #e31d3b;
-          color: #fff;
+          background: var(--accent);
+          color: var(--accent-on);
           cursor: pointer;
-          font-weight: 900;
+          font-family: var(--font-display);
+          font-weight: 600;
+          font-size: 15px;
           margin-top: 20px;
         }
         [data-tp-root] .tpw-metric {
           padding: 16px;
-          border-radius: 16px;
-          background: rgba(0, 0, 0, 0.03);
+          border-radius: 12px;
+          background: rgba(244, 241, 234, 0.04);
           margin-top: 12px;
         }
+        [data-tp-root] .tpw-metric-label {
+          font-family: var(--font-mono);
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #6b655b;
+        }
         [data-tp-root] .tpw-metric-value {
+          font-family: var(--font-mono);
           font-size: 30px;
-          font-weight: 950;
+          font-weight: 500;
+          color: #f4f1ea;
           margin-top: 6px;
         }
         [data-tp-root] .tpw-bottom-note {
           text-align: center;
-          margin: 40px 0;
-          font-size: 16px;
-          opacity: 0.65;
-          font-weight: 800;
+          margin: 40px 0 0;
+          font-size: 14px;
+          color: #6b655b;
+          line-height: 1.6;
         }
         [data-tp-root] .tpw-sep {
           height: 1px;
-          background: rgba(0, 0, 0, 0.08);
+          background: rgba(244, 241, 234, 0.08);
           margin: 16px 0;
         }
         [data-tp-root] .tpw-presets {
@@ -436,14 +437,17 @@ export default function SteamWishlistCalculatorClient({ locale }: { locale: Loca
           align-items: center;
           gap: 8px;
           font-size: 14px;
-          font-weight: 700;
+          color: #9a938a;
           margin-top: 10px;
+        }
+        [data-tp-root] .tpw-check input {
+          accent-color: var(--accent);
         }
         [data-tp-root] .tpw-help {
           margin-top: 12px;
           font-size: 13px;
-          opacity: 0.7;
-          line-height: 1.45;
+          color: #6b655b;
+          line-height: 1.5;
         }
         [data-tp-root] .tpw-actions {
           display: block;

@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function PaidGrowthPage() {
   return (
     <>
-      <main className="bg-[#F3F3F3]">
+      <main className="bg-void-alt">
         <PaidGrowthClient />
         <Footer />
       </main>

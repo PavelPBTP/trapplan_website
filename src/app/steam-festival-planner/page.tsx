@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Footer from "@/components/sections/Footer";
+import ToolShell from "@/components/sections/ToolShell";
 import SteamFestivalPlannerClient from "./steam-festival-planner-client";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
@@ -57,11 +57,13 @@ export default async function SteamFestivalPlannerPage() {
   const locale = await getRequestLocale();
 
   return (
-    <>
-      <main className="bg-[#F3F3F3]">
-        <SteamFestivalPlannerClient locale={locale} />
-        <Footer />
-      </main>
-    </>
+    <ToolShell
+      locale={locale}
+      activeHref="/steam-festival-planner"
+      title={t(locale, "tools.steam_festival_planner.name")}
+      lede={t(locale, "seo.steam_festival_planner.desc")}
+    >
+      <SteamFestivalPlannerClient locale={locale} />
+    </ToolShell>
   );
 }
