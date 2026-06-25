@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Footer from "@/components/sections/Footer";
+import ToolShell from "@/components/sections/ToolShell";
 import SteamPricingPlannerClient from "./steam-pricing-planner-client";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
@@ -54,11 +54,13 @@ export default async function SteamPricingPlannerPage() {
   const locale = await getRequestLocale();
 
   return (
-    <>
-      <main className="bg-[#F3F3F3]">
-        <SteamPricingPlannerClient locale={locale} />
-        <Footer />
-      </main>
-    </>
+    <ToolShell
+      locale={locale}
+      activeHref="/steam-pricing-planner"
+      title={t(locale, "tools.steam_pricing_planner.name")}
+      lede={t(locale, "seo.steam_pricing_planner.desc")}
+    >
+      <SteamPricingPlannerClient locale={locale} />
+    </ToolShell>
   );
 }

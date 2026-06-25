@@ -161,11 +161,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...localize("/games-co-publishing").map((url) => ({
+    ...localize("/publishing").map((url) => ({
       url: toAbs(url),
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.8,
     })),
     ...localize("/paid-growth").map((url) => ({
       url: toAbs(url),

@@ -26,7 +26,7 @@ export default function BackToTopButton({
     <button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed left-5 bottom-24 z-40 hidden items-center justify-center rounded-full border border-black/10 bg-white/95 px-3 py-3 text-black shadow-[0_18px_40px_rgba(0,0,0,0.10)] backdrop-blur transition-colors hover:bg-white md:inline-flex"
+      className="fixed bottom-24 left-5 z-40 hidden items-center justify-center rounded-full border border-[rgba(244,241,234,0.18)] bg-[rgba(19,17,16,0.9)] px-3 py-3 text-bone backdrop-blur transition-colors hover:border-[rgba(244,241,234,0.4)] md:inline-flex"
       aria-label="Back to top"
       title="Back to top"
     >

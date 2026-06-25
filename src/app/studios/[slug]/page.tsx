@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import Footer from "@/components/sections/Footer";
+import ArtTile from "@/components/ui/ArtTile";
+import Button from "@/components/ui/Button";
 import { STUDIO_PAGES } from "@/lib/data/studios";
+import { artGradient } from "@/lib/data/gameArt";
 import { getRequestLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
+import { t } from "@/lib/copy";
 import { clampWithSuffix } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -82,23 +86,38 @@ export default async function StudioPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const locale = await getRequestLocale();
   const { slug } = await params;
   const s = STUDIO_PAGES.find((x) => x.slug === slug);
   if (!s) notFound();
 
   return (
-    <main className="bg-[#F3F3F3]">
-      <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
-          <div className={`h-[220px] w-full rounded-3xl bg-gradient-to-br ${s.theme}`} />
-          <div className="mt-10">
-            <div className="text-[13px] font-semibold text-black/60">
-              {s.date} | {s.client}
-            </div>
-            <h1 className="mt-3 text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
-              {s.title}
-            </h1>
-            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-black/65">{s.excerpt}</p>
+    <main>
+      <section className="mx-auto max-w-[1100px] px-6 py-16 lg:px-8">
+        <ArtTile
+          className="min-h-[240px]"
+          radius={16}
+          gradient={artGradient({ rgb: "176,42,48", base: "#241a17" }, { alpha: 0.45, pos: "32% 28%", spread: "66%" })}
+          ghostName={s.title}
+          ghostSize={40}
+          tag={s.client.toUpperCase()}
+          priority
+        />
+        <div className="mt-10">
+          <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-tertiary">
+            {s.client.toUpperCase()} · {s.date}
+          </div>
+          <h1 className="mt-3 font-display text-[40px] font-bold leading-[1.05] tracking-[-0.03em] text-bone text-balance md:text-[48px]">
+            {s.title}
+          </h1>
+          <p className="mt-5 max-w-3xl text-[18px] leading-[1.6] text-secondary">{s.excerpt}</p>
+          <div className="mt-9 flex flex-wrap gap-[14px]">
+            <Button href={withLocale(locale, "/form")} glow>
+              {t(locale, "cta.request_quote")} ↗
+            </Button>
+            <Button href={withLocale(locale, "/our-cases")} variant="secondary">
+              {t(locale, "cases.cta_view_all")} →
+            </Button>
           </div>
         </div>
       </section>

@@ -55,12 +55,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 function SectionKicker({ children }: { children: string }) {
-  return <div className="text-[12px] font-semibold tracking-wide text-black/45">{children}</div>;
+  return <div className="text-[12px] font-semibold tracking-wide text-tertiary">{children}</div>;
 }
 
 function SectionTitle({ children }: { children: string }) {
   return (
-    <h2 className="mt-3 text-[34px] font-extrabold leading-[1.05] tracking-tight text-black">
+    <h2 className="mt-3 text-[34px] font-extrabold leading-[1.05] tracking-tight text-bone">
       {children}
     </h2>
   );
@@ -71,7 +71,7 @@ function CTAButtons({ locale }: { locale: Parameters<typeof t>[0] }) {
     <div className="mt-10 flex flex-col gap-3 sm:flex-row">
       <a
         href="#contact"
-        className="inline-flex items-center justify-center rounded-full bg-[#FF1F6D] px-7 py-3 text-[14px] font-semibold text-white shadow-[0_18px_42px_rgba(255,31,109,0.28)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.40)]"
+        className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-7 py-3 text-[14px] font-semibold text-white shadow-[0_18px_42px_rgba(255,31,109,0.28)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.40)]"
       >
         {t(locale, "cta.lets_talk")}
       </a>
@@ -79,17 +79,6 @@ function CTAButtons({ locale }: { locale: Parameters<typeof t>[0] }) {
   );
 }
 
-function ContactField({ label, placeholder }: { label: string; placeholder: string }) {
-  return (
-    <label className="block">
-      <span className="text-[12px] font-semibold text-black/60">{label}</span>
-      <input
-        className="mt-2 w-full rounded-[12px] bg-[#F5F5F5] px-4 py-4 text-[14px] text-black placeholder:text-black/40 outline-none ring-2 ring-transparent transition-shadow focus:ring-[#FF1F6D]/40"
-        placeholder={placeholder}
-      />
-    </label>
-  );
-}
 
 export default async function InfluencerActivationForGamesPage() {
   const locale = await getRequestLocale();
@@ -119,28 +108,28 @@ export default async function InfluencerActivationForGamesPage() {
   ];
 
   return (
-    <main className="bg-white">
-      <section className="relative overflow-hidden bg-white">
+    <main className="bg-card">
+      <section className="relative overflow-hidden bg-card">
         <div className="pointer-events-none absolute inset-0 opacity-80 [background-image:linear-gradient(rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.06)_1px,transparent_1px)] [background-size:48px_48px]" />
         <div className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_20%_20%,rgba(255,31,109,0.14),transparent_55%),radial-gradient(circle_at_80%_40%,rgba(0,0,0,0.08),transparent_55%)]" />
 
         <div className="relative mx-auto max-w-[1200px] px-6 pt-14 pb-16 lg:px-10 lg:pt-20">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-[12px] font-semibold text-black/70">
-                <span className="h-2 w-2 rounded-full bg-[#FF1F6D]" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(244,241,234,0.1)] bg-card px-4 py-2 text-[12px] font-semibold text-secondary">
+                <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
                 {t(locale, "influencer_activation.badge")}
               </div>
 
-              <h1 className="mt-6 text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[54px]">
+              <h1 className="mt-6 text-[44px] font-extrabold leading-[1.02] tracking-tight text-bone sm:text-[54px]">
                 {t(locale, "influencer_activation.hero.title")}
               </h1>
 
-              <p className="mt-4 text-[18px] leading-7 text-black/70">
+              <p className="mt-4 text-[18px] leading-7 text-secondary">
                 {t(locale, "influencer_activation.hero.kicker")}
               </p>
 
-              <p className="mt-6 text-[15px] leading-7 text-black/65">
+              <p className="mt-6 text-[15px] leading-7 text-secondary">
                 {t(locale, "influencer_activation.hero.body")}
               </p>
 
@@ -150,7 +139,7 @@ export default async function InfluencerActivationForGamesPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -160,35 +149,35 @@ export default async function InfluencerActivationForGamesPage() {
             <div className="lg:col-span-8">
               <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <div>
-                  <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                  <div className="text-[12px] font-semibold tracking-wide text-tertiary">
                     {t(locale, "influencer_activation.phase.01.kicker")}
                   </div>
-                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">
+                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-bone">
                     {t(locale, "influencer_activation.phase.01.title")}
                   </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">
+                  <p className="mt-3 text-[14px] leading-6 text-secondary">
                     {t(locale, "influencer_activation.phase.01.desc")}
                   </p>
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                  <div className="text-[12px] font-semibold tracking-wide text-tertiary">
                     {t(locale, "influencer_activation.phase.02.kicker")}
                   </div>
-                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">
+                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-bone">
                     {t(locale, "influencer_activation.phase.02.title")}
                   </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">
+                  <p className="mt-3 text-[14px] leading-6 text-secondary">
                     {t(locale, "influencer_activation.phase.02.desc")}
                   </p>
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold tracking-wide text-black/45">
+                  <div className="text-[12px] font-semibold tracking-wide text-tertiary">
                     {t(locale, "influencer_activation.phase.03.kicker")}
                   </div>
-                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-black">
+                  <div className="mt-2 text-[16px] font-extrabold tracking-tight text-bone">
                     {t(locale, "influencer_activation.phase.03.title")}
                   </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">
+                  <p className="mt-3 text-[14px] leading-6 text-secondary">
                     {t(locale, "influencer_activation.phase.03.desc")}
                   </p>
                 </div>
@@ -198,7 +187,7 @@ export default async function InfluencerActivationForGamesPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -210,11 +199,11 @@ export default async function InfluencerActivationForGamesPage() {
                 {deliverables.map((label) => (
                   <div
                     key={label}
-                    className="rounded-[18px] border border-black/10 bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
+                    className="rounded-[18px] border border-[rgba(244,241,234,0.1)] bg-card p-5 shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="mt-[6px] h-2 w-2 flex-none rounded-full bg-[#FF1F6D]/70" aria-hidden />
-                      <div className="text-[14px] font-semibold leading-6 text-black/75">{label}</div>
+                      <span className="mt-[6px] h-2 w-2 flex-none rounded-full bg-[var(--accent)]/70" aria-hidden />
+                      <div className="text-[14px] font-semibold leading-6 text-secondary">{label}</div>
                     </div>
                   </div>
                 ))}
@@ -228,7 +217,7 @@ export default async function InfluencerActivationForGamesPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -240,15 +229,15 @@ export default async function InfluencerActivationForGamesPage() {
                 {faqs.map((item) => (
                   <details
                     key={item.q}
-                    className="group rounded-[18px] border border-black/10 bg-white px-6 py-5 shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
+                    className="group rounded-[18px] border border-[rgba(244,241,234,0.1)] bg-card px-6 py-5 shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
                   >
                     <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-                      <div className="text-[15px] font-semibold leading-7 text-black">{item.q}</div>
-                      <div className="mt-1 text-black/30 transition-transform duration-200 group-open:rotate-45">
+                      <div className="text-[15px] font-semibold leading-7 text-bone">{item.q}</div>
+                      <div className="mt-1 text-faint transition-transform duration-200 group-open:rotate-45">
                         <span className="text-[18px] leading-none">+</span>
                       </div>
                     </summary>
-                    <div className="mt-3 text-[15px] leading-7 text-black/65">{item.a}</div>
+                    <div className="mt-3 text-[15px] leading-7 text-secondary">{item.a}</div>
                   </details>
                 ))}
               </div>
@@ -261,7 +250,7 @@ export default async function InfluencerActivationForGamesPage() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#0F0F0F]">
+      <section id="contact" className="bg-void-alt">
         <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
@@ -273,17 +262,17 @@ export default async function InfluencerActivationForGamesPage() {
               </p>
             </div>
             <div className="lg:col-span-7">
-              <div className="rounded-[24px] bg-white px-8 py-8 shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
-                <div className="text-[12px] font-semibold tracking-wide text-black/45">
+              <div className="rounded-[24px] bg-card px-8 py-8 shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
+                <div className="text-[12px] font-semibold tracking-wide text-tertiary">
                   {t(locale, "influencer_activation.contact.card_kicker")}
                 </div>
-                <div className="mt-3 text-[22px] font-extrabold tracking-tight text-black">
+                <div className="mt-3 text-[22px] font-extrabold tracking-tight text-bone">
                   {t(locale, "influencer_activation.contact.card_title")}
                 </div>
                 <div className="mt-7">
                   <Link
                     href={withLocale(locale, "/form")}
-                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[#FF1F6D] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,31,109,0.30)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.42)]"
+                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,31,109,0.30)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,31,109,0.42)]"
                   >
                     {t(locale, "influencer_activation.contact.submit")}
                   </Link>

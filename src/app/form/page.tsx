@@ -80,11 +80,11 @@ export default async function FormPage() {
   const locale = await getRequestLocale();
   return (
     <>
-      <main className="bg-[#F3F3F3]">
-        <section className="mx-auto max-w-6xl px-6 pt-14 pb-24 lg:px-10 lg:pt-20">
+      <main>
+        <section className="mx-auto max-w-[1240px] px-6 pb-24 pt-14 lg:px-8 lg:pt-20">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
-              <h1 className="text-[40px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[44px]">
+              <h1 className="font-display text-[40px] font-bold leading-[1.02] tracking-[-0.03em] text-bone sm:text-[44px]">
                 {t(locale, "form_page.title").split("\n").map((line, idx, arr) => (
                   <span key={`form-title-${idx}`}>
                     {line}
@@ -93,30 +93,30 @@ export default async function FormPage() {
                 ))}
               </h1>
 
-              <p className="mt-6 max-w-[52ch] text-[14px] leading-6 text-black/60">
+              <p className="mt-6 max-w-[52ch] text-[16px] leading-[1.6] text-secondary">
                 {t(locale, "form_page.subtitle")}
               </p>
 
-              <ul className="mt-6 space-y-2 text-[14px] font-semibold text-black/70">
+              <ul className="mt-6 space-y-2 text-[14px] font-medium text-secondary">
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF0A5B]" />
+                  <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[var(--accent)]" />
                   {t(locale, "form_page.bullet.01")}
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF0A5B]" />
+                  <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[var(--accent)]" />
                   {t(locale, "form_page.bullet.02")}
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#FF0A5B]" />
+                  <span className="mt-[9px] h-[5px] w-[5px] shrink-0 rounded-full bg-[var(--accent)]" />
                   {t(locale, "form_page.bullet.03")}
                 </li>
               </ul>
 
               <a
                 href="mailto:pb@trapplan.com"
-                className="mt-7 inline-flex items-center gap-3 text-[14px] font-semibold text-black transition-colors hover:text-black/80"
+                className="mt-7 inline-flex items-center gap-3 text-[14px] font-semibold text-bone transition-colors hover:text-secondary"
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#FF0A5B]/10 text-[#FF0A5B]">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--accent)_12%,transparent)] text-[var(--accent)]">
                   <MailIcon />
                 </span>
                 pb@trapplan.com
@@ -124,7 +124,7 @@ export default async function FormPage() {
             </div>
 
             <div className="lg:col-span-7 lg:flex lg:justify-end">
-              <div className="w-full max-w-[520px] rounded-[22px] bg-white px-8 pt-8 pb-9 shadow-[0_30px_70px_rgba(0,0,0,0.10)]">
+              <div className="w-full max-w-[520px] rounded-[16px] border border-[rgba(244,241,234,0.08)] bg-card px-8 pb-9 pt-8">
                 <WorkWithUsForm locale={locale} />
               </div>
             </div>

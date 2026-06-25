@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Footer from "@/components/sections/Footer";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbList, itemList, SITE_ORIGIN } from "@/lib/seo";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
@@ -115,41 +118,55 @@ export default async function BlogIndexPage({
   }));
 
   return (
-    <main className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 pt-10 pb-16 lg:px-10 lg:pt-14">
-        <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-black/50">
+    <main>
+      <JsonLd
+        data={breadcrumbList([
+          { name: t(locale, "blog.ui.home"), url: new URL(withLocale(locale, "/"), SITE_ORIGIN).toString() },
+          { name: t(locale, "blog.ui.blog") },
+        ])}
+      />
+      <JsonLd
+        data={itemList(
+          t(locale, "seo.blog.title"),
+          posts.slice(0, 50).map((p) => new URL(withLocale(locale, `/blog/${p.slug}`), SITE_ORIGIN).toString()),
+        )}
+      />
+      <div className="mx-auto max-w-[1240px] px-6 pb-16 pt-10 lg:px-8">
+        <nav aria-label="Breadcrumb" className="font-mono text-[12px] tracking-[0.06em] text-tertiary">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href={withLocale(locale, "/")} className="transition-colors hover:text-black">
+              <Link href={withLocale(locale, "/")} className="text-secondary no-underline transition-colors hover:text-bone">
                 {t(locale, "blog.ui.home")}
               </Link>
             </li>
-            <li className="text-black/30">/</li>
-            <li className="text-black/70">{t(locale, "blog.ui.blog")}</li>
+            <li className="text-faint">/</li>
+            <li className="text-secondary">{t(locale, "blog.ui.blog")}</li>
           </ol>
         </nav>
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           <aside className="lg:col-span-3">
-            <h1 className="text-[26px] font-bold leading-tight tracking-tight text-black">
+            <h1 className="font-display text-[28px] font-bold leading-tight tracking-[-0.025em] text-bone">
               {t(locale, "blog.ui.sidebar_title").split("\n").map((line, i) => (
                 <span key={i}>{i > 0 && <br />}{line}</span>
               ))}
             </h1>
-            <p className="mt-4 text-[15px] leading-[1.6] text-[#37352f]">
+            <p className="mt-4 text-[15px] leading-[1.6] text-secondary">
               {t(locale, "blog.ui.sidebar_subtitle")}
             </p>
 
             <div className="mt-10">
-              <div className="text-[13px] font-semibold text-black/50">{t(locale, "blog.ui.sidebar_latest")}</div>
+              <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-tertiary">
+                {t(locale, "blog.ui.sidebar_latest")}
+              </div>
               <div className="mt-4 flex flex-wrap gap-2 lg:flex-col lg:gap-1">
                 <Link
                   href={withLocale(locale, "/blog")}
                   prefetch={false}
-                  className={`inline-flex items-center rounded-full px-3 py-1.5 text-[14px] font-medium transition-colors lg:rounded-md lg:px-2.5 lg:py-2 ${
+                  className={`inline-flex items-center rounded-[6px] px-3 py-2 text-[14px] font-medium no-underline transition-colors ${
                     !selectedCategory
-                      ? "bg-black/[0.04] text-black"
-                      : "text-black/70 hover:bg-black/[0.03] hover:text-black"
+                      ? "bg-[rgba(244,241,234,0.06)] text-bone"
+                      : "text-secondary hover:bg-[rgba(244,241,234,0.04)] hover:text-bone"
                   }`}
                 >
                   {t(locale, "blog.ui.sidebar_all")}
@@ -159,10 +176,10 @@ export default async function BlogIndexPage({
                     key={c}
                     href={withLocale(locale, `/blog?category=${encodeURIComponent(c)}`)}
                     prefetch={false}
-                    className={`inline-flex items-center rounded-full px-3 py-1.5 text-[14px] font-medium transition-colors lg:rounded-md lg:px-2.5 lg:py-2 ${
+                    className={`inline-flex items-center rounded-[6px] px-3 py-2 text-[14px] font-medium no-underline transition-colors ${
                       selectedCategory === c
-                        ? "bg-black/[0.04] text-black"
-                        : "text-black/70 hover:bg-black/[0.03] hover:text-black"
+                        ? "bg-[rgba(244,241,234,0.06)] text-bone"
+                        : "text-secondary hover:bg-[rgba(244,241,234,0.04)] hover:text-bone"
                     }`}
                   >
                     {c}
@@ -173,81 +190,40 @@ export default async function BlogIndexPage({
           </aside>
 
           <section className="lg:col-span-9">
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-              {cards.map(({ post, cover, ogCover }, idx) => (
+            <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
+              {cards.map(({ post, cover, ogCover }) => (
                 <article key={post.slug} className="group">
-                  <Link href={withLocale(locale, `/blog/${post.slug}`)} className="block">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-black/[0.04]">
-                      {cover ? (
-                        <>
-                          <Image
-                            src={cover}
-                            alt={post.title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 640px) 100vw, 480px"
-                            priority={false}
-                          />
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                          <div className="pointer-events-none absolute inset-0 flex items-end p-5">
-                            <div className="text-white">
-                              <div className="text-[18px] font-semibold leading-snug tracking-tight">
-                                {post.title}
-                              </div>
-                            </div>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <Image
-                            src={ogCover}
-                            alt={post.title}
-                            fill
-                            sizes="(max-width: 640px) 100vw, 50vw"
-                            className="object-cover"
-                          />
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                          <div className="pointer-events-none absolute inset-0 flex items-end p-5">
-                            <div className="text-white">
-                              <div className="text-[18px] font-semibold leading-snug tracking-tight">
-                                {post.title}
-                              </div>
-                            </div>
-                          </div>
-                        </>
-                      )}
-                      <div className="absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100 [background-image:radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.55),transparent_55%)]" />
+                  <Link
+                    href={withLocale(locale, `/blog/${post.slug}`)}
+                    className="art-zoom flex h-full flex-col overflow-hidden rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card no-underline transition-colors hover:border-[rgba(244,241,234,0.18)]"
+                  >
+                    <div className="gart relative aspect-[16/10]">
+                      <Image
+                        src={cover || ogCover}
+                        alt={post.title}
+                        fill
+                        className="gcover object-cover"
+                        sizes="(max-width: 640px) 100vw, 480px"
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[62%] bg-gradient-to-t from-[#0c0b0a] via-[#0c0b0a]/40 to-transparent" />
                     </div>
 
-                    <div className="mt-5">
-                      <div className="flex items-center gap-2">
-                        {post.category ? (
-                          <span className="text-[12px] font-semibold text-black/45">
-                            {post.category}
-                          </span>
-                        ) : null}
-                      </div>
-
-                      <h2 className="mt-2 text-[22px] font-semibold leading-snug tracking-tight text-black underline-offset-4 group-hover:underline">
+                    <div className="flex flex-1 flex-col p-[22px] pb-6">
+                      {post.category ? (
+                        <div className="mb-2 font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary">
+                          {post.category}
+                        </div>
+                      ) : null}
+                      <h2 className="font-display text-[20px] font-semibold leading-snug tracking-[-0.015em] text-bone">
                         {post.title}
                       </h2>
-
-                      <p className="mt-3 text-[17px] leading-[1.6] text-[#37352f]">
-                        {post.excerpt}
-                      </p>
-
-                      <div className="mt-4 text-[13px] font-medium text-black/50">
+                      <p className="mt-3 text-[15px] leading-[1.6] text-secondary">{post.excerpt}</p>
+                      <div className="mt-4 font-mono text-[12px] text-tertiary">
                         <span>{formatDate(locale, post.date)}</span>
-                        <span className="px-2 text-black/25">•</span>
+                        <span className="px-2 text-faint">•</span>
                         <span>
                           {post.readingMinutes} {t(locale, "blog.ui.min_read")}
                         </span>
-                        {post.authorName ? (
-                          <>
-                            <span className="px-2 text-black/25">•</span>
-                            <span>{post.authorName}</span>
-                          </>
-                        ) : null}
                       </div>
                     </div>
                   </Link>
@@ -256,13 +232,14 @@ export default async function BlogIndexPage({
             </div>
 
             {posts.length === 0 ? (
-              <div className="rounded-[16px] bg-black/[0.02] px-5 py-5 text-[15px] text-black/60">
+              <div className="rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card px-5 py-5 text-[15px] text-secondary">
                 {t(locale, "blog.ui.no_posts_found")}
               </div>
             ) : null}
           </section>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

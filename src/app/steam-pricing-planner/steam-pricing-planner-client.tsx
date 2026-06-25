@@ -100,19 +100,19 @@ export default function SteamPricingPlannerClient({ locale }: { locale: Locale }
       />
 
       <div className="sr-only">
-        <h1>{t(locale, "tools.steam_pricing_planner.sr.title")}</h1>
+        <h2>{t(locale, "tools.steam_pricing_planner.sr.title")}</h2>
         <p>{t(locale, "tools.steam_pricing_planner.sr.body")}</p>
       </div>
 
-      <div id="tp-steam-pricing-tool" suppressHydrationWarning style={{ marginTop: 100 }}>
-        <h2 style={{ textAlign: "center", fontFamily: "sans-serif" }}>
+      <div id="tp-steam-pricing-tool" suppressHydrationWarning style={{ marginTop: 8 }}>
+        <h2 style={{ textAlign: "center", fontFamily: "var(--font-display)", color: "#f4f1ea" }}>
           {t(locale, "tools.steam_pricing_planner.ui.h2")}
         </h2>
         <p
           style={{
             textAlign: "center",
-            fontFamily: "sans-serif",
-            color: "#666",
+            fontFamily: "var(--font-body)",
+            color: "#9a938a",
             maxWidth: 800,
             margin: "0 auto",
           }}

@@ -54,14 +54,6 @@ export default function StructuredData({ locale }: { locale: Locale }) {
     url: "https://www.trapplan.com",
     email: "pb@trapplan.com",
     priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 0,
-      longitude: 0,
-    },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

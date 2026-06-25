@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
-import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import Button from "@/components/ui/Button";
+import Reveal from "@/components/ui/Reveal";
+import { stagger } from "@/lib/stagger";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
@@ -50,15 +53,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-function NumberBadge({ n }: { n: string }) {
-  return (
-    <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/50">{n}</div>
-  );
-}
-
 function SectionTitle({ children }: { children: string }) {
   return (
-    <h2 className="text-[32px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[40px]">
+    <h2 className="font-display text-[32px] font-bold leading-[1.05] tracking-[-0.025em] text-bone sm:text-[40px]">
       {children}
     </h2>
   );
@@ -102,199 +99,126 @@ export default async function AboutUsPage() {
     },
   ];
 
-  return (
-    <main className="bg-[#F3F3F3]">
-      <section className="relative overflow-hidden bg-white">
-        <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_18%_20%,rgba(255,10,91,0.14),transparent_55%),radial-gradient(circle_at_76%_10%,rgba(0,0,0,0.06),transparent_50%)]" />
-        <div className="mx-auto max-w-6xl px-6 pt-14 pb-14 lg:px-10 lg:pt-18">
-          <div className="flex items-center justify-between">
-            <NumberBadge n="01" />
-            <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-          </div>
+  const outcomes = [
+    { title: t(locale, "about.outcome.01.title"), body: t(locale, "about.outcome.01.body") },
+    { title: t(locale, "about.outcome.02.title"), body: t(locale, "about.outcome.02.body") },
+    { title: t(locale, "about.outcome.03.title"), body: t(locale, "about.outcome.03.body") },
+    { title: t(locale, "about.outcome.04.title"), body: t(locale, "about.outcome.04.body") },
+  ];
 
-          <h1 className="mt-8 text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[56px]">
+  return (
+    <main>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute left-1/2 top-[-40px] h-[460px] w-[860px] -translate-x-1/2 opacity-50 blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%)",
+          }}
+        />
+        <div className="tp-grain" />
+        <div className="relative mx-auto max-w-[1240px] px-6 pb-14 pt-[88px] lg:px-8">
+          <Eyebrow number="01" label={t(locale, "nav.about_us")} className="mb-[22px]" />
+          <h1 className="mb-5 max-w-[820px] font-display text-[44px] font-bold leading-[1.02] tracking-[-0.03em] text-bone text-balance md:text-[56px]">
             {t(locale, "about.hero.title")}
           </h1>
-          <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/65">
+          <p className="mb-10 max-w-2xl text-[18px] leading-[1.6] text-secondary">
             {t(locale, "about.hero.subtitle")}
           </p>
-
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={withLocale(locale, "/form")}
-              className="inline-flex items-center justify-center rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
-            >
-              {t(locale, "about.hero.cta_primary")}
-            </Link>
-            <Link
-              href={withLocale(locale, "/blog")}
-              className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white px-7 py-3 text-[13px] font-semibold text-black/80 transition-colors duration-200 hover:bg-black/5 hover:text-black"
-            >
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href={withLocale(locale, "/form")} glow>
+              {t(locale, "about.hero.cta_primary")} ↗
+            </Button>
+            <Button href={withLocale(locale, "/blog")} variant="secondary">
               {t(locale, "about.hero.cta_secondary")}
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F3F3F3]">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <div className="flex items-center justify-between">
-                <NumberBadge n="02" />
-                <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-              </div>
-              <div className="mt-6">
-                <SectionTitle>{t(locale, "about.how_we_think.title")}</SectionTitle>
-                <p className="mt-4 max-w-[52ch] text-[15px] leading-7 text-black/65">
-                  {t(locale, "about.how_we_think.body")}
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 gap-4">
-                {principles.map((p) => (
-                  <div
-                    key={p.n}
-                    className="rounded-2xl border border-black/10 bg-white px-7 py-7 shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
-                          {p.n}
-                        </div>
-                        <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                          {p.title}
-                        </div>
-                        <p className="mt-3 text-[14px] leading-6 text-black/60">{p.body}</p>
-                      </div>
-                      <div className="mt-1 h-2 w-2 flex-none rounded-full bg-[#FF0A5B]" />
-                    </div>
+      {/* How we think */}
+      <section className="border-t border-[rgba(244,241,234,0.07)] bg-void-alt">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-12 lg:px-8">
+          <div className="lg:col-span-5">
+            <Eyebrow number="02" label={t(locale, "about.how_we_think.title")} className="mb-6" />
+            <SectionTitle>{t(locale, "about.how_we_think.title")}</SectionTitle>
+            <p className="mt-4 max-w-[52ch] text-[15px] leading-[1.7] text-secondary">
+              {t(locale, "about.how_we_think.body")}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 lg:col-span-7">
+            {principles.map((p, i) => (
+              <Reveal key={p.n} delay={stagger(i)} className="block">
+                <div className="flex items-start justify-between gap-4 rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card px-7 py-7">
+                  <div>
+                    <div className="font-mono text-[12px] tracking-[0.18em] text-[var(--accent)]">{p.n}</div>
+                    <div className="mt-3 font-display text-[18px] font-semibold text-bone">{p.title}</div>
+                    <p className="mt-3 text-[14px] leading-[1.6] text-secondary">{p.body}</p>
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div className="mt-1 h-2 w-2 flex-none rounded-full bg-[var(--accent)]" />
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <div className="flex items-center justify-between">
-                <NumberBadge n="03" />
-                <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-              </div>
-              <div className="mt-6">
-                <SectionTitle>{t(locale, "about.what_you_get.title")}</SectionTitle>
-                <p className="mt-4 max-w-[52ch] text-[15px] leading-7 text-black/65">
-                  {t(locale, "about.what_you_get.body")}
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
+      {/* What you get */}
+      <section className="border-t border-[rgba(244,241,234,0.07)]">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-12 lg:px-8">
+          <div className="lg:col-span-5">
+            <Eyebrow number="03" label={t(locale, "about.what_you_get.title")} className="mb-6" />
+            <SectionTitle>{t(locale, "about.what_you_get.title")}</SectionTitle>
+            <p className="mt-4 max-w-[52ch] text-[15px] leading-[1.7] text-secondary">
+              {t(locale, "about.what_you_get.body")}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-7">
+            {outcomes.map((o, i) => (
+              <Reveal key={o.title} delay={stagger(i)} className="block">
+                <div className="h-full rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-[rgba(244,241,234,0.04)] px-7 py-7">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-tertiary">
                     {t(locale, "about.outcome.label")}
                   </div>
-                  <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    {t(locale, "about.outcome.01.title")}
-                  </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    {t(locale, "about.outcome.01.body")}
-                  </p>
+                  <div className="mt-3 font-display text-[18px] font-semibold text-bone">{o.title}</div>
+                  <p className="mt-3 text-[14px] leading-[1.6] text-secondary">{o.body}</p>
                 </div>
-                <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
-                    {t(locale, "about.outcome.label")}
-                  </div>
-                  <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    {t(locale, "about.outcome.02.title")}
-                  </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    {t(locale, "about.outcome.02.body")}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
-                    {t(locale, "about.outcome.label")}
-                  </div>
-                  <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    {t(locale, "about.outcome.03.title")}
-                  </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    {t(locale, "about.outcome.03.body")}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-black/10 bg-[#F3F3F3] px-7 py-7">
-                  <div className="text-[12px] font-extrabold tracking-[0.18em] text-black/60">
-                    {t(locale, "about.outcome.label")}
-                  </div>
-                  <div className="mt-3 text-[18px] font-extrabold tracking-tight text-black">
-                    {t(locale, "about.outcome.04.title")}
-                  </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/60">
-                    {t(locale, "about.outcome.04.body")}
-                  </p>
-                </div>
-              </div>
-            </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#0F0F0F]">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <div className="flex items-center justify-between">
-                <NumberBadge n="04" />
-                <div className="h-[10px] w-[10px] rounded-full bg-[#FF0A5B]" />
-              </div>
-              <div className="mt-6">
-                <SectionTitle>{t(locale, "about.principles.title")}</SectionTitle>
-                <p className="mt-4 max-w-[52ch] text-[15px] leading-7 text-white/65">
-                  {t(locale, "about.principles.body")}
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="space-y-4">
-                {values.map((v) => (
-                  <div
-                    key={v.n}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-7 py-7"
-                  >
-                    <div className="text-[12px] font-extrabold tracking-[0.18em] text-white/40">
-                      {v.n}
-                    </div>
-                    <div className="mt-3 text-[18px] font-extrabold tracking-tight text-white">
-                      {v.title}
-                    </div>
-                    <p className="mt-3 text-[14px] leading-6 text-white/65">{v.body}</p>
+      {/* Principles */}
+      <section className="border-t border-[rgba(244,241,234,0.07)] bg-void-alt">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-12 lg:px-8">
+          <div className="lg:col-span-5">
+            <Eyebrow number="04" label={t(locale, "about.principles.title")} className="mb-6" />
+            <SectionTitle>{t(locale, "about.principles.title")}</SectionTitle>
+            <p className="mt-4 max-w-[52ch] text-[15px] leading-[1.7] text-secondary">
+              {t(locale, "about.principles.body")}
+            </p>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="space-y-4">
+              {values.map((v, i) => (
+                <Reveal key={v.n} delay={stagger(i)} className="block">
+                  <div className="rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card px-7 py-7">
+                    <div className="font-mono text-[12px] tracking-[0.18em] text-[var(--accent)]">{v.n}</div>
+                    <div className="mt-3 font-display text-[18px] font-semibold text-bone">{v.title}</div>
+                    <p className="mt-3 text-[14px] leading-[1.6] text-secondary">{v.body}</p>
                   </div>
-                ))}
-              </div>
-
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href={withLocale(locale, "/form")}
-                  className="inline-flex items-center justify-center rounded-full bg-[#FF0A5B] px-7 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
-                >
-                  {t(locale, "cta.lets_talk")}
-                </Link>
-                <a
-                  href="mailto:hello@trapplan.com"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-transparent px-7 py-3 text-[13px] font-semibold text-white/80 transition-colors duration-200 hover:bg-white/10 hover:text-white"
-                >
-                  hello@trapplan.com
-                </a>
-              </div>
+                </Reveal>
+              ))}
+            </div>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Button href={withLocale(locale, "/form")} glow>
+                {t(locale, "cta.lets_talk")} ↗
+              </Button>
+              <Button href="mailto:hello@trapplan.com" variant="secondary" external>
+                hello@trapplan.com
+              </Button>
             </div>
           </div>
         </div>

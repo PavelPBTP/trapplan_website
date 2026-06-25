@@ -99,7 +99,7 @@ function linkifyText(text: string, defs: InlineLinkDef[], budget: LinkifyBudget)
       <Link
         key={`${best.href}-${bestIdx}-${budget.used}`}
         href={best.href}
-        className="font-medium text-black/75 underline underline-offset-2 decoration-black/20 transition-colors hover:text-black hover:decoration-black/40"
+        className="font-medium text-bone underline underline-offset-2 decoration-[var(--accent)] transition-colors hover:text-[var(--accent)]"
       >
         {match}
       </Link>,
@@ -128,7 +128,7 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
       return (
         <h2
           key={idx}
-          className="mt-10 text-[26px] font-semibold leading-snug tracking-tight text-black"
+          className="mt-10 text-[26px] font-semibold leading-snug tracking-tight text-bone"
         >
           {normalizeText(block.text)}
         </h2>
@@ -137,14 +137,14 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
       return (
         <h3
           key={idx}
-          className="mt-10 text-[20px] font-semibold leading-snug tracking-tight text-black"
+          className="mt-10 text-[20px] font-semibold leading-snug tracking-tight text-bone"
         >
           {normalizeText(block.text)}
         </h3>
       );
     case "p":
       return (
-        <p key={idx} className="mt-5 text-[17px] leading-[1.6] text-[#37352f]">
+        <p key={idx} className="mt-5 text-[17px] leading-[1.6] text-secondary">
           {linkifyText(
             normalizeText(block.text),
             opts.inlineLinks ?? [],
@@ -156,7 +156,7 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
       return (
         <ul
           key={idx}
-          className="mt-5 list-disc space-y-2 pl-6 text-[17px] leading-[1.6] text-[#37352f]"
+          className="mt-5 list-disc space-y-2 pl-6 text-[17px] leading-[1.6] text-secondary"
         >
           {block.items.map((it, i) => (
             <li key={i}>
@@ -183,7 +183,7 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
             width={1200}
             height={800}
             sizes="(max-width: 768px) 100vw, 768px"
-            className="h-auto w-full rounded-[14px] border border-black/5"
+            className="h-auto w-full rounded-[14px] border border-[rgba(244,241,234,0.08)]"
           />
         </figure>
       );
@@ -191,14 +191,14 @@ function renderBlock(block: BlogBlock, idx: number, opts: RenderOpts) {
       return (
         <div
           key={idx}
-          className="mt-7 flex gap-3 rounded-[14px] bg-[#F6F6F3] px-4 py-4"
+          className="mt-7 flex gap-3 rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-[rgba(244,241,234,0.04)] px-4 py-4"
         >
           <div className="mt-[2px] text-[18px] leading-none">{block.emoji ?? "💡"}</div>
           <div className="min-w-0">
             {block.title ? (
-              <div className="text-[14px] font-semibold text-black">{block.title}</div>
+              <div className="text-[14px] font-semibold text-bone">{block.title}</div>
             ) : null}
-            <div className="text-[17px] leading-[1.6] text-[#37352f]">
+            <div className="text-[17px] leading-[1.6] text-secondary">
               {linkifyText(
                 normalizeText(block.text),
                 opts.inlineLinks ?? [],
@@ -415,10 +415,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   })();
 
   const cover = post.cover ?? ogFallback;
-
-  const allText = `${post.title}\n${post.excerpt}\n${post.content
-    .map((b) => (b.type === "p" || b.type === "h2" || b.type === "h3" ? b.text : ""))
-    .join("\n")}`.toLowerCase();
 
   const relatedPostLinks = BLOG_POSTS
     .filter((p) => p.slug !== post.slug)
@@ -671,7 +667,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   })();
 
   return (
-    <main className="bg-white pb-20">
+    <main className="pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbLd]) }}
@@ -680,21 +676,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="mx-auto max-w-3xl px-6 pb-20 pt-12 lg:px-0">
         <header>
           <div className="flex flex-col gap-4">
-            <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-black/50">
+            <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-tertiary">
               <ol className="flex flex-wrap items-center gap-2">
                 <li>
-                  <Link href={withLocale(locale, "/")} className="transition-colors hover:text-black">
+                  <Link href={withLocale(locale, "/")} className="transition-colors hover:text-bone">
                     {t(locale, "blog.ui.home")}
                   </Link>
                 </li>
-                <li className="text-black/30">/</li>
+                <li className="text-faint">/</li>
                 <li>
-                  <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-black">
+                  <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-bone">
                     {t(locale, "blog.ui.blog")}
                   </Link>
                 </li>
-                <li className="text-black/30">/</li>
-                <li className="text-black/70">{post.title}</li>
+                <li className="text-faint">/</li>
+                <li className="text-secondary">{post.title}</li>
               </ol>
             </nav>
           </div>
@@ -705,35 +701,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="mt-[4px] text-[26px] leading-none">{post.emoji ?? "📝"}</div>
             <div className="min-w-0">
               {post.category ? (
-                <div className="text-[12px] font-semibold text-black/40">
+                <div className="text-[12px] font-semibold text-tertiary">
                   {post.category}
                 </div>
               ) : null}
-              <h1 className="mt-1 text-[34px] font-bold leading-[1.1] tracking-tight text-black sm:text-[42px]">
+              <h1 className="mt-1 text-[34px] font-bold leading-[1.1] tracking-tight text-bone sm:text-[42px]">
                 {post.title}
               </h1>
 
-              <div className="mt-4 text-[13px] font-medium text-black/50">
+              <div className="mt-4 text-[13px] font-medium text-tertiary">
                 <span>{formatDate(locale, post.date)}</span>
-                <span className="px-2 text-black/25">•</span>
+                <span className="px-2 text-faint">•</span>
                 <span>
                   {post.readingMinutes} {t(locale, "blog.ui.min_read")}
                 </span>
                 {post.authorName ? (
                   <>
-                    <span className="px-2 text-black/25">•</span>
-                    <span className="text-black/70">{post.authorName}</span>
+                    <span className="px-2 text-faint">•</span>
+                    <span className="text-secondary">{post.authorName}</span>
                   </>
                 ) : null}
                 {post.authorRole ? (
                   <>
-                    <span className="px-2 text-black/25">•</span>
+                    <span className="px-2 text-faint">•</span>
                     <span>{post.authorRole}</span>
                   </>
                 ) : null}
               </div>
 
-              <p className="mt-5 text-[18px] leading-[1.6] text-[#37352f]">
+              <p className="mt-5 text-[18px] leading-[1.6] text-secondary">
                 {normalizeText(post.excerpt)}
               </p>
             </div>
@@ -744,8 +740,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {renderedBlocks}
         </article>
 
-        <div className="mt-14 border-t border-[#eeeeee] pt-8">
-          <Link href={withLocale(locale, "/blog")} className="text-[14px] font-semibold text-black/70 hover:underline">
+        <div className="mt-14 border-t border-[rgba(244,241,234,0.08)] pt-8">
+          <Link href={withLocale(locale, "/blog")} className="text-[14px] font-semibold text-secondary hover:underline">
             {t(locale, "blog.ui.back_to_blog")}
           </Link>
         </div>

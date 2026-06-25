@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale, stripLocalePrefix, withLocale } from "@/lib/i18n.shared";
@@ -14,15 +14,15 @@ const LOCALE_LABELS: Record<Locale, string> = {
   zh: "中文",
 };
 
+function setLocaleCookie(nextLocale: Locale) {
+  if (typeof document === "undefined") return;
+  document.cookie = `tp_locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+}
+
 export default function LanguageSwitcher({ locale }: { locale: Locale }) {
   const pathname = usePathname() || "/";
   const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
-
-  const setLocaleCookie = (nextLocale: Locale) => {
-    if (typeof document === "undefined") return;
-    document.cookie = `tp_locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
-  };
 
   const currentFromPath = useMemo(() => {
     const seg = pathname.split("/").filter(Boolean)[0];
@@ -38,10 +38,6 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
 
   const current = currentFromPath || ((SUPPORTED_LOCALES.includes(locale) ? locale : DEFAULT_LOCALE) as Locale);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname, suffix]);
-
   return (
     <nav className="relative" aria-label="Select language">
       <details
@@ -50,12 +46,12 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
         onToggle={(e) => setOpen((e.currentTarget as HTMLDetailsElement).open)}
       >
         <summary className="list-none" aria-haspopup="listbox" aria-expanded={open}>
-          <span className="inline-flex h-10 items-center gap-2 rounded-full bg-zinc-100 px-4 text-[13px] font-semibold text-black/80 transition-colors hover:bg-zinc-200">
+          <span className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-[6px] border border-[rgba(244,241,234,0.18)] px-3.5 font-mono text-[13px] font-medium text-secondary transition-colors hover:text-bone">
             {LOCALE_LABELS[current]}
-            <span className="text-[12px] text-black/55">▾</span>
+            <span className="text-[12px] text-tertiary">▾</span>
           </span>
         </summary>
-        <div className="absolute right-0 top-full z-50 mt-3 w-[160px] overflow-hidden rounded-2xl border border-black/10 bg-white p-2 shadow-lg" role="listbox" aria-label="Languages">
+        <div className="absolute right-0 top-full z-50 mt-3 w-[160px] overflow-hidden rounded-[12px] border border-[rgba(244,241,234,0.1)] bg-card p-2 shadow-[0_16px_48px_-12px_rgba(0,0,0,0.6)]" role="listbox" aria-label="Languages">
           {SUPPORTED_LOCALES.map((l) => {
             const href = withLocale(l, `${strippedPath}${suffix}`);
             const active = l === current;
@@ -69,8 +65,8 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
                   setLocaleCookie(l);
                   setOpen(false);
                 }}
-                className={`block rounded-xl px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  active ? "bg-black/[0.04] text-black" : "text-black/70 hover:bg-zinc-50 hover:text-black"
+                className={`block rounded-[8px] px-3 py-2 font-mono text-[13px] font-medium transition-colors ${
+                  active ? "bg-[rgba(244,241,234,0.06)] text-bone" : "text-secondary hover:bg-[rgba(244,241,234,0.04)] hover:text-bone"
                 }`}
               >
                 {LOCALE_LABELS[l]}

@@ -68,26 +68,26 @@ export default function ArticleClient({
       <ProgressBar progress={progress} />
 
       <div className="mx-auto max-w-[720px] px-6 pb-20 pt-12">
-        <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-black/50">
+        <nav aria-label="Breadcrumb" className="text-[13px] font-medium text-tertiary">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href={withLocale(locale, "/")} className="transition-colors hover:text-black">
+              <Link href={withLocale(locale, "/")} className="transition-colors hover:text-bone">
                 {t(locale, "blog.ui.home")}
               </Link>
             </li>
-            <li className="text-black/30">/</li>
+            <li className="text-faint">/</li>
             <li>
-              <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-black">
+              <Link href={withLocale(locale, "/blog")} className="transition-colors hover:text-bone">
                 {t(locale, "blog.ui.blog")}
               </Link>
             </li>
-            <li className="text-black/30">/</li>
-            <li className="text-black/70">Steam Next Fest</li>
+            <li className="text-faint">/</li>
+            <li className="text-secondary">Steam Next Fest</li>
           </ol>
         </nav>
 
         {coverSrc ? (
-          <div className="mt-8 overflow-hidden rounded-[18px] bg-black/[0.04]">
+          <div className="mt-8 overflow-hidden rounded-[18px] bg-[rgba(244,241,234,0.04)]">
             <div className="relative aspect-[16/9]">
               <Image
                 src={coverSrc}
@@ -121,7 +121,7 @@ export default function ArticleClient({
                     : "mt-12"
               }
             >
-              <h2 className={`${loraClassName} text-3xl font-bold leading-snug tracking-tight text-black`}>
+              <h2 className={`${loraClassName} text-3xl font-bold leading-snug tracking-tight text-bone`}>
                 {s.title}
               </h2>
 

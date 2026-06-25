@@ -8,12 +8,12 @@ import { t } from "@/lib/copy";
 function Field({ label, type = "text", value, onChange }: { label: string; type?: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) {
   return (
     <label className="block">
-      <span className="text-[12px] font-semibold text-black/70">{label}</span>
+      <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-tertiary">{label}</span>
       <input
         type={type}
         value={value}
         onChange={onChange}
-        className="mt-2 w-full rounded-[12px] bg-[#F5F5F5] px-4 py-4 text-[14px] text-black placeholder:text-black/40 outline-none ring-2 ring-transparent transition-shadow focus:ring-[#FF0A5B]/35"
+        className="mt-2 w-full rounded-[6px] border border-[rgba(244,241,234,0.12)] bg-void px-4 py-3 text-[15px] text-bone outline-none transition-colors focus:border-[var(--accent)]"
         placeholder=""
         required
       />
@@ -98,13 +98,13 @@ export default function BlogQuoteBanner() {
 
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 bg-white/92 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 lg:px-10">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[rgba(244,241,234,0.08)] bg-[rgba(12,11,10,0.9)] backdrop-blur-[14px]">
+        <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-6 py-3 lg:px-8">
           <div className="min-w-0">
-            <div className="truncate text-[13px] font-semibold text-black">
+            <div className="truncate font-display text-[14px] font-semibold text-bone">
               {t(locale, "blog_quote_banner.banner.title")}
             </div>
-            <div className="truncate text-[12px] font-medium text-black/55">
+            <div className="truncate text-[12px] font-medium text-tertiary">
               {t(locale, "blog_quote_banner.banner.subtitle")}
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function BlogQuoteBanner() {
             ref={triggerRef}
             type="button"
             onClick={() => setOpen(true)}
-            className="shrink-0 rounded-full bg-[#FF0A5B] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
+            className="shrink-0 rounded-[6px] bg-[var(--accent)] px-5 py-2.5 font-display text-[13px] font-semibold text-[var(--accent-on)] transition hover:brightness-[1.06]"
           >
             {t(locale, "blog_quote_banner.banner.cta")}
           </button>
@@ -134,13 +134,13 @@ export default function BlogQuoteBanner() {
             onClick={() => setOpen(false)}
           />
 
-          <div className="relative w-full max-w-[520px] rounded-[22px] bg-white px-8 pt-8 pb-7 shadow-[0_30px_70px_rgba(0,0,0,0.28)]">
+          <div className="relative w-full max-w-[520px] rounded-[16px] border border-[rgba(244,241,234,0.08)] bg-card px-8 pb-7 pt-8 shadow-[0_30px_70px_rgba(0,0,0,0.5)]">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h3 className="text-[22px] font-extrabold leading-none tracking-tight text-black">
+                <h3 className="font-display text-[22px] font-bold leading-none tracking-[-0.02em] text-bone">
                   {t(locale, "blog_quote_banner.modal.title")}
                 </h3>
-                <p className="mt-3 text-[13px] font-medium leading-6 text-black/55">
+                <p className="mt-3 text-[13px] font-medium leading-6 text-secondary">
                   {t(locale, "blog_quote_banner.modal.subtitle")}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function BlogQuoteBanner() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-black/70 transition-colors hover:bg-zinc-200"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(244,241,234,0.18)] text-secondary transition-colors hover:text-bone"
                 aria-label={t(locale, "blog_quote_banner.modal.close")}
               >
                 ×
@@ -169,7 +169,8 @@ export default function BlogQuoteBanner() {
               <button
                 type="submit"
                 disabled={isSubmitting || !isFormValid}
-                className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-8 py-4 text-[14px] font-semibold text-white shadow-[0_18px_40px_rgba(255,10,91,0.34)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_22px_52px_rgba(255,10,91,0.50)] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="mt-7 inline-flex h-[52px] w-full items-center justify-center rounded-[6px] bg-[var(--accent)] font-display text-[15px] font-semibold text-[var(--accent-on)] transition hover:brightness-[1.06] disabled:cursor-not-allowed disabled:opacity-50"
+                style={{ boxShadow: "var(--cta-glow)" }}
               >
                 {isSubmitting
                   ? t(locale, "form.get_a_quote.submit_sending")

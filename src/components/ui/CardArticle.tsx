@@ -191,22 +191,22 @@ export default function CardArticle({
   };
 
   return (
-    <main className="bg-white">
-      <div className="sticky top-0 z-20 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+    <main>
+      <div className="sticky top-0 z-20 border-b border-[rgba(244,241,234,0.08)] bg-[rgba(12,11,10,0.8)] backdrop-blur-[14px]">
         <div className="mx-auto max-w-[800px] px-6 py-3">
           <div className="flex items-center justify-between gap-4">
             <div className="min-w-0">
-              <div className="truncate text-[13px] font-semibold text-slate-700">
+              <div className="truncate text-[13px] font-semibold text-secondary">
                 {data.title}
               </div>
-              <div className="mt-1 text-[12px] font-medium text-slate-500">
+              <div className="mt-1 text-[12px] font-medium text-tertiary">
                 Step {activeLabel}
               </div>
             </div>
 
             <div className="flex items-center gap-3">
               {shareStatus !== "idle" ? (
-                <div className="hidden text-[12px] font-medium text-slate-500 sm:block">
+                <div className="hidden text-[12px] font-medium text-tertiary sm:block">
                   {shareStatus === "copied" ? "Link copied" : null}
                   {shareStatus === "shared" ? "Shared" : null}
                   {shareStatus === "error" ? "Could not share" : null}
@@ -216,7 +216,7 @@ export default function CardArticle({
               <button
                 type="button"
                 onClick={onShare}
-                className="shrink-0 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-[13px] font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
+                className="shrink-0 rounded-[8px] border border-[rgba(244,241,234,0.18)] bg-transparent px-3 py-2 text-[13px] font-semibold text-secondary transition-colors hover:text-bone"
               >
                 <span className="inline-flex items-center gap-2">
                   <Share2 className="h-4 w-4" aria-hidden="true" />
@@ -226,9 +226,9 @@ export default function CardArticle({
               </button>
 
               <div className="w-[160px] max-w-[34vw]">
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-[rgba(244,241,234,0.1)]">
                   <div
-                    className="h-full rounded-full bg-slate-900"
+                    className="h-full rounded-full bg-[var(--accent)]"
                     style={{ width: `${Math.round(progress * 100)}%` }}
                   />
                 </div>
@@ -281,13 +281,13 @@ export default function CardArticle({
             className={
               cover
                 ? "sr-only"
-                : "text-[34px] font-extrabold leading-[1.1] tracking-tight text-slate-950 sm:text-[44px]"
+                : "text-[34px] font-extrabold leading-[1.1] tracking-tight text-bone sm:text-[44px]"
             }
           >
             {data.title}
           </h1>
           {data.lead ? (
-            <p className="mt-5 text-[18px] leading-[1.65] text-slate-700">
+            <p className="mt-5 text-[18px] leading-[1.65] text-secondary">
               {data.lead}
             </p>
           ) : null}

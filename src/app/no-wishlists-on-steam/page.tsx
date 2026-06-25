@@ -56,34 +56,34 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function NoWishlistsOnSteamPage() {
   const locale = await getRequestLocale();
   return (
-    <main className="bg-[#F3F3F3]">
-      <section className="bg-white">
+    <main className="bg-void-alt">
+      <section className="bg-card">
         <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10">
-          <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-black sm:text-[48px]">
+          <h1 className="text-[40px] font-extrabold leading-[1.05] tracking-tight text-bone sm:text-[48px]">
             {t(locale, "no_wishlists.ui.title")}
           </h1>
-          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-black/65">
+          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-secondary">
             {t(locale, "no_wishlists.ui.subtitle")}
           </p>
 
           <div className="mt-10 space-y-4">
-            <div className="rounded-2xl border border-black/10 bg-white px-7 py-7">
-              <h2 className="text-[18px] font-bold tracking-tight text-black">{t(locale, "no_wishlists.ui.reasons.title")}</h2>
-              <p className="mt-2 text-[15px] leading-7 text-black/65">
+            <div className="rounded-2xl border border-[rgba(244,241,234,0.1)] bg-card px-7 py-7">
+              <h2 className="text-[18px] font-bold tracking-tight text-bone">{t(locale, "no_wishlists.ui.reasons.title")}</h2>
+              <p className="mt-2 text-[15px] leading-7 text-secondary">
                 {t(locale, "no_wishlists.ui.reasons.body")}
               </p>
             </div>
 
-            <div className="rounded-2xl border border-black/10 bg-white px-7 py-7">
-              <h2 className="text-[18px] font-bold tracking-tight text-black">{t(locale, "no_wishlists.ui.fix.title")}</h2>
-              <p className="mt-2 text-[15px] leading-7 text-black/65">
+            <div className="rounded-2xl border border-[rgba(244,241,234,0.1)] bg-card px-7 py-7">
+              <h2 className="text-[18px] font-bold tracking-tight text-bone">{t(locale, "no_wishlists.ui.fix.title")}</h2>
+              <p className="mt-2 text-[15px] leading-7 text-secondary">
                 {t(locale, "no_wishlists.ui.fix.body")}
               </p>
             </div>
 
-            <div className="rounded-2xl border border-black/10 bg-white px-7 py-7">
-              <h2 className="text-[18px] font-bold tracking-tight text-black">{t(locale, "no_wishlists.ui.tools.title")}</h2>
-              <p className="mt-2 text-[15px] leading-7 text-black/65">
+            <div className="rounded-2xl border border-[rgba(244,241,234,0.1)] bg-card px-7 py-7">
+              <h2 className="text-[18px] font-bold tracking-tight text-bone">{t(locale, "no_wishlists.ui.tools.title")}</h2>
+              <p className="mt-2 text-[15px] leading-7 text-secondary">
                 {t(locale, "no_wishlists.ui.tools.body")}
               </p>
               <div className="mt-4">

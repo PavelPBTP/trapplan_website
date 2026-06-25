@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { readdir } from "node:fs/promises";
 import path from "node:path";
 
-import Footer from "@/components/sections/Footer";
+import ToolShell from "@/components/sections/ToolShell";
 import SteamInfluencersPlannerClient from "./steam-influencers-planner-client";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
@@ -206,57 +206,51 @@ export default async function SteamInfluencersPlannerPage() {
   const influencers = await loadInfluencersSnapshot();
 
   return (
-    <>
-      <main className="bg-[#F3F3F3]">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              name: t(locale, "seo.steam_influencers_planner.title"),
-              url: "https://www.trapplan.com/steam-influencers-planner",
-              description:
-                t(locale, "seo.steam_influencers_planner.desc"),
-              applicationCategory: "MarketingApplication",
-              operatingSystem: "Web",
-            }),
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: t(locale, "blog.ui.home"),
-                  item: "https://www.trapplan.com/",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: t(locale, "tools.ui.free_tools"),
-                  item: "https://www.trapplan.com/steam-influencers-planner",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: t(locale, "seo.steam_influencers_planner.title"),
-                  item: "https://www.trapplan.com/steam-influencers-planner",
-                },
-              ],
-            }),
-          }}
-        />
-
-        <SteamInfluencersPlannerClient influencers={influencers} />
-        <Footer />
-      </main>
-    </>
+    <ToolShell
+      locale={locale}
+      activeHref="/steam-influencers-planner"
+      title={t(locale, "tools.steam_influencers_planner.ui.title")}
+      lede={t(locale, "seo.steam_influencers_planner.desc")}
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: t(locale, "seo.steam_influencers_planner.title"),
+            url: "https://www.trapplan.com/steam-influencers-planner",
+            description: t(locale, "seo.steam_influencers_planner.desc"),
+            applicationCategory: "MarketingApplication",
+            operatingSystem: "Web",
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: t(locale, "blog.ui.home"), item: "https://www.trapplan.com/" },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: t(locale, "tools.ui.free_tools"),
+                item: "https://www.trapplan.com/steam-influencers-planner",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: t(locale, "seo.steam_influencers_planner.title"),
+                item: "https://www.trapplan.com/steam-influencers-planner",
+              },
+            ],
+          }),
+        }}
+      />
+      <SteamInfluencersPlannerClient influencers={influencers} />
+    </ToolShell>
   );
 }

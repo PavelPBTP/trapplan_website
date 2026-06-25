@@ -32,15 +32,16 @@ export async function GET(request: Request) {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 64,
-          backgroundColor: "#0B0B0D",
+          backgroundColor: "#0C0B0A",
           backgroundImage:
-            "radial-gradient(circle at 16% 20%, rgba(255,10,91,0.35), transparent 55%), radial-gradient(circle at 72% 18%, rgba(255,255,255,0.08), transparent 50%), radial-gradient(circle at 50% 90%, rgba(255,10,91,0.18), transparent 55%)",
+            "radial-gradient(circle at 16% 20%, rgba(240,34,78,0.35), transparent 55%), radial-gradient(circle at 72% 18%, rgba(255,255,255,0.08), transparent 50%), radial-gradient(circle at 50% 90%, rgba(240,34,78,0.18), transparent 55%)",
           color: "#FFFFFF",
           fontFamily:
             "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- Satori (ImageResponse) requires a raw <img>, not next/image */}
           <img
             src={`${origin}/images/logo.png`}
             width={64}
@@ -98,8 +99,8 @@ export async function GET(request: Request) {
                 fontSize: 18,
                 padding: "10px 16px",
                 borderRadius: 999,
-                background: "rgba(255,10,91,0.18)",
-                border: "1px solid rgba(255,10,91,0.28)",
+                background: "rgba(240,34,78,0.18)",
+                border: "1px solid rgba(240,34,78,0.28)",
               }}
             >
               {tag}

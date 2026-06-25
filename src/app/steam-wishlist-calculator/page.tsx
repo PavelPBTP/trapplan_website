@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Footer from "@/components/sections/Footer";
+import ToolShell from "@/components/sections/ToolShell";
 import SteamWishlistCalculatorClient from "./steam-wishlist-calculator-client";
 import { getRequestLocale, withLocale } from "@/lib/i18n.server";
 import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
@@ -57,11 +57,13 @@ export default async function SteamWishlistCalculatorPage() {
   const locale = await getRequestLocale();
 
   return (
-    <>
-      <main className="bg-[#F3F3F3]">
-        <SteamWishlistCalculatorClient locale={locale} />
-        <Footer />
-      </main>
-    </>
+    <ToolShell
+      locale={locale}
+      activeHref="/steam-wishlist-calculator"
+      title={t(locale, "tools.steam_wishlist_calculator.name")}
+      lede={t(locale, "tools.steam_wishlist_calculator.ui.subtitle")}
+    >
+      <SteamWishlistCalculatorClient locale={locale} />
+    </ToolShell>
   );
 }

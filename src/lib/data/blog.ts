@@ -1,4 +1,5 @@
 import { BLOG_IMPORTED_POSTS } from "@/lib/data/blog.posts";
+import { BLOG_SEO_2026 } from "@/lib/data/blog.seo2026";
 
 export type BlogBlock =
   | { type: "p"; text: string }
@@ -1319,5 +1320,6 @@ function toDateMs(date: string) {
 
 export const BLOG_POSTS: BlogPost[] = dedupePostsBySlug([
   ...MANUAL_BLOG_POSTS,
+  ...BLOG_SEO_2026,
   ...BLOG_IMPORTED_POSTS,
 ]).sort((a, b) => toDateMs(b.date) - toDateMs(a.date));

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-
 import Footer from "@/components/sections/Footer";
-import Link from "next/link";
+import CaseFilterGrid, { type CaseCard } from "@/components/sections/CaseFilterGrid";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import Button from "@/components/ui/Button";
 import { CASE_STUDIES } from "@/lib/data/cases";
-import Image from "next/image";
-import { getRequestLocale, withLocale } from "@/lib/i18n.server";
-import { SUPPORTED_LOCALES } from "@/lib/i18n.shared";
+import { GAME_ART, CASE_ART, artGradient, type GameArt } from "@/lib/data/gameArt";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbList, itemList, SITE_ORIGIN } from "@/lib/seo";
+import { getRequestLocale } from "@/lib/i18n.server";
+import { SUPPORTED_LOCALES, withLocale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,182 +18,101 @@ export async function generateMetadata(): Promise<Metadata> {
   const languages = Object.fromEntries(
     SUPPORTED_LOCALES.map((l) => [l, new URL(withLocale(l, "/our-cases"), origin).toString()]),
   ) as Record<string, string>;
-
   const title = t(locale, "seo.our_cases.title");
   const description = t(locale, "seo.our_cases.desc");
-
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: {
-        ...languages,
-        "x-default": new URL(withLocale("en", "/our-cases"), origin).toString(),
-      },
+      languages: { ...languages, "x-default": new URL(withLocale("en", "/our-cases"), origin).toString() },
     },
     openGraph: {
       type: "website",
       url: canonical,
       title,
       description,
-      images: [
-        {
-          url: new URL("/og", origin).toString(),
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
+      images: [{ url: new URL("/og", origin).toString(), width: 1200, height: 630, alt: title }],
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [new URL("/og", origin).toString()],
-    },
+    twitter: { card: "summary_large_image", title, description, images: [new URL("/og", origin).toString()] },
   };
 }
 
 export default async function OurCasesPage() {
   const locale = await getRequestLocale();
-  const featured = CASE_STUDIES[0];
+
+  const cards: CaseCard[] = CASE_STUDIES.map((c) => {
+    const art: GameArt = GAME_ART[CASE_ART[c.slug]];
+    return {
+      slug: c.slug,
+      href: withLocale(locale, c.href),
+      filter: c.client.toLowerCase(),
+      category: `${c.client.toUpperCase()} · ${art.ghostName.toUpperCase()}`,
+      title: c.title,
+      highlight: c.excerpt,
+      gradient: artGradient(art, { alpha: 0.5, pos: "32% 26%", spread: "64%" }),
+      ghostName: art.ghostName,
+      tag: c.client.toUpperCase(),
+      cover: art.landscape,
+    };
+  });
 
   return (
-    <main className="bg-[#F3F3F3]">
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 pt-14 pb-14 lg:px-10">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <h1 className="text-[44px] font-extrabold leading-[1.02] tracking-tight text-black sm:text-[56px]">
-                {t(locale, "our_cases.ui.title")}
-              </h1>
-              <p className="mt-5 max-w-[60ch] text-[15px] leading-7 text-black/65">
-                {t(locale, "our_cases.ui.subtitle")}
-              </p>
-            </div>
-          </div>
-
-          {featured ? (
-            <div className="mt-12">
-              <div className="max-w-4xl">
-                <Link
-                  href={withLocale(locale, featured.href)}
-                  className="group block overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_40px_90px_rgba(0,0,0,0.08)]"
-                >
-                  <div className="relative h-[260px] overflow-hidden">
-                    {featured.coverImage ? (
-                      <>
-                        <Image
-                          src={featured.coverImage.src}
-                          alt={featured.coverImage.alt}
-                          fill
-                          sizes="(min-width: 1024px) 60vw, 100vw"
-                          className="object-cover"
-                          priority
-                        />
-                        <div className="absolute inset-0 bg-black/10" />
-                      </>
-                    ) : (
-                      <>
-                        <div className={`absolute inset-0 bg-gradient-to-br ${featured.theme}`} />
-                        <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.85),transparent_55%),radial-gradient(circle_at_75%_45%,rgba(255,255,255,0.35),transparent_60%)]" />
-                      </>
-                    )}
-                  </div>
-
-                  <div className="px-8 pt-8 pb-9">
-                    <div className="text-[12px] font-semibold leading-none text-black/60">
-                      <span>{featured.date}</span>
-                      <span className="px-2">|</span>
-                      <span>{featured.client}</span>
-                    </div>
-
-                    <h2 className="mt-4 text-[28px] font-extrabold leading-[1.05] tracking-tight text-black">
-                      {featured.title}
-                    </h2>
-
-                    <p className="mt-3 max-w-[68ch] text-[14px] leading-6 text-black/60">
-                      {featured.excerpt}
-                    </p>
-
-                    <div className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]">
-                      {t(locale, "our_cases.ui.view_case_study")}
-                      <span className="transition-transform duration-200 group-hover:translate-x-[1px] group-hover:-translate-y-[1px]">
-                        ↗
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          ) : null}
+    <main>
+      <JsonLd
+        data={breadcrumbList([
+          { name: t(locale, "blog.ui.home"), url: new URL(withLocale(locale, "/"), SITE_ORIGIN).toString() },
+          { name: t(locale, "nav.our_cases") },
+        ])}
+      />
+      <JsonLd
+        data={itemList(
+          t(locale, "seo.our_cases.title"),
+          CASE_STUDIES.map((c) => new URL(withLocale(locale, c.href), SITE_ORIGIN).toString()),
+        )}
+      />
+      <section className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute left-1/2 top-[-40px] h-[420px] w-[820px] -translate-x-1/2 opacity-50 blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%)",
+          }}
+        />
+        <div className="tp-grain" />
+        <div className="relative mx-auto max-w-[1240px] px-6 pb-6 pt-[88px] lg:px-8">
+          <Eyebrow number={t(locale, "cases.eyebrow")} label={t(locale, "cases.catalog.sub")} className="mb-[22px]" />
+          <h1 className="mb-5 max-w-[760px] font-display text-[40px] font-bold leading-[1.04] tracking-[-0.03em] text-bone text-balance md:text-[54px]">
+            {t(locale, "our_cases.ui.title")}
+          </h1>
+          <p className="max-w-[600px] text-[18px] leading-[1.6] text-secondary">
+            {t(locale, "our_cases.ui.subtitle")}
+          </p>
         </div>
       </section>
 
-      <section className="bg-[#F3F3F3]">
-        <div className="mx-auto max-w-6xl px-6 py-14 lg:px-10">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {CASE_STUDIES.map((c) => (
-              <Link
-                key={c.slug}
-                href={withLocale(locale, c.href)}
-                className="group rounded-3xl border border-black/10 bg-white p-6 transition-colors hover:bg-zinc-50"
-              >
-                {c.coverImage ? (
-                  <div className="relative h-[180px] w-full overflow-hidden rounded-2xl border border-black/10 bg-zinc-50">
-                    <Image
-                      src={c.coverImage.src}
-                      alt={c.coverImage.alt}
-                      fill
-                      sizes="(min-width: 1024px) 600px, 100vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/10" />
-                  </div>
-                ) : (
-                  <div className={`h-[180px] w-full rounded-2xl bg-gradient-to-br ${c.theme}`} />
-                )}
+      <section className="mx-auto max-w-[1240px] px-6 pb-[90px] pt-6 lg:px-8">
+        <CaseFilterGrid
+          cards={cards}
+          labels={{
+            all: t(locale, "cases.filter.all"),
+            wargaming: t(locale, "cases.filter.wargaming"),
+            gaijin: t(locale, "cases.filter.gaijin"),
+          }}
+        />
+      </section>
 
-                <div className="mt-6">
-                  <div className="text-[13px] font-semibold text-black/60">
-                    {c.date} | {c.client}
-                  </div>
-                  <div className="mt-2 flex items-start justify-between gap-4">
-                    <h2 className="text-[20px] font-extrabold leading-tight tracking-tight text-black">
-                      {c.title}
-                    </h2>
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-[14px] font-extrabold text-black transition-colors group-hover:bg-zinc-200">
-                      ↗
-                    </div>
-                  </div>
-                  <p className="mt-3 text-[14px] leading-6 text-black/65">{c.excerpt}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-12 rounded-3xl border border-black/10 bg-white p-7 sm:p-9">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-8">
-                <div className="text-[12px] font-extrabold tracking-[0.16em] text-black/50">{t(locale, "our_cases.ui.next_step")}</div>
-                <h3 className="mt-4 text-[28px] font-extrabold tracking-tight text-black">
-                  {t(locale, "our_cases.ui.next_step_title")}
-                </h3>
-                <p className="mt-3 max-w-[64ch] text-[14px] leading-6 text-black/65">
-                  {t(locale, "our_cases.ui.next_step_body")}
-                </p>
-              </div>
-              <div className="lg:col-span-4">
-                <Link
-                  href={withLocale(locale, "/form")}
-                  className="inline-flex w-full items-center justify-center rounded-full bg-[#FF0A5B] px-6 py-3 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#E6004E]"
-                >
-                  {t(locale, "our_cases.ui.contact_us")}
-                </Link>
-              </div>
-            </div>
-          </div>
+      <section className="border-t border-[rgba(244,241,234,0.07)]">
+        <div className="mx-auto max-w-[1240px] px-6 py-[90px] text-center lg:px-8">
+          <h2 className="mb-[18px] font-display text-[42px] font-bold tracking-[-0.025em] text-bone text-balance">
+            {t(locale, "our_cases.ui.next_step_title")}
+          </h2>
+          <p className="mx-auto mb-[34px] max-w-[520px] text-[17px] leading-[1.6] text-secondary">
+            {t(locale, "our_cases.ui.next_step_body")}
+          </p>
+          <Button href={withLocale(locale, "/form")} glow>
+            {t(locale, "cta.request_quote")} ↗
+          </Button>
         </div>
       </section>
       <Footer />

@@ -273,7 +273,7 @@ export default function SteamInfluencersPlannerClient({
     <>
       <div id="tp-influencer-planner">
         <div className="tp-card">
-          <h1>{t(locale, "tools.steam_influencers_planner.ui.title")}</h1>
+          <h2>{t(locale, "tools.steam_influencers_planner.ui.title")}</h2>
           <div className="tp-sub">
             {t(locale, "tools.steam_influencers_planner.ui.subtitle")}
           </div>
@@ -398,8 +398,8 @@ export default function SteamInfluencersPlannerClient({
                   style={{
                     minWidth: 120,
                     background: "transparent",
-                    color: "#0b0b0b",
-                    borderColor: "rgba(11, 11, 11, 0.22)",
+                    color: "#f4f1ea",
+                    borderColor: "rgba(244, 241, 234, 0.22)",
                   }}
                 >
                   {t(locale, "tools.steam_influencers_planner.ui.cta.clear")}
@@ -434,18 +434,18 @@ export default function SteamInfluencersPlannerClient({
                 {results.twitch.map((r, i) => (
                   <div
                     key={`twitch-${r.nick}-${r.link}-${i}`}
-                    className="group rounded-2xl border border-black/10 bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.06)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_60px_rgba(0,0,0,0.10)]"
+                    className="group rounded-2xl border border-[rgba(244,241,234,0.08)] bg-card p-5 transition hover:border-[rgba(244,241,234,0.18)]"
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-                      <div className="inline-flex items-center rounded-full bg-black/5 px-3 py-1 text-[12px] font-extrabold text-black/70">
+                      <div className="inline-flex items-center rounded-full bg-[rgba(244,241,234,0.06)] px-3 py-1 font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
                         {platformLabel(r.platform)}
                       </div>
-                      <div className="text-[12px] font-semibold text-black/50">
-                        {avgMetricLabel(r.platform)}: <span className="font-extrabold text-black/80">{avgMetricValue(r)}</span>
+                      <div className="text-[12px] font-semibold text-tertiary">
+                        {avgMetricLabel(r.platform)}: <span className="font-mono text-bone">{avgMetricValue(r)}</span>
                       </div>
                     </div>
 
-                    <div className="text-[18px] font-extrabold leading-tight tracking-tight text-black">
+                    <div className="mt-3 font-display text-[18px] font-semibold leading-tight tracking-tight text-bone">
                       {r.nick || r.name}
                     </div>
 
@@ -470,7 +470,7 @@ export default function SteamInfluencersPlannerClient({
                             })(),
                           )
                         }
-                        className="inline-flex items-center justify-center rounded-full bg-[#FF0A5B] px-4 py-2 text-[12px] font-extrabold text-white transition-colors hover:bg-[#E6004E]"
+                        className="inline-flex items-center justify-center rounded-[6px] bg-[var(--accent)] px-4 py-2 font-display text-[12px] font-semibold text-[var(--accent-on)] transition hover:brightness-110"
                       >
                         Run with TrapPlan
                       </a>
@@ -480,7 +480,7 @@ export default function SteamInfluencersPlannerClient({
                           href={r.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-[12px] font-extrabold text-white transition-colors hover:bg-black/85"
+                          className="inline-flex items-center justify-center rounded-[6px] border border-[rgba(244,241,234,0.18)] px-4 py-2 font-display text-[12px] font-semibold text-bone transition-colors hover:border-[rgba(244,241,234,0.4)]"
                         >
                           Open
                         </a>
@@ -498,18 +498,18 @@ export default function SteamInfluencersPlannerClient({
                 {results.youtube.map((r, i) => (
                   <div
                     key={`youtube-${r.nick}-${r.link}-${i}`}
-                    className="group rounded-2xl border border-black/10 bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.06)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_60px_rgba(0,0,0,0.10)]"
+                    className="group rounded-2xl border border-[rgba(244,241,234,0.08)] bg-card p-5 transition hover:border-[rgba(244,241,234,0.18)]"
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-                      <div className="inline-flex items-center rounded-full bg-black/5 px-3 py-1 text-[12px] font-extrabold text-black/70">
+                      <div className="inline-flex items-center rounded-full bg-[rgba(244,241,234,0.06)] px-3 py-1 font-mono text-[11px] uppercase tracking-[0.1em] text-secondary">
                         {platformLabel(r.platform)}
                       </div>
-                      <div className="text-[12px] font-semibold text-black/50">
-                        {avgMetricLabel(r.platform)}: <span className="font-extrabold text-black/80">{avgMetricValue(r)}</span>
+                      <div className="text-[12px] font-semibold text-tertiary">
+                        {avgMetricLabel(r.platform)}: <span className="font-mono text-bone">{avgMetricValue(r)}</span>
                       </div>
                     </div>
 
-                    <div className="text-[18px] font-extrabold leading-tight tracking-tight text-black">
+                    <div className="mt-3 font-display text-[18px] font-semibold leading-tight tracking-tight text-bone">
                       {r.nick || r.name}
                     </div>
 
@@ -534,7 +534,7 @@ export default function SteamInfluencersPlannerClient({
                             })(),
                           )
                         }
-                        className="inline-flex items-center justify-center rounded-full bg-[#FF0A5B] px-4 py-2 text-[12px] font-extrabold text-white transition-colors hover:bg-[#E6004E]"
+                        className="inline-flex items-center justify-center rounded-[6px] bg-[var(--accent)] px-4 py-2 font-display text-[12px] font-semibold text-[var(--accent-on)] transition hover:brightness-110"
                       >
                         Run with TrapPlan
                       </a>
@@ -544,7 +544,7 @@ export default function SteamInfluencersPlannerClient({
                           href={r.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-[12px] font-extrabold text-white transition-colors hover:bg-black/85"
+                          className="inline-flex items-center justify-center rounded-[6px] border border-[rgba(244,241,234,0.18)] px-4 py-2 font-display text-[12px] font-semibold text-bone transition-colors hover:border-[rgba(244,241,234,0.4)]"
                         >
                           Open
                         </a>
@@ -563,17 +563,17 @@ export default function SteamInfluencersPlannerClient({
         #tp-influencer-planner {
           position: relative;
           isolation: isolate;
-          --tp-text: #0b0b0b;
-          --tp-muted: rgba(11, 11, 11, 0.6);
-          --tp-border: rgba(11, 11, 11, 0.12);
-          --tp-bg: #ffffff;
-          --tp-soft: rgba(11, 11, 11, 0.04);
-          --tp-radius: 22px;
-          --tp-radius-sm: 14px;
-          max-width: 980px;
-          margin: 80px auto;
+          --tp-text: #f4f1ea;
+          --tp-muted: #9a938a;
+          --tp-border: rgba(244, 241, 234, 0.12);
+          --tp-bg: #131110;
+          --tp-soft: rgba(244, 241, 234, 0.04);
+          --tp-radius: 18px;
+          --tp-radius-sm: 8px;
+          max-width: 1240px;
+          margin: 8px auto;
           color: var(--tp-text);
-          font-family: inherit;
+          font-family: var(--font-body);
         }
         #tp-influencer-planner * {
           box-sizing: border-box;
@@ -614,7 +614,7 @@ export default function SteamInfluencersPlannerClient({
         #tp-influencer-planner .tp-how {
           margin-top: 18px;
           border: 1px solid var(--tp-border);
-          background: linear-gradient(180deg, rgba(11, 11, 11, 0.02), rgba(11, 11, 11, 0.01));
+          background: linear-gradient(180deg, rgba(244, 241, 234, 0.02), rgba(244, 241, 234, 0.01));
           border-radius: var(--tp-radius);
           padding: 18px 18px;
         }
@@ -637,15 +637,15 @@ export default function SteamInfluencersPlannerClient({
           align-items: start;
           padding: 12px 12px;
           border-radius: 16px;
-          background: rgba(255, 255, 255, 0.9);
-          border: 1px solid rgba(11, 11, 11, 0.08);
+          background: rgba(244, 241, 234, 0.03);
+          border: 1px solid rgba(244, 241, 234, 0.08);
         }
         #tp-influencer-planner .tp-how-num {
           height: 28px;
           width: 28px;
           border-radius: 999px;
-          background: rgba(255, 10, 91, 0.12);
-          color: #ff0a5b;
+          background: rgba(240, 34, 78, 0.12);
+          color: #f0224e;
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -655,7 +655,7 @@ export default function SteamInfluencersPlannerClient({
         #tp-influencer-planner .tp-how-copy {
           font-size: 13px;
           line-height: 1.4;
-          color: rgba(11, 11, 11, 0.72);
+          color: rgba(244, 241, 234, 0.72);
           font-weight: 650;
         }
 
@@ -671,11 +671,11 @@ export default function SteamInfluencersPlannerClient({
           align-items: center;
         }
         #tp-influencer-planner .tp-preview-muted {
-          color: rgba(11, 11, 11, 0.55);
+          color: rgba(244, 241, 234, 0.55);
           font-weight: 650;
         }
         #tp-influencer-planner .tp-preview-warn {
-          color: rgba(255, 10, 91, 0.9);
+          color: rgba(240, 34, 78, 0.9);
           font-weight: 750;
         }
         #tp-influencer-planner .tp-chip {
@@ -683,15 +683,15 @@ export default function SteamInfluencersPlannerClient({
           align-items: center;
           padding: 7px 10px;
           border-radius: 999px;
-          border: 1px solid rgba(11, 11, 11, 0.12);
-          background: rgba(11, 11, 11, 0.03);
+          border: 1px solid rgba(244, 241, 234, 0.12);
+          background: rgba(244, 241, 234, 0.03);
           font-weight: 850;
-          color: rgba(11, 11, 11, 0.72);
+          color: rgba(244, 241, 234, 0.72);
         }
         #tp-influencer-planner .tp-chip-soft {
-          background: rgba(255, 10, 91, 0.08);
-          border-color: rgba(255, 10, 91, 0.18);
-          color: rgba(255, 10, 91, 0.95);
+          background: rgba(240, 34, 78, 0.08);
+          border-color: rgba(240, 34, 78, 0.18);
+          color: rgba(240, 34, 78, 0.95);
           font-weight: 900;
         }
 
@@ -700,7 +700,7 @@ export default function SteamInfluencersPlannerClient({
           justify-content: space-between;
           gap: 16px;
           padding-bottom: 14px;
-          border-bottom: 1px solid rgba(11, 11, 11, 0.08);
+          border-bottom: 1px solid rgba(244, 241, 234, 0.08);
         }
         #tp-influencer-planner .tp-results-kicker {
           font-size: 12px;
@@ -717,11 +717,11 @@ export default function SteamInfluencersPlannerClient({
         #tp-influencer-planner .tp-results-sub {
           margin-top: 6px;
           font-size: 12px;
-          color: rgba(11, 11, 11, 0.55);
+          color: rgba(244, 241, 234, 0.55);
           font-weight: 650;
         }
         #tp-influencer-planner .tp-results-strong {
-          color: rgba(11, 11, 11, 0.78);
+          color: rgba(244, 241, 234, 0.78);
           font-weight: 900;
         }
         #tp-influencer-planner .tp-dot {
@@ -736,7 +736,7 @@ export default function SteamInfluencersPlannerClient({
         #tp-influencer-planner .tp-section-sub {
           margin-top: 4px;
           font-size: 12px;
-          color: rgba(11, 11, 11, 0.55);
+          color: rgba(244, 241, 234, 0.55);
           font-weight: 650;
           margin-bottom: 12px;
         }
@@ -772,8 +772,8 @@ export default function SteamInfluencersPlannerClient({
         }
         #tp-influencer-planner input.tp-input:focus,
         #tp-influencer-planner select.tp-input:focus {
-          background: #ffffff;
-          border-color: rgba(11, 11, 11, 0.28);
+          background: #0c0b0a;
+          border-color: var(--accent);
         }
 
         #tp-influencer-planner .tp-error {
@@ -803,11 +803,12 @@ export default function SteamInfluencersPlannerClient({
           min-width: 190px;
           height: 44px;
           padding: 0 18px;
-          border-radius: 999px;
-          background: #0b0b0b;
-          color: #ffffff;
-          font-weight: 850;
-          border: 1px solid #0b0b0b;
+          border-radius: 6px;
+          background: var(--accent);
+          color: var(--accent-on);
+          font-family: var(--font-display);
+          font-weight: 600;
+          border: 1px solid var(--accent);
           cursor: pointer;
         }
         #tp-influencer-planner .tp-btn:disabled {
@@ -832,15 +833,15 @@ export default function SteamInfluencersPlannerClient({
           border-radius: 999px;
           border: 1px solid var(--tp-border);
           background: var(--tp-soft);
-          color: rgba(11, 11, 11, 0.86);
+          color: rgba(244, 241, 234, 0.86);
           font-weight: 850;
           font-size: 13px;
           cursor: pointer;
         }
         #tp-influencer-planner .tp-tab[data-active="true"] {
-          background: #0b0b0b;
-          border-color: #0b0b0b;
-          color: #ffffff;
+          background: var(--accent);
+          border-color: var(--accent);
+          color: var(--accent-on);
         }
         #tp-influencer-planner .tp-pill {
           font-size: 12px;
@@ -851,9 +852,9 @@ export default function SteamInfluencersPlannerClient({
           background: rgba(255, 255, 255, 0.12);
         }
         #tp-influencer-planner .tp-tab[data-active="false"] .tp-pill {
-          border: 1px solid rgba(11, 11, 11, 0.12);
-          background: rgba(11, 11, 11, 0.06);
-          color: rgba(11, 11, 11, 0.7);
+          border: 1px solid rgba(244, 241, 234, 0.12);
+          background: rgba(244, 241, 234, 0.06);
+          color: rgba(244, 241, 234, 0.7);
         }
         #tp-influencer-planner .tp-results {
           margin-top: 16px;
@@ -869,8 +870,7 @@ export default function SteamInfluencersPlannerClient({
           border: 1px solid var(--tp-border);
           border-radius: 18px;
           padding: 14px;
-          background: #ffffff;
-          box-shadow: 0 10px 28px rgba(11, 11, 11, 0.06);
+          background: #131110;
           display: grid;
           gap: 10px;
           min-width: 0;
@@ -896,7 +896,7 @@ export default function SteamInfluencersPlannerClient({
           border-radius: 999px;
           background: var(--tp-soft);
           border: 1px solid var(--tp-border);
-          color: rgba(11, 11, 11, 0.78);
+          color: rgba(244, 241, 234, 0.78);
           flex: 0 0 auto;
           font-weight: 850;
         }
@@ -910,13 +910,13 @@ export default function SteamInfluencersPlannerClient({
           padding: 6px 9px;
           border-radius: 999px;
           background: var(--tp-soft);
-          border: 1px solid rgba(11, 11, 11, 0.08);
-          color: rgba(11, 11, 11, 0.72);
+          border: 1px solid rgba(244, 241, 234, 0.08);
+          color: rgba(244, 241, 234, 0.72);
         }
         #tp-influencer-planner .tp-why {
           font-size: 12px;
           line-height: 1.35;
-          color: rgba(11, 11, 11, 0.86);
+          color: rgba(244, 241, 234, 0.86);
         }
         #tp-influencer-planner .tp-linkRow {
           display: flex;
@@ -927,12 +927,12 @@ export default function SteamInfluencersPlannerClient({
         }
         #tp-influencer-planner .tp-metric {
           font-size: 12px;
-          color: rgba(11, 11, 11, 0.55);
+          color: rgba(244, 241, 234, 0.55);
         }
         #tp-influencer-planner a.tp-link {
           font-size: 12px;
           font-weight: 900;
-          color: #0b0b0b;
+          color: #f4f1ea;
           text-decoration: none;
         }
         #tp-influencer-planner a.tp-link:hover {

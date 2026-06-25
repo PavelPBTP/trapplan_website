@@ -61,6 +61,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function SteamNextFestMasterclassPage() {
   const locale = await getRequestLocale();
+  const origin = "https://www.trapplan.com";
+  const slugPath = "/blog/steam-next-fest-the-masterclass-in-discovery";
   const coverPath = "/images/steam-next-fest-the-masterclass-in-discovery.avif";
 
   const paraCounts = [1, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3];
@@ -86,10 +88,33 @@ export default async function SteamNextFestMasterclassPage() {
     })),
   };
 
+  const url = new URL(withLocale(locale, slugPath), origin).toString();
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: data.title,
+      description: data.lead,
+      mainEntityOfPage: url,
+      image: [new URL(coverPath, origin).toString()],
+      author: { "@type": "Organization", name: "TrapPlan", url: origin },
+      publisher: { "@type": "Organization", name: "TrapPlan", url: origin },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: t(locale, "blog.ui.home"), item: origin },
+        { "@type": "ListItem", position: 2, name: t(locale, "blog.ui.blog"), item: new URL(withLocale(locale, "/blog"), origin).toString() },
+        { "@type": "ListItem", position: 3, name: data.title },
+      ],
+    },
+  ];
+
   return (
-    <CardArticle
-      data={data}
-      cover={{ src: coverPath, alt: "Steam Next Fest February 2026" }}
-    />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <CardArticle data={data} cover={{ src: coverPath, alt: "Steam Next Fest February 2026" }} />
+    </>
   );
 }

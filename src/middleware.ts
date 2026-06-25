@@ -25,7 +25,11 @@ export function middleware(req: NextRequest) {
     pathname.startsWith("/og") ||
     pathname === "/favicon.ico" ||
     pathname.startsWith("/images") ||
+    pathname.startsWith("/brand") ||
+    pathname.startsWith("/mockups") ||
     pathname.startsWith("/blog-assets") ||
+    pathname.startsWith("/data") ||
+    pathname.startsWith("/scripts") ||
     pathname.startsWith("/robots.txt") ||
     pathname.startsWith("/sitemap")
   ) {
