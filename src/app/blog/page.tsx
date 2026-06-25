@@ -9,6 +9,7 @@ import { getBlogPosts } from "@/lib/data/blog.i18n";
 import { SUPPORTED_LOCALES, type Locale } from "@/lib/i18n.shared";
 import { t } from "@/lib/copy";
 import { clampText } from "@/lib/seo";
+import { blogGradient } from "@/lib/data/blogArt";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -70,14 +71,6 @@ function toDateMs(iso: string) {
   return Number.isFinite(ms) ? ms : 0;
 }
 
-function ogFallbackForPost(locale: Locale, title: string, category?: string) {
-  const p = new URLSearchParams();
-  p.set("title", title);
-  p.set("subtitle", t(locale, "blog.og.subtitle"));
-  if (category) p.set("tag", category);
-  return `/og?${p.toString()}`;
-}
-
 export default async function BlogIndexPage({
   searchParams,
 }: {
@@ -114,7 +107,6 @@ export default async function BlogIndexPage({
   const cards = posts.map((p) => ({
     post: p,
     cover: p.cover,
-    ogCover: ogFallbackForPost(locale, p.title, p.category),
   }));
 
   return (
@@ -191,20 +183,33 @@ export default async function BlogIndexPage({
 
           <section className="lg:col-span-9">
             <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
-              {cards.map(({ post, cover, ogCover }) => (
+              {cards.map(({ post, cover }) => (
                 <article key={post.slug} className="group">
                   <Link
                     href={withLocale(locale, `/blog/${post.slug}`)}
                     className="art-zoom flex h-full flex-col overflow-hidden rounded-[14px] border border-[rgba(244,241,234,0.08)] bg-card no-underline transition-colors hover:border-[rgba(244,241,234,0.18)]"
                   >
                     <div className="gart relative aspect-[16/10]">
-                      <Image
-                        src={cover || ogCover}
-                        alt={post.title}
-                        fill
-                        className="gcover object-cover"
-                        sizes="(max-width: 640px) 100vw, 480px"
-                      />
+                      {cover ? (
+                        <Image
+                          src={cover}
+                          alt={post.title}
+                          fill
+                          className="gcover object-cover"
+                          sizes="(max-width: 640px) 100vw, 480px"
+                        />
+                      ) : (
+                        <div
+                          aria-hidden
+                          className="absolute inset-0"
+                          style={{ background: blogGradient(post.category) }}
+                        >
+                          <div className="gscan absolute inset-0" />
+                          <span className="absolute bottom-2 left-5 right-5 truncate font-anton text-[40px] uppercase leading-[0.9] tracking-[-0.01em] text-[rgba(244,241,234,0.14)]">
+                            {post.category ?? "TrapPlan"}
+                          </span>
+                        </div>
+                      )}
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[62%] bg-gradient-to-t from-[#0c0b0a] via-[#0c0b0a]/40 to-transparent" />
                     </div>
 

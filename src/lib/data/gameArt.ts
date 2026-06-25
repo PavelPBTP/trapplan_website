@@ -106,7 +106,7 @@ export const CASE_ART: Record<string, GameArtId> = {
   "twitch-ad-campaigns-for-crossout": "crossout",
   "twitch-ad-campaigns-for-enlisted": "enlisted",
   "youtube-ad-campaigns-for-warthunder-in-europe": "warthunderEu",
-  "youtube-ad-campaigns-for-world-of-tanks-in-usa": "warthunder",
+  "youtube-ad-campaigns-for-world-of-tanks-in-usa": "wot",
   "youtube-ad-campaigns-for-world-of-warships-in-europe": "warships",
 };
 
